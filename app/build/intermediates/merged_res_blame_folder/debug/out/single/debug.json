@@ -1,0 +1,222 @@
+[
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\font_metropolis_bolditalic.otf.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\font\\metropolis_bolditalic.otf"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.playMatch.app-merged_res-31:/layout_activity_welcome.xml.flat",
+        "source": "com.playMatch.app-main-33:/layout/activity_welcome.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\drawable-mdpi_welcomescreen.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\drawable-mdpi\\welcomescreen.png"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\drawable-ldpi_welcomescreen.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\drawable-ldpi\\welcomescreen.png"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\font_metropolis_blackitalic.otf.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\font\\metropolis_blackitalic.otf"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\layout_custom_progressbar.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\layout\\custom_progressbar.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\font_metropolis_regularitalic.otf.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\font\\metropolis_regularitalic.otf"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\font_metropolis_regular.otf.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\font\\metropolis_regular.otf"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\drawable-xxhdpi_splash.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\drawable-xxhdpi\\splash.png"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\font_metropolis_mediumitalic.otf.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\font\\metropolis_mediumitalic.otf"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\font_metropolis_light.otf.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\font\\metropolis_light.otf"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\font_metropolis_thinitalic.otf.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\font\\metropolis_thinitalic.otf"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\font_metropolis_semibold.otf.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\font\\metropolis_semibold.otf"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\layout_activity_welcome.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\layout\\activity_welcome.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\font_metropolis_extrabold.otf.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\font\\metropolis_extrabold.otf"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\font_metropolis_extralightitalic.otf.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\font\\metropolis_extralightitalic.otf"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\drawable-xhdpi_welcomescreen.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\drawable-xhdpi\\welcomescreen.png"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\anim_exit_activity.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\anim\\exit_activity.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\font_metropolis_thin.otf.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\font\\metropolis_thin.otf"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\font_metropolis_bold.otf.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\font\\metropolis_bold.otf"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\font_metropolis_medium.otf.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\font\\metropolis_medium.otf"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\drawable-hdpi_splash.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\drawable-hdpi\\splash.png"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\font_metropolis_extrabolditalic.otf.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\font\\metropolis_extrabolditalic.otf"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\drawable-xxxhdpi_welcomescreen.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\drawable-xxxhdpi\\welcomescreen.png"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\anim_left_to_right.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\anim\\left_to_right.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\drawable-mdpi_splash.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\drawable-mdpi\\splash.png"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\anim_right_to_left.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\anim\\right_to_left.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\layout_activity_splash.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\drawable-hdpi_welcomescreen.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\drawable-hdpi\\welcomescreen.png"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\font_metropolis_black.otf.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\font\\metropolis_black.otf"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\font_metropolis_lightitalic.otf.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\font\\metropolis_lightitalic.otf"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\drawable-ldpi_splash.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\drawable-ldpi\\splash.png"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\drawable-xxhdpi_welcomescreen.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\drawable-xxhdpi\\welcomescreen.png"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\font_metropolis_semibolditalic.otf.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\font\\metropolis_semibolditalic.otf"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\font_metropolis_extralight.otf.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\font\\metropolis_extralight.otf"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\drawable-xhdpi_splash.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\drawable-xhdpi\\splash.png"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\drawable-xxxhdpi_splash.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\drawable-xxxhdpi\\splash.png"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\anim_enter_activity.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\anim\\enter_activity.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\drawable_playmatchlogo.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\drawable\\playmatchlogo.png"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-31:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\xml\\backup_rules.xml"
+    }
+]
