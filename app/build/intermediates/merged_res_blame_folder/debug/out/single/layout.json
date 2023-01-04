@@ -1,11 +1,19 @@
 [
     {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-mergeDebugResources-30:\\layout\\activity_login.xml",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "com.playMatch.app-mergeDebugResources-30:/layout/activity_sign_up.xml",
+        "source": "com.playMatch.app-main-33:/layout/activity_sign_up.xml"
+    },
+    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-mergeDebugResources-30:\\layout\\activity_welcome.xml",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\layout\\activity_welcome.xml"
     },
     {
-        "merged": "com.playMatch.app-mergeDebugResources-30:/layout/activity_welcome.xml",
-        "source": "com.playMatch.app-main-33:/layout/activity_welcome.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-mergeDebugResources-30:\\layout\\activity_sign_up.xml",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-33:\\layout\\activity_sign_up.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-mergeDebugResources-30:\\layout\\custom_progressbar.xml",

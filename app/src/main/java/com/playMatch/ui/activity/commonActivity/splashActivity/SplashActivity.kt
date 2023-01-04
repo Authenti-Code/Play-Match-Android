@@ -19,7 +19,7 @@ class SplashActivity : BaseActivity() {
         setContentView(binding.root)
         Handler(Looper.getMainLooper()).postDelayed({
 
-                CommonUtils.performIntentFinish(
+            CommonUtils.performIntentFinish(
                     this@SplashActivity,
                     WelcomeActivity::class.java
                 )

@@ -49,10 +49,11 @@
         </LinearLayout>
         
         <androidx.cardview.widget.CardView
+            android:id="@+id/getStarted"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_35sdp"
             android:layout_gravity="bottom"
-            app:cardBackgroundColor="#F95047"
+            app:cardBackgroundColor="@color/red_F95047"
             android:layout_marginBottom="@dimen/_20sdp"
             android:layout_marginHorizontal="@dimen/_15sdp"
             app:cardCornerRadius="@dimen/_18sdp">

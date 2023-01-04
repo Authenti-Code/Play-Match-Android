@@ -1273,6 +1273,7 @@ color background_material_dark
 color background_material_light
 color beige
 color black
+color black_707070
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -1832,6 +1833,7 @@ color primary_text_disabled_material_light
 color purple_200
 color purple_500
 color purple_700
+color red_F95047
 color ripple_material_dark
 color ripple_material_light
 color secondary_text_default_material_dark
@@ -3322,10 +3324,14 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable fblogin
+drawable googlelogin
 drawable ic_clock_black_24dp
+drawable ic_email
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_lock
 drawable ic_m3_chip_check
 drawable ic_m3_chip_checked_circle
 drawable ic_m3_chip_close
@@ -3333,6 +3339,8 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_name
+drawable loginbg
 drawable m3_appbar_background
 drawable m3_popupmenu_background_overlay
 drawable m3_radiobutton_ripple
@@ -3401,7 +3409,10 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable or
 drawable playmatchlogo
+drawable signupfb
+drawable signupgoogle
 drawable splash
 drawable test_level_drawable
 drawable tooltip_frame_dark
@@ -3619,9 +3630,11 @@ id fixed
 id flip
 id floating
 id forever
+id forgotPassTv
 id fragment_container_view_tag
 id frost
 id fullscreen_header
+id getStarted
 id ghost_view
 id ghost_view_holder
 id give_us_a_review_landmine_button
@@ -3667,6 +3680,8 @@ id line3
 id linear
 id listMode
 id list_item
+id login
+id loginTv
 id marquee
 id masked
 id match_constraint
@@ -3769,6 +3784,7 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id relative4
 id reverseSawtooth
 id right
 id rightToLeft
@@ -3805,6 +3821,7 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
+id signupTv
 id sin
 id skipCollapsed
 id skipped
@@ -3861,6 +3878,7 @@ id textTop
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
+id text_sign
 id textinput_counter
 id textinput_error
 id textinput_helper_text
@@ -4028,6 +4046,8 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_login
+layout activity_sign_up
 layout activity_splash
 layout activity_welcome
 layout custom_dialog
