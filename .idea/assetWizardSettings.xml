@@ -14,8 +14,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_name" />
-                            <entry key="sourceFile" value="D:\Authenticode Project 20222\playMatchAssets\signup svg\Icon awesome-user-astronaut.svg" />
+                            <entry key="outputName" value="ic_back" />
+                            <entry key="sourceFile" value="D:\Authenticode Project 20222\playMatchAssets\profile svg\arrow-down-sign-to-navigate.svg" />
                           </map>
                         </option>
                       </PersistentState>

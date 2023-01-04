@@ -267,6 +267,10 @@ attr circularflow_defaultAngle
 attr circularflow_defaultRadius
 attr circularflow_radiusInDP
 attr circularflow_viewCenter
+attr civ_border_color
+attr civ_border_overlay
+attr civ_border_width
+attr civ_circle_background_color
 attr clearsTag
 attr clickAction
 attr clockFaceBackgroundColor
@@ -3319,18 +3323,26 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable check_mark
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable dummy_profile
+drawable edit_profile
 drawable fblogin
 drawable googlelogin
+drawable hi
+drawable ic_back
 drawable ic_clock_black_24dp
+drawable ic_date
 drawable ic_email
+drawable ic_gender
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_location
 drawable ic_lock
 drawable ic_m3_chip_check
 drawable ic_m3_chip_checked_circle
@@ -3340,6 +3352,7 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_name
+drawable info
 drawable loginbg
 drawable m3_appbar_background
 drawable m3_popupmenu_background_overlay
@@ -3411,12 +3424,19 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable or
 drawable playmatchlogo
+drawable profile_bg
+drawable profilebg
+drawable rocket
+drawable rocket_fast
 drawable signupfb
 drawable signupgoogle
+drawable skip
 drawable splash
+drawable start_up
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable user_svg
 drawable welcomescreen
 font metropolis_black
 font metropolis_blackitalic
@@ -3440,6 +3460,7 @@ id ALT
 id BOTTOM_END
 id BOTTOM_START
 id CTRL
+id Continue
 id FUNCTION
 id META
 id NO_DEBUG
@@ -3526,6 +3547,8 @@ id autoCompleteToStart
 id barrier
 id baseline
 id beginOnFirstDraw
+id beginner
+id beginner_check
 id beginning
 id bestChoice
 id blocking
@@ -3593,6 +3616,7 @@ id disableIntraAutoTransition
 id disablePostScroll
 id disableScroll
 id disjoint
+id dob
 id dragAnticlockwise
 id dragClockwise
 id dragDown
@@ -3606,6 +3630,7 @@ id easeIn
 id easeInOut
 id easeOut
 id east
+id editProfile
 id edit_query
 id elastic
 id embed
@@ -3616,6 +3641,8 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id experienced
+id experienced_check
 id fade
 id fill
 id fill_horizontal
@@ -3664,6 +3691,8 @@ id immediateStop
 id included
 id indeterminate
 id info
+id intermediate
+id intermediate_check
 id invisible
 id inward
 id italic
@@ -3681,7 +3710,6 @@ id linear
 id listMode
 id list_item
 id login
-id loginTv
 id marquee
 id masked
 id match_constraint
@@ -3778,6 +3806,8 @@ id pin
 id position
 id postLayout
 id pressed
+id profileBg
+id profile_image
 id progressBarLay
 id progress_circular
 id progress_horizontal
@@ -4046,9 +4076,11 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_add_profile_image
 layout activity_login
 layout activity_sign_up
 layout activity_splash
+layout activity_user_detail
 layout activity_welcome
 layout custom_dialog
 layout custom_progressbar
@@ -5326,6 +5358,7 @@ style Widget_MaterialComponents_Toolbar_PrimarySurface
 style Widget_MaterialComponents_Toolbar_Surface
 style Widget_MaterialComponents_Tooltip
 style Widget_Support_CoordinatorLayout
+style dialogTheme
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth
@@ -5357,6 +5390,7 @@ styleable Carousel carousel_backwardTransition carousel_emptyViewsBehavior carou
 styleable CheckedTextView android_checkMark checkMarkCompat checkMarkTint checkMarkTintMode
 styleable Chip android_textAppearance android_textSize android_textColor android_ellipsize android_maxWidth android_text android_checkable checkedIcon checkedIconEnabled checkedIconTint checkedIconVisible chipBackgroundColor chipCornerRadius chipEndPadding chipIcon chipIconEnabled chipIconSize chipIconTint chipIconVisible chipMinHeight chipMinTouchTargetSize chipStartPadding chipStrokeColor chipStrokeWidth chipSurfaceColor closeIcon closeIconEnabled closeIconEndPadding closeIconSize closeIconStartPadding closeIconTint closeIconVisible ensureMinTouchTargetSize hideMotionSpec iconEndPadding iconStartPadding rippleColor shapeAppearance shapeAppearanceOverlay showMotionSpec textEndPadding textStartPadding
 styleable ChipGroup checkedChip chipSpacing chipSpacingHorizontal chipSpacingVertical selectionRequired singleLine singleSelection
+styleable CircleImageView civ_border_color civ_border_overlay civ_border_width civ_circle_background_color
 styleable CircularProgressIndicator indicatorDirectionCircular indicatorInset indicatorSize
 styleable ClockFaceView clockFaceBackgroundColor clockNumberTextColor
 styleable ClockHandView clockHandColor materialCircleRadius selectorSize

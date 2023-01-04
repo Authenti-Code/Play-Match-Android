@@ -22,10 +22,10 @@ public final class ActivitySignUpBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
-  public final CardView login;
+  public final CardView Continue;
 
   @NonNull
-  public final AppCompatTextView loginTv;
+  public final AppCompatTextView login;
 
   @NonNull
   public final RelativeLayout relative4;
@@ -33,12 +33,12 @@ public final class ActivitySignUpBinding implements ViewBinding {
   @NonNull
   public final AppCompatTextView textSign;
 
-  private ActivitySignUpBinding(@NonNull FrameLayout rootView, @NonNull CardView login,
-      @NonNull AppCompatTextView loginTv, @NonNull RelativeLayout relative4,
+  private ActivitySignUpBinding(@NonNull FrameLayout rootView, @NonNull CardView Continue,
+      @NonNull AppCompatTextView login, @NonNull RelativeLayout relative4,
       @NonNull AppCompatTextView textSign) {
     this.rootView = rootView;
+    this.Continue = Continue;
     this.login = login;
-    this.loginTv = loginTv;
     this.relative4 = relative4;
     this.textSign = textSign;
   }
@@ -70,15 +70,15 @@ public final class ActivitySignUpBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.login;
-      CardView login = ViewBindings.findChildViewById(rootView, id);
-      if (login == null) {
+      id = R.id.Continue;
+      CardView Continue = ViewBindings.findChildViewById(rootView, id);
+      if (Continue == null) {
         break missingId;
       }
 
-      id = R.id.loginTv;
-      AppCompatTextView loginTv = ViewBindings.findChildViewById(rootView, id);
-      if (loginTv == null) {
+      id = R.id.login;
+      AppCompatTextView login = ViewBindings.findChildViewById(rootView, id);
+      if (login == null) {
         break missingId;
       }
 
@@ -94,7 +94,8 @@ public final class ActivitySignUpBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivitySignUpBinding((FrameLayout) rootView, login, loginTv, relative4, textSign);
+      return new ActivitySignUpBinding((FrameLayout) rootView, Continue, login, relative4,
+          textSign);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
