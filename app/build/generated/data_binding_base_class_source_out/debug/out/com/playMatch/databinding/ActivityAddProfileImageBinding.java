@@ -26,6 +26,9 @@ public final class ActivityAddProfileImageBinding implements ViewBinding {
   public final CardView Continue;
 
   @NonNull
+  public final ImageView back;
+
+  @NonNull
   public final ImageView editProfile;
 
   @NonNull
@@ -35,10 +38,11 @@ public final class ActivityAddProfileImageBinding implements ViewBinding {
   public final CircleImageView profileImage;
 
   private ActivityAddProfileImageBinding(@NonNull FrameLayout rootView, @NonNull CardView Continue,
-      @NonNull ImageView editProfile, @NonNull AppCompatImageView profileBg,
-      @NonNull CircleImageView profileImage) {
+      @NonNull ImageView back, @NonNull ImageView editProfile,
+      @NonNull AppCompatImageView profileBg, @NonNull CircleImageView profileImage) {
     this.rootView = rootView;
     this.Continue = Continue;
+    this.back = back;
     this.editProfile = editProfile;
     this.profileBg = profileBg;
     this.profileImage = profileImage;
@@ -77,6 +81,12 @@ public final class ActivityAddProfileImageBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.back;
+      ImageView back = ViewBindings.findChildViewById(rootView, id);
+      if (back == null) {
+        break missingId;
+      }
+
       id = R.id.editProfile;
       ImageView editProfile = ViewBindings.findChildViewById(rootView, id);
       if (editProfile == null) {
@@ -95,7 +105,7 @@ public final class ActivityAddProfileImageBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityAddProfileImageBinding((FrameLayout) rootView, Continue, editProfile,
+      return new ActivityAddProfileImageBinding((FrameLayout) rootView, Continue, back, editProfile,
           profileBg, profileImage);
     }
     String missingId = rootView.getResources().getResourceName(id);

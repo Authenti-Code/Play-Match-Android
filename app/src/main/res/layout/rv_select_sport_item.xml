@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginVertical="@dimen/_10sdp"
+    android:orientation="horizontal">
+
+    <CheckBox
+        android:layout_marginTop="@dimen/_40sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_width="@dimen/_11sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:buttonTint="@color/red_F95047"
+        android:button="@drawable/custom_check_box"/>
+
+    <View
+        android:layout_marginTop="@dimen/_50sdp"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_1sdp"
+        android:background="#45F95047" />
+
+<androidx.cardview.widget.CardView
+    android:layout_marginVertical="@dimen/_5sdp"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_100sdp"
+    android:layout_marginEnd="@dimen/_5sdp"
+    app:cardCornerRadius="@dimen/_15sdp"
+    app:cardElevation="@dimen/_10sdp">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/metropolis_light"
+            android:text="Cricket"
+            android:textSize="@dimen/_18ssp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginVertical="@dimen/_5sdp"
+            app:spanCount="3"
+            tools:listitem="@layout/rv_child_select_sport_list_item"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.cardview.widget.CardView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

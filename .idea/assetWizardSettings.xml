@@ -14,8 +14,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_back" />
-                            <entry key="sourceFile" value="D:\Authenticode Project 20222\playMatchAssets\profile svg\arrow-down-sign-to-navigate.svg" />
+                            <entry key="outputName" value="ic_circle_checked" />
+                            <entry key="sourceFile" value="D:\Authenticode Project 20222\playMatchAssets\selectSport svg\ic_circle_checked.svg" />
                           </map>
                         </option>
                       </PersistentState>

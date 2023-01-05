@@ -31,18 +31,20 @@ drawable ic_lock
 drawable ic_name
 drawable info
 drawable loginbg
+drawable new_dummy_profile
 drawable or
 drawable playmatchlogo
 drawable profile_bg
 drawable profilebg
 drawable rocket
 drawable rocket_fast
+drawable search
+drawable select_sport_proifle
 drawable signupfb
 drawable signupgoogle
 drawable skip
 drawable splash
 drawable start_up
-drawable user_svg
 drawable welcomescreen
 font metropolis_black
 font metropolis_blackitalic
@@ -63,6 +65,7 @@ font metropolis_semibolditalic
 font metropolis_thin
 font metropolis_thinitalic
 id Continue
+id back
 id beginner
 id beginner_check
 id dob
@@ -82,6 +85,7 @@ id signupTv
 id text_sign
 layout activity_add_profile_image
 layout activity_login
+layout activity_select_sport
 layout activity_sign_up
 layout activity_splash
 layout activity_user_detail

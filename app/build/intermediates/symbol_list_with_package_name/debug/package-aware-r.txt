@@ -3410,6 +3410,7 @@ drawable mtrl_switch_track
 drawable mtrl_switch_track_decoration
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
+drawable new_dummy_profile
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -3428,6 +3429,8 @@ drawable profile_bg
 drawable profilebg
 drawable rocket
 drawable rocket_fast
+drawable search
+drawable select_sport_proifle
 drawable signupfb
 drawable signupgoogle
 drawable skip
@@ -3436,7 +3439,6 @@ drawable start_up
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
-drawable user_svg
 drawable welcomescreen
 font metropolis_black
 font metropolis_blackitalic
@@ -3544,6 +3546,7 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id back
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -4078,6 +4081,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_add_profile_image
 layout activity_login
+layout activity_select_sport
 layout activity_sign_up
 layout activity_splash
 layout activity_user_detail

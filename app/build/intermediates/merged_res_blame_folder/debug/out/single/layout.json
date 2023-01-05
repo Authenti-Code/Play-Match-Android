@@ -12,16 +12,20 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-34:\\layout\\activity_splash.xml"
     },
     {
-        "merged": "com.playMatch.app-mergeDebugResources-31:/layout/activity_add_profile_image.xml",
-        "source": "com.playMatch.app-main-34:/layout/activity_add_profile_image.xml"
-    },
-    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-mergeDebugResources-31:\\layout\\custom_progressbar.xml",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-34:\\layout\\custom_progressbar.xml"
     },
     {
+        "merged": "com.playMatch.app-mergeDebugResources-31:/layout/activity_select_sport.xml",
+        "source": "com.playMatch.app-main-34:/layout/activity_select_sport.xml"
+    },
+    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-mergeDebugResources-31:\\layout\\activity_user_detail.xml",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-34:\\layout\\activity_user_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-mergeDebugResources-31:\\layout\\activity_select_sport.xml",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-34:\\layout\\activity_select_sport.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-mergeDebugResources-31:\\layout\\activity_sign_up.xml",
