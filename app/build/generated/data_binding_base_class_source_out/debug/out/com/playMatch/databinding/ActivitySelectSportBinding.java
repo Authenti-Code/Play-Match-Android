@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.playMatch.R;
@@ -20,12 +22,20 @@ public final class ActivitySelectSportBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
+  public final CardView Continue;
+
+  @NonNull
   public final CircleImageView profileImage;
 
-  private ActivitySelectSportBinding(@NonNull FrameLayout rootView,
-      @NonNull CircleImageView profileImage) {
+  @NonNull
+  public final RecyclerView rvSports;
+
+  private ActivitySelectSportBinding(@NonNull FrameLayout rootView, @NonNull CardView Continue,
+      @NonNull CircleImageView profileImage, @NonNull RecyclerView rvSports) {
     this.rootView = rootView;
+    this.Continue = Continue;
     this.profileImage = profileImage;
+    this.rvSports = rvSports;
   }
 
   @Override
@@ -55,13 +65,26 @@ public final class ActivitySelectSportBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.Continue;
+      CardView Continue = ViewBindings.findChildViewById(rootView, id);
+      if (Continue == null) {
+        break missingId;
+      }
+
       id = R.id.profile_image;
       CircleImageView profileImage = ViewBindings.findChildViewById(rootView, id);
       if (profileImage == null) {
         break missingId;
       }
 
-      return new ActivitySelectSportBinding((FrameLayout) rootView, profileImage);
+      id = R.id.rv_sports;
+      RecyclerView rvSports = ViewBindings.findChildViewById(rootView, id);
+      if (rvSports == null) {
+        break missingId;
+      }
+
+      return new ActivitySelectSportBinding((FrameLayout) rootView, Continue, profileImage,
+          rvSports);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

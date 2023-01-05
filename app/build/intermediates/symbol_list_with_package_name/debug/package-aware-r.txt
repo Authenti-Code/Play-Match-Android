@@ -3324,6 +3324,7 @@ drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable check_mark
+drawable custom_check_box
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
@@ -3335,6 +3336,8 @@ drawable fblogin
 drawable googlelogin
 drawable hi
 drawable ic_back
+drawable ic_circle_checked
+drawable ic_circle_uncheck
 drawable ic_clock_black_24dp
 drawable ic_date
 drawable ic_email
@@ -3564,6 +3567,7 @@ id buttonPanel
 id cache_measures
 id callMeasure
 id cancel_button
+id cardView
 id carryVelocity
 id center
 id centerCrop
@@ -3656,6 +3660,7 @@ id fitEnd
 id fitStart
 id fitToContents
 id fitXY
+id fitnessLevel
 id fixed
 id flip
 id floating
@@ -3825,6 +3830,8 @@ id right_icon
 id right_side
 id rounded
 id row_index_key
+id rv_child_sports
+id rv_sports
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -3868,6 +3875,7 @@ id spacer
 id special_effects_controller_view_tag
 id spline
 id split_action_bar
+id sportName
 id spread
 id spread_inside
 id spring
@@ -4081,6 +4089,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_add_profile_image
 layout activity_login
+layout activity_match_sign_up
 layout activity_select_sport
 layout activity_sign_up
 layout activity_splash
@@ -4158,6 +4167,8 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout rv_child_select_sport_list_item
+layout rv_select_sport_item
 layout sdp_example
 layout select_dialog_item_material
 layout select_dialog_multichoice_material

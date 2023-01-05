@@ -3323,6 +3323,7 @@ int drawable btn_radio_off_to_on_mtrl_animation 0x7f07007a
 int drawable btn_radio_on_mtrl 0x7f07007b
 int drawable btn_radio_on_to_off_mtrl_animation 0x7f07007c
 int drawable check_mark 0x7f07007d
+int drawable custom_check_box 0x7f0700f6
 int drawable design_fab_background 0x7f07007e
 int drawable design_ic_visibility 0x7f07007f
 int drawable design_ic_visibility_off 0x7f070080
@@ -3334,6 +3335,8 @@ int drawable fblogin 0x7f070085
 int drawable googlelogin 0x7f070086
 int drawable hi 0x7f070087
 int drawable ic_back 0x7f070088
+int drawable ic_circle_checked 0x7f0700f7
+int drawable ic_circle_uncheck 0x7f0700f8
 int drawable ic_clock_black_24dp 0x7f070089
 int drawable ic_date 0x7f07008a
 int drawable ic_email 0x7f07008b
@@ -3563,6 +3566,7 @@ int id buttonPanel 0x7f090065
 int id cache_measures 0x7f090066
 int id callMeasure 0x7f090067
 int id cancel_button 0x7f090068
+int id cardView 0x7f0901f5
 int id carryVelocity 0x7f090069
 int id center 0x7f09006a
 int id centerCrop 0x7f09006b
@@ -3655,6 +3659,7 @@ int id fitEnd 0x7f0900c1
 int id fitStart 0x7f0900c2
 int id fitToContents 0x7f0900c3
 int id fitXY 0x7f0900c4
+int id fitnessLevel 0x7f0901f6
 int id fixed 0x7f0900c5
 int id flip 0x7f0900c6
 int id floating 0x7f0900c7
@@ -3824,6 +3829,8 @@ int id right_icon 0x7f09016a
 int id right_side 0x7f09016b
 int id rounded 0x7f09016c
 int id row_index_key 0x7f09016d
+int id rv_child_sports 0x7f0901f7
+int id rv_sports 0x7f0901f3
 int id save_non_transition_alpha 0x7f09016e
 int id save_overlay_view 0x7f09016f
 int id sawtooth 0x7f090170
@@ -3867,6 +3874,7 @@ int id spacer 0x7f090195
 int id special_effects_controller_view_tag 0x7f090196
 int id spline 0x7f090197
 int id split_action_bar 0x7f090198
+int id sportName 0x7f0901f4
 int id spread 0x7f090199
 int id spread_inside 0x7f09019a
 int id spring 0x7f09019b
@@ -4080,6 +4088,7 @@ int layout abc_select_dialog_material 0x7f0c001a
 int layout abc_tooltip 0x7f0c001b
 int layout activity_add_profile_image 0x7f0c001c
 int layout activity_login 0x7f0c001d
+int layout activity_match_sign_up 0x7f0c0074
 int layout activity_select_sport 0x7f0c0071
 int layout activity_sign_up 0x7f0c001e
 int layout activity_splash 0x7f0c001f
@@ -4157,6 +4166,8 @@ int layout notification_template_custom_big 0x7f0c0066
 int layout notification_template_icon_group 0x7f0c0067
 int layout notification_template_part_chronometer 0x7f0c0068
 int layout notification_template_part_time 0x7f0c0069
+int layout rv_child_select_sport_list_item 0x7f0c0072
+int layout rv_select_sport_item 0x7f0c0073
 int layout sdp_example 0x7f0c006a
 int layout select_dialog_item_material 0x7f0c006b
 int layout select_dialog_multichoice_material 0x7f0c006c
