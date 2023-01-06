@@ -105,12 +105,12 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\DELL\.gradle\cache
 		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:13:9-47
 	android:dataExtractionRules
 		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:7:9-65
-activity#com.playMatch.MatchSignUpActivity
+activity#com.playMatch.ui.activity.commonActivity.signUpActivity.MatchSignUpActivity
 ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:15:9-21:20
 	android:exported
 		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:17:13-37
 	android:name
-		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:16:13-48
+		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:16:13-90
 meta-data#android.app.lib_name
 ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:18:13-20:36
 	android:value

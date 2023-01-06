@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.playMatch.R
+import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.databinding.ActivitySelectSportBinding
 import com.playMatch.databinding.ActivityUserDetailBinding
 import com.playMatch.ui.activity.baseActivity.BaseActivity
@@ -45,9 +46,13 @@ class SelectSportActivity : BaseActivity(), View.OnClickListener {
     }
 
     private fun initView() {
+        binding.Continue.setOnClickListener(this)
     }
     override fun onClick(v: View?) {
         when (v?.id) {
+            R.id.Continue -> {
+                CommonUtils.performIntent(this, MatchSignUpActivity::class.java)
+            }
 
         }
     }

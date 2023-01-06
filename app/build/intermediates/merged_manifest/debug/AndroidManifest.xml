@@ -22,7 +22,7 @@
         android:testOnly="true"
         android:theme="@style/Theme.PlayMatch" >
         <activity
-            android:name="com.playMatch.MatchSignUpActivity"
+            android:name="com.playMatch.ui.activity.commonActivity.signUpActivity.MatchSignUpActivity"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"

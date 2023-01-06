@@ -7,6 +7,7 @@ anim right_to_left
 color beige
 color black
 color black_707070
+color black_B7B7B7
 color purple_200
 color purple_500
 color purple_700
@@ -26,6 +27,7 @@ drawable ic_circle_checked
 drawable ic_circle_uncheck
 drawable ic_date
 drawable ic_email
+drawable ic_front_arrow
 drawable ic_gender
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -68,6 +70,20 @@ font metropolis_semibolditalic
 font metropolis_thin
 font metropolis_thinitalic
 id Continue
+id Fcv
+id Ftv
+id Mcv
+id Mtv
+id Sacv
+id Satv
+id Scv
+id Stv
+id Tcv
+id Thcv
+id Thtv
+id Ttv
+id Wcv
+id Wtv
 id back
 id beginner
 id beginner_check

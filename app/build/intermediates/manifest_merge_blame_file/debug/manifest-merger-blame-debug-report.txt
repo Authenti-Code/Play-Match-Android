@@ -35,8 +35,8 @@
 23-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:13:9-47
 24        <activity
 24-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:15:9-21:20
-25            android:name="com.playMatch.MatchSignUpActivity"
-25-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:16:13-48
+25            android:name="com.playMatch.ui.activity.commonActivity.signUpActivity.MatchSignUpActivity"
+25-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:16:13-90
 26            android:exported="false" >
 26-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:17:13-37
 27            <meta-data
