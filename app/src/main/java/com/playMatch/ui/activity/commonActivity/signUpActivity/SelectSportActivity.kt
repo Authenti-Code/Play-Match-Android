@@ -30,7 +30,7 @@ class SelectSportActivity : BaseActivity(), View.OnClickListener {
     private fun setAdapter() {
         adapter = SelectSportAdapter(list, this)
         binding.rvSports.adapter = adapter
-        for (i in 1..10) {
+        for (i in 1..5) {
             list.add(
                 SelectSportModel(
                     "Cricket"
@@ -38,6 +38,7 @@ class SelectSportActivity : BaseActivity(), View.OnClickListener {
             )
 
         }
+
     }
 
     override fun onDestroy() {

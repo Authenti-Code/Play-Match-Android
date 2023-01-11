@@ -28,13 +28,18 @@ public final class RvSelectSportItemBinding implements ViewBinding {
   public final RecyclerView rvChildSports;
 
   @NonNull
+  public final RecyclerView rvLightChildSports;
+
+  @NonNull
   public final AppCompatTextView sportName;
 
   private RvSelectSportItemBinding(@NonNull LinearLayoutCompat rootView, @NonNull CheckBox checkbox,
-      @NonNull RecyclerView rvChildSports, @NonNull AppCompatTextView sportName) {
+      @NonNull RecyclerView rvChildSports, @NonNull RecyclerView rvLightChildSports,
+      @NonNull AppCompatTextView sportName) {
     this.rootView = rootView;
     this.checkbox = checkbox;
     this.rvChildSports = rvChildSports;
+    this.rvLightChildSports = rvLightChildSports;
     this.sportName = sportName;
   }
 
@@ -77,6 +82,12 @@ public final class RvSelectSportItemBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.rv_light_child_sports;
+      RecyclerView rvLightChildSports = ViewBindings.findChildViewById(rootView, id);
+      if (rvLightChildSports == null) {
+        break missingId;
+      }
+
       id = R.id.sportName;
       AppCompatTextView sportName = ViewBindings.findChildViewById(rootView, id);
       if (sportName == null) {
@@ -84,7 +95,7 @@ public final class RvSelectSportItemBinding implements ViewBinding {
       }
 
       return new RvSelectSportItemBinding((LinearLayoutCompat) rootView, checkbox, rvChildSports,
-          sportName);
+          rvLightChildSports, sportName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

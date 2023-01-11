@@ -435,7 +435,7 @@
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:button="@color/red_F95047"/>
+            android:buttonTint="@color/red_F95047"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"

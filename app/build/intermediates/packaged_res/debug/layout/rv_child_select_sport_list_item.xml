@@ -11,7 +11,7 @@
         android:layout_height="@dimen/_25sdp"
         android:layout_marginStart="@dimen/_5sdp"
         app:strokeWidth="@dimen/_1sdp"
-        app:strokeColor="#80F95047"
+        app:strokeColor="@color/red_F95047"
         app:cardCornerRadius="@dimen/_6sdp">
 
 
@@ -20,7 +20,7 @@
                 android:id="@+id/fitnessLevel"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textColor="#80F95047"
+                android:textColor="@color/red_F95047"
                 android:layout_gravity="center"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:layout_marginEnd="@dimen/_10sdp"

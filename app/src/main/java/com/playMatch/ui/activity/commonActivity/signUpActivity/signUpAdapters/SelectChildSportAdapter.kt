@@ -14,7 +14,7 @@ import com.playMatch.ui.activity.commonActivity.signUpActivity.signupModel.Selec
 import com.playMatch.ui.activity.commonActivity.signUpActivity.signupModel.SelectSportModel
 import com.saetae.controller.sharedPrefrence.PrefData
 
-class SelectChildSportAdapter(var list: ArrayList<SelectChildSPortModel>, var activity: Activity,val tasklistner: Tasklistner) : RecyclerView.Adapter<SelectChildSportAdapter.ViewHolder>() {
+class SelectChildSportAdapter(var list: ArrayList<SelectChildSPortModel>, var activity: Activity) : RecyclerView.Adapter<SelectChildSportAdapter.ViewHolder>() {
 
 
 private  var selectedPosition=-1
@@ -32,21 +32,21 @@ private  var selectedPosition=-1
         holder.apply {
             val ItemsviewModel = list[position]
             val id=PrefData.getStringPrefs(activity,PrefData.CHECK_BOX,"")
-            if (id=="1"){
-                binding.cardView.setCardBackgroundColor(Color.parseColor("#F95047"))
-            }else{
-                binding.cardView.setCardBackgroundColor(Color.parseColor("#80F95047"))
-            }
+
+//            if (id=="1"){
+//                binding.cardView.setCardBackgroundColor(Color.parseColor("#F95047"))
+//            }else{
+//                binding.cardView.setCardBackgroundColor(Color.parseColor("#80F95047"))
+//            }
             holder.binding.fitnessLevel.text = ItemsviewModel.fitnessLevel
 
-                holder.setIsRecyclable(false)
 
             if (selectedPosition==position && id=="1") {
                 binding.cardView.setCardBackgroundColor(Color.parseColor("#F95047"))
                 binding.fitnessLevel.setTextColor(Color.WHITE)
             } else {
                 binding.cardView.setCardBackgroundColor(Color.parseColor("#ffffff"))
-                binding.fitnessLevel.setTextColor(Color.parseColor("#80F95047"))
+                binding.fitnessLevel.setTextColor(Color.parseColor("#F95047"))
             }
 
             binding.cardView.setOnClickListener {

@@ -7,6 +7,7 @@ import com.playMatch.R
 import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.databinding.ActivityMatchSignUpBinding
 import com.playMatch.ui.activity.baseActivity.BaseActivity
+import com.playMatch.ui.activity.commonActivity.homeActivity.HomeActivity
 
 class MatchSignUpActivity : BaseActivity(), View.OnClickListener {
     private lateinit var binding: ActivityMatchSignUpBinding
@@ -36,6 +37,7 @@ class MatchSignUpActivity : BaseActivity(), View.OnClickListener {
         binding.Thcv.setOnClickListener(this)
         binding.Fcv.setOnClickListener(this)
         binding.Scv.setOnClickListener(this)
+        binding.Continue.setOnClickListener(this)
         binding.mondaySlider.setValues(1.0f,5.0f)
         binding.tuesdaySlider.setValues(1.0f,5.0f)
     }
@@ -58,6 +60,9 @@ class MatchSignUpActivity : BaseActivity(), View.OnClickListener {
             R.id.back -> {
                 onBackPressed()
             }
+
+            R.id.Continue -> {
+        CommonUtils.performIntentFinish(this@MatchSignUpActivity,HomeActivity::class.java)            }
 
         }
     }

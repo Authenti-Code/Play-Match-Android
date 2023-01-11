@@ -3317,7 +3317,10 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable award
 drawable begginer_rocket
+drawable bottom_bar_bg
+drawable bottom_nav
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3438,6 +3441,10 @@ drawable rocket
 drawable rocket_fast
 drawable search
 drawable select_sport_proifle
+drawable selected_group_icon
+drawable selected_home_ic
+drawable selected_messgae_ic
+drawable seletec_profile_icon
 drawable signup_proifle_bg
 drawable signupfb
 drawable signupgoogle
@@ -3447,6 +3454,10 @@ drawable start_up
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable unselected_chat
+drawable unselected_group_chat
+drawable unselected_home_icon
+drawable unselected_profile_ic
 drawable welcomescreen
 font metropolis_black
 font metropolis_blackitalic
@@ -3472,6 +3483,8 @@ id BOTTOM_START
 id CTRL
 id Continue
 id FUNCTION
+id Farmerbottombar
+id FarmerbottombarLay
 id Fcv
 id Ftv
 id META
@@ -3552,6 +3565,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id addAwardButton
 id alertTitle
 id aligned
 id all
@@ -3686,6 +3700,7 @@ id floating
 id forever
 id forgotPassTv
 id fragment_container_view_tag
+id frameLayoutHomeMain
 id frost
 id fullscreen_header
 id getStarted
@@ -3698,14 +3713,18 @@ id give_us_a_review_landmine_text_2
 id gone
 id graph
 id graph_wrap
+id groupOn
 id group_divider
 id grouping
+id groupoff
 id groups
 id guideline
 id header_title
 id hideable
 id home
 id homeAsUp
+id homeeventoff
+id homeeventon
 id honorRequest
 id horizontal_only
 id icon
@@ -3761,6 +3780,8 @@ id material_timepicker_view
 id material_value_index
 id matrix
 id message
+id messageOn
+id messageoff
 id middle
 id mini
 id mondaySlider
@@ -3836,6 +3857,8 @@ id postLayout
 id pressed
 id profileBg
 id profile_image
+id profile_on
+id profileoff
 id progressBarLay
 id progress_circular
 id progress_horizontal
@@ -3851,6 +3874,7 @@ id right_side
 id rounded
 id row_index_key
 id rv_child_sports
+id rv_light_child_sports
 id rv_sports
 id save_non_transition_alpha
 id save_overlay_view
@@ -4109,6 +4133,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_add_profile_image
+layout activity_home
 layout activity_login
 layout activity_match_sign_up
 layout activity_select_sport
@@ -4134,6 +4159,8 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout dp_example
+layout fragment_home
+layout list_item_light_bg_rv_child
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -4247,6 +4274,7 @@ string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string full_name
+string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description

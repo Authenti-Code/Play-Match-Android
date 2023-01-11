@@ -19,6 +19,7 @@ class SelectSportAdapter(var list: ArrayList<SelectSportModel>, var activity: Ac
 
     private var selectedPosition = -1
     private var adapter:SelectChildSportAdapter?=null
+    private var lightAdapter:SelectLightBgChildSportAdapter?=null
     private  var mlist = ArrayList<SelectChildSPortModel>()
 
     inner class ViewHolder(val binding:RvSelectSportItemBinding) : RecyclerView.ViewHolder(binding.root)
@@ -36,11 +37,7 @@ class SelectSportAdapter(var list: ArrayList<SelectSportModel>, var activity: Ac
             holder.binding.sportName.text = ItemsviewModel.sport
 
 
-            adapter = SelectChildSportAdapter(mlist, activity,object :Tasklistner {
-                override fun onItemClick(position: Int) {
-
-                }
-            })
+            adapter = SelectChildSportAdapter(mlist, activity)
             holder.binding.rvChildSports.adapter = adapter
             mlist.clear()
             for (i in 1..5) {
@@ -51,11 +48,26 @@ class SelectSportAdapter(var list: ArrayList<SelectSportModel>, var activity: Ac
                 )
 
             }
+
+            lightAdapter = SelectLightBgChildSportAdapter(mlist, activity)
+            binding.rvLightChildSports.adapter = lightAdapter
+            for (i in 1..5) {
+                list.add(
+                    SelectSportModel(
+                        "Cricket"
+                    )
+                )
+
+            }
             binding.checkbox.setOnClickListener {
 if (binding.checkbox.isChecked){
     PrefData.setStringPrefs(activity,PrefData.CHECK_BOX,"1")
+    binding.rvChildSports.visibility=View.VISIBLE
+    binding.rvLightChildSports.visibility=View.GONE
 }else{
     PrefData.setStringPrefs(activity,PrefData.CHECK_BOX,"0")
+    binding.rvChildSports.visibility=View.GONE
+    binding.rvLightChildSports.visibility=View.VISIBLE
 }
             }
         }
