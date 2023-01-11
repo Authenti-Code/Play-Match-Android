@@ -9,9 +9,11 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
+import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.slider.RangeSlider;
 import com.playMatch.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -20,6 +22,9 @@ import java.lang.String;
 public final class ActivityMatchSignUpBinding implements ViewBinding {
   @NonNull
   private final FrameLayout rootView;
+
+  @NonNull
+  public final CardView Continue;
 
   @NonNull
   public final MaterialCardView Fcv;
@@ -66,14 +71,22 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
   @NonNull
   public final ImageView back;
 
-  private ActivityMatchSignUpBinding(@NonNull FrameLayout rootView, @NonNull MaterialCardView Fcv,
-      @NonNull AppCompatTextView Ftv, @NonNull MaterialCardView Mcv, @NonNull AppCompatTextView Mtv,
-      @NonNull MaterialCardView Sacv, @NonNull AppCompatTextView Satv,
-      @NonNull MaterialCardView Scv, @NonNull AppCompatTextView Stv, @NonNull MaterialCardView Tcv,
-      @NonNull MaterialCardView Thcv, @NonNull AppCompatTextView Thtv,
-      @NonNull AppCompatTextView Ttv, @NonNull MaterialCardView Wcv, @NonNull AppCompatTextView Wtv,
-      @NonNull ImageView back) {
+  @NonNull
+  public final RangeSlider mondaySlider;
+
+  @NonNull
+  public final RangeSlider tuesdaySlider;
+
+  private ActivityMatchSignUpBinding(@NonNull FrameLayout rootView, @NonNull CardView Continue,
+      @NonNull MaterialCardView Fcv, @NonNull AppCompatTextView Ftv, @NonNull MaterialCardView Mcv,
+      @NonNull AppCompatTextView Mtv, @NonNull MaterialCardView Sacv,
+      @NonNull AppCompatTextView Satv, @NonNull MaterialCardView Scv,
+      @NonNull AppCompatTextView Stv, @NonNull MaterialCardView Tcv, @NonNull MaterialCardView Thcv,
+      @NonNull AppCompatTextView Thtv, @NonNull AppCompatTextView Ttv,
+      @NonNull MaterialCardView Wcv, @NonNull AppCompatTextView Wtv, @NonNull ImageView back,
+      @NonNull RangeSlider mondaySlider, @NonNull RangeSlider tuesdaySlider) {
     this.rootView = rootView;
+    this.Continue = Continue;
     this.Fcv = Fcv;
     this.Ftv = Ftv;
     this.Mcv = Mcv;
@@ -89,6 +102,8 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
     this.Wcv = Wcv;
     this.Wtv = Wtv;
     this.back = back;
+    this.mondaySlider = mondaySlider;
+    this.tuesdaySlider = tuesdaySlider;
   }
 
   @Override
@@ -118,6 +133,12 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.Continue;
+      CardView Continue = ViewBindings.findChildViewById(rootView, id);
+      if (Continue == null) {
+        break missingId;
+      }
+
       id = R.id.Fcv;
       MaterialCardView Fcv = ViewBindings.findChildViewById(rootView, id);
       if (Fcv == null) {
@@ -208,8 +229,20 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMatchSignUpBinding((FrameLayout) rootView, Fcv, Ftv, Mcv, Mtv, Sacv, Satv,
-          Scv, Stv, Tcv, Thcv, Thtv, Ttv, Wcv, Wtv, back);
+      id = R.id.mondaySlider;
+      RangeSlider mondaySlider = ViewBindings.findChildViewById(rootView, id);
+      if (mondaySlider == null) {
+        break missingId;
+      }
+
+      id = R.id.tuesdaySlider;
+      RangeSlider tuesdaySlider = ViewBindings.findChildViewById(rootView, id);
+      if (tuesdaySlider == null) {
+        break missingId;
+      }
+
+      return new ActivityMatchSignUpBinding((FrameLayout) rootView, Continue, Fcv, Ftv, Mcv, Mtv,
+          Sacv, Satv, Scv, Stv, Tcv, Thcv, Thtv, Ttv, Wcv, Wtv, back, mondaySlider, tuesdaySlider);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

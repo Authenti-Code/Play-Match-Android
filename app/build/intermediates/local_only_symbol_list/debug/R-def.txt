@@ -8,6 +8,7 @@ color beige
 color black
 color black_707070
 color black_B7B7B7
+color greay_B7B7B7
 color purple_200
 color purple_500
 color purple_700
@@ -15,6 +16,7 @@ color red_F95047
 color teal_200
 color teal_700
 color white
+drawable begginer_rocket
 drawable check_mark
 drawable custom_check_box
 drawable dummy_profile
@@ -45,6 +47,7 @@ drawable rocket
 drawable rocket_fast
 drawable search
 drawable select_sport_proifle
+drawable signup_proifle_bg
 drawable signupfb
 drawable signupgoogle
 drawable skip
@@ -99,6 +102,7 @@ id getStarted
 id intermediate
 id intermediate_check
 id login
+id mondaySlider
 id profileBg
 id profile_image
 id progressBarLay
@@ -108,6 +112,7 @@ id rv_sports
 id signupTv
 id sportName
 id text_sign
+id tuesdaySlider
 layout activity_add_profile_image
 layout activity_login
 layout activity_match_sign_up
@@ -122,6 +127,9 @@ layout rv_select_sport_item
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
+string email
+string full_name
+string password
 style DialogTheme
 style Theme.PlayMatch
 style dialogTheme

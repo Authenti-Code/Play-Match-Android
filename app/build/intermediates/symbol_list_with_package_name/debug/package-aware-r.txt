@@ -1337,6 +1337,7 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color greay_B7B7B7
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color m3_appbar_overlay_color
@@ -3316,6 +3317,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable begginer_rocket
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3436,6 +3438,7 @@ drawable rocket
 drawable rocket_fast
 drawable search
 drawable select_sport_proifle
+drawable signup_proifle_bg
 drawable signupfb
 drawable signupgoogle
 drawable skip
@@ -3760,6 +3763,7 @@ id matrix
 id message
 id middle
 id mini
+id mondaySlider
 id month_grid
 id month_navigation_bar
 id month_navigation_fragment_toggle
@@ -3958,6 +3962,7 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tuesdaySlider
 id unchecked
 id uniform
 id unlabeled
@@ -4235,11 +4240,13 @@ string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
 string clear_text_end_icon_content_description
+string email
 string error_a11y_label
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string full_name
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description
@@ -4330,6 +4337,7 @@ string mtrl_switch_track_decoration_path
 string mtrl_switch_track_path
 string mtrl_timepicker_cancel
 string mtrl_timepicker_confirm
+string password
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through

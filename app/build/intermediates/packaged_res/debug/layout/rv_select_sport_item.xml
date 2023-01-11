@@ -44,7 +44,7 @@
             android:textColor="@color/black"
             android:fontFamily="@font/metropolis_light"
             android:text="Cricket"
-            android:textSize="@dimen/_18ssp"/>
+            android:textSize="@dimen/_14ssp"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_child_sports"

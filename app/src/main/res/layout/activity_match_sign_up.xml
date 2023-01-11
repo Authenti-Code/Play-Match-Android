@@ -37,14 +37,13 @@
     </FrameLayout>
 
         <FrameLayout
-            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_20sdp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
 
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:layout_marginTop="@dimen/_10sdp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
@@ -68,7 +67,7 @@
             android:textColor="@color/black_B7B7B7"
             android:fontFamily="@font/metropolis_thinitalic"
             android:text="You can edit this in profile settings later. "
-            android:textSize="@dimen/_12ssp"/>
+            android:textSize="@dimen/_10ssp"/>
 
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -347,7 +346,7 @@
                 android:text="Monday"
                 android:textSize="@dimen/_12ssp"/>
 
-            <androidx.appcompat.widget.AppCompatEditText
+            <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textColor="@color/black"
@@ -361,6 +360,8 @@
                 style="@style/Widget.AppCompat.SeekBar"
                 android:duplicateParentState="true"
                 app:trackHeight="@dimen/_2sdp"
+                android:valueFrom="0"
+                android:valueTo="10"
                 app:thumbRadius="8dp"
                 app:thumbColor="@color/red_F95047"
                 app:thumbStrokeColor="@color/red_F95047"
@@ -387,7 +388,7 @@
                 android:text="Tuesday"
                 android:textSize="@dimen/_12ssp"/>
 
-            <androidx.appcompat.widget.AppCompatEditText
+            <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textColor="@color/black"
@@ -397,11 +398,13 @@
                 android:fontFamily="@font/metropolis_light"/>
 
             <com.google.android.material.slider.RangeSlider
-                android:id="@+id/tuesdyaSlider"
+                android:id="@+id/tuesdaySlider"
                 style="@style/Widget.AppCompat.SeekBar"
-                app:thumbElevation="0dp"
+                android:duplicateParentState="true"
                 app:trackHeight="@dimen/_2sdp"
                 app:thumbRadius="8dp"
+                android:valueFrom="0"
+                android:valueTo="10"
                 app:thumbColor="@color/red_F95047"
                 app:thumbStrokeColor="@color/red_F95047"
                 app:tickColor="@color/black"
@@ -432,7 +435,7 @@
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:buttonTint="@color/red_F95047"/>
+            android:button="@color/red_F95047"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
