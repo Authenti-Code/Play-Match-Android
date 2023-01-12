@@ -28,7 +28,7 @@ class LoginActivity : BaseActivity(),View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.login -> {
-                CommonUtils.performIntent(this, HomeActivity::class.java)
+                CommonUtils.performIntentFinish(this, HomeActivity::class.java)
             } R.id.signupTv -> {
                 CommonUtils.performIntent(this, SignUpActivity::class.java)
             }

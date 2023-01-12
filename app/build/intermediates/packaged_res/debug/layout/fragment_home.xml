@@ -3,12 +3,164 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.homeFragment.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="@dimen/_150sdp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/home_bg"/>
+
+   <androidx.appcompat.widget.LinearLayoutCompat
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical"
+       android:layout_marginHorizontal="@dimen/_15sdp">
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="@dimen/_35sdp">
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Welcome, John"
+               android:fontFamily="@font/metropolis_semibold"
+               android:textColor="@color/white"
+               android:textSize="@dimen/_16ssp"/>
+           
+           <androidx.appcompat.widget.AppCompatImageView
+               android:id="@+id/notification"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               app:srcCompat="@drawable/bell"
+               android:layout_alignParentEnd="true"/>
+
+           <androidx.appcompat.widget.AppCompatImageView
+               android:id="@+id/globe"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               app:srcCompat="@drawable/ic_globe"
+               android:layout_marginEnd="@dimen/_10sdp"
+               android:layout_toStartOf="@+id/notification"/>
+
+
+       </RelativeLayout>
+       
+       <androidx.appcompat.widget.LinearLayoutCompat
+           android:layout_width="match_parent"
+           android:layout_height="@dimen/_90sdp"
+           android:layout_marginTop="@dimen/_30sdp"
+           android:orientation="horizontal">
+
+           <androidx.cardview.widget.CardView
+               android:layout_width="@dimen/_100sdp"
+               android:layout_height="match_parent"
+               app:cardCornerRadius="@dimen/_8sdp"
+               android:layout_marginHorizontal="@dimen/_2sdp"
+               android:layout_marginVertical="@dimen/_2sdp"
+               app:cardElevation="@dimen/_5sdp">
+
+               <androidx.appcompat.widget.LinearLayoutCompat
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:orientation="vertical">
+
+                   <androidx.appcompat.widget.AppCompatTextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_marginTop="@dimen/_5sdp"
+                       android:text="Teams"
+                       android:textSize="@dimen/_12ssp"
+                       android:fontFamily="@font/metropolis_semibold"
+                       android:textColor="@color/black"
+                       android:layout_gravity="center"/>
+
+                   <androidx.appcompat.widget.AppCompatTextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_marginTop="@dimen/_5sdp"
+                       android:text="10"
+                       android:textSize="@dimen/_22ssp"
+                       android:fontFamily="@font/metropolis_regular"
+                       android:textColor="#686868"
+                       android:layout_gravity="center"/>
+               </androidx.appcompat.widget.LinearLayoutCompat>
+
+               <FrameLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent">
+                   <androidx.appcompat.widget.AppCompatImageView
+                       android:layout_width="@dimen/_35sdp"
+                       android:layout_height="@dimen/_35sdp"
+                       app:srcCompat="@drawable/ic_hand"
+                       android:layout_gravity="bottom|end"
+                       android:layout_marginBottom="@dimen/_5sdp"
+                       android:layout_marginEnd="@dimen/_10sdp"/>
+               </FrameLayout>
+
+
+           </androidx.cardview.widget.CardView>
+
+           <androidx.cardview.widget.CardView
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               app:cardCornerRadius="@dimen/_8sdp"
+               android:layout_marginEnd="@dimen/_3sdp"
+               android:layout_marginVertical="@dimen/_2sdp"
+               android:layout_marginStart="@dimen/_10sdp"
+               app:cardElevation="@dimen/_6sdp">
+
+               <androidx.appcompat.widget.LinearLayoutCompat
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:orientation="vertical">
+
+                   <androidx.appcompat.widget.AppCompatTextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_marginTop="@dimen/_5sdp"
+                       android:text="Matches"
+                       android:textSize="@dimen/_12ssp"
+                       android:fontFamily="@font/metropolis_semibold"
+                       android:textColor="@color/black"
+                       android:layout_gravity="center"/>
+
+                   <androidx.appcompat.widget.AppCompatTextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_marginTop="@dimen/_5sdp"
+                       android:text="20"
+                       android:textSize="@dimen/_22ssp"
+                       android:fontFamily="@font/metropolis_regular"
+                       android:textColor="#686868"
+                       android:layout_gravity="center"/>
+               </androidx.appcompat.widget.LinearLayoutCompat>
+
+               <FrameLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent">
+                   <androidx.appcompat.widget.AppCompatImageView
+                       android:layout_width="@dimen/_35sdp"
+                       android:layout_height="@dimen/_35sdp"
+                       app:srcCompat="@drawable/stadium"
+                       android:layout_gravity="bottom|end"
+                       android:layout_marginBottom="@dimen/_5sdp"
+                       android:layout_marginEnd="@dimen/_10sdp"/>
+               </FrameLayout>
+
+
+           </androidx.cardview.widget.CardView>
+
+
+
+       </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+   </androidx.appcompat.widget.LinearLayoutCompat>
+
 
 </FrameLayout>

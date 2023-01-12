@@ -8,8 +8,6 @@ import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageView;
-import androidx.appcompat.widget.LinearLayoutCompat;
-import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.playMatch.R;
@@ -22,61 +20,52 @@ public final class ActivityHomeBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
-  public final CardView Farmerbottombar;
+  public final AppCompatImageView award;
 
   @NonNull
-  public final LinearLayoutCompat FarmerbottombarLay;
+  public final AppCompatImageView chatOff;
 
   @NonNull
-  public final AppCompatImageView addAwardButton;
+  public final AppCompatImageView chatOn;
 
   @NonNull
   public final FrameLayout frameLayoutHomeMain;
 
   @NonNull
-  public final LinearLayoutCompat groupOn;
+  public final AppCompatImageView groupOff;
 
   @NonNull
-  public final LinearLayoutCompat groupoff;
+  public final AppCompatImageView groupOn;
 
   @NonNull
-  public final LinearLayoutCompat homeeventoff;
+  public final AppCompatImageView homeOff;
 
   @NonNull
-  public final LinearLayoutCompat homeeventon;
+  public final AppCompatImageView homeOn;
 
   @NonNull
-  public final LinearLayoutCompat messageOn;
+  public final AppCompatImageView profileOff;
 
   @NonNull
-  public final LinearLayoutCompat messageoff;
+  public final AppCompatImageView profileOn;
 
-  @NonNull
-  public final LinearLayoutCompat profileOn;
-
-  @NonNull
-  public final LinearLayoutCompat profileoff;
-
-  private ActivityHomeBinding(@NonNull FrameLayout rootView, @NonNull CardView Farmerbottombar,
-      @NonNull LinearLayoutCompat FarmerbottombarLay, @NonNull AppCompatImageView addAwardButton,
-      @NonNull FrameLayout frameLayoutHomeMain, @NonNull LinearLayoutCompat groupOn,
-      @NonNull LinearLayoutCompat groupoff, @NonNull LinearLayoutCompat homeeventoff,
-      @NonNull LinearLayoutCompat homeeventon, @NonNull LinearLayoutCompat messageOn,
-      @NonNull LinearLayoutCompat messageoff, @NonNull LinearLayoutCompat profileOn,
-      @NonNull LinearLayoutCompat profileoff) {
+  private ActivityHomeBinding(@NonNull FrameLayout rootView, @NonNull AppCompatImageView award,
+      @NonNull AppCompatImageView chatOff, @NonNull AppCompatImageView chatOn,
+      @NonNull FrameLayout frameLayoutHomeMain, @NonNull AppCompatImageView groupOff,
+      @NonNull AppCompatImageView groupOn, @NonNull AppCompatImageView homeOff,
+      @NonNull AppCompatImageView homeOn, @NonNull AppCompatImageView profileOff,
+      @NonNull AppCompatImageView profileOn) {
     this.rootView = rootView;
-    this.Farmerbottombar = Farmerbottombar;
-    this.FarmerbottombarLay = FarmerbottombarLay;
-    this.addAwardButton = addAwardButton;
+    this.award = award;
+    this.chatOff = chatOff;
+    this.chatOn = chatOn;
     this.frameLayoutHomeMain = frameLayoutHomeMain;
+    this.groupOff = groupOff;
     this.groupOn = groupOn;
-    this.groupoff = groupoff;
-    this.homeeventoff = homeeventoff;
-    this.homeeventon = homeeventon;
-    this.messageOn = messageOn;
-    this.messageoff = messageoff;
+    this.homeOff = homeOff;
+    this.homeOn = homeOn;
+    this.profileOff = profileOff;
     this.profileOn = profileOn;
-    this.profileoff = profileoff;
   }
 
   @Override
@@ -106,81 +95,64 @@ public final class ActivityHomeBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.Farmerbottombar;
-      CardView Farmerbottombar = ViewBindings.findChildViewById(rootView, id);
-      if (Farmerbottombar == null) {
+      id = R.id.award;
+      AppCompatImageView award = ViewBindings.findChildViewById(rootView, id);
+      if (award == null) {
         break missingId;
       }
 
-      id = R.id.FarmerbottombarLay;
-      LinearLayoutCompat FarmerbottombarLay = ViewBindings.findChildViewById(rootView, id);
-      if (FarmerbottombarLay == null) {
+      id = R.id.chatOff;
+      AppCompatImageView chatOff = ViewBindings.findChildViewById(rootView, id);
+      if (chatOff == null) {
         break missingId;
       }
 
-      id = R.id.addAwardButton;
-      AppCompatImageView addAwardButton = ViewBindings.findChildViewById(rootView, id);
-      if (addAwardButton == null) {
+      id = R.id.chatOn;
+      AppCompatImageView chatOn = ViewBindings.findChildViewById(rootView, id);
+      if (chatOn == null) {
         break missingId;
       }
 
-      id = R.id.frameLayoutHomeMain;
-      FrameLayout frameLayoutHomeMain = ViewBindings.findChildViewById(rootView, id);
-      if (frameLayoutHomeMain == null) {
+      FrameLayout frameLayoutHomeMain = (FrameLayout) rootView;
+
+      id = R.id.groupOff;
+      AppCompatImageView groupOff = ViewBindings.findChildViewById(rootView, id);
+      if (groupOff == null) {
         break missingId;
       }
 
       id = R.id.groupOn;
-      LinearLayoutCompat groupOn = ViewBindings.findChildViewById(rootView, id);
+      AppCompatImageView groupOn = ViewBindings.findChildViewById(rootView, id);
       if (groupOn == null) {
         break missingId;
       }
 
-      id = R.id.groupoff;
-      LinearLayoutCompat groupoff = ViewBindings.findChildViewById(rootView, id);
-      if (groupoff == null) {
+      id = R.id.homeOff;
+      AppCompatImageView homeOff = ViewBindings.findChildViewById(rootView, id);
+      if (homeOff == null) {
         break missingId;
       }
 
-      id = R.id.homeeventoff;
-      LinearLayoutCompat homeeventoff = ViewBindings.findChildViewById(rootView, id);
-      if (homeeventoff == null) {
+      id = R.id.homeOn;
+      AppCompatImageView homeOn = ViewBindings.findChildViewById(rootView, id);
+      if (homeOn == null) {
         break missingId;
       }
 
-      id = R.id.homeeventon;
-      LinearLayoutCompat homeeventon = ViewBindings.findChildViewById(rootView, id);
-      if (homeeventon == null) {
+      id = R.id.profileOff;
+      AppCompatImageView profileOff = ViewBindings.findChildViewById(rootView, id);
+      if (profileOff == null) {
         break missingId;
       }
 
-      id = R.id.messageOn;
-      LinearLayoutCompat messageOn = ViewBindings.findChildViewById(rootView, id);
-      if (messageOn == null) {
-        break missingId;
-      }
-
-      id = R.id.messageoff;
-      LinearLayoutCompat messageoff = ViewBindings.findChildViewById(rootView, id);
-      if (messageoff == null) {
-        break missingId;
-      }
-
-      id = R.id.profile_on;
-      LinearLayoutCompat profileOn = ViewBindings.findChildViewById(rootView, id);
+      id = R.id.profileOn;
+      AppCompatImageView profileOn = ViewBindings.findChildViewById(rootView, id);
       if (profileOn == null) {
         break missingId;
       }
 
-      id = R.id.profileoff;
-      LinearLayoutCompat profileoff = ViewBindings.findChildViewById(rootView, id);
-      if (profileoff == null) {
-        break missingId;
-      }
-
-      return new ActivityHomeBinding((FrameLayout) rootView, Farmerbottombar, FarmerbottombarLay,
-          addAwardButton, frameLayoutHomeMain, groupOn, groupoff, homeeventoff, homeeventon,
-          messageOn, messageoff, profileOn, profileoff);
+      return new ActivityHomeBinding((FrameLayout) rootView, award, chatOff, chatOn,
+          frameLayoutHomeMain, groupOff, groupOn, homeOff, homeOn, profileOff, profileOn);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

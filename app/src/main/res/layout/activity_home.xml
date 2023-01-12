@@ -1,253 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayoutHomeMain"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.playMatch.ui.activity.commonActivity.homeActivity.HomeActivity">
 
+
     <FrameLayout
-        android:id="@+id/frameLayoutHomeMain"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-    <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:elevation="@dimen/_20sdp"
-        android:layout_gravity="bottom|center_horizontal">
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/addAwardButton"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_60sdp"
-            android:layout_marginBottom="@dimen/_10sdp"
-            android:src="@drawable/award" />
+        android:layout_gravity="center|bottom">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/award"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_gravity="center|bottom"
+                android:elevation="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:scaleType="fitXY"
+                android:src="@drawable/award"
+                android:visibility="visible" />
     </FrameLayout>
 
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/Farmerbottombar"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_45sdp"
-        app:cardElevation="@dimen/_10sdp"
-        android:layout_gravity="bottom"
-        android:outlineAmbientShadowColor="@color/black"
-        android:outlineSpotShadowColor="@color/black"
-        android:background="@drawable/bottom_nav"
-        android:fitsSystemWindows="true"
-        android:orientation="horizontal"
-        tools:ignore="UnusedAttribute">
-
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/FarmerbottombarLay"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="@dimen/_60sdp"
+        android:elevation="@dimen/_10sdp"
+        android:background="@drawable/bottom_nav"
+        android:layout_gravity="bottom"
         android:orientation="horizontal">
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="wrap_content"
+        <FrameLayout
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center">
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:ignore="UselessLeaf">
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:id="@+id/homeeventon"
-                    android:visibility="visible"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="@dimen/_20sdp"
-                    android:orientation="vertical">
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="@dimen/_30sdp"
-                        android:layout_height="@dimen/_30sdp"
-                        android:src="@drawable/selected_home_ic" />
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:id="@+id/homeeventoff"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="@dimen/_2sdp"
-                    android:layout_marginHorizontal="@dimen/_20sdp"
-                    android:orientation="vertical"
-                    android:visibility="gone">
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="@dimen/_23sdp"
-                        android:layout_height="@dimen/_23sdp"
-                        android:src="@drawable/unselected_home_icon" />
-                </androidx.appcompat.widget.LinearLayoutCompat>
-            </FrameLayout>
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginHorizontal="@dimen/_10sdp"
-            android:layout_gravity="center">
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:ignore="UselessLeaf">
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:id="@+id/messageOn"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:visibility="gone">
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="@dimen/_26sdp"
-                        android:layout_height="@dimen/_30sdp"
-                        android:src="@drawable/selected_messgae_ic" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:id="@+id/messageoff"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="@dimen/_23sdp"
-                        android:layout_height="@dimen/_23sdp"
-                        android:src="@drawable/unselected_chat" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-            </FrameLayout>
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="@dimen/_80sdp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="@dimen/_20sdp"
-            android:layout_gravity="top"
-            android:gravity="top">
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:visibility="gone"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_40sdp"
-                android:layout_gravity="top"
-                android:layout_marginBottom="@dimen/_20sdp"
-                android:src="@drawable/award" />
-        </androidx.appcompat.widget.LinearLayoutCompat>
+                android:id="@+id/homeOff"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/unselected_home_icon"
+                android:visibility="gone" />
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="wrap_content"
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/homeOn"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/selected_home_ic"
+                android:visibility="visible" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="@dimen/_20sdp"
-            android:layout_marginHorizontal="@dimen/_20sdp"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-            <FrameLayout
-                android:layout_width="match_parent"
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/chatOff"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/unselected_chat"
+                android:visibility="visible" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/chatOn"
+                android:layout_width="@dimen/_20sdp"
                 android:layout_height="match_parent"
-                tools:ignore="UselessLeaf">
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/selected_messgae_ic"
+                android:visibility="gone" />
+        </FrameLayout>
 
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:id="@+id/groupOn"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:visibility="gone">
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="@dimen/_26sdp"
-                        android:layout_height="@dimen/_26sdp"
-                        android:src="@drawable/selected_group_icon" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:id="@+id/groupoff"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="@dimen/_8sdp"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="@dimen/_26sdp"
-                        android:layout_height="@dimen/_26sdp"
-                        android:src="@drawable/unselected_group_chat" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-<!--                <View-->
-<!--                    android:id="@+id/mChatNotificationView"-->
-<!--                    android:layout_width="@dimen/_8sdp"-->
-<!--                    android:layout_height="@dimen/_8sdp"-->
-<!--                    android:layout_gravity="bottom|center"-->
-<!--                    android:layout_marginBottom="@dimen/_32sdp"-->
-<!--                    android:background="@drawable/drawable_circle_red_b34648"-->
-<!--                    android:visibility="gone" />-->
-            </FrameLayout>
-        </androidx.appcompat.widget.LinearLayoutCompat>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1    " />
 
 
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_20sdp"
-            android:layout_gravity="center">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/groupOff"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/unselected_group_chat"
+                android:visibility="visible" />
 
-            <FrameLayout
-                android:layout_width="match_parent"
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/groupOn"
+                android:layout_width="@dimen/_35sdp"
                 android:layout_height="match_parent"
-                tools:ignore="UselessLeaf">
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/selected_group_icon"
+                android:visibility="gone" />
+        </FrameLayout>
 
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:id="@+id/profile_on"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:visibility="gone">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="@dimen/_26sdp"
-                        android:layout_height="@dimen/_26sdp"
-                        android:src="@drawable/seletec_profile_icon" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/profileOff"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/unselected_profile_ic"
+                android:visibility="visible" />
 
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:id="@+id/profileoff"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="@dimen/_4sdp"
-                    android:layout_gravity="center"
-                    android:gravity="center|bottom"
-                    android:orientation="vertical">
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="@dimen/_23sdp"
-                        android:layout_height="@dimen/_23sdp"
-                        android:src="@drawable/unselected_profile_ic" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-            </FrameLayout>
-        </androidx.appcompat.widget.LinearLayoutCompat>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/profileOn"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/seletec_profile_icon"
+                android:visibility="gone" />
+        </FrameLayout>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
-
-    </androidx.cardview.widget.CardView>
 
 </FrameLayout>

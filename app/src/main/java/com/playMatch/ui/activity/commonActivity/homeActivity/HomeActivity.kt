@@ -106,18 +106,18 @@ class HomeActivity : BaseActivity(), View.OnClickListener {
     }
     private fun initViews() {
         performBottomNavigation(position = 1)
-        binding.addAwardButton.setOnClickListener(this)
+        binding.award.setOnClickListener(this)
 
-        binding.homeeventoff.setOnClickListener(this)
-        binding.homeeventon.setOnClickListener(this)
+        binding.homeOff.setOnClickListener(this)
+        binding.homeOn.setOnClickListener(this)
 
-        binding.groupoff.setOnClickListener(this)
+        binding.groupOff.setOnClickListener(this)
         binding.groupOn.setOnClickListener(this)
 
-        binding.messageoff.setOnClickListener(this)
-        binding.messageOn.setOnClickListener(this)
+        binding.chatOff.setOnClickListener(this)
+        binding.chatOn.setOnClickListener(this)
 
-        binding.profileoff.setOnClickListener(this)
+        binding.profileOff.setOnClickListener(this)
         binding.profileOn.setOnClickListener(this)
 
 //        binding.addEventButton.setOnClickListener(this)
@@ -125,55 +125,55 @@ class HomeActivity : BaseActivity(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         when (v?.id) {
-            R.id.addAwardButton -> {
+            R.id.award -> {
 //                CommonUtils.performIntent(this, CreateEventActivity::class.java)
             }
-            R.id.homeeventoff -> {
-                binding.homeeventon.visibility = View.VISIBLE
-                binding.homeeventoff.visibility = View.GONE
-                binding.messageoff.visibility = View.VISIBLE
-                binding.messageOn.visibility = View.GONE
-                binding.groupoff.visibility = View.VISIBLE
+            R.id.homeOff -> {
+                binding.homeOn.visibility = View.VISIBLE
+                binding.homeOff.visibility = View.GONE
+                binding.chatOff.visibility = View.VISIBLE
+                binding.chatOn.visibility = View.GONE
+                binding.groupOff.visibility = View.VISIBLE
                 binding.groupOn.visibility = View.GONE
-                binding.profileoff.visibility = View.VISIBLE
+                binding.profileOff.visibility = View.VISIBLE
                 binding.profileOn.visibility = View.GONE
 
                 performBottomNavigation(position = 1)
             }
-            R.id.messageoff -> {
-                binding.homeeventoff.visibility = View.VISIBLE
-                binding.homeeventon.visibility = View.GONE
-                binding.messageOn.visibility = View.VISIBLE
-                binding.messageoff.visibility = View.GONE
-                binding.groupoff.visibility = View.VISIBLE
+            R.id.chatOff -> {
+                binding.homeOff.visibility = View.VISIBLE
+                binding.homeOn.visibility = View.GONE
+                binding.chatOn.visibility = View.VISIBLE
+                binding.chatOff.visibility = View.GONE
+                binding.groupOff.visibility = View.VISIBLE
                 binding.groupOn.visibility = View.GONE
-                binding.profileoff.visibility = View.VISIBLE
+                binding.profileOff.visibility = View.VISIBLE
                 binding.profileOn.visibility = View.GONE
 
                 performBottomNavigation(position = 2)
             }
-            R.id.profileoff -> {
+            R.id.profileOff -> {
 
-                binding.homeeventoff.visibility = View.VISIBLE
-                binding.homeeventon.visibility = View.GONE
-                binding.messageoff.visibility = View.VISIBLE
-                binding.messageOn.visibility = View.GONE
-                binding.groupoff.visibility = View.VISIBLE
+                binding.homeOff.visibility = View.VISIBLE
+                binding.homeOn.visibility = View.GONE
+                binding.chatOff.visibility = View.VISIBLE
+                binding.chatOn.visibility = View.GONE
+                binding.groupOff.visibility = View.VISIBLE
                 binding.groupOn.visibility = View.GONE
                 binding.profileOn.visibility = View.VISIBLE
-                binding.profileoff.visibility = View.GONE
+                binding.profileOff.visibility = View.GONE
 
                 performBottomNavigation(position = 4)
 
             }
-            R.id.groupoff -> {
-                binding.homeeventoff.visibility = View.VISIBLE
-                binding.homeeventon.visibility = View.GONE
-                binding.messageoff.visibility = View.VISIBLE
-                binding.messageOn.visibility = View.GONE
+            R.id.groupOff -> {
+                binding.homeOff.visibility = View.VISIBLE
+                binding.homeOn.visibility = View.GONE
+                binding.chatOff.visibility = View.VISIBLE
+                binding.chatOn.visibility = View.GONE
                 binding.groupOn.visibility = View.VISIBLE
-                binding.groupoff.visibility = View.GONE
-                binding.profileoff.visibility = View.VISIBLE
+                binding.groupOff.visibility = View.GONE
+                binding.profileOff.visibility = View.VISIBLE
                 binding.profileOn.visibility = View.GONE
                 PrefData.setBooleanPrefs(this@HomeActivity, PrefData.KEY_NOTIFICATION_IS_CHAT, false)
 //                binding.mChatNotificationView.visibility = View.GONE
