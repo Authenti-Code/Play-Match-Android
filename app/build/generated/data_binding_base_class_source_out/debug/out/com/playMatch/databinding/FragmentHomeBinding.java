@@ -8,6 +8,7 @@ import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageView;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.playMatch.R;
@@ -25,11 +26,15 @@ public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
   public final AppCompatImageView notification;
 
+  @NonNull
+  public final RecyclerView rvParentHome;
+
   private FragmentHomeBinding(@NonNull FrameLayout rootView, @NonNull AppCompatImageView globe,
-      @NonNull AppCompatImageView notification) {
+      @NonNull AppCompatImageView notification, @NonNull RecyclerView rvParentHome) {
     this.rootView = rootView;
     this.globe = globe;
     this.notification = notification;
+    this.rvParentHome = rvParentHome;
   }
 
   @Override
@@ -71,7 +76,13 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentHomeBinding((FrameLayout) rootView, globe, notification);
+      id = R.id.rvParentHome;
+      RecyclerView rvParentHome = ViewBindings.findChildViewById(rootView, id);
+      if (rvParentHome == null) {
+        break missingId;
+      }
+
+      return new FragmentHomeBinding((FrameLayout) rootView, globe, notification, rvParentHome);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

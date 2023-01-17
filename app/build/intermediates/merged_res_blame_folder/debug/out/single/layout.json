@@ -1,62 +1,78 @@
 [
     {
-        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-mergeDebugResources-31:\\layout\\list_item_light_bg_rv_child.xml",
-        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-34:\\layout\\list_item_light_bg_rv_child.xml"
+        "merged": "com.playMatch.app-mergeDebugResources-31:/layout/rv_child_home_fourth_position_list_item.xml",
+        "source": "com.playMatch.app-main-34:/layout/rv_child_home_fourth_position_list_item.xml"
     },
     {
-        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-mergeDebugResources-31:\\layout\\activity_login.xml",
-        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-34:\\layout\\activity_login.xml"
+        "merged": "com.playMatch.app-mergeDebugResources-31:/layout/rv_home_list_item.xml",
+        "source": "com.playMatch.app-main-34:/layout/rv_home_list_item.xml"
     },
     {
-        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-mergeDebugResources-31:\\layout\\activity_welcome.xml",
-        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-34:\\layout\\activity_welcome.xml"
+        "merged": "com.playMatch.app-mergeDebugResources-31:/layout/rv_select_sport_item.xml",
+        "source": "com.playMatch.app-main-34:/layout/rv_select_sport_item.xml"
     },
     {
-        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-mergeDebugResources-31:\\layout\\custom_progressbar.xml",
-        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-34:\\layout\\custom_progressbar.xml"
+        "merged": "com.playMatch.app-mergeDebugResources-31:/layout/rv_child_home_list_item.xml",
+        "source": "com.playMatch.app-main-34:/layout/rv_child_home_list_item.xml"
     },
     {
-        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-mergeDebugResources-31:\\layout\\activity_home.xml",
-        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-34:\\layout\\activity_home.xml"
+        "merged": "com.playMatch.app-mergeDebugResources-31:/layout/activity_home.xml",
+        "source": "com.playMatch.app-main-34:/layout/activity_home.xml"
     },
     {
-        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-mergeDebugResources-31:\\layout\\activity_sign_up.xml",
-        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-34:\\layout\\activity_sign_up.xml"
+        "merged": "com.playMatch.app-mergeDebugResources-31:/layout/activity_login.xml",
+        "source": "com.playMatch.app-main-34:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.playMatch.app-mergeDebugResources-31:/layout/rv_child_second_position_list_item.xml",
+        "source": "com.playMatch.app-main-34:/layout/rv_child_second_position_list_item.xml"
+    },
+    {
+        "merged": "com.playMatch.app-mergeDebugResources-31:/layout/activity_user_detail.xml",
+        "source": "com.playMatch.app-main-34:/layout/activity_user_detail.xml"
     },
     {
         "merged": "com.playMatch.app-mergeDebugResources-31:/layout/fragment_home.xml",
         "source": "com.playMatch.app-main-34:/layout/fragment_home.xml"
     },
     {
-        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-mergeDebugResources-31:\\layout\\activity_add_profile_image.xml",
-        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-34:\\layout\\activity_add_profile_image.xml"
+        "merged": "com.playMatch.app-mergeDebugResources-31:/layout/activity_welcome.xml",
+        "source": "com.playMatch.app-main-34:/layout/activity_welcome.xml"
     },
     {
-        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-mergeDebugResources-31:\\layout\\activity_splash.xml",
-        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-34:\\layout\\activity_splash.xml"
+        "merged": "com.playMatch.app-mergeDebugResources-31:/layout/activity_add_profile_image.xml",
+        "source": "com.playMatch.app-main-34:/layout/activity_add_profile_image.xml"
     },
     {
-        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-mergeDebugResources-31:\\layout\\fragment_home.xml",
-        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-34:\\layout\\fragment_home.xml"
+        "merged": "com.playMatch.app-mergeDebugResources-31:/layout/activity_select_sport.xml",
+        "source": "com.playMatch.app-main-34:/layout/activity_select_sport.xml"
     },
     {
-        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-mergeDebugResources-31:\\layout\\rv_child_select_sport_list_item.xml",
-        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-34:\\layout\\rv_child_select_sport_list_item.xml"
+        "merged": "com.playMatch.app-mergeDebugResources-31:/layout/rv_child_select_sport_list_item.xml",
+        "source": "com.playMatch.app-main-34:/layout/rv_child_select_sport_list_item.xml"
     },
     {
-        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-mergeDebugResources-31:\\layout\\rv_select_sport_item.xml",
-        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-34:\\layout\\rv_select_sport_item.xml"
+        "merged": "com.playMatch.app-mergeDebugResources-31:/layout/list_item_light_bg_rv_child.xml",
+        "source": "com.playMatch.app-main-34:/layout/list_item_light_bg_rv_child.xml"
     },
     {
-        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-mergeDebugResources-31:\\layout\\activity_user_detail.xml",
-        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-34:\\layout\\activity_user_detail.xml"
+        "merged": "com.playMatch.app-mergeDebugResources-31:/layout/activity_match_sign_up.xml",
+        "source": "com.playMatch.app-main-34:/layout/activity_match_sign_up.xml"
     },
     {
-        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-mergeDebugResources-31:\\layout\\activity_select_sport.xml",
-        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-34:\\layout\\activity_select_sport.xml"
+        "merged": "com.playMatch.app-mergeDebugResources-31:/layout/activity_splash.xml",
+        "source": "com.playMatch.app-main-34:/layout/activity_splash.xml"
     },
     {
-        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-mergeDebugResources-31:\\layout\\activity_match_sign_up.xml",
-        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-34:\\layout\\activity_match_sign_up.xml"
+        "merged": "com.playMatch.app-mergeDebugResources-31:/layout/activity_sign_up.xml",
+        "source": "com.playMatch.app-main-34:/layout/activity_sign_up.xml"
+    },
+    {
+        "merged": "com.playMatch.app-mergeDebugResources-31:/layout/rv_child_home_third_position_list_item.xml",
+        "source": "com.playMatch.app-main-34:/layout/rv_child_home_third_position_list_item.xml"
+    },
+    {
+        "merged": "com.playMatch.app-mergeDebugResources-31:/layout/custom_progressbar.xml",
+        "source": "com.playMatch.app-main-34:/layout/custom_progressbar.xml"
     }
 ]

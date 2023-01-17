@@ -16,12 +16,12 @@
    <androidx.appcompat.widget.LinearLayoutCompat
        android:layout_width="match_parent"
        android:layout_height="match_parent"
-       android:orientation="vertical"
-       android:layout_marginHorizontal="@dimen/_15sdp">
+       android:orientation="vertical">
 
        <RelativeLayout
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
+           android:layout_marginHorizontal="@dimen/_15sdp"
            android:layout_marginTop="@dimen/_35sdp">
 
            <TextView
@@ -54,6 +54,7 @@
            android:layout_width="match_parent"
            android:layout_height="@dimen/_90sdp"
            android:layout_marginTop="@dimen/_30sdp"
+           android:layout_marginHorizontal="@dimen/_15sdp"
            android:orientation="horizontal">
 
            <androidx.cardview.widget.CardView
@@ -158,6 +159,15 @@
 
 
        </androidx.appcompat.widget.LinearLayoutCompat>
+
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/rvParentHome"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:layout_marginBottom="@dimen/_70sdp"
+           app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+           tools:listitem="@layout/rv_home_list_item"
+           android:layout_marginTop="@dimen/_10sdp"/>
 
 
    </androidx.appcompat.widget.LinearLayoutCompat>

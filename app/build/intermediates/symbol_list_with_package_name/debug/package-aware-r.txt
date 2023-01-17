@@ -1839,6 +1839,7 @@ color primary_text_disabled_material_light
 color purple_200
 color purple_500
 color purple_700
+color red_E65D50
 color red_F95047
 color ripple_material_dark
 color ripple_material_light
@@ -3354,6 +3355,7 @@ drawable ic_front_arrow
 drawable ic_gender
 drawable ic_globe
 drawable ic_hand
+drawable ic_interest
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -3368,7 +3370,10 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_name
+drawable ic_path
+drawable ic_upcoming_matches
 drawable info
+drawable juventus
 drawable loginbg
 drawable m3_appbar_background
 drawable m3_popupmenu_background_overlay
@@ -3643,6 +3648,7 @@ id currentState
 id custom
 id customPanel
 id cut
+id date
 id date_picker_actions
 id decelerate
 id decelerateAndComplete
@@ -3728,6 +3734,7 @@ id grouping
 id groups
 id guideline
 id header_title
+id heading
 id hideable
 id home
 id homeAsUp
@@ -3764,6 +3771,7 @@ id linear
 id listMode
 id list_item
 id login
+id logo
 id marquee
 id masked
 id match_constraint
@@ -3822,6 +3830,7 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
+id name
 id navigation_bar_item_active_indicator_view
 id navigation_bar_item_icon_container
 id navigation_bar_item_icon_view
@@ -3880,6 +3889,8 @@ id right_icon
 id right_side
 id rounded
 id row_index_key
+id rvParentHome
+id rv_child_home
 id rv_child_sports
 id rv_light_child_sports
 id rv_sports
@@ -4222,7 +4233,12 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout rv_child_home_fourth_position_list_item
+layout rv_child_home_list_item
+layout rv_child_home_third_position_list_item
+layout rv_child_second_position_list_item
 layout rv_child_select_sport_list_item
+layout rv_home_list_item
 layout rv_select_sport_item
 layout sdp_example
 layout select_dialog_item_material

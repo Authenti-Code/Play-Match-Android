@@ -2,6 +2,7 @@ package com.playMatch.ui.fragments.homeFragment.homeAdapter
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.os.Build.VERSION_CODES.P
 import android.service.autofill.FieldClassification
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -18,6 +19,9 @@ class HomeParentAdapter(var list: ArrayList<HomeParentModel>, var activity: Acti
 
     private var selectedPosition = -1
     private var adapter: HomeChildAdapter?=null
+    private var secondAdapter: HomeChildSecondPositionAdapterclass?=null
+    private var thirdAdapter: HomeChildThirdPositionAdapter?=null
+    private var fourthAdapter: HomeChildFourthAdapter?=null
     private var lightAdapter: SelectLightBgChildSportAdapter?=null
     private  var mlist = ArrayList<HomeChildModel>()
 
@@ -33,20 +37,63 @@ class HomeParentAdapter(var list: ArrayList<HomeParentModel>, var activity: Acti
     override fun onBindViewHolder(holder: HomeParentAdapter.ViewHolder, @SuppressLint("RecyclerView") position: Int) {
         holder.apply {
             val ItemsviewModel = list[position]
-            holder.binding.heading.text = ItemsviewModel.name
 
-
-            adapter = HomeChildAdapter(mlist, activity)
-            holder.binding.rvChildHome.adapter = adapter
-            mlist.clear()
-            for (i in 1..5) {
-                mlist.add(
-                    HomeChildModel(
-                        R.drawable.ic_league_match,"League Match"
+            if (position==0) {
+                adapter = HomeChildAdapter(mlist, activity)
+                holder.binding.rvChildHome.adapter = adapter
+                holder.binding.heading.text = "New Invites"
+                mlist.clear()
+                for (i in 1..5) {
+                    mlist.add(
+                        HomeChildModel(
+                            R.drawable.ic_league_match,"League Match"
+                        )
                     )
-                )
 
+                }
             }
+            else if (position==1){
+                secondAdapter = HomeChildSecondPositionAdapterclass(mlist, activity)
+                holder.binding.rvChildHome.adapter = secondAdapter
+                holder.binding.heading.text = "New Interests"
+                mlist.clear()
+                for (i in 1..5) {
+                    mlist.add(
+                        HomeChildModel(
+                            R.drawable.new_dummy_profile,"Rossy Alan"
+                        )
+                    )
+
+                }
+            } else if (position==2){
+                thirdAdapter = HomeChildThirdPositionAdapter(mlist, activity)
+                holder.binding.rvChildHome.adapter = thirdAdapter
+                holder.binding.heading.text = "Upcoming Matches"
+                mlist.clear()
+                for (i in 1..5) {
+                    mlist.add(
+                        HomeChildModel(
+                            R.drawable.new_dummy_profile,"T20 League"
+                        )
+                    )
+
+                }
+            } else if (position==3){
+                fourthAdapter = HomeChildFourthAdapter(mlist, activity)
+                holder.binding.rvChildHome.adapter = fourthAdapter
+                holder.binding.heading.text = "Teams"
+                mlist.clear()
+                for (i in 1..5) {
+                    mlist.add(
+                        HomeChildModel(
+                            R.drawable.juventus,"T20 League"
+                        )
+                    )
+
+                }
+            }
+
+
             }
     }
 
@@ -69,15 +116,6 @@ class HomeParentAdapter(var list: ArrayList<HomeParentModel>, var activity: Acti
         }, 100)
     }
 
-//    private fun getSampleArrayList(): ArrayList<Any> {
-//        val items: ArrayList<Any> = ArrayList()
-//        items.add(User("Dany Targaryen", "Valyria"))
-//        items.add(User("Rob Stark", "Winterfell"))
-//        items.add("image")
-//        items.add(User("Jon Snow", "Castle Black"))
-//        items.add("image")
-//        items.add(User("Tyrion Lanister", "King's Landing"))
-//        return items
-//    }
+
 
 }

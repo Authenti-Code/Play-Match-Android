@@ -8,6 +8,7 @@ import com.playMatch.R
 import com.playMatch.databinding.ActivityHomeBinding
 import com.playMatch.ui.activity.baseActivity.BaseActivity
 import com.playMatch.ui.fragments.homeFragment.HomeFragment
+import com.playMatch.ui.fragments.homeFragment.homeModel.HomeChildModel
 import com.saetae.controller.sharedPrefrence.PrefData
 
 class HomeActivity : BaseActivity(), View.OnClickListener {
@@ -28,6 +29,10 @@ class HomeActivity : BaseActivity(), View.OnClickListener {
     override fun onResume() {
         super.onResume()
         getDot()
+    }
+
+    fun bindDataToAdapter() {
+        // Bind adapter to recycler view object
     }
 
 
