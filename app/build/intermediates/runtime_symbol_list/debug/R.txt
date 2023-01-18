@@ -544,8 +544,10 @@ int attr fontWeight 0x7f0301d7
 int attr forceApplySystemWindowInsetTop 0x7f0301d8
 int attr foregroundInsidePadding 0x7f0301d9
 int attr framePosition 0x7f0301da
+int attr freezesAnimation 0x7f030491
 int attr gapBetweenBars 0x7f0301db
 int attr gestureInsetBottomIgnored 0x7f0301dc
+int attr gifSource 0x7f030492
 int attr goIcon 0x7f0301dd
 int attr guidelineUseRtl 0x7f0301de
 int attr haloColor 0x7f0301df
@@ -598,6 +600,7 @@ int attr isLightTheme 0x7f03020d
 int attr isMaterial3DynamicColorApplied 0x7f03020e
 int attr isMaterial3Theme 0x7f03020f
 int attr isMaterialTheme 0x7f030210
+int attr isOpaque 0x7f030493
 int attr itemActiveIndicatorStyle 0x7f030211
 int attr itemBackground 0x7f030212
 int attr itemFillColor 0x7f030213
@@ -734,6 +737,7 @@ int attr logo 0x7f030295
 int attr logoAdjustViewBounds 0x7f030296
 int attr logoDescription 0x7f030297
 int attr logoScaleType 0x7f030298
+int attr loopCount 0x7f030494
 int attr marginHorizontal 0x7f030299
 int attr marginLeftSystemWindowInsets 0x7f03029a
 int attr marginRightSystemWindowInsets 0x7f03029b
@@ -3655,6 +3659,7 @@ int id decor_content_parent 0x7f0900a3
 int id default_activity_button 0x7f0900a4
 int id deltaRelative 0x7f0900a5
 int id dependency_ordering 0x7f0900a6
+int id description 0x7f09021b
 int id design_bottom_sheet 0x7f0900a7
 int id design_menu_item_action_area 0x7f0900a8
 int id design_menu_item_action_area_stub 0x7f0900a9
@@ -3795,6 +3800,7 @@ int id material_timepicker_view 0x7f09012f
 int id material_value_index 0x7f090130
 int id matrix 0x7f090131
 int id message 0x7f090132
+int id message_time 0x7f09021d
 int id middle 0x7f090133
 int id mini 0x7f090134
 int id mondaySlider 0x7f090135
@@ -3840,6 +3846,7 @@ int id navigation_header_container 0x7f09015c
 int id never 0x7f09015d
 int id neverCompleteToEnd 0x7f09015e
 int id neverCompleteToStart 0x7f09015f
+int id noChat 0x7f09021e
 int id noScroll 0x7f090160
 int id noState 0x7f090161
 int id none 0x7f090162
@@ -3886,11 +3893,14 @@ int id right 0x7f09018a
 int id rightToLeft 0x7f09018b
 int id right_icon 0x7f09018c
 int id right_side 0x7f09018d
+int id rootView 0x7f09021f
 int id rounded 0x7f09018e
 int id row_index_key 0x7f09018f
+int id rvNotification 0x7f09021c
 int id rvParentHome 0x7f090190
 int id rv_child_home 0x7f090191
 int id rv_child_sports 0x7f090192
+int id rv_inbox 0x7f090220
 int id rv_light_child_sports 0x7f090193
 int id rv_sports 0x7f090194
 int id save_non_transition_alpha 0x7f090195
@@ -4009,6 +4019,8 @@ int id uniform 0x7f090205
 int id unlabeled 0x7f090206
 int id up 0x7f090207
 int id useLogo 0x7f090208
+int id user_message_layout 0x7f090221
+int id username 0x7f090222
 int id vertical_only 0x7f090209
 int id view_offset_helper 0x7f09020a
 int id view_transition 0x7f09020b
@@ -4153,6 +4165,7 @@ int layout activity_add_profile_image 0x7f0c001c
 int layout activity_home 0x7f0c001d
 int layout activity_login 0x7f0c001e
 int layout activity_match_sign_up 0x7f0c001f
+int layout activity_notification 0x7f0c007d
 int layout activity_select_sport 0x7f0c0020
 int layout activity_sign_up 0x7f0c0021
 int layout activity_splash 0x7f0c0022
@@ -4177,6 +4190,7 @@ int layout design_text_input_end_icon 0x7f0c0034
 int layout design_text_input_start_icon 0x7f0c0035
 int layout dp_example 0x7f0c0036
 int layout fragment_home 0x7f0c0037
+int layout fragment_inbox 0x7f0c007f
 int layout list_item_light_bg_rv_child 0x7f0c0038
 int layout m3_alert_dialog 0x7f0c0039
 int layout m3_alert_dialog_actions 0x7f0c003a
@@ -4238,6 +4252,8 @@ int layout rv_child_home_third_position_list_item 0x7f0c007b
 int layout rv_child_second_position_list_item 0x7f0c007a
 int layout rv_child_select_sport_list_item 0x7f0c0070
 int layout rv_home_list_item 0x7f0c0071
+int layout rv_inbox_list 0x7f0c0080
+int layout rv_notification_list_item 0x7f0c007e
 int layout rv_select_sport_item 0x7f0c0072
 int layout sdp_example 0x7f0c0073
 int layout select_dialog_item_material 0x7f0c0074
@@ -6490,6 +6506,12 @@ int styleable Fragment_android_tag 2
 int[] styleable FragmentContainerView { 0x01010003, 0x010100d1 }
 int styleable FragmentContainerView_android_name 0
 int styleable FragmentContainerView_android_tag 1
+int[] styleable GifTextureView { 0x7f030492, 0x7f030493 }
+int styleable GifTextureView_gifSource 0
+int styleable GifTextureView_isOpaque 1
+int[] styleable GifView { 0x7f030491, 0x7f030494 }
+int styleable GifView_freezesAnimation 0
+int styleable GifView_loopCount 1
 int[] styleable GradientColor { 0x0101019d, 0x0101019e, 0x010101a1, 0x010101a2, 0x010101a3, 0x010101a4, 0x01010201, 0x0101020b, 0x01010510, 0x01010511, 0x01010512, 0x01010513 }
 int styleable GradientColor_android_startColor 0
 int styleable GradientColor_android_endColor 1

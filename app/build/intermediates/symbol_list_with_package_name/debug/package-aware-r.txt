@@ -545,8 +545,10 @@ attr fontWeight
 attr forceApplySystemWindowInsetTop
 attr foregroundInsidePadding
 attr framePosition
+attr freezesAnimation
 attr gapBetweenBars
 attr gestureInsetBottomIgnored
+attr gifSource
 attr goIcon
 attr guidelineUseRtl
 attr haloColor
@@ -599,6 +601,7 @@ attr isLightTheme
 attr isMaterial3DynamicColorApplied
 attr isMaterial3Theme
 attr isMaterialTheme
+attr isOpaque
 attr itemActiveIndicatorStyle
 attr itemBackground
 attr itemFillColor
@@ -735,6 +738,7 @@ attr logo
 attr logoAdjustViewBounds
 attr logoDescription
 attr logoScaleType
+attr loopCount
 attr marginHorizontal
 attr marginLeftSystemWindowInsets
 attr marginRightSystemWindowInsets
@@ -3656,6 +3660,7 @@ id decor_content_parent
 id default_activity_button
 id deltaRelative
 id dependency_ordering
+id description
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -3796,6 +3801,7 @@ id material_timepicker_view
 id material_value_index
 id matrix
 id message
+id message_time
 id middle
 id mini
 id mondaySlider
@@ -3841,6 +3847,7 @@ id navigation_header_container
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
+id noChat
 id noScroll
 id noState
 id none
@@ -3887,11 +3894,14 @@ id right
 id rightToLeft
 id right_icon
 id right_side
+id rootView
 id rounded
 id row_index_key
+id rvNotification
 id rvParentHome
 id rv_child_home
 id rv_child_sports
+id rv_inbox
 id rv_light_child_sports
 id rv_sports
 id save_non_transition_alpha
@@ -4010,6 +4020,8 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id user_message_layout
+id username
 id vertical_only
 id view_offset_helper
 id view_transition
@@ -4154,6 +4166,7 @@ layout activity_add_profile_image
 layout activity_home
 layout activity_login
 layout activity_match_sign_up
+layout activity_notification
 layout activity_select_sport
 layout activity_sign_up
 layout activity_splash
@@ -4178,6 +4191,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout dp_example
 layout fragment_home
+layout fragment_inbox
 layout list_item_light_bg_rv_child
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
@@ -4239,6 +4253,8 @@ layout rv_child_home_third_position_list_item
 layout rv_child_second_position_list_item
 layout rv_child_select_sport_list_item
 layout rv_home_list_item
+layout rv_inbox_list
+layout rv_notification_list_item
 layout rv_select_sport_item
 layout sdp_example
 layout select_dialog_item_material
@@ -5509,6 +5525,8 @@ styleable FontFamilyFont android_font android_fontWeight android_fontStyle andro
 styleable ForegroundLinearLayout android_foreground android_foregroundGravity foregroundInsidePadding
 styleable Fragment android_name android_id android_tag
 styleable FragmentContainerView android_name android_tag
+styleable GifTextureView gifSource isOpaque
+styleable GifView freezesAnimation loopCount
 styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY
 styleable GradientColorItem android_color android_offset
 styleable ImageFilterView altSrc blendSrc brightness contrast crossfade imagePanX imagePanY imageRotate imageZoom overlay round roundPercent saturation warmth

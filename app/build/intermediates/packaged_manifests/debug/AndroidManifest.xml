@@ -22,70 +22,77 @@
         android:testOnly="true"
         android:theme="@style/Theme.PlayMatch" >
         <activity
-            android:name="com.playMatch.ui.activity.commonActivity.homeActivity.HomeActivity"
+            android:name="com.playMatch.ui.home.activity.NotificationActivity"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.playMatch.ui.activity.commonActivity.signUpActivity.MatchSignUpActivity"
+            android:name="com.playMatch.ui.home.activity.HomeActivity"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.playMatch.ui.activity.commonActivity.signUpActivity.SignUpActivity"
+            android:name="com.playMatch.ui.signUp.MatchSignUpActivity"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.playMatch.ui.activity.commonActivity.signUpActivity.SelectSportActivity"
+            android:name="com.playMatch.ui.signUp.SignUpActivity"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.playMatch.ui.activity.commonActivity.signUpActivity.AddProfileImageActivity"
+            android:name="com.playMatch.ui.signUp.SelectSportActivity"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.playMatch.ui.activity.commonActivity.signUpActivity.UserDetailActivity"
+            android:name="com.playMatch.ui.signUp.AddProfileImageActivity"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.playMatch.ui.activity.commonActivity.signUpActivity.SignUpActivity"
+            android:name="com.playMatch.ui.signUp.UserDetailActivity"
+            android:exported="false" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <!-- <activity -->
+        <!-- android:name=".ui.signUp.SelectSportActivity" -->
+        <!-- android:exported="false"> -->
+        <!-- <meta-data -->
+        <!-- android:name="android.app.lib_name" -->
+        <!-- android:value="" /> -->
+        <!-- </activity> -->
+        <activity
+            android:name="com.playMatch.ui.login.LoginActivity"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.playMatch.ui.activity.commonActivity.loginActivity.LoginActivity"
+            android:name="com.playMatch.ui.welcome.WelcomeActivity"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.playMatch.ui.activity.commonActivity.welcomeActivity.WelcomeActivity"
-            android:exported="false" >
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name="com.playMatch.ui.activity.commonActivity.splashActivity.SplashActivity"
+            android:name="com.playMatch.ui.splash.SplashActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

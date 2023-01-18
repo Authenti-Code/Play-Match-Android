@@ -11,7 +11,7 @@
 9-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml
 10
 11    <application
-11-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:5:5-91:19
+11-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:5:5-98:19
 12        android:allowBackup="true"
 12-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:6:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -35,8 +35,8 @@
 23-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:13:9-47
 24        <activity
 24-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:15:9-21:20
-25            android:name="com.playMatch.ui.activity.commonActivity.homeActivity.HomeActivity"
-25-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:16:13-81
+25            android:name="com.playMatch.ui.home.activity.NotificationActivity"
+25-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:16:13-66
 26            android:exported="false" >
 26-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:17:13-37
 27            <meta-data
@@ -48,8 +48,8 @@
 30        </activity>
 31        <activity
 31-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:22:9-28:20
-32            android:name="com.playMatch.ui.activity.commonActivity.signUpActivity.MatchSignUpActivity"
-32-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:23:13-90
+32            android:name="com.playMatch.ui.home.activity.HomeActivity"
+32-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:23:13-58
 33            android:exported="false" >
 33-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:24:13-37
 34            <meta-data
@@ -61,8 +61,8 @@
 37        </activity>
 38        <activity
 38-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:29:9-35:20
-39            android:name="com.playMatch.ui.activity.commonActivity.signUpActivity.SignUpActivity"
-39-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:30:13-85
+39            android:name="com.playMatch.ui.signUp.MatchSignUpActivity"
+39-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:30:13-58
 40            android:exported="false" >
 40-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:31:13-37
 41            <meta-data
@@ -74,8 +74,8 @@
 44        </activity>
 45        <activity
 45-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:36:9-42:20
-46            android:name="com.playMatch.ui.activity.commonActivity.signUpActivity.SelectSportActivity"
-46-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:37:13-90
+46            android:name="com.playMatch.ui.signUp.SignUpActivity"
+46-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:37:13-53
 47            android:exported="false" >
 47-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:38:13-37
 48            <meta-data
@@ -87,8 +87,8 @@
 51        </activity>
 52        <activity
 52-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:43:9-49:20
-53            android:name="com.playMatch.ui.activity.commonActivity.signUpActivity.AddProfileImageActivity"
-53-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:44:13-94
+53            android:name="com.playMatch.ui.signUp.SelectSportActivity"
+53-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:44:13-58
 54            android:exported="false" >
 54-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:45:13-37
 55            <meta-data
@@ -100,8 +100,8 @@
 58        </activity>
 59        <activity
 59-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:50:9-56:20
-60            android:name="com.playMatch.ui.activity.commonActivity.signUpActivity.UserDetailActivity"
-60-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:51:13-89
+60            android:name="com.playMatch.ui.signUp.AddProfileImageActivity"
+60-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:51:13-62
 61            android:exported="false" >
 61-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:52:13-37
 62            <meta-data
@@ -112,11 +112,11 @@
 64-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:20:17-33
 65        </activity>
 66        <activity
-66-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:29:9-35:20
-67            android:name="com.playMatch.ui.activity.commonActivity.signUpActivity.SignUpActivity"
-67-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:30:13-85
+66-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:57:9-63:20
+67            android:name="com.playMatch.ui.signUp.UserDetailActivity"
+67-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:58:13-57
 68            android:exported="false" >
-68-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:31:13-37
+68-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:59:13-37
 69            <meta-data
 69-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:18:13-20:36
 70                android:name="android.app.lib_name"
@@ -124,23 +124,17 @@
 71                android:value="" />
 71-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:20:17-33
 72        </activity>
-73        <activity
-73-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:64:9-70:20
-74            android:name="com.playMatch.ui.activity.commonActivity.loginActivity.LoginActivity"
-74-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:65:13-83
-75            android:exported="false" >
-75-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:66:13-37
-76            <meta-data
-76-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:18:13-20:36
-77                android:name="android.app.lib_name"
-77-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:19:17-52
-78                android:value="" />
-78-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:20:17-33
-79        </activity>
+73        <!-- <activity -->
+74        <!-- android:name=".ui.signUp.SelectSportActivity" -->
+75        <!-- android:exported="false"> -->
+76        <!-- <meta-data -->
+77        <!-- android:name="android.app.lib_name" -->
+78        <!-- android:value="" /> -->
+79        <!-- </activity> -->
 80        <activity
 80-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:71:9-77:20
-81            android:name="com.playMatch.ui.activity.commonActivity.welcomeActivity.WelcomeActivity"
-81-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:72:13-87
+81            android:name="com.playMatch.ui.login.LoginActivity"
+81-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:72:13-51
 82            android:exported="false" >
 82-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:73:13-37
 83            <meta-data
@@ -151,51 +145,64 @@
 85-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:20:17-33
 86        </activity>
 87        <activity
-87-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:78:9-90:20
-88            android:name="com.playMatch.ui.activity.commonActivity.splashActivity.SplashActivity"
-88-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:79:13-85
-89            android:exported="true" >
-89-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:80:13-36
-90            <intent-filter>
-90-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:81:13-85:29
-91                <action android:name="android.intent.action.MAIN" />
-91-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:82:17-69
-91-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:82:25-66
-92
-93                <category android:name="android.intent.category.LAUNCHER" />
-93-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:84:17-77
-93-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:84:27-74
-94            </intent-filter>
-95
-96            <meta-data
-96-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:18:13-20:36
-97                android:name="android.app.lib_name"
-97-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:19:17-52
-98                android:value="" />
-98-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:20:17-33
-99        </activity>
-100
-101        <provider
-101-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\412372332f980a5c4ef0364c55a99af0\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-102            android:name="androidx.startup.InitializationProvider"
-102-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\412372332f980a5c4ef0364c55a99af0\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
-103            android:authorities="com.playMatch.androidx-startup"
-103-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\412372332f980a5c4ef0364c55a99af0\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
-104            android:exported="false" >
-104-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\412372332f980a5c4ef0364c55a99af0\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
-105            <meta-data
-105-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\412372332f980a5c4ef0364c55a99af0\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-106                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-106-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\412372332f980a5c4ef0364c55a99af0\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
-107                android:value="androidx.startup" />
-107-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\412372332f980a5c4ef0364c55a99af0\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
-108            <meta-data
-108-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\DELL\.gradle\caches\transforms-3\a8199b6bb025d711471524267dd78014\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
-109                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-109-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\DELL\.gradle\caches\transforms-3\a8199b6bb025d711471524267dd78014\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
-110                android:value="androidx.startup" />
-110-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\DELL\.gradle\caches\transforms-3\a8199b6bb025d711471524267dd78014\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
-111        </provider>
-112    </application>
-113
-114</manifest>
+87-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:78:9-84:20
+88            android:name="com.playMatch.ui.welcome.WelcomeActivity"
+88-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:79:13-55
+89            android:exported="false" >
+89-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:80:13-37
+90            <meta-data
+90-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:18:13-20:36
+91                android:name="android.app.lib_name"
+91-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:19:17-52
+92                android:value="" />
+92-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:20:17-33
+93        </activity>
+94        <activity
+94-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:85:9-97:20
+95            android:name="com.playMatch.ui.splash.SplashActivity"
+95-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:86:13-53
+96            android:exported="true" >
+96-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:87:13-36
+97            <intent-filter>
+97-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:88:13-92:29
+98                <action android:name="android.intent.action.MAIN" />
+98-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:89:17-69
+98-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:89:25-66
+99
+100                <category android:name="android.intent.category.LAUNCHER" />
+100-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:91:17-77
+100-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:91:27-74
+101            </intent-filter>
+102
+103            <meta-data
+103-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:18:13-20:36
+104                android:name="android.app.lib_name"
+104-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:19:17-52
+105                android:value="" />
+105-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:20:17-33
+106        </activity>
+107
+108        <provider
+108-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\412372332f980a5c4ef0364c55a99af0\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+109            android:name="androidx.startup.InitializationProvider"
+109-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\412372332f980a5c4ef0364c55a99af0\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+110            android:authorities="com.playMatch.androidx-startup"
+110-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\412372332f980a5c4ef0364c55a99af0\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+111            android:exported="false" >
+111-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\412372332f980a5c4ef0364c55a99af0\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+112            <meta-data
+112-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\412372332f980a5c4ef0364c55a99af0\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+113                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+113-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\412372332f980a5c4ef0364c55a99af0\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+114                android:value="androidx.startup" />
+114-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\412372332f980a5c4ef0364c55a99af0\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+115            <meta-data
+115-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\DELL\.gradle\caches\transforms-3\a8199b6bb025d711471524267dd78014\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+116                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+116-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\DELL\.gradle\caches\transforms-3\a8199b6bb025d711471524267dd78014\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+117                android:value="androidx.startup" />
+117-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\DELL\.gradle\caches\transforms-3\a8199b6bb025d711471524267dd78014\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+118        </provider>
+119    </application>
+120
+121</manifest>

@@ -13,70 +13,77 @@
         android:theme="@style/Theme.PlayMatch"
         tools:targetApi="31">
         <activity
-            android:name=".ui.activity.commonActivity.homeActivity.HomeActivity"
+            android:name=".ui.home.activity.NotificationActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ui.activity.commonActivity.signUpActivity.MatchSignUpActivity"
+            android:name=".ui.home.activity.HomeActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ui.activity.commonActivity.signUpActivity.SignUpActivity"
+            android:name=".ui.signUp.MatchSignUpActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ui.activity.commonActivity.signUpActivity.SelectSportActivity"
+            android:name=".ui.signUp.SignUpActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ui.activity.commonActivity.signUpActivity.AddProfileImageActivity"
+            android:name=".ui.signUp.SelectSportActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ui.activity.commonActivity.signUpActivity.UserDetailActivity"
+            android:name=".ui.signUp.AddProfileImageActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ui.activity.commonActivity.signUpActivity.SignUpActivity"
+            android:name=".ui.signUp.UserDetailActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+<!--        <activity-->
+<!--            android:name=".ui.signUp.SelectSportActivity"-->
+<!--            android:exported="false">-->
+<!--            <meta-data-->
+<!--                android:name="android.app.lib_name"-->
+<!--                android:value="" />-->
+<!--        </activity>-->
+        <activity
+            android:name=".ui.login.LoginActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ui.activity.commonActivity.loginActivity.LoginActivity"
+            android:name=".ui.welcome.WelcomeActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ui.activity.commonActivity.welcomeActivity.WelcomeActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".ui.activity.commonActivity.splashActivity.SplashActivity"
+            android:name=".ui.splash.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

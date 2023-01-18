@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activity.commonActivity.signUpActivity.SignUpActivity">
+    tools:context=".ui.signUp.SignUpActivity">
 
     <ImageView
         android:layout_marginTop="@dimen/_10sdp"
