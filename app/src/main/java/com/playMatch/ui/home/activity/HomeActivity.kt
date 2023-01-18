@@ -9,6 +9,7 @@ import com.playMatch.databinding.ActivityHomeBinding
 import com.playMatch.ui.baseActivity.BaseActivity
 import com.playMatch.ui.home.fragment.HomeFragment
 import com.playMatch.ui.inbox.fragment.InboxFragment
+import com.playMatch.ui.teams.fragment.TeamsFragment
 import com.saetae.controller.sharedPrefrence.PrefData
 
 class HomeActivity : BaseActivity(), View.OnClickListener {
@@ -65,12 +66,12 @@ class HomeActivity : BaseActivity(), View.OnClickListener {
             }
 
         } else if (position == 3) {
-//            if (currentPositionDrawer != position) {
-//                val chatFragment = InboxFragment()
-//                fragment = chatFragment
-//                tagFragment = chatFragment.javaClass.simpleName
-//
-//            }
+            if (currentPositionDrawer != position) {
+                val teamsFragment = TeamsFragment()
+                fragment = teamsFragment
+                tagFragment = teamsFragment.javaClass.simpleName
+
+            }
         } else if (position == 4) {
 //            if (currentPositionDrawer != position) {
 //                val farmerProfileFragment = ProfileFragment()

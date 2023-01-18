@@ -5,18 +5,18 @@ import android.app.Activity
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.playMatch.databinding.ListItemLightBgRvChildBinding
+import com.playMatch.databinding.RvListItemLightBgRvChildBinding
 import com.playMatch.ui.signUp.signupModel.SelectChildSPortModel
 
 class SelectLightBgChildSportAdapter(var list: ArrayList<SelectChildSPortModel>, var activity: Activity) : RecyclerView.Adapter<SelectLightBgChildSportAdapter.ViewHolder>() {
 
 
     private  var selectedPosition=-1
-    inner class ViewHolder(val binding: ListItemLightBgRvChildBinding) : RecyclerView.ViewHolder(binding.root)
+    inner class ViewHolder(val binding: RvListItemLightBgRvChildBinding) : RecyclerView.ViewHolder(binding.root)
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SelectLightBgChildSportAdapter.ViewHolder {
-        val binding = ListItemLightBgRvChildBinding
+        val binding = RvListItemLightBgRvChildBinding
             .inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }

@@ -3320,6 +3320,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable add_team
 drawable avd_hide_password
 drawable avd_show_password
 drawable award
@@ -3354,6 +3355,7 @@ drawable ic_circle_checked
 drawable ic_circle_uncheck
 drawable ic_clock_black_24dp
 drawable ic_date
+drawable ic_edit
 drawable ic_email
 drawable ic_front_arrow
 drawable ic_gender
@@ -3467,6 +3469,7 @@ drawable skip
 drawable splash
 drawable stadium
 drawable start_up
+drawable svg_red_tag
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3579,6 +3582,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id addTeam
 id alertTitle
 id aligned
 id all
@@ -3688,6 +3692,7 @@ id easeIn
 id easeInOut
 id easeOut
 id east
+id edit
 id editProfile
 id edit_query
 id elastic
@@ -3899,6 +3904,7 @@ id rounded
 id row_index_key
 id rvNotification
 id rvParentHome
+id rvTeams
 id rv_child_home
 id rv_child_sports
 id rv_inbox
@@ -4192,7 +4198,7 @@ layout design_text_input_start_icon
 layout dp_example
 layout fragment_home
 layout fragment_inbox
-layout list_item_light_bg_rv_child
+layout fragment_teams
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -4254,6 +4260,8 @@ layout rv_child_second_position_list_item
 layout rv_child_select_sport_list_item
 layout rv_home_list_item
 layout rv_inbox_list
+layout rv_list_item_light_bg_rv_child
+layout rv_list_item_teams
 layout rv_notification_list_item
 layout rv_select_sport_item
 layout sdp_example
