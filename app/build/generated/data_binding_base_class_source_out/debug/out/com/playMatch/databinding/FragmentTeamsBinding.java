@@ -4,33 +4,33 @@ package com.playMatch.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.AppCompatTextView;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import com.google.android.material.card.MaterialCardView;
 import com.playMatch.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
-public final class ListItemLightBgRvChildBinding implements ViewBinding {
+public final class FragmentTeamsBinding implements ViewBinding {
   @NonNull
   private final LinearLayout rootView;
 
   @NonNull
-  public final MaterialCardView cardView;
+  public final ImageView addTeam;
 
   @NonNull
-  public final AppCompatTextView fitnessLevel;
+  public final RecyclerView rvTeams;
 
-  private ListItemLightBgRvChildBinding(@NonNull LinearLayout rootView,
-      @NonNull MaterialCardView cardView, @NonNull AppCompatTextView fitnessLevel) {
+  private FragmentTeamsBinding(@NonNull LinearLayout rootView, @NonNull ImageView addTeam,
+      @NonNull RecyclerView rvTeams) {
     this.rootView = rootView;
-    this.cardView = cardView;
-    this.fitnessLevel = fitnessLevel;
+    this.addTeam = addTeam;
+    this.rvTeams = rvTeams;
   }
 
   @Override
@@ -40,14 +40,14 @@ public final class ListItemLightBgRvChildBinding implements ViewBinding {
   }
 
   @NonNull
-  public static ListItemLightBgRvChildBinding inflate(@NonNull LayoutInflater inflater) {
+  public static FragmentTeamsBinding inflate(@NonNull LayoutInflater inflater) {
     return inflate(inflater, null, false);
   }
 
   @NonNull
-  public static ListItemLightBgRvChildBinding inflate(@NonNull LayoutInflater inflater,
+  public static FragmentTeamsBinding inflate(@NonNull LayoutInflater inflater,
       @Nullable ViewGroup parent, boolean attachToParent) {
-    View root = inflater.inflate(R.layout.list_item_light_bg_rv_child, parent, false);
+    View root = inflater.inflate(R.layout.fragment_teams, parent, false);
     if (attachToParent) {
       parent.addView(root);
     }
@@ -55,24 +55,24 @@ public final class ListItemLightBgRvChildBinding implements ViewBinding {
   }
 
   @NonNull
-  public static ListItemLightBgRvChildBinding bind(@NonNull View rootView) {
+  public static FragmentTeamsBinding bind(@NonNull View rootView) {
     // The body of this method is generated in a way you would not otherwise write.
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.cardView;
-      MaterialCardView cardView = ViewBindings.findChildViewById(rootView, id);
-      if (cardView == null) {
+      id = R.id.addTeam;
+      ImageView addTeam = ViewBindings.findChildViewById(rootView, id);
+      if (addTeam == null) {
         break missingId;
       }
 
-      id = R.id.fitnessLevel;
-      AppCompatTextView fitnessLevel = ViewBindings.findChildViewById(rootView, id);
-      if (fitnessLevel == null) {
+      id = R.id.rvTeams;
+      RecyclerView rvTeams = ViewBindings.findChildViewById(rootView, id);
+      if (rvTeams == null) {
         break missingId;
       }
 
-      return new ListItemLightBgRvChildBinding((LinearLayout) rootView, cardView, fitnessLevel);
+      return new FragmentTeamsBinding((LinearLayout) rootView, addTeam, rvTeams);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

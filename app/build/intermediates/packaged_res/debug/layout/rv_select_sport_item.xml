@@ -66,7 +66,7 @@
             android:orientation="vertical"
             android:layout_marginVertical="@dimen/_5sdp"
             app:spanCount="3"
-            tools:listitem="@layout/list_item_light_bg_rv_child"
+            tools:listitem="@layout/rv_list_item_light_bg_rv_child"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
 
 
