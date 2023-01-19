@@ -13,6 +13,7 @@ color purple_200
 color purple_500
 color purple_700
 color red_E65D50
+color red_F8453F
 color red_F95047
 color teal_200
 color teal_700
@@ -37,6 +38,7 @@ drawable ic_circle_checked
 drawable ic_circle_uncheck
 drawable ic_date
 drawable ic_edit
+drawable ic_edit_profile
 drawable ic_email
 drawable ic_front_arrow
 drawable ic_gender
@@ -54,10 +56,15 @@ drawable ic_upcoming_matches
 drawable info
 drawable juventus
 drawable loginbg
+drawable museum
 drawable new_dummy_profile
 drawable or
+drawable pin
 drawable playmatchlogo
+drawable profile
 drawable profile_bg
+drawable profile_bg_view
+drawable profile_sports
 drawable profilebg
 drawable rocket
 drawable rocket_fast
@@ -67,6 +74,7 @@ drawable selected_group_icon
 drawable selected_home_ic
 drawable selected_messgae_ic
 drawable seletec_profile_icon
+drawable setting
 drawable signup_proifle_bg
 drawable signupfb
 drawable signupgoogle
@@ -75,10 +83,12 @@ drawable splash
 drawable stadium
 drawable start_up
 drawable svg_red_tag
+drawable triangle
 drawable unselected_chat
 drawable unselected_group_chat
 drawable unselected_home_icon
 drawable unselected_profile_ic
+drawable walk
 drawable welcomescreen
 font metropolis_black
 font metropolis_blackitalic
@@ -114,6 +124,7 @@ id Ttv
 id Wcv
 id Wtv
 id addTeam
+id app_bar
 id award
 id back
 id beginner
@@ -139,6 +150,7 @@ id groupOn
 id heading
 id homeOff
 id homeOn
+id image
 id intermediate
 id intermediate_check
 id login
@@ -164,11 +176,14 @@ id rv_child_sports
 id rv_inbox
 id rv_light_child_sports
 id rv_sports
+id rv_statistics
 id signupTv
 id sportName
 id text_sign
 id time
 id title
+id toolbar
+id toolbar_layout
 id tuesdaySlider
 id user_message_layout
 id username
@@ -185,6 +200,7 @@ layout activity_welcome
 layout custom_progressbar
 layout fragment_home
 layout fragment_inbox
+layout fragment_profile
 layout fragment_teams
 layout rv_child_home_fourth_position_list_item
 layout rv_child_home_list_item
@@ -194,8 +210,10 @@ layout rv_child_select_sport_list_item
 layout rv_home_list_item
 layout rv_inbox_list
 layout rv_list_item_light_bg_rv_child
+layout rv_list_item_profile_statistics
 layout rv_list_item_teams
 layout rv_notification_list_item
+layout rv_profile_list_item_sports_ability
 layout rv_select_sport_item
 mipmap ic_launcher
 mipmap ic_launcher_round

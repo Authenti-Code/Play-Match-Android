@@ -1,5 +1,6 @@
 package com.playMatch.ui.profile.fragment
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import com.playMatch.ui.baseActivity.BaseActivity
 import com.playMatch.ui.home.model.HomeChildModel
 import com.playMatch.ui.inbox.adapter.InboxAdapter
 import com.playMatch.ui.profile.adapter.ProfileSportsAdapter
+import com.playMatch.ui.profile.adapter.ProfileStatisticsAdapter
 import com.saetae.controller.sharedPrefrence.PrefData
 
 // TODO: Rename parameter arguments, choose names that match
@@ -27,6 +29,7 @@ private const val ARG_PARAM2 = "param2"
 class ProfileFragment : Fragment(),View.OnClickListener {
     private var binding: FragmentProfileBinding? = null
     private var adapter: ProfileSportsAdapter? = null
+    private var profileStatisticsAdapter: ProfileStatisticsAdapter? = null
     private var list = ArrayList<HomeChildModel>()
     private var pageNo: String = "1"
     private var totalPages: String = ""
@@ -68,7 +71,9 @@ class ProfileFragment : Fragment(),View.OnClickListener {
         binding = null
     }
 
+    @SuppressLint("SuspiciousIndentation")
     private fun setAdapter() {
+        list.clear()
         adapter = ProfileSportsAdapter(list, requireActivity())
         binding?.rvSports?.adapter = adapter
 
@@ -80,5 +85,32 @@ class ProfileFragment : Fragment(),View.OnClickListener {
             )
 
         }
+
+        list.clear()
+        profileStatisticsAdapter = ProfileStatisticsAdapter(list, requireActivity())
+        binding?.rvStatistics?.adapter = profileStatisticsAdapter
+
+            list.add(
+                HomeChildModel(
+                    R.drawable.ic_hand,"Total Teams"
+                )
+            )
+        list.add(
+                HomeChildModel(
+                    R.drawable.stadium,"Matches Created"
+                )
+            )
+        list.add(
+                HomeChildModel(
+                    R.drawable.triangle,"Matches Played"
+                )
+            )
+        list.add(
+                HomeChildModel(
+                    R.drawable.museum,"Invites Received"
+                )
+            )
+
+
     }
 }
