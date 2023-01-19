@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.FrameLayout
+import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.playMatch.R
 import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.databinding.FragmentHomeBinding
@@ -30,7 +30,7 @@ class HomeFragment : Fragment(),View.OnClickListener {
 
     }
 
-    private fun initViews(root: FrameLayout) {
+    private fun initViews(root: CoordinatorLayout) {
         setAdapters()
 
         binding?.notification?.setOnClickListener(this)
