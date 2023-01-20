@@ -29,11 +29,6 @@ private  var selectedPosition=-1
             val ItemsviewModel = list[position]
             val id=PrefData.getStringPrefs(activity,PrefData.CHECK_BOX,"")
 
-//            if (id=="1"){
-//                binding.cardView.setCardBackgroundColor(Color.parseColor("#F95047"))
-//            }else{
-//                binding.cardView.setCardBackgroundColor(Color.parseColor("#80F95047"))
-//            }
             holder.binding.fitnessLevel.text = ItemsviewModel.fitnessLevel
 
 
