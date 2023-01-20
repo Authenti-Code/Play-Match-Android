@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.matches.fragment.MatchesFragment">
+
+    <FrameLayout
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10sdp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Matches"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_gravity="start"
+            android:textSize="@dimen/_15sdp"
+            android:fontFamily="@font/metropolis_semibold"/>
+
+        <ImageView
+            android:id="@+id/addTeam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:src="@drawable/create_match"/>
+
+    </FrameLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+      android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginVertical="@dimen/_5sdp"
+        app:strokeWidth="@dimen/_1sdp"
+        app:strokeColor="@color/red_F95047"
+        app:cardCornerRadius="@dimen/_15sdp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:backgroundTint="@color/white">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/upcoming_match"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginVertical="@dimen/_3sdp"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:text="Upcoming"
+                android:textSize="@dimen/_12ssp"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:fontFamily="@font/metropolis_light"
+                android:background="@drawable/matches_tab_bg"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/past_match"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginVertical="@dimen/_3sdp"
+                android:layout_marginEnd="@dimen/_3sdp"
+                android:text="Past"
+                android:gravity="center"
+                android:textSize="@dimen/_12ssp"
+                android:fontFamily="@font/metropolis_light"
+                android:textColor="@color/red_E65D50"
+                />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvUpcoming"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginBottom="@dimen/_65sdp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        tools:listitem="@layout/rv_matches_list_item"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:visibility="gone"
+            android:id="@+id/rvPast"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/_65sdp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            tools:listitem="@layout/rv_matches_list_item"/>
+
+
+    </FrameLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

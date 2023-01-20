@@ -25,6 +25,7 @@ drawable bell
 drawable bottom_bar_bg
 drawable bottom_nav
 drawable check_mark
+drawable create_match
 drawable custom_check_box
 drawable dummy_profile
 drawable edit_profile
@@ -50,12 +51,15 @@ drawable ic_launcher_foreground
 drawable ic_league_match
 drawable ic_location
 drawable ic_lock
+drawable ic_message
 drawable ic_name
 drawable ic_path
 drawable ic_upcoming_matches
 drawable info
 drawable juventus
+drawable line
 drawable loginbg
+drawable matches_tab_bg
 drawable museum
 drawable new_dummy_profile
 drawable or
@@ -82,6 +86,7 @@ drawable skip
 drawable splash
 drawable stadium
 drawable start_up
+drawable svg_line
 drawable svg_red_tag
 drawable triangle
 drawable unselected_chat
@@ -130,6 +135,7 @@ id back
 id beginner
 id beginner_check
 id cardView
+id chat
 id chatOff
 id chatOn
 id checkbox
@@ -161,6 +167,7 @@ id mondaySlider
 id name
 id noChat
 id notification
+id past_match
 id profileBg
 id profileOff
 id profileOn
@@ -170,7 +177,9 @@ id relative4
 id rootView
 id rvNotification
 id rvParentHome
+id rvPast
 id rvTeams
+id rvUpcoming
 id rv_child_home
 id rv_child_sports
 id rv_inbox
@@ -185,6 +194,7 @@ id title
 id toolbar
 id toolbar_layout
 id tuesdaySlider
+id upcoming_match
 id user_message_layout
 id username
 layout activity_add_profile_image
@@ -200,6 +210,7 @@ layout activity_welcome
 layout custom_progressbar
 layout fragment_home
 layout fragment_inbox
+layout fragment_matches
 layout fragment_profile
 layout fragment_teams
 layout rv_child_home_fourth_position_list_item
@@ -212,6 +223,7 @@ layout rv_inbox_list
 layout rv_list_item_light_bg_rv_child
 layout rv_list_item_profile_statistics
 layout rv_list_item_teams
+layout rv_matches_list_item
 layout rv_notification_list_item
 layout rv_profile_list_item_sports_ability
 layout rv_select_sport_item

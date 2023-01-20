@@ -143,6 +143,10 @@
 
         </androidx.cardview.widget.CardView>
 
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -331,6 +335,8 @@
 
 
         </LinearLayout>
+
+        </HorizontalScrollView>
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_marginTop="@dimen/_10sdp"

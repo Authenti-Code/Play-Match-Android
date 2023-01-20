@@ -9,6 +9,7 @@ import com.playMatch.databinding.ActivityHomeBinding
 import com.playMatch.ui.baseActivity.BaseActivity
 import com.playMatch.ui.home.fragment.HomeFragment
 import com.playMatch.ui.inbox.fragment.InboxFragment
+import com.playMatch.ui.matches.fragment.MatchesFragment
 import com.playMatch.ui.profile.fragment.ProfileFragment
 import com.playMatch.ui.teams.fragment.TeamsFragment
 import com.saetae.controller.sharedPrefrence.PrefData
@@ -33,17 +34,9 @@ class HomeActivity : BaseActivity(), View.OnClickListener {
         getDot()
     }
 
-    fun bindDataToAdapter() {
-        // Bind adapter to recycler view object
-    }
-
-
-
     private fun getDot(){
         if (PrefData.getBooleanPrefs(this@HomeActivity, PrefData.KEY_NOTIFICATION_IS_CHAT)) {
-//            binding.mChatNotificationView.visibility = View.VISIBLE
         } else {
-//            binding.mChatNotificationView.visibility = View.GONE
         }
     }
 
@@ -68,12 +61,20 @@ class HomeActivity : BaseActivity(), View.OnClickListener {
 
         } else if (position == 3) {
             if (currentPositionDrawer != position) {
-                val teamsFragment = TeamsFragment()
-                fragment = teamsFragment
-                tagFragment = teamsFragment.javaClass.simpleName
+                val matchesFragment = MatchesFragment()
+                fragment = matchesFragment
+                tagFragment = matchesFragment.javaClass.simpleName
 
             }
-        } else if (position == 4) {
+        }else if (position == 4) {
+                if (currentPositionDrawer != position) {
+                    val teamsFragment = TeamsFragment()
+                    fragment = teamsFragment
+                    tagFragment = teamsFragment.javaClass.simpleName
+
+                }
+
+        } else if (position == 5) {
             if (currentPositionDrawer != position) {
                 val profileFragment = ProfileFragment()
                 fragment = profileFragment
@@ -133,7 +134,15 @@ class HomeActivity : BaseActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.award -> {
-//                CommonUtils.performIntent(this, CreateEventActivity::class.java)
+                binding.homeOff.visibility = View.VISIBLE
+                binding.homeOn.visibility = View.GONE
+                binding.chatOff.visibility = View.VISIBLE
+                binding.chatOn.visibility = View.GONE
+                binding.groupOn.visibility = View.GONE
+                binding.groupOff.visibility = View.VISIBLE
+                binding.profileOff.visibility = View.VISIBLE
+                binding.profileOn.visibility = View.GONE
+                performBottomNavigation(position = 3)
             }
             R.id.homeOff -> {
                 binding.homeOn.visibility = View.VISIBLE
@@ -170,7 +179,7 @@ class HomeActivity : BaseActivity(), View.OnClickListener {
                 binding.profileOn.visibility = View.VISIBLE
                 binding.profileOff.visibility = View.GONE
 
-                performBottomNavigation(position = 4)
+                performBottomNavigation(position = 5)
 
             }
             R.id.groupOff -> {
@@ -182,9 +191,13 @@ class HomeActivity : BaseActivity(), View.OnClickListener {
                 binding.groupOff.visibility = View.GONE
                 binding.profileOff.visibility = View.VISIBLE
                 binding.profileOn.visibility = View.GONE
-                PrefData.setBooleanPrefs(this@HomeActivity, PrefData.KEY_NOTIFICATION_IS_CHAT, false)
+                PrefData.setBooleanPrefs(
+                    this@HomeActivity,
+                    PrefData.KEY_NOTIFICATION_IS_CHAT,
+                    false
+                )
 //                binding.mChatNotificationView.visibility = View.GONE
-                performBottomNavigation(position = 3)
+                performBottomNavigation(position = 4)
             }
         }
     }

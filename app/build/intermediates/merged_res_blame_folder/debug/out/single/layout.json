@@ -16,6 +16,10 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\layout\\rv_notification_list_item.xml"
     },
     {
+        "merged": "com.playMatch.app-mergeDebugResources-32:/layout/rv_matches_list_item.xml",
+        "source": "com.playMatch.app-main-35:/layout/rv_matches_list_item.xml"
+    },
+    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-mergeDebugResources-32:\\layout\\fragment_home.xml",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\layout\\fragment_home.xml"
     },
@@ -34,6 +38,10 @@
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-mergeDebugResources-32:\\layout\\activity_sign_up.xml",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\layout\\activity_sign_up.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-mergeDebugResources-32:\\layout\\rv_matches_list_item.xml",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\layout\\rv_matches_list_item.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-mergeDebugResources-32:\\layout\\activity_select_sport.xml",
@@ -56,8 +64,8 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\layout\\rv_select_sport_item.xml"
     },
     {
-        "merged": "com.playMatch.app-mergeDebugResources-32:/layout/fragment_profile.xml",
-        "source": "com.playMatch.app-main-35:/layout/fragment_profile.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-mergeDebugResources-32:\\layout\\fragment_matches.xml",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\layout\\fragment_matches.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-mergeDebugResources-32:\\layout\\rv_child_home_fourth_position_list_item.xml",
@@ -66,10 +74,6 @@
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-mergeDebugResources-32:\\layout\\activity_user_detail.xml",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\layout\\activity_user_detail.xml"
-    },
-    {
-        "merged": "com.playMatch.app-mergeDebugResources-32:/layout/fragment_home.xml",
-        "source": "com.playMatch.app-main-35:/layout/fragment_home.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-mergeDebugResources-32:\\layout\\rv_profile_list_item_sports_ability.xml",

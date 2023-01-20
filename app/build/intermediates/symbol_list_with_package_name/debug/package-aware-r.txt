@@ -3338,6 +3338,7 @@ drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable check_mark
+drawable create_match
 drawable custom_check_box
 drawable design_fab_background
 drawable design_ic_visibility
@@ -3373,6 +3374,7 @@ drawable ic_lock
 drawable ic_m3_chip_check
 drawable ic_m3_chip_checked_circle
 drawable ic_m3_chip_close
+drawable ic_message
 drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
@@ -3382,6 +3384,7 @@ drawable ic_path
 drawable ic_upcoming_matches
 drawable info
 drawable juventus
+drawable line
 drawable loginbg
 drawable m3_appbar_background
 drawable m3_popupmenu_background_overlay
@@ -3391,6 +3394,7 @@ drawable m3_tabs_background
 drawable m3_tabs_line_indicator
 drawable m3_tabs_rounded_line_indicator
 drawable m3_tabs_transparent_background
+drawable matches_tab_bg
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
@@ -3477,6 +3481,7 @@ drawable skip
 drawable splash
 drawable stadium
 drawable start_up
+drawable svg_line
 drawable svg_red_tag
 drawable test_level_drawable
 drawable tooltip_frame_dark
@@ -3639,6 +3644,7 @@ id center_vertical
 id chain
 id chain2
 id chains
+id chat
 id chatOff
 id chatOn
 id checkbox
@@ -3886,6 +3892,7 @@ id parentPanel
 id parentRelative
 id parent_matrix
 id password_toggle
+id past_match
 id path
 id pathRelative
 id peekHeight
@@ -3915,7 +3922,9 @@ id rounded
 id row_index_key
 id rvNotification
 id rvParentHome
+id rvPast
 id rvTeams
+id rvUpcoming
 id rv_child_home
 id rv_child_sports
 id rv_inbox
@@ -4039,6 +4048,7 @@ id unchecked
 id uniform
 id unlabeled
 id up
+id upcoming_match
 id useLogo
 id user_message_layout
 id username
@@ -4212,6 +4222,7 @@ layout design_text_input_start_icon
 layout dp_example
 layout fragment_home
 layout fragment_inbox
+layout fragment_matches
 layout fragment_profile
 layout fragment_teams
 layout m3_alert_dialog
@@ -4278,6 +4289,7 @@ layout rv_inbox_list
 layout rv_list_item_light_bg_rv_child
 layout rv_list_item_profile_statistics
 layout rv_list_item_teams
+layout rv_matches_list_item
 layout rv_notification_list_item
 layout rv_profile_list_item_sports_ability
 layout rv_select_sport_item
