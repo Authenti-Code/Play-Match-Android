@@ -28,7 +28,7 @@ private const val ARG_PARAM2 = "param2"
  */
 class ProfileFragment : Fragment(),View.OnClickListener {
     private var binding: FragmentProfileBinding? = null
-    private var adapter: ProfileSportsAdapter? = null
+    private var profileSportsAdapter: ProfileSportsAdapter? = null
     private var profileStatisticsAdapter: ProfileStatisticsAdapter? = null
     private var list = ArrayList<HomeChildModel>()
     private var pageNo: String = "1"
@@ -73,10 +73,10 @@ class ProfileFragment : Fragment(),View.OnClickListener {
 
     @SuppressLint("SuspiciousIndentation")
     private fun setAdapter() {
-        list.clear()
-        adapter = ProfileSportsAdapter(list, requireActivity())
-        binding?.rvSports?.adapter = adapter
+        profileSportsAdapter = ProfileSportsAdapter(list, requireActivity())
+        binding?.rvSports?.adapter = profileSportsAdapter
 
+        list.clear()
         for (i in 1..5) {
             list.add(
                 HomeChildModel(
@@ -86,10 +86,9 @@ class ProfileFragment : Fragment(),View.OnClickListener {
 
         }
 
-        list.clear()
         profileStatisticsAdapter = ProfileStatisticsAdapter(list, requireActivity())
         binding?.rvStatistics?.adapter = profileStatisticsAdapter
-
+        list.clear()
             list.add(
                 HomeChildModel(
                     R.drawable.ic_hand,"Total Teams"
