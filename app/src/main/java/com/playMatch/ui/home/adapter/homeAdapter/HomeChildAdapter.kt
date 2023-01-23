@@ -5,7 +5,9 @@ import android.app.Activity
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.playMatch.controller.`interface`.ButtonClickListener
 import com.playMatch.databinding.RvChildHomeListItemBinding
+import com.playMatch.ui.home.dialogs.invitesDialog.InvitesDialog
 import com.playMatch.ui.home.model.HomeChildModel
 import com.saetae.controller.sharedPrefrence.PrefData
 
@@ -46,10 +48,15 @@ class HomeChildAdapter(var list: ArrayList<HomeChildModel>, var activity: Activi
 
 
 
-//            binding.cardView.setOnClickListener {
-//                selectedPosition=position
-//                notifyDataSetChanged()
-//            }
+            binding.cardView.setOnClickListener {
+                selectedPosition=position
+                notifyDataSetChanged()
+
+                InvitesDialog (activity).invitesDialog(object :
+                    ButtonClickListener {
+                    override fun Onclick() {}
+                })
+            }
         }
     }
 

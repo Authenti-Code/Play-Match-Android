@@ -5,6 +5,7 @@ import android.view.View
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.playMatch.R
+import com.playMatch.controller.constant.IntentConstant
 import com.playMatch.databinding.ActivityHomeBinding
 import com.playMatch.ui.baseActivity.BaseActivity
 import com.playMatch.ui.home.fragment.HomeFragment
@@ -26,6 +27,7 @@ class HomeActivity : BaseActivity(), View.OnClickListener {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initViews()
+        getIntentData()
         PrefData.setBooleanPrefs(this@HomeActivity, PrefData.IS_USER_LOGIN, true)
     }
 
@@ -198,6 +200,35 @@ class HomeActivity : BaseActivity(), View.OnClickListener {
                 )
 //                binding.mChatNotificationView.visibility = View.GONE
                 performBottomNavigation(position = 4)
+            }
+        }
+    }
+
+    private fun getIntentData(){
+        if (intent.extras != null) {
+            when (intent.extras?.getString(IntentConstant.TYPE)) {
+                IntentConstant.FRAGMENT_Matches -> {
+                    binding.homeOff.visibility = View.VISIBLE
+                    binding.homeOn.visibility = View.GONE
+                    binding.chatOff.visibility = View.VISIBLE
+                    binding.chatOn.visibility = View.GONE
+                    binding.groupOn.visibility = View.GONE
+                    binding.groupOff.visibility = View.VISIBLE
+                    binding.profileOff.visibility = View.VISIBLE
+                    binding.profileOn.visibility = View.GONE
+                    performBottomNavigation(position = 3)
+                }
+                IntentConstant.FRAGMENT_Teams -> {
+                    binding.homeOff.visibility = View.VISIBLE
+                    binding.homeOn.visibility = View.GONE
+                    binding.chatOff.visibility = View.VISIBLE
+                    binding.chatOn.visibility = View.GONE
+                    binding.groupOn.visibility = View.VISIBLE
+                    binding.groupOff.visibility = View.GONE
+                    binding.profileOff.visibility = View.VISIBLE
+                    binding.profileOn.visibility = View.GONE
+                    performBottomNavigation(position = 4)
+                }
             }
         }
     }

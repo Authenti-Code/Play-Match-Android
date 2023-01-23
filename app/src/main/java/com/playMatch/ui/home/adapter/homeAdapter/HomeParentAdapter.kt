@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.playMatch.R
+import com.playMatch.controller.`interface`.ButtonClickListener
 import com.playMatch.databinding.RvHomeListItemBinding
+import com.playMatch.ui.home.dialogs.invitesDialog.InvitesDialog
 import com.playMatch.ui.home.model.HomeChildModel
 import com.playMatch.ui.home.model.HomeParentModel
 import com.playMatch.ui.signUp.signUpAdapters.SelectLightBgChildSportAdapter
@@ -82,7 +84,7 @@ class HomeParentAdapter(var list: ArrayList<HomeParentModel>, var activity: Acti
                 for (i in 1..5) {
                     mlist.add(
                         HomeChildModel(
-                            R.drawable.juventus,"T20 League"
+                            R.drawable.juventus,"League Match"
                         )
                     )
 

@@ -19,6 +19,13 @@
     <string name="full_name">Full Name</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="password">Password</string>
+    <style name="AppBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+
+        <item name="android:background">@drawable/bottom_sheet_dialog</item>
+    </style>
     <style name="DialogTheme" parent="ThemeOverlay.Material3.MaterialCalendar.Fullscreen">
         <item name="colorAccent">@color/beige</item>
         <item name="colorPrimary">@color/black</item>

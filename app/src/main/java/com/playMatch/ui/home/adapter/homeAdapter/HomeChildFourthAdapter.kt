@@ -2,10 +2,14 @@ package com.playMatch.ui.home.adapter.homeAdapter
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.playMatch.controller.constant.IntentConstant
+import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.databinding.RvChildHomeFourthPositionListItemBinding
+import com.playMatch.ui.home.activity.HomeActivity
 import com.playMatch.ui.home.model.HomeChildModel
 import com.saetae.controller.sharedPrefrence.PrefData
 
@@ -42,10 +46,17 @@ class HomeChildFourthAdapter(var list: ArrayList<HomeChildModel>, var activity: 
 
 
 
-//            binding.cardView.setOnClickListener {
-//                selectedPosition=position
-//                notifyDataSetChanged()
-//            }
+            binding.profileImage.setOnClickListener {
+                selectedPosition=position
+                notifyDataSetChanged()
+                val bundle = Bundle()
+                bundle.putString(IntentConstant.TYPE, IntentConstant.FRAGMENT_Teams)
+                CommonUtils.performIntentWithBundleFinish(
+                    activity,
+                    HomeActivity::class.java,
+                    bundle
+                )
+            }
         }
     }
 

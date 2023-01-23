@@ -23,6 +23,13 @@
         android:testOnly="true"
         android:theme="@style/Theme.PlayMatch" >
         <activity
+            android:name="com.playMatch.ui.home.activity.NearByMatches"
+            android:exported="false" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name="com.playMatch.ui.home.activity.NotificationActivity"
             android:exported="false" >
             <meta-data
@@ -70,8 +77,7 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity>
-        <!-- <activity -->
+        </activity> <!-- <activity -->
         <!-- android:name=".ui.signUp.SelectSportActivity" -->
         <!-- android:exported="false"> -->
         <!-- <meta-data -->

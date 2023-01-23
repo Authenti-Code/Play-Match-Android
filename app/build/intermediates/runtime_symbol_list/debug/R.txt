@@ -4060,6 +4060,7 @@ int id unlabeled 0x7f090217
 int id up 0x7f090218
 int id upcoming_match 0x7f090219
 int id useLogo 0x7f09021a
+int id userName 0x7f090235
 int id user_message_layout 0x7f09021b
 int id username 0x7f09021c
 int id vertical_only 0x7f09021d
@@ -4230,6 +4231,8 @@ int layout design_navigation_menu 0x7f0c0033
 int layout design_navigation_menu_item 0x7f0c0034
 int layout design_text_input_end_icon 0x7f0c0035
 int layout design_text_input_start_icon 0x7f0c0036
+int layout dialog_interests 0x7f0c008c
+int layout dialog_invites 0x7f0c008b
 int layout dp_example 0x7f0c0037
 int layout fragment_home 0x7f0c0038
 int layout fragment_inbox 0x7f0c0039

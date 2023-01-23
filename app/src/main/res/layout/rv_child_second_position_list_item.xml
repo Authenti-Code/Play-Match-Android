@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="@dimen/_200sdp"
         android:layout_marginVertical="@dimen/_10sdp"
         android:layout_marginHorizontal="@dimen/_10sdp"
