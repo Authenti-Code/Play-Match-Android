@@ -114,4 +114,5 @@ class HomeParentAdapter(var list: ArrayList<HomeParentModel>, var activity: Acti
 
 
 
+
 }

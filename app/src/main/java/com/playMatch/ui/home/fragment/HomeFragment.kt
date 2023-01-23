@@ -9,6 +9,7 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.playMatch.R
 import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.databinding.FragmentHomeBinding
+import com.playMatch.ui.home.activity.NearByMatches
 import com.playMatch.ui.home.activity.NotificationActivity
 import com.playMatch.ui.home.adapter.homeAdapter.HomeParentAdapter
 import com.playMatch.ui.home.model.HomeParentModel
@@ -34,6 +35,7 @@ class HomeFragment : Fragment(),View.OnClickListener {
         setAdapters()
 
         binding?.notification?.setOnClickListener(this)
+        binding?.globe?.setOnClickListener(this)
 
     }
 
@@ -56,6 +58,9 @@ class HomeFragment : Fragment(),View.OnClickListener {
         when (v?.id) {
             R.id.notification -> {
                 CommonUtils.performIntent(requireActivity(), NotificationActivity::class.java)
+            }
+            R.id.globe -> {
+                CommonUtils.performIntent(requireActivity(), NearByMatches::class.java)
             }
         }
     }
