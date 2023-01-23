@@ -8,6 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.LinearLayoutCompat;
+import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.playMatch.R;
@@ -19,6 +20,9 @@ import java.lang.String;
 public final class RvChildSecondPositionListItemBinding implements ViewBinding {
   @NonNull
   private final LinearLayoutCompat rootView;
+
+  @NonNull
+  public final CardView cardView;
 
   @NonNull
   public final TextView date;
@@ -33,9 +37,10 @@ public final class RvChildSecondPositionListItemBinding implements ViewBinding {
   public final TextView time;
 
   private RvChildSecondPositionListItemBinding(@NonNull LinearLayoutCompat rootView,
-      @NonNull TextView date, @NonNull TextView name, @NonNull CircleImageView profileImage,
-      @NonNull TextView time) {
+      @NonNull CardView cardView, @NonNull TextView date, @NonNull TextView name,
+      @NonNull CircleImageView profileImage, @NonNull TextView time) {
     this.rootView = rootView;
+    this.cardView = cardView;
     this.date = date;
     this.name = name;
     this.profileImage = profileImage;
@@ -69,6 +74,12 @@ public final class RvChildSecondPositionListItemBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.cardView;
+      CardView cardView = ViewBindings.findChildViewById(rootView, id);
+      if (cardView == null) {
+        break missingId;
+      }
+
       id = R.id.date;
       TextView date = ViewBindings.findChildViewById(rootView, id);
       if (date == null) {
@@ -93,8 +104,8 @@ public final class RvChildSecondPositionListItemBinding implements ViewBinding {
         break missingId;
       }
 
-      return new RvChildSecondPositionListItemBinding((LinearLayoutCompat) rootView, date, name,
-          profileImage, time);
+      return new RvChildSecondPositionListItemBinding((LinearLayoutCompat) rootView, cardView, date,
+          name, profileImage, time);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

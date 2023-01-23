@@ -2,12 +2,16 @@ package com.playMatch.ui.home.adapter.homeAdapter
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.playMatch.R
 import com.playMatch.controller.`interface`.ButtonClickListener
+import com.playMatch.controller.constant.IntentConstant
+import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.databinding.RvHomeListItemBinding
+import com.playMatch.ui.home.activity.HomeActivity
 import com.playMatch.ui.home.dialogs.invitesDialog.InvitesDialog
 import com.playMatch.ui.home.model.HomeChildModel
 import com.playMatch.ui.home.model.HomeParentModel
@@ -76,6 +80,16 @@ class HomeParentAdapter(var list: ArrayList<HomeParentModel>, var activity: Acti
                     )
 
                 }
+
+                binding.viewAll.setOnClickListener() {
+                    val bundle = Bundle()
+                    bundle.putString(IntentConstant.TYPE, IntentConstant.FRAGMENT_Matches)
+                    CommonUtils.performIntentWithBundleFinish(
+                        activity,
+                        HomeActivity::class.java,
+                        bundle
+                    )
+                }
             } else if (position==3){
                 fourthAdapter = HomeChildFourthAdapter(mlist, activity)
                 holder.binding.rvChildHome.adapter = fourthAdapter
@@ -89,6 +103,15 @@ class HomeParentAdapter(var list: ArrayList<HomeParentModel>, var activity: Acti
                     )
 
                 }
+               binding.viewAll.setOnClickListener() {
+                   val bundle = Bundle()
+                   bundle.putString(IntentConstant.TYPE, IntentConstant.FRAGMENT_Teams)
+                   CommonUtils.performIntentWithBundleFinish(
+                       activity,
+                       HomeActivity::class.java,
+                       bundle
+                   )
+               }
             }
 
 

@@ -21,14 +21,19 @@ public final class RvChildHomeThirdPositionListItemBinding implements ViewBindin
   private final LinearLayoutCompat rootView;
 
   @NonNull
+  public final LinearLayoutCompat cardView;
+
+  @NonNull
   public final AppCompatImageView logo;
 
   @NonNull
   public final TextView name;
 
   private RvChildHomeThirdPositionListItemBinding(@NonNull LinearLayoutCompat rootView,
-      @NonNull AppCompatImageView logo, @NonNull TextView name) {
+      @NonNull LinearLayoutCompat cardView, @NonNull AppCompatImageView logo,
+      @NonNull TextView name) {
     this.rootView = rootView;
+    this.cardView = cardView;
     this.logo = logo;
     this.name = name;
   }
@@ -60,6 +65,12 @@ public final class RvChildHomeThirdPositionListItemBinding implements ViewBindin
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.cardView;
+      LinearLayoutCompat cardView = ViewBindings.findChildViewById(rootView, id);
+      if (cardView == null) {
+        break missingId;
+      }
+
       id = R.id.logo;
       AppCompatImageView logo = ViewBindings.findChildViewById(rootView, id);
       if (logo == null) {
@@ -72,7 +83,8 @@ public final class RvChildHomeThirdPositionListItemBinding implements ViewBindin
         break missingId;
       }
 
-      return new RvChildHomeThirdPositionListItemBinding((LinearLayoutCompat) rootView, logo, name);
+      return new RvChildHomeThirdPositionListItemBinding((LinearLayoutCompat) rootView, cardView,
+          logo, name);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

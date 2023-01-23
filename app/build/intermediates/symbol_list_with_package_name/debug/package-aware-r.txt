@@ -4065,6 +4065,7 @@ id userName
 id user_message_layout
 id username
 id vertical_only
+id viewAll
 id view_offset_helper
 id view_transition
 id view_tree_lifecycle_owner

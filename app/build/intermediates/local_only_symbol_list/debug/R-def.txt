@@ -209,6 +209,7 @@ id upcoming_match
 id userName
 id user_message_layout
 id username
+id viewAll
 layout activity_add_profile_image
 layout activity_home
 layout activity_login

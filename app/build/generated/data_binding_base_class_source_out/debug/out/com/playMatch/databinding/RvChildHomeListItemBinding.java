@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.LinearLayoutCompat;
+import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.playMatch.R;
@@ -19,6 +20,9 @@ import java.lang.String;
 public final class RvChildHomeListItemBinding implements ViewBinding {
   @NonNull
   private final LinearLayoutCompat rootView;
+
+  @NonNull
+  public final CardView cardView;
 
   @NonNull
   public final TextView date;
@@ -32,9 +36,11 @@ public final class RvChildHomeListItemBinding implements ViewBinding {
   @NonNull
   public final TextView time;
 
-  private RvChildHomeListItemBinding(@NonNull LinearLayoutCompat rootView, @NonNull TextView date,
-      @NonNull AppCompatImageView logo, @NonNull TextView name, @NonNull TextView time) {
+  private RvChildHomeListItemBinding(@NonNull LinearLayoutCompat rootView,
+      @NonNull CardView cardView, @NonNull TextView date, @NonNull AppCompatImageView logo,
+      @NonNull TextView name, @NonNull TextView time) {
     this.rootView = rootView;
+    this.cardView = cardView;
     this.date = date;
     this.logo = logo;
     this.name = name;
@@ -68,6 +74,12 @@ public final class RvChildHomeListItemBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.cardView;
+      CardView cardView = ViewBindings.findChildViewById(rootView, id);
+      if (cardView == null) {
+        break missingId;
+      }
+
       id = R.id.date;
       TextView date = ViewBindings.findChildViewById(rootView, id);
       if (date == null) {
@@ -92,7 +104,8 @@ public final class RvChildHomeListItemBinding implements ViewBinding {
         break missingId;
       }
 
-      return new RvChildHomeListItemBinding((LinearLayoutCompat) rootView, date, logo, name, time);
+      return new RvChildHomeListItemBinding((LinearLayoutCompat) rootView, cardView, date, logo,
+          name, time);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
