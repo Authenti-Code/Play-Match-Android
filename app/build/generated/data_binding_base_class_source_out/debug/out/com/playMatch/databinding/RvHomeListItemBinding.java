@@ -4,6 +4,7 @@ package com.playMatch.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
@@ -26,11 +27,16 @@ public final class RvHomeListItemBinding implements ViewBinding {
   @NonNull
   public final RecyclerView rvChildHome;
 
+  @NonNull
+  public final TextView viewAll;
+
   private RvHomeListItemBinding(@NonNull LinearLayoutCompat rootView,
-      @NonNull AppCompatTextView heading, @NonNull RecyclerView rvChildHome) {
+      @NonNull AppCompatTextView heading, @NonNull RecyclerView rvChildHome,
+      @NonNull TextView viewAll) {
     this.rootView = rootView;
     this.heading = heading;
     this.rvChildHome = rvChildHome;
+    this.viewAll = viewAll;
   }
 
   @Override
@@ -72,7 +78,14 @@ public final class RvHomeListItemBinding implements ViewBinding {
         break missingId;
       }
 
-      return new RvHomeListItemBinding((LinearLayoutCompat) rootView, heading, rvChildHome);
+      id = R.id.viewAll;
+      TextView viewAll = ViewBindings.findChildViewById(rootView, id);
+      if (viewAll == null) {
+        break missingId;
+      }
+
+      return new RvHomeListItemBinding((LinearLayoutCompat) rootView, heading, rvChildHome,
+          viewAll);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
