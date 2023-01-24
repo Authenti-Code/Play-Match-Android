@@ -44,6 +44,10 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\layout_rv_list_item_select_team.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\layout\\rv_list_item_select_team.xml"
+    },
+    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-hdpi_ic_hand.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-hdpi\\ic_hand.png"
     },
@@ -60,12 +64,12 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-xhdpi\\info.png"
     },
     {
-        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-xhdpi_home_bg.png.flat",
-        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-xhdpi\\home_bg.png"
-    },
-    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-mdpi_profile.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-mdpi\\profile.png"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-xhdpi_home_bg.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-xhdpi\\home_bg.png"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-hdpi_loginbg.png.flat",
@@ -92,6 +96,10 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable\\new_dummy_profile.xml"
     },
     {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable_style_chating.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable\\style_chating.xml"
+    },
+    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-ldpi_profile.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-ldpi\\profile.png"
     },
@@ -108,10 +116,6 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-ldpi\\triangle.png"
     },
     {
-        "merged": "com.playMatch.app-merged_res-33:/layout_rv_home_list_item.xml.flat",
-        "source": "com.playMatch.app-main-35:/layout/rv_home_list_item.xml"
-    },
-    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\layout_activity_welcome.xml.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\layout\\activity_welcome.xml"
     },
@@ -122,6 +126,10 @@
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable_chat_top_bar.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable\\chat_top_bar.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\xml_data_extraction_rules.xml.flat",
@@ -200,16 +208,16 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable\\ic_globe.xml"
     },
     {
-        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-hdpi_selected_home_ic.png.flat",
-        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-hdpi\\selected_home_ic.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-mdpi_unselected_group_chat.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-mdpi\\unselected_group_chat.png"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-xxxhdpi_or.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-xxxhdpi\\or.png"
     },
     {
-        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-mdpi_unselected_group_chat.png.flat",
-        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-mdpi\\unselected_group_chat.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-hdpi_selected_home_ic.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-hdpi\\selected_home_ic.png"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-xxhdpi_hi.png.flat",
@@ -272,8 +280,16 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-mdpi\\line.png"
     },
     {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable_ic_calender.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable\\ic_calender.xml"
+    },
+    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-xxxhdpi_skip.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-xxxhdpi\\skip.png"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable_ic_attachment.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable\\ic_attachment.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-ldpi_add_team.png.flat",
@@ -292,12 +308,12 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-xhdpi\\selected_messgae_ic.png"
     },
     {
-        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-hdpi_ic_upcoming_matches.png.flat",
-        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-hdpi\\ic_upcoming_matches.png"
-    },
-    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\layout_activity_home.xml.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\layout\\activity_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-hdpi_ic_upcoming_matches.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-hdpi\\ic_upcoming_matches.png"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-mdpi_ic_upcoming_matches.png.flat",
@@ -336,12 +352,12 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-ldpi\\unselected_home_icon.png"
     },
     {
-        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable_ic_gender.xml.flat",
-        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable\\ic_gender.xml"
-    },
-    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\layout_rv_child_home_third_position_list_item.xml.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\layout\\rv_child_home_third_position_list_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable_ic_gender.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable\\ic_gender.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-xxhdpi_welcomescreen.png.flat",
@@ -496,6 +512,10 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-xxxhdpi\\create_match.png"
     },
     {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable_style_chatting2.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable\\style_chatting2.xml"
+    },
+    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\layout_activity_match_sign_up.xml.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\layout\\activity_match_sign_up.xml"
     },
@@ -512,12 +532,12 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\layout\\near_by_matches.xml"
     },
     {
-        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-hdpi_welcomescreen.png.flat",
-        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-hdpi\\welcomescreen.png"
-    },
-    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-xxhdpi_loginbg.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-xxhdpi\\loginbg.png"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-hdpi_welcomescreen.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-hdpi\\welcomescreen.png"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-xhdpi_museum.png.flat",
@@ -554,6 +574,10 @@
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-ldpi_ic_edit.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-ldpi\\ic_edit.png"
+    },
+    {
+        "merged": "com.playMatch.app-merged_res-33:/layout_rv_list_item_select_team.xml.flat",
+        "source": "com.playMatch.app-main-35:/layout/rv_list_item_select_team.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\anim_exit_activity.xml.flat",
@@ -596,24 +620,24 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-xhdpi\\edit_profile.png"
     },
     {
-        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-hdpi_edit_profile.png.flat",
-        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-hdpi\\edit_profile.png"
-    },
-    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-ldpi_welcomescreen.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-ldpi\\welcomescreen.png"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-hdpi_edit_profile.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-hdpi\\edit_profile.png"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\font_metropolis_blackitalic.otf.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\font\\metropolis_blackitalic.otf"
     },
     {
-        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-ldpi_loginbg.png.flat",
-        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-ldpi\\loginbg.png"
-    },
-    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-xxhdpi_ic_edit.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-xxhdpi\\ic_edit.png"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-ldpi_loginbg.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-ldpi\\loginbg.png"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-ldpi_setting.png.flat",
@@ -624,20 +648,20 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\font\\metropolis_thinitalic.otf"
     },
     {
-        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-mdpi_signupfb.png.flat",
-        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-mdpi\\signupfb.png"
-    },
-    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-xhdpi_splash.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-xhdpi\\splash.png"
     },
     {
-        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-hdpi_hi.png.flat",
-        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-hdpi\\hi.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-mdpi_signupfb.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-mdpi\\signupfb.png"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable_svg_red_tag.xml.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable\\svg_red_tag.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-hdpi_hi.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-hdpi\\hi.png"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-ldpi_start_up.png.flat",
@@ -668,12 +692,12 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-hdpi\\begginer_rocket.png"
     },
     {
-        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\mipmap-hdpi\\ic_launcher.webp"
-    },
-    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-xxhdpi_line.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-xxhdpi\\line.png"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\mipmap-hdpi\\ic_launcher.webp"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-xhdpi_home_new_bg.png.flat",
@@ -692,12 +716,20 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-xxxhdpi\\info.png"
     },
     {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable_ic_more.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable\\ic_more.xml"
+    },
+    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-xhdpi_or.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-xhdpi\\or.png"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-xxxhdpi_welcomescreen.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-xxxhdpi\\welcomescreen.png"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable_black_back.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable\\black_back.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable_ic_name.xml.flat",
@@ -894,6 +926,10 @@
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-xxxhdpi_select_sport_proifle.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-xxxhdpi\\select_sport_proifle.png"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\layout_activity_chat.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\layout\\activity_chat.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\layout_rv_select_sport_item.xml.flat",
@@ -1172,6 +1208,10 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\font\\metropolis_thin.otf"
     },
     {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable_ic_time.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable\\ic_time.xml"
+    },
+    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-hdpi_unselected_chat.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-hdpi\\unselected_chat.png"
     },
@@ -1208,6 +1248,10 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-xxxhdpi\\selected_messgae_ic.png"
     },
     {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\layout_activity_create_match.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\layout\\activity_create_match.xml"
+    },
+    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-mdpi_ic_league_match.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-mdpi\\ic_league_match.png"
     },
@@ -1226,6 +1270,10 @@
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable_ic_back.xml.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable\\ic_back.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable_ic_location_nav.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable\\ic_location_nav.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-xxhdpi_start_up.png.flat",
@@ -1344,8 +1392,20 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable-ldpi\\stadium.png"
     },
     {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable_ic_match_name.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable\\ic_match_name.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable_ic_btn_send.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\drawable\\ic_btn_send.xml"
+    },
+    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\font_metropolis_medium.otf.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\font\\metropolis_medium.otf"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\layout_rv_chat_list_item.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\layout\\rv_chat_list_item.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-xhdpi_ic_edit_profile.png.flat",
@@ -1534,6 +1594,10 @@
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\layout_rv_child_home_fourth_position_list_item.xml.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\layout\\rv_child_home_fourth_position_list_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\layout_bottom_sheet_select_team.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-35:\\layout\\bottom_sheet_select_team.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-merged_res-33:\\drawable-mdpi_add_team.png.flat",

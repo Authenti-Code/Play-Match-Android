@@ -9,11 +9,13 @@ import android.view.View
 import android.view.ViewGroup
 import com.playMatch.R
 import com.playMatch.R.color
+import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.databinding.FragmentInboxBinding
 import com.playMatch.databinding.FragmentMatchesBinding
 import com.playMatch.ui.baseActivity.BaseActivity
 import com.playMatch.ui.home.model.HomeChildModel
 import com.playMatch.ui.inbox.adapter.InboxAdapter
+import com.playMatch.ui.matches.activity.createMatchActivity.CreateMatchActivity
 import com.playMatch.ui.matches.adapter.pastAdapter.PastAdapter
 import com.playMatch.ui.matches.adapter.upcomingAdapter.UpcomingAdapter
 import com.saetae.controller.sharedPrefrence.PrefData
@@ -57,6 +59,7 @@ class MatchesFragment : Fragment(),View.OnClickListener {
     private fun initViews() {
         binding?.upcomingMatch?.setOnClickListener(this)
         binding?.pastMatch?.setOnClickListener(this)
+        binding?.createMatch?.setOnClickListener(this)
     }
 
 
@@ -78,6 +81,9 @@ class MatchesFragment : Fragment(),View.OnClickListener {
                 binding?.upcomingMatch?.setTextColor(Color.parseColor("#E65D50"))
                 binding?.rvUpcoming?.visibility=View.GONE
                 binding?.rvPast?.visibility=View.VISIBLE
+            }
+            R.id.createMatch -> {
+                CommonUtils.performIntent(requireActivity(),CreateMatchActivity::class.java)
             }
 
         }

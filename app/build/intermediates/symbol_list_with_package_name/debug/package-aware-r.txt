@@ -3327,6 +3327,7 @@ drawable avd_show_password
 drawable award
 drawable begginer_rocket
 drawable bell
+drawable black_back
 drawable bottom_bar_bg
 drawable bottom_nav
 drawable bottom_sheet_dialog
@@ -3338,6 +3339,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable chat_top_bar
 drawable check_mark
 drawable create_match
 drawable custom_check_box
@@ -3355,7 +3357,10 @@ drawable grey_search
 drawable hi
 drawable home_bg
 drawable home_new_bg
+drawable ic_attachment
 drawable ic_back
+drawable ic_btn_send
+drawable ic_calender
 drawable ic_circle_checked
 drawable ic_circle_uncheck
 drawable ic_clock_black_24dp
@@ -3374,17 +3379,21 @@ drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_league_match
 drawable ic_location
+drawable ic_location_nav
 drawable ic_lock
 drawable ic_m3_chip_check
 drawable ic_m3_chip_checked_circle
 drawable ic_m3_chip_close
+drawable ic_match_name
 drawable ic_message
+drawable ic_more
 drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_name
 drawable ic_path
+drawable ic_time
 drawable ic_upcoming_matches
 drawable info
 drawable juventus
@@ -3486,6 +3495,8 @@ drawable splash
 drawable stadium
 drawable start_up
 drawable streetmap
+drawable style_chating
+drawable style_chatting2
 drawable svg_line
 drawable svg_red_tag
 drawable test_level_drawable
@@ -3616,6 +3627,7 @@ id app_bar
 id arc
 id asConfigured
 id async
+id attachment
 id auto
 id autoComplete
 id autoCompleteToEnd
@@ -3651,6 +3663,7 @@ id chain
 id chain2
 id chains
 id chat
+id chatLay
 id chatOff
 id chatOn
 id checkbox
@@ -3675,6 +3688,7 @@ id coordinator
 id cos
 id counterclockwise
 id cradle
+id createMatch
 id currentState
 id custom
 id customPanel
@@ -3840,6 +3854,7 @@ id month_navigation_fragment_toggle
 id month_navigation_next
 id month_navigation_previous
 id month_title
+id more
 id motion_base
 id mtrl_anchor_parent
 id mtrl_calendar_day_selector_frame
@@ -3917,6 +3932,7 @@ id progress_circular
 id progress_horizontal
 id radio
 id ratio
+id receiverLay
 id rectangles
 id relative4
 id reverseSawtooth
@@ -3930,8 +3946,10 @@ id row_index_key
 id rvNotification
 id rvParentHome
 id rvPast
+id rvSelectTeams
 id rvTeams
 id rvUpcoming
+id rv_chat
 id rv_child_home
 id rv_child_sports
 id rv_inbox
@@ -3960,9 +3978,14 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
+id selectSport
+id selectTeam
+id selectTeamTV
 id select_dialog_listview
 id selected
 id selection_type
+id send
+id senderLay
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -4061,7 +4084,9 @@ id unlabeled
 id up
 id upcoming_match
 id useLogo
+id userMessage
 id userName
+id userTime
 id user_message_layout
 id username
 id vertical_only
@@ -4206,6 +4231,8 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_add_profile_image
+layout activity_chat
+layout activity_create_match
 layout activity_home
 layout activity_login
 layout activity_match_sign_up
@@ -4215,6 +4242,7 @@ layout activity_sign_up
 layout activity_splash
 layout activity_user_detail
 layout activity_welcome
+layout bottom_sheet_select_team
 layout bottom_sheet_show_interest
 layout custom_dialog
 layout custom_progressbar
@@ -4296,6 +4324,7 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout rv_chat_list_item
 layout rv_child_home_fourth_position_list_item
 layout rv_child_home_list_item
 layout rv_child_home_third_position_list_item
@@ -4305,6 +4334,7 @@ layout rv_home_list_item
 layout rv_inbox_list
 layout rv_list_item_light_bg_rv_child
 layout rv_list_item_profile_statistics
+layout rv_list_item_select_team
 layout rv_list_item_teams
 layout rv_matches_list_item
 layout rv_near_by_match_list

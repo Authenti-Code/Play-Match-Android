@@ -21,6 +21,9 @@ public final class RvInboxListBinding implements ViewBinding {
   private final LinearLayoutCompat rootView;
 
   @NonNull
+  public final LinearLayoutCompat chatLay;
+
+  @NonNull
   public final AppCompatTextView message;
 
   @NonNull
@@ -36,10 +39,11 @@ public final class RvInboxListBinding implements ViewBinding {
   public final AppCompatTextView username;
 
   private RvInboxListBinding(@NonNull LinearLayoutCompat rootView,
-      @NonNull AppCompatTextView message, @NonNull AppCompatTextView messageTime,
-      @NonNull CircleImageView profileImage, @NonNull LinearLayoutCompat userMessageLayout,
-      @NonNull AppCompatTextView username) {
+      @NonNull LinearLayoutCompat chatLay, @NonNull AppCompatTextView message,
+      @NonNull AppCompatTextView messageTime, @NonNull CircleImageView profileImage,
+      @NonNull LinearLayoutCompat userMessageLayout, @NonNull AppCompatTextView username) {
     this.rootView = rootView;
+    this.chatLay = chatLay;
     this.message = message;
     this.messageTime = messageTime;
     this.profileImage = profileImage;
@@ -74,6 +78,8 @@ public final class RvInboxListBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      LinearLayoutCompat chatLay = (LinearLayoutCompat) rootView;
+
       id = R.id.message;
       AppCompatTextView message = ViewBindings.findChildViewById(rootView, id);
       if (message == null) {
@@ -104,7 +110,7 @@ public final class RvInboxListBinding implements ViewBinding {
         break missingId;
       }
 
-      return new RvInboxListBinding((LinearLayoutCompat) rootView, message, messageTime,
+      return new RvInboxListBinding((LinearLayoutCompat) rootView, chatLay, message, messageTime,
           profileImage, userMessageLayout, username);
     }
     String missingId = rootView.getResources().getResourceName(id);

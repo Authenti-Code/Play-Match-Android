@@ -9,10 +9,11 @@ import com.playMatch.databinding.ActivityNotificationBinding
 import com.playMatch.ui.baseActivity.BaseActivity
 import com.playMatch.ui.home.adapter.notificationAdapter.NotificationAdapter
 import com.playMatch.ui.home.model.HomeChildModel
+import com.playMatch.ui.inbox.adapter.ChatAdapter
 
 class ChatActivity : BaseActivity(), View.OnClickListener {
     private lateinit var binding: ActivityChatBinding
-    private var adapter: NotificationAdapter?=null
+    private var adapter: ChatAdapter?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         removeStatusBarFullyBlackIcon()
         super.onCreate(savedInstanceState)
@@ -28,16 +29,16 @@ class ChatActivity : BaseActivity(), View.OnClickListener {
 
     private fun adapterView() {
         val list = ArrayList<HomeChildModel>()
-        adapter = NotificationAdapter(list, this)
-//        binding.rvNotification.adapter = adapter
-//        for (i in 1..5) {
-//            list.add(
-//                HomeChildModel(
-//                    R.drawable.ic_league_match,"Hockey Match"
-//                )
-//            )
-//
-//        }
+        adapter = ChatAdapter(list, this)
+        binding.rvChat.adapter = adapter
+        for (i in 1..5) {
+            list.add(
+                HomeChildModel(
+                    R.drawable.ic_league_match,"Hockey Match"
+                )
+            )
+
+        }
 
     }
 

@@ -29,9 +29,9 @@
                 android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginHorizontal="@dimen/_20sdp"
                 android:text="Hi, let's discuss"
-                android:layout_marginBottom="@dimen/_10sdp"
-                android:textSize="@dimen/_12ssp"
-                android:fontFamily="@font/metropolis_bold"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:textSize="@dimen/_10ssp"
+                android:fontFamily="@font/metropolis_light"
                 android:textColor="#1A3764"/>
 
 
@@ -70,9 +70,9 @@
             android:layout_marginHorizontal="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_5sdp"
             android:text="Sure, let me know"
-            android:layout_marginBottom="@dimen/_10sdp"
-            android:textSize="@dimen/_12ssp"
-            android:fontFamily="@font/metropolis_bold"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:textSize="@dimen/_10ssp"
+            android:fontFamily="@font/metropolis_light"
             android:textColor="@color/white"/>
 
 
