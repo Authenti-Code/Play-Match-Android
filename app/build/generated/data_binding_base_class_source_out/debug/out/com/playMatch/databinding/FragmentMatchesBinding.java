@@ -22,7 +22,7 @@ public final class FragmentMatchesBinding implements ViewBinding {
   private final LinearLayoutCompat rootView;
 
   @NonNull
-  public final ImageView addTeam;
+  public final ImageView createMatch;
 
   @NonNull
   public final AppCompatTextView pastMatch;
@@ -36,11 +36,12 @@ public final class FragmentMatchesBinding implements ViewBinding {
   @NonNull
   public final AppCompatTextView upcomingMatch;
 
-  private FragmentMatchesBinding(@NonNull LinearLayoutCompat rootView, @NonNull ImageView addTeam,
-      @NonNull AppCompatTextView pastMatch, @NonNull RecyclerView rvPast,
-      @NonNull RecyclerView rvUpcoming, @NonNull AppCompatTextView upcomingMatch) {
+  private FragmentMatchesBinding(@NonNull LinearLayoutCompat rootView,
+      @NonNull ImageView createMatch, @NonNull AppCompatTextView pastMatch,
+      @NonNull RecyclerView rvPast, @NonNull RecyclerView rvUpcoming,
+      @NonNull AppCompatTextView upcomingMatch) {
     this.rootView = rootView;
-    this.addTeam = addTeam;
+    this.createMatch = createMatch;
     this.pastMatch = pastMatch;
     this.rvPast = rvPast;
     this.rvUpcoming = rvUpcoming;
@@ -74,9 +75,9 @@ public final class FragmentMatchesBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.addTeam;
-      ImageView addTeam = ViewBindings.findChildViewById(rootView, id);
-      if (addTeam == null) {
+      id = R.id.createMatch;
+      ImageView createMatch = ViewBindings.findChildViewById(rootView, id);
+      if (createMatch == null) {
         break missingId;
       }
 
@@ -104,8 +105,8 @@ public final class FragmentMatchesBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentMatchesBinding((LinearLayoutCompat) rootView, addTeam, pastMatch, rvPast,
-          rvUpcoming, upcomingMatch);
+      return new FragmentMatchesBinding((LinearLayoutCompat) rootView, createMatch, pastMatch,
+          rvPast, rvUpcoming, upcomingMatch);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

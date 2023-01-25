@@ -31,6 +31,7 @@ drawable check_mark
 drawable create_match
 drawable custom_check_box
 drawable dummy_profile
+drawable edit
 drawable edit_profile
 drawable fblogin
 drawable filter
@@ -43,11 +44,13 @@ drawable ic_attachment
 drawable ic_back
 drawable ic_btn_send
 drawable ic_calender
+drawable ic_circle
 drawable ic_circle_checked
 drawable ic_circle_uncheck
 drawable ic_close
 drawable ic_date
 drawable ic_edit
+drawable ic_edit_payment
 drawable ic_edit_profile
 drawable ic_email
 drawable ic_front_arrow
@@ -66,8 +69,11 @@ drawable ic_message
 drawable ic_more
 drawable ic_name
 drawable ic_path
+drawable ic_search_without_bg
 drawable ic_time
 drawable ic_upcoming_matches
+drawable ic_whitel_cancel
+drawable icon_simple_visa
 drawable info
 drawable juventus
 drawable line
@@ -76,6 +82,7 @@ drawable matches_tab_bg
 drawable museum
 drawable new_dummy_profile
 drawable or
+drawable payment_card_view
 drawable pin
 drawable playmatchlogo
 drawable profile
@@ -150,14 +157,19 @@ id attachment
 id award
 id back
 id beginner
+id beginnerTv
 id beginner_check
 id cancel
+id cardNumber
+id cardNumber2
 id cardView
 id chat
 id chatLay
 id chatOff
 id chatOn
 id checkbox
+id checkbox2
+id close
 id createMatch
 id date
 id description
@@ -165,6 +177,7 @@ id dob
 id edit
 id editProfile
 id experienced
+id experiencedTv
 id experienced_check
 id filter
 id fitnessLevel
@@ -179,6 +192,7 @@ id homeOff
 id homeOn
 id image
 id intermediate
+id intermediateTv
 id intermediate_check
 id login
 id logo
@@ -190,6 +204,7 @@ id name
 id noChat
 id notification
 id past_match
+id pay
 id profileBg
 id profileOff
 id profileOn
@@ -201,6 +216,7 @@ id rootView
 id rvNotification
 id rvParentHome
 id rvPast
+id rvSelectSport
 id rvSelectTeams
 id rvTeams
 id rvUpcoming
@@ -214,6 +230,7 @@ id rv_sports
 id rv_statistics
 id search
 id selectSport
+id selectSportTv
 id selectTeam
 id selectTeamTV
 id send
@@ -235,6 +252,8 @@ id userTime
 id user_message_layout
 id username
 id viewAll
+id visa
+id visa2
 layout activity_add_profile_image
 layout activity_chat
 layout activity_create_match
@@ -242,11 +261,13 @@ layout activity_home
 layout activity_login
 layout activity_match_sign_up
 layout activity_notification
+layout activity_payment
 layout activity_select_sport
 layout activity_sign_up
 layout activity_splash
 layout activity_user_detail
 layout activity_welcome
+layout bottom_sheet_select_sport
 layout bottom_sheet_select_team
 layout bottom_sheet_show_interest
 layout custom_progressbar
@@ -275,6 +296,7 @@ layout rv_near_by_match_list
 layout rv_notification_list_item
 layout rv_profile_list_item_sports_ability
 layout rv_select_sport_item
+layout rv_select_sport_list_item
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name

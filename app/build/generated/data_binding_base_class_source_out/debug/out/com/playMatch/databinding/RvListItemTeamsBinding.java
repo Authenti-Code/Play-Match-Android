@@ -26,6 +26,9 @@ public final class RvListItemTeamsBinding implements ViewBinding {
   public final LinearLayoutCompat back;
 
   @NonNull
+  public final FrameLayout cardView;
+
+  @NonNull
   public final ImageView edit;
 
   @NonNull
@@ -35,9 +38,11 @@ public final class RvListItemTeamsBinding implements ViewBinding {
   public final CircleImageView profileImage;
 
   private RvListItemTeamsBinding(@NonNull FrameLayout rootView, @NonNull LinearLayoutCompat back,
-      @NonNull ImageView edit, @NonNull TextView name, @NonNull CircleImageView profileImage) {
+      @NonNull FrameLayout cardView, @NonNull ImageView edit, @NonNull TextView name,
+      @NonNull CircleImageView profileImage) {
     this.rootView = rootView;
     this.back = back;
+    this.cardView = cardView;
     this.edit = edit;
     this.name = name;
     this.profileImage = profileImage;
@@ -76,6 +81,8 @@ public final class RvListItemTeamsBinding implements ViewBinding {
         break missingId;
       }
 
+      FrameLayout cardView = (FrameLayout) rootView;
+
       id = R.id.edit;
       ImageView edit = ViewBindings.findChildViewById(rootView, id);
       if (edit == null) {
@@ -94,7 +101,8 @@ public final class RvListItemTeamsBinding implements ViewBinding {
         break missingId;
       }
 
-      return new RvListItemTeamsBinding((FrameLayout) rootView, back, edit, name, profileImage);
+      return new RvListItemTeamsBinding((FrameLayout) rootView, back, cardView, edit, name,
+          profileImage);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
