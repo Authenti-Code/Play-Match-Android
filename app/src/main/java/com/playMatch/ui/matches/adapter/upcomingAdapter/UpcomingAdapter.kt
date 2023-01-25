@@ -5,9 +5,11 @@ import android.app.Activity
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.databinding.RvChildHomeListItemBinding
 import com.playMatch.databinding.RvMatchesListItemBinding
 import com.playMatch.ui.home.model.HomeChildModel
+import com.playMatch.ui.matches.activity.matchDetails.MatchDetailsActivity
 import com.saetae.controller.sharedPrefrence.PrefData
 
 class UpcomingAdapter(var list: ArrayList<HomeChildModel>, var activity: Activity) : RecyclerView.Adapter<UpcomingAdapter.ViewHolder>() {
@@ -47,10 +49,11 @@ class UpcomingAdapter(var list: ArrayList<HomeChildModel>, var activity: Activit
 
 
 
-//            binding.cardView.setOnClickListener {
-//                selectedPosition=position
-//                notifyDataSetChanged()
-//            }
+            binding.cardView.setOnClickListener {
+                selectedPosition=position
+                notifyDataSetChanged()
+                CommonUtils.performIntent(activity,MatchDetailsActivity::class.java)
+            }
         }
     }
 

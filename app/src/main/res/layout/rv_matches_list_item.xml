@@ -6,9 +6,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="@dimen/_270sdp"
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
         android:layout_marginVertical="@dimen/_10sdp"
-        android:layout_marginHorizontal="@dimen/_2sdp"
+        android:layout_marginHorizontal="@dimen/_5sdp"
         android:layout_height="@dimen/_115sdp"
         app:cardElevation="@dimen/_10sdp"
         app:cardCornerRadius="@dimen/_8sdp">
@@ -79,7 +80,7 @@
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
                     <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginStart="@dimen/_25sdp"
                         android:layout_gravity="end"
@@ -90,7 +91,8 @@
                             android:layout_height="@dimen/_15sdp"
                             android:layout_marginTop="@dimen/_5sdp"
                             app:cardElevation="0dp"
-
+                            android:layout_gravity="end"
+                            android:layout_marginEnd="@dimen/_10sdp"
                             app:cardBackgroundColor="#66B7B7B7"
                             app:cardCornerRadius="@dimen/_3sdp">
 
@@ -119,6 +121,8 @@
                             android:layout_height="@dimen/_15sdp"
                             android:visibility="visible"
                             android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_gravity="end"
+                            android:layout_marginEnd="@dimen/_10sdp"
                             app:cardElevation="0dp"
                            app:strokeColor="@color/red_F95047"
                             app:strokeWidth="@dimen/_1sdp"

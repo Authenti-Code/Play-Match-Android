@@ -14,8 +14,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="icon_simple_visa" />
-                            <entry key="sourceFile" value="D:\Authenticode Project 20222\playMatchAssets\AddMatch\Icon simple-visa.svg" />
+                            <entry key="outputName" value="ic_user" />
+                            <entry key="sourceFile" value="D:\Authenticode Project 20222\playMatchAssets\addTeam\Icon awesome-user-astronaut.svg" />
                           </map>
                         </option>
                       </PersistentState>

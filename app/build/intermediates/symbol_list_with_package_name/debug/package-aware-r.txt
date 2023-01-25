@@ -1342,6 +1342,7 @@ color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
 color greay_B7B7B7
+color grey_color
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color m3_appbar_overlay_color
@@ -3348,9 +3349,12 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable drawable_switchbutton
+drawable drawable_track
 drawable dummy_profile
 drawable edit
 drawable edit_profile
+drawable edit_team_img
 drawable fblogin
 drawable filter
 drawable googlelogin
@@ -3396,9 +3400,18 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_name
 drawable ic_path
+drawable ic_plus
 drawable ic_search_without_bg
+drawable ic_setting_about_us
+drawable ic_setting_card
+drawable ic_setting_delete_acc
+drawable ic_setting_logout
+drawable ic_setting_notification
+drawable ic_setting_privacy
+drawable ic_setting_reset_password
 drawable ic_time
 drawable ic_upcoming_matches
+drawable ic_user
 drawable ic_whitel_cancel
 drawable icon_simple_visa
 drawable info
@@ -3564,6 +3577,8 @@ id Ttv
 id Wcv
 id Wtv
 id accelerate
+id accepted
+id acceptedTv
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
 id accessibility_custom_action_1
@@ -3817,6 +3832,8 @@ id intermediate
 id intermediateTv
 id intermediate_check
 id invisible
+id invitedPlayers
+id invitedPlayersTv
 id inward
 id italic
 id item_touch_helper_previous_elevation
@@ -3834,6 +3851,7 @@ id listMode
 id list_item
 id login
 id logo
+id logout
 id marquee
 id masked
 id match_constraint
@@ -3915,6 +3933,7 @@ id notification
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id notification_toggle
 id off
 id on
 id onInterceptTouchReturnSwipe
@@ -3958,6 +3977,8 @@ id right_side
 id rootView
 id rounded
 id row_index_key
+id rvAccepted
+id rvInvitedPlayers
 id rvNotification
 id rvParentHome
 id rvPast
@@ -3971,6 +3992,7 @@ id rv_child_sports
 id rv_inbox
 id rv_light_child_sports
 id rv_nearby_matches
+id rv_searchPlayers
 id rv_sports
 id rv_statistics
 id save_non_transition_alpha
@@ -3984,6 +4006,8 @@ id scrollIndicatorUp
 id scrollView
 id scrollable
 id search
+id searchPlayers
+id searchPlayersTv
 id search_badge
 id search_bar
 id search_button
@@ -4003,6 +4027,7 @@ id selected
 id selection_type
 id send
 id senderLay
+id setting
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -4250,14 +4275,17 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_add_profile_image
+layout activity_add_team
 layout activity_chat
 layout activity_create_match
 layout activity_home
 layout activity_login
+layout activity_match_details
 layout activity_match_sign_up
 layout activity_notification
 layout activity_payment
 layout activity_select_sport
+layout activity_setting
 layout activity_sign_up
 layout activity_splash
 layout activity_user_detail
@@ -4355,6 +4383,7 @@ layout rv_home_list_item
 layout rv_inbox_list
 layout rv_list_item_light_bg_rv_child
 layout rv_list_item_profile_statistics
+layout rv_list_item_search_players
 layout rv_list_item_select_team
 layout rv_list_item_teams
 layout rv_matches_list_item
@@ -4845,6 +4874,7 @@ style RtlOverlay_Widget_AppCompat_Search_DropDown_Text
 style RtlOverlay_Widget_AppCompat_SearchView_MagIcon
 style RtlUnderlay_Widget_AppCompat_ActionButton
 style RtlUnderlay_Widget_AppCompat_ActionButton_Overflow
+style SCBSwitch
 style ShapeAppearance_M3_Comp_BottomAppBar_Container_Shape
 style ShapeAppearance_M3_Comp_Switch_Handle_Shape
 style ShapeAppearance_M3_Comp_Switch_StateLayer_Shape

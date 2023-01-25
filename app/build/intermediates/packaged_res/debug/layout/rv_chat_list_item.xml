@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/_10sdp"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/receiverLay"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_60sdp"
+        android:orientation="vertical"
+        >
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:background="@drawable/style_chating"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/_80sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:backgroundTint="#66B7B7B7">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:text="Hi, let's discuss"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:textSize="@dimen/_10ssp"
+                android:fontFamily="@font/metropolis_light"
+                android:textColor="#1A3764"/>
+
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:text="5:30 PM | 2 Dec 2022"
+            android:textSize="@dimen/_8ssp"
+            android:fontFamily="@font/metropolis_regular"
+            android:textColor="@color/black_707070"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/senderLay"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/style_chatting2"
+        android:orientation="vertical"
+        android:layout_marginStart="@dimen/_80sdp"
+
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_gravity="end"
+        android:backgroundTint="@color/red_F95047">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/userMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="Sure, let me know"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:textSize="@dimen/_10ssp"
+            android:fontFamily="@font/metropolis_light"
+            android:textColor="@color/white"/>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/userTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:text="5:40 PM | 2 Dec 2022"
+        android:layout_gravity="end"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:textSize="@dimen/_8ssp"
+        android:fontFamily="@font/metropolis_regular"
+        android:textColor="@color/black_707070"/>
+
+    <!--todo other sender layout-->
+</LinearLayout>

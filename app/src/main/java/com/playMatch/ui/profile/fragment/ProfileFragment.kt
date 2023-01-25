@@ -7,11 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.playMatch.R
+import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.databinding.FragmentInboxBinding
 import com.playMatch.databinding.FragmentProfileBinding
 import com.playMatch.ui.baseActivity.BaseActivity
 import com.playMatch.ui.home.model.HomeChildModel
 import com.playMatch.ui.inbox.adapter.InboxAdapter
+import com.playMatch.ui.profile.activity.settingActivity.SettingActivity
 import com.playMatch.ui.profile.adapter.ProfileSportsAdapter
 import com.playMatch.ui.profile.adapter.ProfileStatisticsAdapter
 import com.saetae.controller.sharedPrefrence.PrefData
@@ -58,10 +60,14 @@ class ProfileFragment : Fragment(),View.OnClickListener {
 
     private fun initViews() {
         PrefData.setBooleanPrefs(requireActivity(), PrefData.KEY_NOTIFICATION_IS_CHAT, false)
+        binding?.setting?.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
         when (v?.id) {
+            R.id.setting->{
+                CommonUtils.performIntent(requireActivity(),SettingActivity::class.java)
+            }
 
         }
     }
