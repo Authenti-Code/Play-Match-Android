@@ -11,9 +11,10 @@ import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.databinding.RvChildHomeThirdPositionListItemBinding
 import com.playMatch.ui.home.activity.HomeActivity
 import com.playMatch.ui.home.model.HomeChildModel
+import com.playMatch.ui.home.model.HomeChildthirdModel
 import com.saetae.controller.sharedPrefrence.PrefData
 
-class HomeChildThirdPositionAdapter(var list: ArrayList<HomeChildModel>, var activity: Activity) : RecyclerView.Adapter<HomeChildThirdPositionAdapter.ViewHolder>() {
+class HomeChildThirdPositionAdapter(var list: ArrayList<HomeChildthirdModel>, var activity: Activity) : RecyclerView.Adapter<HomeChildThirdPositionAdapter.ViewHolder>() {
 
 
     private val USER = 0
@@ -46,6 +47,8 @@ class HomeChildThirdPositionAdapter(var list: ArrayList<HomeChildModel>, var act
 //                binding.cardView.setCardBackgroundColor(Color.parseColor("#80F95047"))
 //            }
             holder.binding.name.text = ItemsviewModel.name
+            binding.logo.setImageResource(ItemsviewModel.logo)
+
 
 
 
@@ -77,7 +80,7 @@ class HomeChildThirdPositionAdapter(var list: ArrayList<HomeChildModel>, var act
 
 
     @SuppressLint("NotifyDataSetChanged")
-    fun updateCommentList(Data: List<HomeChildModel>, mRecyclerview: RecyclerView?) {
+    fun updateCommentList(Data: List<HomeChildthirdModel>, mRecyclerview: RecyclerView?) {
         if (list.size > 0) {
             list.clear()
             notifyDataSetChanged()

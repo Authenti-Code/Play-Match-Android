@@ -11,9 +11,10 @@ import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.databinding.RvChildHomeFourthPositionListItemBinding
 import com.playMatch.ui.home.activity.HomeActivity
 import com.playMatch.ui.home.model.HomeChildModel
+import com.playMatch.ui.home.model.HomeChildfourthModel
 import com.saetae.controller.sharedPrefrence.PrefData
 
-class HomeChildFourthAdapter(var list: ArrayList<HomeChildModel>, var activity: Activity) : RecyclerView.Adapter<HomeChildFourthAdapter.ViewHolder>() {
+class HomeChildFourthAdapter(var list: ArrayList<HomeChildfourthModel>, var activity: Activity) : RecyclerView.Adapter<HomeChildFourthAdapter.ViewHolder>() {
 
 
     private  var selectedPosition=-1
@@ -73,7 +74,7 @@ class HomeChildFourthAdapter(var list: ArrayList<HomeChildModel>, var activity: 
 
 
     @SuppressLint("NotifyDataSetChanged")
-    fun updateCommentList(Data: List<HomeChildModel>, mRecyclerview: RecyclerView?) {
+    fun updateCommentList(Data: List<HomeChildfourthModel>, mRecyclerview: RecyclerView?) {
         if (list.size > 0) {
             list.clear()
             notifyDataSetChanged()

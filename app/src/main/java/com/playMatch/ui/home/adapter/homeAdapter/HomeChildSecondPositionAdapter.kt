@@ -10,9 +10,10 @@ import com.playMatch.databinding.RvChildSecondPositionListItemBinding
 import com.playMatch.ui.home.dialogs.interestDialog.InterestsDialog
 import com.playMatch.ui.home.dialogs.invitesDialog.InvitesDialog
 import com.playMatch.ui.home.model.HomeChildModel
+import com.playMatch.ui.home.model.HomeChilseconddModel
 import com.saetae.controller.sharedPrefrence.PrefData
 
-class HomeChildSecondPositionAdapterclass(var list: ArrayList<HomeChildModel>, var activity: Activity) : RecyclerView.Adapter<HomeChildSecondPositionAdapterclass.ViewHolder>() {
+class HomeChildSecondPositionAdapterclass(var list: ArrayList<HomeChilseconddModel>, var activity: Activity) : RecyclerView.Adapter<HomeChildSecondPositionAdapterclass.ViewHolder>() {
 
 
     private val USER = 0
@@ -39,12 +40,8 @@ class HomeChildSecondPositionAdapterclass(var list: ArrayList<HomeChildModel>, v
             val ItemsviewModel = list[position]
             val id= PrefData.getStringPrefs(activity, PrefData.CHECK_BOX,"")
 
-//            if (id=="1"){
-//                binding.cardView.setCardBackgroundColor(Color.parseColor("#F95047"))
-//            }else{
-//                binding.cardView.setCardBackgroundColor(Color.parseColor("#80F95047"))
-//            }
             holder.binding.name.text = ItemsviewModel.name
+            binding.profileImage.setImageResource(ItemsviewModel.logo)
 
 
 
@@ -67,25 +64,5 @@ class HomeChildSecondPositionAdapterclass(var list: ArrayList<HomeChildModel>, v
     override fun getItemCount(): Int {
         return list.size
     }
-
-
-
-
-    @SuppressLint("NotifyDataSetChanged")
-    fun updateCommentList(Data: List<HomeChildModel>, mRecyclerview: RecyclerView?) {
-        if (list.size > 0) {
-            list.clear()
-            notifyDataSetChanged()
-        }
-        list.addAll(Data)
-        notifyDataSetChanged()
-
-        mRecyclerview?.postDelayed({
-            mRecyclerview.scrollToPosition(itemCount - 1)
-
-        }, 100)
-    }
-
-
 
 }

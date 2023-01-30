@@ -13,8 +13,7 @@ import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.databinding.RvHomeListItemBinding
 import com.playMatch.ui.home.activity.HomeActivity
 import com.playMatch.ui.home.dialogs.invitesDialog.InvitesDialog
-import com.playMatch.ui.home.model.HomeChildModel
-import com.playMatch.ui.home.model.HomeParentModel
+import com.playMatch.ui.home.model.*
 import com.playMatch.ui.signUp.signUpAdapters.SelectLightBgChildSportAdapter
 
 class HomeParentAdapter(var list: ArrayList<HomeParentModel>, var activity: Activity) : RecyclerView.Adapter<HomeParentAdapter.ViewHolder>() {
@@ -26,6 +25,9 @@ class HomeParentAdapter(var list: ArrayList<HomeParentModel>, var activity: Acti
     private var fourthAdapter: HomeChildFourthAdapter?=null
     private var lightAdapter: SelectLightBgChildSportAdapter?=null
     private  var mlist = ArrayList<HomeChildModel>()
+    private  var msecondlist = ArrayList<HomeChilseconddModel>()
+    private  var mthirdlist = ArrayList<HomeChildthirdModel>()
+    private  var mfourthlist = ArrayList<HomeChildfourthModel>()
 
     inner class ViewHolder(val binding: RvHomeListItemBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -48,34 +50,34 @@ class HomeParentAdapter(var list: ArrayList<HomeParentModel>, var activity: Acti
                 for (i in 1..5) {
                     mlist.add(
                         HomeChildModel(
-                            R.drawable.ic_league_match,"League Match"
+                            R.drawable.match,"League Match"
                         )
                     )
 
                 }
             }
             else if (position==1){
-                secondAdapter = HomeChildSecondPositionAdapterclass(mlist, activity)
+                secondAdapter = HomeChildSecondPositionAdapterclass(msecondlist, activity)
                 holder.binding.rvChildHome.adapter = secondAdapter
                 holder.binding.heading.text = "New Interests"
-                mlist.clear()
+                msecondlist.clear()
                 for (i in 1..5) {
-                    mlist.add(
-                        HomeChildModel(
-                            R.drawable.new_dummy_profile,"Rossy Alan"
+                    msecondlist.add(
+                        HomeChilseconddModel(
+                            R.drawable.profile_pic,"Rossy Alan"
                         )
                     )
 
                 }
             } else if (position==2){
-                thirdAdapter = HomeChildThirdPositionAdapter(mlist, activity)
+                thirdAdapter = HomeChildThirdPositionAdapter(mthirdlist, activity)
                 holder.binding.rvChildHome.adapter = thirdAdapter
                 holder.binding.heading.text = "Upcoming Matches"
-                mlist.clear()
+                mthirdlist.clear()
                 for (i in 1..5) {
-                    mlist.add(
-                        HomeChildModel(
-                            R.drawable.new_dummy_profile,"T20 League"
+                    mthirdlist.add(
+                        HomeChildthirdModel(
+                            R.drawable.your_team,"T20 League"
                         )
                     )
 
@@ -91,13 +93,13 @@ class HomeParentAdapter(var list: ArrayList<HomeParentModel>, var activity: Acti
                     )
                 }
             } else if (position==3){
-                fourthAdapter = HomeChildFourthAdapter(mlist, activity)
+                fourthAdapter = HomeChildFourthAdapter(mfourthlist, activity)
                 holder.binding.rvChildHome.adapter = fourthAdapter
                 holder.binding.heading.text = "Teams"
-                mlist.clear()
+                mfourthlist.clear()
                 for (i in 1..5) {
-                    mlist.add(
-                        HomeChildModel(
+                    mfourthlist.add(
+                        HomeChildfourthModel(
                             R.drawable.juventus,"League Match"
                         )
                     )

@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.matches.activity.matchDetails.MatchDetailsActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_30sdp">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="20sp"
+            android:layout_gravity="center_vertical"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Match details"
+            android:textColor="@color/black"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_gravity="center_horizontal"
+            android:textSize="@dimen/_14ssp"
+            android:fontFamily="@font/metropolis_semibold"/>
+
+    </FrameLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_height="@dimen/_115sdp"
+        app:cardElevation="@dimen/_10sdp"
+        app:cardCornerRadius="@dimen/_8sdp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="@dimen/_8sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/logo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/ic_upcoming_matches"/>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="T20 League Match"
+                            android:singleLine="true"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:fontFamily="@font/metropolis_semibold"
+                            android:textSize="@dimen/_10ssp"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:id="@+id/date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="25 Dec 2022"
+                            android:fontFamily="@font/metropolis_light"
+                            android:textSize="@dimen/_8ssp"
+                            android:textColor="@color/greay_B7B7B7"/>
+
+                        <TextView
+                            android:id="@+id/time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="10:00 AM - 2:00 PM"
+                            android:fontFamily="@font/metropolis_light"
+                            android:textSize="@dimen/_8ssp"
+                            android:textColor="@color/greay_B7B7B7"/>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="end"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            app:cardElevation="0dp"
+                            android:layout_gravity="end"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            app:cardBackgroundColor="#66B7B7B7"
+                            app:cardCornerRadius="@dimen/_3sdp">
+
+
+
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:textColor="@color/black_707070"
+                                android:textSize="@dimen/_8ssp"
+                                android:gravity="center"
+                                android:text="Male"
+                                android:backgroundTint="@color/white"
+                                android:fontFamily="@font/metropolis_light"/>
+
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <ImageView
+                                android:id="@+id/edit"
+                                android:visibility="visible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/edit_profile"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:layout_gravity="end"/>
+
+                        </FrameLayout>
+
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/line"/>
+
+                <TextView
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sector 32, Entertainment District, 23156,"
+                    android:fontFamily="@font/metropolis_light"
+                    android:textSize="@dimen/_8ssp"
+                    android:textColor="@color/greay_B7B7B7"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Amsterdam,Wellington St. "
+                    android:fontFamily="@font/metropolis_light"
+                    android:textSize="@dimen/_8ssp"
+                    android:textColor="@color/greay_B7B7B7"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/line"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        app:cardBackgroundColor="@color/red_E65D50"
+                        app:cardCornerRadius="@dimen/_5sdp">
+
+
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_8ssp"
+                            android:gravity="center"
+                            android:text="Intermediate"
+                            android:backgroundTint="@color/white"
+                            android:fontFamily="@font/metropolis_light"/>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        app:strokeWidth="@dimen/_1sdp"
+                        app:strokeColor="@color/red_E65D50"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        app:cardCornerRadius="@dimen/_5sdp">
+
+
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textColor="#D66657"
+                            android:textSize="@dimen/_8ssp"
+                            android:gravity="center"
+                            android:text="Cricket"
+                            android:backgroundTint="@color/white"
+                            android:fontFamily="@font/metropolis_light"/>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_20sdp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/searchPlayers"
+            android:layout_width="@dimen/_75sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            app:strokeWidth="@dimen/_1sdp"
+            app:strokeColor="@color/black_707070"
+            app:cardBackgroundColor="@color/black_B7B7B7"
+            app:cardCornerRadius="@dimen/_3sdp">
+
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/searchPlayersTv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_8ssp"
+                android:gravity="center"
+                android:text="Search Players"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/metropolis_light"/>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/invitedPlayers"
+            android:layout_width="@dimen/_75sdp"
+            android:layout_toEndOf="@id/searchPlayers"
+            android:layout_height="@dimen/_20sdp"
+            app:strokeWidth="@dimen/_1sdp"
+            app:strokeColor="@color/black_707070"
+            android:layout_marginEnd="@dimen/_10sdp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/_3sdp">
+
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/invitedPlayersTv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black_707070"
+                android:textSize="@dimen/_8ssp"
+                android:gravity="center"
+                android:text="Invited Players"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/metropolis_light"/>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/accepted"
+            android:layout_width="@dimen/_75sdp"
+            android:layout_toEndOf="@id/invitedPlayers"
+            android:layout_height="@dimen/_20sdp"
+            app:strokeWidth="@dimen/_1sdp"
+            app:strokeColor="@color/black_707070"
+            android:layout_marginEnd="@dimen/_10sdp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/_3sdp">
+
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/acceptedTv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black_707070"
+                android:textSize="@dimen/_8ssp"
+                android:gravity="center"
+                android:text="Accepted"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/metropolis_light"/>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <ImageView
+            android:id="@+id/search"
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/grey_search"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_alignParentEnd="true"/>
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_searchPlayers"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"
+        tools:listitem="@layout/rv_list_item_search_players"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvInvitedPlayers"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"
+        tools:listitem="@layout/rv_list_item_search_players"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvAccepted"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"
+        tools:listitem="@layout/rv_list_item_search_players"/>
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

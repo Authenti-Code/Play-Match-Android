@@ -36,10 +36,15 @@ import androidx.cardview.widget.CardView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
-import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.gms.common.api.ApiException
+import com.google.android.gms.common.api.ResolvableApiException
+import com.google.android.gms.location.*
+import com.google.android.gms.location.LocationRequest.create
+import com.google.android.gms.tasks.Task
 import com.google.android.material.snackbar.Snackbar
 import com.playMatch.R
 import com.playMatch.controller.utils.CommonUtils
+import com.playMatch.ui.home.activity.HomeActivity
 import java.io.File
 import java.io.IOException
 import java.text.ParseException
@@ -96,7 +101,8 @@ open class BaseActivity : AppCompatActivity() {
     internal var _longitude: String? = null
 
 //    private var mFusedLocationClient: FusedLocationProviderClient? = null
-    private var locationRequest: LocationRequest? = null
+    private var locationRequest: com.google.android.gms.location.LocationRequest? = null
+    private var mFusedLocationClient: FusedLocationProviderClient? = null
     private var activity: Activity? = null
 
 
@@ -127,13 +133,22 @@ open class BaseActivity : AppCompatActivity() {
         try {
 //            ApplicationClass.firebaseToken
 //            getFirebaseToken()
-//            locationCall()
+            locationCall()
 //            areNotificationsEnabled()
         } catch (e: Exception) {
             e.printStackTrace()
         }
     }
 
+
+    @Throws(Exception::class)
+    private fun locationCall() {
+        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+        locationRequest = create()
+        locationRequest?.priority = com.google.android.gms.location.LocationRequest.PRIORITY_HIGH_ACCURACY
+        locationRequest?.interval = 10000
+        locationRequest?.fastestInterval = (10000 / 2).toLong()
+    }
 
 
     @Suppress("DEPRECATION")
@@ -351,12 +366,12 @@ open class BaseActivity : AppCompatActivity() {
             100 -> {
                 when (resultCode) {
                     Activity.RESULT_OK -> {
-//                        getLastLocation(this@BaseActivity)
+                        getLastLocation(this@BaseActivity)
                         Log.e("", "")
                     }
                     Activity.RESULT_CANCELED -> {
                         try {
-//                            locationRequest()
+                            locationRequest()
                         } catch (e: Exception) {
                             e.printStackTrace()
                         }
@@ -380,6 +395,93 @@ open class BaseActivity : AppCompatActivity() {
 //
 //    }
 
+
+    @Throws(Exception::class)
+    fun locationRequest() {
+        val builder = LocationSettingsRequest.Builder().addLocationRequest(locationRequest!!)
+        builder.setAlwaysShow(true)
+        val result: Task<LocationSettingsResponse> =
+            LocationServices.getSettingsClient(this).checkLocationSettings(builder.build())
+
+
+        result.addOnFailureListener {
+            if (it is ResolvableApiException) {
+                try { // Handle result in onActivityResult()
+                    it.startResolutionForResult(
+                        this, PERMISSION_ID_RESOLUTION_REQUIRED
+                    )
+                } catch (sendEx: IntentSender.SendIntentException) {
+                }
+            }
+        }
+
+        result.addOnCompleteListener {
+            try {
+                if (it.isSuccessful) {
+                    getLastLocation(this@BaseActivity)
+                }/* else {
+                    Toast.makeText(this, "location not on ", Toast.LENGTH_SHORT).show()
+                }*/
+            } catch (exception: ApiException) {
+                when (exception.statusCode) {
+                    LocationSettingsStatusCodes.RESOLUTION_REQUIRED ->                             // Location settings are not satisfied. But could be fixed by showing the
+                        // user a dialog.
+                        try {
+                            // Cast to a resolvable exception.
+                            val resolvable = exception as ResolvableApiException
+                            // Show the dialog by calling startResolutionForResult(),
+                            // and check the result in onActivityResult().
+                            resolvable.startResolutionForResult(
+                                this@BaseActivity, 100
+                            )
+                        } catch (e: IntentSender.SendIntentException) {
+
+                            // Ignore the error.
+                        } catch (e: ClassCastException) {
+                        }
+                    LocationSettingsStatusCodes.SETTINGS_CHANGE_UNAVAILABLE -> {
+
+                    }
+                }
+            }
+        }
+    }
+
+    @SuppressLint("MissingPermission")
+    fun getLastLocation(activity: Activity) {
+        // check if location is enabled
+        if (isLocationEnabled()) {
+            // getting last
+            // location from
+            // FusedLocationClient
+            // object
+            mFusedLocationClient!!.lastLocation.addOnCompleteListener { task ->
+                val location = task.result
+
+                if (location == null) {
+                    this.activity = activity
+                    //requestNewLocationData()
+                    getLastLocation(this@BaseActivity)
+                } else {
+                    latitude = location.latitude
+                    longitude = location.longitude
+                    Log.e("LiveLocationCurrent", "getLastLocation: $latitude $longitude")
+                    Log.e("LiveLocationCurrent", "getLastLocation: $latitude $longitude")
+                    when (activity) {
+                        is HomeActivity -> {
+                            activity.getData()
+                        }
+
+                    }
+                }
+                this.activity = activity
+                requestNewLocationData()
+            }
+        } else {
+            locationRequest()
+        }
+    }
+
     override fun onRequestPermissionsResult(
         requestCode: Int, permissions: Array<String?>, grantResults: IntArray
     ) {
@@ -397,7 +499,7 @@ open class BaseActivity : AppCompatActivity() {
 
                 } else if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     if (permission == Manifest.permission.ACCESS_FINE_LOCATION) {
-//                        locationRequest()
+                        locationRequest()
                     }
 
                 } else if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_DENIED) {
@@ -410,14 +512,29 @@ open class BaseActivity : AppCompatActivity() {
 //                bottomSheetEnableLocationService()
             }
         } else  if (requestCode ==PERMISSION_ALL) {
-                openCamera()
+            openCamera()
         } else if (requestCode==PERMISSION_GALLERY) {
             openGallery()
         }
     }
 
+    @SuppressLint("MissingPermission")
+    @Throws(Exception::class)
+    internal fun requestNewLocationData() {
+        // setting LocationRequest
+        // on FusedLocationClient
+        mFusedLocationClient?.requestLocationUpdates(
+            locationRequest!!, mLocationCallback, Looper.myLooper()!!
+        )
+    }
 
-
+    private val mLocationCallback: LocationCallback = object : LocationCallback() {
+        override fun onLocationResult(locationResult: LocationResult) {
+            val mLastLocation: Location? = locationResult.lastLocation
+            latitude = mLastLocation?.latitude
+            longitude = mLastLocation?.longitude
+        }
+    }
     @SuppressLint("ObsoleteSdkInt")
     @Throws(java.lang.Exception::class)
     internal fun openCamera() {
@@ -1259,5 +1376,8 @@ open class BaseActivity : AppCompatActivity() {
 
     open fun onNetworkChanged() {}
 }
+
+
+
 
 

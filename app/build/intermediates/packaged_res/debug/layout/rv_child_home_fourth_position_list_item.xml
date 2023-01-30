@@ -15,7 +15,7 @@
         android:layout_height="@dimen/_80sdp"
         android:layout_marginStart="@dimen/_10sdp"
         android:layout_marginBottom="@dimen/_10sdp"
-        android:elevation="@dimen/_5sdp"
+        android:elevation="0dp"
         android:src="@color/white"
         app:civ_border_color="@color/red_F95047"
         app:civ_border_width="@dimen/_2sdp"/>
@@ -27,7 +27,7 @@
             android:layout_gravity="center"
             android:layout_marginStart="@dimen/_5sdp"
             android:layout_marginBottom="@dimen/_10sdp"
-            android:elevation="@dimen/_5sdp"
+            android:elevation="0dp"
             android:src="@drawable/juventus" />
 
         <ImageView
@@ -35,7 +35,7 @@
             android:layout_height="@dimen/_15sdp"
             android:layout_marginStart="@dimen/_5sdp"
             android:layout_marginBottom="@dimen/_5sdp"
-            android:elevation="@dimen/_10sdp"
+            android:elevation="0dp"
             android:src="@drawable/ic_path"
             android:layout_gravity="bottom|center_horizontal"/>
 

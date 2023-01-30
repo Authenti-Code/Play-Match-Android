@@ -7,10 +7,9 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="@dimen/_230sdp"
-        android:layout_marginVertical="@dimen/_10sdp"
-        android:layout_marginHorizontal="@dimen/_10sdp"
-        android:layout_height="@dimen/_110sdp"
-        app:cardElevation="@dimen/_10sdp"
+        android:layout_height="@dimen/_120sdp"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="@dimen/_5sdp"
         app:cardCornerRadius="@dimen/_8sdp">
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -21,6 +20,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="@dimen/_100sdp"
                 android:layout_height="match_parent"
+                app:cardElevation="@dimen/_5sdp"
                 app:cardCornerRadius="@dimen/_8sdp">
 
                 <androidx.appcompat.widget.AppCompatImageView
@@ -54,7 +54,7 @@
                     android:layout_height="wrap_content"
                     android:text="25 Dec 2022"
                     android:fontFamily="@font/metropolis_light"
-                    android:textSize="@dimen/_10ssp"
+                    android:textSize="@dimen/_9ssp"
                     android:textColor="@color/greay_B7B7B7"/>
 
                 <TextView
@@ -63,7 +63,7 @@
                     android:layout_height="wrap_content"
                     android:text="10:00 AM - 2:00 PM"
                     android:fontFamily="@font/metropolis_light"
-                    android:textSize="@dimen/_10ssp"
+                    android:textSize="@dimen/_9ssp"
                     android:textColor="@color/greay_B7B7B7"/>
 
                 <com.google.android.material.card.MaterialCardView

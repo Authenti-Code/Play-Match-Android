@@ -21,6 +21,7 @@ object PrefData {
     const val SOCIAL_LOGIN="social_login"
     const val LATITUDE="latitutde"
     const val LONGITUDE="longitude"
+    const val EDIT="edit"
 
     const val CURRENT_USER_SCREEN_TYPE="current_screen_type"
     const val DEVICE_TOKEN = "device_token"

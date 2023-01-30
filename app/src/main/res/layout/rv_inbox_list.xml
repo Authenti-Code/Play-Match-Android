@@ -12,31 +12,37 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/profile_image"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:src="@drawable/new_dummy_profile"
-                app:civ_border_color="@color/red_E65D50"
-                app:civ_border_width="@dimen/_2sdp" />
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp">
 
-<!--            <pl.droidsonroids.gif.GifImageView-->
-<!--                android:id="@+id/gif"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:src="@drawable/progress_t_orange"-->
-<!--                android:visibility="gone"/>-->
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:elevation="0dp"
+                    android:src="@drawable/new_dummy_profile"
+                    app:civ_border_color="@color/red_F95047"
+                    app:civ_border_width="@dimen/_1sdp" />
 
-        </FrameLayout>
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_image"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:layout_width="@dimen/_56sdp"
+                    android:layout_height="@dimen/_56sdp"
+                    android:elevation="0dp"
+                    android:src="@drawable/profile_pic"/>
+
+            </FrameLayout>
+
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
             android:layout_marginStart="@dimen/_10sdp"
             android:orientation="vertical">
 
@@ -99,7 +105,7 @@
             android:layout_height="@dimen/_15sdp"
             android:layout_gravity="end"
             android:layout_marginEnd="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_15sdp"
             app:cardBackgroundColor="@color/greay_B7B7B7"
             app:cardCornerRadius="@dimen/_3sdp">
 
@@ -143,7 +149,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/_1sdp"
         android:layout_marginTop="@dimen/_5sdp"
-        android:layout_marginStart="@dimen/_60sdp"
+        android:layout_marginStart="@dimen/_70sdp"
         android:layout_marginEnd="@dimen/_10sdp"
         android:background="#E2E2E2" />
 </androidx.appcompat.widget.LinearLayoutCompat>

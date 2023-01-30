@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.playMatch.databinding.RvSelectSportItemBinding
+import com.playMatch.ui.signUp.signupModel.SelectChildSPortLightModel
 import com.playMatch.ui.signUp.signupModel.SelectChildSPortModel
 import com.playMatch.ui.signUp.signupModel.SelectSportModel
 import com.saetae.controller.sharedPrefrence.PrefData
@@ -17,6 +18,7 @@ class SelectSportAdapter(var list: ArrayList<SelectSportModel>, var activity: Ac
     private var adapter:SelectChildSportAdapter?=null
     private var lightAdapter:SelectLightBgChildSportAdapter?=null
     private  var mlist = ArrayList<SelectChildSPortModel>()
+    private  var mlightlist = ArrayList<SelectChildSPortLightModel>()
 
     inner class ViewHolder(val binding:RvSelectSportItemBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -32,7 +34,6 @@ class SelectSportAdapter(var list: ArrayList<SelectSportModel>, var activity: Ac
             val ItemsviewModel = list[position]
             holder.binding.sportName.text = ItemsviewModel.sport
 
-
             adapter = SelectChildSportAdapter(mlist, activity)
             holder.binding.rvChildSports.adapter = adapter
             mlist.clear()
@@ -45,46 +46,32 @@ class SelectSportAdapter(var list: ArrayList<SelectSportModel>, var activity: Ac
 
             }
 
-            lightAdapter = SelectLightBgChildSportAdapter(mlist, activity)
+            lightAdapter = SelectLightBgChildSportAdapter(mlightlist, activity)
             binding.rvLightChildSports.adapter = lightAdapter
+            mlightlist.clear()
             for (i in 1..5) {
-                list.add(
-                    SelectSportModel(
-                        "Cricket"
+                mlightlist.add(
+                    SelectChildSPortLightModel(
+                        "Beginner"
                     )
                 )
-
             }
             binding.checkbox.setOnClickListener {
-if (binding.checkbox.isChecked){
+       if (binding.checkbox.isChecked){
     PrefData.setStringPrefs(activity,PrefData.CHECK_BOX,"1")
     binding.rvChildSports.visibility=View.VISIBLE
     binding.rvLightChildSports.visibility=View.GONE
-}else{
+        }
+       else{
     PrefData.setStringPrefs(activity,PrefData.CHECK_BOX,"0")
     binding.rvChildSports.visibility=View.GONE
     binding.rvLightChildSports.visibility=View.VISIBLE
-}
+             }
             }
         }
     }
 
     override fun getItemCount(): Int {
         return list.size
-    }
-
-    @SuppressLint("NotifyDataSetChanged")
-    fun updateCommentList(Data: List<SelectSportModel>,mRecyclerview: RecyclerView?) {
-        if (list.size > 0) {
-            list.clear()
-            notifyDataSetChanged()
-        }
-        list.addAll(Data)
-        notifyDataSetChanged()
-
-        mRecyclerview?.postDelayed({
-            mRecyclerview.scrollToPosition(itemCount - 1)
-
-        }, 100)
     }
 }

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.playMatch.R
+import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.databinding.ActivityNotificationBinding
 import com.playMatch.databinding.NearByMatchesBinding
 import com.playMatch.ui.baseActivity.BaseActivity
@@ -25,6 +26,8 @@ class NearByMatches : BaseActivity(), View.OnClickListener {
 
     private fun initView() {
         binding.back.setOnClickListener(this)
+        binding.streetMap.setOnClickListener(this)
+        binding.filter.setOnClickListener(this)
     }
 
     private fun adapterView() {
@@ -46,6 +49,12 @@ class NearByMatches : BaseActivity(), View.OnClickListener {
         when (v?.id) {
             R.id.back -> {
                 onBackPressed()
+            }
+            R.id.streetMap -> {
+                CommonUtils.performIntent(this,OnMapNearbyMatchesActivity::class.java)
+            }
+            R.id.filter -> {
+                CommonUtils.performIntent(this,FilterActivity::class.java)
             }
         }
 

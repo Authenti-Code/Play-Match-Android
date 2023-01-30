@@ -44,6 +44,7 @@ class HomeChildAdapter(var list: ArrayList<HomeChildModel>, var activity: Activi
 //                binding.cardView.setCardBackgroundColor(Color.parseColor("#80F95047"))
 //            }
             holder.binding.name.text = ItemsviewModel.name
+            binding.logo.setImageResource(ItemsviewModel.logo)
 
 
 

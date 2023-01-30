@@ -4,10 +4,14 @@ import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import com.playMatch.R
+import com.playMatch.controller.constant.IntentConstant
+import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.databinding.ActivityMatchDetailsBinding
 import com.playMatch.ui.baseActivity.BaseActivity
 import com.playMatch.ui.home.model.HomeChildModel
+import com.playMatch.ui.matches.activity.createMatchActivity.CreateMatchActivity
 import com.playMatch.ui.matches.adapter.searchPlayersAdapter.SearchPlayersAdapter
+import com.saetae.controller.sharedPrefrence.PrefData
 
 class MatchDetailsActivity : BaseActivity(), View.OnClickListener {
     private lateinit var binding: ActivityMatchDetailsBinding
@@ -26,6 +30,7 @@ class MatchDetailsActivity : BaseActivity(), View.OnClickListener {
         binding.searchPlayers.setOnClickListener(this)
         binding.invitedPlayers.setOnClickListener(this)
         binding.accepted.setOnClickListener(this)
+        binding.edit.setOnClickListener(this)
     }
 
     private fun adapterView() {
@@ -72,6 +77,12 @@ class MatchDetailsActivity : BaseActivity(), View.OnClickListener {
                 binding.invitedPlayersTv.setTextColor(Color.parseColor("#707070"))
                 binding.searchPlayers.setCardBackgroundColor(Color.WHITE)
                 binding.searchPlayersTv.setTextColor(Color.parseColor("#707070"))
+            }
+
+            R.id.edit -> {
+                val bundle=Bundle()
+                bundle.putString(PrefData.EDIT,"edit")
+                CommonUtils.performIntentWithBundle(this,CreateMatchActivity::class.java,bundle)
             }
         }
 

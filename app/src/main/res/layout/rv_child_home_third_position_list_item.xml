@@ -5,11 +5,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="@dimen/_110sdp"
-        android:layout_marginVertical="@dimen/_10sdp"
-        android:layout_marginHorizontal="@dimen/_10sdp"
-        android:layout_height="@dimen/_120sdp"
-        app:cardElevation="@dimen/_10sdp"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_150sdp"
+        android:layout_marginStart="@dimen/_5sdp"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="@dimen/_5sdp"
         app:cardCornerRadius="@dimen/_8sdp">
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -20,7 +20,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_100sdp"
+                android:layout_height="@dimen/_110sdp"
                 app:cardCornerRadius="@dimen/_8sdp">
 
                 <androidx.appcompat.widget.AppCompatImageView
@@ -40,7 +40,7 @@
                 android:singleLine="true"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:fontFamily="@font/metropolis_light"
-                android:textSize="@dimen/_10ssp"
+                android:textSize="@dimen/_8ssp"
                 android:textColor="@color/black"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>

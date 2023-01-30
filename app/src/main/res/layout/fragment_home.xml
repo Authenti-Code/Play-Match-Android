@@ -210,7 +210,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fillViewport="true"
-        android:elevation="@dimen/_5sdp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:layout_marginBottom="@dimen/_65sdp">
 
@@ -225,7 +224,7 @@
            android:layout_height="wrap_content"
            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
            tools:listitem="@layout/rv_home_list_item"
-           android:layout_marginTop="@dimen/_10sdp"/>
+           android:layout_marginTop="@dimen/_5sdp"/>
 
 
    </androidx.appcompat.widget.LinearLayoutCompat>

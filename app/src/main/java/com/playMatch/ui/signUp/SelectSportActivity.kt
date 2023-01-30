@@ -27,6 +27,7 @@ class SelectSportActivity : BaseActivity(), View.OnClickListener {
     private fun setAdapter() {
         adapter = SelectSportAdapter(list, this)
         binding.rvSports.adapter = adapter
+        list.clear()
         for (i in 1..5) {
             list.add(
                 SelectSportModel(

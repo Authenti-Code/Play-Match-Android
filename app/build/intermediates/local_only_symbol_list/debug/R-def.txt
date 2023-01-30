@@ -44,6 +44,7 @@ drawable grey_search
 drawable hi
 drawable home_bg
 drawable home_new_bg
+drawable ic_apply
 drawable ic_attachment
 drawable ic_back
 drawable ic_btn_send
@@ -69,7 +70,9 @@ drawable ic_location
 drawable ic_location_nav
 drawable ic_lock
 drawable ic_match_name
+drawable ic_menu
 drawable ic_message
+drawable ic_metro_cross
 drawable ic_more
 drawable ic_name
 drawable ic_path
@@ -91,6 +94,7 @@ drawable info
 drawable juventus
 drawable line
 drawable loginbg
+drawable match
 drawable matches_tab_bg
 drawable museum
 drawable new_dummy_profile
@@ -101,6 +105,7 @@ drawable playmatchlogo
 drawable profile
 drawable profile_bg
 drawable profile_bg_view
+drawable profile_pic
 drawable profile_sports
 drawable profilebg
 drawable rocket
@@ -131,6 +136,7 @@ drawable unselected_home_icon
 drawable unselected_profile_ic
 drawable walk
 drawable welcomescreen
+drawable your_team
 font metropolis_black
 font metropolis_blackitalic
 font metropolis_bold
@@ -149,6 +155,7 @@ font metropolis_semibold
 font metropolis_semibolditalic
 font metropolis_thin
 font metropolis_thinitalic
+id Apply
 id Continue
 id Fcv
 id Ftv
@@ -182,6 +189,7 @@ id cancel
 id cardNumber
 id cardNumber2
 id cardView
+id cardViewTv
 id chat
 id chatLay
 id chatOff
@@ -197,6 +205,7 @@ id description
 id dob
 id edit
 id editProfile
+id editSports
 id experienced
 id experiencedTv
 id experienced_check
@@ -227,6 +236,7 @@ id login
 id logo
 id logout
 id map
+id menu
 id message
 id message_time
 id mondaySlider
@@ -257,6 +267,8 @@ id rvUpcoming
 id rv_chat
 id rv_child_home
 id rv_child_sports
+id rv_edit_sports
+id rv_filter
 id rv_inbox
 id rv_light_child_sports
 id rv_nearby_matches
@@ -298,12 +310,15 @@ layout activity_add_team
 layout activity_chat
 layout activity_create_match
 layout activity_edit_profile
+layout activity_edit_sports
+layout activity_filter
 layout activity_home
 layout activity_location
 layout activity_login
 layout activity_match_details
 layout activity_match_sign_up
 layout activity_notification
+layout activity_on_map_nearby_matches
 layout activity_payment
 layout activity_select_sport
 layout activity_setting
@@ -329,6 +344,7 @@ layout rv_child_home_list_item
 layout rv_child_home_third_position_list_item
 layout rv_child_second_position_list_item
 layout rv_child_select_sport_list_item
+layout rv_filter_list_item
 layout rv_home_list_item
 layout rv_inbox_list
 layout rv_list_item_light_bg_rv_child

@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.playMatch.R
 import com.playMatch.controller.`interface`.BottomSheetListner
+import com.playMatch.controller.constant.IntentConstant
 import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.databinding.ActivityCreateMatchBinding
 import com.playMatch.ui.baseActivity.BaseActivity
@@ -17,6 +18,7 @@ import com.playMatch.ui.home.model.HomeChildModel
 import com.playMatch.ui.matches.activity.payment.PaymentActivity
 import com.playMatch.ui.matches.adapter.selectSportAdapter.SelectMatchSportAdapter
 import com.playMatch.ui.matches.adapter.selectTeamAdapter.SelectTeamAdapter
+import com.saetae.controller.sharedPrefrence.PrefData
 
 class CreateMatchActivity : BaseActivity(), View.OnClickListener,BottomSheetListner {
     private lateinit var binding: ActivityCreateMatchBinding
@@ -30,6 +32,7 @@ class CreateMatchActivity : BaseActivity(), View.OnClickListener,BottomSheetList
         super.onCreate(savedInstanceState)
         binding = ActivityCreateMatchBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        getIntentData()
         initView()
 //        adapterView()
     }
@@ -53,6 +56,12 @@ class CreateMatchActivity : BaseActivity(), View.OnClickListener,BottomSheetList
 
     }
 
+    private fun getIntentData() {
+
+        if (intent?.extras != null) {
+            type = intent.extras?.getString(PrefData.EDIT, "")
+        }
+    }
 
     override fun onClick(v: View?) {
         when (v?.id) {
@@ -60,7 +69,11 @@ class CreateMatchActivity : BaseActivity(), View.OnClickListener,BottomSheetList
                 onBackPressed()
             }
             R.id.Continue -> {
-                CommonUtils.performIntent(this,PaymentActivity::class.java)
+                if (type=="edit"){
+                    onBackPressed()
+                }else {
+                    CommonUtils.performIntent(this, PaymentActivity::class.java)
+                }
             }
             R.id.selectTeam -> {
                 selectTeamBottomSheet()
