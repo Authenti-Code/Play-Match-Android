@@ -9,6 +9,7 @@ import com.playMatch.R
 import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.databinding.ActivityUserDetailBinding
 import com.playMatch.ui.baseActivity.BaseActivity
+import com.playMatch.ui.location.activity.LocationActivity
 import java.util.*
 
 class UserDetailActivity : BaseActivity(), View.OnClickListener {
@@ -24,6 +25,7 @@ class UserDetailActivity : BaseActivity(), View.OnClickListener {
     }
     private fun initView() {
         binding.Continue.setOnClickListener(this)
+        binding.location.setOnClickListener(this)
         binding.beginner.setOnClickListener(this)
         binding.intermediate.setOnClickListener(this)
         binding.experienced.setOnClickListener(this)
@@ -32,6 +34,10 @@ class UserDetailActivity : BaseActivity(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         when (v?.id) {
+            R.id.location -> {
+                CommonUtils.performIntent(this, LocationActivity::class.java)
+            }
+
             R.id.beginner -> {
                 binding.beginnerCheck.visibility=View.VISIBLE
                 binding.intermediateCheck.visibility=View.GONE

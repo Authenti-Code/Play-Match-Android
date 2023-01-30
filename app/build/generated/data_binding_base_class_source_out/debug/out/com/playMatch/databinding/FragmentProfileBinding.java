@@ -66,10 +66,10 @@ public final class FragmentProfileBinding implements ViewBinding {
   public final AppCompatTextView Wtv;
 
   @NonNull
-  public final ImageView addTeam;
+  public final TextView date;
 
   @NonNull
-  public final TextView date;
+  public final ImageView editProfile;
 
   @NonNull
   public final TextView name;
@@ -81,6 +81,9 @@ public final class FragmentProfileBinding implements ViewBinding {
   public final RecyclerView rvStatistics;
 
   @NonNull
+  public final ImageView setting;
+
+  @NonNull
   public final TextView time;
 
   private FragmentProfileBinding(@NonNull LinearLayoutCompat rootView,
@@ -89,9 +92,9 @@ public final class FragmentProfileBinding implements ViewBinding {
       @NonNull AppCompatTextView Satv, @NonNull MaterialCardView Scv,
       @NonNull AppCompatTextView Stv, @NonNull MaterialCardView Tcv, @NonNull MaterialCardView Thcv,
       @NonNull AppCompatTextView Thtv, @NonNull AppCompatTextView Ttv,
-      @NonNull MaterialCardView Wcv, @NonNull AppCompatTextView Wtv, @NonNull ImageView addTeam,
-      @NonNull TextView date, @NonNull TextView name, @NonNull RecyclerView rvSports,
-      @NonNull RecyclerView rvStatistics, @NonNull TextView time) {
+      @NonNull MaterialCardView Wcv, @NonNull AppCompatTextView Wtv, @NonNull TextView date,
+      @NonNull ImageView editProfile, @NonNull TextView name, @NonNull RecyclerView rvSports,
+      @NonNull RecyclerView rvStatistics, @NonNull ImageView setting, @NonNull TextView time) {
     this.rootView = rootView;
     this.Fcv = Fcv;
     this.Ftv = Ftv;
@@ -107,11 +110,12 @@ public final class FragmentProfileBinding implements ViewBinding {
     this.Ttv = Ttv;
     this.Wcv = Wcv;
     this.Wtv = Wtv;
-    this.addTeam = addTeam;
     this.date = date;
+    this.editProfile = editProfile;
     this.name = name;
     this.rvSports = rvSports;
     this.rvStatistics = rvStatistics;
+    this.setting = setting;
     this.time = time;
   }
 
@@ -226,15 +230,15 @@ public final class FragmentProfileBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.addTeam;
-      ImageView addTeam = ViewBindings.findChildViewById(rootView, id);
-      if (addTeam == null) {
-        break missingId;
-      }
-
       id = R.id.date;
       TextView date = ViewBindings.findChildViewById(rootView, id);
       if (date == null) {
+        break missingId;
+      }
+
+      id = R.id.editProfile;
+      ImageView editProfile = ViewBindings.findChildViewById(rootView, id);
+      if (editProfile == null) {
         break missingId;
       }
 
@@ -256,6 +260,12 @@ public final class FragmentProfileBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.setting;
+      ImageView setting = ViewBindings.findChildViewById(rootView, id);
+      if (setting == null) {
+        break missingId;
+      }
+
       id = R.id.time;
       TextView time = ViewBindings.findChildViewById(rootView, id);
       if (time == null) {
@@ -263,8 +273,8 @@ public final class FragmentProfileBinding implements ViewBinding {
       }
 
       return new FragmentProfileBinding((LinearLayoutCompat) rootView, Fcv, Ftv, Mcv, Mtv, Sacv,
-          Satv, Scv, Stv, Tcv, Thcv, Thtv, Ttv, Wcv, Wtv, addTeam, date, name, rvSports,
-          rvStatistics, time);
+          Satv, Scv, Stv, Tcv, Thcv, Thtv, Ttv, Wcv, Wtv, date, editProfile, name, rvSports,
+          rvStatistics, setting, time);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

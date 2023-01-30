@@ -5,11 +5,13 @@ import android.app.Activity
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.databinding.RvChildHomeListItemBinding
 import com.playMatch.databinding.RvInboxListBinding
 import com.playMatch.databinding.RvListItemTeamsBinding
 import com.playMatch.databinding.RvNotificationListItemBinding
 import com.playMatch.ui.home.model.HomeChildModel
+import com.playMatch.ui.teams.activity.AddTeamActivity
 import com.saetae.controller.sharedPrefrence.PrefData
 
 class TeamsAdapter(var list: ArrayList<HomeChildModel>, var activity: Activity) : RecyclerView.Adapter<TeamsAdapter.ViewHolder>() {
@@ -49,10 +51,11 @@ class TeamsAdapter(var list: ArrayList<HomeChildModel>, var activity: Activity) 
 
 
 
-//            binding.cardView.setOnClickListener {
-//                selectedPosition=position
-//                notifyDataSetChanged()
-//            }
+            binding.edit.setOnClickListener {
+                selectedPosition=position
+                notifyDataSetChanged()
+                CommonUtils.performIntent(activity,AddTeamActivity::class.java)
+            }
         }
     }
 

@@ -13,6 +13,7 @@ import com.playMatch.databinding.FragmentProfileBinding
 import com.playMatch.ui.baseActivity.BaseActivity
 import com.playMatch.ui.home.model.HomeChildModel
 import com.playMatch.ui.inbox.adapter.InboxAdapter
+import com.playMatch.ui.profile.activity.editProfile.EditProfileActivity
 import com.playMatch.ui.profile.activity.settingActivity.SettingActivity
 import com.playMatch.ui.profile.adapter.ProfileSportsAdapter
 import com.playMatch.ui.profile.adapter.ProfileStatisticsAdapter
@@ -61,6 +62,7 @@ class ProfileFragment : Fragment(),View.OnClickListener {
     private fun initViews() {
         PrefData.setBooleanPrefs(requireActivity(), PrefData.KEY_NOTIFICATION_IS_CHAT, false)
         binding?.setting?.setOnClickListener(this)
+        binding?.editProfile?.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -68,7 +70,9 @@ class ProfileFragment : Fragment(),View.OnClickListener {
             R.id.setting->{
                 CommonUtils.performIntent(requireActivity(),SettingActivity::class.java)
             }
-
+            R.id.editProfile->{
+                CommonUtils.performIntent(requireActivity(),EditProfileActivity::class.java)
+            }
         }
     }
 

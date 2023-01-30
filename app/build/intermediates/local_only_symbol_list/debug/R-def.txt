@@ -170,6 +170,10 @@ id addTeam
 id app_bar
 id attachment
 id award
+id awayNo
+id awayNoTv
+id awayYes
+id awayYesTv
 id back
 id beginner
 id beginnerTv
@@ -185,7 +189,9 @@ id chatOn
 id checkbox
 id checkbox2
 id close
+id confirmLocation
 id createMatch
+id createTeam
 id date
 id description
 id dob
@@ -198,6 +204,7 @@ id filter
 id fitnessLevel
 id forgotPassTv
 id frameLayoutHomeMain
+id gender
 id getStarted
 id globe
 id groupOff
@@ -211,9 +218,15 @@ id intermediateTv
 id intermediate_check
 id invitedPlayers
 id invitedPlayersTv
+id kitNo
+id kitNoTv
+id kitYes
+id kitYesTv
+id location
 id login
 id logo
 id logout
+id map
 id message
 id message_time
 id mondaySlider
@@ -271,6 +284,7 @@ id toolbar
 id toolbar_layout
 id tuesdaySlider
 id upcoming_match
+id update
 id userMessage
 id userName
 id userTime
@@ -283,7 +297,9 @@ layout activity_add_profile_image
 layout activity_add_team
 layout activity_chat
 layout activity_create_match
+layout activity_edit_profile
 layout activity_home
+layout activity_location
 layout activity_login
 layout activity_match_details
 layout activity_match_sign_up

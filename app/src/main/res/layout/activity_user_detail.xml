@@ -84,6 +84,7 @@
 
 
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/location"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_35sdp"
                 android:layout_marginTop="@dimen/_10sdp"
@@ -91,12 +92,13 @@
                 app:strokeColor="@color/black_707070"
                 app:cardCornerRadius="@dimen/_8sdp">
 
-                <androidx.appcompat.widget.AppCompatEditText
+                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textColor="@color/black"
                     android:textColorHint="@color/greay_B7B7B7"
                     android:textSize="@dimen/_12ssp"
+                    android:gravity="center_vertical"
                     android:drawableStart="@drawable/ic_location"
                     android:paddingStart="@dimen/_10sdp"
                     android:hint="Location"

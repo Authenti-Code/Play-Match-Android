@@ -5,6 +5,7 @@
     <color name="black_707070">#707070</color>
     <color name="black_B7B7B7">#B7B7B7</color>
     <color name="greay_B7B7B7">#B7B7B7</color>
+    <color name="grey_color">#E4E4E4</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -29,6 +30,18 @@
     <style name="DialogTheme" parent="ThemeOverlay.Material3.MaterialCalendar.Fullscreen">
         <item name="colorAccent">@color/beige</item>
         <item name="colorPrimary">@color/black</item>
+    </style>
+    <style name="SCBSwitch" parent="Theme.AppCompat.Light">
+        
+        <item name="colorControlActivated">@color/red_F95047</item>
+
+        
+        <item name="colorSwitchThumbNormal">#f1f1f1
+        </item>
+
+        
+        <item name="android:colorForeground">#42221f1f
+        </item>
     </style>
     <style name="Theme.PlayMatch" parent="Theme.MaterialComponents.Light.NoActionBar">
         
