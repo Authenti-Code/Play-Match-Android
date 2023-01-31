@@ -7,11 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.playMatch.R
 import com.playMatch.controller.utils.CommonUtils
-import com.playMatch.databinding.FragmentInboxBinding
 import com.playMatch.databinding.FragmentTeamsBinding
 import com.playMatch.ui.baseActivity.BaseActivity
 import com.playMatch.ui.home.model.HomeChildModel
-import com.playMatch.ui.inbox.adapter.InboxAdapter
 import com.playMatch.ui.teams.activity.AddTeamActivity
 import com.playMatch.ui.teams.adapter.TeamsAdapter
 import com.saetae.controller.sharedPrefrence.PrefData
@@ -54,7 +52,7 @@ class TeamsFragment : Fragment(),View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.addTeam -> {
-       CommonUtils?.performIntent(requireActivity(),AddTeamActivity::class.java)
+       CommonUtils.performIntent(requireActivity(),AddTeamActivity::class.java)
             }
         }
     }

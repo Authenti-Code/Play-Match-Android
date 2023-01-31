@@ -68,7 +68,8 @@
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/new_dummy_profile"/>
+                android:scaleType="fitXY"
+                android:src="@drawable/my_image"/>
         </androidx.cardview.widget.CardView>
 
         <androidx.appcompat.widget.LinearLayoutCompat

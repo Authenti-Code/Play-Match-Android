@@ -1,5 +1,6 @@
 package com.playMatch.ui.home.activity
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -26,6 +27,10 @@ class FilterActivity : BaseActivity(), View.OnClickListener {
     private fun initView() {
         binding.back.setOnClickListener(this)
         binding.Apply.setOnClickListener(this)
+        binding.sportsTv.setOnClickListener(this)
+        binding.abilityTv.setOnClickListener(this)
+        binding.distanceTV.setOnClickListener(this)
+        binding.genderTv.setOnClickListener(this)
     }
 
     private fun adapterView() {
@@ -50,6 +55,31 @@ class FilterActivity : BaseActivity(), View.OnClickListener {
             }
             R.id.Apply -> {
                 onBackPressed()
+            }
+
+            R.id.sportsTv -> {
+            binding.sportsTv.setBackgroundColor(Color.WHITE)
+            binding.abilityTv.setBackgroundColor(Color.parseColor("#F1F1F1"))
+            binding.distanceTV.setBackgroundColor(Color.parseColor("#F1F1F1"))
+            binding.genderTv.setBackgroundColor(Color.parseColor("#F1F1F1"))
+            }
+            R.id.abilityTv -> {
+            binding.abilityTv.setBackgroundColor(Color.WHITE)
+            binding.sportsTv.setBackgroundColor(Color.parseColor("#F1F1F1"))
+            binding.distanceTV.setBackgroundColor(Color.parseColor("#F1F1F1"))
+            binding.genderTv.setBackgroundColor(Color.parseColor("#F1F1F1"))
+            }
+            R.id.distanceTV -> {
+            binding.distanceTV.setBackgroundColor(Color.WHITE)
+            binding.sportsTv.setBackgroundColor(Color.parseColor("#F1F1F1"))
+            binding.abilityTv.setBackgroundColor(Color.parseColor("#F1F1F1"))
+            binding.genderTv.setBackgroundColor(Color.parseColor("#F1F1F1"))
+            }
+            R.id.genderTv -> {
+            binding.genderTv.setBackgroundColor(Color.WHITE)
+            binding.sportsTv.setBackgroundColor(Color.parseColor("#F1F1F1"))
+            binding.abilityTv.setBackgroundColor(Color.parseColor("#F1F1F1"))
+            binding.distanceTV.setBackgroundColor(Color.parseColor("#F1F1F1"))
             }
         }
     }

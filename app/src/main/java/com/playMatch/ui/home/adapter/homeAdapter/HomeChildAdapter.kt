@@ -87,7 +87,4 @@ class HomeChildAdapter(var list: ArrayList<HomeChildModel>, var activity: Activi
 
         }, 100)
     }
-
-
-
 }

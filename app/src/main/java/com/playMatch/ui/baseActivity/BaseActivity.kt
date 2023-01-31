@@ -45,6 +45,8 @@ import com.google.android.material.snackbar.Snackbar
 import com.playMatch.R
 import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.ui.home.activity.HomeActivity
+import com.playMatch.ui.home.activity.OnMapNearbyMatchesActivity
+import com.playMatch.ui.location.activity.LocationActivity
 import java.io.File
 import java.io.IOException
 import java.text.ParseException
@@ -468,8 +470,11 @@ open class BaseActivity : AppCompatActivity() {
                     Log.e("LiveLocationCurrent", "getLastLocation: $latitude $longitude")
                     Log.e("LiveLocationCurrent", "getLastLocation: $latitude $longitude")
                     when (activity) {
-                        is HomeActivity -> {
-                            activity.getData()
+                        is OnMapNearbyMatchesActivity -> {
+                            activity.setUpMap()
+                        }
+                        is LocationActivity-> {
+                            activity.setUpMap()
                         }
 
                     }

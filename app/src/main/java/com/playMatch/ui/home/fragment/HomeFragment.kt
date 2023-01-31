@@ -33,7 +33,6 @@ class HomeFragment : Fragment(),View.OnClickListener {
 
     private fun initViews(root: CoordinatorLayout) {
         setAdapters()
-
         binding?.notification?.setOnClickListener(this)
         binding?.globe?.setOnClickListener(this)
 

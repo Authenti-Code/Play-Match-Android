@@ -34,7 +34,6 @@ class LocationActivity : BaseActivity(), View.OnClickListener, OnMapReadyCallbac
             requestPermissions()
         } else {
             locationRequest()
-            setUpMap()
         }
         initView()
 
@@ -65,11 +64,11 @@ class LocationActivity : BaseActivity(), View.OnClickListener, OnMapReadyCallbac
         }
     }
 
-    private fun setUpMap() {
+    internal fun setUpMap() {
 if (longitude!==null&&latitude!==null) {
     val latLngOrigin = LatLng(latitude!!, longitude!!) // Ayala
 
-    this.map!!.moveCamera(CameraUpdateFactory.newLatLngZoom(latLngOrigin, 12f))
+    this.map!!.moveCamera(CameraUpdateFactory.newLatLngZoom(latLngOrigin, 15f))
     if (ActivityCompat.checkSelfPermission(
             this,
             Manifest.permission.ACCESS_FINE_LOCATION
@@ -88,15 +87,11 @@ if (longitude!==null&&latitude!==null) {
         map?.moveCamera(
             CameraUpdateFactory.newLatLngZoom(
                 currentLatLong,
-                12f
+                15f
             )
         )
         map?.addMarker(
-            MarkerOptions().position(currentLatLong)
-                .icon(
-                    getBitmapDescriptorFromVector(this, R.drawable.pin)
-                ).title("I am here")
-        )
+            MarkerOptions().position(currentLatLong).title("I am here!") )
     }
 
     private fun getBitmapDescriptorFromVector(
@@ -116,6 +111,6 @@ if (longitude!==null&&latitude!==null) {
         return BitmapDescriptorFactory.fromBitmap(bitmap)
     }
     override fun onMarkerClick(p0: Marker): Boolean {
-        return true
+        return false
     }
 }

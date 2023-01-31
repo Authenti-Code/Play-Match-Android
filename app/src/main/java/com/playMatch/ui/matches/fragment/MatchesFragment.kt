@@ -102,7 +102,7 @@ class MatchesFragment : Fragment(),View.OnClickListener {
         for (i in 1..5) {
             list.add(
                 HomeChildModel(
-                    R.drawable.ic_upcoming_matches,"Rossy Alan"
+                    R.drawable.your_team,"T20 League Match"
                 )
             )
 
@@ -114,7 +114,7 @@ class MatchesFragment : Fragment(),View.OnClickListener {
         for (i in 1..5) {
             list.add(
                 HomeChildModel(
-                    R.drawable.ic_league_match,"Rossy Alan"
+                    R.drawable.match,"T20 League Match"
                 )
             )
 

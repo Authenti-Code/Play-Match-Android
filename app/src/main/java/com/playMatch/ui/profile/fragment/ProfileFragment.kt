@@ -8,27 +8,15 @@ import android.view.View
 import android.view.ViewGroup
 import com.playMatch.R
 import com.playMatch.controller.utils.CommonUtils
-import com.playMatch.databinding.FragmentInboxBinding
 import com.playMatch.databinding.FragmentProfileBinding
 import com.playMatch.ui.baseActivity.BaseActivity
 import com.playMatch.ui.home.model.HomeChildModel
-import com.playMatch.ui.inbox.adapter.InboxAdapter
 import com.playMatch.ui.profile.activity.editProfile.EditProfileActivity
 import com.playMatch.ui.profile.activity.settingActivity.SettingActivity
 import com.playMatch.ui.profile.adapter.ProfileSportsAdapter
 import com.playMatch.ui.profile.adapter.ProfileStatisticsAdapter
 import com.saetae.controller.sharedPrefrence.PrefData
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ProfileFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ProfileFragment : Fragment(),View.OnClickListener {
     private var binding: FragmentProfileBinding? = null
     private var profileSportsAdapter: ProfileSportsAdapter? = null

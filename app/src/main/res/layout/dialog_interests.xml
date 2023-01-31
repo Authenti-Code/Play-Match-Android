@@ -199,7 +199,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="fitXY"
-                        app:srcCompat="@drawable/ic_upcoming_matches"/>
+                        app:srcCompat="@drawable/your_team"/>
                 </androidx.cardview.widget.CardView>
 
                 <androidx.appcompat.widget.LinearLayoutCompat
@@ -357,7 +357,7 @@
                 android:orientation="horizontal">
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="@dimen/_100sdp"
-                    android:layout_height="@dimen/_25sdp"
+                    android:layout_height="@dimen/_20sdp"
                     android:layout_marginEnd="@dimen/_20sdp"
                     app:cardBackgroundColor="#6B8468"
                     app:cardCornerRadius="@dimen/_8sdp">
@@ -369,7 +369,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:textColor="@color/white"
-                        android:textSize="@dimen/_10ssp"
+                        android:textSize="@dimen/_8ssp"
                         android:gravity="center"
                         android:text="Accept"
                         android:backgroundTint="@color/white"
@@ -380,7 +380,7 @@
 
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="@dimen/_100sdp"
-                    android:layout_height="@dimen/_25sdp"
+                    android:layout_height="@dimen/_20sdp"
                     app:cardBackgroundColor="@color/red_E65D50"
                     android:layout_marginEnd="@dimen/_10sdp"
                     app:cardCornerRadius="@dimen/_5sdp">
@@ -392,7 +392,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:textColor="@color/white"
-                        android:textSize="@dimen/_10ssp"
+                        android:textSize="@dimen/_8ssp"
                         android:gravity="center"
                         android:text="Reject"
                         android:backgroundTint="@color/white"

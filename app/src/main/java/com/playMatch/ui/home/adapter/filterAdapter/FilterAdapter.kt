@@ -28,7 +28,7 @@ class FilterAdapter(var list: ArrayList<HomeChildModel>, var activity: Activity)
     private val USER = 0
     private val IMAGE = 1
 
-    private  var selectedPosition=-1
+    private  var selectedPosition=0
     inner class ViewHolder(val binding: RvFilterListItemBinding) : RecyclerView.ViewHolder(binding.root)
 
 
@@ -49,10 +49,12 @@ class FilterAdapter(var list: ArrayList<HomeChildModel>, var activity: Activity)
             val ItemsviewModel = list[position]
             val id= PrefData.getStringPrefs(activity, PrefData.CHECK_BOX,"")
 
-            if (position==0){
+            if (position==0 && selectedPosition==position){
+                binding.cardViewTv.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_metro_cross, 0);
+            }else if (selectedPosition==position){
                 binding.cardViewTv.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_metro_cross, 0);
             }else{
-                binding.cardViewTv.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+                binding.cardViewTv.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0)
             }
 
 

@@ -53,7 +53,6 @@ class HomeParentAdapter(var list: ArrayList<HomeParentModel>, var activity: Acti
                             R.drawable.match,"League Match"
                         )
                     )
-
                 }
             }
             else if (position==1){

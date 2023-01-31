@@ -33,7 +33,7 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_25sdp"
 
             android:orientation="horizontal">
 
@@ -41,7 +41,6 @@
                 android:layout_width="@dimen/_100sdp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginVertical="@dimen/_5sdp"
                 app:cardCornerRadius="@dimen/_8sdp">
 
                 <androidx.appcompat.widget.AppCompatImageView
@@ -49,7 +48,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="fitXY"
-                    app:srcCompat="@drawable/ic_upcoming_matches"/>
+                    app:srcCompat="@drawable/match"/>
             </androidx.cardview.widget.CardView>
 
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -61,7 +60,6 @@
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_5sdp"
                     android:orientation="horizontal">
 
                     <androidx.appcompat.widget.LinearLayoutCompat
@@ -161,6 +159,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_1sdp"
                     android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
                     android:background="@drawable/line"/>
 
                 <LinearLayout
@@ -170,7 +169,7 @@
                     android:orientation="horizontal">
                     <com.google.android.material.card.MaterialCardView
                         android:layout_width="@dimen/_70sdp"
-                        android:layout_height="@dimen/_20sdp"
+                        android:layout_height="@dimen/_15sdp"
                         android:layout_marginEnd="@dimen/_10sdp"
                         app:cardBackgroundColor="@color/red_E65D50"
                         app:cardCornerRadius="@dimen/_5sdp">
@@ -193,7 +192,7 @@
 
                     <com.google.android.material.card.MaterialCardView
                         android:layout_width="@dimen/_70sdp"
-                        android:layout_height="@dimen/_20sdp"
+                        android:layout_height="@dimen/_15sdp"
                         app:strokeWidth="@dimen/_1sdp"
                         app:strokeColor="@color/red_E65D50"
                         android:layout_marginEnd="@dimen/_10sdp"
@@ -224,7 +223,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_25sdp"
         android:layout_marginBottom="@dimen/_20sdp"
         android:gravity="center"
         android:orientation="horizontal">
