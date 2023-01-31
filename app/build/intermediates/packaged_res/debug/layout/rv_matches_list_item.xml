@@ -30,7 +30,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="fitXY"
-                    app:srcCompat="@drawable/ic_upcoming_matches"/>
+                    app:srcCompat="@drawable/your_team"/>
             </androidx.cardview.widget.CardView>
 
             <androidx.appcompat.widget.LinearLayoutCompat

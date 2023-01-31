@@ -80,6 +80,14 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-39:\\layout\\rv_list_item_teams.xml"
     },
     {
+        "merged": "com.playMatch.app-mergeDebugResources-36:/layout/fragment_profile.xml",
+        "source": "com.playMatch.app-main-39:/layout/fragment_profile.xml"
+    },
+    {
+        "merged": "com.playMatch.app-mergeDebugResources-36:/layout/activity_edit_profile.xml",
+        "source": "com.playMatch.app-main-39:/layout/activity_edit_profile.xml"
+    },
+    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-mergeDebugResources-36:\\layout\\rv_child_home_list_item.xml",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-39:\\layout\\rv_child_home_list_item.xml"
     },
@@ -146,10 +154,6 @@
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-mergeDebugResources-36:\\layout\\activity_filter.xml",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-39:\\layout\\activity_filter.xml"
-    },
-    {
-        "merged": "com.playMatch.app-mergeDebugResources-36:/layout/rv_filter_list_item.xml",
-        "source": "com.playMatch.app-main-39:/layout/rv_filter_list_item.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-mergeDebugResources-36:\\layout\\activity_on_map_nearby_matches.xml",

@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
@@ -25,17 +26,34 @@ public final class ActivityFilterBinding implements ViewBinding {
   public final CardView Apply;
 
   @NonNull
+  public final TextView abilityTv;
+
+  @NonNull
   public final ImageView back;
+
+  @NonNull
+  public final TextView distanceTV;
+
+  @NonNull
+  public final TextView genderTv;
 
   @NonNull
   public final RecyclerView rvFilter;
 
+  @NonNull
+  public final TextView sportsTv;
+
   private ActivityFilterBinding(@NonNull FrameLayout rootView, @NonNull CardView Apply,
-      @NonNull ImageView back, @NonNull RecyclerView rvFilter) {
+      @NonNull TextView abilityTv, @NonNull ImageView back, @NonNull TextView distanceTV,
+      @NonNull TextView genderTv, @NonNull RecyclerView rvFilter, @NonNull TextView sportsTv) {
     this.rootView = rootView;
     this.Apply = Apply;
+    this.abilityTv = abilityTv;
     this.back = back;
+    this.distanceTV = distanceTV;
+    this.genderTv = genderTv;
     this.rvFilter = rvFilter;
+    this.sportsTv = sportsTv;
   }
 
   @Override
@@ -71,9 +89,27 @@ public final class ActivityFilterBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.abilityTv;
+      TextView abilityTv = ViewBindings.findChildViewById(rootView, id);
+      if (abilityTv == null) {
+        break missingId;
+      }
+
       id = R.id.back;
       ImageView back = ViewBindings.findChildViewById(rootView, id);
       if (back == null) {
+        break missingId;
+      }
+
+      id = R.id.distanceTV;
+      TextView distanceTV = ViewBindings.findChildViewById(rootView, id);
+      if (distanceTV == null) {
+        break missingId;
+      }
+
+      id = R.id.genderTv;
+      TextView genderTv = ViewBindings.findChildViewById(rootView, id);
+      if (genderTv == null) {
         break missingId;
       }
 
@@ -83,7 +119,14 @@ public final class ActivityFilterBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityFilterBinding((FrameLayout) rootView, Apply, back, rvFilter);
+      id = R.id.sportsTv;
+      TextView sportsTv = ViewBindings.findChildViewById(rootView, id);
+      if (sportsTv == null) {
+        break missingId;
+      }
+
+      return new ActivityFilterBinding((FrameLayout) rootView, Apply, abilityTv, back, distanceTV,
+          genderTv, rvFilter, sportsTv);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

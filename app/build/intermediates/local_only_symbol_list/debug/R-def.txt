@@ -9,6 +9,7 @@ color black
 color black_707070
 color black_B7B7B7
 color greay_B7B7B7
+color grey_F1F1F1
 color grey_color
 color purple_200
 color purple_500
@@ -76,6 +77,7 @@ drawable ic_metro_cross
 drawable ic_more
 drawable ic_name
 drawable ic_path
+drawable ic_pin_team
 drawable ic_plus
 drawable ic_search_without_bg
 drawable ic_setting_about_us
@@ -97,6 +99,7 @@ drawable loginbg
 drawable match
 drawable matches_tab_bg
 drawable museum
+drawable my_image
 drawable new_dummy_profile
 drawable or
 drawable payment_card_view
@@ -171,6 +174,7 @@ id Thtv
 id Ttv
 id Wcv
 id Wtv
+id abilityTv
 id accepted
 id acceptedTv
 id addTeam
@@ -202,6 +206,7 @@ id createMatch
 id createTeam
 id date
 id description
+id distanceTV
 id dob
 id edit
 id editProfile
@@ -214,6 +219,7 @@ id fitnessLevel
 id forgotPassTv
 id frameLayoutHomeMain
 id gender
+id genderTv
 id getStarted
 id globe
 id groupOff
@@ -288,6 +294,7 @@ id setting
 id showInterest
 id signupTv
 id sportName
+id sportsTv
 id streetMap
 id text_sign
 id time
