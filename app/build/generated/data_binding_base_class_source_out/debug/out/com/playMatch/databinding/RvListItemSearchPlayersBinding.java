@@ -7,9 +7,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.card.MaterialCardView;
 import com.playMatch.R;
 import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.NullPointerException;
@@ -21,6 +23,12 @@ public final class RvListItemSearchPlayersBinding implements ViewBinding {
   private final LinearLayoutCompat rootView;
 
   @NonNull
+  public final MaterialCardView cardView;
+
+  @NonNull
+  public final AppCompatTextView cardViewTv;
+
+  @NonNull
   public final TextView date;
 
   @NonNull
@@ -30,8 +38,11 @@ public final class RvListItemSearchPlayersBinding implements ViewBinding {
   public final CircleImageView profileImage;
 
   private RvListItemSearchPlayersBinding(@NonNull LinearLayoutCompat rootView,
+      @NonNull MaterialCardView cardView, @NonNull AppCompatTextView cardViewTv,
       @NonNull TextView date, @NonNull TextView name, @NonNull CircleImageView profileImage) {
     this.rootView = rootView;
+    this.cardView = cardView;
+    this.cardViewTv = cardViewTv;
     this.date = date;
     this.name = name;
     this.profileImage = profileImage;
@@ -64,6 +75,18 @@ public final class RvListItemSearchPlayersBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.cardView;
+      MaterialCardView cardView = ViewBindings.findChildViewById(rootView, id);
+      if (cardView == null) {
+        break missingId;
+      }
+
+      id = R.id.cardViewTv;
+      AppCompatTextView cardViewTv = ViewBindings.findChildViewById(rootView, id);
+      if (cardViewTv == null) {
+        break missingId;
+      }
+
       id = R.id.date;
       TextView date = ViewBindings.findChildViewById(rootView, id);
       if (date == null) {
@@ -82,8 +105,8 @@ public final class RvListItemSearchPlayersBinding implements ViewBinding {
         break missingId;
       }
 
-      return new RvListItemSearchPlayersBinding((LinearLayoutCompat) rootView, date, name,
-          profileImage);
+      return new RvListItemSearchPlayersBinding((LinearLayoutCompat) rootView, cardView, cardViewTv,
+          date, name, profileImage);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

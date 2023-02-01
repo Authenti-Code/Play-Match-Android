@@ -19,17 +19,52 @@
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_width="@dimen/_70sdp"
                 android:layout_height="@dimen/_60sdp"
-                android:elevation="@dimen/_5sdp"
+                android:elevation="0dp"
                 android:src="@drawable/new_dummy_profile"
                 app:civ_border_color="@color/red_F95047"
                 app:civ_border_width="@dimen/_1sdp" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="@dimen/_5sdp"
                 android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    app:cardElevation="0dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    app:strokeWidth="@dimen/_1sdp"
+                    app:strokeColor="@color/black_707070"
+                    app:cardCornerRadius="@dimen/_3sdp">
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/cardViewTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/black_707070"
+                        android:drawableStart="@drawable/ic_plus"
+                        android:paddingStart="@dimen/_5sdp"
+                        android:textSize="@dimen/_10ssp"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:text="Invite"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:backgroundTint="@color/white"
+                        android:fontFamily="@font/metropolis_light"/>
+
+
+                </com.google.android.material.card.MaterialCardView>
 
                 <TextView
                     android:id="@+id/name"
@@ -41,6 +76,8 @@
                     android:fontFamily="@font/metropolis_semibold"
                     android:textSize="@dimen/_12ssp"
                     android:textColor="@color/black"/>
+
+                </RelativeLayout>
 
                 <TextView
                     android:id="@+id/date"
@@ -59,11 +96,11 @@
                     >
 
                     <com.google.android.material.card.MaterialCardView
-                        android:layout_width="@dimen/_70sdp"
+                        android:layout_width="@dimen/_60sdp"
                         android:layout_height="@dimen/_15sdp"
                         android:layout_marginEnd="@dimen/_10sdp"
                         app:cardElevation="0dp"
-                        app:cardBackgroundColor="#66B7B7B7"
+                        app:cardBackgroundColor="@color/grey_66B7B7B7"
                         app:cardCornerRadius="@dimen/_3sdp">
 
 
@@ -85,7 +122,6 @@
                         android:layout_height="@dimen/_15sdp"
                         app:cardElevation="0dp"
                        app:cardBackgroundColor="@color/red_F95047"
-                        android:layout_marginEnd="@dimen/_10sdp"
                         app:cardCornerRadius="@dimen/_3sdp">
 
 
@@ -112,32 +148,6 @@
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="@dimen/_60sdp"
-                android:layout_height="@dimen/_15sdp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="@dimen/_10sdp"
-                app:strokeWidth="@dimen/_1sdp"
-                app:strokeColor="@color/black_707070"
-                app:cardCornerRadius="@dimen/_3sdp">
-
-
-
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textColor="@color/black_707070"
-                    android:drawableStart="@drawable/ic_plus"
-                    android:paddingStart="@dimen/_10sdp"
-                    android:textSize="@dimen/_10ssp"
-                    android:drawablePadding="@dimen/_5sdp"
-                    android:text="invite"
-                    android:backgroundTint="@color/white"
-                    android:fontFamily="@font/metropolis_light"/>
-
-
-            </com.google.android.material.card.MaterialCardView>
 
 
 

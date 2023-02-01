@@ -49,11 +49,15 @@ public final class ActivityUserDetailBinding implements ViewBinding {
   @NonNull
   public final MaterialCardView location;
 
+  @NonNull
+  public final AppCompatTextView name;
+
   private ActivityUserDetailBinding(@NonNull FrameLayout rootView, @NonNull CardView Continue,
       @NonNull MaterialCardView beginner, @NonNull ImageView beginnerCheck,
       @NonNull AppCompatTextView dob, @NonNull MaterialCardView experienced,
       @NonNull ImageView experiencedCheck, @NonNull MaterialCardView intermediate,
-      @NonNull ImageView intermediateCheck, @NonNull MaterialCardView location) {
+      @NonNull ImageView intermediateCheck, @NonNull MaterialCardView location,
+      @NonNull AppCompatTextView name) {
     this.rootView = rootView;
     this.Continue = Continue;
     this.beginner = beginner;
@@ -64,6 +68,7 @@ public final class ActivityUserDetailBinding implements ViewBinding {
     this.intermediate = intermediate;
     this.intermediateCheck = intermediateCheck;
     this.location = location;
+    this.name = name;
   }
 
   @Override
@@ -147,9 +152,15 @@ public final class ActivityUserDetailBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.name;
+      AppCompatTextView name = ViewBindings.findChildViewById(rootView, id);
+      if (name == null) {
+        break missingId;
+      }
+
       return new ActivityUserDetailBinding((FrameLayout) rootView, Continue, beginner,
           beginnerCheck, dob, experienced, experiencedCheck, intermediate, intermediateCheck,
-          location);
+          location, name);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
