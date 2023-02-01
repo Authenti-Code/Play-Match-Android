@@ -4,13 +4,11 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_marginVertical="@dimen/_10sdp"
     android:orientation="horizontal">
 
     <CheckBox
         android:id="@+id/checkbox"
         android:layout_gravity="center"
-        android:layout_marginStart="@dimen/_10sdp"
         android:layout_width="@dimen/_11sdp"
         android:layout_height="@dimen/_20sdp"
         android:buttonTint="@color/red_F95047"
@@ -44,7 +42,7 @@
             android:textColor="@color/black"
             android:fontFamily="@font/metropolis_light"
             android:text="Cricket"
-            android:textSize="@dimen/_14ssp"/>
+            android:textSize="@dimen/_12ssp"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:visibility="gone"

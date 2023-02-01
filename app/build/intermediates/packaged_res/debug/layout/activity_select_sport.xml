@@ -114,7 +114,7 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:textColor="@color/black"
                 android:fontFamily="@font/metropolis_regular"
                 android:text="Select sports and ability levels. "
@@ -122,10 +122,10 @@
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|end"
-                android:src="@drawable/search"
-                android:scaleType="center"/>
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom|end"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:src="@drawable/search" />
 
         </FrameLayout>
 

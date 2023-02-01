@@ -157,7 +157,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
                     android:layout_marginVertical="@dimen/_10sdp"                    android:fontFamily="@font/metropolis_light"
-                    android:text="Select your fitness level."
+                    android:text="Select your fitness level"
                     android:textSize="@dimen/_13ssp"/>
 
                 <com.google.android.material.card.MaterialCardView

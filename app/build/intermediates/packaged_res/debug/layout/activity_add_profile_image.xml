@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginHorizontal="@dimen/_20sdp"
-        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_30sdp"
         android:orientation="vertical">
     <FrameLayout
         android:layout_width="match_parent"
@@ -20,8 +20,8 @@
     <ImageView
         android:id="@+id/back"
         android:layout_width="@dimen/_20sdp"
-        android:layout_height="@dimen/_20sdp"
-        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
         android:src="@drawable/ic_back"/>
 
     <TextView
@@ -29,9 +29,8 @@
         android:layout_height="wrap_content"
         android:text="Profile Image"
         android:textColor="@color/black"
-        android:layout_marginTop="@dimen/_20sdp"
         android:layout_marginStart="@dimen/_10sdp"
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="center_horizontal|bottom"
         android:textSize="@dimen/_14ssp"
         android:fontFamily="@font/metropolis_semibold"/>
 

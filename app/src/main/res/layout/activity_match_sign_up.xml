@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginHorizontal="@dimen/_20sdp"
-        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_30sdp"
         android:orientation="vertical">
     <FrameLayout
         android:layout_width="match_parent"
@@ -18,17 +18,16 @@
 
         <ImageView
             android:id="@+id/back"
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_20sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:src="@drawable/ic_back"/>
+            android:layout_width="20dp"
+            android:layout_gravity="bottom"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Availability"
             android:textColor="@color/black"
-            android:layout_marginTop="@dimen/_20sdp"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_gravity="center_horizontal"
             android:textSize="@dimen/_14ssp"
@@ -54,7 +53,6 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_5sdp"
                 android:layout_gravity="center_vertical|end"
                 android:src="@drawable/skip"
                 android:scaleType="center"/>
@@ -65,7 +63,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/black_B7B7B7"
-            android:fontFamily="@font/metropolis_thinitalic"
+            android:fontFamily="@font/metropolis_thin"
             android:text="You can edit this in profile settings later. "
             android:textSize="@dimen/_10ssp"/>
 
@@ -376,12 +374,11 @@
                 app:trackColorInactive="#707070"
                 android:scrollbarAlwaysDrawHorizontalTrack="false"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="0dp"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_marginTop="@dimen/_10sdp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -428,7 +425,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
         android:layout_gravity="bottom"
         android:background="@color/white"
         android:orientation="vertical">
@@ -439,18 +436,20 @@
         android:orientation="horizontal">
 
         <CheckBox
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/_25sdp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
             android:buttonTint="@color/red_F95047"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:gravity="center_vertical"
             android:textColor="@color/black"
             android:fontFamily="@font/metropolis_light"
-            android:text="Receive push notifications when teams are searching
-for a player."
-            android:textSize="@dimen/_11ssp"/>
+            android:text="Receive push notifications when teams are searching for a player."
+            android:textSize="@dimen/_10ssp"/>
 
     </LinearLayout>
 

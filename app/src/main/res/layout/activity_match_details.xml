@@ -145,10 +145,10 @@
                             <ImageView
                                 android:id="@+id/edit"
                                 android:visibility="visible"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_15sdp"
+                                android:layout_marginTop="@dimen/_3sdp"
                                 android:src="@drawable/edit_profile"
-                                android:layout_marginTop="@dimen/_5sdp"
                                 android:layout_marginEnd="@dimen/_10sdp"
                                 android:layout_gravity="end"/>
 

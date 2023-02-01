@@ -226,7 +226,7 @@
                 android:textColor="#D66657"
                 android:textSize="@dimen/_8ssp"
                 android:gravity="center"
-                android:text="Begginer"
+                android:text="Beginner"
                 android:backgroundTint="@color/white"
                 android:fontFamily="@font/metropolis_light"/>
 
@@ -319,7 +319,7 @@
                 android:layout_height="match_parent"
                 android:textColor="@color/red_F95047"
                 android:gravity="center"
-                android:text="yes"
+                android:text="Yes"
                 android:textSize="@dimen/_8sdp"
                 android:backgroundTint="@color/white"
                 android:fontFamily="@font/metropolis_light"/>
@@ -387,7 +387,7 @@
                 android:layout_height="match_parent"
                 android:textColor="@color/red_F95047"
                 android:gravity="center"
-                android:text="yes"
+                android:text="Yes"
                 android:textSize="@dimen/_8sdp"
                 android:backgroundTint="@color/white"
                 android:fontFamily="@font/metropolis_light"/>
@@ -672,7 +672,6 @@
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_marginTop="@dimen/_10sdp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/_15sdp"
