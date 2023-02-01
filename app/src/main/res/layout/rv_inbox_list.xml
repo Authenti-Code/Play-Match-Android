@@ -106,7 +106,7 @@
             android:layout_gravity="end"
             android:layout_marginEnd="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_15sdp"
-            app:cardBackgroundColor="@color/greay_B7B7B7"
+            app:cardBackgroundColor="@color/grey_66B7B7B7"
             app:cardCornerRadius="@dimen/_3sdp">
 
 

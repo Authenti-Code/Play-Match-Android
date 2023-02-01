@@ -108,10 +108,6 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-39:\\layout\\rv_matches_list_item.xml"
     },
     {
-        "merged": "com.playMatch.app-mergeDebugResources-36:/layout/activity_match_details.xml",
-        "source": "com.playMatch.app-main-39:/layout/activity_match_details.xml"
-    },
-    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-mergeDebugResources-36:\\layout\\fragment_matches.xml",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-39:\\layout\\fragment_matches.xml"
     },
@@ -206,6 +202,10 @@
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-mergeDebugResources-36:\\layout\\custom_progressbar.xml",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-main-39:\\layout\\custom_progressbar.xml"
+    },
+    {
+        "merged": "com.playMatch.app-mergeDebugResources-36:/layout/activity_add_profile_image.xml",
+        "source": "com.playMatch.app-main-39:/layout/activity_add_profile_image.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.4\\com.playMatch.app-mergeDebugResources-36:\\layout\\activity_splash.xml",

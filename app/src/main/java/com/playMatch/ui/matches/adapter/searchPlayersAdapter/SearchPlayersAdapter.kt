@@ -2,9 +2,11 @@ package com.playMatch.ui.matches.adapter.searchPlayersAdapter
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.playMatch.R
 import com.playMatch.databinding.RvListItemSearchPlayersBinding
 import com.playMatch.databinding.RvNotificationListItemBinding
 import com.playMatch.ui.home.model.HomeChildModel
@@ -36,6 +38,8 @@ class SearchPlayersAdapter(var list: ArrayList<HomeChildModel>, var activity: Ac
         holder.apply {
             val ItemsviewModel = list[position]
             val id= PrefData.getStringPrefs(activity, PrefData.CHECK_BOX,"")
+//            binding.cardViewTv.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_plus, 0, 0, 0);
+
 
 //            if (id=="1"){
 //                binding.cardView.setCardBackgroundColor(Color.parseColor("#F95047"))
@@ -47,10 +51,14 @@ class SearchPlayersAdapter(var list: ArrayList<HomeChildModel>, var activity: Ac
 
 
 
-//            binding.cardView.setOnClickListener {
-//                selectedPosition=position
-//                notifyDataSetChanged()
-//            }
+            binding.cardView.setOnClickListener {
+                selectedPosition=position
+                notifyDataSetChanged()
+                binding.cardViewTv.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_grey_check, 0, 0, 0);
+                binding.cardView.setCardBackgroundColor(Color.parseColor("#66B7B7B7"))
+                binding.cardViewTv.text="Invited"
+                binding.cardView.strokeColor=(Color.parseColor("#66B7B7B7"))
+            }
         }
     }
 

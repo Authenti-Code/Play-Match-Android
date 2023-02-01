@@ -151,7 +151,6 @@
                                 android:src="@drawable/edit_profile"
                                 android:layout_marginEnd="@dimen/_10sdp"
                                 android:layout_gravity="end"/>
-
                         </FrameLayout>
 
 
@@ -263,8 +262,9 @@
             android:layout_marginStart="@dimen/_5sdp"
             android:layout_marginEnd="@dimen/_10sdp"
             app:strokeWidth="@dimen/_1sdp"
-            app:strokeColor="@color/black_707070"
-            app:cardBackgroundColor="@color/black_B7B7B7"
+            app:strokeColor="#66707070"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="#66B7B7B7"
             app:cardCornerRadius="@dimen/_3sdp">
 
 
@@ -290,7 +290,8 @@
             android:layout_toEndOf="@id/searchPlayers"
             android:layout_height="@dimen/_20sdp"
             app:strokeWidth="@dimen/_1sdp"
-            app:strokeColor="@color/black_707070"
+            app:cardElevation="0dp"
+            app:strokeColor="#66707070"
             android:layout_marginEnd="@dimen/_10sdp"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="@dimen/_3sdp">
@@ -318,13 +319,11 @@
             android:layout_toEndOf="@id/invitedPlayers"
             android:layout_height="@dimen/_20sdp"
             app:strokeWidth="@dimen/_1sdp"
-            app:strokeColor="@color/black_707070"
+            app:strokeColor="#66707070"
+            app:cardElevation="0dp"
             android:layout_marginEnd="@dimen/_10sdp"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="@dimen/_3sdp">
-
-
-
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/acceptedTv"

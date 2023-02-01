@@ -46,6 +46,12 @@ public final class ActivityPaymentBinding implements ViewBinding {
   public final CheckBox checkbox2;
 
   @NonNull
+  public final AppCompatTextView hideNumber;
+
+  @NonNull
+  public final AppCompatTextView hideNumber2;
+
+  @NonNull
   public final CardView pay;
 
   @NonNull
@@ -57,8 +63,9 @@ public final class ActivityPaymentBinding implements ViewBinding {
   private ActivityPaymentBinding(@NonNull LinearLayoutCompat rootView, @NonNull ImageView back,
       @NonNull MaterialCardView beginner, @NonNull AppCompatTextView beginnerTv,
       @NonNull AppCompatTextView cardNumber, @NonNull AppCompatTextView cardNumber2,
-      @NonNull CheckBox checkbox, @NonNull CheckBox checkbox2, @NonNull CardView pay,
-      @NonNull AppCompatImageView visa, @NonNull AppCompatImageView visa2) {
+      @NonNull CheckBox checkbox, @NonNull CheckBox checkbox2,
+      @NonNull AppCompatTextView hideNumber, @NonNull AppCompatTextView hideNumber2,
+      @NonNull CardView pay, @NonNull AppCompatImageView visa, @NonNull AppCompatImageView visa2) {
     this.rootView = rootView;
     this.back = back;
     this.beginner = beginner;
@@ -67,6 +74,8 @@ public final class ActivityPaymentBinding implements ViewBinding {
     this.cardNumber2 = cardNumber2;
     this.checkbox = checkbox;
     this.checkbox2 = checkbox2;
+    this.hideNumber = hideNumber;
+    this.hideNumber2 = hideNumber2;
     this.pay = pay;
     this.visa = visa;
     this.visa2 = visa2;
@@ -141,6 +150,18 @@ public final class ActivityPaymentBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.hideNumber;
+      AppCompatTextView hideNumber = ViewBindings.findChildViewById(rootView, id);
+      if (hideNumber == null) {
+        break missingId;
+      }
+
+      id = R.id.hideNumber2;
+      AppCompatTextView hideNumber2 = ViewBindings.findChildViewById(rootView, id);
+      if (hideNumber2 == null) {
+        break missingId;
+      }
+
       id = R.id.pay;
       CardView pay = ViewBindings.findChildViewById(rootView, id);
       if (pay == null) {
@@ -160,7 +181,7 @@ public final class ActivityPaymentBinding implements ViewBinding {
       }
 
       return new ActivityPaymentBinding((LinearLayoutCompat) rootView, back, beginner, beginnerTv,
-          cardNumber, cardNumber2, checkbox, checkbox2, pay, visa, visa2);
+          cardNumber, cardNumber2, checkbox, checkbox2, hideNumber, hideNumber2, pay, visa, visa2);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

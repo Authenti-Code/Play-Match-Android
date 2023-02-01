@@ -36,7 +36,7 @@
 
     </FrameLayout>
 
-    <FrameLayout
+    <RelativeLayout
         android:layout_marginTop="@dimen/_30sdp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -44,15 +44,15 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_toEndOf="@+id/name"
             android:src="@drawable/hi"
             android:scaleType="center"/>
 
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/name"
             android:layout_marginTop="@dimen/_10sdp"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:fontFamily="@font/metropolis_regular"
@@ -62,11 +62,13 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
             android:layout_gravity="center_vertical|end"
             android:src="@drawable/skip"
             android:scaleType="center"/>
 
-    </FrameLayout>
+    </RelativeLayout>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="match_parent"

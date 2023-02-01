@@ -1421,6 +1421,7 @@ color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
 color greay_B7B7B7
+color grey_66B7B7B7
 color grey_F1F1F1
 color grey_color
 color highlighted_text_material_dark
@@ -3606,6 +3607,7 @@ drawable ic_email
 drawable ic_front_arrow
 drawable ic_gender
 drawable ic_globe
+drawable ic_grey_check
 drawable ic_hand
 drawable ic_interest
 drawable ic_keyboard_black_24dp
@@ -3643,6 +3645,7 @@ drawable ic_setting_reset_password
 drawable ic_time
 drawable ic_upcoming_matches
 drawable ic_user
+drawable ic_user_check
 drawable ic_whitel_cancel
 drawable icon_simple_visa
 drawable info
@@ -4065,6 +4068,8 @@ id grouping
 id groups
 id header_title
 id heading
+id hideNumber
+id hideNumber2
 id hideable
 id home
 id homeAsUp

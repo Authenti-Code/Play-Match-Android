@@ -63,7 +63,7 @@
                 android:layout_height="@dimen/_15sdp"
                 android:layout_marginTop="@dimen/_15sdp"
                 app:cardElevation="0dp"
-                android:layout_toStartOf="@id/more"
+                android:layout_alignParentEnd="true"
                 android:layout_marginEnd="@dimen/_10sdp"
                 app:cardBackgroundColor="#66B7B7B7"
                 app:cardCornerRadius="@dimen/_3sdp">
@@ -87,6 +87,7 @@
 
             <ImageView
                 android:id="@+id/more"
+                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_15sdp"

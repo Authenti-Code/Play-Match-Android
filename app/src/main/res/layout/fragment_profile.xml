@@ -283,7 +283,7 @@
                 android:textColor="@color/black"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_gravity="start"
-                android:textSize="@dimen/_18sdp"
+                android:textSize="@dimen/_15sdp"
                 android:fontFamily="@font/metropolis_semibold"/>
 
             <View
@@ -505,7 +505,7 @@
                 android:textColor="@color/black"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_gravity="start"
-                android:textSize="@dimen/_18sdp"
+                android:textSize="@dimen/_15sdp"
                 android:fontFamily="@font/metropolis_semibold"/>
 
             <View
@@ -540,7 +540,7 @@
                 android:textColor="@color/black"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_gravity="start"
-                android:textSize="@dimen/_18sdp"
+                android:textSize="@dimen/_15sdp"
                 android:fontFamily="@font/metropolis_semibold"/>
 
             <View

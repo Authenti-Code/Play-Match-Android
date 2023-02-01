@@ -46,7 +46,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-<androidx.appcompat.widget.LinearLayoutCompat
+  <androidx.appcompat.widget.LinearLayoutCompat
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:elevation="@dimen/_5sdp"
@@ -91,11 +91,9 @@ adipiscing elit £6"
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginHorizontal="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_10sdp">
-
-
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -122,10 +120,9 @@ adipiscing elit £6"
             <View
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginHorizontal="@dimen/_10sdp"
                 android:background="#8CE2E2E2" />
-
-
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -148,39 +145,55 @@ adipiscing elit £6"
                     android:src="@drawable/icon_simple_visa"
                     android:layout_marginStart="@dimen/_10sdp"/>
 
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/hideNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_toEndOf="@id/visa"
+                    android:backgroundTint="@color/white"
+                    android:fontFamily="@font/metropolis_light"
+                    android:gravity="bottom"
+                    android:text="****"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_20ssp" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/cardNumber"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_toEndOf="@id/visa"
-                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_toEndOf="@id/hideNumber"
+                    android:layout_marginStart="@dimen/_5sdp"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12ssp"
                     android:gravity="center"
-                    android:text="**** 5009"
+                    android:text="5009"
                     android:backgroundTint="@color/white"
                     android:fontFamily="@font/metropolis_light"/>
 
                 <com.google.android.material.card.MaterialCardView
-                    android:layout_width="@dimen/_40sdp"
+                    android:layout_width="@dimen/_50sdp"
                     android:layout_height="match_parent"
-                    android:layout_marginVertical="@dimen/_6sdp"
+                    android:layout_marginVertical="@dimen/_8sdp"
                     app:strokeWidth="@dimen/_1sdp"
                     android:layout_toStartOf="@id/checkbox"
                     android:layout_marginStart="@dimen/_20sdp"
                     app:strokeColor="@color/red_E65D50"
                     android:layout_marginEnd="@dimen/_10sdp"
-                    app:cardCornerRadius="@dimen/_5sdp">
+                    app:cardCornerRadius="@dimen/_6sdp">
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:textColor="@color/black"
                     android:inputType="number"
                     android:maxLength="3"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:padding="0dp"
                     android:hint="cvv"
-                    android:textSize="@dimen/_6sdp"
+                    android:textSize="@dimen/_8sdp"
                     android:backgroundTint="@color/white"
                     android:fontFamily="@font/metropolis_light"/>
 
@@ -225,38 +238,55 @@ adipiscing elit £6"
 
 
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/hideNumber2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_toEndOf="@id/visa2"
+                    android:backgroundTint="@color/white"
+                    android:fontFamily="@font/metropolis_light"
+                    android:gravity="bottom"
+                    android:text="****"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_20ssp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/cardNumber2"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_toEndOf="@id/visa2"
-                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_toEndOf="@id/hideNumber2"
+                    android:layout_marginStart="@dimen/_5sdp"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12ssp"
                     android:gravity="center"
-                    android:text="**** 5009"
+                    android:text="5009"
                     android:backgroundTint="@color/white"
                     android:fontFamily="@font/metropolis_light"/>
 
                 <com.google.android.material.card.MaterialCardView
-                    android:layout_width="@dimen/_40sdp"
+                    android:layout_width="@dimen/_50sdp"
                     android:layout_height="match_parent"
-                    android:layout_marginVertical="@dimen/_6sdp"
+                    android:layout_marginVertical="@dimen/_8sdp"
                     app:strokeWidth="@dimen/_1sdp"
 
                     android:layout_toStartOf="@id/checkbox2"
                     android:layout_marginStart="@dimen/_20sdp"
                     app:strokeColor="@color/red_E65D50"
                     android:layout_marginEnd="@dimen/_10sdp"
-                    app:cardCornerRadius="@dimen/_5sdp">
+                    app:cardCornerRadius="@dimen/_6sdp">
 
                     <androidx.appcompat.widget.AppCompatEditText
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:textColor="@color/black"
+                        android:paddingStart="@dimen/_5sdp"
+                        android:padding="0dp"
                         android:inputType="number"
                         android:maxLength="3"
                         android:hint="cvv"
-                        android:textSize="@dimen/_6sdp"
+                        android:textSize="@dimen/_8sdp"
                         android:backgroundTint="@color/white"
                         android:fontFamily="@font/metropolis_light"/>
 
@@ -293,6 +323,7 @@ adipiscing elit £6"
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_5sdp"
             android:layout_marginHorizontal="@dimen/_10sdp"
             android:background="#8CE2E2E2" />
 
@@ -428,7 +459,7 @@ adipiscing elit £6"
                         android:textColor="@color/black"
                         android:fontFamily="@font/metropolis_light"
                         android:text="Save this card for future use"
-                        android:textSize="@dimen/_10ssp"/>
+                        android:textSize="@dimen/_12ssp"/>
 
                 </LinearLayout>
 

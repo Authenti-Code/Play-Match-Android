@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.playMatch.R
 import com.playMatch.controller.`interface`.BottomSheetListner
-import com.playMatch.controller.constant.IntentConstant
 import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.databinding.ActivityCreateMatchBinding
 import com.playMatch.ui.baseActivity.BaseActivity
@@ -34,7 +33,6 @@ class CreateMatchActivity : BaseActivity(), View.OnClickListener,BottomSheetList
         setContentView(binding.root)
         getIntentData()
         initView()
-//        adapterView()
     }
 
     @SuppressLint("ClickableViewAccessibility")

@@ -9,6 +9,7 @@ color black
 color black_707070
 color black_B7B7B7
 color greay_B7B7B7
+color grey_66B7B7B7
 color grey_F1F1F1
 color grey_color
 color purple_200
@@ -62,6 +63,7 @@ drawable ic_email
 drawable ic_front_arrow
 drawable ic_gender
 drawable ic_globe
+drawable ic_grey_check
 drawable ic_hand
 drawable ic_interest
 drawable ic_launcher_background
@@ -90,6 +92,7 @@ drawable ic_setting_reset_password
 drawable ic_time
 drawable ic_upcoming_matches
 drawable ic_user
+drawable ic_user_check
 drawable ic_whitel_cancel
 drawable icon_simple_visa
 drawable info
@@ -225,6 +228,8 @@ id globe
 id groupOff
 id groupOn
 id heading
+id hideNumber
+id hideNumber2
 id homeOff
 id homeOn
 id image

@@ -7,11 +7,11 @@
     tools:context=".ui.signUp.UserDetailActivity">
 
     <ImageView
-        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_15sdp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/loginbg"
-        android:scaleType="center"/>
+        android:scaleType="fitXY"/>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -20,33 +20,33 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="@dimen/_130sdp"
+            android:layout_marginTop="@dimen/_135sdp"
             android:layout_marginHorizontal="@dimen/_15sdp"
             android:orientation="vertical">
 
-            <FrameLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_toEndOf="@+id/name"
                     android:src="@drawable/hi"
                     android:scaleType="center"/>
 
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/name"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:fontFamily="@font/metropolis_regular"
                 android:text="John Deo "
                 android:textSize="@dimen/_23ssp"/>
 
-            </FrameLayout>
+            </RelativeLayout>
 
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -60,7 +60,7 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_35sdp"
-                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_10sdp"
                 app:strokeWidth="@dimen/_1sdp"
                 app:strokeColor="@color/black_707070"
                 app:cardCornerRadius="@dimen/_8sdp">
