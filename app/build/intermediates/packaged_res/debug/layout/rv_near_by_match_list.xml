@@ -79,7 +79,7 @@
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
                     <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginStart="@dimen/_25sdp"
                         android:layout_gravity="end"
@@ -88,6 +88,8 @@
                         <com.google.android.material.card.MaterialCardView
                             android:layout_width="@dimen/_40sdp"
                             android:layout_height="@dimen/_15sdp"
+                            android:layout_gravity="end"
+                            android:layout_marginEnd="@dimen/_5sdp"
                             android:layout_marginTop="@dimen/_5sdp"
                             app:cardElevation="0dp"
 
@@ -120,6 +122,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_1sdp"
                     android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
                     android:background="@drawable/line"/>
 
                 <TextView
@@ -143,6 +146,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_1sdp"
                     android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
                     android:background="@drawable/line"/>
 
                 <LinearLayout
