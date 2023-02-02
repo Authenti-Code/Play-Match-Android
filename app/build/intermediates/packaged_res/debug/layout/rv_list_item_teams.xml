@@ -115,8 +115,7 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="@dimen/_75sdp"
         android:layout_height="@dimen/_16sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_2sdp"
         app:cardElevation="@dimen/_5sdp"
         android:layout_gravity="center_horizontal|bottom"
         app:cardBackgroundColor="@color/red_E65D50"

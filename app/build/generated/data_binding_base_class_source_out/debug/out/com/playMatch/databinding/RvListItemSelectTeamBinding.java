@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -28,17 +29,21 @@ public final class RvListItemSelectTeamBinding implements ViewBinding {
   public final FrameLayout cardView;
 
   @NonNull
+  public final ImageView edit;
+
+  @NonNull
   public final TextView name;
 
   @NonNull
   public final CircleImageView profileImage;
 
   private RvListItemSelectTeamBinding(@NonNull FrameLayout rootView,
-      @NonNull LinearLayoutCompat back, @NonNull FrameLayout cardView, @NonNull TextView name,
-      @NonNull CircleImageView profileImage) {
+      @NonNull LinearLayoutCompat back, @NonNull FrameLayout cardView, @NonNull ImageView edit,
+      @NonNull TextView name, @NonNull CircleImageView profileImage) {
     this.rootView = rootView;
     this.back = back;
     this.cardView = cardView;
+    this.edit = edit;
     this.name = name;
     this.profileImage = profileImage;
   }
@@ -78,6 +83,12 @@ public final class RvListItemSelectTeamBinding implements ViewBinding {
 
       FrameLayout cardView = (FrameLayout) rootView;
 
+      id = R.id.edit;
+      ImageView edit = ViewBindings.findChildViewById(rootView, id);
+      if (edit == null) {
+        break missingId;
+      }
+
       id = R.id.name;
       TextView name = ViewBindings.findChildViewById(rootView, id);
       if (name == null) {
@@ -90,7 +101,7 @@ public final class RvListItemSelectTeamBinding implements ViewBinding {
         break missingId;
       }
 
-      return new RvListItemSelectTeamBinding((FrameLayout) rootView, back, cardView, name,
+      return new RvListItemSelectTeamBinding((FrameLayout) rootView, back, cardView, edit, name,
           profileImage);
     }
     String missingId = rootView.getResources().getResourceName(id);

@@ -52,6 +52,9 @@ class CreateMatchActivity : BaseActivity(), View.OnClickListener,BottomSheetList
             return@setOnTouchListener false
         }
 
+        if (type=="edit"){
+            binding.title.text="Edit Match"
+        }
     }
 
     private fun getIntentData() {

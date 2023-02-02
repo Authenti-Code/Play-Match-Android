@@ -14,6 +14,7 @@ import com.playMatch.ui.baseActivity.BaseActivity
 import com.playMatch.ui.home.model.HomeChildModel
 import com.playMatch.ui.location.activity.LocationActivity
 import com.playMatch.ui.matches.adapter.selectSportAdapter.SelectMatchSportAdapter
+import com.saetae.controller.sharedPrefrence.PrefData
 
 class AddTeamActivity : BaseActivity(), View.OnClickListener, BottomSheetListner {
     private lateinit var binding: ActivityAddTeamBinding
@@ -28,7 +29,15 @@ class AddTeamActivity : BaseActivity(), View.OnClickListener, BottomSheetListner
         super.onCreate(savedInstanceState)
         binding = ActivityAddTeamBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        getIntentData()
         initView()
+    }
+
+    private fun getIntentData() {
+
+        if (intent?.extras != null) {
+            type = intent.extras?.getString(PrefData.CURRENT_USER_SCREEN_TYPE, "")
+        }
     }
 
     private fun initView() {
@@ -57,8 +66,12 @@ class AddTeamActivity : BaseActivity(), View.OnClickListener, BottomSheetListner
         binding.awayNo.setOnClickListener(this)
         binding.createTeam.setOnClickListener(this)
         binding.location.setOnClickListener(this)
-        binding.mondaySlider.setValues(1.0f,5.0f)
-        binding.tuesdaySlider.setValues(1.0f,5.0f)
+        binding.mondaySlider.setValues(0.0f,5.0f)
+        binding.tuesdaySlider.setValues(0.0f,5.0f)
+
+        if (type=="edit"){
+            binding.title.text="Edit Team"
+        }
     }
 
     override fun onClick(v: View?) {

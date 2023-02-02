@@ -136,7 +136,7 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/rv_select_sport_item"
             android:layout_marginTop="@dimen/_10sdp"
-            android:layout_marginBottom="@dimen/_52sdp"/>
+            android:layout_marginBottom="@dimen/_60sdp"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

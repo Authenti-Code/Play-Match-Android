@@ -386,18 +386,18 @@ adipiscing elit £6"
 
                 </com.google.android.material.card.MaterialCardView>
 
-                <RelativeLayout
+                <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <com.google.android.material.card.MaterialCardView
-                        android:layout_width="@dimen/_130sdp"
+                        android:layout_width="match_parent"
                         android:layout_height="@dimen/_30sdp"
                         android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_weight="1"
                         app:strokeWidth="@dimen/_1sdp"
                         android:layout_marginStart="@dimen/_10sdp"
                         app:strokeColor="@color/red_E65D50"
-                        android:layout_marginEnd="@dimen/_20sdp"
                         app:cardCornerRadius="@dimen/_5sdp">
 
                         <androidx.appcompat.widget.AppCompatEditText
@@ -412,13 +412,18 @@ adipiscing elit £6"
 
                     </com.google.android.material.card.MaterialCardView>
 
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.9"/>
+
                     <com.google.android.material.card.MaterialCardView
-                        android:layout_width="@dimen/_140sdp"
+                        android:layout_width="match_parent"
                         android:layout_height="@dimen/_30sdp"
                         android:layout_alignParentEnd="true"
+                        android:layout_weight="1"
                         android:layout_marginTop="@dimen/_10sdp"
                         app:strokeWidth="@dimen/_1sdp"
-                        android:layout_marginStart="@dimen/_10sdp"
                         app:strokeColor="@color/red_E65D50"
                         android:layout_marginEnd="@dimen/_10sdp"
                         app:cardCornerRadius="@dimen/_5sdp">
@@ -438,7 +443,7 @@ adipiscing elit £6"
                     </com.google.android.material.card.MaterialCardView>
 
 
-                </RelativeLayout>
+                </androidx.appcompat.widget.LinearLayoutCompat>
 
                 <LinearLayout
                     android:layout_width="match_parent"

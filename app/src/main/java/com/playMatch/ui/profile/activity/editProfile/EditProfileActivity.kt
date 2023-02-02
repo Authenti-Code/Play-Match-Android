@@ -33,8 +33,8 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
         binding.intermediate.setOnClickListener(this)
         binding.experienced.setOnClickListener(this)
         binding.editSports.setOnClickListener(this)
-        binding.mondaySlider.setValues(1.0f,5.0f)
-        binding.tuesdaySlider.setValues(1.0f,5.0f)
+        binding.mondaySlider.setValues(0.0f,5.0f)
+        binding.tuesdaySlider.setValues(0.0f,5.0f)
 
     }
 

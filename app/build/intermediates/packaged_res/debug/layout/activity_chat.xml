@@ -123,7 +123,7 @@
         android:layout_marginBottom="@dimen/_15sdp"
         app:cardBackgroundColor="#F1F1F1"
         android:layout_marginHorizontal="@dimen/_10sdp"
-        app:cardCornerRadius="@dimen/_15sdp">
+        app:cardCornerRadius="@dimen/_20sdp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -148,6 +148,7 @@
                 android:textColorHint="#CCCCCC"
                 android:textColor="@color/black"
                 android:maxLines="3"
+                android:textSize="@dimen/_10sdp"
                 android:backgroundTint="#F1F1F1"
                 android:layout_toEndOf="@+id/attachment"/>
 

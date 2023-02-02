@@ -3,12 +3,14 @@ package com.playMatch.ui.matches.adapter.upcomingAdapter
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.databinding.RvChildHomeListItemBinding
 import com.playMatch.databinding.RvMatchesListItemBinding
 import com.playMatch.ui.home.model.HomeChildModel
+import com.playMatch.ui.inbox.activity.chatActivity.ChatActivity
 import com.playMatch.ui.matches.activity.matchDetails.MatchDetailsActivity
 import com.saetae.controller.sharedPrefrence.PrefData
 
@@ -45,6 +47,11 @@ class UpcomingAdapter(var list: ArrayList<HomeChildModel>, var activity: Activit
 //                binding.cardView.setCardBackgroundColor(Color.parseColor("#80F95047"))
 //            }
             holder.binding.name.text = ItemsviewModel.name
+            if (position==1){
+                binding.genderTv.text="Female"
+                binding.host.visibility=View.GONE
+                binding.chat.visibility=View.VISIBLE
+            }
 
 
 
@@ -53,6 +60,12 @@ class UpcomingAdapter(var list: ArrayList<HomeChildModel>, var activity: Activit
                 selectedPosition=position
                 notifyDataSetChanged()
                 CommonUtils.performIntent(activity,MatchDetailsActivity::class.java)
+            }
+
+            binding.chat.setOnClickListener {
+                selectedPosition=position
+                notifyDataSetChanged()
+                CommonUtils.performIntent(activity,ChatActivity::class.java)
             }
         }
     }

@@ -23,7 +23,6 @@
             android:id="@+id/back"
             android:layout_width="@dimen/_20sdp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_10sdp"
             android:layout_gravity="center_vertical"
             android:src="@drawable/ic_back"/>
 
@@ -39,6 +38,9 @@
 
     </FrameLayout>
 
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
@@ -116,12 +118,12 @@ Wellington St. "
                 android:layout_gravity="bottom"
                 android:layout_marginBottom="@dimen/_20sdp"
                 android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
                 app:cardBackgroundColor="@color/red_F95047"
                 app:cardCornerRadius="@dimen/_18sdp">
 
                 <TextView
-                    android:layout_width="365dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/metropolis_light"
                     android:gravity="center"
@@ -133,7 +135,7 @@ Wellington St. "
 
 
         </androidx.appcompat.widget.LinearLayoutCompat>
-
+        </androidx.core.widget.NestedScrollView>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 

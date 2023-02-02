@@ -2,6 +2,7 @@ package com.playMatch.ui.teams.adapter
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -54,7 +55,9 @@ class TeamsAdapter(var list: ArrayList<HomeChildModel>, var activity: Activity) 
             binding.edit.setOnClickListener {
                 selectedPosition=position
                 notifyDataSetChanged()
-                CommonUtils.performIntent(activity,AddTeamActivity::class.java)
+                val bundle= Bundle()
+                bundle.putString(PrefData.CURRENT_USER_SCREEN_TYPE,"edit")
+                CommonUtils.performIntentWithBundle(activity,AddTeamActivity::class.java,bundle)
             }
         }
     }
