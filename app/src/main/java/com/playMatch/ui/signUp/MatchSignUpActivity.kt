@@ -37,8 +37,8 @@ class MatchSignUpActivity : BaseActivity(), View.OnClickListener {
         binding.Fcv.setOnClickListener(this)
         binding.Scv.setOnClickListener(this)
         binding.Continue.setOnClickListener(this)
-        binding.mondaySlider.setValues(1.0f,5.0f)
-        binding.tuesdaySlider.setValues(1.0f,5.0f)
+        binding.mondaySlider.setValues(0.0f,5.0f)
+        binding.tuesdaySlider.setValues(0.0f,5.0f)
     }
 
     override fun onClick(v: View?) {

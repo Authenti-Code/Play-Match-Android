@@ -35,11 +35,6 @@ class UpcomingAdapter(var list: ArrayList<HomeChildModel>, var activity: Activit
         holder.apply {
             val itemsViewModel = list[position]
 
-//            if (id=="1"){
-//                binding.cardView.setCardBackgroundColor(Color.parseColor("#F95047"))
-//            }else{
-//                binding.cardView.setCardBackgroundColor(Color.parseColor("#80F95047"))
-//            }
             holder.binding.name.text = itemsViewModel.name
             if (position==1){
                 binding.genderTv.text="Female"

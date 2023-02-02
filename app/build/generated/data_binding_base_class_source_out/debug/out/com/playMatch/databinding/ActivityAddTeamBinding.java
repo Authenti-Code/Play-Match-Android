@@ -129,6 +129,9 @@ public final class ActivityAddTeamBinding implements ViewBinding {
   public final CircleImageView profileImage;
 
   @NonNull
+  public final TextView save;
+
+  @NonNull
   public final MaterialCardView selectSport;
 
   @NonNull
@@ -157,8 +160,9 @@ public final class ActivityAddTeamBinding implements ViewBinding {
       @NonNull AppCompatTextView kitNoTv, @NonNull MaterialCardView kitYes,
       @NonNull AppCompatTextView kitYesTv, @NonNull AppCompatTextView location,
       @NonNull RangeSlider mondaySlider, @NonNull CircleImageView profileImage,
-      @NonNull MaterialCardView selectSport, @NonNull AppCompatTextView selectSportTv,
-      @NonNull TextView title, @NonNull RangeSlider tuesdaySlider) {
+      @NonNull TextView save, @NonNull MaterialCardView selectSport,
+      @NonNull AppCompatTextView selectSportTv, @NonNull TextView title,
+      @NonNull RangeSlider tuesdaySlider) {
     this.rootView = rootView;
     this.Fcv = Fcv;
     this.Ftv = Ftv;
@@ -194,6 +198,7 @@ public final class ActivityAddTeamBinding implements ViewBinding {
     this.location = location;
     this.mondaySlider = mondaySlider;
     this.profileImage = profileImage;
+    this.save = save;
     this.selectSport = selectSport;
     this.selectSportTv = selectSportTv;
     this.title = title;
@@ -431,6 +436,12 @@ public final class ActivityAddTeamBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.save;
+      TextView save = ViewBindings.findChildViewById(rootView, id);
+      if (save == null) {
+        break missingId;
+      }
+
       id = R.id.selectSport;
       MaterialCardView selectSport = ViewBindings.findChildViewById(rootView, id);
       if (selectSport == null) {
@@ -459,7 +470,7 @@ public final class ActivityAddTeamBinding implements ViewBinding {
           Satv, Scv, Stv, Tcv, Thcv, Thtv, Ttv, Wcv, Wtv, awayNo, awayNoTv, awayYes, awayYesTv,
           back, beginner, beginnerTv, createTeam, description, experienced, experiencedTv,
           intermediate, intermediateTv, kitNo, kitNoTv, kitYes, kitYesTv, location, mondaySlider,
-          profileImage, selectSport, selectSportTv, title, tuesdaySlider);
+          profileImage, save, selectSport, selectSportTv, title, tuesdaySlider);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

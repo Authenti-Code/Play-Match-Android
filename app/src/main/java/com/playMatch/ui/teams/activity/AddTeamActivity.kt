@@ -71,6 +71,7 @@ class AddTeamActivity : BaseActivity(), View.OnClickListener, BottomSheetListner
 
         if (type=="edit"){
             binding.title.text="Edit Team"
+            binding.save.text="Save"
         }
     }
 
