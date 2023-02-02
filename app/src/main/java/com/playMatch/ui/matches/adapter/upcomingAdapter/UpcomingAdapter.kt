@@ -53,9 +53,6 @@ class UpcomingAdapter(var list: ArrayList<HomeChildModel>, var activity: Activit
                 binding.chat.visibility=View.VISIBLE
             }
 
-
-
-
             binding.cardView.setOnClickListener {
                 selectedPosition=position
                 notifyDataSetChanged()
