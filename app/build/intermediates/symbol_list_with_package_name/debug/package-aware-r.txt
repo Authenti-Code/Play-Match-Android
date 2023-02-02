@@ -4077,6 +4077,7 @@ id homeOff
 id homeOn
 id honorRequest
 id horizontal_only
+id host
 id hybrid
 id icon
 id icon_group

@@ -91,7 +91,7 @@
         android:orientation="vertical"
         android:layout_marginBottom="@dimen/_65sdp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginHorizontal="@dimen/_5sdp"
         tools:listitem="@layout/rv_matches_list_item"/>
 
         <androidx.recyclerview.widget.RecyclerView

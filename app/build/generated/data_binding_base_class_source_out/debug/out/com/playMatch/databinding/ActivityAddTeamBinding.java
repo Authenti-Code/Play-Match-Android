@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatEditText;
@@ -134,6 +135,9 @@ public final class ActivityAddTeamBinding implements ViewBinding {
   public final AppCompatTextView selectSportTv;
 
   @NonNull
+  public final TextView title;
+
+  @NonNull
   public final RangeSlider tuesdaySlider;
 
   private ActivityAddTeamBinding(@NonNull LinearLayoutCompat rootView,
@@ -154,7 +158,7 @@ public final class ActivityAddTeamBinding implements ViewBinding {
       @NonNull AppCompatTextView kitYesTv, @NonNull AppCompatTextView location,
       @NonNull RangeSlider mondaySlider, @NonNull CircleImageView profileImage,
       @NonNull MaterialCardView selectSport, @NonNull AppCompatTextView selectSportTv,
-      @NonNull RangeSlider tuesdaySlider) {
+      @NonNull TextView title, @NonNull RangeSlider tuesdaySlider) {
     this.rootView = rootView;
     this.Fcv = Fcv;
     this.Ftv = Ftv;
@@ -192,6 +196,7 @@ public final class ActivityAddTeamBinding implements ViewBinding {
     this.profileImage = profileImage;
     this.selectSport = selectSport;
     this.selectSportTv = selectSportTv;
+    this.title = title;
     this.tuesdaySlider = tuesdaySlider;
   }
 
@@ -438,6 +443,12 @@ public final class ActivityAddTeamBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.title;
+      TextView title = ViewBindings.findChildViewById(rootView, id);
+      if (title == null) {
+        break missingId;
+      }
+
       id = R.id.tuesdaySlider;
       RangeSlider tuesdaySlider = ViewBindings.findChildViewById(rootView, id);
       if (tuesdaySlider == null) {
@@ -448,7 +459,7 @@ public final class ActivityAddTeamBinding implements ViewBinding {
           Satv, Scv, Stv, Tcv, Thcv, Thtv, Ttv, Wcv, Wtv, awayNo, awayNoTv, awayYes, awayYesTv,
           back, beginner, beginnerTv, createTeam, description, experienced, experiencedTv,
           intermediate, intermediateTv, kitNo, kitNoTv, kitYes, kitYesTv, location, mondaySlider,
-          profileImage, selectSport, selectSportTv, tuesdaySlider);
+          profileImage, selectSport, selectSportTv, title, tuesdaySlider);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

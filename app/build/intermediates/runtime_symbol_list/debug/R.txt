@@ -4076,6 +4076,7 @@ int id homeOff 0x7f09011d
 int id homeOn 0x7f09011e
 int id honorRequest 0x7f09011f
 int id horizontal_only 0x7f090120
+int id host 0x7f090293
 int id hybrid 0x7f090121
 int id icon 0x7f090122
 int id icon_group 0x7f090123

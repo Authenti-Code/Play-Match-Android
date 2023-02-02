@@ -9,9 +9,11 @@
         android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_marginVertical="@dimen/_10sdp"
-        android:layout_marginHorizontal="@dimen/_5sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
         android:layout_height="@dimen/_115sdp"
-        app:cardElevation="@dimen/_10sdp"
+        app:cardElevation="@dimen/_5sdp"
+        android:outlineSpotShadowColor="@color/black"
+        android:outlineAmbientShadowColor="@color/black"
         app:cardCornerRadius="@dimen/_8sdp">
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -82,7 +84,6 @@
                     <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginStart="@dimen/_25sdp"
                         android:layout_gravity="end"
                         android:orientation="vertical">
 
@@ -100,6 +101,7 @@
 
 
                             <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/genderTv"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:textColor="@color/black_707070"
@@ -117,11 +119,13 @@
                             android:layout_height="wrap_content">
 
                         <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/host"
                             android:layout_width="@dimen/_40sdp"
                             android:layout_height="@dimen/_15sdp"
                             android:visibility="visible"
                             android:layout_marginTop="@dimen/_5sdp"
                             android:layout_gravity="end"
+                            android:layout_marginBottom="@dimen/_2sdp"
                             android:layout_marginEnd="@dimen/_10sdp"
                             app:cardElevation="0dp"
                            app:strokeColor="@color/red_F95047"
@@ -149,9 +153,12 @@
                                 android:visibility="gone"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:layout_marginEnd="@dimen/_13sdp"
                                 android:src="@drawable/ic_message"
-                                android:layout_marginTop="@dimen/_5sdp"
-                                android:layout_gravity="end"/>
+                                android:paddingBottom="@dimen/_5sdp"
+                                android:layout_gravity="center|end"/>
 
                         </FrameLayout>
 

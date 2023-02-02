@@ -9,10 +9,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageView;
+import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.card.MaterialCardView;
 import com.playMatch.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -32,6 +34,12 @@ public final class RvMatchesListItemBinding implements ViewBinding {
   public final TextView date;
 
   @NonNull
+  public final AppCompatTextView genderTv;
+
+  @NonNull
+  public final MaterialCardView host;
+
+  @NonNull
   public final AppCompatImageView logo;
 
   @NonNull
@@ -41,12 +49,15 @@ public final class RvMatchesListItemBinding implements ViewBinding {
   public final TextView time;
 
   private RvMatchesListItemBinding(@NonNull LinearLayoutCompat rootView, @NonNull CardView cardView,
-      @NonNull ImageView chat, @NonNull TextView date, @NonNull AppCompatImageView logo,
-      @NonNull TextView name, @NonNull TextView time) {
+      @NonNull ImageView chat, @NonNull TextView date, @NonNull AppCompatTextView genderTv,
+      @NonNull MaterialCardView host, @NonNull AppCompatImageView logo, @NonNull TextView name,
+      @NonNull TextView time) {
     this.rootView = rootView;
     this.cardView = cardView;
     this.chat = chat;
     this.date = date;
+    this.genderTv = genderTv;
+    this.host = host;
     this.logo = logo;
     this.name = name;
     this.time = time;
@@ -97,6 +108,18 @@ public final class RvMatchesListItemBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.genderTv;
+      AppCompatTextView genderTv = ViewBindings.findChildViewById(rootView, id);
+      if (genderTv == null) {
+        break missingId;
+      }
+
+      id = R.id.host;
+      MaterialCardView host = ViewBindings.findChildViewById(rootView, id);
+      if (host == null) {
+        break missingId;
+      }
+
       id = R.id.logo;
       AppCompatImageView logo = ViewBindings.findChildViewById(rootView, id);
       if (logo == null) {
@@ -115,8 +138,8 @@ public final class RvMatchesListItemBinding implements ViewBinding {
         break missingId;
       }
 
-      return new RvMatchesListItemBinding((LinearLayoutCompat) rootView, cardView, chat, date, logo,
-          name, time);
+      return new RvMatchesListItemBinding((LinearLayoutCompat) rootView, cardView, chat, date,
+          genderTv, host, logo, name, time);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

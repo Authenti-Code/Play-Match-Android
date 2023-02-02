@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatEditText;
@@ -62,13 +63,17 @@ public final class ActivityCreateMatchBinding implements ViewBinding {
   @NonNull
   public final AppCompatTextView selectTeamTV;
 
+  @NonNull
+  public final TextView title;
+
   private ActivityCreateMatchBinding(@NonNull LinearLayoutCompat rootView,
       @NonNull CardView Continue, @NonNull ImageView back, @NonNull MaterialCardView beginner,
       @NonNull AppCompatTextView beginnerTv, @NonNull AppCompatEditText description,
       @NonNull MaterialCardView experienced, @NonNull AppCompatTextView experiencedTv,
       @NonNull MaterialCardView intermediate, @NonNull AppCompatTextView intermediateTv,
       @NonNull MaterialCardView selectSport, @NonNull AppCompatTextView selectSportTv,
-      @NonNull MaterialCardView selectTeam, @NonNull AppCompatTextView selectTeamTV) {
+      @NonNull MaterialCardView selectTeam, @NonNull AppCompatTextView selectTeamTV,
+      @NonNull TextView title) {
     this.rootView = rootView;
     this.Continue = Continue;
     this.back = back;
@@ -83,6 +88,7 @@ public final class ActivityCreateMatchBinding implements ViewBinding {
     this.selectSportTv = selectSportTv;
     this.selectTeam = selectTeam;
     this.selectTeamTV = selectTeamTV;
+    this.title = title;
   }
 
   @Override
@@ -190,9 +196,15 @@ public final class ActivityCreateMatchBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.title;
+      TextView title = ViewBindings.findChildViewById(rootView, id);
+      if (title == null) {
+        break missingId;
+      }
+
       return new ActivityCreateMatchBinding((LinearLayoutCompat) rootView, Continue, back, beginner,
           beginnerTv, description, experienced, experiencedTv, intermediate, intermediateTv,
-          selectSport, selectSportTv, selectTeam, selectTeamTV);
+          selectSport, selectSportTv, selectTeam, selectTeamTV, title);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
