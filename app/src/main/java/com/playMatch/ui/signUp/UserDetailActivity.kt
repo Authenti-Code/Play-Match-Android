@@ -118,6 +118,11 @@ class UserDetailActivity : BaseActivity(), View.OnClickListener {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        val location = PrefData.getStringPrefs(this,PrefData.LOCATION,"")
+        binding.locationTv.text = location
+    }
     private fun updateDateInView() {
         val myFormat = "yyyy-MM-dd" // mention the format you need
         val sdf = SimpleDateFormat(myFormat, Locale.US)
@@ -144,12 +149,14 @@ class UserDetailActivity : BaseActivity(), View.OnClickListener {
 
 
     private fun apiResult(resultResponse: ResultResponse) {
-       hideProgressBar()
         return when (resultResponse) {
             is ResultResponse.Success<*> -> {
                 val response = resultResponse.response as RegistrationResponse
                 //get data and convert string to json and save data
                 if (response.success == "true") {
+                    hideProgressBar()
+                    val bundle=Bundle()
+
                     PrefData.setStringPrefs(
                         this@UserDetailActivity,
                         PrefData.KEY_BEARER_TOKEN,
@@ -171,15 +178,17 @@ class UserDetailActivity : BaseActivity(), View.OnClickListener {
 //                        "+" + cpCountry?.phoneCode.toString()
 //                                + " " + binding?.edtPhoneNoVerification?.text?.trim().toString()
 //                    )
-//                    bundle.putString(IntentConstant.SESSION_ID, response.sessionId.toString())
+                    bundle.putString(PrefData.NAME, name)
 
-                    CommonUtils.performIntent(this, AddProfileImageActivity::class.java)
+                    CommonUtils.performIntentWithBundleFinish(this, AddProfileImageActivity::class.java,bundle)
                 } else {
                     showSnackBar(findViewById(R.id.rootView), response.message)
+                    hideProgressBar()
                 }
             }
             else -> {
                 showError(resultResponse)
+                hideProgressBar()
             }
         }
     }

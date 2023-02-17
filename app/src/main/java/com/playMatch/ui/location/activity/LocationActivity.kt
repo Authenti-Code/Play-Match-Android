@@ -21,6 +21,7 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import com.playMatch.R
+import com.playMatch.controller.sharedPrefrence.PrefData
 import com.playMatch.databinding.ActivityLocationBinding
 import com.playMatch.ui.baseActivity.BaseActivity
 
@@ -58,7 +59,7 @@ class LocationActivity : BaseActivity(), OnMapReadyCallback, View.OnClickListene
 
     override fun onMapReady(googleMap: GoogleMap) {
         map = googleMap
-        map?.uiSettings?.isZoomControlsEnabled = true
+        map?.uiSettings?.isZoomControlsEnabled = false
 //        map?.setOnMarkerClickListener(this)
         googleMap.setOnMarkerDragListener(this)
         handleCameraMap(googleMap)
@@ -69,6 +70,7 @@ class LocationActivity : BaseActivity(), OnMapReadyCallback, View.OnClickListene
             R.id.back -> {
                 onBackPressed()
             } R.id.confirmLocation -> {
+            PrefData.setStringPrefs(this,PrefData.LOCATION,binding.address.text.toString().trim())
                 onBackPressed()
             }
         }
@@ -130,7 +132,6 @@ class LocationActivity : BaseActivity(), OnMapReadyCallback, View.OnClickListene
 
         googleMap.setOnCameraMoveListener {
             map?.clear()
-
             val updatedLatLng = map?.cameraPosition?.target
             latitude = updatedLatLng?.latitude
             longitude = updatedLatLng?.longitude
@@ -147,14 +148,12 @@ class LocationActivity : BaseActivity(), OnMapReadyCallback, View.OnClickListene
                         address = convertLatLngToAddress()
                         if (address != null)
                             fullAddress = address?.getAddressLine(0).toString()
-                        binding?.fullAddress?.text = address?.getAddressLine(0).toString()
+                        binding.fullAddress.text = address?.getAddressLine(0).toString()
                         if (address?.locality.isNullOrEmpty()) {
-                            binding?.address?.text = getString(R.string.unknown)
+                            binding.address.text = getString(R.string.unknown)
                         } else {
-                            binding?.address?.text = address?.locality.toString()
+                            binding.address.text = address?.locality.toString()
                         }
-
-
                 } catch (ex: Exception) {
                     ex.printStackTrace()
                 }
@@ -174,6 +173,4 @@ class LocationActivity : BaseActivity(), OnMapReadyCallback, View.OnClickListene
     override fun onMarkerDragEnd(p0: Marker) {
         Log.e("cameraMove", "onMarkerDragEnd: ${p0.position}")
     }
-
-
 }

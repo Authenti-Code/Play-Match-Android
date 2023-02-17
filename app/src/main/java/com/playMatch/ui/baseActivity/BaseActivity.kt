@@ -43,12 +43,15 @@ import com.google.android.gms.tasks.Task
 import com.google.android.material.snackbar.Snackbar
 import com.playMatch.R
 import com.playMatch.controller.constant.AppConstant
+import com.playMatch.controller.constant.ExifUtil
+import com.playMatch.controller.constant.IntentConstant
 import com.playMatch.controller.enum.Generation
 import com.playMatch.controller.playMatchAPi.ResultResponse
 import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.ui.home.activity.HomeActivity
 import com.playMatch.ui.home.activity.OnMapNearbyMatchesActivity
 import com.playMatch.ui.location.activity.LocationActivity
+import com.soundcloud.android.crop.Crop
 import java.io.File
 import java.io.IOException
 import java.text.ParseException
@@ -680,12 +683,12 @@ open class BaseActivity : AppCompatActivity() {
         } else {
             intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(file))
         }
-//        startActivityForResult(intent, IntentConstant.REQUEST_CODE_CAMERA)
+        startActivityForResult(intent, IntentConstant.REQUEST_CODE_CAMERA)
     }
 
     internal fun openGallery() {
         val galleryIntent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-//        startActivityForResult(galleryIntent, IntentConstant.REQUEST_CODE_GALLERY)
+        startActivityForResult(galleryIntent, IntentConstant.REQUEST_CODE_GALLERY)
     }
 
     private fun makeDirectory() {
@@ -731,7 +734,7 @@ open class BaseActivity : AppCompatActivity() {
     //todo crop bg_guest_home
     @Throws(java.lang.Exception::class)
     internal fun beginCrop(source: Uri?) {
-        destinationRoot = File(Environment.getExternalStorageDirectory().absolutePath + "/Saetae")
+        destinationRoot = File(Environment.getExternalStorageDirectory().absolutePath + "/PlayMatch")
         file = if (!destinationRoot!!.exists()) {
             destinationRoot!!.mkdirs()
             val currentTime = System.currentTimeMillis().toString() + ".jpg"
@@ -742,14 +745,14 @@ open class BaseActivity : AppCompatActivity() {
         }
         if (file?.isFile!!) {
 //            Crop.of(source, Uri.fromFile(file)).asSquare().start(this)
-//            Crop.of(source, Uri.fromFile(file)).withMaxSize(1240, 640).start(this)
+            Crop.of(source, Uri.fromFile(file)).withMaxSize(1240, 640).start(this)
 //            Crop.of(source,output(source).withFixedSize(640, 640).start(this))
         } else {
             // If Target API level is 29(Android 10),
             // you should access local path in scoped storage mode.
             val localStorage = getExternalFilesDir(null) ?: return
             val storagePath = localStorage.absolutePath
-            val rootPath = "$storagePath/Saetae"
+            val rootPath = "$storagePath/PlayMatch"
             val currentTime = System.currentTimeMillis().toString() + ".jpg"
 
             val root = File(rootPath)
@@ -769,7 +772,7 @@ open class BaseActivity : AppCompatActivity() {
                     }
                 }
                 file = fileJ
-//                Crop.of(source, Uri.fromFile(file)).asSquare().start(this)
+                Crop.of(source, Uri.fromFile(file)).asSquare().start(this)
             } catch (e: java.lang.Exception) {
                 e.printStackTrace()
             }
@@ -782,8 +785,8 @@ open class BaseActivity : AppCompatActivity() {
         try {
             mBitmapImage =
                 MediaStore.Images.Media.getBitmap(this.contentResolver, Uri.parse(ImagePath))
-//            val orientation = ExifUtil.getExifOrientation(this, Uri.parse(ImagePath))
-//            mBitmapImage = ExifUtil.rotateBitmap(mBitmapImage!!, orientation)
+            val orientation = ExifUtil.getExifOrientation(this, Uri.parse(ImagePath))
+            mBitmapImage = ExifUtil.rotateBitmap(mBitmapImage!!, orientation)
 
         } catch (e: IOException) {
             e.printStackTrace()

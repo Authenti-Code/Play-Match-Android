@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:id="@+id/rootView"
     tools:context=".ui.signUp.AddProfileImageActivity">
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -60,6 +60,7 @@
             android:textSize="@dimen/_23ssp"/>
 
         <ImageView
+            android:id="@+id/skip"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -90,8 +91,9 @@
         android:textSize="@dimen/_10ssp"/>
         
         <RelativeLayout
+            android:id="@+id/profileLay"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/_52sdp">
             
             <androidx.appcompat.widget.AppCompatImageView
@@ -102,6 +104,8 @@
                 android:layout_marginHorizontal="@dimen/_20sdp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/_70sdp"/>
+
+
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/profile_image"
@@ -122,6 +126,7 @@
                 android:layout_centerInParent="true"
                 android:elevation="@dimen/_10sdp"
                 android:src="@drawable/edit_profile" />
+
             
         </RelativeLayout>
 
@@ -141,7 +146,16 @@
             android:layout_marginBottom="@dimen/_15sdp"
             app:cardCornerRadius="@dimen/_18sdp">
 
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:layout_marginVertical="@dimen/_2sdp"
+                android:indeterminateTint="@color/white"/>
+
             <TextView
+                android:id="@+id/continueTv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"

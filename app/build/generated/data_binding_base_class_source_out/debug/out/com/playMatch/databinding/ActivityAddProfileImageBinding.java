@@ -6,6 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageView;
@@ -21,13 +24,16 @@ import java.lang.String;
 
 public final class ActivityAddProfileImageBinding implements ViewBinding {
   @NonNull
-  private final FrameLayout rootView;
+  private final FrameLayout rootView_;
 
   @NonNull
   public final CardView Continue;
 
   @NonNull
   public final ImageView back;
+
+  @NonNull
+  public final TextView continueTv;
 
   @NonNull
   public final ImageView editProfile;
@@ -41,22 +47,41 @@ public final class ActivityAddProfileImageBinding implements ViewBinding {
   @NonNull
   public final CircleImageView profileImage;
 
-  private ActivityAddProfileImageBinding(@NonNull FrameLayout rootView, @NonNull CardView Continue,
-      @NonNull ImageView back, @NonNull ImageView editProfile, @NonNull AppCompatTextView name,
-      @NonNull AppCompatImageView profileBg, @NonNull CircleImageView profileImage) {
-    this.rootView = rootView;
+  @NonNull
+  public final RelativeLayout profileLay;
+
+  @NonNull
+  public final ProgressBar progressBar;
+
+  @NonNull
+  public final FrameLayout rootView;
+
+  @NonNull
+  public final ImageView skip;
+
+  private ActivityAddProfileImageBinding(@NonNull FrameLayout rootView_, @NonNull CardView Continue,
+      @NonNull ImageView back, @NonNull TextView continueTv, @NonNull ImageView editProfile,
+      @NonNull AppCompatTextView name, @NonNull AppCompatImageView profileBg,
+      @NonNull CircleImageView profileImage, @NonNull RelativeLayout profileLay,
+      @NonNull ProgressBar progressBar, @NonNull FrameLayout rootView, @NonNull ImageView skip) {
+    this.rootView_ = rootView_;
     this.Continue = Continue;
     this.back = back;
+    this.continueTv = continueTv;
     this.editProfile = editProfile;
     this.name = name;
     this.profileBg = profileBg;
     this.profileImage = profileImage;
+    this.profileLay = profileLay;
+    this.progressBar = progressBar;
+    this.rootView = rootView;
+    this.skip = skip;
   }
 
   @Override
   @NonNull
   public FrameLayout getRoot() {
-    return rootView;
+    return rootView_;
   }
 
   @NonNull
@@ -92,6 +117,12 @@ public final class ActivityAddProfileImageBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.continueTv;
+      TextView continueTv = ViewBindings.findChildViewById(rootView, id);
+      if (continueTv == null) {
+        break missingId;
+      }
+
       id = R.id.editProfile;
       ImageView editProfile = ViewBindings.findChildViewById(rootView, id);
       if (editProfile == null) {
@@ -116,8 +147,28 @@ public final class ActivityAddProfileImageBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityAddProfileImageBinding((FrameLayout) rootView, Continue, back, editProfile,
-          name, profileBg, profileImage);
+      id = R.id.profileLay;
+      RelativeLayout profileLay = ViewBindings.findChildViewById(rootView, id);
+      if (profileLay == null) {
+        break missingId;
+      }
+
+      id = R.id.progressBar;
+      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
+      if (progressBar == null) {
+        break missingId;
+      }
+
+      FrameLayout rootView_ = (FrameLayout) rootView;
+
+      id = R.id.skip;
+      ImageView skip = ViewBindings.findChildViewById(rootView, id);
+      if (skip == null) {
+        break missingId;
+      }
+
+      return new ActivityAddProfileImageBinding((FrameLayout) rootView, Continue, back, continueTv,
+          editProfile, name, profileBg, profileImage, profileLay, progressBar, rootView_, skip);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

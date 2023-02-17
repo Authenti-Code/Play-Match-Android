@@ -11,8 +11,8 @@ data class RegisterPost(
     val location: String? = null,
     val gender: String? = null,
     val fitnessLevel: String? = null,
-    val device_type: String?= null,
-    val device_token: String?= null,
-    val device_id: String?= null
+    val deviceType: String?= null,
+    val deviceToken: String?= null,
+    val deviceID: String?= null
 )
 

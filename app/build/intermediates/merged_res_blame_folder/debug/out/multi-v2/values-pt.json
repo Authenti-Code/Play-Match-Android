@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.playMatch.app-mergeDebugResources-45:/values-pt/values-pt.xml",
+            "outputFile": "com.playMatch.app-mergeDebugResources-46:/values-pt/values-pt.xml",
             "map": [
                 {
                     "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-3\\cc46e9078e872b1f970272741e86ae83\\transformed\\preference-1.2.0\\res\\values-pt\\values-pt.xml",

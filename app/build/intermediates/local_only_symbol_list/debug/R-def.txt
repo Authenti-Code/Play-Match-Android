@@ -270,6 +270,7 @@ id password
 id past_match
 id pay
 id profileBg
+id profileLay
 id profileOff
 id profileOn
 id profile_image
@@ -311,6 +312,7 @@ id senderLay
 id setting
 id showInterest
 id signupTv
+id skip
 id snackbar_text
 id sportName
 id sportsTv
@@ -419,3 +421,5 @@ style Theme.PlayMatch
 style dialogTheme
 xml backup_rules
 xml data_extraction_rules
+xml network_security_config
+xml provider_paths

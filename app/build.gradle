@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -90,4 +91,7 @@ dependencies {
 
     //for cropping image
     implementation 'com.soundcloud.android:android-crop:1.0.1@aar'
+
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
 }

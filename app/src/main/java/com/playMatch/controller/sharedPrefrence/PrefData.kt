@@ -19,7 +19,7 @@ object PrefData {
     const val SPORT_ID="sport_id"
     const val DISTANCE="distance_km"
     const val SOCIAL_LOGIN="social_login"
-    const val LATITUDE="latitutde"
+    const val LOCATION="location_name"
     const val LONGITUDE="longitude"
     const val EDIT="edit"
 

@@ -23,7 +23,7 @@ import java.lang.String;
 
 public final class ActivityUserDetailBinding implements ViewBinding {
   @NonNull
-  private final FrameLayout rootView;
+  private final FrameLayout rootView_;
 
   @NonNull
   public final CardView Continue;
@@ -76,7 +76,10 @@ public final class ActivityUserDetailBinding implements ViewBinding {
   @NonNull
   public final ProgressBar progressBar;
 
-  private ActivityUserDetailBinding(@NonNull FrameLayout rootView, @NonNull CardView Continue,
+  @NonNull
+  public final FrameLayout rootView;
+
+  private ActivityUserDetailBinding(@NonNull FrameLayout rootView_, @NonNull CardView Continue,
       @NonNull AppCompatTextView ExperiencedTv, @NonNull AppCompatTextView IntermediateTv,
       @NonNull AppCompatTextView begginerTv, @NonNull MaterialCardView beginner,
       @NonNull ImageView beginnerCheck, @NonNull TextView continueTv,
@@ -84,8 +87,9 @@ public final class ActivityUserDetailBinding implements ViewBinding {
       @NonNull ImageView experiencedCheck, @NonNull AppCompatEditText gender,
       @NonNull MaterialCardView intermediate, @NonNull ImageView intermediateCheck,
       @NonNull MaterialCardView location, @NonNull AppCompatTextView locationTv,
-      @NonNull AppCompatTextView name, @NonNull ProgressBar progressBar) {
-    this.rootView = rootView;
+      @NonNull AppCompatTextView name, @NonNull ProgressBar progressBar,
+      @NonNull FrameLayout rootView) {
+    this.rootView_ = rootView_;
     this.Continue = Continue;
     this.ExperiencedTv = ExperiencedTv;
     this.IntermediateTv = IntermediateTv;
@@ -103,12 +107,13 @@ public final class ActivityUserDetailBinding implements ViewBinding {
     this.locationTv = locationTv;
     this.name = name;
     this.progressBar = progressBar;
+    this.rootView = rootView;
   }
 
   @Override
   @NonNull
   public FrameLayout getRoot() {
-    return rootView;
+    return rootView_;
   }
 
   @NonNull
@@ -234,10 +239,12 @@ public final class ActivityUserDetailBinding implements ViewBinding {
         break missingId;
       }
 
+      FrameLayout rootView_ = (FrameLayout) rootView;
+
       return new ActivityUserDetailBinding((FrameLayout) rootView, Continue, ExperiencedTv,
           IntermediateTv, begginerTv, beginner, beginnerCheck, continueTv, dob, experienced,
           experiencedCheck, gender, intermediate, intermediateCheck, location, locationTv, name,
-          progressBar);
+          progressBar, rootView_);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -6,7 +6,7 @@ object ApiConstant {
     const val AUTHORIZATION = "Authorization"
 
     // user methods
-    const val REGISTER = "useregister"
+    const val REGISTER = "register"
     const val SOCIAL_LOGIN = "social_registger"
 
     const val LOGIN = "userlogin"
@@ -18,6 +18,7 @@ object ApiConstant {
     const val CHANGE_PASSWORD="userchngpass"
 
     const val EDIT_PROFILE="editUserProfile"
+    const val UPLOAD_IMAGE="userImage"
 
     const val PROFILE="userprofile"
 
