@@ -8,9 +8,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.playMatch.R
 import com.playMatch.databinding.RvListItemSearchPlayersBinding
-import com.playMatch.databinding.RvNotificationListItemBinding
 import com.playMatch.ui.home.model.HomeChildModel
-import com.saetae.controller.sharedPrefrence.PrefData
+import com.playMatch.controller.sharedPrefrence.PrefData
 
 class InvitedPlayersAdapter(var list: ArrayList<HomeChildModel>, var activity: Activity) : RecyclerView.Adapter<InvitedPlayersAdapter.ViewHolder>() {
 

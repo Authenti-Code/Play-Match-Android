@@ -10,7 +10,7 @@ import com.playMatch.databinding.FragmentInboxBinding
 import com.playMatch.ui.baseActivity.BaseActivity
 import com.playMatch.ui.home.model.HomeChildModel
 import com.playMatch.ui.inbox.adapter.InboxAdapter
-import com.saetae.controller.sharedPrefrence.PrefData
+import com.playMatch.controller.sharedPrefrence.PrefData
 
 
 class InboxFragment : Fragment(),View.OnClickListener {

@@ -9,8 +9,7 @@ import android.graphics.Bitmap
 import android.graphics.Color
 import android.graphics.Color.red
 import android.hardware.display.DisplayManager
-import android.location.Location
-import android.location.LocationManager
+import android.location.*
 import android.location.LocationRequest
 import android.net.ConnectivityManager
 import android.net.Network
@@ -43,6 +42,9 @@ import com.google.android.gms.location.LocationRequest.create
 import com.google.android.gms.tasks.Task
 import com.google.android.material.snackbar.Snackbar
 import com.playMatch.R
+import com.playMatch.controller.constant.AppConstant
+import com.playMatch.controller.enum.Generation
+import com.playMatch.controller.playMatchAPi.ResultResponse
 import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.ui.home.activity.HomeActivity
 import com.playMatch.ui.home.activity.OnMapNearbyMatchesActivity
@@ -61,14 +63,13 @@ open class BaseActivity : AppCompatActivity() {
 
     var type: String? = ""
 
-    internal var notifications:Boolean?=true
+    internal var notifications: Boolean? = true
 
 
-    val bundle= Bundle()
+    val bundle = Bundle()
     internal var firebaseToken: String = ""
 
 
-    var address: String? = ""
 
     internal var file: File? = null
     internal var uri: Uri? = null
@@ -77,10 +78,14 @@ open class BaseActivity : AppCompatActivity() {
     private var destinationRoot: File? = null
     internal var PERMISSION_ALL = 4
     internal var PERMISSION_GALLERY = 5
+
     //strings
     internal var imageName: String? = ""
 
     private val permissionId = 2
+
+    private var networkType: String = AppConstant.INTERNET_OFF
+
 
     companion object {
         //permission
@@ -102,11 +107,10 @@ open class BaseActivity : AppCompatActivity() {
     internal var _latitude: String? = null
     internal var _longitude: String? = null
 
-//    private var mFusedLocationClient: FusedLocationProviderClient? = null
+    //    private var mFusedLocationClient: FusedLocationProviderClient? = null
     private var locationRequest: com.google.android.gms.location.LocationRequest? = null
     private var mFusedLocationClient: FusedLocationProviderClient? = null
     private var activity: Activity? = null
-
 
 
 //    var apiService: ApiService? = null
@@ -147,7 +151,8 @@ open class BaseActivity : AppCompatActivity() {
     private fun locationCall() {
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
         locationRequest = create()
-        locationRequest?.priority = com.google.android.gms.location.LocationRequest.PRIORITY_HIGH_ACCURACY
+        locationRequest?.priority =
+            com.google.android.gms.location.LocationRequest.PRIORITY_HIGH_ACCURACY
         locationRequest?.interval = 10000
         locationRequest?.fastestInterval = (10000 / 2).toLong()
     }
@@ -218,109 +223,224 @@ open class BaseActivity : AppCompatActivity() {
 //    }
 
 
-    //check network
-//    internal fun isNetworkAvailable(): Boolean {
-//        return checkNetwork(this@BaseActivity)
-//    }
+    internal fun isNetworkAvailable(): Boolean {
+        return checkNetwork(this@BaseActivity)
+    }
 
-//    internal fun showError(resultResponse: ResultResponse) {
-//        return when (resultResponse) {
-//            is ResultResponse.Error -> {
-//                showSnackBar(findViewById(R.id.rootView), resultResponse.error)
-//            }
-//            is ResultResponse.HttpErrors.ResourceForbidden -> {
-//                showSnackBar(findViewById(R.id.rootView), getString(
-//                    R.string.resourceforbidden))
-//            }
-//            is ResultResponse.HttpErrors.ResourceNotFound -> {
-//                showSnackBar(findViewById(R.id.rootView), getString(
-//                    R.string.resourceNotFound))
-//            }
-//            is ResultResponse.HttpErrors.InternalServerError -> {
-//                showSnackBar(findViewById(R.id.rootView), getString(
-//                    R.string.internalServerError))
-//            }
-//            is ResultResponse.HttpErrors.BadGateWay -> {
-//                showSnackBar(findViewById(R.id.rootView), getString(
-//                    R.string.badGateWay))
-//            }
-//            is ResultResponse.HttpErrors.ResourceRemoved -> {
-//                showSnackBar(findViewById(R.id.rootView), getString(
-//                    R.string.resourceRemoved))
-//            }
-//            is ResultResponse.HttpErrors.RemovedResourceFound -> {
-//                showSnackBar(findViewById(R.id.rootView), getString(
-//                    R.string.removedResourceFound))
-//            }
-//            is ResultResponse.NetworkException -> {
-//
-//                showNetworkSpeedError()
-//                //showSnackBar(findViewById(R.id.rootView), getString(R.string.error_no_internet))
-//            }
-//            else -> {
-//                showSnackBar(findViewById(R.id.rootView), getString(
-//                   R.string.something_went_wrong))
-//
-//            }
-//        }
-//    }
+    internal fun showNetworkSpeedError() {
+        if (networkType == AppConstant.INTERNET_SLOW) {
+            showSnackBar(
+                findViewById(R.id.rootView),
+                getString(R.string.error_speed)
+            )
+        } else if (networkType == AppConstant.INTERNET_OFF) {
+            showSnackBarInternetDisConnected(
+                findViewById(R.id.rootView),
+                getString(R.string.error_no_internet)
+            )
+        }
+    }
 
-//    private fun checkNetwork(context: Context): Boolean {
-//        var result = false
-//        val connectivityManager =
-//            context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-//        val networkCapabilities: Network = connectivityManager.activeNetwork ?: return false
-//        val actNw: NetworkCapabilities =
-//            connectivityManager.getNetworkCapabilities(networkCapabilities) ?: return false
-//        val info: Int? = connectivityManager.activeNetworkInfo?.subtype
-//        if (info == null) {
-//            networkType = AppConstant.INTERNET_OFF
-//            result = false
-//        } else {
-//            val generation = getNetworkGeneration(info)
-//            result = when {
-//                actNw.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
-//
-//                actNw.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> {
-//                    when (generation) {
-//                        Generation.`2G` -> {
-//                            result = false
-//                            networkType = AppConstant.INTERNET_SLOW
-//                        }
-//                        Generation.`3G` -> {
-//                            result = false
-//                            networkType = AppConstant.INTERNET_SLOW
-//                        }
-//
-//                        Generation.`4G` -> {
-//                            result = true
-//
-//                        }
-//                        Generation.`5G` -> {
-//                            result = true
-//
-//                        }
-//                        null -> {
-//                            networkType = AppConstant.INTERNET_OFF
-//                            result = false
-//                        }
-//                    }
-//                    result
-//                }
-//                actNw.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) -> true
-//                else -> {
-//                    Log.e("connectionType", "no internet connection")
-//                    networkType = AppConstant.INTERNET_OFF
-//                    false
-//                }
-//            }
-//        }
-//        if (result) {
-//            networkType = AppConstant.INTERNET_CONNECTED
-//        }
-//        return result
-//    }
+    internal fun showSnackBarInternetDisConnected(view: View?, message: String?) {
+        val snackBar: Snackbar = Snackbar.make(view!!, message.toString(), 3500)
+        val snackBarView: View = snackBar.view
 
+        snackBarView.setBackgroundColor(
+            ContextCompat.getColor(
+                this@BaseActivity,
+                R.color.red_E65D50
+            )
+        )
+        val textView =
+            snackBarView.findViewById<View>(R.id.snackbar_text) as AppCompatTextView
+        textView.setTextColor(Color.WHITE)
+        textView.maxLines = 5
+
+        snackBar.show()
+    }
+
+    internal fun showError(resultResponse: ResultResponse) {
+        return when (resultResponse) {
+            is ResultResponse.Error -> {
+                showSnackBar(findViewById(R.id.rootView), resultResponse.error)
+            }
+            is ResultResponse.HttpErrors.ResourceForbidden -> {
+                showSnackBar(
+                    findViewById(R.id.rootView), getString(
+                        R.string.resourceforbidden
+                    )
+                )
+            }
+            is ResultResponse.HttpErrors.ResourceNotFound -> {
+                showSnackBar(
+                    findViewById(R.id.rootView), getString(
+                        R.string.resourceNotFound
+                    )
+                )
+            }
+            is ResultResponse.HttpErrors.InternalServerError -> {
+                showSnackBar(
+                    findViewById(R.id.rootView), getString(
+                        R.string.internalServerError
+                    )
+                )
+            }
+            is ResultResponse.HttpErrors.BadGateWay -> {
+                showSnackBar(
+                    findViewById(R.id.rootView), getString(
+                        R.string.badGateWay
+                    )
+                )
+            }
+            is ResultResponse.HttpErrors.ResourceRemoved -> {
+                showSnackBar(
+                    findViewById(R.id.rootView), getString(
+                        R.string.resourceRemoved
+                    )
+                )
+            }
+            is ResultResponse.HttpErrors.RemovedResourceFound -> {
+                showSnackBar(
+                    findViewById(R.id.rootView), getString(
+                        R.string.removedResourceFound
+                    )
+                )
+            }
+            is ResultResponse.NetworkException -> {
+
+                showNetworkSpeedError()
+                //showSnackBar(findViewById(R.id.rootView), getString(R.string.error_no_internet))
+            }
+            else -> {
+                showSnackBar(
+                    findViewById(R.id.rootView), getString(
+                        R.string.something_went_wrong
+                    )
+                )
+
+            }
+        }
+    }
+
+    private fun checkNetwork(context: Context): Boolean {
+        var result = false
+        val connectivityManager =
+            context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val networkCapabilities: Network = connectivityManager.activeNetwork ?: return false
+        val actNw: NetworkCapabilities =
+            connectivityManager.getNetworkCapabilities(networkCapabilities) ?: return false
+        val info: Int? = connectivityManager.activeNetworkInfo?.subtype
+        if (info == null) {
+            networkType = AppConstant.INTERNET_OFF
+            result = false
+        } else {
+            val generation = getNetworkGeneration(info)
+            result = when {
+                actNw.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
+
+                actNw.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> {
+                    when (generation) {
+                        Generation.`2G` -> {
+                            result = false
+                            networkType = AppConstant.INTERNET_SLOW
+                        }
+                        Generation.`3G` -> {
+                            result = false
+                            networkType = AppConstant.INTERNET_SLOW
+                        }
+
+                        Generation.`4G` -> {
+                            result = true
+
+                        }
+                        Generation.`5G` -> {
+                            result = true
+
+                        }
+                        null -> {
+                            networkType = AppConstant.INTERNET_OFF
+                            result = false
+                        }
+                    }
+                    result
+                }
+                actNw.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) -> true
+                else -> {
+                    Log.e("connectionType", "no internet connection")
+                    networkType = AppConstant.INTERNET_OFF
+                    false
+                }
+            }
+        }
+        if (result) {
+            networkType = AppConstant.INTERNET_CONNECTED
+        }
+        return result
+    }
+
+
+    @Throws(Exception::class)
+    internal fun convertLatLngToAddress(): Address? {
+        /* var addresses: ArrayList<Address>? = ArrayList()
+         try {
+             val geoCoder = Geocoder(this@BaseActivity, Locale.ENGLISH)
+             addresses = geoCoder.getFromLocation(latitude!!, latitude!!, 1) as ArrayList<Address>?
+         } catch (e: IOException) {
+             e.printStackTrace()
+         }
+         return addresses?.get(0)*/
+
+        // Reverse-Geocoding starts
+        var addresses: Address? = null
+        try {
+            val geoCoder = Geocoder(this@BaseActivity, Locale.ENGLISH)
+            val addressList: MutableList<Address>? =
+                latitude?.let { longitude?.let { it1 -> geoCoder.getFromLocation(it, it1, 1) } }
+
+            // use your lat, long value here
+            if (addressList != null && addressList.isNotEmpty()) {
+
+                addresses = addressList[0]
+            }
+        } catch (e: IOException) {
+
+            Toast.makeText(applicationContext, "Unable connect to Geocoder", Toast.LENGTH_LONG)
+                .show()
+            return null
+        }
+        return addresses
+
+    }
+
+    private fun getNetworkGeneration(info: Int?): Generation? {
+        return when (info) {
+            TelephonyManager.NETWORK_TYPE_UNKNOWN -> null
+            TelephonyManager.NETWORK_TYPE_GPRS,
+            TelephonyManager.NETWORK_TYPE_EDGE,
+            TelephonyManager.NETWORK_TYPE_CDMA,
+            TelephonyManager.NETWORK_TYPE_1xRTT,
+            TelephonyManager.NETWORK_TYPE_IDEN,
+            TelephonyManager.NETWORK_TYPE_GSM -> Generation.`2G`
+
+            TelephonyManager.NETWORK_TYPE_UMTS,
+            TelephonyManager.NETWORK_TYPE_EVDO_0,
+            TelephonyManager.NETWORK_TYPE_EVDO_A,
+            TelephonyManager.NETWORK_TYPE_HSDPA,
+            TelephonyManager.NETWORK_TYPE_HSUPA,
+            TelephonyManager.NETWORK_TYPE_HSPA,
+            TelephonyManager.NETWORK_TYPE_EVDO_B,
+            TelephonyManager.NETWORK_TYPE_EHRPD,
+            TelephonyManager.NETWORK_TYPE_HSPAP,
+            TelephonyManager.NETWORK_TYPE_TD_SCDMA -> Generation.`3G`
+
+            TelephonyManager.NETWORK_TYPE_LTE,
+            TelephonyManager.NETWORK_TYPE_IWLAN -> Generation.`4G`
+
+            TelephonyManager.NETWORK_TYPE_NR -> Generation.`5G`
+
+            else -> null
+        }
+    }
     @SuppressLint("NewApi")
     fun checkPermissions(): Boolean {
 //        if (ActivityCompat.checkSelfPermission(
@@ -345,6 +465,7 @@ open class BaseActivity : AppCompatActivity() {
         }
         return true
     }
+
     @RequiresApi(33)
     fun requestPermissions() {
 //        ActivityCompat.requestPermissions(
@@ -473,7 +594,7 @@ open class BaseActivity : AppCompatActivity() {
                         is OnMapNearbyMatchesActivity -> {
                             activity.setUpMap()
                         }
-                        is LocationActivity-> {
+                        is LocationActivity -> {
                             activity.setUpMap()
                         }
 
@@ -516,9 +637,9 @@ open class BaseActivity : AppCompatActivity() {
             } else if (isLocation) {
 //                bottomSheetEnableLocationService()
             }
-        } else  if (requestCode ==PERMISSION_ALL) {
+        } else if (requestCode == PERMISSION_ALL) {
             openCamera()
-        } else if (requestCode==PERMISSION_GALLERY) {
+        } else if (requestCode == PERMISSION_GALLERY) {
             openGallery()
         }
     }
@@ -540,6 +661,7 @@ open class BaseActivity : AppCompatActivity() {
             longitude = mLastLocation?.longitude
         }
     }
+
     @SuppressLint("ObsoleteSdkInt")
     @Throws(java.lang.Exception::class)
     internal fun openCamera() {
@@ -791,7 +913,6 @@ open class BaseActivity : AppCompatActivity() {
     }
 
 
-
 //    private fun getNetworkGeneration(info: Int?): Generation? {
 //        return when (info) {
 //            TelephonyManager.NETWORK_TYPE_UNKNOWN -> null
@@ -847,41 +968,32 @@ open class BaseActivity : AppCompatActivity() {
 //        bottomSheetDialog.show()
 //    }
 
-//    internal fun showSnackBarInternetConnected(view: View?, message: String?) {
-//        val snackBar: Snackbar = Snackbar.make(view!!, message.toString(), 3500)
-//        val snackBarView: View = snackBar.view
-//
-//        snackBarView.setBackgroundColor(
-//            ContextCompat.getColor(
-//                this@BaseActivity,
-//                R.color.greenColor01A67E
-//            )
-//        )
-//        val textView =
-//            snackBarView.findViewById<View>(R.id.snackbar_text) as AppCompatTextView
-//        textView.setTextColor(Color.WHITE)
-//        textView.maxLines = 5
-//
-//        snackBar.show()
-//    }
 
-//    internal fun showSnackBarInternetDisConnected(view: View?, message: String?) {
-//        val snackBar: Snackbar = Snackbar.make(view!!, message.toString(), 3500)
-//        val snackBarView: View = snackBar.view
-//
-//        snackBarView.setBackgroundColor(
-//            ContextCompat.getColor(
-//                this@BaseActivity,
-//              R.color.red
-//            )
-//        )
-//        val textView =
-//            snackBarView.findViewById<View>(R.id.snackbar_text) as AppCompatTextView
-//        textView.setTextColor(Color.WHITE)
-//        textView.maxLines = 5
-//
-//        snackBar.show()
-//    }
+
+    /**
+     * This method displays provided message on SnackBar
+     *
+     * @param view
+     * @param message
+     */
+    internal fun showSnackBar(view: View?, message: String?) {
+        val snackBar: Snackbar = Snackbar.make(view!!, message.toString(), 3500)
+        val snackBarView: View = snackBar.view
+
+        snackBarView.setBackgroundColor(
+            ContextCompat.getColor(
+                this@BaseActivity,
+                R.color.red_E65D50
+            )
+        )
+        val textView =
+            snackBarView.findViewById<View>(R.id.snackbar_text) as TextView
+        textView.setTextColor(Color.WHITE)
+        textView.maxLines = 5
+
+        snackBar.show()
+    }
+
 
 //    internal fun showCheckBoxError(){
 //        showSnackBar(findViewById(R.id.rootView), getString(R.string.error_checkbox))

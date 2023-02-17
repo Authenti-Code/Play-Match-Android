@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.playMatch.databinding.RvChildSelectSportListItemBinding
 import com.playMatch.ui.signUp.signupModel.SelectChildSPortModel
-import com.saetae.controller.sharedPrefrence.PrefData
+import com.playMatch.controller.sharedPrefrence.PrefData
 
 class SelectChildSportAdapter(var list: ArrayList<SelectChildSPortModel>, var activity: Activity) : RecyclerView.Adapter<SelectChildSportAdapter.ViewHolder>() {
 
@@ -27,7 +27,7 @@ private  var selectedPosition=-1
     override fun onBindViewHolder(holder: SelectChildSportAdapter.ViewHolder, @SuppressLint("RecyclerView") position: Int) {
         holder.apply {
             val ItemsviewModel = list[position]
-            val id=PrefData.getStringPrefs(activity,PrefData.CHECK_BOX,"")
+            val id= PrefData.getStringPrefs(activity, PrefData.CHECK_BOX,"")
 
             holder.binding.fitnessLevel.text = ItemsviewModel.fitnessLevel
 

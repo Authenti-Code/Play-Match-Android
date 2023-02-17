@@ -10,7 +10,7 @@ import com.playMatch.databinding.RvSelectSportItemBinding
 import com.playMatch.ui.signUp.signupModel.SelectChildSPortLightModel
 import com.playMatch.ui.signUp.signupModel.SelectChildSPortModel
 import com.playMatch.ui.signUp.signupModel.SelectSportModel
-import com.saetae.controller.sharedPrefrence.PrefData
+import com.playMatch.controller.sharedPrefrence.PrefData
 
 class SelectSportAdapter(var list: ArrayList<SelectSportModel>, var activity: Activity ) : RecyclerView.Adapter<SelectSportAdapter.ViewHolder>() {
 
@@ -58,12 +58,12 @@ class SelectSportAdapter(var list: ArrayList<SelectSportModel>, var activity: Ac
             }
             binding.checkbox.setOnClickListener {
        if (binding.checkbox.isChecked){
-    PrefData.setStringPrefs(activity,PrefData.CHECK_BOX,"1")
+    PrefData.setStringPrefs(activity, PrefData.CHECK_BOX,"1")
     binding.rvChildSports.visibility=View.VISIBLE
     binding.rvLightChildSports.visibility=View.GONE
         }
        else{
-    PrefData.setStringPrefs(activity,PrefData.CHECK_BOX,"0")
+    PrefData.setStringPrefs(activity, PrefData.CHECK_BOX,"0")
     binding.rvChildSports.visibility=View.GONE
     binding.rvLightChildSports.visibility=View.VISIBLE
              }

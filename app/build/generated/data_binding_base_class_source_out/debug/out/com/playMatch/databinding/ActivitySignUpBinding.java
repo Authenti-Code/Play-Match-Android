@@ -5,9 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatEditText;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
@@ -25,7 +28,25 @@ public final class ActivitySignUpBinding implements ViewBinding {
   public final CardView Continue;
 
   @NonNull
+  public final AppCompatEditText confirmPass;
+
+  @NonNull
+  public final TextView continueTv;
+
+  @NonNull
+  public final AppCompatEditText email;
+
+  @NonNull
   public final AppCompatTextView login;
+
+  @NonNull
+  public final AppCompatEditText name;
+
+  @NonNull
+  public final AppCompatEditText password;
+
+  @NonNull
+  public final ProgressBar progressBar;
 
   @NonNull
   public final RelativeLayout relative4;
@@ -34,11 +55,20 @@ public final class ActivitySignUpBinding implements ViewBinding {
   public final AppCompatTextView textSign;
 
   private ActivitySignUpBinding(@NonNull FrameLayout rootView, @NonNull CardView Continue,
-      @NonNull AppCompatTextView login, @NonNull RelativeLayout relative4,
+      @NonNull AppCompatEditText confirmPass, @NonNull TextView continueTv,
+      @NonNull AppCompatEditText email, @NonNull AppCompatTextView login,
+      @NonNull AppCompatEditText name, @NonNull AppCompatEditText password,
+      @NonNull ProgressBar progressBar, @NonNull RelativeLayout relative4,
       @NonNull AppCompatTextView textSign) {
     this.rootView = rootView;
     this.Continue = Continue;
+    this.confirmPass = confirmPass;
+    this.continueTv = continueTv;
+    this.email = email;
     this.login = login;
+    this.name = name;
+    this.password = password;
+    this.progressBar = progressBar;
     this.relative4 = relative4;
     this.textSign = textSign;
   }
@@ -76,9 +106,45 @@ public final class ActivitySignUpBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.confirmPass;
+      AppCompatEditText confirmPass = ViewBindings.findChildViewById(rootView, id);
+      if (confirmPass == null) {
+        break missingId;
+      }
+
+      id = R.id.continueTv;
+      TextView continueTv = ViewBindings.findChildViewById(rootView, id);
+      if (continueTv == null) {
+        break missingId;
+      }
+
+      id = R.id.email;
+      AppCompatEditText email = ViewBindings.findChildViewById(rootView, id);
+      if (email == null) {
+        break missingId;
+      }
+
       id = R.id.login;
       AppCompatTextView login = ViewBindings.findChildViewById(rootView, id);
       if (login == null) {
+        break missingId;
+      }
+
+      id = R.id.name;
+      AppCompatEditText name = ViewBindings.findChildViewById(rootView, id);
+      if (name == null) {
+        break missingId;
+      }
+
+      id = R.id.password;
+      AppCompatEditText password = ViewBindings.findChildViewById(rootView, id);
+      if (password == null) {
+        break missingId;
+      }
+
+      id = R.id.progressBar;
+      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
+      if (progressBar == null) {
         break missingId;
       }
 
@@ -94,8 +160,8 @@ public final class ActivitySignUpBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivitySignUpBinding((FrameLayout) rootView, Continue, login, relative4,
-          textSign);
+      return new ActivitySignUpBinding((FrameLayout) rootView, Continue, confirmPass, continueTv,
+          email, login, name, password, progressBar, relative4, textSign);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

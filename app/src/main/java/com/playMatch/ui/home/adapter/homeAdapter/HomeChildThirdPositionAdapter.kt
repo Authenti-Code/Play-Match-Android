@@ -10,9 +10,8 @@ import com.playMatch.controller.constant.IntentConstant
 import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.databinding.RvChildHomeThirdPositionListItemBinding
 import com.playMatch.ui.home.activity.HomeActivity
-import com.playMatch.ui.home.model.HomeChildModel
 import com.playMatch.ui.home.model.HomeChildthirdModel
-import com.saetae.controller.sharedPrefrence.PrefData
+import com.playMatch.controller.sharedPrefrence.PrefData
 
 class HomeChildThirdPositionAdapter(var list: ArrayList<HomeChildthirdModel>, var activity: Activity) : RecyclerView.Adapter<HomeChildThirdPositionAdapter.ViewHolder>() {
 

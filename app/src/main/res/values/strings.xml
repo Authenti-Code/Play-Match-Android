@@ -5,4 +5,33 @@
     <string name="full_name">Full Name</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    //error String
+    <string name="error_name">Please Enter full name</string>
+    <string name="error_Email">Please Enter Email address</string>
+    <string name="error_dob">Please Select Date of Birth</string>
+    <string name="error_location">Please Select Your Location</string>
+    <string name="error_Password">Please Enter Password</string>
+    <string name="error_Old_Password">Please Enter Old Password</string>
+
+    <string name="error_ConfirmPassword">Please Enter Confirm Password</string>
+    <string name="error_match_password">Please enter same password</string>
+
+    <item name="snackbar_text" type="id" />
+    <string name="unknown">Unknown</string>
+
+
+
+    <string name="resourceforbidden">Access to resource is forbidden</string>
+    <string name="resourceNotFound">Resource not found</string>
+    <string name="internalServerError">Internal server error</string>
+    <string name="badGateWay">Bad Gateway</string>
+    <string name="resourceRemoved">Resource has been removed permanently</string>
+    <string name="removedResourceFound">Resource moved, but has been found</string>
+    <string name="something_went_wrong">Something went wrong, please try again.</string>
+
+    <string name="connected_internet">You are connected to internet.</string>
+    <string name="error_no_internet">Please check your network connection and try again.</string>
+    <string name="error_speed">"Poor internet connection. Try again later."</string>
+    <string name="error_checkbox">"Please Select the essential check box before Registration."</string>
 </resources>

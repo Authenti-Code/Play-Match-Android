@@ -8,10 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.playMatch.controller.`interface`.ButtonClickListener
 import com.playMatch.databinding.RvChildSecondPositionListItemBinding
 import com.playMatch.ui.home.dialogs.interestDialog.InterestsDialog
-import com.playMatch.ui.home.dialogs.invitesDialog.InvitesDialog
-import com.playMatch.ui.home.model.HomeChildModel
 import com.playMatch.ui.home.model.HomeChilseconddModel
-import com.saetae.controller.sharedPrefrence.PrefData
+import com.playMatch.controller.sharedPrefrence.PrefData
 
 class HomeChildSecondPositionAdapterclass(var list: ArrayList<HomeChilseconddModel>, var activity: Activity) : RecyclerView.Adapter<HomeChildSecondPositionAdapterclass.ViewHolder>() {
 

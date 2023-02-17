@@ -1,18 +1,18 @@
-package com.saetae.controller.sharedPrefrence
+package com.playMatch.controller.sharedPrefrence
 
 import android.content.Context
-import android.preference.PreferenceManager
 
 object PrefData {
     private const val PREFERENCE = "SaetaePref"
     const val KEY_BEARER_TOKEN = "key_bearer_token"
-    const val EVENT_ID = "event_id"
+    const val NAME = "Name"
     const val MY_ID = "my_id"
     const val CHAT_ROOM_ID = "chat_room_id"
     const val OTHER_USER_ID = "other_user_id"
     const val OTHER_USER_Receiver_ID = "other_user_receiver_id"
     const val EMAIL = "email"
     const val PASSWORD = "password"
+    const val CONFIRM_PASSWORD = "confirm_password"
     const val CHECK_BOX="Check_Box"
     const val IS_USER_LOGIN="is_user_login"
     const val SPORT_IMAGE="sport_image"

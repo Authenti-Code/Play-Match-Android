@@ -2,23 +2,17 @@ package com.playMatch.ui.home.adapter.nearbyMatchesAdapter
 
 import android.annotation.SuppressLint
 import android.app.Activity
-import android.telecom.Call
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.cardview.widget.CardView
-import androidx.core.content.ContentProviderCompat.requireContext
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.google.android.material.card.MaterialCardView
 import com.playMatch.R
-import com.playMatch.databinding.RvChildHomeListItemBinding
 import com.playMatch.databinding.RvNearByMatchListBinding
-import com.playMatch.databinding.RvNotificationListItemBinding
 import com.playMatch.ui.home.model.HomeChildModel
-import com.saetae.controller.sharedPrefrence.PrefData
+import com.playMatch.controller.sharedPrefrence.PrefData
 
 class NearByMatchesAdapter(var list: ArrayList<HomeChildModel>, var activity: Activity) : RecyclerView.Adapter<NearByMatchesAdapter.ViewHolder>() {
 

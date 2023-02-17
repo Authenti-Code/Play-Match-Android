@@ -93,6 +93,7 @@
                 app:cardCornerRadius="@dimen/_8sdp">
 
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/locationTv"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textColor="@color/black"
@@ -117,18 +118,19 @@
                 app:cardCornerRadius="@dimen/_8sdp">
 
                 <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/gender"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:backgroundTint="@color/white"
+                    android:drawableStart="@drawable/ic_gender"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:fontFamily="@font/metropolis_light"
+                    android:hint="Gender"
+                    android:paddingStart="@dimen/_10sdp"
                     android:textColor="@color/black"
                     android:textColorHint="@color/greay_B7B7B7"
                     android:textSize="@dimen/_12ssp"
-                    android:drawableStart="@drawable/ic_gender"
-                    android:paddingStart="@dimen/_10sdp"
-                    android:hint="Gender"
-                    android:password="true"
-                    android:drawablePadding="@dimen/_10sdp"
-                    android:backgroundTint="@color/white"
-                    android:fontFamily="@font/metropolis_light"/>
+                    tools:ignore="TouchTargetSizeCheck" />
 
             </com.google.android.material.card.MaterialCardView>
 
@@ -170,6 +172,7 @@
                     app:cardCornerRadius="@dimen/_8sdp">
 
                     <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/begginerTv"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:textColor="@color/black"
@@ -212,6 +215,7 @@
                         android:scaleType="fitXY"/>
 
                     <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/IntermediateTv"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:textColor="@color/black"
@@ -247,6 +251,7 @@
                             android:scaleType="fitXY"/>
 
                         <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/ExperiencedTv"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:textColor="@color/black"
@@ -276,7 +281,16 @@
                 android:layout_marginBottom="@dimen/_15sdp"
                 app:cardCornerRadius="@dimen/_18sdp">
 
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    android:layout_marginVertical="@dimen/_2sdp"
+                    android:indeterminateTint="@color/white"/>
+
                 <TextView
+                    android:id="@+id/continueTv"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"

@@ -7,7 +7,7 @@ import com.playMatch.databinding.ActivityEditSportsBinding
 import com.playMatch.ui.baseActivity.BaseActivity
 import com.playMatch.ui.signUp.signUpAdapters.SelectSportAdapter
 import com.playMatch.ui.signUp.signupModel.SelectSportModel
-import com.saetae.controller.sharedPrefrence.PrefData
+import com.playMatch.controller.sharedPrefrence.PrefData
 
 class EditSportsActivity : BaseActivity(), View.OnClickListener {
     private lateinit var binding: ActivityEditSportsBinding

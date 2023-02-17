@@ -8,7 +8,7 @@ import com.playMatch.databinding.ActivitySelectSportBinding
 import com.playMatch.ui.baseActivity.BaseActivity
 import com.playMatch.ui.signUp.signUpAdapters.SelectSportAdapter
 import com.playMatch.ui.signUp.signupModel.SelectSportModel
-import com.saetae.controller.sharedPrefrence.PrefData
+import com.playMatch.controller.sharedPrefrence.PrefData
 
 class SelectSportActivity : BaseActivity(), View.OnClickListener {
     private lateinit var binding: ActivitySelectSportBinding
@@ -41,7 +41,7 @@ class SelectSportActivity : BaseActivity(), View.OnClickListener {
 
     override fun onDestroy() {
         super.onDestroy()
-        PrefData.remove(this,PrefData.CHECK_BOX)
+        PrefData.remove(this, PrefData.CHECK_BOX)
     }
 
     private fun initView() {

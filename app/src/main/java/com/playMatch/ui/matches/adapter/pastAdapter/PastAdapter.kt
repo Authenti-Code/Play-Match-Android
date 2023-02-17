@@ -6,11 +6,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.playMatch.controller.utils.CommonUtils
-import com.playMatch.databinding.RvChildHomeListItemBinding
 import com.playMatch.databinding.RvMatchesListItemBinding
 import com.playMatch.ui.home.model.HomeChildModel
 import com.playMatch.ui.matches.activity.matchDetails.MatchDetailsActivity
-import com.saetae.controller.sharedPrefrence.PrefData
+import com.playMatch.controller.sharedPrefrence.PrefData
 
 class PastAdapter(var list: ArrayList<HomeChildModel>, var activity: Activity) : RecyclerView.Adapter<PastAdapter.ViewHolder>() {
 

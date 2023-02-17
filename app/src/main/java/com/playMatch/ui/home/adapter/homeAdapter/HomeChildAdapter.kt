@@ -9,7 +9,7 @@ import com.playMatch.controller.`interface`.ButtonClickListener
 import com.playMatch.databinding.RvChildHomeListItemBinding
 import com.playMatch.ui.home.dialogs.invitesDialog.InvitesDialog
 import com.playMatch.ui.home.model.HomeChildModel
-import com.saetae.controller.sharedPrefrence.PrefData
+import com.playMatch.controller.sharedPrefrence.PrefData
 
 class HomeChildAdapter(var list: ArrayList<HomeChildModel>, var activity: Activity) : RecyclerView.Adapter<HomeChildAdapter.ViewHolder>() {
 

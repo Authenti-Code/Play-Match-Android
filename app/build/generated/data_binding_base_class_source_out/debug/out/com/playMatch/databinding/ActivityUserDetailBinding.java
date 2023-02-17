@@ -6,8 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatEditText;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
@@ -26,10 +29,22 @@ public final class ActivityUserDetailBinding implements ViewBinding {
   public final CardView Continue;
 
   @NonNull
+  public final AppCompatTextView ExperiencedTv;
+
+  @NonNull
+  public final AppCompatTextView IntermediateTv;
+
+  @NonNull
+  public final AppCompatTextView begginerTv;
+
+  @NonNull
   public final MaterialCardView beginner;
 
   @NonNull
   public final ImageView beginnerCheck;
+
+  @NonNull
+  public final TextView continueTv;
 
   @NonNull
   public final AppCompatTextView dob;
@@ -41,6 +56,9 @@ public final class ActivityUserDetailBinding implements ViewBinding {
   public final ImageView experiencedCheck;
 
   @NonNull
+  public final AppCompatEditText gender;
+
+  @NonNull
   public final MaterialCardView intermediate;
 
   @NonNull
@@ -50,25 +68,41 @@ public final class ActivityUserDetailBinding implements ViewBinding {
   public final MaterialCardView location;
 
   @NonNull
+  public final AppCompatTextView locationTv;
+
+  @NonNull
   public final AppCompatTextView name;
 
+  @NonNull
+  public final ProgressBar progressBar;
+
   private ActivityUserDetailBinding(@NonNull FrameLayout rootView, @NonNull CardView Continue,
-      @NonNull MaterialCardView beginner, @NonNull ImageView beginnerCheck,
+      @NonNull AppCompatTextView ExperiencedTv, @NonNull AppCompatTextView IntermediateTv,
+      @NonNull AppCompatTextView begginerTv, @NonNull MaterialCardView beginner,
+      @NonNull ImageView beginnerCheck, @NonNull TextView continueTv,
       @NonNull AppCompatTextView dob, @NonNull MaterialCardView experienced,
-      @NonNull ImageView experiencedCheck, @NonNull MaterialCardView intermediate,
-      @NonNull ImageView intermediateCheck, @NonNull MaterialCardView location,
-      @NonNull AppCompatTextView name) {
+      @NonNull ImageView experiencedCheck, @NonNull AppCompatEditText gender,
+      @NonNull MaterialCardView intermediate, @NonNull ImageView intermediateCheck,
+      @NonNull MaterialCardView location, @NonNull AppCompatTextView locationTv,
+      @NonNull AppCompatTextView name, @NonNull ProgressBar progressBar) {
     this.rootView = rootView;
     this.Continue = Continue;
+    this.ExperiencedTv = ExperiencedTv;
+    this.IntermediateTv = IntermediateTv;
+    this.begginerTv = begginerTv;
     this.beginner = beginner;
     this.beginnerCheck = beginnerCheck;
+    this.continueTv = continueTv;
     this.dob = dob;
     this.experienced = experienced;
     this.experiencedCheck = experiencedCheck;
+    this.gender = gender;
     this.intermediate = intermediate;
     this.intermediateCheck = intermediateCheck;
     this.location = location;
+    this.locationTv = locationTv;
     this.name = name;
+    this.progressBar = progressBar;
   }
 
   @Override
@@ -104,6 +138,24 @@ public final class ActivityUserDetailBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.ExperiencedTv;
+      AppCompatTextView ExperiencedTv = ViewBindings.findChildViewById(rootView, id);
+      if (ExperiencedTv == null) {
+        break missingId;
+      }
+
+      id = R.id.IntermediateTv;
+      AppCompatTextView IntermediateTv = ViewBindings.findChildViewById(rootView, id);
+      if (IntermediateTv == null) {
+        break missingId;
+      }
+
+      id = R.id.begginerTv;
+      AppCompatTextView begginerTv = ViewBindings.findChildViewById(rootView, id);
+      if (begginerTv == null) {
+        break missingId;
+      }
+
       id = R.id.beginner;
       MaterialCardView beginner = ViewBindings.findChildViewById(rootView, id);
       if (beginner == null) {
@@ -113,6 +165,12 @@ public final class ActivityUserDetailBinding implements ViewBinding {
       id = R.id.beginner_check;
       ImageView beginnerCheck = ViewBindings.findChildViewById(rootView, id);
       if (beginnerCheck == null) {
+        break missingId;
+      }
+
+      id = R.id.continueTv;
+      TextView continueTv = ViewBindings.findChildViewById(rootView, id);
+      if (continueTv == null) {
         break missingId;
       }
 
@@ -134,6 +192,12 @@ public final class ActivityUserDetailBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.gender;
+      AppCompatEditText gender = ViewBindings.findChildViewById(rootView, id);
+      if (gender == null) {
+        break missingId;
+      }
+
       id = R.id.intermediate;
       MaterialCardView intermediate = ViewBindings.findChildViewById(rootView, id);
       if (intermediate == null) {
@@ -152,15 +216,28 @@ public final class ActivityUserDetailBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.locationTv;
+      AppCompatTextView locationTv = ViewBindings.findChildViewById(rootView, id);
+      if (locationTv == null) {
+        break missingId;
+      }
+
       id = R.id.name;
       AppCompatTextView name = ViewBindings.findChildViewById(rootView, id);
       if (name == null) {
         break missingId;
       }
 
-      return new ActivityUserDetailBinding((FrameLayout) rootView, Continue, beginner,
-          beginnerCheck, dob, experienced, experiencedCheck, intermediate, intermediateCheck,
-          location, name);
+      id = R.id.progressBar;
+      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
+      if (progressBar == null) {
+        break missingId;
+      }
+
+      return new ActivityUserDetailBinding((FrameLayout) rootView, Continue, ExperiencedTv,
+          IntermediateTv, begginerTv, beginner, beginnerCheck, continueTv, dob, experienced,
+          experiencedCheck, gender, intermediate, intermediateCheck, location, locationTv, name,
+          progressBar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

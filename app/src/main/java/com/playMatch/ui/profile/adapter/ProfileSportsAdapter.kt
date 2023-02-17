@@ -5,12 +5,9 @@ import android.app.Activity
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.playMatch.databinding.RvChildHomeListItemBinding
-import com.playMatch.databinding.RvInboxListBinding
-import com.playMatch.databinding.RvNotificationListItemBinding
 import com.playMatch.databinding.RvProfileListItemSportsAbilityBinding
 import com.playMatch.ui.home.model.HomeChildModel
-import com.saetae.controller.sharedPrefrence.PrefData
+import com.playMatch.controller.sharedPrefrence.PrefData
 
 class ProfileSportsAdapter(var list: ArrayList<HomeChildModel>, var activity: Activity) : RecyclerView.Adapter<ProfileSportsAdapter.ViewHolder>() {
 

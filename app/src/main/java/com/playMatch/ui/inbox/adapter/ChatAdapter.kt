@@ -6,10 +6,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.playMatch.databinding.RvChatListItemBinding
-import com.playMatch.databinding.RvChildHomeListItemBinding
-import com.playMatch.databinding.RvNotificationListItemBinding
 import com.playMatch.ui.home.model.HomeChildModel
-import com.saetae.controller.sharedPrefrence.PrefData
+import com.playMatch.controller.sharedPrefrence.PrefData
 
 class ChatAdapter(var list: ArrayList<HomeChildModel>, var activity: Activity) : RecyclerView.Adapter<ChatAdapter.ViewHolder>() {
 

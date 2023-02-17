@@ -15,7 +15,7 @@ import com.playMatch.ui.profile.activity.editProfile.EditProfileActivity
 import com.playMatch.ui.profile.activity.settingActivity.SettingActivity
 import com.playMatch.ui.profile.adapter.ProfileSportsAdapter
 import com.playMatch.ui.profile.adapter.ProfileStatisticsAdapter
-import com.saetae.controller.sharedPrefrence.PrefData
+import com.playMatch.controller.sharedPrefrence.PrefData
 
 class ProfileFragment : Fragment(),View.OnClickListener {
     private var binding: FragmentProfileBinding? = null

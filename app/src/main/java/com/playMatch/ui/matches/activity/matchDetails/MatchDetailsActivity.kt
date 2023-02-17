@@ -12,7 +12,7 @@ import com.playMatch.ui.matches.activity.createMatchActivity.CreateMatchActivity
 import com.playMatch.ui.matches.adapter.acceptedPlayerAdapters.AcceptedPlayersAdapter
 import com.playMatch.ui.matches.adapter.invitedPlayersAdapter.InvitedPlayersAdapter
 import com.playMatch.ui.matches.adapter.searchPlayersAdapter.SearchPlayersAdapter
-import com.saetae.controller.sharedPrefrence.PrefData
+import com.playMatch.controller.sharedPrefrence.PrefData
 
 @Suppress("DEPRECATION")
 class MatchDetailsActivity : BaseActivity(), View.OnClickListener {

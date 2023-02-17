@@ -13,7 +13,7 @@ import com.playMatch.ui.inbox.fragment.InboxFragment
 import com.playMatch.ui.matches.fragment.MatchesFragment
 import com.playMatch.ui.profile.fragment.ProfileFragment
 import com.playMatch.ui.teams.fragment.TeamsFragment
-import com.saetae.controller.sharedPrefrence.PrefData
+import com.playMatch.controller.sharedPrefrence.PrefData
 
 class HomeActivity : BaseActivity(), View.OnClickListener {
     private lateinit var binding: ActivityHomeBinding
