@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.playMatch.app-mergeDebugResources-45:/values-zh/values-zh.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-3\\7659b0d59d349f58d36b2fa3d2ca548f\\transformed\\android-crop-1.0.1\\res\\values-zh\\values-zh.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "215,283,325,376,425",
+                        "endColumns": "67,41,50,48,43",
+                        "endOffsets": "278,320,371,420,464"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "100,168,210,261,310",
+                        "endColumns": "67,41,50,48,43",
+                        "endOffsets": "163,205,256,305,349"
+                    }
+                }
+            ]
+        }
+    ]
+}
