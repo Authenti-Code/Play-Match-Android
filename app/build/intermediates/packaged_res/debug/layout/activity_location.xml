@@ -38,10 +38,6 @@
 
     </FrameLayout>
 
-        <androidx.core.widget.NestedScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -86,6 +82,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_10sdp"
@@ -100,6 +97,7 @@
         android:fontFamily="@font/metropolis_semibold"/>
 
     <TextView
+        android:id="@+id/fullAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sector 32, Entertainment District, 23156, Amsterdam,
@@ -135,7 +133,6 @@ Wellington St. "
 
 
         </androidx.appcompat.widget.LinearLayoutCompat>
-        </androidx.core.widget.NestedScrollView>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 

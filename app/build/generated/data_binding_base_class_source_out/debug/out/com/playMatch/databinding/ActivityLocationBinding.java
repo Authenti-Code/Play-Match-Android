@@ -6,8 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatTextView;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentContainerView;
 import androidx.viewbinding.ViewBinding;
@@ -23,6 +25,9 @@ public final class ActivityLocationBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
+  public final AppCompatTextView address;
+
+  @NonNull
   public final ImageView back;
 
   @NonNull
@@ -32,15 +37,21 @@ public final class ActivityLocationBinding implements ViewBinding {
   public final CardView confirmLocation;
 
   @NonNull
+  public final TextView fullAddress;
+
+  @NonNull
   public final FragmentContainerView map;
 
-  private ActivityLocationBinding(@NonNull FrameLayout rootView, @NonNull ImageView back,
-      @NonNull MaterialCardView beginner, @NonNull CardView confirmLocation,
+  private ActivityLocationBinding(@NonNull FrameLayout rootView, @NonNull AppCompatTextView address,
+      @NonNull ImageView back, @NonNull MaterialCardView beginner,
+      @NonNull CardView confirmLocation, @NonNull TextView fullAddress,
       @NonNull FragmentContainerView map) {
     this.rootView = rootView;
+    this.address = address;
     this.back = back;
     this.beginner = beginner;
     this.confirmLocation = confirmLocation;
+    this.fullAddress = fullAddress;
     this.map = map;
   }
 
@@ -71,6 +82,12 @@ public final class ActivityLocationBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.address;
+      AppCompatTextView address = ViewBindings.findChildViewById(rootView, id);
+      if (address == null) {
+        break missingId;
+      }
+
       id = R.id.back;
       ImageView back = ViewBindings.findChildViewById(rootView, id);
       if (back == null) {
@@ -89,14 +106,20 @@ public final class ActivityLocationBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.fullAddress;
+      TextView fullAddress = ViewBindings.findChildViewById(rootView, id);
+      if (fullAddress == null) {
+        break missingId;
+      }
+
       id = R.id.map;
       FragmentContainerView map = ViewBindings.findChildViewById(rootView, id);
       if (map == null) {
         break missingId;
       }
 
-      return new ActivityLocationBinding((FrameLayout) rootView, back, beginner, confirmLocation,
-          map);
+      return new ActivityLocationBinding((FrameLayout) rootView, address, back, beginner,
+          confirmLocation, fullAddress, map);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
