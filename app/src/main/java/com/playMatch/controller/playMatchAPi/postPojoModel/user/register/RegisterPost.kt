@@ -1,4 +1,4 @@
-package com.saetae.controller.saetaeApi.postPojoModel.user.register
+package com.playMatch.controller.playMatchAPi.postPojoModel.user.register
 
 import android.app.Notification
 

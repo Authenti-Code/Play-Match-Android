@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:id="@+id/rootView"
     tools:context=".ui.profile.activity.settingActivity.SettingActivity">
 
     <FrameLayout
@@ -62,13 +63,13 @@
         android:id="@+id/notification_toggle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:checked="true"
-        android:theme="@style/SCBSwitch"
         android:layout_gravity="end|center_vertical"
         android:layout_marginEnd="@dimen/_10sdp"
+        android:checked="true"
+        android:theme="@style/SCBSwitch"
         android:thumb="@drawable/drawable_switchbutton"
         app:track="@drawable/drawable_track"
-        tools:ignore="UseSwitchCompatOrMaterialXml" />
+        tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck" />
 
 </FrameLayout>
 

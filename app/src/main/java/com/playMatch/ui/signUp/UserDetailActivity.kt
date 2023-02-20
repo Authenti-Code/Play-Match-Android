@@ -17,7 +17,7 @@ import com.playMatch.databinding.ActivityUserDetailBinding
 import com.playMatch.ui.baseActivity.BaseActivity
 import com.playMatch.ui.location.activity.LocationActivity
 import com.playMatch.ui.signUp.signupModel.RegistrationResponse
-import com.saetae.controller.saetaeApi.postPojoModel.user.register.RegisterPost
+import com.playMatch.controller.playMatchAPi.postPojoModel.user.register.RegisterPost
 import java.util.*
 
 class UserDetailActivity : BaseActivity(), View.OnClickListener {

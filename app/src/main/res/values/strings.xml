@@ -34,4 +34,5 @@
     <string name="error_no_internet">Please check your network connection and try again.</string>
     <string name="error_speed">"Poor internet connection. Try again later."</string>
     <string name="error_checkbox">"Please Select the essential check box before Registration."</string>
+    <string name="error_email">Enter valid email.</string>
 </resources>

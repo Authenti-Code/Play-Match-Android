@@ -9,7 +9,7 @@ object ApiConstant {
     const val REGISTER = "register"
     const val SOCIAL_LOGIN = "social_registger"
 
-    const val LOGIN = "userlogin"
+    const val LOGIN = "login"
 
     const val BEARER_TOKEN = "Bearer"
 
@@ -23,7 +23,7 @@ object ApiConstant {
     const val PROFILE="userprofile"
 
     const val CREATE_EVENT="userEvents"
-    const val LOGOUT="userlogout"
+    const val LOGOUT="logout"
 
     const val EVENT_SHOW="eventshow"
     const val EVENT_DETAIL="eventdetails"

@@ -1,4 +1,4 @@
-package com.saetae.controller.saetaeApi.postPojoModel.user.login
+package com.playMatch.controller.playMatchAPi.postPojoModel.user.login
 
 data class SocialLoginPost( val name: String? = null,
                             val email: String? = null,

@@ -4,7 +4,9 @@ import android.app.Activity
 import com.playMatch.controller.playMatchAPi.*
 import com.playMatch.ui.baseActivity.BaseActivity
 import com.playMatch.controller.sharedPrefrence.PrefData
-import com.saetae.controller.saetaeApi.postPojoModel.user.register.RegisterPost
+import com.playMatch.controller.playMatchAPi.postPojoModel.user.login.LoginPost
+import com.playMatch.controller.playMatchAPi.postPojoModel.user.logout.LogoutPost
+import com.playMatch.controller.playMatchAPi.postPojoModel.user.register.RegisterPost
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.toRequestBody
@@ -83,27 +85,50 @@ class UserApi( val activity: Activity): BaseActivity()  {
     }
 
 
-//    suspend fun loginUser(loginPost: LoginPost): ResultResponse {
-//        return try {
-//            val response = apiService?.userLogin(loginPost)
-//            if (response?.isSuccessful!!) {
-//                val model = response.body()
-//                ResultResponse.Success(model)
-//            } else {
-//                when (response.code()) {
-//                    403 -> ResultResponse.HttpErrors.ResourceForbidden(response.message())
-//                    404 -> ResultResponse.HttpErrors.ResourceNotFound(response.message())
-//                    500 -> ResultResponse.HttpErrors.InternalServerError(response.message())
-//                    502 -> ResultResponse.HttpErrors.BadGateWay(response.message())
-//                    301 -> ResultResponse.HttpErrors.ResourceRemoved(response.message())
-//                    302 -> ResultResponse.HttpErrors.RemovedResourceFound(response.message())
-//                    else -> ResultResponse.Error(response.message())
-//                }
-//            }
-//
-//        } catch (error: IOException) {
-//            ResultResponse.NetworkException(error.message!!)
-//        }
-//    }
+    suspend fun loginUser(loginPost: LoginPost): ResultResponse {
+        return try {
+            val response = apiService?.userLogin(loginPost)
+            if (response?.isSuccessful!!) {
+                val model = response.body()
+                ResultResponse.Success(model)
+            } else {
+                when (response.code()) {
+                    403 -> ResultResponse.HttpErrors.ResourceForbidden(response.message())
+                    404 -> ResultResponse.HttpErrors.ResourceNotFound(response.message())
+                    500 -> ResultResponse.HttpErrors.InternalServerError(response.message())
+                    502 -> ResultResponse.HttpErrors.BadGateWay(response.message())
+                    301 -> ResultResponse.HttpErrors.ResourceRemoved(response.message())
+                    302 -> ResultResponse.HttpErrors.RemovedResourceFound(response.message())
+                    else -> ResultResponse.Error(response.message())
+                }
+            }
 
+        } catch (error: IOException) {
+            ResultResponse.NetworkException(error.message!!)
+        }
+    }
+
+    suspend fun Logout(logoutPost: LogoutPost): ResultResponse {
+
+        return try {
+            val response = apiService?.LogoutApi(ApiConstant.BEARER_TOKEN + " " + token,logoutPost)
+            if (response?.isSuccessful!!) {
+                val model = response.body()
+                ResultResponse.Success(model)
+            } else {
+                when (response.code()) {
+                    403 -> ResultResponse.HttpErrors.ResourceForbidden(response.message())
+                    404 -> ResultResponse.HttpErrors.ResourceNotFound(response.message())
+                    500 -> ResultResponse.HttpErrors.InternalServerError(response.message())
+                    502 -> ResultResponse.HttpErrors.BadGateWay(response.message())
+                    301 -> ResultResponse.HttpErrors.ResourceRemoved(response.message())
+                    302 -> ResultResponse.HttpErrors.RemovedResourceFound(response.message())
+                    else -> ResultResponse.Error(response.message())
+                }
+            }
+
+        } catch (error: IOException) {
+            ResultResponse.NetworkException(error.message!!)
+        }
+    }
 }

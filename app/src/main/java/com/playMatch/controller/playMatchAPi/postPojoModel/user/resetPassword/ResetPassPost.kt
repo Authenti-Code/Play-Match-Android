@@ -1,4 +1,4 @@
-package com.saetae.controller.saetaeApi.postPojoModel.user.resetPassword
+package com.playMatch.controller.playMatchAPi.postPojoModel.user.resetPassword
 
 data class resetPassPost(val email:String,
 val newpass:String,
