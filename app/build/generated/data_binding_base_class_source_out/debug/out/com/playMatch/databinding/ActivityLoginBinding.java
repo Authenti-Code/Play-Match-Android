@@ -5,9 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatEditText;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
@@ -19,7 +22,10 @@ import java.lang.String;
 
 public final class ActivityLoginBinding implements ViewBinding {
   @NonNull
-  private final FrameLayout rootView;
+  private final FrameLayout rootView_;
+
+  @NonNull
+  public final AppCompatEditText email;
 
   @NonNull
   public final AppCompatTextView forgotPassTv;
@@ -28,7 +34,19 @@ public final class ActivityLoginBinding implements ViewBinding {
   public final CardView login;
 
   @NonNull
+  public final TextView loginTv;
+
+  @NonNull
+  public final AppCompatEditText password;
+
+  @NonNull
+  public final ProgressBar progressBar;
+
+  @NonNull
   public final RelativeLayout relative4;
+
+  @NonNull
+  public final FrameLayout rootView;
 
   @NonNull
   public final AppCompatTextView signupTv;
@@ -36,14 +54,20 @@ public final class ActivityLoginBinding implements ViewBinding {
   @NonNull
   public final AppCompatTextView textSign;
 
-  private ActivityLoginBinding(@NonNull FrameLayout rootView,
-      @NonNull AppCompatTextView forgotPassTv, @NonNull CardView login,
-      @NonNull RelativeLayout relative4, @NonNull AppCompatTextView signupTv,
-      @NonNull AppCompatTextView textSign) {
-    this.rootView = rootView;
+  private ActivityLoginBinding(@NonNull FrameLayout rootView_, @NonNull AppCompatEditText email,
+      @NonNull AppCompatTextView forgotPassTv, @NonNull CardView login, @NonNull TextView loginTv,
+      @NonNull AppCompatEditText password, @NonNull ProgressBar progressBar,
+      @NonNull RelativeLayout relative4, @NonNull FrameLayout rootView,
+      @NonNull AppCompatTextView signupTv, @NonNull AppCompatTextView textSign) {
+    this.rootView_ = rootView_;
+    this.email = email;
     this.forgotPassTv = forgotPassTv;
     this.login = login;
+    this.loginTv = loginTv;
+    this.password = password;
+    this.progressBar = progressBar;
     this.relative4 = relative4;
+    this.rootView = rootView;
     this.signupTv = signupTv;
     this.textSign = textSign;
   }
@@ -51,7 +75,7 @@ public final class ActivityLoginBinding implements ViewBinding {
   @Override
   @NonNull
   public FrameLayout getRoot() {
-    return rootView;
+    return rootView_;
   }
 
   @NonNull
@@ -75,6 +99,12 @@ public final class ActivityLoginBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.email;
+      AppCompatEditText email = ViewBindings.findChildViewById(rootView, id);
+      if (email == null) {
+        break missingId;
+      }
+
       id = R.id.forgotPassTv;
       AppCompatTextView forgotPassTv = ViewBindings.findChildViewById(rootView, id);
       if (forgotPassTv == null) {
@@ -87,11 +117,31 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.loginTv;
+      TextView loginTv = ViewBindings.findChildViewById(rootView, id);
+      if (loginTv == null) {
+        break missingId;
+      }
+
+      id = R.id.password;
+      AppCompatEditText password = ViewBindings.findChildViewById(rootView, id);
+      if (password == null) {
+        break missingId;
+      }
+
+      id = R.id.progressBar;
+      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
+      if (progressBar == null) {
+        break missingId;
+      }
+
       id = R.id.relative4;
       RelativeLayout relative4 = ViewBindings.findChildViewById(rootView, id);
       if (relative4 == null) {
         break missingId;
       }
+
+      FrameLayout rootView_ = (FrameLayout) rootView;
 
       id = R.id.signupTv;
       AppCompatTextView signupTv = ViewBindings.findChildViewById(rootView, id);
@@ -105,8 +155,8 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityLoginBinding((FrameLayout) rootView, forgotPassTv, login, relative4,
-          signupTv, textSign);
+      return new ActivityLoginBinding((FrameLayout) rootView, email, forgotPassTv, login, loginTv,
+          password, progressBar, relative4, rootView_, signupTv, textSign);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

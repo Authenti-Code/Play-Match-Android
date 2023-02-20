@@ -19,7 +19,7 @@ import java.lang.String;
 
 public final class ActivitySettingBinding implements ViewBinding {
   @NonNull
-  private final LinearLayoutCompat rootView;
+  private final LinearLayoutCompat rootView_;
 
   @NonNull
   public final ImageView back;
@@ -30,18 +30,23 @@ public final class ActivitySettingBinding implements ViewBinding {
   @NonNull
   public final SwitchCompat notificationToggle;
 
-  private ActivitySettingBinding(@NonNull LinearLayoutCompat rootView, @NonNull ImageView back,
-      @NonNull MaterialCardView logout, @NonNull SwitchCompat notificationToggle) {
-    this.rootView = rootView;
+  @NonNull
+  public final LinearLayoutCompat rootView;
+
+  private ActivitySettingBinding(@NonNull LinearLayoutCompat rootView_, @NonNull ImageView back,
+      @NonNull MaterialCardView logout, @NonNull SwitchCompat notificationToggle,
+      @NonNull LinearLayoutCompat rootView) {
+    this.rootView_ = rootView_;
     this.back = back;
     this.logout = logout;
     this.notificationToggle = notificationToggle;
+    this.rootView = rootView;
   }
 
   @Override
   @NonNull
   public LinearLayoutCompat getRoot() {
-    return rootView;
+    return rootView_;
   }
 
   @NonNull
@@ -83,8 +88,10 @@ public final class ActivitySettingBinding implements ViewBinding {
         break missingId;
       }
 
+      LinearLayoutCompat rootView_ = (LinearLayoutCompat) rootView;
+
       return new ActivitySettingBinding((LinearLayoutCompat) rootView, back, logout,
-          notificationToggle);
+          notificationToggle, rootView_);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

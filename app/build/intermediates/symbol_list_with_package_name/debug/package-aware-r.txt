@@ -3914,10 +3914,12 @@ id Continue
 id ExperiencedTv
 id FUNCTION
 id Fcv
+id Flay
 id Ftv
 id IntermediateTv
 id META
 id Mcv
+id Mlay
 id Mtv
 id NO_DEBUG
 id SHIFT
@@ -3925,17 +3927,22 @@ id SHOW_ALL
 id SHOW_PATH
 id SHOW_PROGRESS
 id SYM
+id SaLay
 id Sacv
 id Satv
 id Scv
+id Slay
 id Stv
 id TOP_END
 id TOP_START
 id Tcv
 id Thcv
+id Thlay
 id Thtv
+id Tlay
 id Ttv
 id Wcv
+id Wlay
 id Wtv
 id abilityTv
 id accelerate
@@ -4177,6 +4184,7 @@ id forever
 id forgotPassTv
 id fragment_container_view_tag
 id frameLayoutHomeMain
+id fridaySlider
 id frost
 id fullAddress
 id fullscreen_header
@@ -4255,6 +4263,7 @@ id locale
 id location
 id locationTv
 id login
+id loginTv
 id logo
 id logout
 id ltr
@@ -4421,6 +4430,7 @@ id rv_searchPlayers
 id rv_sports
 id rv_statistics
 id satellite
+id saturdaySlider
 id save
 id save_non_transition_alpha
 id save_overlay_view
@@ -4515,6 +4525,7 @@ id streetMap
 id stretch
 id submenuarrow
 id submit_area
+id sundaySlider
 id supportScrollUp
 id switchWidget
 id tabMode
@@ -4549,6 +4560,7 @@ id textinput_helper_text
 id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
+id thursdaySlider
 id time
 id title
 id titleDividerNoCustom
@@ -4594,6 +4606,7 @@ id visa2
 id visible
 id visible_removing_fragment_view_tag
 id webview
+id wednesdaySlider
 id west
 id wide
 id window
@@ -4948,6 +4961,7 @@ string error_Password
 string error_a11y_label
 string error_checkbox
 string error_dob
+string error_email
 string error_icon_content_description
 string error_location
 string error_match_password

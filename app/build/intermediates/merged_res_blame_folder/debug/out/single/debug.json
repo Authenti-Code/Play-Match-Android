@@ -260,6 +260,10 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\drawable-hdpi\\your_team.png"
     },
     {
+        "merged": "com.playMatch.app-merged_res-48:/layout_activity_match_sign_up.xml.flat",
+        "source": "com.playMatch.app-main-50:/layout/activity_match_sign_up.xml"
+    },
+    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-merged_res-48:\\drawable-ldpi_triangle.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\drawable-ldpi\\triangle.png"
     },
@@ -1510,10 +1514,6 @@
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-merged_res-48:\\drawable-hdpi_my_image.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\drawable-hdpi\\my_image.png"
-    },
-    {
-        "merged": "com.playMatch.app-merged_res-48:/layout_activity_add_profile_image.xml.flat",
-        "source": "com.playMatch.app-main-50:/layout/activity_add_profile_image.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-merged_res-48:\\layout_fragment_home.xml.flat",

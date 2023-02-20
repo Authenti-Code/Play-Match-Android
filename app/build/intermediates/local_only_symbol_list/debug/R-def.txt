@@ -165,19 +165,26 @@ id Apply
 id Continue
 id ExperiencedTv
 id Fcv
+id Flay
 id Ftv
 id IntermediateTv
 id Mcv
+id Mlay
 id Mtv
+id SaLay
 id Sacv
 id Satv
 id Scv
+id Slay
 id Stv
 id Tcv
 id Thcv
+id Thlay
 id Thtv
+id Tlay
 id Ttv
 id Wcv
+id Wlay
 id Wtv
 id abilityTv
 id accepted
@@ -228,6 +235,7 @@ id filter
 id fitnessLevel
 id forgotPassTv
 id frameLayoutHomeMain
+id fridaySlider
 id fullAddress
 id gender
 id genderTv
@@ -254,6 +262,7 @@ id kitYesTv
 id location
 id locationTv
 id login
+id loginTv
 id logo
 id logout
 id map
@@ -299,6 +308,7 @@ id rv_nearby_matches
 id rv_searchPlayers
 id rv_sports
 id rv_statistics
+id saturdaySlider
 id save
 id search
 id searchPlayers
@@ -317,7 +327,9 @@ id snackbar_text
 id sportName
 id sportsTv
 id streetMap
+id sundaySlider
 id text_sign
+id thursdaySlider
 id time
 id title
 id toolbar
@@ -333,6 +345,7 @@ id username
 id viewAll
 id visa
 id visa2
+id wednesdaySlider
 layout activity_add_profile_image
 layout activity_add_team
 layout activity_chat
@@ -398,6 +411,7 @@ string error_Old_Password
 string error_Password
 string error_checkbox
 string error_dob
+string error_email
 string error_location
 string error_match_password
 string error_name

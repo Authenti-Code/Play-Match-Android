@@ -28,6 +28,7 @@
     <string name="error_Password">Please Enter Password</string>
     <string name="error_checkbox">"Please Select the essential check box before Registration."</string>
     <string name="error_dob">Please Select Date of Birth</string>
+    <string name="error_email">Enter valid email.</string>
     <string name="error_location">Please Select Your Location</string>
     <string name="error_match_password">Please enter same password</string>
     <string name="error_name">Please Enter full name</string>
