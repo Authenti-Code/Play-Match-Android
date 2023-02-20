@@ -34,6 +34,9 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
   public final LinearLayoutCompat Flay;
 
   @NonNull
+  public final AppCompatTextView Fstv;
+
+  @NonNull
   public final AppCompatTextView Ftv;
 
   @NonNull
@@ -41,6 +44,9 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
 
   @NonNull
   public final LinearLayoutCompat Mlay;
+
+  @NonNull
+  public final AppCompatTextView Mstv;
 
   @NonNull
   public final AppCompatTextView Mtv;
@@ -52,6 +58,9 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
   public final MaterialCardView Sacv;
 
   @NonNull
+  public final AppCompatTextView Sastv;
+
+  @NonNull
   public final AppCompatTextView Satv;
 
   @NonNull
@@ -59,6 +68,9 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
 
   @NonNull
   public final LinearLayoutCompat Slay;
+
+  @NonNull
+  public final AppCompatTextView Sstv;
 
   @NonNull
   public final AppCompatTextView Stv;
@@ -73,10 +85,16 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
   public final LinearLayoutCompat Thlay;
 
   @NonNull
+  public final AppCompatTextView Thstv;
+
+  @NonNull
   public final AppCompatTextView Thtv;
 
   @NonNull
   public final LinearLayoutCompat Tlay;
+
+  @NonNull
+  public final AppCompatTextView Tstv;
 
   @NonNull
   public final AppCompatTextView Ttv;
@@ -86,6 +104,9 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
 
   @NonNull
   public final LinearLayoutCompat Wlay;
+
+  @NonNull
+  public final AppCompatTextView Wstv;
 
   @NonNull
   public final AppCompatTextView Wtv;
@@ -116,41 +137,52 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
 
   private ActivityMatchSignUpBinding(@NonNull FrameLayout rootView, @NonNull CardView Continue,
       @NonNull MaterialCardView Fcv, @NonNull LinearLayoutCompat Flay,
-      @NonNull AppCompatTextView Ftv, @NonNull MaterialCardView Mcv,
-      @NonNull LinearLayoutCompat Mlay, @NonNull AppCompatTextView Mtv,
+      @NonNull AppCompatTextView Fstv, @NonNull AppCompatTextView Ftv,
+      @NonNull MaterialCardView Mcv, @NonNull LinearLayoutCompat Mlay,
+      @NonNull AppCompatTextView Mstv, @NonNull AppCompatTextView Mtv,
       @NonNull LinearLayoutCompat SaLay, @NonNull MaterialCardView Sacv,
-      @NonNull AppCompatTextView Satv, @NonNull MaterialCardView Scv,
-      @NonNull LinearLayoutCompat Slay, @NonNull AppCompatTextView Stv,
+      @NonNull AppCompatTextView Sastv, @NonNull AppCompatTextView Satv,
+      @NonNull MaterialCardView Scv, @NonNull LinearLayoutCompat Slay,
+      @NonNull AppCompatTextView Sstv, @NonNull AppCompatTextView Stv,
       @NonNull MaterialCardView Tcv, @NonNull MaterialCardView Thcv,
-      @NonNull LinearLayoutCompat Thlay, @NonNull AppCompatTextView Thtv,
-      @NonNull LinearLayoutCompat Tlay, @NonNull AppCompatTextView Ttv,
+      @NonNull LinearLayoutCompat Thlay, @NonNull AppCompatTextView Thstv,
+      @NonNull AppCompatTextView Thtv, @NonNull LinearLayoutCompat Tlay,
+      @NonNull AppCompatTextView Tstv, @NonNull AppCompatTextView Ttv,
       @NonNull MaterialCardView Wcv, @NonNull LinearLayoutCompat Wlay,
-      @NonNull AppCompatTextView Wtv, @NonNull ImageView back, @NonNull RangeSlider fridaySlider,
-      @NonNull RangeSlider mondaySlider, @NonNull RangeSlider saturdaySlider,
-      @NonNull RangeSlider sundaySlider, @NonNull RangeSlider thursdaySlider,
-      @NonNull RangeSlider tuesdaySlider, @NonNull RangeSlider wednesdaySlider) {
+      @NonNull AppCompatTextView Wstv, @NonNull AppCompatTextView Wtv, @NonNull ImageView back,
+      @NonNull RangeSlider fridaySlider, @NonNull RangeSlider mondaySlider,
+      @NonNull RangeSlider saturdaySlider, @NonNull RangeSlider sundaySlider,
+      @NonNull RangeSlider thursdaySlider, @NonNull RangeSlider tuesdaySlider,
+      @NonNull RangeSlider wednesdaySlider) {
     this.rootView = rootView;
     this.Continue = Continue;
     this.Fcv = Fcv;
     this.Flay = Flay;
+    this.Fstv = Fstv;
     this.Ftv = Ftv;
     this.Mcv = Mcv;
     this.Mlay = Mlay;
+    this.Mstv = Mstv;
     this.Mtv = Mtv;
     this.SaLay = SaLay;
     this.Sacv = Sacv;
+    this.Sastv = Sastv;
     this.Satv = Satv;
     this.Scv = Scv;
     this.Slay = Slay;
+    this.Sstv = Sstv;
     this.Stv = Stv;
     this.Tcv = Tcv;
     this.Thcv = Thcv;
     this.Thlay = Thlay;
+    this.Thstv = Thstv;
     this.Thtv = Thtv;
     this.Tlay = Tlay;
+    this.Tstv = Tstv;
     this.Ttv = Ttv;
     this.Wcv = Wcv;
     this.Wlay = Wlay;
+    this.Wstv = Wstv;
     this.Wtv = Wtv;
     this.back = back;
     this.fridaySlider = fridaySlider;
@@ -207,6 +239,12 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.Fstv;
+      AppCompatTextView Fstv = ViewBindings.findChildViewById(rootView, id);
+      if (Fstv == null) {
+        break missingId;
+      }
+
       id = R.id.Ftv;
       AppCompatTextView Ftv = ViewBindings.findChildViewById(rootView, id);
       if (Ftv == null) {
@@ -222,6 +260,12 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
       id = R.id.Mlay;
       LinearLayoutCompat Mlay = ViewBindings.findChildViewById(rootView, id);
       if (Mlay == null) {
+        break missingId;
+      }
+
+      id = R.id.Mstv;
+      AppCompatTextView Mstv = ViewBindings.findChildViewById(rootView, id);
+      if (Mstv == null) {
         break missingId;
       }
 
@@ -243,6 +287,12 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.Sastv;
+      AppCompatTextView Sastv = ViewBindings.findChildViewById(rootView, id);
+      if (Sastv == null) {
+        break missingId;
+      }
+
       id = R.id.Satv;
       AppCompatTextView Satv = ViewBindings.findChildViewById(rootView, id);
       if (Satv == null) {
@@ -258,6 +308,12 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
       id = R.id.Slay;
       LinearLayoutCompat Slay = ViewBindings.findChildViewById(rootView, id);
       if (Slay == null) {
+        break missingId;
+      }
+
+      id = R.id.Sstv;
+      AppCompatTextView Sstv = ViewBindings.findChildViewById(rootView, id);
+      if (Sstv == null) {
         break missingId;
       }
 
@@ -285,6 +341,12 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.Thstv;
+      AppCompatTextView Thstv = ViewBindings.findChildViewById(rootView, id);
+      if (Thstv == null) {
+        break missingId;
+      }
+
       id = R.id.Thtv;
       AppCompatTextView Thtv = ViewBindings.findChildViewById(rootView, id);
       if (Thtv == null) {
@@ -294,6 +356,12 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
       id = R.id.Tlay;
       LinearLayoutCompat Tlay = ViewBindings.findChildViewById(rootView, id);
       if (Tlay == null) {
+        break missingId;
+      }
+
+      id = R.id.Tstv;
+      AppCompatTextView Tstv = ViewBindings.findChildViewById(rootView, id);
+      if (Tstv == null) {
         break missingId;
       }
 
@@ -312,6 +380,12 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
       id = R.id.Wlay;
       LinearLayoutCompat Wlay = ViewBindings.findChildViewById(rootView, id);
       if (Wlay == null) {
+        break missingId;
+      }
+
+      id = R.id.Wstv;
+      AppCompatTextView Wstv = ViewBindings.findChildViewById(rootView, id);
+      if (Wstv == null) {
         break missingId;
       }
 
@@ -369,10 +443,10 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMatchSignUpBinding((FrameLayout) rootView, Continue, Fcv, Flay, Ftv, Mcv,
-          Mlay, Mtv, SaLay, Sacv, Satv, Scv, Slay, Stv, Tcv, Thcv, Thlay, Thtv, Tlay, Ttv, Wcv,
-          Wlay, Wtv, back, fridaySlider, mondaySlider, saturdaySlider, sundaySlider, thursdaySlider,
-          tuesdaySlider, wednesdaySlider);
+      return new ActivityMatchSignUpBinding((FrameLayout) rootView, Continue, Fcv, Flay, Fstv, Ftv,
+          Mcv, Mlay, Mstv, Mtv, SaLay, Sacv, Sastv, Satv, Scv, Slay, Sstv, Stv, Tcv, Thcv, Thlay,
+          Thstv, Thtv, Tlay, Tstv, Ttv, Wcv, Wlay, Wstv, Wtv, back, fridaySlider, mondaySlider,
+          saturdaySlider, sundaySlider, thursdaySlider, tuesdaySlider, wednesdaySlider);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

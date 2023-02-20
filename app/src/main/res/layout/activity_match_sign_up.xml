@@ -368,8 +368,6 @@
                 android:layout_height="match_parent"
                 android:duplicateParentState="true"
                 android:scrollbarAlwaysDrawHorizontalTrack="false"
-                android:valueFrom="0"
-                android:valueTo="10"
                 app:thumbColor="@color/red_F95047"
                 app:thumbRadius="8dp"
                 app:thumbStrokeColor="@color/red_F95047"

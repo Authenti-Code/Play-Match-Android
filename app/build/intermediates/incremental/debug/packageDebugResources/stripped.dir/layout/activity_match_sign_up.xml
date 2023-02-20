@@ -351,6 +351,7 @@
                 android:textSize="@dimen/_12ssp"/>
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/Sstv"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textColor="@color/black"
@@ -367,8 +368,6 @@
                 android:layout_height="match_parent"
                 android:duplicateParentState="true"
                 android:scrollbarAlwaysDrawHorizontalTrack="false"
-                android:valueFrom="0"
-                android:valueTo="10"
                 app:thumbColor="@color/red_F95047"
                 app:thumbRadius="8dp"
                 app:thumbStrokeColor="@color/red_F95047"
@@ -389,6 +388,7 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/Mstv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
@@ -435,6 +435,7 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/Tstv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
@@ -481,6 +482,7 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/Wstv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
@@ -527,6 +529,7 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/Thstv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
@@ -572,6 +575,7 @@
                     android:orientation="vertical">
 
                     <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/Fstv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -618,6 +622,7 @@
                     android:orientation="vertical">
 
                     <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/Sastv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <array name="hours">
+        <item>0</item>
+        <item>24</item>
+    </array>
     <color name="beige">#CC9D53</color>
     <color name="black">#FF000000</color>
     <color name="black_707070">#707070</color>

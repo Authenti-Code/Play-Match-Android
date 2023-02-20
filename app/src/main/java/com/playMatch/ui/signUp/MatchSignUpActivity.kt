@@ -1,12 +1,21 @@
 package com.playMatch.ui.signUp
 
+import android.annotation.SuppressLint
 import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import androidx.annotation.RequiresApi
+import com.google.android.material.slider.RangeSlider
 import com.playMatch.R
 import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.databinding.ActivityMatchSignUpBinding
 import com.playMatch.ui.baseActivity.BaseActivity
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.math.roundToInt
+
 
 class MatchSignUpActivity : BaseActivity(), View.OnClickListener {
     private lateinit var binding: ActivityMatchSignUpBinding
@@ -18,6 +27,7 @@ class MatchSignUpActivity : BaseActivity(), View.OnClickListener {
     private var FCvColor:Boolean=true
     private var SACvColor:Boolean=true
 
+    @RequiresApi(33)
     override fun onCreate(savedInstanceState: Bundle?) {
         removeStatusBarFullyBlackIcon()
         super.onCreate(savedInstanceState)
@@ -26,6 +36,8 @@ class MatchSignUpActivity : BaseActivity(), View.OnClickListener {
         initView()
     }
 
+    @SuppressLint("SetTextI18n")
+    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     private fun initView() {
         binding.back.setOnClickListener(this)
         binding.Stv.setOnClickListener(this)
@@ -36,14 +48,77 @@ class MatchSignUpActivity : BaseActivity(), View.OnClickListener {
         binding.Ftv.setOnClickListener(this)
         binding.Satv.setOnClickListener(this)
         binding.Continue.setOnClickListener(this)
-        binding.sundaySlider.setValues(0.0f,10.0f)
+//        binding.sundaySlider.setLabelFormatter(LabelFormatter { "hours" })
+        binding.sundaySlider.setLabelFormatter { value: Float ->
+            return@setLabelFormatter if (value>12.00){"${value.roundToInt()}pm"}else{
+                "${value.roundToInt()}am"
+            }
+        }
+        binding.sundaySlider.setValueFrom(0f).toString()
+        binding.sundaySlider.setValues(0f,24f).toString()
+        binding.sundaySlider.setValueTo(24f).toString()
+
+//        binding.sundaySlider.addOnChangeListener { slider, value, fromUser ->
+//            value = SimpleDateFormat("hh:mm", Locale.ENGLISH)
+//            // Do something with the selected hours
+//        }
+
+        binding.sundaySlider.addOnSliderTouchListener(object : RangeSlider.OnSliderTouchListener{
+            override fun onStartTrackingTouch(slider: RangeSlider) {
+                val values = binding.sundaySlider.values
+                //Those are the satrt and end values of sldier when user start dragging
+                Log.i("SliderPreviousValue From", values[0].toString())
+                Log.i("SliderPreviousValue To", values[1].toString())
+            }
+
+            @SuppressLint("SetTextI18n")
+            override fun onStopTrackingTouch(slider: RangeSlider) {
+                val values = binding.sundaySlider.values
+                val id:String
+                val newId:String
+                //Those are the new updated values of sldier when user has finshed dragging
+                Log.i("SliderNewValue From", values[0].toString())
+                Log.i("SliderNewValue To", values[1].toString())
+                if (values[0].toFloat()>12.00){ id="${values[0].roundToInt()}pm"}else {
+                  id="${values[0].roundToInt()}am"
+                }
+                if (values[1].toFloat()>12.00){ newId="${values[1].roundToInt()}pm"}else {
+                  newId="${values[1].roundToInt()}am"
+                }
+
+                binding.Sstv.setText(id+"-"+ newId)
+            }
+        })
+
+
+        //If you only want the slider start and end value and don't care about the previous values
+        binding.sundaySlider.addOnChangeListener { slider, value, fromUser ->
+            val values =  binding.sundaySlider.values
+            val id:String
+            val newId:String
+
+            if (values[0].toFloat()>12.00){ id="${values[0].roundToInt()}pm"}else {
+                id="${values[0].roundToInt()}am"
+            }
+            if (values[1].toFloat()>12.00){ newId="${values[1].roundToInt()}pm"}else {
+                newId="${values[1].roundToInt()}am"
+            }
+            binding.Sstv.text =id+"-"+ newId
+        }
+
+
+
         binding.mondaySlider.setValues(0.0f,10.0f)
         binding.tuesdaySlider.setValues(0.0f,10.0f)
         binding.wednesdaySlider.setValues(0.0f,10.0f)
         binding.thursdaySlider.setValues(0.0f,10.0f)
         binding.fridaySlider.setValues(0.0f,10.0f)
         binding.saturdaySlider.setValues(0.0f,10.0f)
+
+
     }
+
+
 
     override fun onClick(v: View?) {
 
