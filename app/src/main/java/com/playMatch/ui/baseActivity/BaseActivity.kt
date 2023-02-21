@@ -1263,14 +1263,7 @@ open class BaseActivity : AppCompatActivity() {
      * @param view
      * @param activity
      */
-    fun requestFocus(view: View?, activity: Activity) {
-        try {
-            if (view?.requestFocus() == true) {
-                activity.window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
-            }
-        } catch (ex: Exception) {
-        }
-    }
+
 
     @Throws(Exception::class)
     fun getCurrentDate(): String {
@@ -1330,6 +1323,28 @@ open class BaseActivity : AppCompatActivity() {
 
         return timeInMilliseconds
     }
+
+
+    fun requestFocus(view: View, activity: Activity) {
+        if (view.requestFocus()) {
+            activity.window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
+        }
+    }
+
+    fun validateEmail(editText: EditText, activity: Activity): Boolean {
+        val email = editText.text.toString().trim { it <= ' ' }
+
+        if (email.isEmpty() || !isValidEmail(email)) {
+            editText.error = activity.resources.getString(R.string.error_email)
+            requestFocus(editText, activity)
+//                (activity as BusinessSignupActivity).hideBtnProgress()
+            return false
+        } else {
+            editText.error = null
+        }
+        return true
+    }
+
 
     fun getDateTimeFromMillis(milliSeconds: Long): String {
         // Create login DateFormatter object for displaying date in specified format.

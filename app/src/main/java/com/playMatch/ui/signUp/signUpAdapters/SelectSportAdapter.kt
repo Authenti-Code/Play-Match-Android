@@ -34,6 +34,7 @@ class SelectSportAdapter(var list: ArrayList<SportsList>, var activity: Activity
         return ViewHolder(binding)
     }
 
+    @SuppressLint("SuspiciousIndentation")
     override fun onBindViewHolder(holder: SelectSportAdapter.ViewHolder, @SuppressLint("RecyclerView") position: Int) {
         holder.apply {
             val ItemsviewModel = list[position]
@@ -42,17 +43,19 @@ class SelectSportAdapter(var list: ArrayList<SportsList>, var activity: Activity
             adapter = SelectChildSportAdapter(mlist, activity,object : RecyclerviewListener {
 
                 override fun onItemClick(position: Int, viewType: String) {
-                        nlist.add("${ItemsviewModel.id} : $viewType")
-                    type=viewType
+                    nlist.add("${ItemsviewModel.id} : $viewType")
 
-                    val param = nlist.joinToString()
-
-                    PrefData.setStringPrefs(activity, PrefData.New_ARRAYLIST, param)
+//                    if (nlist.isEmpty()) {
+//                        nlist.add("${ItemsviewModel.id} : $viewType")
+//                    }else if (nlist.isNotEmpty() && nlist[position] == "${ItemsviewModel.id} : $viewType"){
+////                             nlist.remove("${ItemsviewModel.id} : $viewType")
+//                    }else if (nlist.isNotEmpty()&& !nlist.equals("${ItemsviewModel.id} : $viewType")){
+//                    }
+                        type = viewType
+                        val param = nlist.joinToString()
+                        PrefData.setStringPrefs(activity, PrefData.New_ARRAYLIST, param)
                 }
             })
-
-
-
 
             holder.binding.rvChildSports.adapter = adapter
             mlist.clear()
@@ -126,7 +129,6 @@ class SelectSportAdapter(var list: ArrayList<SportsList>, var activity: Activity
     PrefData.setStringPrefs(activity, PrefData.CHECK_BOX,"0")
     binding.rvChildSports.visibility=View.GONE
     binding.rvLightChildSports.visibility=View.VISIBLE
-           nlist.remove("${ItemsviewModel.id}")
              }
             }
         }

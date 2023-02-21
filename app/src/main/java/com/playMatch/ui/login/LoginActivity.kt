@@ -39,6 +39,9 @@ class LoginActivity : BaseActivity(),View.OnClickListener {
                     binding.email.error =
                         resources.getString(R.string.error_email)
                     requestFocus(binding.email, this@LoginActivity)
+                }else if (!validateEmail(binding.email, this@LoginActivity)) {
+                    hideProgressBar()
+                    return
                 }else if (binding.password.text.toString().trim().isEmpty()) {
                     binding.password.error =
                         resources.getString(R.string.error_Password)

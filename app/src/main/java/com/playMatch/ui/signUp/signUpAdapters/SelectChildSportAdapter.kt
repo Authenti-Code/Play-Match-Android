@@ -36,15 +36,14 @@ private  var selectedPosition=-1
             if (selectedPosition==position && id=="1") {
                 binding.cardView.setCardBackgroundColor(Color.parseColor("#F95047"))
                 binding.fitnessLevel.setTextColor(Color.WHITE)
-                recyclerviewListener.onItemClick(position, binding.fitnessLevel.text.toString().trim())
             } else {
                 binding.cardView.setCardBackgroundColor(Color.parseColor("#ffffff"))
                 binding.fitnessLevel.setTextColor(Color.parseColor("#F95047"))
             }
-
             binding.cardView.setOnClickListener {
                 selectedPosition=position
                 notifyDataSetChanged()
+                recyclerviewListener.onItemClick(position, binding.fitnessLevel.text.toString().trim())
             }
         }
     }

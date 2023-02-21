@@ -34,7 +34,7 @@ interface ApiService {
         @Body userLogin: LoginPost?): Response<LoginResponse?>?
 
     @Headers("Content-Type: application/json")
-    @GET(ApiConstant.SPORTS_LIST)
+    @POST(ApiConstant.SPORTS_LIST)
     suspend fun sportsList(
     ):Response<SportListResponse>
 

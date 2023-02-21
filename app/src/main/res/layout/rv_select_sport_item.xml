@@ -9,8 +9,8 @@
     <CheckBox
         android:id="@+id/checkbox"
         android:layout_gravity="center"
-        android:layout_width="@dimen/_11sdp"
-        android:layout_height="@dimen/_20sdp"
+        android:layout_width="@dimen/_12sdp"
+        android:layout_height="@dimen/_25sdp"
         android:buttonTint="@color/red_F95047"
         android:button="@drawable/custom_check_box"/>
 

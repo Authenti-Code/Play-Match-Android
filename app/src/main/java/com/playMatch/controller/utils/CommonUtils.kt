@@ -8,7 +8,11 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.location.LocationManager
 import android.os.Bundle
+import android.text.TextUtils
+import android.view.View
 import android.view.Window
+import android.view.WindowManager
+import android.widget.EditText
 import android.widget.LinearLayout
 import androidx.activity.result.ActivityResultLauncher
 import com.playMatch.R
@@ -179,5 +183,30 @@ class CommonUtils {
             return mLocationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
         }
     }
+
+     fun validateEmail(editText: EditText, activity: Activity): Boolean {
+        val email = editText.text.toString().trim { it <= ' ' }
+
+        if (email.isEmpty() || !isValidEmail(email)) {
+            editText.error = activity.resources.getString(R.string.error_email)
+            requestFocus(editText, activity)
+//                (activity as BusinessSignupActivity).hideBtnProgress()
+            return false
+        } else {
+            editText.error = null
+        }
+        return true
+    }
+
+    fun requestFocus(view: View, activity: Activity) {
+        if (view.requestFocus()) {
+            activity.window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
+        }
+    }
+
+    fun isValidEmail(email: String): Boolean {
+        return !TextUtils.isEmpty(email) && android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
+    }
+
 
 }
