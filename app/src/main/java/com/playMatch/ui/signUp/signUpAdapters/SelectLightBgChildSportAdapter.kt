@@ -26,6 +26,7 @@ class SelectLightBgChildSportAdapter(var list: ArrayList<SelectChildSPortLightMo
     override fun onBindViewHolder(holder: SelectLightBgChildSportAdapter.ViewHolder, @SuppressLint("RecyclerView") position: Int) {
         holder.apply {
             val ItemsviewModel = list[position]
+            holder.binding.fitnessLevel.text = ItemsviewModel.fitnessLevel
 
             binding.cardView.setOnClickListener {
                 selectedPosition=position

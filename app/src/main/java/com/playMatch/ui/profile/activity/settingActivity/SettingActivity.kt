@@ -31,7 +31,6 @@ class SettingActivity : BaseActivity(), View.OnClickListener {
         binding = ActivitySettingBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initView()
-//        adapterView()
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -50,12 +49,11 @@ class SettingActivity : BaseActivity(), View.OnClickListener {
             }
         }
     }
-
+//-----------------------------------logout Api--------------------------------------------------
     private fun logoutApi(){
 
         if (isNetworkAvailable()) {
             CommonUtils.showProgressDialog(this)
-
             lifecycleScope.launchWhenStarted {
                 val resultResponse = UserApi(this@SettingActivity).Logout(LogoutPost(getUuid()!!,AppConstant.DEVICE_TYPE,"firebaseToken"))
                 apiProfileResult(resultResponse)

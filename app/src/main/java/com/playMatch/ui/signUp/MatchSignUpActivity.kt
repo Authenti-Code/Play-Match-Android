@@ -48,20 +48,16 @@ class MatchSignUpActivity : BaseActivity(), View.OnClickListener {
         binding.Ftv.setOnClickListener(this)
         binding.Satv.setOnClickListener(this)
         binding.Continue.setOnClickListener(this)
-//        binding.sundaySlider.setLabelFormatter(LabelFormatter { "hours" })
+        binding.skip.setOnClickListener(this)
+
         binding.sundaySlider.setLabelFormatter { value: Float ->
-            return@setLabelFormatter if (value>12.00){"${value.roundToInt()}pm"}else{
-                "${value.roundToInt()}am"
+            return@setLabelFormatter if (value>12.00){"${value.roundToInt()}:00pm"}else{
+                "${value.roundToInt()}:00am"
             }
         }
         binding.sundaySlider.setValueFrom(0f).toString()
-        binding.sundaySlider.setValues(0f,24f).toString()
-        binding.sundaySlider.setValueTo(24f).toString()
-
-//        binding.sundaySlider.addOnChangeListener { slider, value, fromUser ->
-//            value = SimpleDateFormat("hh:mm", Locale.ENGLISH)
-//            // Do something with the selected hours
-//        }
+        binding.sundaySlider.setValues(0f,23f).toString()
+        binding.sundaySlider.setValueTo(23f).toString()
 
         binding.sundaySlider.addOnSliderTouchListener(object : RangeSlider.OnSliderTouchListener{
             override fun onStartTrackingTouch(slider: RangeSlider) {
@@ -79,46 +75,326 @@ class MatchSignUpActivity : BaseActivity(), View.OnClickListener {
                 //Those are the new updated values of sldier when user has finshed dragging
                 Log.i("SliderNewValue From", values[0].toString())
                 Log.i("SliderNewValue To", values[1].toString())
-                if (values[0].toFloat()>12.00){ id="${values[0].roundToInt()}pm"}else {
-                  id="${values[0].roundToInt()}am"
+                if (values[0].toFloat()>12.00){ id="${values[0].roundToInt()}:00pm"}else {
+                  id="${values[0].roundToInt()}:00am"
                 }
-                if (values[1].toFloat()>12.00){ newId="${values[1].roundToInt()}pm"}else {
-                  newId="${values[1].roundToInt()}am"
+                if (values[1].toFloat()>12.00){ newId="${values[1].roundToInt()}:00pm"}else {
+                  newId="${values[1].roundToInt()}:00am"
                 }
 
-                binding.Sstv.setText(id+"-"+ newId)
+                binding.Sstv.text = "$id - $newId"
             }
         })
-
-
-        //If you only want the slider start and end value and don't care about the previous values
         binding.sundaySlider.addOnChangeListener { slider, value, fromUser ->
             val values =  binding.sundaySlider.values
             val id:String
             val newId:String
 
-            if (values[0].toFloat()>12.00){ id="${values[0].roundToInt()}pm"}else {
-                id="${values[0].roundToInt()}am"
+            if (values[0].toFloat()>12.00){ id="${values[0].roundToInt()}:00pm"}else {
+                id="${values[0].roundToInt()}:00am"
             }
-            if (values[1].toFloat()>12.00){ newId="${values[1].roundToInt()}pm"}else {
-                newId="${values[1].roundToInt()}am"
+            if (values[1].toFloat()>12.00){ newId="${values[1].roundToInt()}:00pm"}else {
+                newId="${values[1].roundToInt()}:00am"
             }
-            binding.Sstv.text =id+"-"+ newId
+            binding.Sstv.text ="$id - $newId"
         }
 
 
+        binding.mondaySlider.setLabelFormatter { value: Float ->
+            return@setLabelFormatter if (value>12.00){"${value.roundToInt()}:00pm"}else{
+                "${value.roundToInt()}:00am"
+            }
+        }
+        binding.mondaySlider.setValueFrom(0f).toString()
+        binding.mondaySlider.setValues(0f,23f).toString()
+        binding.mondaySlider.setValueTo(23f).toString()
 
-        binding.mondaySlider.setValues(0.0f,10.0f)
-        binding.tuesdaySlider.setValues(0.0f,10.0f)
-        binding.wednesdaySlider.setValues(0.0f,10.0f)
-        binding.thursdaySlider.setValues(0.0f,10.0f)
-        binding.fridaySlider.setValues(0.0f,10.0f)
-        binding.saturdaySlider.setValues(0.0f,10.0f)
+        binding.mondaySlider.addOnSliderTouchListener(object : RangeSlider.OnSliderTouchListener{
+            override fun onStartTrackingTouch(slider: RangeSlider) {
+                val values = binding.mondaySlider.values
+                //Those are the satrt and end values of sldier when user start dragging
+                Log.i("SliderPreviousValue From", values[0].toString())
+                Log.i("SliderPreviousValue To", values[1].toString())
+            }
+
+            @SuppressLint("SetTextI18n")
+            override fun onStopTrackingTouch(slider: RangeSlider) {
+                val values = binding.mondaySlider.values
+                val id:String
+                val newId:String
+                //Those are the new updated values of sldier when user has finshed dragging
+                Log.i("SliderNewValue From", values[0].toString())
+                Log.i("SliderNewValue To", values[1].toString())
+                if (values[0].toFloat()>12.00){ id="${values[0].roundToInt()}:00pm"}else {
+                    id="${values[0].roundToInt()}:00am"
+                }
+                if (values[1].toFloat()>12.00){ newId="${values[1].roundToInt()}:00pm"}else {
+                    newId="${values[1].roundToInt()}:00am"
+                }
+
+                binding.Mstv.text = "$id - $newId"
+            }
+        })
+        binding.mondaySlider.addOnChangeListener { slider, value, fromUser ->
+            val values =  binding.mondaySlider.values
+            val id:String
+            val newId:String
+
+            if (values[0].toFloat()>12.00){ id="${values[0].roundToInt()}:00pm"}else {
+                id="${values[0].roundToInt()}:00am"
+            }
+            if (values[1].toFloat()>12.00){ newId="${values[1].roundToInt()}:00pm"}else {
+                newId="${values[1].roundToInt()}:00am"
+            }
+            binding.Mstv.text ="$id - $newId"
+        }
 
 
+        binding.tuesdaySlider.setLabelFormatter { value: Float ->
+            return@setLabelFormatter if (value>12.00){"${value.roundToInt()}:00pm"}else{
+                "${value.roundToInt()}:00am"
+            }
+        }
+        binding.tuesdaySlider.setValueFrom(0f).toString()
+        binding.tuesdaySlider.setValues(0f,23f).toString()
+        binding.tuesdaySlider.setValueTo(23f).toString()
+
+        binding.tuesdaySlider.addOnSliderTouchListener(object : RangeSlider.OnSliderTouchListener{
+            override fun onStartTrackingTouch(slider: RangeSlider) {
+                val values = binding.tuesdaySlider.values
+                //Those are the satrt and end values of sldier when user start dragging
+                Log.i("SliderPreviousValue From", values[0].toString())
+                Log.i("SliderPreviousValue To", values[1].toString())
+            }
+
+            @SuppressLint("SetTextI18n")
+            override fun onStopTrackingTouch(slider: RangeSlider) {
+                val values = binding.tuesdaySlider.values
+                val id:String
+                val newId:String
+                //Those are the new updated values of sldier when user has finshed dragging
+                Log.i("SliderNewValue From", values[0].toString())
+                Log.i("SliderNewValue To", values[1].toString())
+                if (values[0].toFloat()>12.00){ id="${values[0].roundToInt()}:00pm"}else {
+                    id="${values[0].roundToInt()}:00am"
+                }
+                if (values[1].toFloat()>12.00){ newId="${values[1].roundToInt()}:00pm"}else {
+                    newId="${values[1].roundToInt()}:00am"
+                }
+
+                binding.Tstv.text = "$id - $newId"
+            }
+        })
+        binding.tuesdaySlider.addOnChangeListener { slider, value, fromUser ->
+            val values =  binding.tuesdaySlider.values
+            val id:String
+            val newId:String
+
+            if (values[0].toFloat()>12.00){ id="${values[0].roundToInt()}:00pm"}else {
+                id="${values[0].roundToInt()}:00am"
+            }
+            if (values[1].toFloat()>12.00){ newId="${values[1].roundToInt()}:00pm"}else {
+                newId="${values[1].roundToInt()}:00am"
+            }
+            binding.Tstv.text = "$id - $newId"
+        }
+
+        binding.wednesdaySlider.setLabelFormatter { value: Float ->
+            return@setLabelFormatter if (value>12.00){"${value.roundToInt()}:00pm"}else{
+                "${value.roundToInt()}:00am"
+            }
+        }
+        binding.wednesdaySlider.setValueFrom(0f).toString()
+        binding.wednesdaySlider.setValues(0f,23f).toString()
+        binding.wednesdaySlider.setValueTo(23f).toString()
+
+        binding.wednesdaySlider.addOnSliderTouchListener(object : RangeSlider.OnSliderTouchListener{
+            override fun onStartTrackingTouch(slider: RangeSlider) {
+                val values = binding.wednesdaySlider.values
+                //Those are the satrt and end values of sldier when user start dragging
+                Log.i("SliderPreviousValue From", values[0].toString())
+                Log.i("SliderPreviousValue To", values[1].toString())
+            }
+
+            @SuppressLint("SetTextI18n")
+            override fun onStopTrackingTouch(slider: RangeSlider) {
+                val values = binding.wednesdaySlider.values
+                val id:String
+                val newId:String
+                //Those are the new updated values of sldier when user has finshed dragging
+                Log.i("SliderNewValue From", values[0].toString())
+                Log.i("SliderNewValue To", values[1].toString())
+                if (values[0].toFloat()>12.00){ id="${values[0].roundToInt()}:00pm"}else {
+                    id="${values[0].roundToInt()}:00am"
+                }
+                if (values[1].toFloat()>12.00){ newId="${values[1].roundToInt()}:00pm"}else {
+                    newId="${values[1].roundToInt()}:00am"
+                }
+
+                binding.Wstv.text = "$id - $newId"
+            }
+        })
+        binding.wednesdaySlider.addOnChangeListener { slider, value, fromUser ->
+            val values =  binding.wednesdaySlider.values
+            val id:String
+            val newId:String
+
+            if (values[0].toFloat()>12.00){ id="${values[0].roundToInt()}:00pm"}else {
+                id="${values[0].roundToInt()}:00am"
+            }
+            if (values[1].toFloat()>12.00){ newId="${values[1].roundToInt()}:00pm"}else {
+                newId="${values[1].roundToInt()}:00am"
+            }
+            binding.Wstv.text ="$id - $newId"
+        }
+
+        binding.thursdaySlider.setLabelFormatter { value: Float ->
+            return@setLabelFormatter if (value>12.00){"${value.roundToInt()}:00pm"}else{
+                "${value.roundToInt()}:00am"
+            }
+        }
+        binding.thursdaySlider.setValueFrom(0f).toString()
+        binding.thursdaySlider.setValues(0f,23f).toString()
+        binding.thursdaySlider.setValueTo(23f).toString()
+
+        binding.thursdaySlider.addOnSliderTouchListener(object : RangeSlider.OnSliderTouchListener{
+            override fun onStartTrackingTouch(slider: RangeSlider) {
+                val values = binding.thursdaySlider.values
+                //Those are the satrt and end values of sldier when user start dragging
+                Log.i("SliderPreviousValue From", values[0].toString())
+                Log.i("SliderPreviousValue To", values[1].toString())
+            }
+
+            @SuppressLint("SetTextI18n")
+            override fun onStopTrackingTouch(slider: RangeSlider) {
+                val values = binding.thursdaySlider.values
+                val id:String
+                val newId:String
+                //Those are the new updated values of sldier when user has finshed dragging
+                Log.i("SliderNewValue From", values[0].toString())
+                Log.i("SliderNewValue To", values[1].toString())
+                if (values[0].toFloat()>12.00){ id="${values[0].roundToInt()}:00pm"}else {
+                    id="${values[0].roundToInt()}:00am"
+                }
+                if (values[1].toFloat()>12.00){ newId="${values[1].roundToInt()}:00pm"}else {
+                    newId="${values[1].roundToInt()}:00am"
+                }
+
+                binding.Thstv.text = "$id - $newId"
+            }
+        })
+        binding.thursdaySlider.addOnChangeListener { slider, value, fromUser ->
+            val values =  binding.thursdaySlider.values
+            val id:String
+            val newId:String
+
+            if (values[0].toFloat()>12.00){ id="${values[0].roundToInt()}:00pm"}else {
+                id="${values[0].roundToInt()}:00am"
+            }
+            if (values[1].toFloat()>12.00){ newId="${values[1].roundToInt()}:00pm"}else {
+                newId="${values[1].roundToInt()}:00am"
+            }
+            binding.Thstv.text ="$id - $newId"
+        }
+
+        binding.fridaySlider.setLabelFormatter { value: Float ->
+            return@setLabelFormatter if (value>12.00){"${value.roundToInt()}:00pm"}else{
+                "${value.roundToInt()}:00am"
+            }
+        }
+        binding.fridaySlider.setValueFrom(0f).toString()
+        binding.fridaySlider.setValues(0f,23f).toString()
+        binding.fridaySlider.setValueTo(23f).toString()
+
+        binding.fridaySlider.addOnSliderTouchListener(object : RangeSlider.OnSliderTouchListener{
+            override fun onStartTrackingTouch(slider: RangeSlider) {
+                val values = binding.fridaySlider.values
+                //Those are the satrt and end values of sldier when user start dragging
+                Log.i("SliderPreviousValue From", values[0].toString())
+                Log.i("SliderPreviousValue To", values[1].toString())
+            }
+
+            @SuppressLint("SetTextI18n")
+            override fun onStopTrackingTouch(slider: RangeSlider) {
+                val values = binding.fridaySlider.values
+                val id:String
+                val newId:String
+                //Those are the new updated values of sldier when user has finshed dragging
+                Log.i("SliderNewValue From", values[0].toString())
+                Log.i("SliderNewValue To", values[1].toString())
+                if (values[0].toFloat()>12.00){ id="${values[0].roundToInt()}:00pm"}else {
+                    id="${values[0].roundToInt()}:00am"
+                }
+                if (values[1].toFloat()>12.00){ newId="${values[1].roundToInt()}:00pm"}else {
+                    newId="${values[1].roundToInt()}:00am"
+                }
+
+                binding.Fstv.text = "$id - $newId"
+            }
+        })
+        binding.fridaySlider.addOnChangeListener { slider, value, fromUser ->
+            val values =  binding.fridaySlider.values
+            val id:String
+            val newId:String
+
+            if (values[0].toFloat()>12.00){ id="${values[0].roundToInt()}:00pm"}else {
+                id="${values[0].roundToInt()}:00am"
+            }
+            if (values[1].toFloat()>12.00){ newId="${values[1].roundToInt()}:00pm"}else {
+                newId="${values[1].roundToInt()}:00am"
+            }
+            binding.Fstv.text ="$id - $newId"
+        }
+
+        binding.saturdaySlider.setLabelFormatter { value: Float ->
+            return@setLabelFormatter if (value>12.00){"${value.roundToInt()}:00pm"}else{
+                "${value.roundToInt()}:00am"
+            }
+        }
+        binding.saturdaySlider.setValueFrom(0f).toString()
+        binding.saturdaySlider.setValues(0f,23f).toString()
+        binding.saturdaySlider.setValueTo(23f).toString()
+
+        binding.saturdaySlider.addOnSliderTouchListener(object : RangeSlider.OnSliderTouchListener{
+            override fun onStartTrackingTouch(slider: RangeSlider) {
+                val values = binding.fridaySlider.values
+                //Those are the satrt and end values of sldier when user start dragging
+                Log.i("SliderPreviousValue From", values[0].toString())
+                Log.i("SliderPreviousValue To", values[1].toString())
+            }
+
+            @SuppressLint("SetTextI18n")
+            override fun onStopTrackingTouch(slider: RangeSlider) {
+                val values = binding.saturdaySlider.values
+                val id:String
+                val newId:String
+                //Those are the new updated values of sldier when user has finshed dragging
+                Log.i("SliderNewValue From", values[0].toString())
+                Log.i("SliderNewValue To", values[1].toString())
+                if (values[0].toFloat()>12.00){ id="${values[0].roundToInt()}:00pm"}else {
+                    id="${values[0].roundToInt()}:00am"
+                }
+                if (values[1].toFloat()>12.00){ newId="${values[1].roundToInt()}:00pm"}else {
+                    newId="${values[1].roundToInt()}:00am"
+                }
+
+                binding.Sastv.text = "$id - $newId"
+            }
+        })
+        binding.saturdaySlider.addOnChangeListener { slider, value, fromUser ->
+            val values =  binding.saturdaySlider.values
+            val id:String
+            val newId:String
+
+            if (values[0].toFloat()>12.00){ id="${values[0].roundToInt()}:00pm"}else {
+                id="${values[0].roundToInt()}:00am"
+            }
+            if (values[1].toFloat()>12.00){ newId="${values[1].roundToInt()}:00pm"}else {
+                newId="${values[1].roundToInt()}:00am"
+            }
+            binding.Sastv.text ="$id - $newId"
+        }
     }
-
-
 
     override fun onClick(v: View?) {
 
@@ -226,8 +502,11 @@ class MatchSignUpActivity : BaseActivity(), View.OnClickListener {
             }
 
             R.id.Continue -> {
-        CommonUtils.performIntentFinish(this@MatchSignUpActivity, com.playMatch.ui.home.activity.HomeActivity::class.java)            }
-
+        CommonUtils.performIntentFinish(this@MatchSignUpActivity, com.playMatch.ui.home.activity.HomeActivity::class.java)
+            }
+            R.id.skip -> {
+        CommonUtils.performIntentFinish(this@MatchSignUpActivity, com.playMatch.ui.home.activity.HomeActivity::class.java)
+            }
         }
     }
 }

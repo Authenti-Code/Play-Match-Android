@@ -260,10 +260,6 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\drawable-hdpi\\your_team.png"
     },
     {
-        "merged": "com.playMatch.app-merged_res-48:/layout_activity_match_sign_up.xml.flat",
-        "source": "com.playMatch.app-main-50:/layout/activity_match_sign_up.xml"
-    },
-    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-merged_res-48:\\layout_activity_filter.xml.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\layout\\activity_filter.xml"
     },
@@ -534,6 +530,10 @@
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-merged_res-48:\\drawable_ic_whitel_cancel.xml.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\drawable\\ic_whitel_cancel.xml"
+    },
+    {
+        "merged": "com.playMatch.app-merged_res-48:/layout_rv_child_select_sport_list_item.xml.flat",
+        "source": "com.playMatch.app-main-50:/layout/rv_child_select_sport_list_item.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-merged_res-48:\\layout_bottom_sheet_show_interest.xml.flat",
@@ -1086,6 +1086,10 @@
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-merged_res-48:\\drawable-hdpi_ic_hand.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\drawable-hdpi\\ic_hand.png"
+    },
+    {
+        "merged": "com.playMatch.app-merged_res-48:/layout_rv_list_item_light_bg_rv_child.xml.flat",
+        "source": "com.playMatch.app-main-50:/layout/rv_list_item_light_bg_rv_child.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-merged_res-48:\\drawable-xxhdpi_or.png.flat",

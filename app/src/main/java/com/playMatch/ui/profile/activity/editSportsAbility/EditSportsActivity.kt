@@ -8,11 +8,12 @@ import com.playMatch.ui.baseActivity.BaseActivity
 import com.playMatch.ui.signUp.signUpAdapters.SelectSportAdapter
 import com.playMatch.ui.signUp.signupModel.SelectSportModel
 import com.playMatch.controller.sharedPrefrence.PrefData
+import com.playMatch.ui.signUp.signupModel.SportsList
 
 class EditSportsActivity : BaseActivity(), View.OnClickListener {
     private lateinit var binding: ActivityEditSportsBinding
     private var adapter: SelectSportAdapter?=null
-    private  var list = ArrayList<SelectSportModel>()
+    private  var list = ArrayList<SportsList>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         removeStatusBarFullyBlackIcon()
@@ -27,13 +28,13 @@ class EditSportsActivity : BaseActivity(), View.OnClickListener {
         if (list.isEmpty()) {
             adapter = SelectSportAdapter(list, this)
             binding.rvEditSports.adapter = adapter
-            for (i in 1..5) {
-                list.add(
-                    SelectSportModel(
-                        "Cricket"
-                    )
-                )
-            }
+//            for (i in 1..5) {
+//                list.add(
+//                    SelectSportModel(
+//                        "Cricket"
+//                    )
+//                )
+//            }
         }else{
             list.clear()
             setAdapter()

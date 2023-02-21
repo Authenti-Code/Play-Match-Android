@@ -22,7 +22,7 @@ object ApiConstant {
 
     const val PROFILE="userprofile"
 
-    const val CREATE_EVENT="userEvents"
+    const val SPORTS_LIST="sportsList"
     const val LOGOUT="logout"
 
     const val EVENT_SHOW="eventshow"

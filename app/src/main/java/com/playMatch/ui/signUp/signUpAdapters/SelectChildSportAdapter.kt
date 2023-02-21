@@ -6,11 +6,13 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.playMatch.controller.`interface`.RecyclerviewListener
 import com.playMatch.databinding.RvChildSelectSportListItemBinding
 import com.playMatch.ui.signUp.signupModel.SelectChildSPortModel
 import com.playMatch.controller.sharedPrefrence.PrefData
+import com.playMatch.ui.signUp.signupModel.SelectChildSPortLightModel
 
-class SelectChildSportAdapter(var list: ArrayList<SelectChildSPortModel>, var activity: Activity) : RecyclerView.Adapter<SelectChildSportAdapter.ViewHolder>() {
+class SelectChildSportAdapter(var list: ArrayList<SelectChildSPortModel>, var activity: Activity,private var recyclerviewListener: RecyclerviewListener) : RecyclerView.Adapter<SelectChildSportAdapter.ViewHolder>() {
 
 
 private  var selectedPosition=-1
@@ -29,12 +31,12 @@ private  var selectedPosition=-1
             val ItemsviewModel = list[position]
             val id= PrefData.getStringPrefs(activity, PrefData.CHECK_BOX,"")
 
-            holder.binding.fitnessLevel.text = ItemsviewModel.fitnessLevel
-
+                holder.binding.fitnessLevel.text = ItemsviewModel.fitnessLevel
 
             if (selectedPosition==position && id=="1") {
                 binding.cardView.setCardBackgroundColor(Color.parseColor("#F95047"))
                 binding.fitnessLevel.setTextColor(Color.WHITE)
+                recyclerviewListener.onItemClick(position, binding.fitnessLevel.text.toString().trim())
             } else {
                 binding.cardView.setCardBackgroundColor(Color.parseColor("#ffffff"))
                 binding.fitnessLevel.setTextColor(Color.parseColor("#F95047"))
@@ -62,10 +64,10 @@ private  var selectedPosition=-1
 
     @SuppressLint("NotifyDataSetChanged")
     fun updateCommentList(Data: List<SelectChildSPortModel>, mRecyclerview: RecyclerView?) {
-        if (list.size > 0) {
-            list.clear()
-            notifyDataSetChanged()
-        }
+//        if (list.size > 0) {
+//            list.clear()
+//            notifyDataSetChanged()
+//        }
         list.addAll(Data)
         notifyDataSetChanged()
 

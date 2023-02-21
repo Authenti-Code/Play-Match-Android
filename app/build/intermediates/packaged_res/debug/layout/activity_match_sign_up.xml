@@ -53,6 +53,7 @@
                 android:textSize="@dimen/_18ssp"/>
 
             <ImageView
+                android:id="@+id/skip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|end"
@@ -126,10 +127,13 @@
             android:outlineAmbientShadowColor="@color/black"
             app:cardCornerRadius="@dimen/_8sdp">
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <CheckBox
+                android:id="@+id/checkbox"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_gravity="center_vertical"
                 android:layout_marginStart="@dimen/_10sdp"
+                android:button="@drawable/custom_check_box"
                 android:buttonTint="@color/red_F95047"
                 tools:ignore="TouchTargetSizeCheck" />
 
@@ -141,7 +145,7 @@
 
                 android:gravity="center_vertical"
                 android:layout_marginEnd="@dimen/_10sdp"
-                android:layout_marginStart="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_35sdp"
                 android:text="Always Available"
                 android:drawablePadding="@dimen/_10sdp"
                 android:backgroundTint="@color/white"
@@ -357,7 +361,7 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/_10ssp"
                 android:layout_marginStart="@dimen/_10sdp"
-                android:hint="00:00 - 23:59"
+                android:hint="00:00am - 23:00pm"
                 android:backgroundTint="@color/white"
                 android:fontFamily="@font/metropolis_light"/>
 
@@ -388,7 +392,6 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/Mstv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
@@ -398,12 +401,13 @@
                 android:textSize="@dimen/_12ssp"/>
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/Mstv"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_10ssp"
                 android:layout_marginStart="@dimen/_10sdp"
-                android:hint="00:00 - 23:59"
+                android:hint="00:00am - 23:00pm"
                 android:backgroundTint="@color/white"
                 android:fontFamily="@font/metropolis_light"/>
 
@@ -435,7 +439,6 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/Tstv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
@@ -445,11 +448,12 @@
                 android:textSize="@dimen/_12ssp"/>
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/Tstv"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_10ssp"
-                android:hint="00:00 - 18:00"
+                android:hint="00:00am - 23:00pm"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:backgroundTint="@color/white"
                 android:fontFamily="@font/metropolis_light"/>
@@ -482,7 +486,6 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/Wstv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
@@ -492,11 +495,12 @@
                 android:textSize="@dimen/_12ssp"/>
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/Wstv"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_10ssp"
-                android:hint="00:00 - 18:00"
+                android:hint="00:00am - 23:00pm"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:backgroundTint="@color/white"
                 android:fontFamily="@font/metropolis_light"/>
@@ -529,7 +533,6 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/Thstv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
@@ -539,11 +542,12 @@
                 android:textSize="@dimen/_12ssp"/>
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/Thstv"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_10ssp"
-                android:hint="00:00 - 18:00"
+                android:hint="00:00am - 23:00pm"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:backgroundTint="@color/white"
                 android:fontFamily="@font/metropolis_light"/>
@@ -575,7 +579,6 @@
                     android:orientation="vertical">
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/Fstv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -585,11 +588,12 @@
                         android:textSize="@dimen/_12ssp"/>
 
                     <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/Fstv"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_10ssp"
-                        android:hint="00:00 - 18:00"
+                        android:hint="00:00am - 23:00pm"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:backgroundTint="@color/white"
                         android:fontFamily="@font/metropolis_light"/>
@@ -622,7 +626,6 @@
                     android:orientation="vertical">
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/Sastv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -632,11 +635,12 @@
                         android:textSize="@dimen/_12ssp"/>
 
                     <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/Sastv"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_10ssp"
-                        android:hint="00:00 - 18:00"
+                        android:hint="00:00am - 23:00pm"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:backgroundTint="@color/white"
                         android:fontFamily="@font/metropolis_light"/>
