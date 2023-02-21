@@ -4,7 +4,7 @@
             "outputFile": "com.playMatch.test.app-mergeDebugAndroidTestResources-4:/values/values.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-3\\3be9fbd2504f0d58fdb6d1538a172410\\transformed\\core-1.5.0\\res\\values\\values.xml",
+                    "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-3\\f07ed18cdfa16bc316ffb539f8698f1b\\transformed\\core-1.5.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "4,11",
                         "startColumns": "0,0",

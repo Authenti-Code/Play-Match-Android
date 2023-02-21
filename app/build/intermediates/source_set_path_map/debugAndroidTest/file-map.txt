@@ -1,9 +1,7 @@
-com.playMatch.test.app-core-1.5.0-0 C:\Users\DELL\.gradle\caches\transforms-3\3be9fbd2504f0d58fdb6d1538a172410\transformed\core-1.5.0\res
-com.playMatch.test.app-annotation-experimental-1.1.0-1 C:\Users\DELL\.gradle\caches\transforms-3\fb44608a9e1d20332c6690b5dda0b67e\transformed\annotation-experimental-1.1.0\res
+com.playMatch.test.app-annotation-experimental-1.3.0-0 C:\Users\DELL\.gradle\caches\transforms-3\d332368eff674ac6b1540fa70d90adf7\transformed\annotation-experimental-1.3.0\res
+com.playMatch.test.app-core-1.5.0-1 C:\Users\DELL\.gradle\caches\transforms-3\f07ed18cdfa16bc316ffb539f8698f1b\transformed\core-1.5.0\res
 com.playMatch.test.app-androidTest-2 D:\Akash\PlayMatch03-01-2023\app\build\generated\res\resValues\androidTest\debug
 com.playMatch.test.app-androidTest-3 D:\Akash\PlayMatch03-01-2023\app\build\generated\res\rs\androidTest\debug
 com.playMatch.test.app-mergeDebugAndroidTestResources-4 D:\Akash\PlayMatch03-01-2023\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
 com.playMatch.test.app-mergeDebugAndroidTestResources-5 D:\Akash\PlayMatch03-01-2023\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
 com.playMatch.test.app-merged_res-6 D:\Akash\PlayMatch03-01-2023\app\build\intermediates\merged_res\debugAndroidTest
-com.playMatch.test.app-androidTest-7 D:\Akash\PlayMatch03-01-2023\app\src\androidTest\res
-com.playMatch.test.app-androidTestDebug-8 D:\Akash\PlayMatch03-01-2023\app\src\androidTestDebug\res
