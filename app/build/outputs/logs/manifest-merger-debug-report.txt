@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:2:1-232:12
-INJECTED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:2:1-232:12
-INJECTED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:2:1-232:12
-INJECTED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:2:1-232:12
+ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:2:1-231:12
+INJECTED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:2:1-231:12
+INJECTED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:2:1-231:12
+INJECTED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:2:1-231:12
 MERGED from [androidx.databinding:viewbinding:7.4.1] C:\Users\DELL\.gradle\caches\transforms-3\cbe2319578129580a2a5c48e6d1f216b\transformed\viewbinding-7.4.1\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.material:material:1.8.0] C:\Users\DELL\.gradle\caches\transforms-3\a0a5b69e20dcb96394b0d4bbcb723337\transformed\material-1.8.0\AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\DELL\.gradle\caches\transforms-3\91282a4c359ac03f2c598474b7eac7db\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
@@ -71,22 +71,22 @@ MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\User
 MERGED from [androidx.print:print:1.0.0] C:\Users\DELL\.gradle\caches\transforms-3\eaf9a74149bd1cc8e30faace2d83f395\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\DELL\.gradle\caches\transforms-3\d332368eff674ac6b1540fa70d90adf7\transformed\annotation-experimental-1.3.0\AndroidManifest.xml:17:1-22:12
 MERGED from [pl.droidsonroids.relinker:relinker:1.4.1] C:\Users\DELL\.gradle\caches\transforms-3\fe1d44d5ea6f2e6df351eeeab08be79b\transformed\relinker-1.4.1\AndroidManifest.xml:2:1-7:12
-INJECTED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:2:1-232:12
-INJECTED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:2:1-232:12
-INJECTED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:2:1-232:12
+INJECTED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:2:1-231:12
+INJECTED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:2:1-231:12
+INJECTED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:2:1-231:12
 	package
 		INJECTED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml
-		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:2:1-232:12
+		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:2:1-231:12
 		INJECTED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml
-		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:2:1-232:12
+		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:2:1-231:12
 		INJECTED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml
-		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:2:1-232:12
+		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:2:1-231:12
 		INJECTED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:2:11-69
@@ -133,7 +133,7 @@ MERGED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\DELL\.gr
 	android:name
 		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:15:18-61
 application
-ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:18:5-231:19
+ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:18:5-230:19
 MERGED from [com.google.android.material:material:1.8.0] C:\Users\DELL\.gradle\caches\transforms-3\a0a5b69e20dcb96394b0d4bbcb723337\transformed\material-1.8.0\AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.8.0] C:\Users\DELL\.gradle\caches\transforms-3\a0a5b69e20dcb96394b0d4bbcb723337\transformed\material-1.8.0\AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\DELL\.gradle\caches\transforms-3\91282a4c359ac03f2c598474b7eac7db\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -333,63 +333,63 @@ ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:150:9-1
 	android:name
 		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:151:13-58
 activity#com.playMatch.ui.signUp.MatchSignUpActivity
-ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:157:9-169:20
+ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:157:9-163:20
 	android:exported
-		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:159:13-36
+		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:159:13-37
 	android:name
 		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:158:13-58
-intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:164:13-168:29
-action#android.intent.action.MAIN
-ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:165:17-69
-	android:name
-		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:165:25-66
-category#android.intent.category.LAUNCHER
-ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:167:17-77
-	android:name
-		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:167:27-74
 activity#com.playMatch.ui.signUp.SignUpActivity
-ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:170:9-176:20
+ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:164:9-170:20
 	android:exported
-		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:172:13-37
+		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:166:13-37
 	android:name
-		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:171:13-53
+		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:165:13-53
 activity#com.playMatch.ui.signUp.SelectSportActivity
-ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:177:9-183:20
+ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:171:9-182:20
 	android:exported
-		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:179:13-37
+		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:173:13-36
 	android:name
-		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:178:13-58
+		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:172:13-58
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:174:13-178:29
+action#android.intent.action.MAIN
+ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:175:17-69
+	android:name
+		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:175:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:177:17-77
+	android:name
+		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:177:27-74
 activity#com.playMatch.ui.signUp.AddProfileImageActivity
-ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:184:9-190:20
+ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:183:9-189:20
 	android:exported
-		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:186:13-37
+		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:185:13-37
 	android:name
-		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:185:13-62
+		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:184:13-62
 activity#com.playMatch.ui.signUp.UserDetailActivity
-ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:191:9-197:20
+ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:190:9-196:20
 	android:exported
-		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:193:13-37
+		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:192:13-37
 	android:name
-		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:192:13-57
+		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:191:13-57
 activity#com.playMatch.ui.login.LoginActivity
-ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:204:9-210:20
+ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:203:9-209:20
 	android:exported
-		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:206:13-37
+		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:205:13-37
 	android:name
-		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:205:13-51
+		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:204:13-51
 activity#com.playMatch.ui.welcome.WelcomeActivity
-ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:211:9-217:20
+ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:210:9-216:20
 	android:exported
-		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:213:13-37
+		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:212:13-37
 	android:name
-		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:212:13-55
+		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:211:13-55
 activity#com.playMatch.ui.splash.SplashActivity
-ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:218:9-230:20
+ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:217:9-229:20
 	android:exported
-		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:220:13-36
+		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:219:13-36
 	android:name
-		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:219:13-53
+		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:218:13-53
 uses-sdk
 INJECTED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml

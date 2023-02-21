@@ -19,7 +19,7 @@ import java.lang.String;
 
 public final class ActivitySelectSportBinding implements ViewBinding {
   @NonNull
-  private final FrameLayout rootView;
+  private final FrameLayout rootView_;
 
   @NonNull
   public final CardView Continue;
@@ -28,20 +28,25 @@ public final class ActivitySelectSportBinding implements ViewBinding {
   public final CircleImageView profileImage;
 
   @NonNull
+  public final FrameLayout rootView;
+
+  @NonNull
   public final RecyclerView rvSports;
 
-  private ActivitySelectSportBinding(@NonNull FrameLayout rootView, @NonNull CardView Continue,
-      @NonNull CircleImageView profileImage, @NonNull RecyclerView rvSports) {
-    this.rootView = rootView;
+  private ActivitySelectSportBinding(@NonNull FrameLayout rootView_, @NonNull CardView Continue,
+      @NonNull CircleImageView profileImage, @NonNull FrameLayout rootView,
+      @NonNull RecyclerView rvSports) {
+    this.rootView_ = rootView_;
     this.Continue = Continue;
     this.profileImage = profileImage;
+    this.rootView = rootView;
     this.rvSports = rvSports;
   }
 
   @Override
   @NonNull
   public FrameLayout getRoot() {
-    return rootView;
+    return rootView_;
   }
 
   @NonNull
@@ -77,6 +82,8 @@ public final class ActivitySelectSportBinding implements ViewBinding {
         break missingId;
       }
 
+      FrameLayout rootView_ = (FrameLayout) rootView;
+
       id = R.id.rv_sports;
       RecyclerView rvSports = ViewBindings.findChildViewById(rootView, id);
       if (rvSports == null) {
@@ -84,7 +91,7 @@ public final class ActivitySelectSportBinding implements ViewBinding {
       }
 
       return new ActivitySelectSportBinding((FrameLayout) rootView, Continue, profileImage,
-          rvSports);
+          rootView_, rvSports);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

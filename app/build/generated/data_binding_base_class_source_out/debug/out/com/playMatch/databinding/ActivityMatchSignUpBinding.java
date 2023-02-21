@@ -4,6 +4,7 @@ package com.playMatch.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import androidx.annotation.NonNull;
@@ -115,6 +116,9 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
   public final ImageView back;
 
   @NonNull
+  public final CheckBox checkbox;
+
+  @NonNull
   public final RangeSlider fridaySlider;
 
   @NonNull
@@ -122,6 +126,9 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
 
   @NonNull
   public final RangeSlider saturdaySlider;
+
+  @NonNull
+  public final ImageView skip;
 
   @NonNull
   public final RangeSlider sundaySlider;
@@ -150,8 +157,9 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
       @NonNull AppCompatTextView Tstv, @NonNull AppCompatTextView Ttv,
       @NonNull MaterialCardView Wcv, @NonNull LinearLayoutCompat Wlay,
       @NonNull AppCompatTextView Wstv, @NonNull AppCompatTextView Wtv, @NonNull ImageView back,
-      @NonNull RangeSlider fridaySlider, @NonNull RangeSlider mondaySlider,
-      @NonNull RangeSlider saturdaySlider, @NonNull RangeSlider sundaySlider,
+      @NonNull CheckBox checkbox, @NonNull RangeSlider fridaySlider,
+      @NonNull RangeSlider mondaySlider, @NonNull RangeSlider saturdaySlider,
+      @NonNull ImageView skip, @NonNull RangeSlider sundaySlider,
       @NonNull RangeSlider thursdaySlider, @NonNull RangeSlider tuesdaySlider,
       @NonNull RangeSlider wednesdaySlider) {
     this.rootView = rootView;
@@ -185,9 +193,11 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
     this.Wstv = Wstv;
     this.Wtv = Wtv;
     this.back = back;
+    this.checkbox = checkbox;
     this.fridaySlider = fridaySlider;
     this.mondaySlider = mondaySlider;
     this.saturdaySlider = saturdaySlider;
+    this.skip = skip;
     this.sundaySlider = sundaySlider;
     this.thursdaySlider = thursdaySlider;
     this.tuesdaySlider = tuesdaySlider;
@@ -401,6 +411,12 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.checkbox;
+      CheckBox checkbox = ViewBindings.findChildViewById(rootView, id);
+      if (checkbox == null) {
+        break missingId;
+      }
+
       id = R.id.fridaySlider;
       RangeSlider fridaySlider = ViewBindings.findChildViewById(rootView, id);
       if (fridaySlider == null) {
@@ -416,6 +432,12 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
       id = R.id.saturdaySlider;
       RangeSlider saturdaySlider = ViewBindings.findChildViewById(rootView, id);
       if (saturdaySlider == null) {
+        break missingId;
+      }
+
+      id = R.id.skip;
+      ImageView skip = ViewBindings.findChildViewById(rootView, id);
+      if (skip == null) {
         break missingId;
       }
 
@@ -445,8 +467,9 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
 
       return new ActivityMatchSignUpBinding((FrameLayout) rootView, Continue, Fcv, Flay, Fstv, Ftv,
           Mcv, Mlay, Mstv, Mtv, SaLay, Sacv, Sastv, Satv, Scv, Slay, Sstv, Stv, Tcv, Thcv, Thlay,
-          Thstv, Thtv, Tlay, Tstv, Ttv, Wcv, Wlay, Wstv, Wtv, back, fridaySlider, mondaySlider,
-          saturdaySlider, sundaySlider, thursdaySlider, tuesdaySlider, wednesdaySlider);
+          Thstv, Thtv, Tlay, Tstv, Ttv, Wcv, Wlay, Wstv, Wtv, back, checkbox, fridaySlider,
+          mondaySlider, saturdaySlider, skip, sundaySlider, thursdaySlider, tuesdaySlider,
+          wednesdaySlider);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
