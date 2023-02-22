@@ -43,7 +43,8 @@ private  var selectedPosition=-1
             binding.cardView.setOnClickListener {
                 selectedPosition=position
                 notifyDataSetChanged()
-                recyclerviewListener.onItemClick(position, binding.fitnessLevel.text.toString().trim())
+                recyclerviewListener.onItemClick(position, binding.fitnessLevel.text.toString().trim(),true)
+                ItemsviewModel.status
             }
         }
     }
@@ -58,8 +59,6 @@ private  var selectedPosition=-1
     override fun getItemCount(): Int {
         return list.size
     }
-
-
 
     @SuppressLint("NotifyDataSetChanged")
     fun updateCommentList(Data: List<SelectChildSPortModel>, mRecyclerview: RecyclerView?) {

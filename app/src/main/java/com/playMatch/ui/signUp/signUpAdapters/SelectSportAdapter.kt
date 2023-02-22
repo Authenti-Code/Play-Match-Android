@@ -8,11 +8,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.playMatch.controller.`interface`.RecyclerviewListener
 import com.playMatch.databinding.RvSelectSportItemBinding
-import com.playMatch.ui.signUp.signupModel.SelectChildSPortLightModel
-import com.playMatch.ui.signUp.signupModel.SelectChildSPortModel
-import com.playMatch.ui.signUp.signupModel.SelectSportModel
 import com.playMatch.controller.sharedPrefrence.PrefData
-import com.playMatch.ui.signUp.signupModel.SportsList
+import com.playMatch.ui.signUp.signupModel.*
 
 class SelectSportAdapter(var list: ArrayList<SportsList>, var activity: Activity ) : RecyclerView.Adapter<SelectSportAdapter.ViewHolder>() {
 
@@ -22,7 +19,7 @@ class SelectSportAdapter(var list: ArrayList<SportsList>, var activity: Activity
     private  var mlist = ArrayList<SelectChildSPortModel>()
     private  var mlightlist = ArrayList<SelectChildSPortLightModel>()
     private var type:String?=null
-    private var nlist=ArrayList<String>()
+    private var nlist=ArrayList<selectedSportModel>()
 
 
     inner class ViewHolder(val binding:RvSelectSportItemBinding) : RecyclerView.ViewHolder(binding.root)
@@ -42,14 +39,32 @@ class SelectSportAdapter(var list: ArrayList<SportsList>, var activity: Activity
 
             adapter = SelectChildSportAdapter(mlist, activity,object : RecyclerviewListener {
 
-                override fun onItemClick(position: Int, viewType: String) {
-                    nlist.add("${ItemsviewModel.id} : $viewType")
+                override fun onItemClick(position: Int, viewType: String,status:Boolean) {
+//                    nlist.add("${ItemsviewModel.id} : $viewType")
+
+                    if (nlist.isEmpty()) {
+                        nlist.add(selectedSportModel(ItemsviewModel.id,viewType,status))
+                    } else {
+                        for (i in 0 until nlist.size!!) {
+                            val modelNew = nlist[i]
+                            if (modelNew.sportId ==ItemsviewModel.id ) {
+                                    nlist[i]=selectedSportModel(ItemsviewModel.id,viewType,status)
+                                }
+                            else{
+                                nlist.add(selectedSportModel(ItemsviewModel.id,viewType,status))
+                            }
+                        }
+                    }
+
+
 
 //                    if (nlist.isEmpty()) {
 //                        nlist.add("${ItemsviewModel.id} : $viewType")
-//                    }else if (nlist.isNotEmpty() && nlist[position] == "${ItemsviewModel.id} : $viewType"){
-////                             nlist.remove("${ItemsviewModel.id} : $viewType")
-//                    }else if (nlist.isNotEmpty()&& !nlist.equals("${ItemsviewModel.id} : $viewType")){
+//                    }else if (nlist.isNotEmpty()&&nlist.){
+//                        val index = nlist.indexOf("${ItemsviewModel.id}:$viewType")
+//                               nlist[index]="${ItemsviewModel.id}:$viewType"
+//                    }else if (nlist.isNotEmpty()&& !nlist.equals(nlist.indexOf("${ItemsviewModel.id}"))){
+//                        nlist.add("${ItemsviewModel.id} : $viewType")
 //                    }
                         type = viewType
                         val param = nlist.joinToString()
@@ -61,30 +76,30 @@ class SelectSportAdapter(var list: ArrayList<SportsList>, var activity: Activity
             mlist.clear()
             mlist.add(
                 SelectChildSPortModel(
-                    "Beginner"
+                    "Beginner",false
                 )
             )
 
             mlist.add(
                 SelectChildSPortModel(
-                    "Novice"
+                    "Novice",false
                 )
             )
 
             mlist.add(
                 SelectChildSPortModel(
-                    "Intermediate"
+                    "Intermediate",false
                 )
             )
 
             mlist.add(
                 SelectChildSPortModel(
-                    "Experienced"
+                    "Experienced",false
                 )
             )
             mlist.add(
                 SelectChildSPortModel(
-                    "Superstar"
+                    "Superstar",false
                 )
             )
 
@@ -124,11 +139,54 @@ class SelectSportAdapter(var list: ArrayList<SportsList>, var activity: Activity
     binding.rvChildSports.visibility=View.VISIBLE
     binding.rvLightChildSports.visibility=View.GONE
            selectedPosition=position
+
         }
        else{
     PrefData.setStringPrefs(activity, PrefData.CHECK_BOX,"0")
     binding.rvChildSports.visibility=View.GONE
     binding.rvLightChildSports.visibility=View.VISIBLE
+           holder.binding.rvChildSports.adapter = adapter
+           mlist.clear()
+           mlist.add(
+               SelectChildSPortModel(
+                   "Beginner",false
+               )
+           )
+
+           mlist.add(
+               SelectChildSPortModel(
+                   "Novice",false
+               )
+           )
+
+           mlist.add(
+               SelectChildSPortModel(
+                   "Intermediate",false
+               )
+           )
+
+           mlist.add(
+               SelectChildSPortModel(
+                   "Experienced",false
+               )
+           )
+           mlist.add(
+               SelectChildSPortModel(
+                   "Superstar",false
+               )
+           )
+
+
+
+           for (i in 0 until nlist.size!!) {
+               val modelNew = nlist[i]
+               when (modelNew.sportId) {
+                   ItemsviewModel.id -> {
+                       nlist.removeAt(i)
+                       return@setOnClickListener
+                   }
+               }
+               }
              }
             }
         }
