@@ -23,6 +23,7 @@ object ApiConstant {
     const val PROFILE="userprofile"
 
     const val SPORTS_LIST="sportsList"
+    const val SPORTS_LEVELS="sportAbilityLevels"
     const val LOGOUT="logout"
 
     const val EVENT_SHOW="eventshow"

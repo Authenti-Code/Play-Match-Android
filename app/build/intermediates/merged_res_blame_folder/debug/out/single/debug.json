@@ -972,6 +972,10 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\drawable-xxhdpi\\profile_bg.png"
     },
     {
+        "merged": "com.playMatch.app-merged_res-48:/layout_activity_select_sport.xml.flat",
+        "source": "com.playMatch.app-main-50:/layout/activity_select_sport.xml"
+    },
+    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-merged_res-48:\\drawable-hdpi_juventus.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\drawable-hdpi\\juventus.png"
     },
@@ -1082,10 +1086,6 @@
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-merged_res-48:\\drawable-hdpi_ic_hand.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\drawable-hdpi\\ic_hand.png"
-    },
-    {
-        "merged": "com.playMatch.app-merged_res-48:/layout_activity_sign_up.xml.flat",
-        "source": "com.playMatch.app-main-50:/layout/activity_sign_up.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-merged_res-48:\\drawable-xxhdpi_or.png.flat",
@@ -1934,10 +1934,6 @@
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-merged_res-48:\\drawable_ic_circle_uncheck.xml.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\drawable\\ic_circle_uncheck.xml"
-    },
-    {
-        "merged": "com.playMatch.app-merged_res-48:/layout_rv_select_sport_item.xml.flat",
-        "source": "com.playMatch.app-main-50:/layout/rv_select_sport_item.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-merged_res-48:\\font_metropolis_extrabolditalic.otf.flat",

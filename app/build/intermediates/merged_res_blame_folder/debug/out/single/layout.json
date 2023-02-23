@@ -20,6 +20,10 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\layout\\activity_notification.xml"
     },
     {
+        "merged": "com.playMatch.app-mergeDebugResources-47:/layout/activity_select_sport.xml",
+        "source": "com.playMatch.app-main-50:/layout/activity_select_sport.xml"
+    },
+    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-mergeDebugResources-47:\\layout\\custom_progressbar.xml",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\layout\\custom_progressbar.xml"
     },
@@ -98,10 +102,6 @@
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-mergeDebugResources-47:\\layout\\rv_list_item_search_players.xml",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\layout\\rv_list_item_search_players.xml"
-    },
-    {
-        "merged": "com.playMatch.app-mergeDebugResources-47:/layout/activity_sign_up.xml",
-        "source": "com.playMatch.app-main-50:/layout/activity_sign_up.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-mergeDebugResources-47:\\layout\\activity_on_map_nearby_matches.xml",
@@ -190,10 +190,6 @@
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-mergeDebugResources-47:\\layout\\rv_matches_list_item.xml",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\layout\\rv_matches_list_item.xml"
-    },
-    {
-        "merged": "com.playMatch.app-mergeDebugResources-47:/layout/rv_select_sport_item.xml",
-        "source": "com.playMatch.app-main-50:/layout/rv_select_sport_item.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-mergeDebugResources-47:\\layout\\activity_location.xml",

@@ -710,6 +710,15 @@
             android:layout_marginBottom="@dimen/_5sdp"
             app:cardCornerRadius="@dimen/_18sdp">
 
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:layout_marginVertical="@dimen/_2sdp"
+                android:indeterminateTint="@color/white"/>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

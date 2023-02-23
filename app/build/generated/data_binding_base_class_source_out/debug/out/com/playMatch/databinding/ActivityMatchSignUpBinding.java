@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
@@ -125,6 +126,9 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
   public final RangeSlider mondaySlider;
 
   @NonNull
+  public final ProgressBar progressBar;
+
+  @NonNull
   public final RangeSlider saturdaySlider;
 
   @NonNull
@@ -158,10 +162,10 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
       @NonNull MaterialCardView Wcv, @NonNull LinearLayoutCompat Wlay,
       @NonNull AppCompatTextView Wstv, @NonNull AppCompatTextView Wtv, @NonNull ImageView back,
       @NonNull CheckBox checkbox, @NonNull RangeSlider fridaySlider,
-      @NonNull RangeSlider mondaySlider, @NonNull RangeSlider saturdaySlider,
-      @NonNull ImageView skip, @NonNull RangeSlider sundaySlider,
-      @NonNull RangeSlider thursdaySlider, @NonNull RangeSlider tuesdaySlider,
-      @NonNull RangeSlider wednesdaySlider) {
+      @NonNull RangeSlider mondaySlider, @NonNull ProgressBar progressBar,
+      @NonNull RangeSlider saturdaySlider, @NonNull ImageView skip,
+      @NonNull RangeSlider sundaySlider, @NonNull RangeSlider thursdaySlider,
+      @NonNull RangeSlider tuesdaySlider, @NonNull RangeSlider wednesdaySlider) {
     this.rootView = rootView;
     this.Continue = Continue;
     this.Fcv = Fcv;
@@ -196,6 +200,7 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
     this.checkbox = checkbox;
     this.fridaySlider = fridaySlider;
     this.mondaySlider = mondaySlider;
+    this.progressBar = progressBar;
     this.saturdaySlider = saturdaySlider;
     this.skip = skip;
     this.sundaySlider = sundaySlider;
@@ -429,6 +434,12 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.progressBar;
+      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
+      if (progressBar == null) {
+        break missingId;
+      }
+
       id = R.id.saturdaySlider;
       RangeSlider saturdaySlider = ViewBindings.findChildViewById(rootView, id);
       if (saturdaySlider == null) {
@@ -468,8 +479,8 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
       return new ActivityMatchSignUpBinding((FrameLayout) rootView, Continue, Fcv, Flay, Fstv, Ftv,
           Mcv, Mlay, Mstv, Mtv, SaLay, Sacv, Sastv, Satv, Scv, Slay, Sstv, Stv, Tcv, Thcv, Thlay,
           Thstv, Thtv, Tlay, Tstv, Ttv, Wcv, Wlay, Wstv, Wtv, back, checkbox, fridaySlider,
-          mondaySlider, saturdaySlider, skip, sundaySlider, thursdaySlider, tuesdaySlider,
-          wednesdaySlider);
+          mondaySlider, progressBar, saturdaySlider, skip, sundaySlider, thursdaySlider,
+          tuesdaySlider, wednesdaySlider);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

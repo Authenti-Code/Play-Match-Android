@@ -3,6 +3,7 @@ package com.playMatch.ui.profile.activity.editSportsAbility
 import android.os.Bundle
 import android.view.View
 import com.playMatch.R
+import com.playMatch.controller.`interface`.SelectSportsListener
 import com.playMatch.databinding.ActivityEditSportsBinding
 import com.playMatch.ui.baseActivity.BaseActivity
 import com.playMatch.ui.signUp.signUpAdapters.SelectSportAdapter
@@ -26,7 +27,10 @@ class EditSportsActivity : BaseActivity(), View.OnClickListener {
 
     private fun setAdapter() {
         if (list.isEmpty()) {
-            adapter = SelectSportAdapter(list, this)
+            adapter = SelectSportAdapter(list, this,object:SelectSportsListener{
+                override fun onItemClick(position: Int, list: String) {
+                }
+            })
             binding.rvEditSports.adapter = adapter
 //            for (i in 1..5) {
 //                list.add(

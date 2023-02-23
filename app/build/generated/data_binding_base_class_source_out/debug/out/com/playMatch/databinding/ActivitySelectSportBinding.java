@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
@@ -28,17 +29,21 @@ public final class ActivitySelectSportBinding implements ViewBinding {
   public final CircleImageView profileImage;
 
   @NonNull
+  public final ProgressBar progressBar;
+
+  @NonNull
   public final FrameLayout rootView;
 
   @NonNull
   public final RecyclerView rvSports;
 
   private ActivitySelectSportBinding(@NonNull FrameLayout rootView_, @NonNull CardView Continue,
-      @NonNull CircleImageView profileImage, @NonNull FrameLayout rootView,
-      @NonNull RecyclerView rvSports) {
+      @NonNull CircleImageView profileImage, @NonNull ProgressBar progressBar,
+      @NonNull FrameLayout rootView, @NonNull RecyclerView rvSports) {
     this.rootView_ = rootView_;
     this.Continue = Continue;
     this.profileImage = profileImage;
+    this.progressBar = progressBar;
     this.rootView = rootView;
     this.rvSports = rvSports;
   }
@@ -82,6 +87,12 @@ public final class ActivitySelectSportBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.progressBar;
+      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
+      if (progressBar == null) {
+        break missingId;
+      }
+
       FrameLayout rootView_ = (FrameLayout) rootView;
 
       id = R.id.rv_sports;
@@ -91,7 +102,7 @@ public final class ActivitySelectSportBinding implements ViewBinding {
       }
 
       return new ActivitySelectSportBinding((FrameLayout) rootView, Continue, profileImage,
-          rootView_, rvSports);
+          progressBar, rootView_, rvSports);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

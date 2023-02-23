@@ -7,8 +7,10 @@ import com.playMatch.ui.signUp.signupModel.UploadImageResponse
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.login.LoginPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.logout.LogoutPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.register.RegisterPost
+import com.playMatch.ui.signUp.userSports.UserSportsPost
 import com.playMatch.ui.profile.activity.settingActivity.model.LogoutResponse
 import com.playMatch.ui.signUp.signupModel.SportListResponse
+import com.playMatch.ui.signUp.signupModel.SportsLevelsResponse
 import okhttp3.MultipartBody
 import retrofit2.Response
 import retrofit2.http.*
@@ -45,6 +47,14 @@ interface ApiService {
         @Header(ApiConstant.AUTH) token: String,
         @Body eventDetail: LogoutPost?
     ):Response<LogoutResponse>
+
+
+    @Headers("Content-Type: application/json")
+    @POST(ApiConstant.SPORTS_LEVELS)
+    suspend fun sportLevels(
+        @Header(ApiConstant.AUTH) token: String,
+        @Body eventDetail: UserSportsPost?
+    ):Response<SportsLevelsResponse>
 
 
     //verify otp phone number

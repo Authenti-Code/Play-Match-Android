@@ -7,11 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.playMatch.controller.`interface`.RecyclerviewListener
-import com.playMatch.databinding.RvSelectSportItemBinding
+import com.playMatch.controller.`interface`.SelectSportsListener
 import com.playMatch.controller.sharedPrefrence.PrefData
+import com.playMatch.databinding.RvSelectSportItemBinding
 import com.playMatch.ui.signUp.signupModel.*
 
-class SelectSportAdapter(var list: ArrayList<SportsList>, var activity: Activity ) : RecyclerView.Adapter<SelectSportAdapter.ViewHolder>() {
+class SelectSportAdapter(var list: ArrayList<SportsList>, var activity: Activity,private var selecSportListener: SelectSportsListener ) : RecyclerView.Adapter<SelectSportAdapter.ViewHolder>() {
 
     private var selectedPosition = -1
     private var adapter:SelectChildSportAdapter?=null
@@ -19,7 +20,9 @@ class SelectSportAdapter(var list: ArrayList<SportsList>, var activity: Activity
     private  var mlist = ArrayList<SelectChildSPortModel>()
     private  var mlightlist = ArrayList<SelectChildSPortLightModel>()
     private var type:String?=null
+    private var param:String?=null
     private var nlist=ArrayList<selectedSportModel>()
+    private var newlist=ArrayList<String>()
 
 
     inner class ViewHolder(val binding:RvSelectSportItemBinding) : RecyclerView.ViewHolder(binding.root)
@@ -43,32 +46,29 @@ class SelectSportAdapter(var list: ArrayList<SportsList>, var activity: Activity
 //                    nlist.add("${ItemsviewModel.id} : $viewType")
 
                     if (nlist.isEmpty()) {
-                        nlist.add(selectedSportModel(ItemsviewModel.id,viewType,status))
+                        nlist.add(selectedSportModel(ItemsviewModel.id,viewType,ItemsviewModel.sportName))
                     } else {
                         for (i in 0 until nlist.size!!) {
                             val modelNew = nlist[i]
                             if (modelNew.sportId ==ItemsviewModel.id ) {
-                                    nlist[i]=selectedSportModel(ItemsviewModel.id,viewType,status)
+                                    nlist[i]=selectedSportModel(ItemsviewModel.id,viewType,ItemsviewModel.sportName)
                                 }
                             else{
-                                nlist.add(selectedSportModel(ItemsviewModel.id,viewType,status))
+                                nlist.add(selectedSportModel(ItemsviewModel.id,viewType,ItemsviewModel.sportName))
                             }
                         }
+
+
                     }
-
-
-
-//                    if (nlist.isEmpty()) {
-//                        nlist.add("${ItemsviewModel.id} : $viewType")
-//                    }else if (nlist.isNotEmpty()&&nlist.){
-//                        val index = nlist.indexOf("${ItemsviewModel.id}:$viewType")
-//                               nlist[index]="${ItemsviewModel.id}:$viewType"
-//                    }else if (nlist.isNotEmpty()&& !nlist.equals(nlist.indexOf("${ItemsviewModel.id}"))){
-//                        nlist.add("${ItemsviewModel.id} : $viewType")
-//                    }
-                        type = viewType
-                        val param = nlist.joinToString()
-                        PrefData.setStringPrefs(activity, PrefData.New_ARRAYLIST, param)
+                    param=  nlist.joinToString(
+                        prefix = "(",
+                        separator = ",",
+                        postfix = ")",
+                        truncated = "...",
+                    )
+                    if (param!=null) {
+                        selecSportListener.onItemClick(position, param!!)
+                    }
                 }
             })
 
@@ -139,8 +139,7 @@ class SelectSportAdapter(var list: ArrayList<SportsList>, var activity: Activity
     binding.rvChildSports.visibility=View.VISIBLE
     binding.rvLightChildSports.visibility=View.GONE
            selectedPosition=position
-
-        }
+       }
        else{
     PrefData.setStringPrefs(activity, PrefData.CHECK_BOX,"0")
     binding.rvChildSports.visibility=View.GONE
