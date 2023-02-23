@@ -6,6 +6,7 @@ import com.playMatch.ui.baseActivity.BaseActivity
 import com.playMatch.controller.sharedPrefrence.PrefData
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.login.LoginPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.logout.LogoutPost
+import com.playMatch.controller.playMatchAPi.postPojoModel.user.matchAvailability.MatchAvailabilityPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.register.RegisterPost
 import com.playMatch.ui.signUp.userSports.UserSportsPost
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -161,7 +162,29 @@ class UserApi( val activity: Activity): BaseActivity()  {
 
     suspend fun sportsLevels(userSportsPost: UserSportsPost): ResultResponse {
         return try {
-            val response = apiService?.sportLevels(ApiConstant.BEARER_TOKEN + " " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NjUsImlhdCI6MTY3NzA0NjIxOH0._g-KnjXUccG7__Jcle-KwyQjRpqNVbkaIVb2E9Rw9fQ",userSportsPost)
+            val response = apiService?.sportLevels(ApiConstant.BEARER_TOKEN + " " + "token",userSportsPost)
+            if (response?.isSuccessful!!) {
+                val model = response.body()
+                ResultResponse.Success(model)
+            } else {
+                when (response.code()) {
+                    403 -> ResultResponse.HttpErrors.ResourceForbidden(response.message())
+                    404 -> ResultResponse.HttpErrors.ResourceNotFound(response.message())
+                    500 -> ResultResponse.HttpErrors.InternalServerError(response.message())
+                    502 -> ResultResponse.HttpErrors.BadGateWay(response.message())
+                    301 -> ResultResponse.HttpErrors.ResourceRemoved(response.message())
+                    302 -> ResultResponse.HttpErrors.RemovedResourceFound(response.message())
+                    else -> ResultResponse.Error(response.message())
+                }
+            }
+
+        } catch (error: IOException) {
+            ResultResponse.NetworkException(error.message!!)
+        }
+    }
+    suspend fun matchAvailability(matchAvailabilityPost: MatchAvailabilityPost): ResultResponse {
+        return try {
+            val response = apiService?.matchAbility(ApiConstant.BEARER_TOKEN + " " + token,matchAvailabilityPost)
             if (response?.isSuccessful!!) {
                 val model = response.body()
                 ResultResponse.Success(model)

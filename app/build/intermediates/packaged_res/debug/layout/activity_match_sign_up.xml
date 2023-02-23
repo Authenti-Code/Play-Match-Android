@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/rootView"
     tools:context=".ui.signUp.MatchSignUpActivity">
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -92,6 +93,7 @@
             app:cardCornerRadius="@dimen/_8sdp">
 
             <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/distanceTv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="@dimen/_10sdp"
@@ -159,6 +161,7 @@
             android:layout_marginTop="@dimen/_10sdp">
 
             <LinearLayout
+                android:id="@+id/weekendLay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -361,7 +364,7 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/_10ssp"
                 android:layout_marginStart="@dimen/_10sdp"
-                android:hint="00:00am - 23:00pm"
+                android:text="00:00am - 23:00pm"
                 android:backgroundTint="@color/white"
                 android:fontFamily="@font/metropolis_light"/>
 
@@ -407,7 +410,7 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/_10ssp"
                 android:layout_marginStart="@dimen/_10sdp"
-                android:hint="00:00am - 23:00pm"
+                android:text="00:00am - 23:00pm"
                 android:backgroundTint="@color/white"
                 android:fontFamily="@font/metropolis_light"/>
 
@@ -453,7 +456,7 @@
                 android:layout_height="match_parent"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_10ssp"
-                android:hint="00:00am - 23:00pm"
+                android:text="00:00am - 23:00pm"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:backgroundTint="@color/white"
                 android:fontFamily="@font/metropolis_light"/>
@@ -500,7 +503,7 @@
                 android:layout_height="match_parent"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_10ssp"
-                android:hint="00:00am - 23:00pm"
+                android:text="00:00am - 23:00pm"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:backgroundTint="@color/white"
                 android:fontFamily="@font/metropolis_light"/>
@@ -547,7 +550,7 @@
                 android:layout_height="match_parent"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_10ssp"
-                android:hint="00:00am - 23:00pm"
+                android:text="00:00am - 23:00pm"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:backgroundTint="@color/white"
                 android:fontFamily="@font/metropolis_light"/>
@@ -593,7 +596,7 @@
                         android:layout_height="match_parent"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_10ssp"
-                        android:hint="00:00am - 23:00pm"
+                        android:text="00:00am - 23:00pm"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:backgroundTint="@color/white"
                         android:fontFamily="@font/metropolis_light"/>
@@ -640,7 +643,7 @@
                         android:layout_height="match_parent"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_10ssp"
-                        android:hint="00:00am - 23:00pm"
+                        android:text="00:00am - 23:00pm"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:backgroundTint="@color/white"
                         android:fontFamily="@font/metropolis_light"/>
@@ -684,6 +687,7 @@
             android:orientation="horizontal">
 
             <CheckBox
+                android:id="@+id/notify"
                 android:layout_width="@dimen/_25sdp"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/red_F95047"
@@ -720,6 +724,7 @@
                 android:indeterminateTint="@color/white"/>
 
             <TextView
+                android:id="@id/continueTv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"

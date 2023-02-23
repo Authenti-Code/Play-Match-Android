@@ -231,6 +231,7 @@ id createTeam
 id date
 id description
 id distanceTV
+id distanceTv
 id dob
 id edit
 id editProfile
@@ -283,6 +284,7 @@ id name
 id noChat
 id notification
 id notification_toggle
+id notify
 id password
 id past_match
 id pay
@@ -354,6 +356,7 @@ id viewAll
 id visa
 id visa2
 id wednesdaySlider
+id weekendLay
 layout activity_add_profile_image
 layout activity_add_team
 layout activity_chat

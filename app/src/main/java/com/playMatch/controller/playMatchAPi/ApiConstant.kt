@@ -20,10 +20,11 @@ object ApiConstant {
     const val EDIT_PROFILE="editUserProfile"
     const val UPLOAD_IMAGE="userImage"
 
-    const val PROFILE="userprofile"
+    const val PROFILE="profile"
 
     const val SPORTS_LIST="sportsList"
     const val SPORTS_LEVELS="sportAbilityLevels"
+    const val MATCH_AVAILABILITY="matchAvailability"
     const val LOGOUT="logout"
 
     const val EVENT_SHOW="eventshow"

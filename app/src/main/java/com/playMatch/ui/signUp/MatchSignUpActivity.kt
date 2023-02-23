@@ -6,12 +6,21 @@ import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.lifecycle.lifecycleScope
 import com.google.android.material.slider.RangeSlider
 import com.playMatch.R
+import com.playMatch.controller.playMatchAPi.ResultResponse
+import com.playMatch.controller.playMatchAPi.apiClasses.UserApi
+import com.playMatch.controller.playMatchAPi.postPojoModel.user.matchAvailability.MatchAvailabilityPost
 import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.databinding.ActivityMatchSignUpBinding
 import com.playMatch.ui.baseActivity.BaseActivity
+import com.playMatch.ui.home.activity.HomeActivity
+import com.playMatch.ui.signUp.signupModel.MatchAvailabilityResponse
+import com.playMatch.ui.signUp.signupModel.SportsLevelsResponse
+import com.playMatch.ui.signUp.userSports.UserSportsPost
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.math.roundToInt
@@ -26,6 +35,15 @@ class MatchSignUpActivity : BaseActivity(), View.OnClickListener {
     private var ThCvColor:Boolean=true
     private var FCvColor:Boolean=true
     private var SACvColor:Boolean=true
+    private var availaible:String="0"
+    private var toNotify:String="0"
+    private var sun:String?=null
+    private var mon:String?=null
+    private var tue:String?=null
+    private var wed:String?=null
+    private var thu:String?=null
+    private var fri:String?=null
+    private var sat:String?=null
 
     @RequiresApi(33)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,6 +58,11 @@ class MatchSignUpActivity : BaseActivity(), View.OnClickListener {
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     private fun initView() {
         binding.back.setOnClickListener(this)
+
+        binding.Continue.setOnClickListener(this)
+        binding.skip.setOnClickListener(this)
+        binding.checkbox.setOnClickListener(this)
+        binding.notify.setOnClickListener(this)
         binding.Stv.setOnClickListener(this)
         binding.Mtv.setOnClickListener(this)
         binding.Ttv.setOnClickListener(this)
@@ -47,8 +70,7 @@ class MatchSignUpActivity : BaseActivity(), View.OnClickListener {
         binding.Thtv.setOnClickListener(this)
         binding.Ftv.setOnClickListener(this)
         binding.Satv.setOnClickListener(this)
-        binding.Continue.setOnClickListener(this)
-        binding.skip.setOnClickListener(this)
+
 
         binding.sundaySlider.setLabelFormatter { value: Float ->
             return@setLabelFormatter if (value>12.00){"${value.roundToInt()}:00pm"}else{
@@ -83,6 +105,8 @@ class MatchSignUpActivity : BaseActivity(), View.OnClickListener {
                 }
 
                 binding.Sstv.text = "$id - $newId"
+                sun=binding.Sstv.text.toString().trim()
+
             }
         })
         binding.sundaySlider.addOnChangeListener { slider, value, fromUser ->
@@ -97,6 +121,7 @@ class MatchSignUpActivity : BaseActivity(), View.OnClickListener {
                 newId="${values[1].roundToInt()}:00am"
             }
             binding.Sstv.text ="$id - $newId"
+            sun=binding.Sstv.text.toString().trim()
         }
 
 
@@ -133,6 +158,7 @@ class MatchSignUpActivity : BaseActivity(), View.OnClickListener {
                 }
 
                 binding.Mstv.text = "$id - $newId"
+               mon= binding.Mstv.text.toString().trim()
             }
         })
         binding.mondaySlider.addOnChangeListener { slider, value, fromUser ->
@@ -147,6 +173,7 @@ class MatchSignUpActivity : BaseActivity(), View.OnClickListener {
                 newId="${values[1].roundToInt()}:00am"
             }
             binding.Mstv.text ="$id - $newId"
+            mon= binding.Mstv.text.toString().trim()
         }
 
 
@@ -183,6 +210,8 @@ class MatchSignUpActivity : BaseActivity(), View.OnClickListener {
                 }
 
                 binding.Tstv.text = "$id - $newId"
+                tue= binding.Tstv.text.toString().trim()
+
             }
         })
         binding.tuesdaySlider.addOnChangeListener { slider, value, fromUser ->
@@ -197,6 +226,7 @@ class MatchSignUpActivity : BaseActivity(), View.OnClickListener {
                 newId="${values[1].roundToInt()}:00am"
             }
             binding.Tstv.text = "$id - $newId"
+            tue= binding.Tstv.text.toString().trim()
         }
 
         binding.wednesdaySlider.setLabelFormatter { value: Float ->
@@ -232,6 +262,7 @@ class MatchSignUpActivity : BaseActivity(), View.OnClickListener {
                 }
 
                 binding.Wstv.text = "$id - $newId"
+                wed= binding.Wstv.text.toString().trim()
             }
         })
         binding.wednesdaySlider.addOnChangeListener { slider, value, fromUser ->
@@ -246,6 +277,7 @@ class MatchSignUpActivity : BaseActivity(), View.OnClickListener {
                 newId="${values[1].roundToInt()}:00am"
             }
             binding.Wstv.text ="$id - $newId"
+            wed= binding.Wstv.text.toString().trim()
         }
 
         binding.thursdaySlider.setLabelFormatter { value: Float ->
@@ -281,6 +313,8 @@ class MatchSignUpActivity : BaseActivity(), View.OnClickListener {
                 }
 
                 binding.Thstv.text = "$id - $newId"
+                thu= binding.Thstv.text.toString().trim()
+
             }
         })
         binding.thursdaySlider.addOnChangeListener { slider, value, fromUser ->
@@ -295,6 +329,8 @@ class MatchSignUpActivity : BaseActivity(), View.OnClickListener {
                 newId="${values[1].roundToInt()}:00am"
             }
             binding.Thstv.text ="$id - $newId"
+            thu= binding.Thstv.text.toString().trim()
+
         }
 
         binding.fridaySlider.setLabelFormatter { value: Float ->
@@ -330,6 +366,8 @@ class MatchSignUpActivity : BaseActivity(), View.OnClickListener {
                 }
 
                 binding.Fstv.text = "$id - $newId"
+                fri= binding.Fstv.text.toString().trim()
+
             }
         })
         binding.fridaySlider.addOnChangeListener { slider, value, fromUser ->
@@ -344,6 +382,7 @@ class MatchSignUpActivity : BaseActivity(), View.OnClickListener {
                 newId="${values[1].roundToInt()}:00am"
             }
             binding.Fstv.text ="$id - $newId"
+            fri= binding.Fstv.text.toString().trim()
         }
 
         binding.saturdaySlider.setLabelFormatter { value: Float ->
@@ -379,6 +418,8 @@ class MatchSignUpActivity : BaseActivity(), View.OnClickListener {
                 }
 
                 binding.Sastv.text = "$id - $newId"
+                sat= binding.Sastv.text.toString().trim()
+
             }
         })
         binding.saturdaySlider.addOnChangeListener { slider, value, fromUser ->
@@ -393,6 +434,8 @@ class MatchSignUpActivity : BaseActivity(), View.OnClickListener {
                 newId="${values[1].roundToInt()}:00am"
             }
             binding.Sastv.text ="$id - $newId"
+            sat= binding.Sastv.text.toString().trim()
+
         }
     }
 
@@ -405,12 +448,14 @@ class MatchSignUpActivity : BaseActivity(), View.OnClickListener {
                     binding.Stv.setTextColor(Color.WHITE)
                     binding.Slay.visibility=View.VISIBLE
                     SCvColor=false
+                    sun=binding.Sstv.text.toString()
 
                 }else{
                     binding.Scv.setCardBackgroundColor(Color.WHITE)
                     binding.Stv.setTextColor(Color.parseColor("#F95047"))
                     SCvColor=true
                     binding.Slay.visibility=View.GONE
+                    sun=""
                 }
             }
             R.id.Mtv -> {
@@ -419,12 +464,15 @@ class MatchSignUpActivity : BaseActivity(), View.OnClickListener {
                     binding.Mtv.setTextColor(Color.WHITE)
                     binding.Mlay.visibility=View.VISIBLE
                     MCvColor=false
+                    mon=binding.Mstv.text.toString()
+
 
                 }else{
                     binding.Mcv.setCardBackgroundColor(Color.WHITE)
                     binding.Mtv.setTextColor(Color.parseColor("#F95047"))
                     binding.Mlay.visibility=View.GONE
                     MCvColor=true
+                    mon=""
                 }
             }
             R.id.Ttv -> {
@@ -433,12 +481,14 @@ class MatchSignUpActivity : BaseActivity(), View.OnClickListener {
                     binding.Ttv.setTextColor(Color.WHITE)
                     binding.Tlay.visibility=View.VISIBLE
                     TCvColor=false
+                    tue=binding.Tstv.text.toString()
 
                 }else{
                     binding.Tcv.setCardBackgroundColor(Color.WHITE)
                     binding.Ttv.setTextColor(Color.parseColor("#F95047"))
                     binding.Tlay.visibility=View.GONE
                     TCvColor=true
+                    tue=""
                 }
             }
             R.id.Wtv -> {
@@ -447,12 +497,15 @@ class MatchSignUpActivity : BaseActivity(), View.OnClickListener {
                     binding.Wtv.setTextColor(Color.WHITE)
                     binding.Wlay.visibility=View.VISIBLE
                     WCvColor=false
+                    wed=binding.Wstv.text.toString()
+
 
                 }else{
                     binding.Wcv.setCardBackgroundColor(Color.WHITE)
                     binding.Wtv.setTextColor(Color.parseColor("#F95047"))
                     binding.Wlay.visibility=View.GONE
                     WCvColor=true
+                    wed=""
                 }
             }
             R.id.Thtv -> {
@@ -461,12 +514,14 @@ class MatchSignUpActivity : BaseActivity(), View.OnClickListener {
                     binding.Thtv.setTextColor(Color.WHITE)
                     binding.Thlay.visibility=View.VISIBLE
                     ThCvColor=false
+                    thu=binding.Thstv.text.toString()
 
                 }else{
                     binding.Thcv.setCardBackgroundColor(Color.WHITE)
                     binding.Thtv.setTextColor(Color.parseColor("#F95047"))
                     binding.Thlay.visibility=View.GONE
                     ThCvColor=true
+                    thu=""
                 }
             }
             R.id.Ftv -> {
@@ -475,12 +530,14 @@ class MatchSignUpActivity : BaseActivity(), View.OnClickListener {
                     binding.Ftv.setTextColor(Color.WHITE)
                     binding.Flay.visibility=View.VISIBLE
                     FCvColor=false
+                    fri=binding.Fstv.text.toString()
 
                 }else{
                     binding.Fcv.setCardBackgroundColor(Color.WHITE)
                     binding.Ftv.setTextColor(Color.parseColor("#F95047"))
                     binding.Flay.visibility=View.GONE
                     FCvColor=true
+                    fri=""
                 }
             }
             R.id.Satv -> {
@@ -489,24 +546,105 @@ class MatchSignUpActivity : BaseActivity(), View.OnClickListener {
                     binding.Satv.setTextColor(Color.WHITE)
                     binding.SaLay.visibility=View.VISIBLE
                     SACvColor=false
+                    sat=binding.Sastv.text.toString()
 
                 }else{
                     binding.Sacv.setCardBackgroundColor(Color.WHITE)
                     binding.Satv.setTextColor(Color.parseColor("#F95047"))
                     binding.SaLay.visibility=View.GONE
                     SACvColor=true
+                    sat=""
                 }
             }
             R.id.back -> {
                 onBackPressed()
             }
+            R.id.checkbox -> {
+                if (binding.checkbox.isChecked){
+                    availaible="1"
+                }else{
+                    availaible="0"
+                }
+
+                if (binding.checkbox.isChecked){
+                    binding.Stv.isClickable=false
+                    binding.Mtv.isClickable=false
+                    binding.Ttv.isClickable=false
+                    binding.Wtv.isClickable=false
+                    binding.Thtv.isClickable=false
+                    binding.Ftv.isClickable=false
+                    binding.Satv.isClickable=false
+                }else{
+                    binding.Stv.isClickable=true
+                    binding.Mtv.isClickable=true
+                    binding.Ttv.isClickable=true
+                    binding.Wtv.isClickable=true
+                    binding.Thtv.isClickable=true
+                    binding.Ftv.isClickable=true
+                    binding.Satv.isClickable=true
+                }
+            }
+            R.id.notify -> {
+                if (binding.notify.isChecked){
+                    toNotify="1"
+                }else{
+                    toNotify="0"
+                }
+            }
 
             R.id.Continue -> {
-        CommonUtils.performIntentFinish(this@MatchSignUpActivity, com.playMatch.ui.home.activity.HomeActivity::class.java)
+                if (binding.distanceTv.text.toString().trim()!=""){
+                    matchAvailApi()
+                }else{
+                    Toast.makeText(this@MatchSignUpActivity, "Please Enter Distance", Toast.LENGTH_SHORT).show()
+                }
             }
+
             R.id.skip -> {
         CommonUtils.performIntentFinish(this@MatchSignUpActivity, com.playMatch.ui.home.activity.HomeActivity::class.java)
             }
         }
+    }
+
+    private fun matchAvailApi(){
+
+        if (isNetworkAvailable()) {
+            showProgressBar()
+            lifecycleScope.launchWhenStarted {
+                val resultResponse = UserApi(this@MatchSignUpActivity).matchAvailability(
+                    MatchAvailabilityPost( binding.distanceTv.text.toString().trim(),availaible,sun,mon,tue,wed,thu,fri,sat,toNotify)
+                )
+                apiResult(resultResponse)
+            }
+        } else {
+            showNetworkSpeedError()
+        }
+    }
+
+
+    private fun apiResult(resultResponse: ResultResponse) {
+        hideProgressBar()
+        return when (resultResponse) {
+            is ResultResponse.Success<*> -> {
+                val response = resultResponse.response as MatchAvailabilityResponse
+                //get data and convert string to json and save data
+                if (response.success == "true") {
+                    CommonUtils.performIntentFinish(this, HomeActivity::class.java)
+                } else {
+                    showSnackBar(findViewById(R.id.rootView), response.message)
+                }
+            }
+            else -> {
+                showError(resultResponse)
+            }
+        }
+    }
+    private fun showProgressBar(){
+        binding.progressBar.visibility=View.VISIBLE
+        binding.continueTv.visibility=View.GONE
+    }
+    private fun hideProgressBar(){
+        binding.progressBar.visibility=View.GONE
+        binding.continueTv.visibility=View.VISIBLE
     }
 }

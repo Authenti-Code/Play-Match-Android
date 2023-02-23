@@ -6,11 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.playMatch.controller.*
 import com.playMatch.controller.`interface`.RecyclerviewListener
 import com.playMatch.controller.`interface`.SelectSportsListener
 import com.playMatch.controller.sharedPrefrence.PrefData
 import com.playMatch.databinding.RvSelectSportItemBinding
 import com.playMatch.ui.signUp.signupModel.*
+
 
 class SelectSportAdapter(var list: ArrayList<SportsList>, var activity: Activity,private var selecSportListener: SelectSportsListener ) : RecyclerView.Adapter<SelectSportAdapter.ViewHolder>() {
 
@@ -22,7 +24,6 @@ class SelectSportAdapter(var list: ArrayList<SportsList>, var activity: Activity
     private var type:String?=null
     private var param:String?=null
     private var nlist=ArrayList<selectedSportModel>()
-    private var newlist=ArrayList<String>()
 
 
     inner class ViewHolder(val binding:RvSelectSportItemBinding) : RecyclerView.ViewHolder(binding.root)
@@ -60,14 +61,9 @@ class SelectSportAdapter(var list: ArrayList<SportsList>, var activity: Activity
 
 
                     }
-                    param=  nlist.joinToString(
-                        prefix = "(",
-                        separator = ",",
-                        postfix = ")",
-                        truncated = "...",
-                    )
-                    if (param!=null) {
-                        selecSportListener.onItemClick(position, param!!)
+//                    param=  nlist.joinToString()
+                    if (nlist!=null) {
+                        selecSportListener.onItemClick(position, nlist)
                     }
                 }
             })
@@ -144,36 +140,36 @@ class SelectSportAdapter(var list: ArrayList<SportsList>, var activity: Activity
     PrefData.setStringPrefs(activity, PrefData.CHECK_BOX,"0")
     binding.rvChildSports.visibility=View.GONE
     binding.rvLightChildSports.visibility=View.VISIBLE
-           holder.binding.rvChildSports.adapter = adapter
-           mlist.clear()
-           mlist.add(
-               SelectChildSPortModel(
-                   "Beginner",false
-               )
-           )
-
-           mlist.add(
-               SelectChildSPortModel(
-                   "Novice",false
-               )
-           )
-
-           mlist.add(
-               SelectChildSPortModel(
-                   "Intermediate",false
-               )
-           )
-
-           mlist.add(
-               SelectChildSPortModel(
-                   "Experienced",false
-               )
-           )
-           mlist.add(
-               SelectChildSPortModel(
-                   "Superstar",false
-               )
-           )
+//           holder.binding.rvChildSports.adapter = adapter
+//           mlist.clear()
+//           mlist.add(
+//               SelectChildSPortModel(
+//                   "Beginner",false
+//               )
+//           )
+//
+//           mlist.add(
+//               SelectChildSPortModel(
+//                   "Novice",false
+//               )
+//           )
+//
+//           mlist.add(
+//               SelectChildSPortModel(
+//                   "Intermediate",false
+//               )
+//           )
+//
+//           mlist.add(
+//               SelectChildSPortModel(
+//                   "Experienced",false
+//               )
+//           )
+//           mlist.add(
+//               SelectChildSPortModel(
+//                   "Superstar",false
+//               )
+//           )
 
 
 

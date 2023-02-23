@@ -7,9 +7,12 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatEditText;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.cardview.widget.CardView;
@@ -24,7 +27,7 @@ import java.lang.String;
 
 public final class ActivityMatchSignUpBinding implements ViewBinding {
   @NonNull
-  private final FrameLayout rootView;
+  private final FrameLayout rootView_;
 
   @NonNull
   public final CardView Continue;
@@ -120,13 +123,25 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
   public final CheckBox checkbox;
 
   @NonNull
+  public final TextView continueTv;
+
+  @NonNull
+  public final AppCompatEditText distanceTv;
+
+  @NonNull
   public final RangeSlider fridaySlider;
 
   @NonNull
   public final RangeSlider mondaySlider;
 
   @NonNull
+  public final CheckBox notify;
+
+  @NonNull
   public final ProgressBar progressBar;
+
+  @NonNull
+  public final FrameLayout rootView;
 
   @NonNull
   public final RangeSlider saturdaySlider;
@@ -146,7 +161,10 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
   @NonNull
   public final RangeSlider wednesdaySlider;
 
-  private ActivityMatchSignUpBinding(@NonNull FrameLayout rootView, @NonNull CardView Continue,
+  @NonNull
+  public final LinearLayout weekendLay;
+
+  private ActivityMatchSignUpBinding(@NonNull FrameLayout rootView_, @NonNull CardView Continue,
       @NonNull MaterialCardView Fcv, @NonNull LinearLayoutCompat Flay,
       @NonNull AppCompatTextView Fstv, @NonNull AppCompatTextView Ftv,
       @NonNull MaterialCardView Mcv, @NonNull LinearLayoutCompat Mlay,
@@ -161,12 +179,14 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
       @NonNull AppCompatTextView Tstv, @NonNull AppCompatTextView Ttv,
       @NonNull MaterialCardView Wcv, @NonNull LinearLayoutCompat Wlay,
       @NonNull AppCompatTextView Wstv, @NonNull AppCompatTextView Wtv, @NonNull ImageView back,
-      @NonNull CheckBox checkbox, @NonNull RangeSlider fridaySlider,
-      @NonNull RangeSlider mondaySlider, @NonNull ProgressBar progressBar,
-      @NonNull RangeSlider saturdaySlider, @NonNull ImageView skip,
+      @NonNull CheckBox checkbox, @NonNull TextView continueTv,
+      @NonNull AppCompatEditText distanceTv, @NonNull RangeSlider fridaySlider,
+      @NonNull RangeSlider mondaySlider, @NonNull CheckBox notify, @NonNull ProgressBar progressBar,
+      @NonNull FrameLayout rootView, @NonNull RangeSlider saturdaySlider, @NonNull ImageView skip,
       @NonNull RangeSlider sundaySlider, @NonNull RangeSlider thursdaySlider,
-      @NonNull RangeSlider tuesdaySlider, @NonNull RangeSlider wednesdaySlider) {
-    this.rootView = rootView;
+      @NonNull RangeSlider tuesdaySlider, @NonNull RangeSlider wednesdaySlider,
+      @NonNull LinearLayout weekendLay) {
+    this.rootView_ = rootView_;
     this.Continue = Continue;
     this.Fcv = Fcv;
     this.Flay = Flay;
@@ -198,21 +218,26 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
     this.Wtv = Wtv;
     this.back = back;
     this.checkbox = checkbox;
+    this.continueTv = continueTv;
+    this.distanceTv = distanceTv;
     this.fridaySlider = fridaySlider;
     this.mondaySlider = mondaySlider;
+    this.notify = notify;
     this.progressBar = progressBar;
+    this.rootView = rootView;
     this.saturdaySlider = saturdaySlider;
     this.skip = skip;
     this.sundaySlider = sundaySlider;
     this.thursdaySlider = thursdaySlider;
     this.tuesdaySlider = tuesdaySlider;
     this.wednesdaySlider = wednesdaySlider;
+    this.weekendLay = weekendLay;
   }
 
   @Override
   @NonNull
   public FrameLayout getRoot() {
-    return rootView;
+    return rootView_;
   }
 
   @NonNull
@@ -422,6 +447,18 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.continueTv;
+      TextView continueTv = ViewBindings.findChildViewById(rootView, id);
+      if (continueTv == null) {
+        break missingId;
+      }
+
+      id = R.id.distanceTv;
+      AppCompatEditText distanceTv = ViewBindings.findChildViewById(rootView, id);
+      if (distanceTv == null) {
+        break missingId;
+      }
+
       id = R.id.fridaySlider;
       RangeSlider fridaySlider = ViewBindings.findChildViewById(rootView, id);
       if (fridaySlider == null) {
@@ -434,11 +471,19 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.notify;
+      CheckBox notify = ViewBindings.findChildViewById(rootView, id);
+      if (notify == null) {
+        break missingId;
+      }
+
       id = R.id.progressBar;
       ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
       if (progressBar == null) {
         break missingId;
       }
+
+      FrameLayout rootView_ = (FrameLayout) rootView;
 
       id = R.id.saturdaySlider;
       RangeSlider saturdaySlider = ViewBindings.findChildViewById(rootView, id);
@@ -476,11 +521,17 @@ public final class ActivityMatchSignUpBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.weekendLay;
+      LinearLayout weekendLay = ViewBindings.findChildViewById(rootView, id);
+      if (weekendLay == null) {
+        break missingId;
+      }
+
       return new ActivityMatchSignUpBinding((FrameLayout) rootView, Continue, Fcv, Flay, Fstv, Ftv,
           Mcv, Mlay, Mstv, Mtv, SaLay, Sacv, Sastv, Satv, Scv, Slay, Sstv, Stv, Tcv, Thcv, Thlay,
-          Thstv, Thtv, Tlay, Tstv, Ttv, Wcv, Wlay, Wstv, Wtv, back, checkbox, fridaySlider,
-          mondaySlider, progressBar, saturdaySlider, skip, sundaySlider, thursdaySlider,
-          tuesdaySlider, wednesdaySlider);
+          Thstv, Thtv, Tlay, Tstv, Ttv, Wcv, Wlay, Wstv, Wtv, back, checkbox, continueTv,
+          distanceTv, fridaySlider, mondaySlider, notify, progressBar, rootView_, saturdaySlider,
+          skip, sundaySlider, thursdaySlider, tuesdaySlider, wednesdaySlider, weekendLay);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

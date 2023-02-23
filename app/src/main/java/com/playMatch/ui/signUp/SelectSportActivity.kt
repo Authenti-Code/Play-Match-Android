@@ -16,22 +16,19 @@ import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.databinding.ActivitySelectSportBinding
 import com.playMatch.ui.baseActivity.BaseActivity
 import com.playMatch.ui.signUp.signUpAdapters.SelectSportAdapter
-import com.playMatch.ui.signUp.signupModel.SelectSportModel
 import com.playMatch.controller.sharedPrefrence.PrefData
 import com.playMatch.ui.home.activity.HomeActivity
 import com.playMatch.ui.login.LoginActivity
 import com.playMatch.ui.login.model.LoginResponse
 import com.playMatch.ui.profile.activity.settingActivity.model.LogoutResponse
-import com.playMatch.ui.signUp.signupModel.SportListResponse
-import com.playMatch.ui.signUp.signupModel.SportsLevelsResponse
-import com.playMatch.ui.signUp.signupModel.SportsList
+import com.playMatch.ui.signUp.signupModel.*
 import com.playMatch.ui.signUp.userSports.UserSportsPost
 
 class SelectSportActivity : BaseActivity(), View.OnClickListener {
     private lateinit var binding: ActivitySelectSportBinding
     private var adapter: SelectSportAdapter?=null
     private  var list = ArrayList<SportsList>()
-    private var sportLevel:String?=null
+    private var sportLevel=ArrayList<selectedSportModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         removeStatusBarFullyBlackIcon()
@@ -45,7 +42,7 @@ class SelectSportActivity : BaseActivity(), View.OnClickListener {
 
     private fun setAdapter() {
         adapter = SelectSportAdapter(list, this,object : SelectSportsListener{
-            override fun onItemClick(position: Int, list: String) {
+            override fun onItemClick(position: Int, list: ArrayList<selectedSportModel>) {
                 sportLevel = list
             }
 
@@ -119,7 +116,7 @@ class SelectSportActivity : BaseActivity(), View.OnClickListener {
             lifecycleScope.launchWhenStarted {
                 val resultResponse = UserApi(this@SelectSportActivity).sportsLevels(
                     UserSportsPost(
-                        sportLevel!!
+                        sportLevel.toString()
                     )
                 )
                 apiResult(resultResponse)
@@ -150,10 +147,10 @@ class SelectSportActivity : BaseActivity(), View.OnClickListener {
 
     private fun showProgressBar(){
         binding.progressBar.visibility=View.VISIBLE
-        binding.Continue.visibility=View.GONE
+        binding.continueTv.visibility=View.GONE
     }
     private fun hideProgressBar(){
         binding.progressBar.visibility=View.GONE
-        binding.Continue.visibility=View.VISIBLE
+        binding.continueTv.visibility=View.VISIBLE
     }
 }

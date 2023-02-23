@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
@@ -26,6 +27,9 @@ public final class ActivitySelectSportBinding implements ViewBinding {
   public final CardView Continue;
 
   @NonNull
+  public final TextView continueTv;
+
+  @NonNull
   public final CircleImageView profileImage;
 
   @NonNull
@@ -38,10 +42,12 @@ public final class ActivitySelectSportBinding implements ViewBinding {
   public final RecyclerView rvSports;
 
   private ActivitySelectSportBinding(@NonNull FrameLayout rootView_, @NonNull CardView Continue,
-      @NonNull CircleImageView profileImage, @NonNull ProgressBar progressBar,
-      @NonNull FrameLayout rootView, @NonNull RecyclerView rvSports) {
+      @NonNull TextView continueTv, @NonNull CircleImageView profileImage,
+      @NonNull ProgressBar progressBar, @NonNull FrameLayout rootView,
+      @NonNull RecyclerView rvSports) {
     this.rootView_ = rootView_;
     this.Continue = Continue;
+    this.continueTv = continueTv;
     this.profileImage = profileImage;
     this.progressBar = progressBar;
     this.rootView = rootView;
@@ -81,6 +87,12 @@ public final class ActivitySelectSportBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.continueTv;
+      TextView continueTv = ViewBindings.findChildViewById(rootView, id);
+      if (continueTv == null) {
+        break missingId;
+      }
+
       id = R.id.profile_image;
       CircleImageView profileImage = ViewBindings.findChildViewById(rootView, id);
       if (profileImage == null) {
@@ -101,8 +113,8 @@ public final class ActivitySelectSportBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivitySelectSportBinding((FrameLayout) rootView, Continue, profileImage,
-          progressBar, rootView_, rvSports);
+      return new ActivitySelectSportBinding((FrameLayout) rootView, Continue, continueTv,
+          profileImage, progressBar, rootView_, rvSports);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

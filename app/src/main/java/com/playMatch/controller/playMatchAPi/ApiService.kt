@@ -2,15 +2,13 @@ package com.playMatch.controller.playMatchAPi
 
 
 import com.playMatch.ui.login.model.LoginResponse
-import com.playMatch.ui.signUp.signupModel.RegistrationResponse
-import com.playMatch.ui.signUp.signupModel.UploadImageResponse
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.login.LoginPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.logout.LogoutPost
+import com.playMatch.controller.playMatchAPi.postPojoModel.user.matchAvailability.MatchAvailabilityPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.register.RegisterPost
 import com.playMatch.ui.signUp.userSports.UserSportsPost
 import com.playMatch.ui.profile.activity.settingActivity.model.LogoutResponse
-import com.playMatch.ui.signUp.signupModel.SportListResponse
-import com.playMatch.ui.signUp.signupModel.SportsLevelsResponse
+import com.playMatch.ui.signUp.signupModel.*
 import okhttp3.MultipartBody
 import retrofit2.Response
 import retrofit2.http.*
@@ -56,6 +54,17 @@ interface ApiService {
         @Body eventDetail: UserSportsPost?
     ):Response<SportsLevelsResponse>
 
+    @Headers("Content-Type: application/json")
+    @POST(ApiConstant.MATCH_AVAILABILITY)
+    suspend fun matchAbility(
+        @Header(ApiConstant.AUTH) token: String,
+        @Body eventDetail: MatchAvailabilityPost?
+    ):Response<MatchAvailabilityResponse>
 
+    @Headers("Content-Type: application/json")
+    @POST(ApiConstant.PROFILE)
+    suspend fun profile(
+        @Header(ApiConstant.AUTH) token: String,
+    ):Response<MatchAvailabilityResponse>
     //verify otp phone number
 }

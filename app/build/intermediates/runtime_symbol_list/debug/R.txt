@@ -4140,6 +4140,7 @@ int id disablePostScroll 0x7f0a00e7
 int id disableScroll 0x7f0a00e8
 int id disjoint 0x7f0a00e9
 int id distanceTV 0x7f0a00ea
+int id distanceTv 0x7f0a02d0
 int id dob 0x7f0a00eb
 int id done_cancel_bar 0x7f0a00ec
 int id dragAnticlockwise 0x7f0a00ed
@@ -4361,6 +4362,7 @@ int id notification_background 0x7f0a01c4
 int id notification_main_column 0x7f0a01c5
 int id notification_main_column_container 0x7f0a01c6
 int id notification_toggle 0x7f0a01c7
+int id notify 0x7f0a02d1
 int id off 0x7f0a01c8
 int id on 0x7f0a01c9
 int id onInterceptTouchReturnSwipe 0x7f0a01ca
@@ -4614,6 +4616,7 @@ int id visible 0x7f0a02c1
 int id visible_removing_fragment_view_tag 0x7f0a02c2
 int id webview 0x7f0a02c3
 int id wednesdaySlider 0x7f0a02c4
+int id weekendLay 0x7f0a02d2
 int id west 0x7f0a02c5
 int id wide 0x7f0a02c6
 int id window 0x7f0a02c7
