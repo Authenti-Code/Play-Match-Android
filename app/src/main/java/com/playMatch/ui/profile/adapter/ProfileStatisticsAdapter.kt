@@ -13,12 +13,8 @@ class ProfileStatisticsAdapter(var list: ArrayList<HomeChildModel>, var activity
 
     private val USER = 0
     private val IMAGE = 1
-
     private  var selectedPosition=-1
     inner class ViewHolder(val binding: RvListItemProfileStatisticsBinding) : RecyclerView.ViewHolder(binding.root)
-
-
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
@@ -27,7 +23,6 @@ class ProfileStatisticsAdapter(var list: ArrayList<HomeChildModel>, var activity
 
         return ViewHolder(binding)
     }
-
 
     @SuppressLint("ResourceAsColor", "SuspiciousIndentation")
     override fun onBindViewHolder(holder: ViewHolder, @SuppressLint("RecyclerView") position: Int) {

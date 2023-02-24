@@ -8,6 +8,7 @@ import com.playMatch.controller.playMatchAPi.postPojoModel.user.matchAvailabilit
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.register.RegisterPost
 import com.playMatch.ui.signUp.userSports.UserSportsPost
 import com.playMatch.ui.profile.activity.settingActivity.model.LogoutResponse
+import com.playMatch.ui.profile.model.profile.ProfileResponse
 import com.playMatch.ui.signUp.signupModel.*
 import okhttp3.MultipartBody
 import retrofit2.Response
@@ -65,6 +66,5 @@ interface ApiService {
     @POST(ApiConstant.PROFILE)
     suspend fun profile(
         @Header(ApiConstant.AUTH) token: String,
-    ):Response<MatchAvailabilityResponse>
-    //verify otp phone number
+    ):Response<ProfileResponse>
 }

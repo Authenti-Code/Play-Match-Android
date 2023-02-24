@@ -1,12 +1,23 @@
 package com.playMatch.ui.profile.fragment
 
 import android.annotation.SuppressLint
+import android.graphics.Color
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.lifecycleScope
+import com.bumptech.glide.Glide
+import com.bumptech.glide.Priority
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.load.engine.GlideException
+import com.bumptech.glide.request.RequestListener
 import com.playMatch.R
+import com.playMatch.controller.playMatchAPi.ResultResponse
+import com.playMatch.controller.playMatchAPi.apiClasses.UserApi
+import com.playMatch.controller.playMatchAPi.postPojoModel.user.matchAvailability.MatchAvailabilityPost
 import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.databinding.FragmentProfileBinding
 import com.playMatch.ui.baseActivity.BaseActivity
@@ -16,7 +27,11 @@ import com.playMatch.ui.profile.activity.settingActivity.SettingActivity
 import com.playMatch.ui.profile.adapter.ProfileSportsAdapter
 import com.playMatch.ui.profile.adapter.ProfileStatisticsAdapter
 import com.playMatch.controller.sharedPrefrence.PrefData
+import com.playMatch.ui.home.activity.HomeActivity
+import com.playMatch.ui.profile.model.profile.ProfileResponse
+import com.playMatch.ui.signUp.signupModel.MatchAvailabilityResponse
 
+@Suppress("IMPLICIT_CAST_TO_ANY")
 class ProfileFragment : Fragment(),View.OnClickListener {
     private var binding: FragmentProfileBinding? = null
     private var profileSportsAdapter: ProfileSportsAdapter? = null
@@ -41,6 +56,7 @@ class ProfileFragment : Fragment(),View.OnClickListener {
             (activity as BaseActivity).notifications = true
             initViews()
             setAdapter()
+            profileApi()
         } catch (e: Exception) {
             e.printStackTrace()
         }
@@ -107,7 +123,106 @@ class ProfileFragment : Fragment(),View.OnClickListener {
                     R.drawable.museum,"Invites Received"
                 )
             )
+    }
+
+    private fun profileApi(){
+
+        if ((activity as BaseActivity).isNetworkAvailable()) {
+            CommonUtils.showProgressDialog(requireActivity())
+            lifecycleScope.launchWhenStarted {
+                val resultResponse = UserApi(requireActivity()).profile()
+                apiResult(resultResponse)
+            }
+        } else {
+            (activity as BaseActivity).showNetworkSpeedError()
+        }
+    }
 
 
+    private fun apiResult(resultResponse: ResultResponse) {
+        CommonUtils.hideProgressDialog()
+        return when (resultResponse) {
+            is ResultResponse.Success<*> -> {
+                val response = resultResponse.response as ProfileResponse
+                //get data and convert string to json and save data
+                if (response.success == "true") {
+                    Glide.with(requireActivity())
+                        .load("http://"+response.data.image)
+                        .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
+                        .skipMemoryCache(true)
+                        .priority(Priority.IMMEDIATE)
+                        .placeholder(R.drawable.new_dummy_profile)
+                        .listener(object : RequestListener<Drawable> {
+                            override fun onResourceReady(
+                                resource: Drawable?,
+                                model: Any?,
+                                target: com.bumptech.glide.request.target.Target<Drawable>?,
+                                dataSource: com.bumptech.glide.load.DataSource?,
+                                isFirstResource: Boolean
+                            ): Boolean {
+                                binding?.progressBar?.visibility = View.GONE
+                                return false
+                            }
+
+                            override fun onLoadFailed(
+                                e: GlideException?,
+                                model: Any?,
+                                target: com.bumptech.glide.request.target.Target<Drawable>?,
+                                isFirstResource: Boolean
+                            ): Boolean {
+                                binding?.progressBar?.visibility = View.GONE
+                                return false
+                            }
+
+                        }).into(binding!!.profileImage)
+
+                    binding?.name!!.text=response.data.name
+                    binding?.email!!.text=response.data.email
+                    binding?.dob!!.text=response.data.DOB
+                    binding?.genderTv!!.text=response.data.gender
+                    binding?.distanceTV!!.text=response.data.distance
+                    binding?.fitnessLevel!!.text=response.data.fitnessLevel
+                    binding?.address!!.text=response.data.location
+                    binding?.address!!.text=response.data.location
+
+                    if (response.data.sun!= ""){
+                        binding?.Scv!!.setCardBackgroundColor(Color.parseColor("#F95047"))
+                        binding?.Stv!!.setTextColor(Color.WHITE)
+                    }
+                    if (response.data.mon!= ""){
+                        binding?.Mcv!!.setCardBackgroundColor(Color.parseColor("#F95047"))
+                        binding?.Mtv!!.setTextColor(Color.WHITE)
+                    }
+                    if (response.data.tue!= ""){
+                        binding?.Tcv!!.setCardBackgroundColor(Color.parseColor("#F95047"))
+                        binding?.Ttv!!.setTextColor(Color.WHITE)
+                    }
+                    if (response.data.wed!= ""){
+                        binding?.Wcv!!.setCardBackgroundColor(Color.parseColor("#F95047"))
+                        binding?.Wtv!!.setTextColor(Color.WHITE)
+                    }
+                    if (response.data.thu!= ""){
+                        binding?.Thcv!!.setCardBackgroundColor(Color.parseColor("#F95047"))
+                        binding?.Thtv!!.setTextColor(Color.WHITE)
+                    }
+                    if (response.data.fri != ""){
+                        binding?.Fcv!!.setCardBackgroundColor(Color.parseColor("#F95047"))
+                        binding?.Ftv!!.setTextColor(Color.WHITE)
+                    }
+                    if (response.data.sat!= ""){
+                        binding?.Sacv!!.setCardBackgroundColor(Color.parseColor("#F95047"))
+                        binding?.Satv!!.setTextColor(Color.WHITE)
+                    }else{
+
+                    }
+
+                } else {
+                    (activity as BaseActivity).showSnackBar(view?.findViewById(R.id.rootView), response.message)
+                }
+            }
+            else -> {
+                (activity as BaseActivity).showError(resultResponse)
+            }
+        } as Unit
     }
 }
