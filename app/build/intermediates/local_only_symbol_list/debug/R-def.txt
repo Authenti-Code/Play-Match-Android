@@ -234,6 +234,7 @@ id distanceTV
 id distanceTv
 id dob
 id edit
+id editImage
 id editProfile
 id editSports
 id email
@@ -285,10 +286,12 @@ id noChat
 id notification
 id notification_toggle
 id notify
+id number
 id password
 id past_match
 id pay
 id profileBg
+id profileImage
 id profileLay
 id profileOff
 id profileOn

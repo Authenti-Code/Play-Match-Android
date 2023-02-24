@@ -26,11 +26,16 @@ public final class RvListItemProfileStatisticsBinding implements ViewBinding {
   @NonNull
   public final AppCompatTextView name;
 
+  @NonNull
+  public final AppCompatTextView number;
+
   private RvListItemProfileStatisticsBinding(@NonNull FrameLayout rootView,
-      @NonNull AppCompatImageView image, @NonNull AppCompatTextView name) {
+      @NonNull AppCompatImageView image, @NonNull AppCompatTextView name,
+      @NonNull AppCompatTextView number) {
     this.rootView = rootView;
     this.image = image;
     this.name = name;
+    this.number = number;
   }
 
   @Override
@@ -72,7 +77,13 @@ public final class RvListItemProfileStatisticsBinding implements ViewBinding {
         break missingId;
       }
 
-      return new RvListItemProfileStatisticsBinding((FrameLayout) rootView, image, name);
+      id = R.id.number;
+      AppCompatTextView number = ViewBindings.findChildViewById(rootView, id);
+      if (number == null) {
+        break missingId;
+      }
+
+      return new RvListItemProfileStatisticsBinding((FrameLayout) rootView, image, name, number);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

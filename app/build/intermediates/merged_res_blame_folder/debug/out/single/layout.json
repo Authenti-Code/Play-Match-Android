@@ -128,6 +128,10 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\layout\\rv_near_by_match_list.xml"
     },
     {
+        "merged": "com.playMatch.app-mergeDebugResources-47:/layout/activity_edit_profile.xml",
+        "source": "com.playMatch.app-main-50:/layout/activity_edit_profile.xml"
+    },
+    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-mergeDebugResources-47:\\layout\\rv_list_item_light_bg_rv_child.xml",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\layout\\rv_list_item_light_bg_rv_child.xml"
     },
@@ -176,10 +180,6 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\layout\\rv_child_home_third_position_list_item.xml"
     },
     {
-        "merged": "com.playMatch.app-mergeDebugResources-47:/layout/activity_match_sign_up.xml",
-        "source": "com.playMatch.app-main-50:/layout/activity_match_sign_up.xml"
-    },
-    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-mergeDebugResources-47:\\layout\\bottom_sheet_show_interest.xml",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\layout\\bottom_sheet_show_interest.xml"
     },
@@ -214,5 +214,9 @@
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-mergeDebugResources-47:\\layout\\rv_filter_list_item.xml",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\layout\\rv_filter_list_item.xml"
+    },
+    {
+        "merged": "com.playMatch.app-mergeDebugResources-47:/layout/fragment_profile.xml",
+        "source": "com.playMatch.app-main-50:/layout/fragment_profile.xml"
     }
 ]

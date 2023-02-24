@@ -5,9 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatEditText;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.cardview.widget.CardView;
@@ -23,10 +27,16 @@ import java.lang.String;
 
 public final class ActivityEditProfileBinding implements ViewBinding {
   @NonNull
-  private final LinearLayoutCompat rootView;
+  private final LinearLayoutCompat rootView_;
 
   @NonNull
   public final MaterialCardView Fcv;
+
+  @NonNull
+  public final LinearLayoutCompat Flay;
+
+  @NonNull
+  public final AppCompatTextView Fstv;
 
   @NonNull
   public final AppCompatTextView Ftv;
@@ -35,16 +45,34 @@ public final class ActivityEditProfileBinding implements ViewBinding {
   public final MaterialCardView Mcv;
 
   @NonNull
+  public final LinearLayoutCompat Mlay;
+
+  @NonNull
+  public final AppCompatTextView Mstv;
+
+  @NonNull
   public final AppCompatTextView Mtv;
 
   @NonNull
+  public final LinearLayoutCompat SaLay;
+
+  @NonNull
   public final MaterialCardView Sacv;
+
+  @NonNull
+  public final AppCompatTextView Sastv;
 
   @NonNull
   public final AppCompatTextView Satv;
 
   @NonNull
   public final MaterialCardView Scv;
+
+  @NonNull
+  public final LinearLayoutCompat Slay;
+
+  @NonNull
+  public final AppCompatTextView Sstv;
 
   @NonNull
   public final AppCompatTextView Stv;
@@ -56,7 +84,19 @@ public final class ActivityEditProfileBinding implements ViewBinding {
   public final MaterialCardView Thcv;
 
   @NonNull
+  public final LinearLayoutCompat Thlay;
+
+  @NonNull
+  public final AppCompatTextView Thstv;
+
+  @NonNull
   public final AppCompatTextView Thtv;
+
+  @NonNull
+  public final LinearLayoutCompat Tlay;
+
+  @NonNull
+  public final AppCompatTextView Tstv;
 
   @NonNull
   public final AppCompatTextView Ttv;
@@ -65,7 +105,16 @@ public final class ActivityEditProfileBinding implements ViewBinding {
   public final MaterialCardView Wcv;
 
   @NonNull
+  public final LinearLayoutCompat Wlay;
+
+  @NonNull
+  public final AppCompatTextView Wstv;
+
+  @NonNull
   public final AppCompatTextView Wtv;
+
+  @NonNull
+  public final AppCompatEditText address;
 
   @NonNull
   public final ImageView back;
@@ -77,7 +126,10 @@ public final class ActivityEditProfileBinding implements ViewBinding {
   public final ImageView beginnerCheck;
 
   @NonNull
-  public final MaterialCardView dob;
+  public final AppCompatEditText dob;
+
+  @NonNull
+  public final AppCompatImageView editImage;
 
   @NonNull
   public final TextView editSports;
@@ -89,7 +141,10 @@ public final class ActivityEditProfileBinding implements ViewBinding {
   public final ImageView experiencedCheck;
 
   @NonNull
-  public final MaterialCardView gender;
+  public final RangeSlider fridaySlider;
+
+  @NonNull
+  public final AppCompatEditText gender;
 
   @NonNull
   public final MaterialCardView intermediate;
@@ -104,10 +159,28 @@ public final class ActivityEditProfileBinding implements ViewBinding {
   public final RangeSlider mondaySlider;
 
   @NonNull
-  public final MaterialCardView name;
+  public final AppCompatEditText name;
+
+  @NonNull
+  public final AppCompatImageView profileImage;
+
+  @NonNull
+  public final ProgressBar progressBar;
+
+  @NonNull
+  public final LinearLayoutCompat rootView;
 
   @NonNull
   public final RecyclerView rvSports;
+
+  @NonNull
+  public final RangeSlider saturdaySlider;
+
+  @NonNull
+  public final RangeSlider sundaySlider;
+
+  @NonNull
+  public final RangeSlider thursdaySlider;
 
   @NonNull
   public final RangeSlider tuesdaySlider;
@@ -115,58 +188,103 @@ public final class ActivityEditProfileBinding implements ViewBinding {
   @NonNull
   public final CardView update;
 
-  private ActivityEditProfileBinding(@NonNull LinearLayoutCompat rootView,
-      @NonNull MaterialCardView Fcv, @NonNull AppCompatTextView Ftv, @NonNull MaterialCardView Mcv,
-      @NonNull AppCompatTextView Mtv, @NonNull MaterialCardView Sacv,
-      @NonNull AppCompatTextView Satv, @NonNull MaterialCardView Scv,
-      @NonNull AppCompatTextView Stv, @NonNull MaterialCardView Tcv, @NonNull MaterialCardView Thcv,
-      @NonNull AppCompatTextView Thtv, @NonNull AppCompatTextView Ttv,
-      @NonNull MaterialCardView Wcv, @NonNull AppCompatTextView Wtv, @NonNull ImageView back,
+  @NonNull
+  public final RangeSlider wednesdaySlider;
+
+  @NonNull
+  public final LinearLayout weekendLay;
+
+  private ActivityEditProfileBinding(@NonNull LinearLayoutCompat rootView_,
+      @NonNull MaterialCardView Fcv, @NonNull LinearLayoutCompat Flay,
+      @NonNull AppCompatTextView Fstv, @NonNull AppCompatTextView Ftv,
+      @NonNull MaterialCardView Mcv, @NonNull LinearLayoutCompat Mlay,
+      @NonNull AppCompatTextView Mstv, @NonNull AppCompatTextView Mtv,
+      @NonNull LinearLayoutCompat SaLay, @NonNull MaterialCardView Sacv,
+      @NonNull AppCompatTextView Sastv, @NonNull AppCompatTextView Satv,
+      @NonNull MaterialCardView Scv, @NonNull LinearLayoutCompat Slay,
+      @NonNull AppCompatTextView Sstv, @NonNull AppCompatTextView Stv,
+      @NonNull MaterialCardView Tcv, @NonNull MaterialCardView Thcv,
+      @NonNull LinearLayoutCompat Thlay, @NonNull AppCompatTextView Thstv,
+      @NonNull AppCompatTextView Thtv, @NonNull LinearLayoutCompat Tlay,
+      @NonNull AppCompatTextView Tstv, @NonNull AppCompatTextView Ttv,
+      @NonNull MaterialCardView Wcv, @NonNull LinearLayoutCompat Wlay,
+      @NonNull AppCompatTextView Wstv, @NonNull AppCompatTextView Wtv,
+      @NonNull AppCompatEditText address, @NonNull ImageView back,
       @NonNull MaterialCardView beginner, @NonNull ImageView beginnerCheck,
-      @NonNull MaterialCardView dob, @NonNull TextView editSports,
-      @NonNull MaterialCardView experienced, @NonNull ImageView experiencedCheck,
-      @NonNull MaterialCardView gender, @NonNull MaterialCardView intermediate,
+      @NonNull AppCompatEditText dob, @NonNull AppCompatImageView editImage,
+      @NonNull TextView editSports, @NonNull MaterialCardView experienced,
+      @NonNull ImageView experiencedCheck, @NonNull RangeSlider fridaySlider,
+      @NonNull AppCompatEditText gender, @NonNull MaterialCardView intermediate,
       @NonNull ImageView intermediateCheck, @NonNull MaterialCardView location,
-      @NonNull RangeSlider mondaySlider, @NonNull MaterialCardView name,
-      @NonNull RecyclerView rvSports, @NonNull RangeSlider tuesdaySlider,
-      @NonNull CardView update) {
-    this.rootView = rootView;
+      @NonNull RangeSlider mondaySlider, @NonNull AppCompatEditText name,
+      @NonNull AppCompatImageView profileImage, @NonNull ProgressBar progressBar,
+      @NonNull LinearLayoutCompat rootView, @NonNull RecyclerView rvSports,
+      @NonNull RangeSlider saturdaySlider, @NonNull RangeSlider sundaySlider,
+      @NonNull RangeSlider thursdaySlider, @NonNull RangeSlider tuesdaySlider,
+      @NonNull CardView update, @NonNull RangeSlider wednesdaySlider,
+      @NonNull LinearLayout weekendLay) {
+    this.rootView_ = rootView_;
     this.Fcv = Fcv;
+    this.Flay = Flay;
+    this.Fstv = Fstv;
     this.Ftv = Ftv;
     this.Mcv = Mcv;
+    this.Mlay = Mlay;
+    this.Mstv = Mstv;
     this.Mtv = Mtv;
+    this.SaLay = SaLay;
     this.Sacv = Sacv;
+    this.Sastv = Sastv;
     this.Satv = Satv;
     this.Scv = Scv;
+    this.Slay = Slay;
+    this.Sstv = Sstv;
     this.Stv = Stv;
     this.Tcv = Tcv;
     this.Thcv = Thcv;
+    this.Thlay = Thlay;
+    this.Thstv = Thstv;
     this.Thtv = Thtv;
+    this.Tlay = Tlay;
+    this.Tstv = Tstv;
     this.Ttv = Ttv;
     this.Wcv = Wcv;
+    this.Wlay = Wlay;
+    this.Wstv = Wstv;
     this.Wtv = Wtv;
+    this.address = address;
     this.back = back;
     this.beginner = beginner;
     this.beginnerCheck = beginnerCheck;
     this.dob = dob;
+    this.editImage = editImage;
     this.editSports = editSports;
     this.experienced = experienced;
     this.experiencedCheck = experiencedCheck;
+    this.fridaySlider = fridaySlider;
     this.gender = gender;
     this.intermediate = intermediate;
     this.intermediateCheck = intermediateCheck;
     this.location = location;
     this.mondaySlider = mondaySlider;
     this.name = name;
+    this.profileImage = profileImage;
+    this.progressBar = progressBar;
+    this.rootView = rootView;
     this.rvSports = rvSports;
+    this.saturdaySlider = saturdaySlider;
+    this.sundaySlider = sundaySlider;
+    this.thursdaySlider = thursdaySlider;
     this.tuesdaySlider = tuesdaySlider;
     this.update = update;
+    this.wednesdaySlider = wednesdaySlider;
+    this.weekendLay = weekendLay;
   }
 
   @Override
   @NonNull
   public LinearLayoutCompat getRoot() {
-    return rootView;
+    return rootView_;
   }
 
   @NonNull
@@ -196,6 +314,18 @@ public final class ActivityEditProfileBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.Flay;
+      LinearLayoutCompat Flay = ViewBindings.findChildViewById(rootView, id);
+      if (Flay == null) {
+        break missingId;
+      }
+
+      id = R.id.Fstv;
+      AppCompatTextView Fstv = ViewBindings.findChildViewById(rootView, id);
+      if (Fstv == null) {
+        break missingId;
+      }
+
       id = R.id.Ftv;
       AppCompatTextView Ftv = ViewBindings.findChildViewById(rootView, id);
       if (Ftv == null) {
@@ -208,15 +338,39 @@ public final class ActivityEditProfileBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.Mlay;
+      LinearLayoutCompat Mlay = ViewBindings.findChildViewById(rootView, id);
+      if (Mlay == null) {
+        break missingId;
+      }
+
+      id = R.id.Mstv;
+      AppCompatTextView Mstv = ViewBindings.findChildViewById(rootView, id);
+      if (Mstv == null) {
+        break missingId;
+      }
+
       id = R.id.Mtv;
       AppCompatTextView Mtv = ViewBindings.findChildViewById(rootView, id);
       if (Mtv == null) {
         break missingId;
       }
 
+      id = R.id.SaLay;
+      LinearLayoutCompat SaLay = ViewBindings.findChildViewById(rootView, id);
+      if (SaLay == null) {
+        break missingId;
+      }
+
       id = R.id.Sacv;
       MaterialCardView Sacv = ViewBindings.findChildViewById(rootView, id);
       if (Sacv == null) {
+        break missingId;
+      }
+
+      id = R.id.Sastv;
+      AppCompatTextView Sastv = ViewBindings.findChildViewById(rootView, id);
+      if (Sastv == null) {
         break missingId;
       }
 
@@ -229,6 +383,18 @@ public final class ActivityEditProfileBinding implements ViewBinding {
       id = R.id.Scv;
       MaterialCardView Scv = ViewBindings.findChildViewById(rootView, id);
       if (Scv == null) {
+        break missingId;
+      }
+
+      id = R.id.Slay;
+      LinearLayoutCompat Slay = ViewBindings.findChildViewById(rootView, id);
+      if (Slay == null) {
+        break missingId;
+      }
+
+      id = R.id.Sstv;
+      AppCompatTextView Sstv = ViewBindings.findChildViewById(rootView, id);
+      if (Sstv == null) {
         break missingId;
       }
 
@@ -250,9 +416,33 @@ public final class ActivityEditProfileBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.Thlay;
+      LinearLayoutCompat Thlay = ViewBindings.findChildViewById(rootView, id);
+      if (Thlay == null) {
+        break missingId;
+      }
+
+      id = R.id.Thstv;
+      AppCompatTextView Thstv = ViewBindings.findChildViewById(rootView, id);
+      if (Thstv == null) {
+        break missingId;
+      }
+
       id = R.id.Thtv;
       AppCompatTextView Thtv = ViewBindings.findChildViewById(rootView, id);
       if (Thtv == null) {
+        break missingId;
+      }
+
+      id = R.id.Tlay;
+      LinearLayoutCompat Tlay = ViewBindings.findChildViewById(rootView, id);
+      if (Tlay == null) {
+        break missingId;
+      }
+
+      id = R.id.Tstv;
+      AppCompatTextView Tstv = ViewBindings.findChildViewById(rootView, id);
+      if (Tstv == null) {
         break missingId;
       }
 
@@ -268,9 +458,27 @@ public final class ActivityEditProfileBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.Wlay;
+      LinearLayoutCompat Wlay = ViewBindings.findChildViewById(rootView, id);
+      if (Wlay == null) {
+        break missingId;
+      }
+
+      id = R.id.Wstv;
+      AppCompatTextView Wstv = ViewBindings.findChildViewById(rootView, id);
+      if (Wstv == null) {
+        break missingId;
+      }
+
       id = R.id.Wtv;
       AppCompatTextView Wtv = ViewBindings.findChildViewById(rootView, id);
       if (Wtv == null) {
+        break missingId;
+      }
+
+      id = R.id.address;
+      AppCompatEditText address = ViewBindings.findChildViewById(rootView, id);
+      if (address == null) {
         break missingId;
       }
 
@@ -293,8 +501,14 @@ public final class ActivityEditProfileBinding implements ViewBinding {
       }
 
       id = R.id.dob;
-      MaterialCardView dob = ViewBindings.findChildViewById(rootView, id);
+      AppCompatEditText dob = ViewBindings.findChildViewById(rootView, id);
       if (dob == null) {
+        break missingId;
+      }
+
+      id = R.id.editImage;
+      AppCompatImageView editImage = ViewBindings.findChildViewById(rootView, id);
+      if (editImage == null) {
         break missingId;
       }
 
@@ -316,8 +530,14 @@ public final class ActivityEditProfileBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.fridaySlider;
+      RangeSlider fridaySlider = ViewBindings.findChildViewById(rootView, id);
+      if (fridaySlider == null) {
+        break missingId;
+      }
+
       id = R.id.gender;
-      MaterialCardView gender = ViewBindings.findChildViewById(rootView, id);
+      AppCompatEditText gender = ViewBindings.findChildViewById(rootView, id);
       if (gender == null) {
         break missingId;
       }
@@ -347,14 +567,46 @@ public final class ActivityEditProfileBinding implements ViewBinding {
       }
 
       id = R.id.name;
-      MaterialCardView name = ViewBindings.findChildViewById(rootView, id);
+      AppCompatEditText name = ViewBindings.findChildViewById(rootView, id);
       if (name == null) {
         break missingId;
       }
 
+      id = R.id.profileImage;
+      AppCompatImageView profileImage = ViewBindings.findChildViewById(rootView, id);
+      if (profileImage == null) {
+        break missingId;
+      }
+
+      id = R.id.progressBar;
+      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
+      if (progressBar == null) {
+        break missingId;
+      }
+
+      LinearLayoutCompat rootView_ = (LinearLayoutCompat) rootView;
+
       id = R.id.rv_sports;
       RecyclerView rvSports = ViewBindings.findChildViewById(rootView, id);
       if (rvSports == null) {
+        break missingId;
+      }
+
+      id = R.id.saturdaySlider;
+      RangeSlider saturdaySlider = ViewBindings.findChildViewById(rootView, id);
+      if (saturdaySlider == null) {
+        break missingId;
+      }
+
+      id = R.id.sundaySlider;
+      RangeSlider sundaySlider = ViewBindings.findChildViewById(rootView, id);
+      if (sundaySlider == null) {
+        break missingId;
+      }
+
+      id = R.id.thursdaySlider;
+      RangeSlider thursdaySlider = ViewBindings.findChildViewById(rootView, id);
+      if (thursdaySlider == null) {
         break missingId;
       }
 
@@ -370,10 +622,25 @@ public final class ActivityEditProfileBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityEditProfileBinding((LinearLayoutCompat) rootView, Fcv, Ftv, Mcv, Mtv, Sacv,
-          Satv, Scv, Stv, Tcv, Thcv, Thtv, Ttv, Wcv, Wtv, back, beginner, beginnerCheck, dob,
-          editSports, experienced, experiencedCheck, gender, intermediate, intermediateCheck,
-          location, mondaySlider, name, rvSports, tuesdaySlider, update);
+      id = R.id.wednesdaySlider;
+      RangeSlider wednesdaySlider = ViewBindings.findChildViewById(rootView, id);
+      if (wednesdaySlider == null) {
+        break missingId;
+      }
+
+      id = R.id.weekendLay;
+      LinearLayout weekendLay = ViewBindings.findChildViewById(rootView, id);
+      if (weekendLay == null) {
+        break missingId;
+      }
+
+      return new ActivityEditProfileBinding((LinearLayoutCompat) rootView, Fcv, Flay, Fstv, Ftv,
+          Mcv, Mlay, Mstv, Mtv, SaLay, Sacv, Sastv, Satv, Scv, Slay, Sstv, Stv, Tcv, Thcv, Thlay,
+          Thstv, Thtv, Tlay, Tstv, Ttv, Wcv, Wlay, Wstv, Wtv, address, back, beginner,
+          beginnerCheck, dob, editImage, editSports, experienced, experiencedCheck, fridaySlider,
+          gender, intermediate, intermediateCheck, location, mondaySlider, name, profileImage,
+          progressBar, rootView_, rvSports, saturdaySlider, sundaySlider, thursdaySlider,
+          tuesdaySlider, update, wednesdaySlider, weekendLay);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

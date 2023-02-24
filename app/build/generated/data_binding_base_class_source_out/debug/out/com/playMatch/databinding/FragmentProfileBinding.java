@@ -5,9 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.recyclerview.widget.RecyclerView;
@@ -21,7 +24,7 @@ import java.lang.String;
 
 public final class FragmentProfileBinding implements ViewBinding {
   @NonNull
-  private final LinearLayoutCompat rootView;
+  private final LinearLayoutCompat rootView_;
 
   @NonNull
   public final MaterialCardView Fcv;
@@ -66,13 +69,37 @@ public final class FragmentProfileBinding implements ViewBinding {
   public final AppCompatTextView Wtv;
 
   @NonNull
-  public final TextView date;
+  public final AppCompatTextView address;
+
+  @NonNull
+  public final AppCompatTextView distanceTV;
+
+  @NonNull
+  public final TextView dob;
 
   @NonNull
   public final ImageView editProfile;
 
   @NonNull
+  public final TextView email;
+
+  @NonNull
+  public final AppCompatTextView fitnessLevel;
+
+  @NonNull
+  public final AppCompatTextView genderTv;
+
+  @NonNull
   public final TextView name;
+
+  @NonNull
+  public final AppCompatImageView profileImage;
+
+  @NonNull
+  public final ProgressBar progressBar;
+
+  @NonNull
+  public final LinearLayoutCompat rootView;
 
   @NonNull
   public final RecyclerView rvSports;
@@ -84,18 +111,23 @@ public final class FragmentProfileBinding implements ViewBinding {
   public final ImageView setting;
 
   @NonNull
-  public final TextView time;
+  public final LinearLayout weekendLay;
 
-  private FragmentProfileBinding(@NonNull LinearLayoutCompat rootView,
+  private FragmentProfileBinding(@NonNull LinearLayoutCompat rootView_,
       @NonNull MaterialCardView Fcv, @NonNull AppCompatTextView Ftv, @NonNull MaterialCardView Mcv,
       @NonNull AppCompatTextView Mtv, @NonNull MaterialCardView Sacv,
       @NonNull AppCompatTextView Satv, @NonNull MaterialCardView Scv,
       @NonNull AppCompatTextView Stv, @NonNull MaterialCardView Tcv, @NonNull MaterialCardView Thcv,
       @NonNull AppCompatTextView Thtv, @NonNull AppCompatTextView Ttv,
-      @NonNull MaterialCardView Wcv, @NonNull AppCompatTextView Wtv, @NonNull TextView date,
-      @NonNull ImageView editProfile, @NonNull TextView name, @NonNull RecyclerView rvSports,
-      @NonNull RecyclerView rvStatistics, @NonNull ImageView setting, @NonNull TextView time) {
-    this.rootView = rootView;
+      @NonNull MaterialCardView Wcv, @NonNull AppCompatTextView Wtv,
+      @NonNull AppCompatTextView address, @NonNull AppCompatTextView distanceTV,
+      @NonNull TextView dob, @NonNull ImageView editProfile, @NonNull TextView email,
+      @NonNull AppCompatTextView fitnessLevel, @NonNull AppCompatTextView genderTv,
+      @NonNull TextView name, @NonNull AppCompatImageView profileImage,
+      @NonNull ProgressBar progressBar, @NonNull LinearLayoutCompat rootView,
+      @NonNull RecyclerView rvSports, @NonNull RecyclerView rvStatistics,
+      @NonNull ImageView setting, @NonNull LinearLayout weekendLay) {
+    this.rootView_ = rootView_;
     this.Fcv = Fcv;
     this.Ftv = Ftv;
     this.Mcv = Mcv;
@@ -110,19 +142,27 @@ public final class FragmentProfileBinding implements ViewBinding {
     this.Ttv = Ttv;
     this.Wcv = Wcv;
     this.Wtv = Wtv;
-    this.date = date;
+    this.address = address;
+    this.distanceTV = distanceTV;
+    this.dob = dob;
     this.editProfile = editProfile;
+    this.email = email;
+    this.fitnessLevel = fitnessLevel;
+    this.genderTv = genderTv;
     this.name = name;
+    this.profileImage = profileImage;
+    this.progressBar = progressBar;
+    this.rootView = rootView;
     this.rvSports = rvSports;
     this.rvStatistics = rvStatistics;
     this.setting = setting;
-    this.time = time;
+    this.weekendLay = weekendLay;
   }
 
   @Override
   @NonNull
   public LinearLayoutCompat getRoot() {
-    return rootView;
+    return rootView_;
   }
 
   @NonNull
@@ -230,9 +270,21 @@ public final class FragmentProfileBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.date;
-      TextView date = ViewBindings.findChildViewById(rootView, id);
-      if (date == null) {
+      id = R.id.address;
+      AppCompatTextView address = ViewBindings.findChildViewById(rootView, id);
+      if (address == null) {
+        break missingId;
+      }
+
+      id = R.id.distanceTV;
+      AppCompatTextView distanceTV = ViewBindings.findChildViewById(rootView, id);
+      if (distanceTV == null) {
+        break missingId;
+      }
+
+      id = R.id.dob;
+      TextView dob = ViewBindings.findChildViewById(rootView, id);
+      if (dob == null) {
         break missingId;
       }
 
@@ -242,11 +294,43 @@ public final class FragmentProfileBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.email;
+      TextView email = ViewBindings.findChildViewById(rootView, id);
+      if (email == null) {
+        break missingId;
+      }
+
+      id = R.id.fitnessLevel;
+      AppCompatTextView fitnessLevel = ViewBindings.findChildViewById(rootView, id);
+      if (fitnessLevel == null) {
+        break missingId;
+      }
+
+      id = R.id.genderTv;
+      AppCompatTextView genderTv = ViewBindings.findChildViewById(rootView, id);
+      if (genderTv == null) {
+        break missingId;
+      }
+
       id = R.id.name;
       TextView name = ViewBindings.findChildViewById(rootView, id);
       if (name == null) {
         break missingId;
       }
+
+      id = R.id.profileImage;
+      AppCompatImageView profileImage = ViewBindings.findChildViewById(rootView, id);
+      if (profileImage == null) {
+        break missingId;
+      }
+
+      id = R.id.progressBar;
+      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
+      if (progressBar == null) {
+        break missingId;
+      }
+
+      LinearLayoutCompat rootView_ = (LinearLayoutCompat) rootView;
 
       id = R.id.rv_sports;
       RecyclerView rvSports = ViewBindings.findChildViewById(rootView, id);
@@ -266,15 +350,16 @@ public final class FragmentProfileBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.time;
-      TextView time = ViewBindings.findChildViewById(rootView, id);
-      if (time == null) {
+      id = R.id.weekendLay;
+      LinearLayout weekendLay = ViewBindings.findChildViewById(rootView, id);
+      if (weekendLay == null) {
         break missingId;
       }
 
       return new FragmentProfileBinding((LinearLayoutCompat) rootView, Fcv, Ftv, Mcv, Mtv, Sacv,
-          Satv, Scv, Stv, Tcv, Thcv, Thtv, Ttv, Wcv, Wtv, date, editProfile, name, rvSports,
-          rvStatistics, setting, time);
+          Satv, Scv, Stv, Tcv, Thcv, Thtv, Ttv, Wcv, Wtv, address, distanceTV, dob, editProfile,
+          email, fitnessLevel, genderTv, name, profileImage, progressBar, rootView_, rvSports,
+          rvStatistics, setting, weekendLay);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

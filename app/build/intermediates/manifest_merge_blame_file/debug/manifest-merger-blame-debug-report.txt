@@ -347,25 +347,20 @@
 188-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:172:9-183:20
 189            android:name="com.playMatch.ui.signUp.SelectSportActivity"
 189-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:173:13-58
-190            android:exported="true" >
-190-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:174:13-36
+190            android:exported="false" >
+190-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:174:13-37
 191            <meta-data
 191-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:48:13-50:36
 192                android:name="android.app.lib_name"
 192-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:49:17-52
 193                android:value="" />
 193-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:50:17-33
-194
-195            <intent-filter>
-195-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:178:13-182:29
-196                <action android:name="android.intent.action.MAIN" />
-196-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:179:17-69
-196-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:179:25-66
+194            <!-- <intent-filter> -->
+195            <!-- <action android:name="android.intent.action.MAIN" /> -->
+196
 197
-198                <category android:name="android.intent.category.LAUNCHER" />
-198-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:181:17-77
-198-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:181:27-74
-199            </intent-filter>
+198            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+199            <!-- </intent-filter> -->
 200        </activity>
 201        <activity
 201-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:184:9-190:20
@@ -431,71 +426,74 @@
 236-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:219:13-53
 237            android:exported="true" >
 237-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:220:13-36
-238
-239            <!-- <intent-filter> -->
-240            <!-- <action android:name="android.intent.action.MAIN" /> -->
-241
-242
-243            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-244            <!-- </intent-filter> -->
-245
-246            <meta-data
-246-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:48:13-50:36
-247                android:name="android.app.lib_name"
-247-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:49:17-52
-248                android:value="" />
-248-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:50:17-33
-249        </activity>
-250        <activity
-250-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\DELL\.gradle\caches\transforms-3\932f50fa4ce928c918b81b538446a720\transformed\play-services-base-18.1.0\AndroidManifest.xml:20:9-22:45
-251            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-251-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\DELL\.gradle\caches\transforms-3\932f50fa4ce928c918b81b538446a720\transformed\play-services-base-18.1.0\AndroidManifest.xml:20:19-85
-252            android:exported="false"
-252-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\DELL\.gradle\caches\transforms-3\932f50fa4ce928c918b81b538446a720\transformed\play-services-base-18.1.0\AndroidManifest.xml:22:19-43
-253            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-253-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\DELL\.gradle\caches\transforms-3\932f50fa4ce928c918b81b538446a720\transformed\play-services-base-18.1.0\AndroidManifest.xml:21:19-78
-254
-255        <meta-data
-255-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\DELL\.gradle\caches\transforms-3\c86d3d0c021a13551968e8fe572c68fe\transformed\play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
-256            android:name="com.google.android.gms.version"
-256-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\DELL\.gradle\caches\transforms-3\c86d3d0c021a13551968e8fe572c68fe\transformed\play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
-257            android:value="@integer/google_play_services_version" />
-257-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\DELL\.gradle\caches\transforms-3\c86d3d0c021a13551968e8fe572c68fe\transformed\play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
-258
-259        <uses-library
-259-->[androidx.window:window:1.0.0] C:\Users\DELL\.gradle\caches\transforms-3\a65445fe112968bb11af45ef454b4f98\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
-260            android:name="androidx.window.extensions"
-260-->[androidx.window:window:1.0.0] C:\Users\DELL\.gradle\caches\transforms-3\a65445fe112968bb11af45ef454b4f98\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
-261            android:required="false" />
-261-->[androidx.window:window:1.0.0] C:\Users\DELL\.gradle\caches\transforms-3\a65445fe112968bb11af45ef454b4f98\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
-262        <uses-library
-262-->[androidx.window:window:1.0.0] C:\Users\DELL\.gradle\caches\transforms-3\a65445fe112968bb11af45ef454b4f98\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
-263            android:name="androidx.window.sidecar"
-263-->[androidx.window:window:1.0.0] C:\Users\DELL\.gradle\caches\transforms-3\a65445fe112968bb11af45ef454b4f98\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
-264            android:required="false" />
-264-->[androidx.window:window:1.0.0] C:\Users\DELL\.gradle\caches\transforms-3\a65445fe112968bb11af45ef454b4f98\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
-265
-266        <provider
-266-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\45c3154222f956fe4b13f9980cbb8959\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-267            android:name="androidx.startup.InitializationProvider"
-267-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\45c3154222f956fe4b13f9980cbb8959\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
-268            android:authorities="com.playMatch.androidx-startup"
-268-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\45c3154222f956fe4b13f9980cbb8959\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
-269            android:exported="false" >
-269-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\45c3154222f956fe4b13f9980cbb8959\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
-270            <meta-data
-270-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\45c3154222f956fe4b13f9980cbb8959\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-271                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-271-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\45c3154222f956fe4b13f9980cbb8959\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
-272                android:value="androidx.startup" />
-272-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\45c3154222f956fe4b13f9980cbb8959\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
-273            <meta-data
-273-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\DELL\.gradle\caches\transforms-3\f0388dda555c5631ff1472049b46982f\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
-274                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-274-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\DELL\.gradle\caches\transforms-3\f0388dda555c5631ff1472049b46982f\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
-275                android:value="androidx.startup" />
-275-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\DELL\.gradle\caches\transforms-3\f0388dda555c5631ff1472049b46982f\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
-276        </provider>
-277    </application>
-278
-279</manifest>
+238            <intent-filter>
+238-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:221:13-225:29
+239                <action android:name="android.intent.action.MAIN" />
+239-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:222:17-69
+239-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:222:25-66
+240
+241                <category android:name="android.intent.category.LAUNCHER" />
+241-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:224:17-77
+241-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:224:27-74
+242            </intent-filter>
+243
+244            <meta-data
+244-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:48:13-50:36
+245                android:name="android.app.lib_name"
+245-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:49:17-52
+246                android:value="" />
+246-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:50:17-33
+247        </activity>
+248        <activity
+248-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\DELL\.gradle\caches\transforms-3\932f50fa4ce928c918b81b538446a720\transformed\play-services-base-18.1.0\AndroidManifest.xml:20:9-22:45
+249            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+249-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\DELL\.gradle\caches\transforms-3\932f50fa4ce928c918b81b538446a720\transformed\play-services-base-18.1.0\AndroidManifest.xml:20:19-85
+250            android:exported="false"
+250-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\DELL\.gradle\caches\transforms-3\932f50fa4ce928c918b81b538446a720\transformed\play-services-base-18.1.0\AndroidManifest.xml:22:19-43
+251            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+251-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\DELL\.gradle\caches\transforms-3\932f50fa4ce928c918b81b538446a720\transformed\play-services-base-18.1.0\AndroidManifest.xml:21:19-78
+252
+253        <meta-data
+253-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\DELL\.gradle\caches\transforms-3\c86d3d0c021a13551968e8fe572c68fe\transformed\play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
+254            android:name="com.google.android.gms.version"
+254-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\DELL\.gradle\caches\transforms-3\c86d3d0c021a13551968e8fe572c68fe\transformed\play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
+255            android:value="@integer/google_play_services_version" />
+255-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\DELL\.gradle\caches\transforms-3\c86d3d0c021a13551968e8fe572c68fe\transformed\play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
+256
+257        <uses-library
+257-->[androidx.window:window:1.0.0] C:\Users\DELL\.gradle\caches\transforms-3\a65445fe112968bb11af45ef454b4f98\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
+258            android:name="androidx.window.extensions"
+258-->[androidx.window:window:1.0.0] C:\Users\DELL\.gradle\caches\transforms-3\a65445fe112968bb11af45ef454b4f98\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
+259            android:required="false" />
+259-->[androidx.window:window:1.0.0] C:\Users\DELL\.gradle\caches\transforms-3\a65445fe112968bb11af45ef454b4f98\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
+260        <uses-library
+260-->[androidx.window:window:1.0.0] C:\Users\DELL\.gradle\caches\transforms-3\a65445fe112968bb11af45ef454b4f98\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
+261            android:name="androidx.window.sidecar"
+261-->[androidx.window:window:1.0.0] C:\Users\DELL\.gradle\caches\transforms-3\a65445fe112968bb11af45ef454b4f98\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
+262            android:required="false" />
+262-->[androidx.window:window:1.0.0] C:\Users\DELL\.gradle\caches\transforms-3\a65445fe112968bb11af45ef454b4f98\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
+263
+264        <provider
+264-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\45c3154222f956fe4b13f9980cbb8959\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+265            android:name="androidx.startup.InitializationProvider"
+265-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\45c3154222f956fe4b13f9980cbb8959\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+266            android:authorities="com.playMatch.androidx-startup"
+266-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\45c3154222f956fe4b13f9980cbb8959\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+267            android:exported="false" >
+267-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\45c3154222f956fe4b13f9980cbb8959\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+268            <meta-data
+268-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\45c3154222f956fe4b13f9980cbb8959\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+269                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+269-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\45c3154222f956fe4b13f9980cbb8959\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+270                android:value="androidx.startup" />
+270-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\45c3154222f956fe4b13f9980cbb8959\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+271            <meta-data
+271-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\DELL\.gradle\caches\transforms-3\f0388dda555c5631ff1472049b46982f\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+272                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+272-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\DELL\.gradle\caches\transforms-3\f0388dda555c5631ff1472049b46982f\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+273                android:value="androidx.startup" />
+273-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\DELL\.gradle\caches\transforms-3\f0388dda555c5631ff1472049b46982f\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+274        </provider>
+275    </application>
+276
+277</manifest>

@@ -29,10 +29,11 @@
                 android:layout_gravity="center"/>
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_5sdp"
-                android:text="10"
+                android:text="0"
                 android:textSize="@dimen/_22ssp"
                 android:fontFamily="@font/metropolis_regular"
                 android:textColor="#686868"

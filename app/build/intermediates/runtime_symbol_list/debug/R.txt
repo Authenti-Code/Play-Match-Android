@@ -4157,6 +4157,7 @@ int id easeInOut 0x7f0a00f7
 int id easeOut 0x7f0a00f8
 int id east 0x7f0a00f9
 int id edit 0x7f0a00fa
+int id editImage 0x7f0a02d5
 int id editProfile 0x7f0a00fb
 int id editSports 0x7f0a00fc
 int id edit_query 0x7f0a00fd
@@ -4363,6 +4364,7 @@ int id notification_main_column 0x7f0a01c5
 int id notification_main_column_container 0x7f0a01c6
 int id notification_toggle 0x7f0a01c7
 int id notify 0x7f0a02d1
+int id number 0x7f0a02d4
 int id off 0x7f0a01c8
 int id on 0x7f0a01c9
 int id onInterceptTouchReturnSwipe 0x7f0a01ca
@@ -4391,6 +4393,7 @@ int id preferences_header 0x7f0a01e0
 int id preferences_sliding_pane_layout 0x7f0a01e1
 int id pressed 0x7f0a01e2
 int id profileBg 0x7f0a01e3
+int id profileImage 0x7f0a02d3
 int id profileLay 0x7f0a01e4
 int id profileOff 0x7f0a01e5
 int id profileOn 0x7f0a01e6

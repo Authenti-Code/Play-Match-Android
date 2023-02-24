@@ -4158,6 +4158,7 @@ id easeInOut
 id easeOut
 id east
 id edit
+id editImage
 id editProfile
 id editSports
 id edit_query
@@ -4364,6 +4365,7 @@ id notification_main_column
 id notification_main_column_container
 id notification_toggle
 id notify
+id number
 id off
 id on
 id onInterceptTouchReturnSwipe
@@ -4392,6 +4394,7 @@ id preferences_header
 id preferences_sliding_pane_layout
 id pressed
 id profileBg
+id profileImage
 id profileLay
 id profileOff
 id profileOn
