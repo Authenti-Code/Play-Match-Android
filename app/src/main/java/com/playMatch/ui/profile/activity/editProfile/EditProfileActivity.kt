@@ -74,6 +74,7 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
         profileApi()
     }
 
+    @SuppressLint("SetTextI18n")
     private fun initView() {
         binding.back.setOnClickListener(this)
         binding.update.setOnClickListener(this)
@@ -93,8 +94,8 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
         binding.Satv.setOnClickListener(this)
 
         binding.sundaySlider.setLabelFormatter { value: Float ->
-            return@setLabelFormatter if (value>12.00){"${value.roundToInt()}:00pm"}else{
-                "${value.roundToInt()}:00am"
+            return@setLabelFormatter if (value.roundToInt() >= 12){"${value.roundToInt()}:00 pm"}else{
+                "${value.roundToInt()}:00 am"
             }
         }
         binding.sundaySlider.setValueFrom(0f).toString()
@@ -113,15 +114,19 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
             override fun onStopTrackingTouch(slider: RangeSlider) {
                 val values = binding.sundaySlider.values
                 val id:String
-                val newId:String
+                var newId:String
                 //Those are the new updated values of sldier when user has finshed dragging
                 Log.i("SliderNewValue From", values[0].toString())
                 Log.i("SliderNewValue To", values[1].toString())
-                if (values[0].toFloat()>12.00){ id="${values[0].roundToInt()}:00pm"}else {
-                    id="${values[0].roundToInt()}:00am"
+                if (values[0].toFloat().roundToInt() >= 12){ id="${values[0].roundToInt()}:00 pm"}else {
+                    id="${values[0].roundToInt()}:00 am"
                 }
-                if (values[1].toFloat()>12.00){ newId="${values[1].roundToInt()}:00pm"}else {
-                    newId="${values[1].roundToInt()}:00am"
+                if (values[1].toFloat().roundToInt() >= 12){ newId="${values[1].roundToInt()}:00 pm"}else {
+                    newId="${values[1].roundToInt()}:00 am"
+                }
+
+                if (values[1].toFloat().roundToInt() >= 23){ newId="${values[1].roundToInt()}:59 pm"}else {
+                    newId="${values[1].roundToInt()}:00 am"
                 }
 
                 binding.Sstv.text = "$id - $newId"
@@ -132,13 +137,16 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
         binding.sundaySlider.addOnChangeListener { slider, value, fromUser ->
             val values =  binding.sundaySlider.values
             val id:String
-            val newId:String
+            var newId:String
 
-            if (values[0].toFloat()>12.00){ id="${values[0].roundToInt()}:00pm"}else {
-                id="${values[0].roundToInt()}:00am"
+            if (values[0].toFloat().roundToInt() >= 12){ id="${values[0].roundToInt()}:00 pm"}else {
+                id="${values[0].roundToInt()}:00 am"
             }
-            if (values[1].toFloat()>12.00){ newId="${values[1].roundToInt()}:00pm"}else {
-                newId="${values[1].roundToInt()}:00am"
+            if (values[1].toFloat().roundToInt() >= 12){ newId="${values[1].roundToInt()}:00 pm"}else {
+                newId="${values[1].roundToInt()}:00 am"
+            }
+            if (values[1].toFloat().roundToInt() >= 23){ newId="${values[1].roundToInt()}:59 pm"}else {
+                newId="${values[1].roundToInt()}:00 am"
             }
             binding.Sstv.text ="$id - $newId"
             sun=binding.Sstv.text.toString().trim()
@@ -146,8 +154,8 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
 
 
         binding.mondaySlider.setLabelFormatter { value: Float ->
-            return@setLabelFormatter if (value>12.00){"${value.roundToInt()}:00pm"}else{
-                "${value.roundToInt()}:00am"
+            return@setLabelFormatter if (value.roundToInt() >= 12){"${value.roundToInt()}:00 pm"}else{
+                "${value.roundToInt()}:00 am"
             }
         }
         binding.mondaySlider.setValueFrom(0f).toString()
@@ -157,7 +165,7 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
         binding.mondaySlider.addOnSliderTouchListener(object : RangeSlider.OnSliderTouchListener{
             override fun onStartTrackingTouch(slider: RangeSlider) {
                 val values = binding.mondaySlider.values
-                //Those are the satrt and end values of sldier when user start dragging
+                //Those are the start and end values of slider when user start dragging
                 Log.i("SliderPreviousValue From", values[0].toString())
                 Log.i("SliderPreviousValue To", values[1].toString())
             }
@@ -170,13 +178,12 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
                 //Those are the new updated values of sldier when user has finshed dragging
                 Log.i("SliderNewValue From", values[0].toString())
                 Log.i("SliderNewValue To", values[1].toString())
-                if (values[0].toFloat()>12.00){ id="${values[0].roundToInt()}:00pm"}else {
-                    id="${values[0].roundToInt()}:00am"
+                if (values[0].toFloat().roundToInt() >= 12){ id="${values[0].roundToInt()}:00 pm"}else {
+                    id="${values[0].roundToInt()}:00 am"
                 }
-                if (values[1].toFloat()>12.00){ newId="${values[1].roundToInt()}:00pm"}else {
-                    newId="${values[1].roundToInt()}:00am"
+                if (values[1].toFloat().roundToInt() >= 12){ newId="${values[1].roundToInt()}:00 pm"}else {
+                    newId="${values[1].roundToInt()}:00 am"
                 }
-
                 binding.Mstv.text = "$id - $newId"
                 mon= binding.Mstv.text.toString().trim()
             }
@@ -186,11 +193,11 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
             val id:String
             val newId:String
 
-            if (values[0].toFloat()>12.00){ id="${values[0].roundToInt()}:00pm"}else {
+            if (values[0].toFloat().roundToInt() >= 12){ id="${values[0].roundToInt()}:00pm"}else {
                 id="${values[0].roundToInt()}:00am"
             }
-            if (values[1].toFloat()>12.00){ newId="${values[1].roundToInt()}:00pm"}else {
-                newId="${values[1].roundToInt()}:00am"
+            if (values[1].toFloat().roundToInt() >= 12){ newId="${values[1].roundToInt()}:00 pm"}else {
+                newId="${values[1].roundToInt()}:00 am"
             }
             binding.Mstv.text ="$id - $newId"
             mon= binding.Mstv.text.toString().trim()
@@ -198,13 +205,13 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
 
 
         binding.tuesdaySlider.setLabelFormatter { value: Float ->
-            return@setLabelFormatter if (value > 12.00){"${value.roundToInt()}:00pm"}else{
-                "${value.roundToInt()}:00am"
+            return@setLabelFormatter if (value.roundToInt() >= 12){"${value.roundToInt()}:00 pm"}else{
+                "${value.roundToInt()}:00 am"
             }
         }
         binding.tuesdaySlider.setValueFrom(0f).toString()
-        binding.tuesdaySlider.setValues(0f,23f).toString()
-        binding.tuesdaySlider.setValueTo(23f).toString()
+        binding.tuesdaySlider.setValues(0f,24f).toString()
+        binding.tuesdaySlider.setValueTo(24f).toString()
 
         binding.tuesdaySlider.addOnSliderTouchListener(object : RangeSlider.OnSliderTouchListener{
             override fun onStartTrackingTouch(slider: RangeSlider) {
@@ -218,17 +225,17 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
             override fun onStopTrackingTouch(slider: RangeSlider) {
                 val values = binding.tuesdaySlider.values
                 val id:String
-                val newId:String
+                var newId:String
                 //Those are the new updated values of sldier when user has finshed dragging
                 Log.i("SliderNewValue From", values[0].toString())
                 Log.i("SliderNewValue To", values[1].toString())
-                if (values[0].toFloat()>12.00){ id="${values[0].roundToInt()}:00pm"}else {
+                if (values[0].toFloat().roundToInt()==12){ id="${values[0].roundToInt()}:00 pm"}else {
                     id="${values[0].roundToInt()}:00am"
                 }
-                if (values[1].toFloat()>12.00){ newId="${values[1].roundToInt()}:00pm"}else {
-                    newId="${values[1].roundToInt()}:00am"
+                if (values[1].toFloat().roundToInt()>=12){ newId="${values[1].roundToInt()}:00 pm"}else {
+                    newId="${values[1].roundToInt()}:00 am"
                 }
-
+                if (values[1].toFloat().roundToInt() >= 23){ newId="${values[1].roundToInt()}:59 pm"}
                 binding.Tstv.text = "$id - $newId"
                 tue= binding.Tstv.text.toString().trim()
 
@@ -239,19 +246,19 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
             val id:String
             val newId:String
 
-            if (values[0].toFloat()>12.00){ id="${values[0].roundToInt()}:00pm"}else {
-                id="${values[0].roundToInt()}:00am"
+            if (values[0].toFloat().roundToInt()>=12){ id="${values[0].roundToInt()}:00 pm"}else {
+                id="${values[0].roundToInt()}:00 am"
             }
-            if (values[1].toFloat()>12.00){ newId="${values[1].roundToInt()}:00pm"}else {
-                newId="${values[1].roundToInt()}:00am"
+            if (values[1].toFloat().roundToInt()>=12){ newId="${values[1].roundToInt()}:00 pm"}else {
+                newId="${values[1].roundToInt()}:00 am"
             }
             binding.Tstv.text = "$id - $newId"
             tue= binding.Tstv.text.toString().trim()
         }
 
         binding.wednesdaySlider.setLabelFormatter { value: Float ->
-            return@setLabelFormatter if (value>12.00){"${value.roundToInt()}:00pm"}else{
-                "${value.roundToInt()}:00am"
+            return@setLabelFormatter if (value.roundToInt()>=12){"${value.roundToInt()}:00 pm"}else{
+                "${value.roundToInt()}:00 am"
             }
         }
         binding.wednesdaySlider.setValueFrom(0f).toString()
@@ -274,10 +281,10 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
                 //Those are the new updated values of sldier when user has finshed dragging
                 Log.i("SliderNewValue From", values[0].toString())
                 Log.i("SliderNewValue To", values[1].toString())
-                if (values[0].toFloat()>12.00){ id="${values[0].roundToInt()}:00pm"}else {
+                if (values[0].toFloat().roundToInt() >= 12){ id="${values[0].roundToInt()}:00pm"}else {
                     id="${values[0].roundToInt()}:00am"
                 }
-                if (values[1].toFloat()>12.00){ newId="${values[1].roundToInt()}:00pm"}else {
+                if (values[1].toFloat().roundToInt() >= 12){ newId="${values[1].roundToInt()}:00pm"}else {
                     newId="${values[1].roundToInt()}:00am"
                 }
 
@@ -290,10 +297,10 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
             val id:String
             val newId:String
 
-            if (values[0].toFloat()>12.00){ id="${values[0].roundToInt()}:00pm"}else {
+            if (values[0].toFloat().roundToInt() >= 12){ id="${values[0].roundToInt()}:00pm"}else {
                 id="${values[0].roundToInt()}:00am"
             }
-            if (values[1].toFloat()>12.00){ newId="${values[1].roundToInt()}:00pm"}else {
+            if (values[1].toFloat().roundToInt() >= 12){ newId="${values[1].roundToInt()}:00pm"}else {
                 newId="${values[1].roundToInt()}:00am"
             }
             binding.Wstv.text ="$id - $newId"
@@ -301,7 +308,7 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
         }
 
         binding.thursdaySlider.setLabelFormatter { value: Float ->
-            return@setLabelFormatter if (value>12.00){"${value.roundToInt()}:00pm"}else{
+            return@setLabelFormatter if (value.roundToInt()>=12){"${value.roundToInt()}:00pm"}else{
                 "${value.roundToInt()}:00am"
             }
         }
@@ -325,10 +332,10 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
                 //Those are the new updated values of sldier when user has finshed dragging
                 Log.i("SliderNewValue From", values[0].toString())
                 Log.i("SliderNewValue To", values[1].toString())
-                if (values[0].toFloat()>12.00){ id="${values[0].roundToInt()}:00pm"}else {
+                if (values[0].toFloat().roundToInt() >= 12){ id="${values[0].roundToInt()}:00pm"}else {
                     id="${values[0].roundToInt()}:00am"
                 }
-                if (values[1].toFloat()>12.00){ newId="${values[1].roundToInt()}:00pm"}else {
+                if (values[1].toFloat().roundToInt() >= 12){ newId="${values[1].roundToInt()}:00pm"}else {
                     newId="${values[1].roundToInt()}:00am"
                 }
 
@@ -342,10 +349,10 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
             val id:String
             val newId:String
 
-            if (values[0].toFloat()>12.00){ id="${values[0].roundToInt()}:00pm"}else {
+            if (values[0].toFloat().roundToInt() >= 12){ id="${values[0].roundToInt()}:00pm"}else {
                 id="${values[0].roundToInt()}:00am"
             }
-            if (values[1].toFloat()>12.00){ newId="${values[1].roundToInt()}:00pm"}else {
+            if (values[1].toFloat().roundToInt() >= 12){ newId="${values[1].roundToInt()}:00pm"}else {
                 newId="${values[1].roundToInt()}:00am"
             }
             binding.Thstv.text ="$id - $newId"
@@ -354,7 +361,7 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
         }
 
         binding.fridaySlider.setLabelFormatter { value: Float ->
-            return@setLabelFormatter if (value>12.00){"${value.roundToInt()}:00pm"}else{
+            return@setLabelFormatter if (value.roundToInt()>=12){"${value.roundToInt()}:00pm"}else{
                 "${value.roundToInt()}:00am"
             }
         }
@@ -378,10 +385,10 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
                 //Those are the new updated values of sldier when user has finshed dragging
                 Log.i("SliderNewValue From", values[0].toString())
                 Log.i("SliderNewValue To", values[1].toString())
-                if (values[0].toFloat()>12.00){ id="${values[0].roundToInt()}:00pm"}else {
+                if (values[0].toFloat().roundToInt() >= 12){ id="${values[0].roundToInt()}:00pm"}else {
                     id="${values[0].roundToInt()}:00am"
                 }
-                if (values[1].toFloat()>12.00){ newId="${values[1].roundToInt()}:00pm"}else {
+                if (values[1].toFloat().roundToInt() >= 12){ newId="${values[1].roundToInt()}:00pm"}else {
                     newId="${values[1].roundToInt()}:00am"
                 }
 
@@ -395,10 +402,10 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
             val id:String
             val newId:String
 
-            if (values[0].toFloat()>12.00){ id="${values[0].roundToInt()}:00pm"}else {
+            if (values[0].toFloat().roundToInt() >= 12){ id="${values[0].roundToInt()}:00pm"}else {
                 id="${values[0].roundToInt()}:00am"
             }
-            if (values[1].toFloat()>12.00){ newId="${values[1].roundToInt()}:00pm"}else {
+            if (values[1].toFloat().roundToInt() >= 12){ newId="${values[1].roundToInt()}:00pm"}else {
                 newId="${values[1].roundToInt()}:00am"
             }
             binding.Fstv.text ="$id - $newId"
@@ -406,7 +413,7 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
         }
 
         binding.saturdaySlider.setLabelFormatter { value: Float ->
-            return@setLabelFormatter if (value>12.00){"${value.roundToInt()}:00pm"}else{
+            return@setLabelFormatter if (value.roundToInt()>=12){"${value.roundToInt()}:00pm"}else{
                 "${value.roundToInt()}:00am"
             }
         }
@@ -430,10 +437,10 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
                 //Those are the new updated values of sldier when user has finshed dragging
                 Log.i("SliderNewValue From", values[0].toString())
                 Log.i("SliderNewValue To", values[1].toString())
-                if (values[0].toFloat()>12.00){ id="${values[0].roundToInt()}:00pm"}else {
+                if (values[0].toFloat().roundToInt() >= 12){ id="${values[0].roundToInt()}:00pm"}else {
                     id="${values[0].roundToInt()}:00am"
                 }
-                if (values[1].toFloat()>12.00){ newId="${values[1].roundToInt()}:00pm"}else {
+                if (values[1].toFloat().roundToInt() >= 12){ newId="${values[1].roundToInt()}:00pm"}else {
                     newId="${values[1].roundToInt()}:00am"
                 }
 
@@ -447,10 +454,10 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
             val id:String
             val newId:String
 
-            if (values[0].toFloat()>12.00){ id="${values[0].roundToInt()}:00pm"}else {
+            if (values[0].toFloat().roundToInt() >= 12){ id="${values[0].roundToInt()}:00pm"}else {
                 id="${values[0].roundToInt()}:00am"
             }
-            if (values[1].toFloat()>12.00){ newId="${values[1].roundToInt()}:00pm"}else {
+            if (values[1].toFloat().roundToInt() >= 12){ newId="${values[1].roundToInt()}:00pm"}else {
                 newId="${values[1].roundToInt()}:00am"
             }
             binding.Sastv.text ="$id - $newId"
