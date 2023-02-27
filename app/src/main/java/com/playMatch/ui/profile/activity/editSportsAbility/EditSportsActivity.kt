@@ -10,6 +10,7 @@ import com.playMatch.ui.signUp.signUpAdapters.SelectSportAdapter
 import com.playMatch.ui.signUp.signupModel.SelectSportModel
 import com.playMatch.controller.sharedPrefrence.PrefData
 import com.playMatch.ui.signUp.signupModel.SportsList
+import com.playMatch.ui.signUp.signupModel.selectedSportModel
 
 class EditSportsActivity : BaseActivity(), View.OnClickListener {
     private lateinit var binding: ActivityEditSportsBinding
@@ -28,7 +29,8 @@ class EditSportsActivity : BaseActivity(), View.OnClickListener {
     private fun setAdapter() {
         if (list.isEmpty()) {
             adapter = SelectSportAdapter(list, this,object:SelectSportsListener{
-                override fun onItemClick(position: Int, list: String) {
+
+                override fun onItemClick(position: Int, list: ArrayList<selectedSportModel>) {
                 }
             })
             binding.rvEditSports.adapter = adapter
