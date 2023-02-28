@@ -603,7 +603,7 @@
                         android:textColor="@color/black"
                         android:textSize="@dimen/_10ssp"
                         android:layout_marginStart="@dimen/_10sdp"
-                        android:text="00:00am - 23:59pm"
+                        android:text="00:00am - 23:59 pm"
                         android:backgroundTint="@color/white"
                         android:fontFamily="@font/metropolis_light"/>
 
@@ -649,7 +649,7 @@
                         android:textColor="@color/black"
                         android:textSize="@dimen/_10ssp"
                         android:layout_marginStart="@dimen/_10sdp"
-                        android:text="00:00am - 23:59pm"
+                        android:text="00:00am - 23:59 pm"
                         android:backgroundTint="@color/white"
                         android:fontFamily="@font/metropolis_light"/>
 
@@ -695,7 +695,7 @@
                         android:layout_height="match_parent"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_10ssp"
-                        android:text="00:00am - 23:59pm"
+                        android:text="00:00am - 23:59 pm"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:backgroundTint="@color/white"
                         android:fontFamily="@font/metropolis_light"/>
@@ -742,7 +742,7 @@
                         android:layout_height="match_parent"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_10ssp"
-                        android:text="00:00am - 23:59pm"
+                        android:text="00:00am - 23:59 pm"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:backgroundTint="@color/white"
                         android:fontFamily="@font/metropolis_light"/>
@@ -789,7 +789,7 @@
                         android:layout_height="match_parent"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_10ssp"
-                        android:text="00:00am - 23:59pm"
+                        android:text="00:00am - 23:59 pm"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:backgroundTint="@color/white"
                         android:fontFamily="@font/metropolis_light"/>
@@ -835,7 +835,7 @@
                         android:layout_height="match_parent"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_10ssp"
-                        android:text="00:00am - 23:59pm"
+                        android:text="00:00am - 23:59 pm"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:backgroundTint="@color/white"
                         android:fontFamily="@font/metropolis_light"/>
@@ -882,7 +882,7 @@
                         android:layout_height="match_parent"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_10ssp"
-                        android:text="00:00am - 23:59pm"
+                        android:text="00:00am - 23:59 pm"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:backgroundTint="@color/white"
                         android:fontFamily="@font/metropolis_light"/>

@@ -233,14 +233,24 @@ class UserApi( val activity: Activity): BaseActivity()  {
         activity: Activity,
         imageBytes: ByteArray,
         imageName: String,
-        editProfilePost: EditProfilePost
+        name: String,
+        gender: String,
+        dob: String,
+        location: String,
+        fitness: String,
+        sun: String,
+        mon: String,
+        tue: String,
+        wed: String,
+        thu: String,
+        fri: String,
+        sat: String,
     ): ResultResponse {
         return try {
-            val requestFile =
-                imageBytes.toRequestBody("image/*".toMediaTypeOrNull(), 0, imageBytes.size)
+            val requestFile = imageBytes.toRequestBody("image/*".toMediaTypeOrNull(), 0, imageBytes.size)
 
             val imageBody = MultipartBody.Part.createFormData("image", imageName, requestFile)
-            val response = apiService?.editProfile(ApiConstant.BEARER_TOKEN + " " +token!!, imageBody,editProfilePost)
+            val response = apiService?.editProfile(ApiConstant.BEARER_TOKEN + " " +token!!,imageBody,name.toRequestBody(),gender.toRequestBody(),dob.toRequestBody(),location.toRequestBody(),fitness.toRequestBody(),sun.toRequestBody(),mon.toRequestBody(),tue.toRequestBody(),wed.toRequestBody(),thu.toRequestBody(),fri.toRequestBody(),sat.toRequestBody())
             if (response?.isSuccessful!!) {
                 val model = response.body()
                 ResultResponse.Success(model)

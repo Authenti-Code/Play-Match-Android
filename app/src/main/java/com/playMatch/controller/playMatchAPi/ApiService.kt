@@ -1,6 +1,7 @@
 package com.playMatch.controller.playMatchAPi
 
 
+import com.playMatch.controller.playMatchAPi.apiClasses.ApiParameters
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.editProfile.EditProfilePost
 import com.playMatch.ui.login.model.LoginResponse
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.login.LoginPost
@@ -13,6 +14,7 @@ import com.playMatch.ui.profile.model.editProfile.EditProfileResponse
 import com.playMatch.ui.profile.model.profile.ProfileResponse
 import com.playMatch.ui.signUp.signupModel.*
 import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -75,6 +77,19 @@ interface ApiService {
     suspend fun editProfile(
         @Header(ApiConstant.AUTHORIZATION) token: String,
         @Part image: MultipartBody.Part,
-        @Part eventDetail: EditProfilePost?
-    ): Response<EditProfileResponse>
+        @Part(ApiParameters.Name)name: RequestBody? = null,
+        @Part(ApiParameters.GENDER) gender: RequestBody? = null,
+        @Part (ApiParameters.DOB) dob:RequestBody,
+        @Part (ApiParameters.LOCATION) location: RequestBody?= null,
+        @Part (ApiParameters.FitnessLevel) fitnessLevel: RequestBody?= null,
+        @Part (ApiParameters.Sunday) sun: RequestBody?= null,
+        @Part (ApiParameters.Monday) mon: RequestBody?= null,
+        @Part (ApiParameters.Tuesday) tue: RequestBody?= null,
+        @Part (ApiParameters.Wednesday) wed: RequestBody?= null,
+        @Part (ApiParameters.Thursday) thu: RequestBody?= null,
+        @Part (ApiParameters.Friday) fri: RequestBody?= null,
+        @Part (ApiParameters.Saturday) sat: RequestBody?= null,
+        ): Response<EditProfileResponse>
+
+
 }

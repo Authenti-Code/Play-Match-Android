@@ -58,8 +58,6 @@ class SelectSportAdapter(var list: ArrayList<SportsList>, var activity: Activity
                                 nlist.add(selectedSportModel(ItemsviewModel.id,viewType,ItemsviewModel.sportName))
                             }
                         }
-
-
                     }
 //                    param=  nlist.joinToString()
                     if (nlist!=null) {

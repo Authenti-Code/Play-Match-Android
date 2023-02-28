@@ -58,7 +58,6 @@ class ProfileFragment : Fragment(),View.OnClickListener {
             (activity as BaseActivity).notifications = true
             initViews()
             setAdapter()
-            profileApi()
         } catch (e: Exception) {
             e.printStackTrace()
         }
@@ -91,16 +90,6 @@ class ProfileFragment : Fragment(),View.OnClickListener {
     private fun setAdapter() {
         profileSportsAdapter = ProfileSportsAdapter(sportsList, requireActivity())
         binding?.rvSports?.adapter = profileSportsAdapter
-
-        list.clear()
-        for (i in 1..5) {
-            list.add(
-                HomeChildModel(
-                    R.drawable.ic_league_match,"Cricket"
-                )
-            )
-
-        }
 
         profileStatisticsAdapter = ProfileStatisticsAdapter(list, requireActivity())
         binding?.rvStatistics?.adapter = profileStatisticsAdapter
@@ -189,34 +178,65 @@ class ProfileFragment : Fragment(),View.OnClickListener {
 
                     profileSportsAdapter?.updateSportsList(response.data.sportLevel,binding?.rvSports)
 
-                    if (response.data.sun!= ""){
+                    if (response.data.sun.isNotEmpty()){
                         binding?.Scv!!.setCardBackgroundColor(Color.parseColor("#F95047"))
                         binding?.Stv!!.setTextColor(Color.WHITE)
                     }
-                    if (response.data.mon!= ""){
+                    if (response.data.mon.isNotEmpty()){
                         binding?.Mcv!!.setCardBackgroundColor(Color.parseColor("#F95047"))
                         binding?.Mtv!!.setTextColor(Color.WHITE)
                     }
-                    if (response.data.tue!= ""){
+                    if (response.data.tue.isNotEmpty()){
                         binding?.Tcv!!.setCardBackgroundColor(Color.parseColor("#F95047"))
                         binding?.Ttv!!.setTextColor(Color.WHITE)
                     }
-                    if (response.data.wed!= ""){
+                    if (response.data.wed.isNotEmpty()){
                         binding?.Wcv!!.setCardBackgroundColor(Color.parseColor("#F95047"))
                         binding?.Wtv!!.setTextColor(Color.WHITE)
                     }
-                    if (response.data.thu!= ""){
+                    if (response.data.thu.isNotEmpty()){
                         binding?.Thcv!!.setCardBackgroundColor(Color.parseColor("#F95047"))
                         binding?.Thtv!!.setTextColor(Color.WHITE)
                     }
-                    if (response.data.fri != ""){
+                    if (response.data.fri.isNotEmpty()){
                         binding?.Fcv!!.setCardBackgroundColor(Color.parseColor("#F95047"))
                         binding?.Ftv!!.setTextColor(Color.WHITE)
                     }
-                    if (response.data.sat!= ""){
+                    if (response.data.sat.isNotEmpty()){
                         binding?.Sacv!!.setCardBackgroundColor(Color.parseColor("#F95047"))
                         binding?.Satv!!.setTextColor(Color.WHITE)
-                    }else{
+                    }else {
+                        if (response.data.sun.isEmpty()) {
+                            binding?.Scv!!.setCardBackgroundColor(Color.WHITE)
+                            binding?.Stv!!.setTextColor(Color.parseColor("#F95047"))
+                        }
+                        if (response.data.mon.isEmpty()) {
+                            binding?.Mcv!!.setCardBackgroundColor(Color.WHITE)
+                            binding?.Mtv!!.setTextColor(Color.parseColor("#F95047"))
+                        }
+                        if (response.data.tue.isEmpty()) {
+                            binding?.Tcv!!.setCardBackgroundColor(Color.WHITE)
+                            binding?.Ttv!!.setTextColor(Color.parseColor("#F95047"))
+                        }
+                        if (response.data.wed.isEmpty()) {
+                            binding?.Wcv!!.setCardBackgroundColor(Color.WHITE)
+                            binding?.Wtv!!.setTextColor(Color.parseColor("#F95047"))
+                        }
+                        if (response.data.thu.isEmpty()) {
+                            binding?.Thcv!!.setCardBackgroundColor(Color.WHITE)
+                            binding?.Thtv!!.setTextColor(Color.parseColor("#F95047"))
+                        }
+                        if (response.data.fri.isEmpty()) {
+                            binding?.Fcv!!.setCardBackgroundColor(Color.WHITE)
+                            binding?.Ftv!!.setTextColor(Color.parseColor("#F95047"))
+                        }
+                        if(response.data.sat.isEmpty()) {
+                            binding?.Sacv!!.setCardBackgroundColor(Color.WHITE)
+                            binding?.Satv!!.setTextColor(Color.parseColor("#F95047"))
+                        }
+                        else{
+
+                        }
 
                     }
 
@@ -228,5 +248,10 @@ class ProfileFragment : Fragment(),View.OnClickListener {
                 (activity as BaseActivity).showError(resultResponse)
             }
         } as Unit
+    }
+
+    override fun onResume() {
+        super.onResume()
+        profileApi()
     }
 }

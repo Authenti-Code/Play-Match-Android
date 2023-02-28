@@ -41,6 +41,7 @@ import com.playMatch.ui.home.model.HomeChildModel
 import com.playMatch.ui.location.activity.LocationActivity
 import com.playMatch.ui.profile.activity.editSportsAbility.EditSportsActivity
 import com.playMatch.ui.profile.adapter.ProfileSportsAdapter
+import com.playMatch.ui.profile.model.editProfile.EditProfileResponse
 import com.playMatch.ui.profile.model.profile.ProfileResponse
 import com.playMatch.ui.profile.model.profile.SportLevel
 import com.playMatch.ui.signUp.SelectSportActivity
@@ -61,17 +62,13 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
 
 
     //String
-    private var sun:String?=null
-    private var mon:String?=null
-    private var tue:String?=null
-    private var wed:String?=null
-    private var thu:String?=null
-    private var fri:String?=null
-    private var sat:String?=null
-    private var name:String?=null
-    private var email:String?=null
-    private var password:String?=null
-    private var confirmPass:String?=null
+    private var sun:String?=""
+    private var mon:String?=""
+    private var tue:String?=""
+    private var wed:String?=""
+    private var thu:String?=""
+    private var fri:String?=""
+    private var sat:String?=""
     private var fitnessLevel:String?="Intermediate"
 
     //boolean
@@ -97,7 +94,6 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
         setContentView(binding.root)
         initView()
         setAdapter()
-        profileApi()
     }
 
     @SuppressLint("SetTextI18n")
@@ -109,8 +105,6 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
         binding.experienced.setOnClickListener(this)
         binding.editSports.setOnClickListener(this)
         binding.editImage.setOnClickListener(this)
-        binding.mondaySlider.setValues(0.0f,5.0f)
-        binding.tuesdaySlider.setValues(0.0f,5.0f)
         binding.Stv.setOnClickListener(this)
         binding.Mtv.setOnClickListener(this)
         binding.Ttv.setOnClickListener(this)
@@ -910,13 +904,19 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
                         binding.Stv.setTextColor(Color.WHITE)
                         binding.Slay.visibility=View.VISIBLE
                         binding.Sstv.text=response.data.sun
+                        sun=binding.Sstv.text.toString()
+                        SCvColor=false
                         val strs = response.data.sun.split("-").toTypedArray()
                         val t1=strs[0]
                         val t2=strs[1]
                         val timePartsStart = t1.split(":")
                         val timePartsEnd = t2.split(":")
                         val start = timePartsStart[0].toFloat()
-                        val end = timePartsEnd[0].toFloat()
+                        var end = timePartsEnd[0].toFloat()
+
+                        if (timePartsEnd[1]=="59 pm"){
+                            end=24.toFloat()
+                        }
 
                         binding.sundaySlider.setValues(start,end)
                     }
@@ -927,14 +927,20 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
                         binding.Mcv.setCardBackgroundColor(Color.parseColor("#F95047"))
                         binding.Mtv.setTextColor(Color.WHITE)
                         binding.Mlay.visibility=View.VISIBLE
-                                binding.Mstv.text=response.data.sun
-                        val strs = response.data.sun.split("-").toTypedArray()
+                        MCvColor=false
+                        binding.Mstv.text=response.data.mon
+                        mon=binding.Mstv.text.toString()
+                        val strs = response.data.mon.split("-").toTypedArray()
                         val t1=strs[0]
                         val t2=strs[1]
                         val timePartsStart = t1.split(":")
                         val timePartsEnd = t2.split(":")
                         val start = timePartsStart[0].toFloat()
-                        val end = timePartsEnd[0].toFloat()
+                        var end = timePartsEnd[0].toFloat()
+
+                        if (timePartsEnd[1]=="59 pm"){
+                            end=24.toFloat()
+                        }
 
                         binding.mondaySlider.setValues(start,end)
                     }
@@ -946,13 +952,20 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
                         binding.Ttv.setTextColor(Color.WHITE)
                         binding.Tlay.visibility=View.VISIBLE
                         binding.Tstv.text=response.data.tue
+                        tue=binding.Tstv.text.toString()
+                        TCvColor=false
+
                         val strs = response.data.tue.split("-").toTypedArray()
                         val t1=strs[0]
                         val t2=strs[1]
                         val timePartsStart = t1.split(":")
                         val timePartsEnd = t2.split(":")
                         val start = timePartsStart[0].toFloat()
-                        val end = timePartsEnd[0].toFloat()
+                        var end = timePartsEnd[0].toFloat()
+
+                        if (timePartsEnd[1]=="59 pm"){
+                            end=24.toFloat()
+                        }
 
                         binding.tuesdaySlider.setValues(start,end)
                     } else{
@@ -962,15 +975,20 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
                         binding.Wcv.setCardBackgroundColor(Color.parseColor("#F95047"))
                         binding.Wtv.setTextColor(Color.WHITE)
                         binding.Wlay.visibility=View.VISIBLE
-                        binding.Wstv.text=response.data.tue
-                        val strs = response.data.tue.split("-").toTypedArray()
+                        binding.Wstv.text=response.data.wed
+                        wed=binding.Wstv.text.toString()
+                        WCvColor=false
+                        val strs = response.data.wed.split("-").toTypedArray()
                         val t1=strs[0]
                         val t2=strs[1]
                         val timePartsStart = t1.split(":")
                         val timePartsEnd = t2.split(":")
                         val start = timePartsStart[0].toFloat()
-                        val end = timePartsEnd[0].toFloat()
+                        var end = timePartsEnd[0].toFloat()
 
+                        if (timePartsEnd[1]=="59 pm"){
+                            end=24.toFloat()
+                        }
                         binding.wednesdaySlider.setValues(start,end)
                     } else{
                         binding.Wlay.visibility=View.GONE
@@ -979,15 +997,20 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
                         binding.Thcv.setCardBackgroundColor(Color.parseColor("#F95047"))
                         binding.Thtv.setTextColor(Color.WHITE)
                         binding.Thlay.visibility=View.VISIBLE
-                        binding.Thstv.text=response.data.tue
-                        val strs = response.data.tue.split("-").toTypedArray()
+                        binding.Thstv.text=response.data.thu
+                        thu=binding.Thstv.text.toString()
+                        ThCvColor=false
+                        val strs = response.data.thu.split("-").toTypedArray()
                         val t1=strs[0]
                         val t2=strs[1]
                         val timePartsStart = t1.split(":")
                         val timePartsEnd = t2.split(":")
                         val start = timePartsStart[0].toFloat()
-                        val end = timePartsEnd[0].toFloat()
+                        var end = timePartsEnd[0].toFloat()
 
+                        if (timePartsEnd[1]=="59 pm"){
+                            end=24.toFloat()
+                        }
                         binding.thursdaySlider.setValues(start,end)
                     } else{
                         binding.Thlay.visibility=View.GONE
@@ -996,15 +1019,20 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
                         binding.Fcv.setCardBackgroundColor(Color.parseColor("#F95047"))
                         binding.Ftv.setTextColor(Color.WHITE)
                         binding.Flay.visibility=View.VISIBLE
-                        binding.Fstv.text=response.data.tue
-                        val strs = response.data.tue.split("-").toTypedArray()
+                        binding.Fstv.text=response.data.fri
+                        fri=binding.Fstv.text.toString()
+                        FCvColor=false
+
+                        val strs = response.data.fri.split("-").toTypedArray()
                         val t1=strs[0]
                         val t2=strs[1]
                         val timePartsStart = t1.split(":")
                         val timePartsEnd = t2.split(":")
                         val start = timePartsStart[0].toFloat()
-                        val end = timePartsEnd[0].toFloat()
-
+                        var end = timePartsEnd[0].toFloat()
+                        if (timePartsEnd[1]=="59 pm"){
+                            end=24.toFloat()
+                        }
                         binding.fridaySlider.setValues(start,end)
                     } else{
                         binding.Flay.visibility=View.GONE
@@ -1013,14 +1041,20 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
                         binding.Sacv.setCardBackgroundColor(Color.parseColor("#F95047"))
                         binding.Satv.setTextColor(Color.WHITE)
                         binding.SaLay.visibility=View.VISIBLE
-                        binding.Sastv.text=response.data.tue
+                        binding.Sastv.text=response.data.sat
+                        sat=binding.Sastv.text.toString()
+                        SACvColor=false
+
                         val strs = response.data.sat.split("-").toTypedArray()
                         val t1=strs[0]
                         val t2=strs[1]
                         val timePartsStart = t1.split(":")
                         val timePartsEnd = t2.split(":")
                         val start = timePartsStart[0].toFloat()
-                        val end = timePartsEnd[0].toFloat()
+                        var end = timePartsEnd[0].toFloat()
+                        if (timePartsEnd[1]=="59 pm"){
+                            end=24.toFloat()
+                        }
 
                         binding.saturdaySlider.setValues(start,end)
                     } else{
@@ -1044,8 +1078,7 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
         val imageBytes = bos.toByteArray()
         lifecycleScope.launchWhenStarted {
             val resultResponse = UserApi(this@EditProfileActivity).EditProfile(
-                this@EditProfileActivity, imageBytes, imageName.toString(), EditProfilePost(binding.name.text.toString().trim(),binding.dob.text.toString().trim(),binding.locationTv.text.toString().trim(),binding.gender.text.toString().trim(),fitnessLevel,sun,mon,tue,wed,thu,fri,sat)
-            )
+                this@EditProfileActivity, imageBytes, imageName.toString(),binding.name.text.toString().trim(),binding.gender.text.toString().trim(),binding.dob.text.toString().trim(),binding.locationTv.text.toString().trim(),fitnessLevel.toString(),sun!!,mon!!,tue!!,wed!!,thu!!,fri!!,sat!!)
             editProfileResult(resultResponse)
         }
     }
@@ -1053,10 +1086,9 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
     private fun editProfileResult(resultResponse: ResultResponse) {
         return when (resultResponse) {
             is ResultResponse.Success<*> -> {
-                val response = resultResponse.response as UploadImageResponse
+                val response = resultResponse.response as EditProfileResponse
                 if (response.success == "true") {
-                    CommonUtils.performIntent(this, SelectSportActivity::class.java)
-                    CommonUtils.hideProgressDialog()
+                   onBackPressed()
                 } else {
                     showSnackBar(
                         binding.rootView, response.message
@@ -1083,6 +1115,8 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
         if (location.isNotEmpty()){
         binding.locationTv.text = location
             }
+        profileApi()
+
     }
 
     private fun showProgressBar(){

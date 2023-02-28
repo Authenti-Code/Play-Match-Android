@@ -216,10 +216,6 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\drawable-mdpi\\or.png"
     },
     {
-        "merged": "com.playMatch.app-merged_res-48:/layout_activity_edit_profile.xml.flat",
-        "source": "com.playMatch.app-main-50:/layout/activity_edit_profile.xml"
-    },
-    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-merged_res-48:\\drawable-xxxhdpi_profile.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\drawable-xxxhdpi\\profile.png"
     },
@@ -1826,6 +1822,10 @@
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-merged_res-48:\\drawable_ic_user.xml.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\drawable\\ic_user.xml"
+    },
+    {
+        "merged": "com.playMatch.app-merged_res-48:/layout_activity_edit_sports.xml.flat",
+        "source": "com.playMatch.app-main-50:/layout/activity_edit_sports.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-merged_res-48:\\drawable-ldpi_seletec_profile_icon.png.flat",
