@@ -163,6 +163,7 @@ font metropolis_semibolditalic
 font metropolis_thin
 font metropolis_thinitalic
 id Apply
+id BeginnerTv
 id Continue
 id ExperiencedTv
 id Fcv
@@ -225,6 +226,7 @@ id checkbox2
 id close
 id confirmLocation
 id confirmPass
+id continueProgressBar
 id continueTv
 id createMatch
 id createTeam
@@ -337,6 +339,7 @@ id showInterest
 id signupTv
 id skip
 id snackbar_text
+id sportLevel
 id sportName
 id sportsTv
 id streetMap
@@ -350,6 +353,7 @@ id toolbar_layout
 id tuesdaySlider
 id upcoming_match
 id update
+id updateTV
 id userMessage
 id userName
 id userTime

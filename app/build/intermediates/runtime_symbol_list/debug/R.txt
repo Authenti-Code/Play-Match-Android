@@ -3909,6 +3909,7 @@ int id ALT 0x7f0a0000
 int id Apply 0x7f0a0001
 int id BOTTOM_END 0x7f0a0002
 int id BOTTOM_START 0x7f0a0003
+int id BeginnerTv 0x7f0a02d7
 int id CTRL 0x7f0a0004
 int id Continue 0x7f0a0005
 int id ExperiencedTv 0x7f0a0006
@@ -4103,6 +4104,7 @@ int id container 0x7f0a00c2
 int id content 0x7f0a00c3
 int id contentPanel 0x7f0a00c4
 int id contiguous 0x7f0a00c5
+int id continueProgressBar 0x7f0a02d8
 int id continueTv 0x7f0a00c6
 int id continuousVelocity 0x7f0a00c7
 int id coordinator 0x7f0a00c8
@@ -4516,6 +4518,7 @@ int id special_effects_controller_view_tag 0x7f0a025f
 int id spinner 0x7f0a0260
 int id spline 0x7f0a0261
 int id split_action_bar 0x7f0a0262
+int id sportLevel 0x7f0a02d6
 int id sportName 0x7f0a0263
 int id sportsTv 0x7f0a0264
 int id spread 0x7f0a0265
@@ -4599,6 +4602,7 @@ int id unlabeled 0x7f0a02b2
 int id up 0x7f0a02b3
 int id upcoming_match 0x7f0a02b4
 int id update 0x7f0a02b5
+int id updateTV 0x7f0a02d9
 int id useLogo 0x7f0a02b6
 int id userMessage 0x7f0a02b7
 int id userName 0x7f0a02b8

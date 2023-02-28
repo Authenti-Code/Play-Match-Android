@@ -3910,6 +3910,7 @@ id ALT
 id Apply
 id BOTTOM_END
 id BOTTOM_START
+id BeginnerTv
 id CTRL
 id Continue
 id ExperiencedTv
@@ -4104,6 +4105,7 @@ id container
 id content
 id contentPanel
 id contiguous
+id continueProgressBar
 id continueTv
 id continuousVelocity
 id coordinator
@@ -4517,6 +4519,7 @@ id special_effects_controller_view_tag
 id spinner
 id spline
 id split_action_bar
+id sportLevel
 id sportName
 id sportsTv
 id spread
@@ -4600,6 +4603,7 @@ id unlabeled
 id up
 id upcoming_match
 id update
+id updateTV
 id useLogo
 id userMessage
 id userName

@@ -8,6 +8,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatTextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.playMatch.R;
@@ -20,11 +21,15 @@ public final class RvProfileListItemSportsAbilityBinding implements ViewBinding 
   private final FrameLayout rootView;
 
   @NonNull
+  public final AppCompatTextView sportLevel;
+
+  @NonNull
   public final TextView sportName;
 
   private RvProfileListItemSportsAbilityBinding(@NonNull FrameLayout rootView,
-      @NonNull TextView sportName) {
+      @NonNull AppCompatTextView sportLevel, @NonNull TextView sportName) {
     this.rootView = rootView;
+    this.sportLevel = sportLevel;
     this.sportName = sportName;
   }
 
@@ -55,13 +60,20 @@ public final class RvProfileListItemSportsAbilityBinding implements ViewBinding 
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.sportLevel;
+      AppCompatTextView sportLevel = ViewBindings.findChildViewById(rootView, id);
+      if (sportLevel == null) {
+        break missingId;
+      }
+
       id = R.id.sportName;
       TextView sportName = ViewBindings.findChildViewById(rootView, id);
       if (sportName == null) {
         break missingId;
       }
 
-      return new RvProfileListItemSportsAbilityBinding((FrameLayout) rootView, sportName);
+      return new RvProfileListItemSportsAbilityBinding((FrameLayout) rootView, sportLevel,
+          sportName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
