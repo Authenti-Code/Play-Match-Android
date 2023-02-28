@@ -64,6 +64,7 @@
             android:layout_width="@dimen/_70sdp"
             android:layout_height="@dimen/_70sdp"
             app:cardCornerRadius="@dimen/_18sdp"
+            app:cardElevation="@dimen/_5sdp"
             android:layout_marginStart="@dimen/_50sdp"
             android:layout_marginVertical="@dimen/_5sdp">
 
@@ -73,7 +74,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="fitXY"
-                android:src="@drawable/my_image"/>
+                android:src="@drawable/new_dummy_profile"/>
 
             <ProgressBar
                 android:id="@+id/progressBar"

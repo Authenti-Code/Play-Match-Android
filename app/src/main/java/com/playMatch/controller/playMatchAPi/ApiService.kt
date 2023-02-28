@@ -1,6 +1,7 @@
 package com.playMatch.controller.playMatchAPi
 
 
+import com.playMatch.controller.playMatchAPi.postPojoModel.user.editProfile.EditProfilePost
 import com.playMatch.ui.login.model.LoginResponse
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.login.LoginPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.logout.LogoutPost
@@ -8,6 +9,7 @@ import com.playMatch.controller.playMatchAPi.postPojoModel.user.matchAvailabilit
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.register.RegisterPost
 import com.playMatch.ui.signUp.userSports.UserSportsPost
 import com.playMatch.ui.profile.activity.settingActivity.model.LogoutResponse
+import com.playMatch.ui.profile.model.editProfile.EditProfileResponse
 import com.playMatch.ui.profile.model.profile.ProfileResponse
 import com.playMatch.ui.signUp.signupModel.*
 import okhttp3.MultipartBody
@@ -67,4 +69,12 @@ interface ApiService {
     suspend fun profile(
         @Header(ApiConstant.AUTH) token: String,
     ):Response<ProfileResponse>
+
+    @Multipart
+    @POST(ApiConstant.EDIT_PROFILE)
+    suspend fun editProfile(
+        @Header(ApiConstant.AUTHORIZATION) token: String,
+        @Part image: MultipartBody.Part,
+        @Part eventDetail: EditProfilePost?
+    ): Response<EditProfileResponse>
 }

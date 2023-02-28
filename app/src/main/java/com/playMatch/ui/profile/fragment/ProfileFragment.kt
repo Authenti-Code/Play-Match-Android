@@ -29,6 +29,7 @@ import com.playMatch.ui.profile.adapter.ProfileStatisticsAdapter
 import com.playMatch.controller.sharedPrefrence.PrefData
 import com.playMatch.ui.home.activity.HomeActivity
 import com.playMatch.ui.profile.model.profile.ProfileResponse
+import com.playMatch.ui.profile.model.profile.SportLevel
 import com.playMatch.ui.signUp.signupModel.MatchAvailabilityResponse
 
 @Suppress("IMPLICIT_CAST_TO_ANY")
@@ -37,6 +38,7 @@ class ProfileFragment : Fragment(),View.OnClickListener {
     private var profileSportsAdapter: ProfileSportsAdapter? = null
     private var profileStatisticsAdapter: ProfileStatisticsAdapter? = null
     private var list = ArrayList<HomeChildModel>()
+    private var sportsList = ArrayList<SportLevel>()
     private var pageNo: String = "1"
     private var totalPages: String = ""
 
@@ -87,7 +89,7 @@ class ProfileFragment : Fragment(),View.OnClickListener {
 
     @SuppressLint("SuspiciousIndentation")
     private fun setAdapter() {
-        profileSportsAdapter = ProfileSportsAdapter(list, requireActivity())
+        profileSportsAdapter = ProfileSportsAdapter(sportsList, requireActivity())
         binding?.rvSports?.adapter = profileSportsAdapter
 
         list.clear()
@@ -147,7 +149,7 @@ class ProfileFragment : Fragment(),View.OnClickListener {
                 //get data and convert string to json and save data
                 if (response.success == "true") {
                     Glide.with(requireActivity())
-                        .load("http://"+response.data.image)
+                        .load(response.data.image)
                         .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
                         .skipMemoryCache(true)
                         .priority(Priority.IMMEDIATE)
@@ -184,6 +186,8 @@ class ProfileFragment : Fragment(),View.OnClickListener {
                     binding?.fitnessLevel!!.text=response.data.fitnessLevel
                     binding?.address!!.text=response.data.location
                     binding?.address!!.text=response.data.location
+
+                    profileSportsAdapter?.updateSportsList(response.data.sportLevel,binding?.rvSports)
 
                     if (response.data.sun!= ""){
                         binding?.Scv!!.setCardBackgroundColor(Color.parseColor("#F95047"))

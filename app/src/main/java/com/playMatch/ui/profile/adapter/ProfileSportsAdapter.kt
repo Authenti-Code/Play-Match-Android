@@ -8,8 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.playMatch.databinding.RvProfileListItemSportsAbilityBinding
 import com.playMatch.ui.home.model.HomeChildModel
 import com.playMatch.controller.sharedPrefrence.PrefData
+import com.playMatch.ui.profile.model.profile.SportLevel
 
-class ProfileSportsAdapter(var list: ArrayList<HomeChildModel>, var activity: Activity) : RecyclerView.Adapter<ProfileSportsAdapter.ViewHolder>() {
+class ProfileSportsAdapter(var list: ArrayList<SportLevel>, var activity: Activity) : RecyclerView.Adapter<ProfileSportsAdapter.ViewHolder>() {
 
 
     private val USER = 0
@@ -41,7 +42,8 @@ class ProfileSportsAdapter(var list: ArrayList<HomeChildModel>, var activity: Ac
 //            }else{
 //                binding.cardView.setCardBackgroundColor(Color.parseColor("#80F95047"))
 //            }
-            holder.binding.sportName.text = ItemsviewModel.name
+            holder.binding.sportName.text = ItemsviewModel.sportName.toString()
+            holder.binding.sportLevel.text = ItemsviewModel.sportLevel
 
 
 
@@ -66,7 +68,7 @@ class ProfileSportsAdapter(var list: ArrayList<HomeChildModel>, var activity: Ac
 
 
     @SuppressLint("NotifyDataSetChanged")
-    fun updateCommentList(Data: List<HomeChildModel>, mRecyclerview: RecyclerView?) {
+    fun updateSportsList(Data: List<SportLevel>, mRecyclerview: RecyclerView?) {
         if (list.size > 0) {
             list.clear()
             notifyDataSetChanged()
@@ -74,10 +76,10 @@ class ProfileSportsAdapter(var list: ArrayList<HomeChildModel>, var activity: Ac
         list.addAll(Data)
         notifyDataSetChanged()
 
-        mRecyclerview?.postDelayed({
-            mRecyclerview.scrollToPosition(itemCount - 1)
+//        mRecyclerview?.postDelayed({
+//            mRecyclerview.scrollToPosition(itemCount - 1)
 
-        }, 100)
+//        }, 100)
     }
 
 

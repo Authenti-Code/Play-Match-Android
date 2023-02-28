@@ -17,6 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cricket"
+            android:layout_marginEnd="@dimen/_10sdp"
             android:textColor="@color/white"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_15sdp"
@@ -38,6 +39,7 @@
 
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/sportLevel"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textColor="@color/white"

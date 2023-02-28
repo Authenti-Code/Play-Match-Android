@@ -2,6 +2,7 @@ package com.playMatch.controller.playMatchAPi.apiClasses
 
 import android.app.Activity
 import com.playMatch.controller.playMatchAPi.*
+import com.playMatch.controller.playMatchAPi.postPojoModel.user.editProfile.EditProfilePost
 import com.playMatch.ui.baseActivity.BaseActivity
 import com.playMatch.controller.sharedPrefrence.PrefData
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.login.LoginPost
@@ -208,6 +209,38 @@ class UserApi( val activity: Activity): BaseActivity()  {
     suspend fun profile(): ResultResponse {
         return try {
             val response = apiService?.profile(ApiConstant.BEARER_TOKEN + " " + token)
+            if (response?.isSuccessful!!) {
+                val model = response.body()
+                ResultResponse.Success(model)
+            } else {
+                when (response.code()) {
+                    403 -> ResultResponse.HttpErrors.ResourceForbidden(response.message())
+                    404 -> ResultResponse.HttpErrors.ResourceNotFound(response.message())
+                    500 -> ResultResponse.HttpErrors.InternalServerError(response.message())
+                    502 -> ResultResponse.HttpErrors.BadGateWay(response.message())
+                    301 -> ResultResponse.HttpErrors.ResourceRemoved(response.message())
+                    302 -> ResultResponse.HttpErrors.RemovedResourceFound(response.message())
+                    else -> ResultResponse.Error(response.message())
+                }
+            }
+
+        } catch (error: IOException) {
+            ResultResponse.NetworkException(error.message!!)
+        }
+    }
+
+    suspend fun EditProfile(
+        activity: Activity,
+        imageBytes: ByteArray,
+        imageName: String,
+        editProfilePost: EditProfilePost
+    ): ResultResponse {
+        return try {
+            val requestFile =
+                imageBytes.toRequestBody("image/*".toMediaTypeOrNull(), 0, imageBytes.size)
+
+            val imageBody = MultipartBody.Part.createFormData("image", imageName, requestFile)
+            val response = apiService?.editProfile(ApiConstant.BEARER_TOKEN + " " +token!!, imageBody,editProfilePost)
             if (response?.isSuccessful!!) {
                 val model = response.body()
                 ResultResponse.Success(model)

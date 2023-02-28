@@ -214,9 +214,5 @@
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-mergeDebugResources-47:\\layout\\rv_filter_list_item.xml",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\layout\\rv_filter_list_item.xml"
-    },
-    {
-        "merged": "com.playMatch.app-mergeDebugResources-47:/layout/fragment_profile.xml",
-        "source": "com.playMatch.app-main-50:/layout/fragment_profile.xml"
     }
 ]

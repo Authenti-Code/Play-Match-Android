@@ -1756,10 +1756,6 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\drawable-xxhdpi\\setting.png"
     },
     {
-        "merged": "com.playMatch.app-merged_res-48:/layout_fragment_profile.xml.flat",
-        "source": "com.playMatch.app-main-50:/layout/fragment_profile.xml"
-    },
-    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-merged_res-48:\\drawable-mdpi_edit_profile.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\drawable-mdpi\\edit_profile.png"
     },
