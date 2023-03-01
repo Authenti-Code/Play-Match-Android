@@ -231,6 +231,7 @@ id continueProgressBar
 id continueTv
 id createMatch
 id createTeam
+id createTeamTV
 id date
 id description
 id distanceTV
@@ -325,7 +326,6 @@ id rv_searchPlayers
 id rv_sports
 id rv_statistics
 id saturdaySlider
-id save
 id search
 id searchPlayers
 id searchPlayersTv

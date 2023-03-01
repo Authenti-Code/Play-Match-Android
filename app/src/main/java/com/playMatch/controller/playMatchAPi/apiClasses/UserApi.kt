@@ -9,6 +9,7 @@ import com.playMatch.controller.playMatchAPi.postPojoModel.user.login.LoginPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.logout.LogoutPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.matchAvailability.MatchAvailabilityPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.register.RegisterPost
+import com.playMatch.controller.playMatchAPi.postPojoModel.user.showTeam.ShowTeamPost
 import com.playMatch.ui.signUp.userSports.UserSportsPost
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
@@ -163,7 +164,7 @@ class UserApi( val activity: Activity): BaseActivity()  {
 
     suspend fun sportsLevels(userSportsPost: UserSportsPost): ResultResponse {
         return try {
-            val response = apiService?.sportLevels(ApiConstant.BEARER_TOKEN + " " + "token",userSportsPost)
+            val response = apiService?.sportLevels(ApiConstant.BEARER_TOKEN + " " + token,userSportsPost)
             if (response?.isSuccessful!!) {
                 val model = response.body()
                 ResultResponse.Success(model)
@@ -316,4 +317,97 @@ class UserApi( val activity: Activity): BaseActivity()  {
             ResultResponse.NetworkException(error.message!!)
         }
     }
+
+    suspend fun teams(): ResultResponse {
+        return try {
+            val response = apiService?.teams(ApiConstant.BEARER_TOKEN + " " + token)
+            if (response?.isSuccessful!!) {
+                val model = response.body()
+                ResultResponse.Success(model)
+            } else {
+                when (response.code()) {
+                    403 -> ResultResponse.HttpErrors.ResourceForbidden(response.message())
+                    404 -> ResultResponse.HttpErrors.ResourceNotFound(response.message())
+                    500 -> ResultResponse.HttpErrors.InternalServerError(response.message())
+                    502 -> ResultResponse.HttpErrors.BadGateWay(response.message())
+                    301 -> ResultResponse.HttpErrors.ResourceRemoved(response.message())
+                    302 -> ResultResponse.HttpErrors.RemovedResourceFound(response.message())
+                    else -> ResultResponse.Error(response.message())
+                }
+            }
+
+        } catch (error: IOException) {
+            ResultResponse.NetworkException(error.message!!)
+        }
+    }
+
+    suspend fun teamDetail(showTeamPost: ShowTeamPost): ResultResponse {
+        return try {
+            val response = apiService?.showTeam(ApiConstant.BEARER_TOKEN + " " + token,showTeamPost)
+            if (response?.isSuccessful!!) {
+                val model = response.body()
+                ResultResponse.Success(model)
+            } else {
+                when (response.code()) {
+                    403 -> ResultResponse.HttpErrors.ResourceForbidden(response.message())
+                    404 -> ResultResponse.HttpErrors.ResourceNotFound(response.message())
+                    500 -> ResultResponse.HttpErrors.InternalServerError(response.message())
+                    502 -> ResultResponse.HttpErrors.BadGateWay(response.message())
+                    301 -> ResultResponse.HttpErrors.ResourceRemoved(response.message())
+                    302 -> ResultResponse.HttpErrors.RemovedResourceFound(response.message())
+                    else -> ResultResponse.Error(response.message())
+                }
+            }
+
+        } catch (error: IOException) {
+            ResultResponse.NetworkException(error.message!!)
+        }
+    }
+
+    suspend fun editTeam(
+        activity: Activity,
+        imageBytes: ByteArray,
+        imageName: String,
+        teamId: String,
+        name: String,
+        gender: String,
+        sportId: String,
+        location: String,
+        teamStandard: String,
+        isKitProvided: String,
+        isAwayMatches: String,
+        sun: String,
+        mon: String,
+        tue: String,
+        wed: String,
+        thu: String,
+        fri: String,
+        sat: String,
+        otherDetails: String,
+    ): ResultResponse {
+        return try {
+            val requestFile = imageBytes.toRequestBody("image/*".toMediaTypeOrNull(), 0, imageBytes.size)
+
+            val imageBody = MultipartBody.Part.createFormData("image", imageName, requestFile)
+            val response = apiService?.editTeam(ApiConstant.BEARER_TOKEN + " " +token!!,imageBody,teamId.toRequestBody(),name.toRequestBody(),gender.toRequestBody(),sportId.toRequestBody(),location.toRequestBody(),teamStandard.toRequestBody(),isKitProvided.toRequestBody(),isAwayMatches.toRequestBody(),sun.toRequestBody(),mon.toRequestBody(),tue.toRequestBody(),wed.toRequestBody(),thu.toRequestBody(),fri.toRequestBody(),sat.toRequestBody(),otherDetails.toRequestBody())
+            if (response?.isSuccessful!!) {
+                val model = response.body()
+                ResultResponse.Success(model)
+            } else {
+                when (response.code()) {
+                    403 -> ResultResponse.HttpErrors.ResourceForbidden(response.message())
+                    404 -> ResultResponse.HttpErrors.ResourceNotFound(response.message())
+                    500 -> ResultResponse.HttpErrors.InternalServerError(response.message())
+                    502 -> ResultResponse.HttpErrors.BadGateWay(response.message())
+                    301 -> ResultResponse.HttpErrors.ResourceRemoved(response.message())
+                    302 -> ResultResponse.HttpErrors.RemovedResourceFound(response.message())
+                    else -> ResultResponse.Error(response.message())
+                }
+            }
+
+        } catch (error: IOException) {
+            ResultResponse.NetworkException(error.message!!)
+        }
+    }
+
 }

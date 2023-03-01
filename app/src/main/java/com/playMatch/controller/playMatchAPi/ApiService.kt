@@ -8,12 +8,16 @@ import com.playMatch.controller.playMatchAPi.postPojoModel.user.login.LoginPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.logout.LogoutPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.matchAvailability.MatchAvailabilityPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.register.RegisterPost
+import com.playMatch.controller.playMatchAPi.postPojoModel.user.showTeam.ShowTeamPost
 import com.playMatch.ui.signUp.userSports.UserSportsPost
 import com.playMatch.ui.profile.activity.settingActivity.model.LogoutResponse
 import com.playMatch.ui.profile.model.editProfile.EditProfileResponse
 import com.playMatch.ui.profile.model.profile.ProfileResponse
 import com.playMatch.ui.signUp.signupModel.*
 import com.playMatch.ui.teams.model.addTeam.AddTeamResponse
+import com.playMatch.ui.teams.model.editTeam.EditTeamResponse
+import com.playMatch.ui.teams.model.showTeamDetails.TeamDetailResponse
+import com.playMatch.ui.teams.model.teamList.TeamListResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Response
@@ -114,7 +118,41 @@ interface ApiService {
         @Part (ApiParameters.OtherDetails) otherDetails: RequestBody?= null,
     ): Response<AddTeamResponse>
 
+    @Multipart
+    @POST(ApiConstant.EDIT_TEAM)
+    suspend fun editTeam(
+        @Header(ApiConstant.AUTHORIZATION) token: String,
+        @Part image: MultipartBody.Part,
+        @Part(ApiParameters.TEAM_ID)teamId: RequestBody? = null,
+        @Part(ApiParameters.Name)name: RequestBody? = null,
+        @Part(ApiParameters.GENDER) gender: RequestBody? = null,
+        @Part (ApiParameters.SPORT_ID) sportId:RequestBody,
+        @Part (ApiParameters.LOCATION) location: RequestBody?= null,
+        @Part (ApiParameters.TeamStandard) teamStandard: RequestBody?= null,
+        @Part (ApiParameters.IsKitProvided) isKitProvided: RequestBody?= null,
+        @Part (ApiParameters.IsAwayMatches) isAwayMatches: RequestBody?= null,
+        @Part (ApiParameters.Sunday) sun: RequestBody?= null,
+        @Part (ApiParameters.Monday) mon: RequestBody?= null,
+        @Part (ApiParameters.Tuesday) tue: RequestBody?= null,
+        @Part (ApiParameters.Wednesday) wed: RequestBody?= null,
+        @Part (ApiParameters.Thursday) thu: RequestBody?= null,
+        @Part (ApiParameters.Friday) fri: RequestBody?= null,
+        @Part (ApiParameters.Saturday) sat: RequestBody?= null,
+        @Part (ApiParameters.OtherDetails) otherDetails: RequestBody?= null,
+    ): Response<EditTeamResponse>
 
 
+    @Headers("Content-Type: application/json")
+    @POST(ApiConstant.TEAM_LIST)
+    suspend fun teams(
+        @Header(ApiConstant.AUTH) token: String,
+    ):Response<TeamListResponse>
+
+    @Headers("Content-Type: application/json")
+    @POST(ApiConstant.SHOW_TEAM)
+    suspend fun showTeam(
+        @Header(ApiConstant.AUTH) token: String,
+        @Body eventDetail: ShowTeamPost?
+    ):Response<TeamDetailResponse>
 
 }

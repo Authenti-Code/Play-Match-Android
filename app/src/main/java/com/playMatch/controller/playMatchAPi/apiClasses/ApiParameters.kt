@@ -10,6 +10,7 @@ object ApiParameters {
     const val LOCATION="location"
     const val FitnessLevel="fitnessLevel"
     const val TeamStandard="teamStandard"
+    const val TEAM_ID="teamId"
     const val IsKitProvided="isKitProvided"
     const val IsAwayMatches="isAwayMatches"
     const val Sunday="sun"

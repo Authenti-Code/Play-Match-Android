@@ -19,6 +19,7 @@ object ApiConstant {
 
     const val EDIT_PROFILE="editProfile"
     const val ADD_TEAM="addTeam"
+    const val EDIT_TEAM="edit/team"
     const val UPLOAD_IMAGE="userImage"
 
     const val PROFILE="profile"
@@ -26,9 +27,10 @@ object ApiConstant {
     const val SPORTS_LIST="sportsList"
     const val SPORTS_LEVELS="sportAbilityLevels"
     const val MATCH_AVAILABILITY="matchAvailability"
+    const val SHOW_TEAM="showTeam"
     const val LOGOUT="logout"
 
-    const val EVENT_SHOW="eventshow"
+    const val TEAM_LIST="teams/list"
     const val EVENT_DETAIL="eventdetails"
     const val COMMENT="comment"
     const val INTERESTED_USERS="event_intrestedUsers"

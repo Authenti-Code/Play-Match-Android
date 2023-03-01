@@ -8,7 +8,9 @@ import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
 import android.graphics.Color
+import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -20,6 +22,10 @@ import androidx.core.app.ActivityCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.Priority
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.load.engine.GlideException
+import com.bumptech.glide.request.RequestListener
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.slider.RangeSlider
 import com.playMatch.R
@@ -27,6 +33,7 @@ import com.playMatch.controller.`interface`.BottomSheetListner
 import com.playMatch.controller.playMatchAPi.ApiConstant
 import com.playMatch.controller.playMatchAPi.ResultResponse
 import com.playMatch.controller.playMatchAPi.apiClasses.UserApi
+import com.playMatch.controller.playMatchAPi.postPojoModel.user.showTeam.ShowTeamPost
 import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.databinding.ActivityAddTeamBinding
 import com.playMatch.ui.baseActivity.BaseActivity
@@ -34,14 +41,19 @@ import com.playMatch.ui.home.model.HomeChildModel
 import com.playMatch.ui.location.activity.LocationActivity
 import com.playMatch.ui.matches.adapter.selectSportAdapter.SelectMatchSportAdapter
 import com.playMatch.controller.sharedPrefrence.PrefData
+import com.playMatch.ui.profile.model.editProfile.EditProfileResponse
+import com.playMatch.ui.profile.model.profile.ProfileResponse
 import com.playMatch.ui.signUp.signupModel.SportListResponse
 import com.playMatch.ui.signUp.signupModel.SportsList
+import com.playMatch.ui.teams.model.addTeam.AddTeamResponse
+import com.playMatch.ui.teams.model.editTeam.EditTeamResponse
+import com.playMatch.ui.teams.model.showTeamDetails.TeamDetailResponse
 import com.soundcloud.android.crop.Crop
+import java.io.ByteArrayOutputStream
 import kotlin.math.roundToInt
 
 class AddTeamActivity : BaseActivity(), View.OnClickListener, BottomSheetListner {
     private lateinit var binding: ActivityAddTeamBinding
-    private var CvColor:Boolean=true
     private var selectSportAdapter: SelectMatchSportAdapter? = null
     private var seletedBottomSheet: BottomSheetDialog? = null
     private var list = ArrayList<SportsList>()
@@ -54,7 +66,11 @@ class AddTeamActivity : BaseActivity(), View.OnClickListener, BottomSheetListner
     private var thu:String?=""
     private var fri:String?=""
     private var sat:String?=""
-    private var fitnessLevel:String?="Intermediate"
+    private var teamId:String?=""
+    private var sportId:String?=""
+    private var kitProvided:String?="0"
+    private var awayMatches:String?="0"
+    private var teamStandard:String?="Intermediate"
 
     //boolean
     private var SCvColor:Boolean=true
@@ -85,6 +101,7 @@ class AddTeamActivity : BaseActivity(), View.OnClickListener, BottomSheetListner
 
         if (intent?.extras != null) {
             type = intent.extras?.getString(PrefData.CURRENT_USER_SCREEN_TYPE, "")
+            teamId = intent.extras?.getString(PrefData.TEAM_ID, "")
         }
     }
 
@@ -547,7 +564,8 @@ class AddTeamActivity : BaseActivity(), View.OnClickListener, BottomSheetListner
 
         if (type=="edit"){
             binding.title.text="Edit Team"
-            binding.save.text="Save"
+            binding.createTeamTV.text="Save"
+            teamDetails()
         }
     }
 
@@ -687,6 +705,7 @@ class AddTeamActivity : BaseActivity(), View.OnClickListener, BottomSheetListner
                 binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
                 binding.experienced.setCardBackgroundColor(Color.WHITE)
                 binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
+                teamStandard="Beginner"
             }
             R.id.intermediate -> {
                 binding.intermediate.setCardBackgroundColor(Color.parseColor("#F95047"))
@@ -695,6 +714,7 @@ class AddTeamActivity : BaseActivity(), View.OnClickListener, BottomSheetListner
                 binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
                 binding.experienced.setCardBackgroundColor(Color.WHITE)
                 binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
+                teamStandard="Intermediate"
             }
 
             R.id.experienced -> {
@@ -704,6 +724,7 @@ class AddTeamActivity : BaseActivity(), View.OnClickListener, BottomSheetListner
                 binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
                 binding.intermediate.setCardBackgroundColor(Color.WHITE)
                 binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
+                teamStandard="Experienced"
             }
 
             R.id.kitYes -> {
@@ -711,6 +732,7 @@ class AddTeamActivity : BaseActivity(), View.OnClickListener, BottomSheetListner
                 binding.kitYesTv.setTextColor(Color.WHITE)
                 binding.kitNo.setCardBackgroundColor(Color.WHITE)
                 binding.kitNoTv.setTextColor(Color.parseColor("#F95047"))
+                kitProvided="1"
             }
 
             R.id.kitNo -> {
@@ -718,6 +740,7 @@ class AddTeamActivity : BaseActivity(), View.OnClickListener, BottomSheetListner
                 binding.kitNoTv.setTextColor(Color.WHITE)
                 binding.kitYes.setCardBackgroundColor(Color.WHITE)
                 binding.kitYesTv.setTextColor(Color.parseColor("#F95047"))
+                kitProvided="0"
             }
 
             R.id.awayYes -> {
@@ -725,6 +748,7 @@ class AddTeamActivity : BaseActivity(), View.OnClickListener, BottomSheetListner
                 binding.awayYesTv.setTextColor(Color.WHITE)
                 binding.awayNo.setCardBackgroundColor(Color.WHITE)
                 binding.awayNoTv.setTextColor(Color.parseColor("#F95047"))
+                awayMatches="1"
             }
 
             R.id.awayNo -> {
@@ -732,14 +756,33 @@ class AddTeamActivity : BaseActivity(), View.OnClickListener, BottomSheetListner
                 binding.awayNoTv.setTextColor(Color.WHITE)
                 binding.awayYes.setCardBackgroundColor(Color.WHITE)
                 binding.awayYesTv.setTextColor(Color.parseColor("#F95047"))
+                awayMatches="0"
             }
             R.id.createTeam -> {
-                onBackPressed()
+                showProgressBar()
+                if (binding.name.text.toString().trim().isEmpty()) {
+                    Toast.makeText(this, R.string.error_name, Toast.LENGTH_LONG).show()
+                    hideProgressBar()
+                }else if(sportId==""){
+                    Toast.makeText(this, "Please Select Sport", Toast.LENGTH_LONG).show()
+
+                } else if (binding.location.text.toString().trim().isEmpty()) {
+                    Toast.makeText(this, R.string.error_location, Toast.LENGTH_LONG).show()
+                    hideProgressBar()
+                }else if (binding.genderTv.text.toString().trim().isEmpty()) {
+                    Toast.makeText(this, R.string.error_location, Toast.LENGTH_LONG).show()
+                    hideProgressBar()
+                }else{
+                    if (type=="edit"){
+                        editTeamApi()
+                    }else {
+                        addTeamApi()
+                    }
+                }
             } R.id.location -> {
             CommonUtils.performIntent(this@AddTeamActivity,LocationActivity::class.java)
             }
             }
-
     }
     private fun selectSportBottomSheet() {
         val view: View = layoutInflater.inflate(R.layout.bottom_sheet_select_sport, null)
@@ -765,6 +808,9 @@ class AddTeamActivity : BaseActivity(), View.OnClickListener, BottomSheetListner
             binding.selectSport.setCardBackgroundColor(Color.parseColor("#F95047"))
             binding.selectSportTv.setTextColor(Color.WHITE)
             binding.selectSportTv.text=ViewType
+            if (id!=null) {
+                sportId = id
+            }
             binding.selectSportTv.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_circle, 0);
             seletedBottomSheet?.dismiss()
         }
@@ -891,6 +937,386 @@ class AddTeamActivity : BaseActivity(), View.OnClickListener, BottomSheetListner
         } else if (resultCode == Crop.RESULT_ERROR) {
             CommonUtils.hideProgressDialog()
             Toast.makeText(this, Crop.getError(data!!).message, Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun showProgressBar(){
+        binding.continueProgressBar.visibility=View.VISIBLE
+        binding.createTeamTV.visibility=View.GONE
+    }
+    private fun hideProgressBar(){
+        binding.continueProgressBar.visibility=View.GONE
+        binding.createTeamTV.visibility=View.VISIBLE
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val location = PrefData.getStringPrefs(this, PrefData.LOCATION, "")
+        if (location.isNotEmpty()) {
+            binding.location.text = location
+        }
+    }
+
+    private fun addTeamApi(){
+        showProgressBar()
+        val bos = ByteArrayOutputStream()
+        mBitmapImage?.compress(Bitmap.CompressFormat.JPEG, 100, bos)
+        val imageBytes = bos.toByteArray()
+        lifecycleScope.launchWhenStarted {
+            val resultResponse = UserApi(this@AddTeamActivity).addTeam(
+                this@AddTeamActivity, imageBytes, imageName.toString(),binding.name.text.toString().trim(),binding.genderTv.text.toString().trim(),sportId.toString(),binding.location.text.toString().trim(),teamStandard.toString(),kitProvided.toString(),awayMatches.toString(),sun!!,mon!!,tue!!,wed!!,thu!!,fri!!,sat!!,binding.description.text.toString().trim())
+            addTeamapiResult(resultResponse)
+        }
+    }
+
+    private fun addTeamapiResult(resultResponse: ResultResponse) {
+        return when (resultResponse) {
+            is ResultResponse.Success<*> -> {
+                val response = resultResponse.response as AddTeamResponse
+                if (response.success == "true") {
+                    hideProgressBar()
+                    onBackPressed()
+                } else {
+                    showSnackBar(
+                        binding.rootView, response.message
+                    )
+                    hideProgressBar()
+                }
+            }
+            else -> {
+                showError(resultResponse)
+                hideProgressBar()
+            }
+        }
+    }
+
+    private fun teamDetails(){
+
+        if (isNetworkAvailable()) {
+            CommonUtils.showProgressDialog(this)
+            lifecycleScope.launchWhenStarted {
+                val resultResponse = UserApi(this@AddTeamActivity).teamDetail(ShowTeamPost(teamId.toString()))
+                apiResult(resultResponse)
+            }
+        } else {
+            showNetworkSpeedError()
+        }
+    }
+    private fun apiResult(resultResponse: ResultResponse) {
+        CommonUtils.hideProgressDialog()
+        return when (resultResponse) {
+            is ResultResponse.Success<*> -> {
+                val response = resultResponse.response as TeamDetailResponse
+                //get data and convert string to json and save data
+                if (response.success == "true") {
+                    binding.progressBar.visibility=View.VISIBLE
+                    Glide.with(this@AddTeamActivity)
+                        .load(response.data.image)
+                        .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
+                        .skipMemoryCache(true)
+                        .priority(Priority.IMMEDIATE)
+                        .placeholder(R.drawable.new_dummy_profile)
+                        .listener(object : RequestListener<Drawable> {
+                            override fun onResourceReady(
+                                resource: Drawable?,
+                                model: Any?,
+                                target: com.bumptech.glide.request.target.Target<Drawable>?,
+                                dataSource: com.bumptech.glide.load.DataSource?,
+                                isFirstResource: Boolean
+                            ): Boolean {
+                                binding?.progressBar?.visibility = View.GONE
+                                return false
+                            }
+
+                            override fun onLoadFailed(
+                                e: GlideException?,
+                                model: Any?,
+                                target: com.bumptech.glide.request.target.Target<Drawable>?,
+                                isFirstResource: Boolean
+                            ): Boolean {
+                                binding?.progressBar?.visibility = View.GONE
+                                return false
+                            }
+
+                        }).into(binding!!.profileImage)
+
+                    binding.name.setText(response.data.name)
+                    binding.genderTv.setText(response.data.gender)
+                    binding.location.setText(response.data.location)
+                    binding.description.setText(response.data.otherDetails)
+
+                    if (response.data.sportName!=null){
+                        binding.selectSport.setCardBackgroundColor(Color.parseColor("#F95047"))
+                        binding.selectSportTv.setTextColor(Color.WHITE)
+                        binding.selectSportTv.text=response.data.sportName
+                        if (response.data.sportId!=null) {
+                            sportId = response.data.sportId.toString()
+                        }
+                        binding.selectSportTv.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_circle, 0)
+                    }
+
+                    if (response.data.teamStandard=="Beginner"){
+                        binding.beginner.setCardBackgroundColor(Color.parseColor("#F95047"))
+                        binding.beginnerTv.setTextColor(Color.WHITE)
+                        binding.intermediate.setCardBackgroundColor(Color.WHITE)
+                        binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
+                        binding.experienced.setCardBackgroundColor(Color.WHITE)
+                        binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
+                        teamStandard="Beginner"
+                    }else if (response.data.teamStandard=="Intermediate"){
+                        binding.intermediate.setCardBackgroundColor(Color.parseColor("#F95047"))
+                        binding.intermediateTv.setTextColor(Color.WHITE)
+                        binding.beginner.setCardBackgroundColor(Color.WHITE)
+                        binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
+                        binding.experienced.setCardBackgroundColor(Color.WHITE)
+                        binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
+                        teamStandard="Intermediate"
+                    }else if (response.data.teamStandard=="Experienced"){
+                        binding.experienced.setCardBackgroundColor(Color.parseColor("#F95047"))
+                        binding.experiencedTv.setTextColor(Color.WHITE)
+                        binding.beginner.setCardBackgroundColor(Color.WHITE)
+                        binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
+                        binding.intermediate.setCardBackgroundColor(Color.WHITE)
+                        binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
+                        teamStandard="Experienced"
+                    }
+
+                    if (response.data.isAwayMatches=="0"){
+                        binding.awayNo.setCardBackgroundColor(Color.parseColor("#F95047"))
+                        binding.awayNoTv.setTextColor(Color.WHITE)
+                        binding.awayYes.setCardBackgroundColor(Color.WHITE)
+                        binding.awayYesTv.setTextColor(Color.parseColor("#F95047"))
+                        awayMatches="0"
+                    }else{
+                        binding.awayYes.setCardBackgroundColor(Color.parseColor("#F95047"))
+                        binding.awayYesTv.setTextColor(Color.WHITE)
+                        binding.awayNo.setCardBackgroundColor(Color.WHITE)
+                        binding.awayNoTv.setTextColor(Color.parseColor("#F95047"))
+                        awayMatches="1"
+                    }
+
+                    if (response.data.isKitProvided=="0"){
+                        binding.kitNo.setCardBackgroundColor(Color.parseColor("#F95047"))
+                        binding.kitNoTv.setTextColor(Color.WHITE)
+                        binding.kitYes.setCardBackgroundColor(Color.WHITE)
+                        binding.kitYesTv.setTextColor(Color.parseColor("#F95047"))
+                        kitProvided="0"
+                    }else{
+                        binding.kitYes.setCardBackgroundColor(Color.parseColor("#F95047"))
+                        binding.kitYesTv.setTextColor(Color.WHITE)
+                        binding.kitNo.setCardBackgroundColor(Color.WHITE)
+                        binding.kitNoTv.setTextColor(Color.parseColor("#F95047"))
+                        kitProvided="1"
+                    }
+
+                    if (response.data.sun!= ""){
+                        binding.Scv.setCardBackgroundColor(Color.parseColor("#F95047"))
+                        binding.Stv.setTextColor(Color.WHITE)
+                        binding.Slay.visibility=View.VISIBLE
+                        binding.Sstv.text=response.data.sun
+                        sun=binding.Sstv.text.toString()
+                        SCvColor=false
+                        val strs = response.data.sun.split("-").toTypedArray()
+                        val t1=strs[0]
+                        val t2=strs[1]
+                        val timePartsStart = t1.split(":")
+                        val timePartsEnd = t2.split(":")
+                        val start = timePartsStart[0].toFloat()
+                        var end = timePartsEnd[0].toFloat()
+
+                        if (timePartsEnd[1]=="59 pm"){
+                            end=24.toFloat()
+                        }
+
+                        binding.sundaySlider.setValues(start,end)
+                    }
+                    else{
+                        binding.Slay.visibility=View.GONE
+                    }
+                    if (response.data.mon!= ""){
+                        binding.Mcv.setCardBackgroundColor(Color.parseColor("#F95047"))
+                        binding.Mtv.setTextColor(Color.WHITE)
+                        binding.Mlay.visibility=View.VISIBLE
+                        MCvColor=false
+                        binding.Mstv.text=response.data.mon
+                        mon=binding.Mstv.text.toString()
+                        val strs = response.data.mon.split("-").toTypedArray()
+                        val t1=strs[0]
+                        val t2=strs[1]
+                        val timePartsStart = t1.split(":")
+                        val timePartsEnd = t2.split(":")
+                        val start = timePartsStart[0].toFloat()
+                        var end = timePartsEnd[0].toFloat()
+
+                        if (timePartsEnd[1]=="59 pm"){
+                            end=24.toFloat()
+                        }
+
+                        binding.mondaySlider.setValues(start,end)
+                    }
+                    else{
+                        binding.Mlay.visibility=View.GONE
+                    }
+                    if (response.data.tue!= ""){
+                        binding.Tcv.setCardBackgroundColor(Color.parseColor("#F95047"))
+                        binding.Ttv.setTextColor(Color.WHITE)
+                        binding.Tlay.visibility=View.VISIBLE
+                        binding.Tstv.text=response.data.tue
+                        tue=binding.Tstv.text.toString()
+                        TCvColor=false
+
+                        val strs = response.data.tue.split("-").toTypedArray()
+                        val t1=strs[0]
+                        val t2=strs[1]
+                        val timePartsStart = t1.split(":")
+                        val timePartsEnd = t2.split(":")
+                        val start = timePartsStart[0].toFloat()
+                        var end = timePartsEnd[0].toFloat()
+
+                        if (timePartsEnd[1]=="59 pm"){
+                            end=24.toFloat()
+                        }
+
+                        binding.tuesdaySlider.setValues(start,end)
+                    } else{
+                        binding.Tlay.visibility=View.GONE
+                    }
+                    if (response.data.wed!= ""){
+                        binding.Wcv.setCardBackgroundColor(Color.parseColor("#F95047"))
+                        binding.Wtv.setTextColor(Color.WHITE)
+                        binding.Wlay.visibility=View.VISIBLE
+                        binding.Wstv.text=response.data.wed
+                        wed=binding.Wstv.text.toString()
+                        WCvColor=false
+                        val strs = response.data.wed.split("-").toTypedArray()
+                        val t1=strs[0]
+                        val t2=strs[1]
+                        val timePartsStart = t1.split(":")
+                        val timePartsEnd = t2.split(":")
+                        val start = timePartsStart[0].toFloat()
+                        var end = timePartsEnd[0].toFloat()
+
+                        if (timePartsEnd[1]=="59 pm"){
+                            end=24.toFloat()
+                        }
+                        binding.wednesdaySlider.setValues(start,end)
+                    } else{
+                        binding.Wlay.visibility=View.GONE
+                    }
+                    if (response.data.thu!= ""){
+                        binding.Thcv.setCardBackgroundColor(Color.parseColor("#F95047"))
+                        binding.Thtv.setTextColor(Color.WHITE)
+                        binding.Thlay.visibility=View.VISIBLE
+                        binding.Thstv.text=response.data.thu
+                        thu=binding.Thstv.text.toString()
+                        ThCvColor=false
+                        val strs = response.data.thu.split("-").toTypedArray()
+                        val t1=strs[0]
+                        val t2=strs[1]
+                        val timePartsStart = t1.split(":")
+                        val timePartsEnd = t2.split(":")
+                        val start = timePartsStart[0].toFloat()
+                        var end = timePartsEnd[0].toFloat()
+
+                        if (timePartsEnd[1]=="59 pm"){
+                            end=24.toFloat()
+                        }
+                        binding.thursdaySlider.setValues(start,end)
+                    } else{
+                        binding.Thlay.visibility=View.GONE
+                    }
+                    if (response.data.fri != ""){
+                        binding.Fcv.setCardBackgroundColor(Color.parseColor("#F95047"))
+                        binding.Ftv.setTextColor(Color.WHITE)
+                        binding.Flay.visibility=View.VISIBLE
+                        binding.Fstv.text=response.data.fri
+                        fri=binding.Fstv.text.toString()
+                        FCvColor=false
+
+                        val strs = response.data.fri.split("-").toTypedArray()
+                        val t1=strs[0]
+                        val t2=strs[1]
+                        val timePartsStart = t1.split(":")
+                        val timePartsEnd = t2.split(":")
+                        val start = timePartsStart[0].toFloat()
+                        var end = timePartsEnd[0].toFloat()
+                        if (timePartsEnd[1]=="59 pm"){
+                            end=24.toFloat()
+                        }
+                        binding.fridaySlider.setValues(start,end)
+                    } else{
+                        binding.Flay.visibility=View.GONE
+                    }
+                    if (response.data.sat!= ""){
+                        binding.Sacv.setCardBackgroundColor(Color.parseColor("#F95047"))
+                        binding.Satv.setTextColor(Color.WHITE)
+                        binding.SaLay.visibility=View.VISIBLE
+                        binding.Sastv.text=response.data.sat
+                        sat=binding.Sastv.text.toString()
+                        SACvColor=false
+
+                        val strs = response.data.sat.split("-").toTypedArray()
+                        val t1=strs[0]
+                        val t2=strs[1]
+                        val timePartsStart = t1.split(":")
+                        val timePartsEnd = t2.split(":")
+                        val start = timePartsStart[0].toFloat()
+                        var end = timePartsEnd[0].toFloat()
+                        if (timePartsEnd[1]=="59 pm"){
+                            end=24.toFloat()
+                        }
+
+                        binding.saturdaySlider.setValues(start,end)
+                    } else{
+                        binding.SaLay.visibility=View.GONE
+                    }
+
+//                    if(response.data.sportLevel!=null){
+//                         sportList = response.data.sportLevel
+//                        intent.putExtra("mylist", myList)
+//                    }
+
+                } else {
+                    showSnackBar(findViewById(R.id.rootView), response.message)
+                }
+            }
+            else -> {
+                showError(resultResponse)
+            }
+        } as Unit
+    }
+
+    private fun editTeamApi(){
+        showProgressBar()
+        val bos = ByteArrayOutputStream()
+        mBitmapImage?.compress(Bitmap.CompressFormat.JPEG, 100, bos)
+        val imageBytes = bos.toByteArray()
+        lifecycleScope.launchWhenStarted {
+            val resultResponse = UserApi(this@AddTeamActivity).editTeam(
+                this@AddTeamActivity, imageBytes, imageName.toString(),teamId.toString(),binding.name.text.toString().trim(),binding.genderTv.text.toString().trim(),sportId.toString(),binding.location.text.toString().trim(),teamStandard.toString(),kitProvided.toString(),awayMatches.toString(),sun!!,mon!!,tue!!,wed!!,thu!!,fri!!,sat!!,binding.description.text.toString().trim())
+            editTeamApiResult(resultResponse)
+        }
+    }
+
+    private fun editTeamApiResult(resultResponse: ResultResponse) {
+        return when (resultResponse) {
+            is ResultResponse.Success<*> -> {
+                val response = resultResponse.response as EditTeamResponse
+                if (response.success == "true") {
+                    hideProgressBar()
+                    onBackPressed()
+                } else {
+                    showSnackBar(
+                        binding.rootView, response.message
+                    )
+                    hideProgressBar()
+                }
+            }
+            else -> {
+                showError(resultResponse)
+                hideProgressBar()
+            }
         }
     }
 }
