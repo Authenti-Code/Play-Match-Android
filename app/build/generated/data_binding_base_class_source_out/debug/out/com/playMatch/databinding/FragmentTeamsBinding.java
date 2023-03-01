@@ -18,25 +18,29 @@ import java.lang.String;
 
 public final class FragmentTeamsBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final LinearLayout rootView_;
 
   @NonNull
   public final ImageView addTeam;
 
   @NonNull
+  public final LinearLayout rootView;
+
+  @NonNull
   public final RecyclerView rvTeams;
 
-  private FragmentTeamsBinding(@NonNull LinearLayout rootView, @NonNull ImageView addTeam,
-      @NonNull RecyclerView rvTeams) {
-    this.rootView = rootView;
+  private FragmentTeamsBinding(@NonNull LinearLayout rootView_, @NonNull ImageView addTeam,
+      @NonNull LinearLayout rootView, @NonNull RecyclerView rvTeams) {
+    this.rootView_ = rootView_;
     this.addTeam = addTeam;
+    this.rootView = rootView;
     this.rvTeams = rvTeams;
   }
 
   @Override
   @NonNull
   public LinearLayout getRoot() {
-    return rootView;
+    return rootView_;
   }
 
   @NonNull
@@ -66,13 +70,15 @@ public final class FragmentTeamsBinding implements ViewBinding {
         break missingId;
       }
 
+      LinearLayout rootView_ = (LinearLayout) rootView;
+
       id = R.id.rvTeams;
       RecyclerView rvTeams = ViewBindings.findChildViewById(rootView, id);
       if (rvTeams == null) {
         break missingId;
       }
 
-      return new FragmentTeamsBinding((LinearLayout) rootView, addTeam, rvTeams);
+      return new FragmentTeamsBinding((LinearLayout) rootView, addTeam, rootView_, rvTeams);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
