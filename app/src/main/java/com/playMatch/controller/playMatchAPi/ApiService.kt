@@ -13,6 +13,7 @@ import com.playMatch.ui.profile.activity.settingActivity.model.LogoutResponse
 import com.playMatch.ui.profile.model.editProfile.EditProfileResponse
 import com.playMatch.ui.profile.model.profile.ProfileResponse
 import com.playMatch.ui.signUp.signupModel.*
+import com.playMatch.ui.teams.model.addTeam.AddTeamResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Response
@@ -90,6 +91,30 @@ interface ApiService {
         @Part (ApiParameters.Friday) fri: RequestBody?= null,
         @Part (ApiParameters.Saturday) sat: RequestBody?= null,
         ): Response<EditProfileResponse>
+
+    @Multipart
+    @POST(ApiConstant.ADD_TEAM)
+    suspend fun addTeam(
+        @Header(ApiConstant.AUTHORIZATION) token: String,
+        @Part image: MultipartBody.Part,
+        @Part(ApiParameters.Name)name: RequestBody? = null,
+        @Part(ApiParameters.GENDER) gender: RequestBody? = null,
+        @Part (ApiParameters.SPORT_ID) sportId:RequestBody,
+        @Part (ApiParameters.LOCATION) location: RequestBody?= null,
+        @Part (ApiParameters.TeamStandard) teamStandard: RequestBody?= null,
+        @Part (ApiParameters.IsKitProvided) isKitProvided: RequestBody?= null,
+        @Part (ApiParameters.IsAwayMatches) isAwayMatches: RequestBody?= null,
+        @Part (ApiParameters.Sunday) sun: RequestBody?= null,
+        @Part (ApiParameters.Monday) mon: RequestBody?= null,
+        @Part (ApiParameters.Tuesday) tue: RequestBody?= null,
+        @Part (ApiParameters.Wednesday) wed: RequestBody?= null,
+        @Part (ApiParameters.Thursday) thu: RequestBody?= null,
+        @Part (ApiParameters.Friday) fri: RequestBody?= null,
+        @Part (ApiParameters.Saturday) sat: RequestBody?= null,
+        @Part (ApiParameters.OtherDetails) otherDetails: RequestBody?= null,
+    ): Response<AddTeamResponse>
+
+
 
 
 }

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -30,22 +31,46 @@ public final class ActivityAddTeamBinding implements ViewBinding {
   public final MaterialCardView Fcv;
 
   @NonNull
+  public final LinearLayoutCompat Flay;
+
+  @NonNull
+  public final AppCompatTextView Fstv;
+
+  @NonNull
   public final AppCompatTextView Ftv;
 
   @NonNull
   public final MaterialCardView Mcv;
 
   @NonNull
+  public final LinearLayoutCompat Mlay;
+
+  @NonNull
+  public final AppCompatTextView Mstv;
+
+  @NonNull
   public final AppCompatTextView Mtv;
 
   @NonNull
+  public final LinearLayoutCompat SaLay;
+
+  @NonNull
   public final MaterialCardView Sacv;
+
+  @NonNull
+  public final AppCompatTextView Sastv;
 
   @NonNull
   public final AppCompatTextView Satv;
 
   @NonNull
   public final MaterialCardView Scv;
+
+  @NonNull
+  public final LinearLayoutCompat Slay;
+
+  @NonNull
+  public final AppCompatTextView Sstv;
 
   @NonNull
   public final AppCompatTextView Stv;
@@ -57,7 +82,19 @@ public final class ActivityAddTeamBinding implements ViewBinding {
   public final MaterialCardView Thcv;
 
   @NonNull
+  public final LinearLayoutCompat Thlay;
+
+  @NonNull
+  public final AppCompatTextView Thstv;
+
+  @NonNull
   public final AppCompatTextView Thtv;
+
+  @NonNull
+  public final LinearLayoutCompat Tlay;
+
+  @NonNull
+  public final AppCompatTextView Tstv;
 
   @NonNull
   public final AppCompatTextView Ttv;
@@ -66,7 +103,16 @@ public final class ActivityAddTeamBinding implements ViewBinding {
   public final MaterialCardView Wcv;
 
   @NonNull
+  public final LinearLayoutCompat Wlay;
+
+  @NonNull
+  public final AppCompatTextView Wstv;
+
+  @NonNull
   public final AppCompatTextView Wtv;
+
+  @NonNull
+  public final ImageView addImage;
 
   @NonNull
   public final MaterialCardView awayNo;
@@ -102,6 +148,9 @@ public final class ActivityAddTeamBinding implements ViewBinding {
   public final AppCompatTextView experiencedTv;
 
   @NonNull
+  public final RangeSlider fridaySlider;
+
+  @NonNull
   public final MaterialCardView intermediate;
 
   @NonNull
@@ -129,6 +178,9 @@ public final class ActivityAddTeamBinding implements ViewBinding {
   public final CircleImageView profileImage;
 
   @NonNull
+  public final RangeSlider saturdaySlider;
+
+  @NonNull
   public final TextView save;
 
   @NonNull
@@ -138,46 +190,84 @@ public final class ActivityAddTeamBinding implements ViewBinding {
   public final AppCompatTextView selectSportTv;
 
   @NonNull
+  public final RangeSlider sundaySlider;
+
+  @NonNull
+  public final RangeSlider thursdaySlider;
+
+  @NonNull
   public final TextView title;
 
   @NonNull
   public final RangeSlider tuesdaySlider;
 
+  @NonNull
+  public final RangeSlider wednesdaySlider;
+
+  @NonNull
+  public final LinearLayout weekendLay;
+
   private ActivityAddTeamBinding(@NonNull LinearLayoutCompat rootView,
-      @NonNull MaterialCardView Fcv, @NonNull AppCompatTextView Ftv, @NonNull MaterialCardView Mcv,
-      @NonNull AppCompatTextView Mtv, @NonNull MaterialCardView Sacv,
-      @NonNull AppCompatTextView Satv, @NonNull MaterialCardView Scv,
-      @NonNull AppCompatTextView Stv, @NonNull MaterialCardView Tcv, @NonNull MaterialCardView Thcv,
-      @NonNull AppCompatTextView Thtv, @NonNull AppCompatTextView Ttv,
-      @NonNull MaterialCardView Wcv, @NonNull AppCompatTextView Wtv,
+      @NonNull MaterialCardView Fcv, @NonNull LinearLayoutCompat Flay,
+      @NonNull AppCompatTextView Fstv, @NonNull AppCompatTextView Ftv,
+      @NonNull MaterialCardView Mcv, @NonNull LinearLayoutCompat Mlay,
+      @NonNull AppCompatTextView Mstv, @NonNull AppCompatTextView Mtv,
+      @NonNull LinearLayoutCompat SaLay, @NonNull MaterialCardView Sacv,
+      @NonNull AppCompatTextView Sastv, @NonNull AppCompatTextView Satv,
+      @NonNull MaterialCardView Scv, @NonNull LinearLayoutCompat Slay,
+      @NonNull AppCompatTextView Sstv, @NonNull AppCompatTextView Stv,
+      @NonNull MaterialCardView Tcv, @NonNull MaterialCardView Thcv,
+      @NonNull LinearLayoutCompat Thlay, @NonNull AppCompatTextView Thstv,
+      @NonNull AppCompatTextView Thtv, @NonNull LinearLayoutCompat Tlay,
+      @NonNull AppCompatTextView Tstv, @NonNull AppCompatTextView Ttv,
+      @NonNull MaterialCardView Wcv, @NonNull LinearLayoutCompat Wlay,
+      @NonNull AppCompatTextView Wstv, @NonNull AppCompatTextView Wtv, @NonNull ImageView addImage,
       @NonNull MaterialCardView awayNo, @NonNull AppCompatTextView awayNoTv,
       @NonNull MaterialCardView awayYes, @NonNull AppCompatTextView awayYesTv,
       @NonNull ImageView back, @NonNull MaterialCardView beginner,
       @NonNull AppCompatTextView beginnerTv, @NonNull CardView createTeam,
       @NonNull AppCompatEditText description, @NonNull MaterialCardView experienced,
-      @NonNull AppCompatTextView experiencedTv, @NonNull MaterialCardView intermediate,
-      @NonNull AppCompatTextView intermediateTv, @NonNull MaterialCardView kitNo,
-      @NonNull AppCompatTextView kitNoTv, @NonNull MaterialCardView kitYes,
-      @NonNull AppCompatTextView kitYesTv, @NonNull AppCompatTextView location,
-      @NonNull RangeSlider mondaySlider, @NonNull CircleImageView profileImage,
+      @NonNull AppCompatTextView experiencedTv, @NonNull RangeSlider fridaySlider,
+      @NonNull MaterialCardView intermediate, @NonNull AppCompatTextView intermediateTv,
+      @NonNull MaterialCardView kitNo, @NonNull AppCompatTextView kitNoTv,
+      @NonNull MaterialCardView kitYes, @NonNull AppCompatTextView kitYesTv,
+      @NonNull AppCompatTextView location, @NonNull RangeSlider mondaySlider,
+      @NonNull CircleImageView profileImage, @NonNull RangeSlider saturdaySlider,
       @NonNull TextView save, @NonNull MaterialCardView selectSport,
-      @NonNull AppCompatTextView selectSportTv, @NonNull TextView title,
-      @NonNull RangeSlider tuesdaySlider) {
+      @NonNull AppCompatTextView selectSportTv, @NonNull RangeSlider sundaySlider,
+      @NonNull RangeSlider thursdaySlider, @NonNull TextView title,
+      @NonNull RangeSlider tuesdaySlider, @NonNull RangeSlider wednesdaySlider,
+      @NonNull LinearLayout weekendLay) {
     this.rootView = rootView;
     this.Fcv = Fcv;
+    this.Flay = Flay;
+    this.Fstv = Fstv;
     this.Ftv = Ftv;
     this.Mcv = Mcv;
+    this.Mlay = Mlay;
+    this.Mstv = Mstv;
     this.Mtv = Mtv;
+    this.SaLay = SaLay;
     this.Sacv = Sacv;
+    this.Sastv = Sastv;
     this.Satv = Satv;
     this.Scv = Scv;
+    this.Slay = Slay;
+    this.Sstv = Sstv;
     this.Stv = Stv;
     this.Tcv = Tcv;
     this.Thcv = Thcv;
+    this.Thlay = Thlay;
+    this.Thstv = Thstv;
     this.Thtv = Thtv;
+    this.Tlay = Tlay;
+    this.Tstv = Tstv;
     this.Ttv = Ttv;
     this.Wcv = Wcv;
+    this.Wlay = Wlay;
+    this.Wstv = Wstv;
     this.Wtv = Wtv;
+    this.addImage = addImage;
     this.awayNo = awayNo;
     this.awayNoTv = awayNoTv;
     this.awayYes = awayYes;
@@ -189,6 +279,7 @@ public final class ActivityAddTeamBinding implements ViewBinding {
     this.description = description;
     this.experienced = experienced;
     this.experiencedTv = experiencedTv;
+    this.fridaySlider = fridaySlider;
     this.intermediate = intermediate;
     this.intermediateTv = intermediateTv;
     this.kitNo = kitNo;
@@ -198,11 +289,16 @@ public final class ActivityAddTeamBinding implements ViewBinding {
     this.location = location;
     this.mondaySlider = mondaySlider;
     this.profileImage = profileImage;
+    this.saturdaySlider = saturdaySlider;
     this.save = save;
     this.selectSport = selectSport;
     this.selectSportTv = selectSportTv;
+    this.sundaySlider = sundaySlider;
+    this.thursdaySlider = thursdaySlider;
     this.title = title;
     this.tuesdaySlider = tuesdaySlider;
+    this.wednesdaySlider = wednesdaySlider;
+    this.weekendLay = weekendLay;
   }
 
   @Override
@@ -238,6 +334,18 @@ public final class ActivityAddTeamBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.Flay;
+      LinearLayoutCompat Flay = ViewBindings.findChildViewById(rootView, id);
+      if (Flay == null) {
+        break missingId;
+      }
+
+      id = R.id.Fstv;
+      AppCompatTextView Fstv = ViewBindings.findChildViewById(rootView, id);
+      if (Fstv == null) {
+        break missingId;
+      }
+
       id = R.id.Ftv;
       AppCompatTextView Ftv = ViewBindings.findChildViewById(rootView, id);
       if (Ftv == null) {
@@ -250,15 +358,39 @@ public final class ActivityAddTeamBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.Mlay;
+      LinearLayoutCompat Mlay = ViewBindings.findChildViewById(rootView, id);
+      if (Mlay == null) {
+        break missingId;
+      }
+
+      id = R.id.Mstv;
+      AppCompatTextView Mstv = ViewBindings.findChildViewById(rootView, id);
+      if (Mstv == null) {
+        break missingId;
+      }
+
       id = R.id.Mtv;
       AppCompatTextView Mtv = ViewBindings.findChildViewById(rootView, id);
       if (Mtv == null) {
         break missingId;
       }
 
+      id = R.id.SaLay;
+      LinearLayoutCompat SaLay = ViewBindings.findChildViewById(rootView, id);
+      if (SaLay == null) {
+        break missingId;
+      }
+
       id = R.id.Sacv;
       MaterialCardView Sacv = ViewBindings.findChildViewById(rootView, id);
       if (Sacv == null) {
+        break missingId;
+      }
+
+      id = R.id.Sastv;
+      AppCompatTextView Sastv = ViewBindings.findChildViewById(rootView, id);
+      if (Sastv == null) {
         break missingId;
       }
 
@@ -271,6 +403,18 @@ public final class ActivityAddTeamBinding implements ViewBinding {
       id = R.id.Scv;
       MaterialCardView Scv = ViewBindings.findChildViewById(rootView, id);
       if (Scv == null) {
+        break missingId;
+      }
+
+      id = R.id.Slay;
+      LinearLayoutCompat Slay = ViewBindings.findChildViewById(rootView, id);
+      if (Slay == null) {
+        break missingId;
+      }
+
+      id = R.id.Sstv;
+      AppCompatTextView Sstv = ViewBindings.findChildViewById(rootView, id);
+      if (Sstv == null) {
         break missingId;
       }
 
@@ -292,9 +436,33 @@ public final class ActivityAddTeamBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.Thlay;
+      LinearLayoutCompat Thlay = ViewBindings.findChildViewById(rootView, id);
+      if (Thlay == null) {
+        break missingId;
+      }
+
+      id = R.id.Thstv;
+      AppCompatTextView Thstv = ViewBindings.findChildViewById(rootView, id);
+      if (Thstv == null) {
+        break missingId;
+      }
+
       id = R.id.Thtv;
       AppCompatTextView Thtv = ViewBindings.findChildViewById(rootView, id);
       if (Thtv == null) {
+        break missingId;
+      }
+
+      id = R.id.Tlay;
+      LinearLayoutCompat Tlay = ViewBindings.findChildViewById(rootView, id);
+      if (Tlay == null) {
+        break missingId;
+      }
+
+      id = R.id.Tstv;
+      AppCompatTextView Tstv = ViewBindings.findChildViewById(rootView, id);
+      if (Tstv == null) {
         break missingId;
       }
 
@@ -310,9 +478,27 @@ public final class ActivityAddTeamBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.Wlay;
+      LinearLayoutCompat Wlay = ViewBindings.findChildViewById(rootView, id);
+      if (Wlay == null) {
+        break missingId;
+      }
+
+      id = R.id.Wstv;
+      AppCompatTextView Wstv = ViewBindings.findChildViewById(rootView, id);
+      if (Wstv == null) {
+        break missingId;
+      }
+
       id = R.id.Wtv;
       AppCompatTextView Wtv = ViewBindings.findChildViewById(rootView, id);
       if (Wtv == null) {
+        break missingId;
+      }
+
+      id = R.id.addImage;
+      ImageView addImage = ViewBindings.findChildViewById(rootView, id);
+      if (addImage == null) {
         break missingId;
       }
 
@@ -382,6 +568,12 @@ public final class ActivityAddTeamBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.fridaySlider;
+      RangeSlider fridaySlider = ViewBindings.findChildViewById(rootView, id);
+      if (fridaySlider == null) {
+        break missingId;
+      }
+
       id = R.id.intermediate;
       MaterialCardView intermediate = ViewBindings.findChildViewById(rootView, id);
       if (intermediate == null) {
@@ -436,6 +628,12 @@ public final class ActivityAddTeamBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.saturdaySlider;
+      RangeSlider saturdaySlider = ViewBindings.findChildViewById(rootView, id);
+      if (saturdaySlider == null) {
+        break missingId;
+      }
+
       id = R.id.save;
       TextView save = ViewBindings.findChildViewById(rootView, id);
       if (save == null) {
@@ -454,6 +652,18 @@ public final class ActivityAddTeamBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.sundaySlider;
+      RangeSlider sundaySlider = ViewBindings.findChildViewById(rootView, id);
+      if (sundaySlider == null) {
+        break missingId;
+      }
+
+      id = R.id.thursdaySlider;
+      RangeSlider thursdaySlider = ViewBindings.findChildViewById(rootView, id);
+      if (thursdaySlider == null) {
+        break missingId;
+      }
+
       id = R.id.title;
       TextView title = ViewBindings.findChildViewById(rootView, id);
       if (title == null) {
@@ -466,11 +676,26 @@ public final class ActivityAddTeamBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityAddTeamBinding((LinearLayoutCompat) rootView, Fcv, Ftv, Mcv, Mtv, Sacv,
-          Satv, Scv, Stv, Tcv, Thcv, Thtv, Ttv, Wcv, Wtv, awayNo, awayNoTv, awayYes, awayYesTv,
-          back, beginner, beginnerTv, createTeam, description, experienced, experiencedTv,
-          intermediate, intermediateTv, kitNo, kitNoTv, kitYes, kitYesTv, location, mondaySlider,
-          profileImage, save, selectSport, selectSportTv, title, tuesdaySlider);
+      id = R.id.wednesdaySlider;
+      RangeSlider wednesdaySlider = ViewBindings.findChildViewById(rootView, id);
+      if (wednesdaySlider == null) {
+        break missingId;
+      }
+
+      id = R.id.weekendLay;
+      LinearLayout weekendLay = ViewBindings.findChildViewById(rootView, id);
+      if (weekendLay == null) {
+        break missingId;
+      }
+
+      return new ActivityAddTeamBinding((LinearLayoutCompat) rootView, Fcv, Flay, Fstv, Ftv, Mcv,
+          Mlay, Mstv, Mtv, SaLay, Sacv, Sastv, Satv, Scv, Slay, Sstv, Stv, Tcv, Thcv, Thlay, Thstv,
+          Thtv, Tlay, Tstv, Ttv, Wcv, Wlay, Wstv, Wtv, addImage, awayNo, awayNoTv, awayYes,
+          awayYesTv, back, beginner, beginnerTv, createTeam, description, experienced,
+          experiencedTv, fridaySlider, intermediate, intermediateTv, kitNo, kitNoTv, kitYes,
+          kitYesTv, location, mondaySlider, profileImage, saturdaySlider, save, selectSport,
+          selectSportTv, sundaySlider, thursdaySlider, title, tuesdaySlider, wednesdaySlider,
+          weekendLay);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

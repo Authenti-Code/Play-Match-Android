@@ -1216,6 +1216,10 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\drawable-ldpi\\hi.png"
     },
     {
+        "merged": "com.playMatch.app-merged_res-48:/layout_activity_add_team.xml.flat",
+        "source": "com.playMatch.app-main-50:/layout/activity_add_team.xml"
+    },
+    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-merged_res-48:\\drawable_bottom_bar_bg.xml.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\drawable\\bottom_bar_bg.xml"
     },
@@ -1822,10 +1826,6 @@
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-merged_res-48:\\drawable_ic_user.xml.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\drawable\\ic_user.xml"
-    },
-    {
-        "merged": "com.playMatch.app-merged_res-48:/layout_activity_edit_sports.xml.flat",
-        "source": "com.playMatch.app-main-50:/layout/activity_edit_sports.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-merged_res-48:\\drawable-ldpi_seletec_profile_icon.png.flat",

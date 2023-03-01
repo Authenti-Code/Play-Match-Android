@@ -41,13 +41,7 @@ class EditSportsActivity : BaseActivity(), View.OnClickListener {
                 }
             })
             binding.rvEditSports.adapter = adapter
-//            for (i in 1..5) {
-//                list.add(
-//                    SelectSportModel(
-//                        "Cricket"
-//                    )
-//                )
-//            }
+
         }else{
             list.clear()
             setAdapter()

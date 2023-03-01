@@ -18,6 +18,7 @@ object ApiConstant {
     const val CHANGE_PASSWORD="userchngpass"
 
     const val EDIT_PROFILE="editProfile"
+    const val ADD_TEAM="addTeam"
     const val UPLOAD_IMAGE="userImage"
 
     const val PROFILE="profile"

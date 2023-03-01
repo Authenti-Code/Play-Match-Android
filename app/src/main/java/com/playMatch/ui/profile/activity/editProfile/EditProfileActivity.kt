@@ -32,7 +32,6 @@ import com.playMatch.R
 import com.playMatch.controller.playMatchAPi.ApiConstant
 import com.playMatch.controller.playMatchAPi.ResultResponse
 import com.playMatch.controller.playMatchAPi.apiClasses.UserApi
-import com.playMatch.controller.playMatchAPi.postPojoModel.user.editProfile.EditProfilePost
 import com.playMatch.controller.sharedPrefrence.PrefData
 import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.databinding.ActivityEditProfileBinding
@@ -44,13 +43,9 @@ import com.playMatch.ui.profile.adapter.ProfileSportsAdapter
 import com.playMatch.ui.profile.model.editProfile.EditProfileResponse
 import com.playMatch.ui.profile.model.profile.ProfileResponse
 import com.playMatch.ui.profile.model.profile.SportLevel
-import com.playMatch.ui.signUp.SelectSportActivity
-import com.playMatch.ui.signUp.signupModel.SportsList
-import com.playMatch.ui.signUp.signupModel.UploadImageResponse
 import com.soundcloud.android.crop.Crop
 import java.io.ByteArrayOutputStream
 import java.util.*
-import kotlin.collections.ArrayList
 import kotlin.math.roundToInt
 
 class EditProfileActivity : BaseActivity(), View.OnClickListener {
@@ -59,6 +54,7 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
     private var list = ArrayList<HomeChildModel>()
     private var sportList = ArrayList<SportLevel>()
     private var cal: Calendar = Calendar.getInstance()
+    private var myList = ArrayList<String>()
 
 
     //String
@@ -1060,6 +1056,11 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
                     } else{
                         binding.SaLay.visibility=View.GONE
                     }
+
+//                    if(response.data.sportLevel!=null){
+//                         sportList = response.data.sportLevel
+//                        intent.putExtra("mylist", myList)
+//                    }
 
                 } else {
                     showSnackBar(findViewById(R.id.rootView), response.message)

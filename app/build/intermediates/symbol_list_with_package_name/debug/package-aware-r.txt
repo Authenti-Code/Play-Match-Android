@@ -4013,6 +4013,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id addImage
 id addTeam
 id address
 id adjust_height

@@ -18,6 +18,7 @@ import com.playMatch.ui.matches.activity.payment.PaymentActivity
 import com.playMatch.ui.matches.adapter.selectSportAdapter.SelectMatchSportAdapter
 import com.playMatch.ui.matches.adapter.selectTeamAdapter.SelectTeamAdapter
 import com.playMatch.controller.sharedPrefrence.PrefData
+import com.playMatch.ui.signUp.signupModel.SportsList
 
 class CreateMatchActivity : BaseActivity(), View.OnClickListener,BottomSheetListner {
     private lateinit var binding: ActivityCreateMatchBinding
@@ -26,6 +27,7 @@ class CreateMatchActivity : BaseActivity(), View.OnClickListener,BottomSheetList
     private var seletedBottomSheet: BottomSheetDialog? = null
 
     private var list = ArrayList<HomeChildModel>()
+    private var sportList = ArrayList<SportsList>()
     override fun onCreate(savedInstanceState: Bundle?) {
         removeStatusBarFullyBlackIcon()
         super.onCreate(savedInstanceState)
@@ -138,7 +140,7 @@ class CreateMatchActivity : BaseActivity(), View.OnClickListener,BottomSheetList
         val recyclerView = view.findViewById<RecyclerView>(R.id.rvSelectSport)
         val close = view.findViewById<ImageView>(R.id.close)
 
-        selectSportAdapter = SelectMatchSportAdapter(list, this@CreateMatchActivity,String(),this)
+        selectSportAdapter = SelectMatchSportAdapter(sportList, this@CreateMatchActivity,String(),this)
         recyclerView?.adapter = selectSportAdapter
 
         for (i in 1..6) {
@@ -157,7 +159,7 @@ class CreateMatchActivity : BaseActivity(), View.OnClickListener,BottomSheetList
         seletedBottomSheet?.show()
     }
 
-    override fun bottomSheetListner(ViewType: String) {
+    override fun bottomSheetListner(ViewType: String,id:String) {
 
         if (ViewType=="sports"){
             binding.selectSport.setCardBackgroundColor(Color.parseColor("#F95047"))

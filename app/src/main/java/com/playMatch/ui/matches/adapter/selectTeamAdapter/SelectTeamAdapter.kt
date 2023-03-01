@@ -47,7 +47,7 @@ class SelectTeamAdapter(var list: ArrayList<HomeChildModel>, var activity: Activ
             binding.cardView.setOnClickListener {
                 selectedPosition=position
                 notifyDataSetChanged()
-                bottomSheetListner.bottomSheetListner("team")
+                bottomSheetListner.bottomSheetListner("team",id)
             }
         }
     }

@@ -198,6 +198,7 @@ id Wtv
 id abilityTv
 id accepted
 id acceptedTv
+id addImage
 id addTeam
 id address
 id app_bar

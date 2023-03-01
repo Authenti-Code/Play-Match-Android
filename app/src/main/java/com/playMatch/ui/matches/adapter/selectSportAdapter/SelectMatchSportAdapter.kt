@@ -9,8 +9,9 @@ import com.playMatch.controller.`interface`.BottomSheetListner
 import com.playMatch.databinding.RvSelectSportListItemBinding
 import com.playMatch.ui.home.model.HomeChildModel
 import com.playMatch.controller.sharedPrefrence.PrefData
+import com.playMatch.ui.signUp.signupModel.SportsList
 
-class SelectMatchSportAdapter(var list: ArrayList<HomeChildModel>, var activity: Activity, private var ViewType: String, val bottomSheetListner: BottomSheetListner) : RecyclerView.Adapter<SelectMatchSportAdapter.ViewHolder>() {
+class SelectMatchSportAdapter(var list: ArrayList<SportsList>, var activity: Activity, private var ViewType: String, val bottomSheetListner: BottomSheetListner) : RecyclerView.Adapter<SelectMatchSportAdapter.ViewHolder>() {
 
 
     private val USER = 0
@@ -37,6 +38,8 @@ class SelectMatchSportAdapter(var list: ArrayList<HomeChildModel>, var activity:
             val ItemsviewModel = list[position]
             val id= PrefData.getStringPrefs(activity, PrefData.CHECK_BOX,"")
 
+            binding.sportName.text=ItemsviewModel.sportName
+
 //            if (id=="1"){
 //                binding.cardView.setCardBackgroundColor(Color.parseColor("#F95047"))
 //            }else{
@@ -47,7 +50,7 @@ class SelectMatchSportAdapter(var list: ArrayList<HomeChildModel>, var activity:
             binding.cardView.setOnClickListener {
                 selectedPosition=position
                 notifyDataSetChanged()
-                bottomSheetListner.bottomSheetListner("sports")
+                bottomSheetListner.bottomSheetListner(ItemsviewModel.sportName,ItemsviewModel.id.toString())
             }
         }
     }
@@ -65,7 +68,7 @@ class SelectMatchSportAdapter(var list: ArrayList<HomeChildModel>, var activity:
 
 
     @SuppressLint("NotifyDataSetChanged")
-    fun updateCommentList(Data: List<HomeChildModel>, mRecyclerview: RecyclerView?) {
+    fun updateList(Data: List<SportsList>) {
         if (list.size > 0) {
             list.clear()
             notifyDataSetChanged()
@@ -73,10 +76,10 @@ class SelectMatchSportAdapter(var list: ArrayList<HomeChildModel>, var activity:
         list.addAll(Data)
         notifyDataSetChanged()
 
-        mRecyclerview?.postDelayed({
-            mRecyclerview.scrollToPosition(itemCount - 1)
-
-        }, 100)
+//        mRecyclerview?.postDelayed({
+//            mRecyclerview.scrollToPosition(itemCount - 1)
+//
+//        }, 100)
     }
 
 
