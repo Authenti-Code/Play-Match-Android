@@ -11,6 +11,8 @@ data class CreateMatchPost(
     val standard: String? = null,
     val sportId: String?= null,
     val teamId: String?= null,
-    val description: String?= null
+    val description: String?= null,
+    val latitude: String?= null,
+    val longitude: String?= null,
 )
 

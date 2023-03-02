@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/rootView"
     android:orientation="vertical"
     tools:context=".ui.matches.activity.createMatchActivity.CreateMatchActivity">
 
@@ -143,6 +144,7 @@
         android:background="@color/black_707070" />
 
     <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/locationTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableStart="@drawable/ic_location_nav"
@@ -166,6 +168,7 @@
         android:background="@color/black_707070" />
 
     <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/genderTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableStart="@drawable/ic_gender"
@@ -415,6 +418,14 @@
                 android:layout_marginEnd="@dimen/_10sdp"
                 app:cardBackgroundColor="@color/red_F95047"
                 app:cardCornerRadius="@dimen/_18sdp">
+
+                <ProgressBar
+                    android:id="@+id/continueProgressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    android:layout_marginVertical="@dimen/_2sdp"
+                    android:indeterminateTint="@color/white"/>
 
                 <TextView
                     android:id="@+id/ContinueTv"

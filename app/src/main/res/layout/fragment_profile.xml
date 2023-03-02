@@ -552,6 +552,7 @@
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_statistics"
             android:layout_marginTop="@dimen/_10sdp"

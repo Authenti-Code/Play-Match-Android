@@ -8,9 +8,15 @@
 
     //error String
     <string name="error_name">Please Enter full name</string>
+    <string name="error_match_name">Please Enter Match name</string>
     <string name="error_Email">Please Enter Email address</string>
     <string name="error_dob">Please Select Date of Birth</string>
+    <string name="error_start_time">Please Select Start Time</string>
+    <string name="error_finish_time">Please Select Finish Time</string>
+    <string name="error_match_date">Please Select Match Date</string>
     <string name="error_location">Please Select Your Location</string>
+    <string name="error_description">Please Enter Description </string>
+    <string name="error_gender">Gender Field is empty</string>
     <string name="error_Password">Please Enter Password</string>
     <string name="error_Old_Password">Please Enter Old Password</string>
 

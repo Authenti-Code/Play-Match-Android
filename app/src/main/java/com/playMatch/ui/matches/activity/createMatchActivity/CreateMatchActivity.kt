@@ -57,6 +57,8 @@ class CreateMatchActivity : BaseActivity(), View.OnClickListener,BottomSheetList
 
     private var sportId:String?=null
     private var teamId:String?=null
+    private var fitnessLevel:String?="Intermediate"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         removeStatusBarFullyBlackIcon()
         super.onCreate(savedInstanceState)
@@ -105,7 +107,38 @@ class CreateMatchActivity : BaseActivity(), View.OnClickListener,BottomSheetList
                 if (type=="edit"){
                     onBackPressed()
                 }else {
-                    CommonUtils.performIntent(this, PaymentActivity::class.java)
+                    showProgressBar()
+                    if (binding.matchName.text.toString().trim().isEmpty()) {
+                        Toast.makeText(this, R.string.error_match_name, Toast.LENGTH_LONG).show()
+                        hideProgressBar()
+                    }else if (binding.calendar.text.toString().trim().isEmpty()) {
+                        Toast.makeText(this, R.string.error_match_date, Toast.LENGTH_LONG).show()
+                        hideProgressBar()
+                    }else if (binding.startTime.text.toString().trim().isEmpty()) {
+                        Toast.makeText(this, R.string.error_start_time, Toast.LENGTH_LONG).show()
+                        hideProgressBar()
+                    }else if (binding.finishTime.text.toString().trim().isEmpty()) {
+                        Toast.makeText(this, R.string.error_finish_time, Toast.LENGTH_LONG).show()
+                        hideProgressBar()
+                    }   else if (binding.locationTv.text.toString().trim().isEmpty()) {
+                        Toast.makeText(this, R.string.error_location, Toast.LENGTH_LONG).show()
+                        hideProgressBar()
+                    }else if (binding.genderTv.text.toString().trim().isEmpty()) {
+                        Toast.makeText(this, R.string.error_gender, Toast.LENGTH_LONG).show()
+                        hideProgressBar()
+                    }else if (sportId==null) {
+                        Toast.makeText(this, "Select your Sport", Toast.LENGTH_LONG).show()
+                        hideProgressBar()
+                    }else if (teamId==null) {
+                        Toast.makeText(this, "Select your Team", Toast.LENGTH_LONG).show()
+                        hideProgressBar()
+                    }else if (binding.description.text.toString().trim().isEmpty()) {
+                        Toast.makeText(this, R.string.error_location, Toast.LENGTH_LONG).show()
+                        hideProgressBar()
+                    }
+                    else{
+                        createMatchApi()
+                    }
                 }
             }
             R.id.selectTeam -> {
@@ -176,7 +209,8 @@ class CreateMatchActivity : BaseActivity(), View.OnClickListener,BottomSheetList
             binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
             binding.experienced.setCardBackgroundColor(Color.WHITE)
             binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
-        }
+                fitnessLevel=binding.beginnerTv.text.toString().trim()
+            }
             R.id.intermediate -> {
             binding.intermediate.setCardBackgroundColor(Color.parseColor("#F95047"))
             binding.intermediateTv.setTextColor(Color.WHITE)
@@ -184,7 +218,9 @@ class CreateMatchActivity : BaseActivity(), View.OnClickListener,BottomSheetList
             binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
             binding.experienced.setCardBackgroundColor(Color.WHITE)
             binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
-        }
+                fitnessLevel=binding.intermediateTv.text.toString().trim()
+
+            }
 
             R.id.experienced -> {
             binding.experienced.setCardBackgroundColor(Color.parseColor("#F95047"))
@@ -193,7 +229,8 @@ class CreateMatchActivity : BaseActivity(), View.OnClickListener,BottomSheetList
             binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
             binding.intermediate.setCardBackgroundColor(Color.WHITE)
             binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
-        }
+                fitnessLevel=binding.experiencedTv.text.toString().trim()
+            }
 
         }
 
@@ -287,7 +324,6 @@ class CreateMatchActivity : BaseActivity(), View.OnClickListener,BottomSheetList
     }
 
     private fun teamsListApi(){
-
         if (isNetworkAvailable()) {
             CommonUtils.showProgressDialog(this@CreateMatchActivity)
             lifecycleScope.launchWhenStarted {
@@ -324,11 +360,10 @@ class CreateMatchActivity : BaseActivity(), View.OnClickListener,BottomSheetList
     }
 
     private fun createMatchApi(){
-
+         showProgressBar()
         if (isNetworkAvailable()) {
-            CommonUtils.showProgressDialog(this)
             lifecycleScope.launchWhenStarted {
-                val resultResponse = UserApi(this@CreateMatchActivity).createMatch(CreateMatchPost(teamId.toString()))
+                val resultResponse = UserApi(this@CreateMatchActivity).createMatch(CreateMatchPost(binding.matchName.text.toString().trim(),binding.calendar.text.toString().trim(),binding.startTime.text.toString().trim(),binding.finishTime.text.toString().trim(),binding.locationTv.text.toString().trim(),binding.genderTv.text.toString().trim(),fitnessLevel,sportId,teamId,binding.description.text.toString().trim(),"31.606142","74.885596",))
                 apiCreateMatchResult(resultResponse)
             }
         } else {
@@ -337,12 +372,13 @@ class CreateMatchActivity : BaseActivity(), View.OnClickListener,BottomSheetList
     }
 
     private fun apiCreateMatchResult(resultResponse: ResultResponse) {
-        CommonUtils.hideProgressDialog()
+       hideProgressBar()
         return when (resultResponse) {
             is ResultResponse.Success<*> -> {
                 val response = resultResponse.response as CreateMatchResponse
                 //get data and convert string to json and save data
                 if (response.success == "true") {
+//                    CommonUtils.performIntent(this, PaymentActivity::class.java)
                     onBackPressed()
                 } else {
                     showSnackBar(findViewById(R.id.rootView), response.message)
@@ -353,5 +389,12 @@ class CreateMatchActivity : BaseActivity(), View.OnClickListener,BottomSheetList
             }
         } as Unit
     }
-
+    private fun showProgressBar(){
+        binding.continueProgressBar.visibility=View.VISIBLE
+        binding.ContinueTv.visibility=View.GONE
+    }
+    private fun hideProgressBar(){
+        binding.continueProgressBar.visibility=View.GONE
+        binding.ContinueTv.visibility=View.VISIBLE
+    }
 }

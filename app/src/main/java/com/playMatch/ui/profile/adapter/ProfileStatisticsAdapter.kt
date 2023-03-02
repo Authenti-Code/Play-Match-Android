@@ -7,8 +7,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.playMatch.databinding.RvListItemProfileStatisticsBinding
 import com.playMatch.ui.home.model.HomeChildModel
+import com.playMatch.ui.home.model.ProfileModel
 
-class ProfileStatisticsAdapter(var list: ArrayList<HomeChildModel>, var activity: Activity) : RecyclerView.Adapter<ProfileStatisticsAdapter.ViewHolder>() {
+class ProfileStatisticsAdapter(var list: ArrayList<ProfileModel>, var activity: Activity) : RecyclerView.Adapter<ProfileStatisticsAdapter.ViewHolder>() {
 
 
     private val USER = 0
@@ -62,7 +63,7 @@ class ProfileStatisticsAdapter(var list: ArrayList<HomeChildModel>, var activity
 
 
     @SuppressLint("NotifyDataSetChanged")
-    fun updateCommentList(Data: List<HomeChildModel>, mRecyclerview: RecyclerView?) {
+    fun updateCommentList(Data: List<ProfileModel>, mRecyclerview: RecyclerView?) {
         if (list.size > 0) {
             list.clear()
             notifyDataSetChanged()
@@ -75,7 +76,4 @@ class ProfileStatisticsAdapter(var list: ArrayList<HomeChildModel>, var activity
 
         }, 100)
     }
-
-
-
 }

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,7 +23,7 @@ import java.lang.String;
 
 public final class ActivityCreateMatchBinding implements ViewBinding {
   @NonNull
-  private final LinearLayoutCompat rootView;
+  private final LinearLayoutCompat rootView_;
 
   @NonNull
   public final CardView Continue;
@@ -43,6 +44,9 @@ public final class ActivityCreateMatchBinding implements ViewBinding {
   public final AppCompatTextView calendar;
 
   @NonNull
+  public final ProgressBar continueProgressBar;
+
+  @NonNull
   public final AppCompatEditText description;
 
   @NonNull
@@ -55,13 +59,22 @@ public final class ActivityCreateMatchBinding implements ViewBinding {
   public final AppCompatTextView finishTime;
 
   @NonNull
+  public final AppCompatEditText genderTv;
+
+  @NonNull
   public final MaterialCardView intermediate;
 
   @NonNull
   public final AppCompatTextView intermediateTv;
 
   @NonNull
+  public final AppCompatEditText locationTv;
+
+  @NonNull
   public final AppCompatEditText matchName;
+
+  @NonNull
+  public final LinearLayoutCompat rootView;
 
   @NonNull
   public final MaterialCardView selectSport;
@@ -81,30 +94,36 @@ public final class ActivityCreateMatchBinding implements ViewBinding {
   @NonNull
   public final TextView title;
 
-  private ActivityCreateMatchBinding(@NonNull LinearLayoutCompat rootView,
+  private ActivityCreateMatchBinding(@NonNull LinearLayoutCompat rootView_,
       @NonNull CardView Continue, @NonNull TextView ContinueTv, @NonNull ImageView back,
       @NonNull MaterialCardView beginner, @NonNull AppCompatTextView beginnerTv,
-      @NonNull AppCompatTextView calendar, @NonNull AppCompatEditText description,
-      @NonNull MaterialCardView experienced, @NonNull AppCompatTextView experiencedTv,
-      @NonNull AppCompatTextView finishTime, @NonNull MaterialCardView intermediate,
-      @NonNull AppCompatTextView intermediateTv, @NonNull AppCompatEditText matchName,
+      @NonNull AppCompatTextView calendar, @NonNull ProgressBar continueProgressBar,
+      @NonNull AppCompatEditText description, @NonNull MaterialCardView experienced,
+      @NonNull AppCompatTextView experiencedTv, @NonNull AppCompatTextView finishTime,
+      @NonNull AppCompatEditText genderTv, @NonNull MaterialCardView intermediate,
+      @NonNull AppCompatTextView intermediateTv, @NonNull AppCompatEditText locationTv,
+      @NonNull AppCompatEditText matchName, @NonNull LinearLayoutCompat rootView,
       @NonNull MaterialCardView selectSport, @NonNull AppCompatTextView selectSportTv,
       @NonNull MaterialCardView selectTeam, @NonNull AppCompatTextView selectTeamTV,
       @NonNull AppCompatTextView startTime, @NonNull TextView title) {
-    this.rootView = rootView;
+    this.rootView_ = rootView_;
     this.Continue = Continue;
     this.ContinueTv = ContinueTv;
     this.back = back;
     this.beginner = beginner;
     this.beginnerTv = beginnerTv;
     this.calendar = calendar;
+    this.continueProgressBar = continueProgressBar;
     this.description = description;
     this.experienced = experienced;
     this.experiencedTv = experiencedTv;
     this.finishTime = finishTime;
+    this.genderTv = genderTv;
     this.intermediate = intermediate;
     this.intermediateTv = intermediateTv;
+    this.locationTv = locationTv;
     this.matchName = matchName;
+    this.rootView = rootView;
     this.selectSport = selectSport;
     this.selectSportTv = selectSportTv;
     this.selectTeam = selectTeam;
@@ -116,7 +135,7 @@ public final class ActivityCreateMatchBinding implements ViewBinding {
   @Override
   @NonNull
   public LinearLayoutCompat getRoot() {
-    return rootView;
+    return rootView_;
   }
 
   @NonNull
@@ -176,6 +195,12 @@ public final class ActivityCreateMatchBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.continueProgressBar;
+      ProgressBar continueProgressBar = ViewBindings.findChildViewById(rootView, id);
+      if (continueProgressBar == null) {
+        break missingId;
+      }
+
       id = R.id.description;
       AppCompatEditText description = ViewBindings.findChildViewById(rootView, id);
       if (description == null) {
@@ -200,6 +225,12 @@ public final class ActivityCreateMatchBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.genderTv;
+      AppCompatEditText genderTv = ViewBindings.findChildViewById(rootView, id);
+      if (genderTv == null) {
+        break missingId;
+      }
+
       id = R.id.intermediate;
       MaterialCardView intermediate = ViewBindings.findChildViewById(rootView, id);
       if (intermediate == null) {
@@ -212,11 +243,19 @@ public final class ActivityCreateMatchBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.locationTv;
+      AppCompatEditText locationTv = ViewBindings.findChildViewById(rootView, id);
+      if (locationTv == null) {
+        break missingId;
+      }
+
       id = R.id.matchName;
       AppCompatEditText matchName = ViewBindings.findChildViewById(rootView, id);
       if (matchName == null) {
         break missingId;
       }
+
+      LinearLayoutCompat rootView_ = (LinearLayoutCompat) rootView;
 
       id = R.id.selectSport;
       MaterialCardView selectSport = ViewBindings.findChildViewById(rootView, id);
@@ -255,9 +294,9 @@ public final class ActivityCreateMatchBinding implements ViewBinding {
       }
 
       return new ActivityCreateMatchBinding((LinearLayoutCompat) rootView, Continue, ContinueTv,
-          back, beginner, beginnerTv, calendar, description, experienced, experiencedTv, finishTime,
-          intermediate, intermediateTv, matchName, selectSport, selectSportTv, selectTeam,
-          selectTeamTV, startTime, title);
+          back, beginner, beginnerTv, calendar, continueProgressBar, description, experienced,
+          experiencedTv, finishTime, genderTv, intermediate, intermediateTv, locationTv, matchName,
+          rootView_, selectSport, selectSportTv, selectTeam, selectTeamTV, startTime, title);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

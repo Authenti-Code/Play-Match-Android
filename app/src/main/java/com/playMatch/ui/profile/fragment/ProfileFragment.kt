@@ -28,6 +28,7 @@ import com.playMatch.ui.profile.adapter.ProfileSportsAdapter
 import com.playMatch.ui.profile.adapter.ProfileStatisticsAdapter
 import com.playMatch.controller.sharedPrefrence.PrefData
 import com.playMatch.ui.home.activity.HomeActivity
+import com.playMatch.ui.home.model.ProfileModel
 import com.playMatch.ui.profile.model.profile.ProfileResponse
 import com.playMatch.ui.profile.model.profile.SportLevel
 import com.playMatch.ui.signUp.signupModel.MatchAvailabilityResponse
@@ -37,11 +38,14 @@ class ProfileFragment : Fragment(),View.OnClickListener {
     private var binding: FragmentProfileBinding? = null
     private var profileSportsAdapter: ProfileSportsAdapter? = null
     private var profileStatisticsAdapter: ProfileStatisticsAdapter? = null
-    private var list = ArrayList<HomeChildModel>()
+    private var list = ArrayList<ProfileModel>()
     private var sportsList = ArrayList<SportLevel>()
     private var pageNo: String = "1"
     private var totalPages: String = ""
-
+    private var totalTeams:String?=null
+    private var matchesCreated:String?=null
+    private var matchesPlayed:String?=null
+    private var invitesReceived:String?=null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -95,24 +99,20 @@ class ProfileFragment : Fragment(),View.OnClickListener {
         binding?.rvStatistics?.adapter = profileStatisticsAdapter
         list.clear()
             list.add(
-                HomeChildModel(
-                    R.drawable.ic_hand,"Total Teams"
-                )
+                ProfileModel(
+                    R.drawable.ic_hand,"Total Teams",totalTeams.toString())
             )
         list.add(
-                HomeChildModel(
-                    R.drawable.stadium,"Matches Created"
-                )
+            ProfileModel(
+                    R.drawable.stadium,"Matches Created",matchesCreated.toString())
             )
         list.add(
-                HomeChildModel(
-                    R.drawable.triangle,"Matches Played"
-                )
+            ProfileModel(
+                    R.drawable.triangle,"Matches Played",matchesPlayed.toString())
             )
         list.add(
-                HomeChildModel(
-                    R.drawable.museum,"Invites Received"
-                )
+            ProfileModel(
+                    R.drawable.museum,"Invites Received",invitesReceived.toString())
             )
     }
 
@@ -175,6 +175,7 @@ class ProfileFragment : Fragment(),View.OnClickListener {
                     binding?.fitnessLevel!!.text=response.data.fitnessLevel
                     binding?.address!!.text=response.data.location
                     binding?.address!!.text=response.data.location
+
 
                     profileSportsAdapter?.updateSportsList(response.data.sportLevel,binding?.rvSports)
 
