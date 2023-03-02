@@ -802,12 +802,12 @@ class AddTeamActivity : BaseActivity(), View.OnClickListener, BottomSheetListner
         seletedBottomSheet?.show()
     }
 
-    override fun bottomSheetListner(ViewType: String,id:String) {
+    override fun bottomSheetListner(ViewType: String,id:String,sportsName:String) {
 
-        if (ViewType!=null){
+        if (ViewType=="sports"){
             binding.selectSport.setCardBackgroundColor(Color.parseColor("#F95047"))
             binding.selectSportTv.setTextColor(Color.WHITE)
-            binding.selectSportTv.text=ViewType
+            binding.selectSportTv.text=sportsName
             if (id!=null) {
                 sportId = id
             }

@@ -6,9 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -32,20 +34,33 @@ public final class RvListItemSelectTeamBinding implements ViewBinding {
   public final ImageView edit;
 
   @NonNull
+  public final CircleImageView logo;
+
+  @NonNull
   public final TextView name;
 
   @NonNull
-  public final CircleImageView profileImage;
+  public final ProgressBar progressBar;
+
+  @NonNull
+  public final TextView sportLevel;
+
+  @NonNull
+  public final AppCompatTextView sportName;
 
   private RvListItemSelectTeamBinding(@NonNull FrameLayout rootView,
       @NonNull LinearLayoutCompat back, @NonNull FrameLayout cardView, @NonNull ImageView edit,
-      @NonNull TextView name, @NonNull CircleImageView profileImage) {
+      @NonNull CircleImageView logo, @NonNull TextView name, @NonNull ProgressBar progressBar,
+      @NonNull TextView sportLevel, @NonNull AppCompatTextView sportName) {
     this.rootView = rootView;
     this.back = back;
     this.cardView = cardView;
     this.edit = edit;
+    this.logo = logo;
     this.name = name;
-    this.profileImage = profileImage;
+    this.progressBar = progressBar;
+    this.sportLevel = sportLevel;
+    this.sportName = sportName;
   }
 
   @Override
@@ -89,20 +104,38 @@ public final class RvListItemSelectTeamBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.logo;
+      CircleImageView logo = ViewBindings.findChildViewById(rootView, id);
+      if (logo == null) {
+        break missingId;
+      }
+
       id = R.id.name;
       TextView name = ViewBindings.findChildViewById(rootView, id);
       if (name == null) {
         break missingId;
       }
 
-      id = R.id.profile_image;
-      CircleImageView profileImage = ViewBindings.findChildViewById(rootView, id);
-      if (profileImage == null) {
+      id = R.id.progressBar;
+      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
+      if (progressBar == null) {
         break missingId;
       }
 
-      return new RvListItemSelectTeamBinding((FrameLayout) rootView, back, cardView, edit, name,
-          profileImage);
+      id = R.id.sportLevel;
+      TextView sportLevel = ViewBindings.findChildViewById(rootView, id);
+      if (sportLevel == null) {
+        break missingId;
+      }
+
+      id = R.id.sportName;
+      AppCompatTextView sportName = ViewBindings.findChildViewById(rootView, id);
+      if (sportName == null) {
+        break missingId;
+      }
+
+      return new RvListItemSelectTeamBinding((FrameLayout) rootView, back, cardView, edit, logo,
+          name, progressBar, sportLevel, sportName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

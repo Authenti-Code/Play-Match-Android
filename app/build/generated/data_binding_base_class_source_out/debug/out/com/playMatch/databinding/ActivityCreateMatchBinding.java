@@ -28,6 +28,9 @@ public final class ActivityCreateMatchBinding implements ViewBinding {
   public final CardView Continue;
 
   @NonNull
+  public final TextView ContinueTv;
+
+  @NonNull
   public final ImageView back;
 
   @NonNull
@@ -35,6 +38,9 @@ public final class ActivityCreateMatchBinding implements ViewBinding {
 
   @NonNull
   public final AppCompatTextView beginnerTv;
+
+  @NonNull
+  public final AppCompatTextView calendar;
 
   @NonNull
   public final AppCompatEditText description;
@@ -46,10 +52,16 @@ public final class ActivityCreateMatchBinding implements ViewBinding {
   public final AppCompatTextView experiencedTv;
 
   @NonNull
+  public final AppCompatTextView finishTime;
+
+  @NonNull
   public final MaterialCardView intermediate;
 
   @NonNull
   public final AppCompatTextView intermediateTv;
+
+  @NonNull
+  public final AppCompatEditText matchName;
 
   @NonNull
   public final MaterialCardView selectSport;
@@ -64,30 +76,40 @@ public final class ActivityCreateMatchBinding implements ViewBinding {
   public final AppCompatTextView selectTeamTV;
 
   @NonNull
+  public final AppCompatTextView startTime;
+
+  @NonNull
   public final TextView title;
 
   private ActivityCreateMatchBinding(@NonNull LinearLayoutCompat rootView,
-      @NonNull CardView Continue, @NonNull ImageView back, @NonNull MaterialCardView beginner,
-      @NonNull AppCompatTextView beginnerTv, @NonNull AppCompatEditText description,
+      @NonNull CardView Continue, @NonNull TextView ContinueTv, @NonNull ImageView back,
+      @NonNull MaterialCardView beginner, @NonNull AppCompatTextView beginnerTv,
+      @NonNull AppCompatTextView calendar, @NonNull AppCompatEditText description,
       @NonNull MaterialCardView experienced, @NonNull AppCompatTextView experiencedTv,
-      @NonNull MaterialCardView intermediate, @NonNull AppCompatTextView intermediateTv,
+      @NonNull AppCompatTextView finishTime, @NonNull MaterialCardView intermediate,
+      @NonNull AppCompatTextView intermediateTv, @NonNull AppCompatEditText matchName,
       @NonNull MaterialCardView selectSport, @NonNull AppCompatTextView selectSportTv,
       @NonNull MaterialCardView selectTeam, @NonNull AppCompatTextView selectTeamTV,
-      @NonNull TextView title) {
+      @NonNull AppCompatTextView startTime, @NonNull TextView title) {
     this.rootView = rootView;
     this.Continue = Continue;
+    this.ContinueTv = ContinueTv;
     this.back = back;
     this.beginner = beginner;
     this.beginnerTv = beginnerTv;
+    this.calendar = calendar;
     this.description = description;
     this.experienced = experienced;
     this.experiencedTv = experiencedTv;
+    this.finishTime = finishTime;
     this.intermediate = intermediate;
     this.intermediateTv = intermediateTv;
+    this.matchName = matchName;
     this.selectSport = selectSport;
     this.selectSportTv = selectSportTv;
     this.selectTeam = selectTeam;
     this.selectTeamTV = selectTeamTV;
+    this.startTime = startTime;
     this.title = title;
   }
 
@@ -124,6 +146,12 @@ public final class ActivityCreateMatchBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.ContinueTv;
+      TextView ContinueTv = ViewBindings.findChildViewById(rootView, id);
+      if (ContinueTv == null) {
+        break missingId;
+      }
+
       id = R.id.back;
       ImageView back = ViewBindings.findChildViewById(rootView, id);
       if (back == null) {
@@ -139,6 +167,12 @@ public final class ActivityCreateMatchBinding implements ViewBinding {
       id = R.id.beginnerTv;
       AppCompatTextView beginnerTv = ViewBindings.findChildViewById(rootView, id);
       if (beginnerTv == null) {
+        break missingId;
+      }
+
+      id = R.id.calendar;
+      AppCompatTextView calendar = ViewBindings.findChildViewById(rootView, id);
+      if (calendar == null) {
         break missingId;
       }
 
@@ -160,6 +194,12 @@ public final class ActivityCreateMatchBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.finishTime;
+      AppCompatTextView finishTime = ViewBindings.findChildViewById(rootView, id);
+      if (finishTime == null) {
+        break missingId;
+      }
+
       id = R.id.intermediate;
       MaterialCardView intermediate = ViewBindings.findChildViewById(rootView, id);
       if (intermediate == null) {
@@ -169,6 +209,12 @@ public final class ActivityCreateMatchBinding implements ViewBinding {
       id = R.id.intermediateTv;
       AppCompatTextView intermediateTv = ViewBindings.findChildViewById(rootView, id);
       if (intermediateTv == null) {
+        break missingId;
+      }
+
+      id = R.id.matchName;
+      AppCompatEditText matchName = ViewBindings.findChildViewById(rootView, id);
+      if (matchName == null) {
         break missingId;
       }
 
@@ -196,15 +242,22 @@ public final class ActivityCreateMatchBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.startTime;
+      AppCompatTextView startTime = ViewBindings.findChildViewById(rootView, id);
+      if (startTime == null) {
+        break missingId;
+      }
+
       id = R.id.title;
       TextView title = ViewBindings.findChildViewById(rootView, id);
       if (title == null) {
         break missingId;
       }
 
-      return new ActivityCreateMatchBinding((LinearLayoutCompat) rootView, Continue, back, beginner,
-          beginnerTv, description, experienced, experiencedTv, intermediate, intermediateTv,
-          selectSport, selectSportTv, selectTeam, selectTeamTV, title);
+      return new ActivityCreateMatchBinding((LinearLayoutCompat) rootView, Continue, ContinueTv,
+          back, beginner, beginnerTv, calendar, description, experienced, experiencedTv, finishTime,
+          intermediate, intermediateTv, matchName, selectSport, selectSportTv, selectTeam,
+          selectTeamTV, startTime, title);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -2,6 +2,7 @@ package com.playMatch.controller.playMatchAPi
 
 
 import com.playMatch.controller.playMatchAPi.apiClasses.ApiParameters
+import com.playMatch.controller.playMatchAPi.postPojoModel.user.createMatch.CreateMatchPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.editProfile.EditProfilePost
 import com.playMatch.ui.login.model.LoginResponse
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.login.LoginPost
@@ -154,5 +155,12 @@ interface ApiService {
         @Header(ApiConstant.AUTH) token: String,
         @Body eventDetail: ShowTeamPost?
     ):Response<TeamDetailResponse>
+
+    @Headers("Content-Type: application/json")
+    @POST(ApiConstant.CREATE_MATCH)
+    suspend fun createMatch(
+        @Header(ApiConstant.AUTH) token: String,
+        @Body eventDetail: CreateMatchPost?
+    ):Response<SportsLevelsResponse>
 
 }

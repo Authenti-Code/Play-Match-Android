@@ -165,6 +165,7 @@ font metropolis_thinitalic
 id Apply
 id BeginnerTv
 id Continue
+id ContinueTv
 id ExperiencedTv
 id Fcv
 id Flay
@@ -213,6 +214,7 @@ id begginerTv
 id beginner
 id beginnerTv
 id beginner_check
+id calendar
 id cancel
 id cardNumber
 id cardNumber2
@@ -246,6 +248,7 @@ id experienced
 id experiencedTv
 id experienced_check
 id filter
+id finishTime
 id fitnessLevel
 id forgotPassTv
 id frameLayoutHomeMain
@@ -280,6 +283,7 @@ id loginTv
 id logo
 id logout
 id map
+id matchName
 id menu
 id message
 id message_time
@@ -343,6 +347,7 @@ id snackbar_text
 id sportLevel
 id sportName
 id sportsTv
+id startTime
 id streetMap
 id sundaySlider
 id text_sign

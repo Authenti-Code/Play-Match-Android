@@ -27,6 +27,7 @@ object ApiConstant {
     const val SPORTS_LIST="sportsList"
     const val SPORTS_LEVELS="sportAbilityLevels"
     const val MATCH_AVAILABILITY="matchAvailability"
+    const val CREATE_MATCH="create/match"
     const val SHOW_TEAM="showTeam"
     const val LOGOUT="logout"
 

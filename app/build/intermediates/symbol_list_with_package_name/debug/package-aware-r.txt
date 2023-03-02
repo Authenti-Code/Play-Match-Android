@@ -3913,6 +3913,7 @@ id BOTTOM_START
 id BeginnerTv
 id CTRL
 id Continue
+id ContinueTv
 id ExperiencedTv
 id FUNCTION
 id Fcv
@@ -4064,6 +4065,7 @@ id btn_cancel
 id btn_done
 id buttonPanel
 id cache_measures
+id calendar
 id callMeasure
 id cancel
 id cancel_button
@@ -4185,6 +4187,7 @@ id fill_horizontal
 id fill_vertical
 id filled
 id filter
+id finishTime
 id fitCenter
 id fitEnd
 id fitStart
@@ -4285,6 +4288,7 @@ id m3_side_sheet
 id map
 id marquee
 id masked
+id matchName
 id match_constraint
 id match_parent
 id material_clock_display
@@ -4533,6 +4537,7 @@ id src_over
 id standard
 id start
 id startHorizontal
+id startTime
 id startToEnd
 id startVertical
 id staticLayout

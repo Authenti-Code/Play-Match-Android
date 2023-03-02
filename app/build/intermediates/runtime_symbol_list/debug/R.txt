@@ -3912,6 +3912,7 @@ int id BOTTOM_START 0x7f0a0003
 int id BeginnerTv 0x7f0a0004
 int id CTRL 0x7f0a0005
 int id Continue 0x7f0a0006
+int id ContinueTv 0x7f0a02db
 int id ExperiencedTv 0x7f0a0007
 int id FUNCTION 0x7f0a0008
 int id Fcv 0x7f0a0009
@@ -4063,6 +4064,7 @@ int id btn_cancel 0x7f0a009a
 int id btn_done 0x7f0a009b
 int id buttonPanel 0x7f0a009c
 int id cache_measures 0x7f0a009d
+int id calendar 0x7f0a02dc
 int id callMeasure 0x7f0a009e
 int id cancel 0x7f0a009f
 int id cancel_button 0x7f0a00a0
@@ -4184,6 +4186,7 @@ int id fill_horizontal 0x7f0a0113
 int id fill_vertical 0x7f0a0114
 int id filled 0x7f0a0115
 int id filter 0x7f0a0116
+int id finishTime 0x7f0a02dd
 int id fitCenter 0x7f0a0117
 int id fitEnd 0x7f0a0118
 int id fitStart 0x7f0a0119
@@ -4284,6 +4287,7 @@ int id m3_side_sheet 0x7f0a0177
 int id map 0x7f0a0178
 int id marquee 0x7f0a0179
 int id masked 0x7f0a017a
+int id matchName 0x7f0a02de
 int id match_constraint 0x7f0a017b
 int id match_parent 0x7f0a017c
 int id material_clock_display 0x7f0a017d
@@ -4532,6 +4536,7 @@ int id src_over 0x7f0a026f
 int id standard 0x7f0a0270
 int id start 0x7f0a0271
 int id startHorizontal 0x7f0a0272
+int id startTime 0x7f0a02df
 int id startToEnd 0x7f0a0273
 int id startVertical 0x7f0a0274
 int id staticLayout 0x7f0a0275

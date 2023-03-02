@@ -21,8 +21,6 @@ class SelectMatchSportAdapter(var list: ArrayList<SportsList>, var activity: Act
     inner class ViewHolder(val binding: RvSelectSportListItemBinding) : RecyclerView.ViewHolder(binding.root)
 
 
-
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         val binding = RvSelectSportListItemBinding
@@ -40,17 +38,10 @@ class SelectMatchSportAdapter(var list: ArrayList<SportsList>, var activity: Act
 
             binding.sportName.text=ItemsviewModel.sportName
 
-//            if (id=="1"){
-//                binding.cardView.setCardBackgroundColor(Color.parseColor("#F95047"))
-//            }else{
-//                binding.cardView.setCardBackgroundColor(Color.parseColor("#80F95047"))
-//            }
-//            holder.binding.name.text = ItemsviewModel.name
-
             binding.cardView.setOnClickListener {
                 selectedPosition=position
                 notifyDataSetChanged()
-                bottomSheetListner.bottomSheetListner(ItemsviewModel.sportName,ItemsviewModel.id.toString())
+                bottomSheetListner.bottomSheetListner("sports",ItemsviewModel.id.toString(),ItemsviewModel.sportName)
             }
         }
     }
