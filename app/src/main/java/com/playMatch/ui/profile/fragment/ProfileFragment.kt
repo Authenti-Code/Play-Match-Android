@@ -42,10 +42,10 @@ class ProfileFragment : Fragment(),View.OnClickListener {
     private var sportsList = ArrayList<SportLevel>()
     private var pageNo: String = "1"
     private var totalPages: String = ""
-    private var totalTeams:String?=null
-    private var matchesCreated:String?=null
-    private var matchesPlayed:String?=null
-    private var invitesReceived:String?=null
+    private var totalTeams:String?="0"
+    private var matchesCreated:String?="0"
+    private var matchesPlayed:String?="0"
+    private var invitesReceived:String?="0"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -95,25 +95,6 @@ class ProfileFragment : Fragment(),View.OnClickListener {
         profileSportsAdapter = ProfileSportsAdapter(sportsList, requireActivity())
         binding?.rvSports?.adapter = profileSportsAdapter
 
-        profileStatisticsAdapter = ProfileStatisticsAdapter(list, requireActivity())
-        binding?.rvStatistics?.adapter = profileStatisticsAdapter
-        list.clear()
-            list.add(
-                ProfileModel(
-                    R.drawable.ic_hand,"Total Teams",totalTeams.toString())
-            )
-        list.add(
-            ProfileModel(
-                    R.drawable.stadium,"Matches Created",matchesCreated.toString())
-            )
-        list.add(
-            ProfileModel(
-                    R.drawable.triangle,"Matches Played",matchesPlayed.toString())
-            )
-        list.add(
-            ProfileModel(
-                    R.drawable.museum,"Invites Received",invitesReceived.toString())
-            )
     }
 
     private fun profileApi(){
@@ -175,6 +156,34 @@ class ProfileFragment : Fragment(),View.OnClickListener {
                     binding?.fitnessLevel!!.text=response.data.fitnessLevel
                     binding?.address!!.text=response.data.location
                     binding?.address!!.text=response.data.location
+                    totalTeams=response.data.totalTeams.toString()
+//                    matchesCreated=response.data.matchesCreated.toString()
+//                    matchesPlayed=response.data.matchesPlayed.toString()
+//                    invitesReceived=response.data.invitesReceived.toString()
+
+                    profileStatisticsAdapter = ProfileStatisticsAdapter(list, requireActivity())
+                    binding?.rvStatistics?.adapter = profileStatisticsAdapter
+
+                    list.clear()
+                    list.add(
+                        ProfileModel(
+                            R.drawable.ic_hand,"Total Teams",response.data.totalTeams)
+                    )
+                    list.add(
+                        ProfileModel(
+                            R.drawable.stadium,"Matches Created",response.data.matchesCreated)
+                    )
+                    list.add(
+                        ProfileModel(
+                            R.drawable.triangle,"Matches Played",matchesPlayed.toString())
+                    )
+                    list.add(
+                        ProfileModel(
+                            R.drawable.museum,"Invites Received",invitesReceived.toString())
+                    )
+
+//                    profileStatisticsAdapter?.updateList(list)
+
 
 
                     profileSportsAdapter?.updateSportsList(response.data.sportLevel,binding?.rvSports)

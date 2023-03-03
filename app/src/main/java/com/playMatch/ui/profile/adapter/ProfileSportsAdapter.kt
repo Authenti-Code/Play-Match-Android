@@ -42,8 +42,11 @@ class ProfileSportsAdapter(var list: ArrayList<SportLevel>, var activity: Activi
 //            }else{
 //                binding.cardView.setCardBackgroundColor(Color.parseColor("#80F95047"))
 //            }
-            holder.binding.sportName.text = ItemsviewModel.sportName.toString()
-            holder.binding.sportLevel.text = ItemsviewModel.sportLevel
+
+            if (list!=null) {
+                holder.binding.sportName.text = ItemsviewModel.sportName.toString()
+                holder.binding.sportLevel.text = ItemsviewModel.sportLevel
+            }
 
 
 

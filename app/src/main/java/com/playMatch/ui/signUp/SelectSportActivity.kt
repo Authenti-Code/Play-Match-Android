@@ -1,28 +1,31 @@
 package com.playMatch.ui.signUp
 
+import android.annotation.SuppressLint
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.os.Parcelable
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
+import com.bumptech.glide.Glide
+import com.bumptech.glide.Priority
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.load.engine.GlideException
+import com.bumptech.glide.request.RequestListener
 import com.playMatch.R
-import com.playMatch.controller.constant.AppConstant
-import com.playMatch.controller.`interface`.RecyclerviewListener
 import com.playMatch.controller.`interface`.SelectSportsListener
 import com.playMatch.controller.playMatchAPi.ResultResponse
 import com.playMatch.controller.playMatchAPi.apiClasses.UserApi
-import com.playMatch.controller.playMatchAPi.postPojoModel.user.login.LoginPost
-import com.playMatch.controller.playMatchAPi.postPojoModel.user.logout.LogoutPost
+import com.playMatch.controller.sharedPrefrence.PrefData
 import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.databinding.ActivitySelectSportBinding
 import com.playMatch.ui.baseActivity.BaseActivity
 import com.playMatch.ui.signUp.signUpAdapters.SelectSportAdapter
-import com.playMatch.controller.sharedPrefrence.PrefData
-import com.playMatch.ui.home.activity.HomeActivity
-import com.playMatch.ui.login.LoginActivity
-import com.playMatch.ui.login.model.LoginResponse
-import com.playMatch.ui.profile.activity.settingActivity.model.LogoutResponse
 import com.playMatch.ui.signUp.signupModel.*
 import com.playMatch.ui.signUp.userSports.UserSportsPost
+
 
 class SelectSportActivity : BaseActivity(), View.OnClickListener {
     private lateinit var binding: ActivitySelectSportBinding
@@ -30,11 +33,17 @@ class SelectSportActivity : BaseActivity(), View.OnClickListener {
     private  var list = ArrayList<SportsList>()
     private var sportLevel=ArrayList<selectedSportModel>()
 
+    private var name:String?=null
+    private var dob:String?=null
+    private var fitnessLevel:String?=null
+    private var profileImage:Bitmap?=null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         removeStatusBarFullyBlackIcon()
         super.onCreate(savedInstanceState)
         binding = ActivitySelectSportBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        getIntentData()
         sportListApi()
         initView()
         setAdapter()
@@ -55,8 +64,60 @@ class SelectSportActivity : BaseActivity(), View.OnClickListener {
         PrefData.remove(this, PrefData.CHECK_BOX)
     }
 
+    private fun getIntentData() {
+
+        if (intent?.extras != null) {
+            name = intent.extras?.getString(PrefData.NAME,"")
+            dob = intent.extras?.getString(PrefData.DOB,"")
+            fitnessLevel = intent.extras?.getString(PrefData.FITNESS_LEVEL,"")
+            profileImage= intent.getParcelableExtra<Parcelable>(PrefData.PROFILE_IMAGE) as Bitmap?
+
+            profileImage = BitmapFactory.decodeByteArray(
+                intent.getByteArrayExtra(PrefData.PROFILE_IMAGE), 0, intent
+                    .getByteArrayExtra(PrefData.PROFILE_IMAGE)!!.size
+            )
+        }
+
+    }
+
+    @SuppressLint("SetTextI18n")
     private fun initView() {
         binding.Continue.setOnClickListener(this)
+
+
+        Glide.with(this)
+            .load(profileImage)
+            .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
+            .skipMemoryCache(true)
+            .priority(Priority.IMMEDIATE)
+            .placeholder(R.drawable.new_dummy_profile)
+            .listener(object : RequestListener<Drawable> {
+                override fun onResourceReady(
+                    resource: Drawable?,
+                    model: Any?,
+                    target: com.bumptech.glide.request.target.Target<Drawable>?,
+                    dataSource: com.bumptech.glide.load.DataSource?,
+                    isFirstResource: Boolean
+                ): Boolean {
+                    binding.profileProgressBar.visibility = View.GONE
+                    return false
+                }
+
+                override fun onLoadFailed(
+                    e: GlideException?,
+                    model: Any?,
+                    target: com.bumptech.glide.request.target.Target<Drawable>?,
+                    isFirstResource: Boolean
+                ): Boolean {
+                    binding.profileProgressBar.visibility = View.GONE
+                    return false
+                }
+
+            }).into(binding.profileImage)
+
+        binding.userName.text= "Hi,$name"
+        binding.fitnessLevel.text= fitnessLevel
+        binding.dob.text= dob
     }
     override fun onClick(v: View?) {
         when (v?.id) {

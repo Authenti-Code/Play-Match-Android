@@ -745,8 +745,8 @@ open class BaseActivity : AppCompatActivity() {
         }
         if (file?.isFile!!) {
 //            Crop.of(source, Uri.fromFile(file)).asSquare().start(this)
-            Crop.of(source, Uri.fromFile(file)).withMaxSize(1240, 640).start(this)
-//            Crop.of(source,output(source).withFixedSize(640, 640).start(this))
+//            Crop.of(source, Uri.fromFile(file)).withMaxSize(1240, 640).start(this)
+            Crop.of(source,Uri.fromFile(file)).withMaxSize(640, 640).start(this)
         } else {
             // If Target API level is 29(Android 10),
             // you should access local path in scoped storage mode.

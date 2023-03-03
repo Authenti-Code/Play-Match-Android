@@ -1,6 +1,7 @@
 package com.playMatch.ui.signUp
 
 import android.Manifest
+import android.R.attr.bitmap
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.AlertDialog
@@ -29,9 +30,13 @@ import com.playMatch.ui.signUp.signupModel.UploadImageResponse
 import com.soundcloud.android.crop.Crop
 import java.io.ByteArrayOutputStream
 
+
 class AddProfileImageActivity :  BaseActivity(), View.OnClickListener {
     private lateinit var binding: ActivityAddProfileImageBinding
     private var name:String?=null
+    private var dob:String?=null
+    private var fitnessLevel:String?=null
+    private var bitMap:Bitmap?=null
 
     private val PERMISSIONS = arrayOf(
         Manifest.permission.CAMERA,
@@ -51,6 +56,8 @@ class AddProfileImageActivity :  BaseActivity(), View.OnClickListener {
 
         if (intent?.extras != null) {
             name = intent.extras?.getString(PrefData.NAME,"")
+            dob = intent.extras?.getString(PrefData.DOB,"")
+            fitnessLevel = intent.extras?.getString(PrefData.FITNESS_LEVEL,"")
         }
 
     }
@@ -184,8 +191,14 @@ class AddProfileImageActivity :  BaseActivity(), View.OnClickListener {
             is ResultResponse.Success<*> -> {
                 val response = resultResponse.response as UploadImageResponse
                 if (response.success == "true") {
-                    CommonUtils.performIntent(this, SelectSportActivity::class.java)
+                    val intent = Intent(this, SelectSportActivity::class.java)
+                    val bos = ByteArrayOutputStream()
+                    intent.putExtra(PrefData.PROFILE_IMAGE, mBitmapImage?.compress(Bitmap.CompressFormat.JPEG, 100, bos))
+                    intent.putExtra(PrefData.NAME, name)
+                    intent.putExtra(PrefData.DOB, dob)
+                    intent.putExtra(PrefData.FITNESS_LEVEL, fitnessLevel)
                     hideProgressBar()
+                    this@AddProfileImageActivity.startActivity(intent)
                 } else {
                     showSnackBar(
                         binding.rootView, response.message

@@ -44,6 +44,7 @@ class UserDetailActivity : BaseActivity(), View.OnClickListener {
         binding.intermediate.setOnClickListener(this)
         binding.experienced.setOnClickListener(this)
         binding.dob.setOnClickListener(this)
+        binding.name.text=name
     }
 
     private fun getIntentData() {
@@ -179,7 +180,8 @@ class UserDetailActivity : BaseActivity(), View.OnClickListener {
 //                                + " " + binding?.edtPhoneNoVerification?.text?.trim().toString()
 //                    )
                     bundle.putString(PrefData.NAME, name)
-
+                    bundle.putString(PrefData.DOB, binding.dob.text.toString().trim())
+                    bundle.putString(PrefData.FITNESS_LEVEL, fitnessLevel)
                     CommonUtils.performIntentWithBundleFinish(this, AddProfileImageActivity::class.java,bundle)
                 } else {
                     showSnackBar(findViewById(R.id.rootView), response.message)

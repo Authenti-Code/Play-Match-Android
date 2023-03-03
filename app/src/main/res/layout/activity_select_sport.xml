@@ -19,15 +19,34 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
+        <FrameLayout
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_50sdp"
+            >
+
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image"
-        android:layout_width="@dimen/_50sdp"
-        android:layout_height="@dimen/_50sdp"
-        android:layout_marginTop="@dimen/_50sdp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:elevation="@dimen/_5sdp"
         android:src="@drawable/new_dummy_profile"
         app:civ_border_color="@color/red_F95047"
         app:civ_border_width="@dimen/_1sdp" />
+
+            <ProgressBar
+                android:id="@+id/profileProgressBar"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:visibility="visible"
+                android:elevation="@dimen/_15sdp"
+                android:layout_marginVertical="@dimen/_2sdp"
+                android:indeterminateTint="@color/red_F95047"/>
+
+
+        </FrameLayout>
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
@@ -37,6 +56,7 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/userName"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -46,6 +66,7 @@
                 android:textSize="@dimen/_15ssp"/>
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/dob"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
@@ -87,6 +108,7 @@
                         android:src="@drawable/start_up"/>
 
                     <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/fitnessLevel"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:textColor="@color/black"

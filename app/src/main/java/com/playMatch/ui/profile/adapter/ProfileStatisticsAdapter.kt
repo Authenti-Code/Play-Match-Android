@@ -29,24 +29,9 @@ class ProfileStatisticsAdapter(var list: ArrayList<ProfileModel>, var activity: 
     override fun onBindViewHolder(holder: ViewHolder, @SuppressLint("RecyclerView") position: Int) {
         holder.apply {
             val ItemsviewModel = list[position]
-
-//            if (id=="1"){
-//                binding.cardView.setCardBackgroundColor(Color.parseColor("#F95047"))
-//            }else{
-//                binding.cardView.setCardBackgroundColor(Color.parseColor("#80F95047"))
-//            }
-
                 holder.binding.name.text=ItemsviewModel.name
                 holder.binding.image.setImageResource(ItemsviewModel.logo)
-
-
-
-
-
-//            binding.cardView.setOnClickListener {
-//                selectedPosition=position
-//                notifyDataSetChanged()
-//            }
+                holder.binding.number.text=ItemsviewModel.value.toString()
         }
     }
 
@@ -59,21 +44,13 @@ class ProfileStatisticsAdapter(var list: ArrayList<ProfileModel>, var activity: 
         return list.size
     }
 
-
-
-
     @SuppressLint("NotifyDataSetChanged")
-    fun updateCommentList(Data: List<ProfileModel>, mRecyclerview: RecyclerView?) {
+    fun updateList(Data: List<ProfileModel>) {
         if (list.size > 0) {
             list.clear()
             notifyDataSetChanged()
         }
         list.addAll(Data)
         notifyDataSetChanged()
-
-        mRecyclerview?.postDelayed({
-            mRecyclerview.scrollToPosition(itemCount - 1)
-
-        }, 100)
     }
 }
