@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -25,6 +26,9 @@ public final class RvMatchesListItemBinding implements ViewBinding {
   private final LinearLayoutCompat rootView;
 
   @NonNull
+  public final TextView address;
+
+  @NonNull
   public final CardView cardView;
 
   @NonNull
@@ -32,6 +36,9 @@ public final class RvMatchesListItemBinding implements ViewBinding {
 
   @NonNull
   public final TextView date;
+
+  @NonNull
+  public final AppCompatTextView fitnessLevel;
 
   @NonNull
   public final AppCompatTextView genderTv;
@@ -46,20 +53,32 @@ public final class RvMatchesListItemBinding implements ViewBinding {
   public final TextView name;
 
   @NonNull
+  public final ProgressBar progressBar;
+
+  @NonNull
+  public final AppCompatTextView sportsName;
+
+  @NonNull
   public final TextView time;
 
-  private RvMatchesListItemBinding(@NonNull LinearLayoutCompat rootView, @NonNull CardView cardView,
-      @NonNull ImageView chat, @NonNull TextView date, @NonNull AppCompatTextView genderTv,
+  private RvMatchesListItemBinding(@NonNull LinearLayoutCompat rootView, @NonNull TextView address,
+      @NonNull CardView cardView, @NonNull ImageView chat, @NonNull TextView date,
+      @NonNull AppCompatTextView fitnessLevel, @NonNull AppCompatTextView genderTv,
       @NonNull MaterialCardView host, @NonNull AppCompatImageView logo, @NonNull TextView name,
+      @NonNull ProgressBar progressBar, @NonNull AppCompatTextView sportsName,
       @NonNull TextView time) {
     this.rootView = rootView;
+    this.address = address;
     this.cardView = cardView;
     this.chat = chat;
     this.date = date;
+    this.fitnessLevel = fitnessLevel;
     this.genderTv = genderTv;
     this.host = host;
     this.logo = logo;
     this.name = name;
+    this.progressBar = progressBar;
+    this.sportsName = sportsName;
     this.time = time;
   }
 
@@ -90,6 +109,12 @@ public final class RvMatchesListItemBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.address;
+      TextView address = ViewBindings.findChildViewById(rootView, id);
+      if (address == null) {
+        break missingId;
+      }
+
       id = R.id.cardView;
       CardView cardView = ViewBindings.findChildViewById(rootView, id);
       if (cardView == null) {
@@ -105,6 +130,12 @@ public final class RvMatchesListItemBinding implements ViewBinding {
       id = R.id.date;
       TextView date = ViewBindings.findChildViewById(rootView, id);
       if (date == null) {
+        break missingId;
+      }
+
+      id = R.id.fitnessLevel;
+      AppCompatTextView fitnessLevel = ViewBindings.findChildViewById(rootView, id);
+      if (fitnessLevel == null) {
         break missingId;
       }
 
@@ -132,14 +163,26 @@ public final class RvMatchesListItemBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.progressBar;
+      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
+      if (progressBar == null) {
+        break missingId;
+      }
+
+      id = R.id.sportsName;
+      AppCompatTextView sportsName = ViewBindings.findChildViewById(rootView, id);
+      if (sportsName == null) {
+        break missingId;
+      }
+
       id = R.id.time;
       TextView time = ViewBindings.findChildViewById(rootView, id);
       if (time == null) {
         break missingId;
       }
 
-      return new RvMatchesListItemBinding((LinearLayoutCompat) rootView, cardView, chat, date,
-          genderTv, host, logo, name, time);
+      return new RvMatchesListItemBinding((LinearLayoutCompat) rootView, address, cardView, chat,
+          date, fitnessLevel, genderTv, host, logo, name, progressBar, sportsName, time);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

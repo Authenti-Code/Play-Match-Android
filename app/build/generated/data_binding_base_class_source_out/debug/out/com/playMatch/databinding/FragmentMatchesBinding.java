@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
@@ -25,6 +26,9 @@ public final class FragmentMatchesBinding implements ViewBinding {
   public final ImageView createMatch;
 
   @NonNull
+  public final TextView noMatch;
+
+  @NonNull
   public final AppCompatTextView pastMatch;
 
   @NonNull
@@ -37,11 +41,12 @@ public final class FragmentMatchesBinding implements ViewBinding {
   public final AppCompatTextView upcomingMatch;
 
   private FragmentMatchesBinding(@NonNull LinearLayoutCompat rootView,
-      @NonNull ImageView createMatch, @NonNull AppCompatTextView pastMatch,
-      @NonNull RecyclerView rvPast, @NonNull RecyclerView rvUpcoming,
-      @NonNull AppCompatTextView upcomingMatch) {
+      @NonNull ImageView createMatch, @NonNull TextView noMatch,
+      @NonNull AppCompatTextView pastMatch, @NonNull RecyclerView rvPast,
+      @NonNull RecyclerView rvUpcoming, @NonNull AppCompatTextView upcomingMatch) {
     this.rootView = rootView;
     this.createMatch = createMatch;
+    this.noMatch = noMatch;
     this.pastMatch = pastMatch;
     this.rvPast = rvPast;
     this.rvUpcoming = rvUpcoming;
@@ -81,6 +86,12 @@ public final class FragmentMatchesBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.noMatch;
+      TextView noMatch = ViewBindings.findChildViewById(rootView, id);
+      if (noMatch == null) {
+        break missingId;
+      }
+
       id = R.id.past_match;
       AppCompatTextView pastMatch = ViewBindings.findChildViewById(rootView, id);
       if (pastMatch == null) {
@@ -105,8 +116,8 @@ public final class FragmentMatchesBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentMatchesBinding((LinearLayoutCompat) rootView, createMatch, pastMatch,
-          rvPast, rvUpcoming, upcomingMatch);
+      return new FragmentMatchesBinding((LinearLayoutCompat) rootView, createMatch, noMatch,
+          pastMatch, rvPast, rvUpcoming, upcomingMatch);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
