@@ -303,6 +303,7 @@ id profileImage
 id profileLay
 id profileOff
 id profileOn
+id profileProgressBar
 id profile_image
 id progressBar
 id progressBarLay

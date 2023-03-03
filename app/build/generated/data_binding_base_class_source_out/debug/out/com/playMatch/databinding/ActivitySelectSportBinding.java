@@ -9,6 +9,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatTextView;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
@@ -30,7 +31,16 @@ public final class ActivitySelectSportBinding implements ViewBinding {
   public final TextView continueTv;
 
   @NonNull
+  public final AppCompatTextView dob;
+
+  @NonNull
+  public final AppCompatTextView fitnessLevel;
+
+  @NonNull
   public final CircleImageView profileImage;
+
+  @NonNull
+  public final ProgressBar profileProgressBar;
 
   @NonNull
   public final ProgressBar progressBar;
@@ -41,17 +51,26 @@ public final class ActivitySelectSportBinding implements ViewBinding {
   @NonNull
   public final RecyclerView rvSports;
 
+  @NonNull
+  public final AppCompatTextView userName;
+
   private ActivitySelectSportBinding(@NonNull FrameLayout rootView_, @NonNull CardView Continue,
-      @NonNull TextView continueTv, @NonNull CircleImageView profileImage,
-      @NonNull ProgressBar progressBar, @NonNull FrameLayout rootView,
-      @NonNull RecyclerView rvSports) {
+      @NonNull TextView continueTv, @NonNull AppCompatTextView dob,
+      @NonNull AppCompatTextView fitnessLevel, @NonNull CircleImageView profileImage,
+      @NonNull ProgressBar profileProgressBar, @NonNull ProgressBar progressBar,
+      @NonNull FrameLayout rootView, @NonNull RecyclerView rvSports,
+      @NonNull AppCompatTextView userName) {
     this.rootView_ = rootView_;
     this.Continue = Continue;
     this.continueTv = continueTv;
+    this.dob = dob;
+    this.fitnessLevel = fitnessLevel;
     this.profileImage = profileImage;
+    this.profileProgressBar = profileProgressBar;
     this.progressBar = progressBar;
     this.rootView = rootView;
     this.rvSports = rvSports;
+    this.userName = userName;
   }
 
   @Override
@@ -93,9 +112,27 @@ public final class ActivitySelectSportBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.dob;
+      AppCompatTextView dob = ViewBindings.findChildViewById(rootView, id);
+      if (dob == null) {
+        break missingId;
+      }
+
+      id = R.id.fitnessLevel;
+      AppCompatTextView fitnessLevel = ViewBindings.findChildViewById(rootView, id);
+      if (fitnessLevel == null) {
+        break missingId;
+      }
+
       id = R.id.profile_image;
       CircleImageView profileImage = ViewBindings.findChildViewById(rootView, id);
       if (profileImage == null) {
+        break missingId;
+      }
+
+      id = R.id.profileProgressBar;
+      ProgressBar profileProgressBar = ViewBindings.findChildViewById(rootView, id);
+      if (profileProgressBar == null) {
         break missingId;
       }
 
@@ -113,8 +150,15 @@ public final class ActivitySelectSportBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivitySelectSportBinding((FrameLayout) rootView, Continue, continueTv,
-          profileImage, progressBar, rootView_, rvSports);
+      id = R.id.userName;
+      AppCompatTextView userName = ViewBindings.findChildViewById(rootView, id);
+      if (userName == null) {
+        break missingId;
+      }
+
+      return new ActivitySelectSportBinding((FrameLayout) rootView, Continue, continueTv, dob,
+          fitnessLevel, profileImage, profileProgressBar, progressBar, rootView_, rvSports,
+          userName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
