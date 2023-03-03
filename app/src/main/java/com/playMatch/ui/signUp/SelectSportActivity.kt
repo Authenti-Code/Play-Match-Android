@@ -5,7 +5,6 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.drawable.Drawable
 import android.os.Bundle
-import android.os.Parcelable
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
@@ -70,14 +69,20 @@ class SelectSportActivity : BaseActivity(), View.OnClickListener {
             name = intent.extras?.getString(PrefData.NAME,"")
             dob = intent.extras?.getString(PrefData.DOB,"")
             fitnessLevel = intent.extras?.getString(PrefData.FITNESS_LEVEL,"")
-            profileImage= intent.getParcelableExtra<Parcelable>(PrefData.PROFILE_IMAGE) as Bitmap?
+//            profileImage= intent.getParcelableExtra<Parcelable>(PrefData.PROFILE_IMAGE) as Bitmap?
 
             profileImage = BitmapFactory.decodeByteArray(
                 intent.getByteArrayExtra(PrefData.PROFILE_IMAGE), 0, intent
                     .getByteArrayExtra(PrefData.PROFILE_IMAGE)!!.size
             )
-        }
 
+            if (intent.hasExtra(PrefData.PROFILE_IMAGE)) {
+                profileImage = BitmapFactory.decodeByteArray(
+                    intent.getByteArrayExtra(PrefData.PROFILE_IMAGE), 0, intent
+                        .getByteArrayExtra(PrefData.PROFILE_IMAGE)!!.size
+                )
+            }
+        }
     }
 
     @SuppressLint("SetTextI18n")
@@ -172,12 +177,13 @@ class SelectSportActivity : BaseActivity(), View.OnClickListener {
 
     private fun selectSportApi (){
 
+
         if (isNetworkAvailable()) {
             showProgressBar()
             lifecycleScope.launchWhenStarted {
                 val resultResponse = UserApi(this@SelectSportActivity).sportsLevels(
                     UserSportsPost(
-                        sportLevel.toString()
+                        sportLevel
                     )
                 )
                 apiResult(resultResponse)

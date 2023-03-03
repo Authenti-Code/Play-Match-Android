@@ -47,19 +47,18 @@ class SelectSportAdapter(var list: ArrayList<SportsList>, var activity: Activity
 //                    nlist.add("${ItemsviewModel.id} : $viewType")
 
                     if (nlist.isEmpty()) {
-                        nlist.add(selectedSportModel(ItemsviewModel.id,viewType,ItemsviewModel.sportName))
+                        nlist.add(selectedSportModel(ItemsviewModel.id,viewType))
                     } else {
                         for (i in 0 until nlist.size!!) {
                             val modelNew = nlist[i]
                             if (modelNew.sportId ==ItemsviewModel.id ) {
-                                    nlist[i]=selectedSportModel(ItemsviewModel.id,viewType,ItemsviewModel.sportName)
+                                    nlist[i]=selectedSportModel(ItemsviewModel.id,viewType)
                                 }
                             else{
-                                nlist.add(selectedSportModel(ItemsviewModel.id,viewType,ItemsviewModel.sportName))
+                                nlist.add(selectedSportModel(ItemsviewModel.id,viewType))
                             }
                         }
                     }
-//                    param=  nlist.joinToString()
                     if (nlist!=null) {
                         selecSportListener.onItemClick(position, nlist)
                     }
@@ -138,38 +137,6 @@ class SelectSportAdapter(var list: ArrayList<SportsList>, var activity: Activity
     PrefData.setStringPrefs(activity, PrefData.CHECK_BOX,"0")
     binding.rvChildSports.visibility=View.GONE
     binding.rvLightChildSports.visibility=View.VISIBLE
-//           holder.binding.rvChildSports.adapter = adapter
-//           mlist.clear()
-//           mlist.add(
-//               SelectChildSPortModel(
-//                   "Beginner",false
-//               )
-//           )
-//
-//           mlist.add(
-//               SelectChildSPortModel(
-//                   "Novice",false
-//               )
-//           )
-//
-//           mlist.add(
-//               SelectChildSPortModel(
-//                   "Intermediate",false
-//               )
-//           )
-//
-//           mlist.add(
-//               SelectChildSPortModel(
-//                   "Experienced",false
-//               )
-//           )
-//           mlist.add(
-//               SelectChildSPortModel(
-//                   "Superstar",false
-//               )
-//           )
-
-
 
            for (i in 0 until nlist.size!!) {
                val modelNew = nlist[i]

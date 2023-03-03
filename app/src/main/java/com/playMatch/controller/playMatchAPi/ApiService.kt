@@ -10,7 +10,9 @@ import com.playMatch.controller.playMatchAPi.postPojoModel.user.logout.LogoutPos
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.matchAvailability.MatchAvailabilityPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.register.RegisterPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.showTeam.ShowTeamPost
+import com.playMatch.controller.playMatchAPi.postPojoModel.user.upcomingMatch.UpcomingMatchPost
 import com.playMatch.ui.matches.model.createMatch.CreateMatchResponse
+import com.playMatch.ui.matches.model.upcomingMatches.UpcomingMatchResponse
 import com.playMatch.ui.signUp.userSports.UserSportsPost
 import com.playMatch.ui.profile.activity.settingActivity.model.LogoutResponse
 import com.playMatch.ui.profile.model.editProfile.EditProfileResponse
@@ -156,6 +158,13 @@ interface ApiService {
         @Header(ApiConstant.AUTH) token: String,
         @Body eventDetail: ShowTeamPost?
     ):Response<TeamDetailResponse>
+
+    @Headers("Content-Type: application/json")
+    @POST(ApiConstant.LIST_MATCH)
+    suspend fun listMatch(
+        @Header(ApiConstant.AUTH) token: String,
+        @Body eventDetail: UpcomingMatchPost?
+    ):Response<UpcomingMatchResponse>
 
     @Headers("Content-Type: application/json")
     @POST(ApiConstant.CREATE_MATCH)

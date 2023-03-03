@@ -1,7 +1,6 @@
 package com.playMatch.ui.signUp
 
 import android.Manifest
-import android.R.attr.bitmap
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.AlertDialog
@@ -193,7 +192,8 @@ class AddProfileImageActivity :  BaseActivity(), View.OnClickListener {
                 if (response.success == "true") {
                     val intent = Intent(this, SelectSportActivity::class.java)
                     val bos = ByteArrayOutputStream()
-                    intent.putExtra(PrefData.PROFILE_IMAGE, mBitmapImage?.compress(Bitmap.CompressFormat.JPEG, 100, bos))
+                    mBitmapImage?.compress(Bitmap.CompressFormat.JPEG, 100, bos)
+                    intent.putExtra(PrefData.PROFILE_IMAGE,bos.toByteArray() )
                     intent.putExtra(PrefData.NAME, name)
                     intent.putExtra(PrefData.DOB, dob)
                     intent.putExtra(PrefData.FITNESS_LEVEL, fitnessLevel)

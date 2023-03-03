@@ -8,20 +8,20 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\layout\\activity_match_details.xml"
     },
     {
-        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-mergeDebugResources-47:\\layout\\near_by_matches.xml",
-        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\layout\\near_by_matches.xml"
+        "merged": "com.playMatch.app-mergeDebugResources-47:/layout/fragment_matches.xml",
+        "source": "com.playMatch.app-main-50:/layout/fragment_matches.xml"
     },
     {
-        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-mergeDebugResources-47:\\layout\\activity_notification.xml",
-        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\layout\\activity_notification.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-mergeDebugResources-47:\\layout\\near_by_matches.xml",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\layout\\near_by_matches.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-mergeDebugResources-47:\\layout\\rv_select_sport_list_item.xml",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\layout\\rv_select_sport_list_item.xml"
     },
     {
-        "merged": "com.playMatch.app-mergeDebugResources-47:/layout/activity_select_sport.xml",
-        "source": "com.playMatch.app-main-50:/layout/activity_select_sport.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-mergeDebugResources-47:\\layout\\activity_notification.xml",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\layout\\activity_notification.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-mergeDebugResources-47:\\layout\\activity_home.xml",

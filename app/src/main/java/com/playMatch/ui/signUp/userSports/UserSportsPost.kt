@@ -1,3 +1,5 @@
 package com.playMatch.ui.signUp.userSports
 
-data class UserSportsPost(val sportLevel:String)
+import com.playMatch.ui.signUp.signupModel.selectedSportModel
+
+data class UserSportsPost(val sportLevel: ArrayList<selectedSportModel>)

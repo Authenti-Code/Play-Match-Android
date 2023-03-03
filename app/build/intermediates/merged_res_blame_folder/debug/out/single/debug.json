@@ -696,6 +696,10 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\drawable-xxxhdpi\\my_image.png"
     },
     {
+        "merged": "com.playMatch.app-merged_res-48:/layout_fragment_matches.xml.flat",
+        "source": "com.playMatch.app-main-50:/layout/fragment_matches.xml"
+    },
+    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-merged_res-48:\\drawable-xxhdpi_signup_proifle_bg.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\drawable-xxhdpi\\signup_proifle_bg.png"
     },
@@ -970,10 +974,6 @@
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-merged_res-48:\\drawable-xxhdpi_profile_bg.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-50:\\drawable-xxhdpi\\profile_bg.png"
-    },
-    {
-        "merged": "com.playMatch.app-merged_res-48:/layout_activity_select_sport.xml.flat",
-        "source": "com.playMatch.app-main-50:/layout/activity_select_sport.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-merged_res-48:\\drawable-hdpi_juventus.png.flat",
