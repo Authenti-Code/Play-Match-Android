@@ -91,11 +91,8 @@ class MatchesFragment : Fragment(),View.OnClickListener {
             R.id.createMatch -> {
                 CommonUtils.performIntent(requireActivity(),CreateMatchActivity::class.java)
             }
-
         }
         }
-
-
     override fun onDestroy() {
         super.onDestroy()
         binding = null
@@ -114,7 +111,6 @@ class MatchesFragment : Fragment(),View.OnClickListener {
                     R.drawable.match,"T20 League Match"
                 )
             )
-
         }
     }
 
@@ -130,8 +126,6 @@ class MatchesFragment : Fragment(),View.OnClickListener {
             (activity as BaseActivity).showNetworkSpeedError()
         }
     }
-
-
     private fun apiUpcomingMatchResult(resultResponse: ResultResponse) {
         CommonUtils.hideProgressDialog()
         return when (resultResponse) {

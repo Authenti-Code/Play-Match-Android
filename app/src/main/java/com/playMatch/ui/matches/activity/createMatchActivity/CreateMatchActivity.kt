@@ -21,9 +21,11 @@ import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.playMatch.R
+import com.playMatch.controller.constant.IntentConstant
 import com.playMatch.controller.`interface`.BottomSheetListner
 import com.playMatch.controller.playMatchAPi.ResultResponse
 import com.playMatch.controller.playMatchAPi.apiClasses.UserApi
+import com.playMatch.controller.playMatchAPi.postPojoModel.user.Match.EditMatchPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.createMatch.CreateMatchPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.showTeam.ShowTeamPost
 import com.playMatch.controller.utils.CommonUtils
@@ -34,7 +36,10 @@ import com.playMatch.ui.matches.activity.payment.PaymentActivity
 import com.playMatch.ui.matches.adapter.selectSportAdapter.SelectMatchSportAdapter
 import com.playMatch.ui.matches.adapter.selectTeamAdapter.SelectTeamAdapter
 import com.playMatch.controller.sharedPrefrence.PrefData
+import com.playMatch.ui.home.activity.HomeActivity
 import com.playMatch.ui.matches.model.createMatch.CreateMatchResponse
+import com.playMatch.ui.matches.model.editMatch.EditMatchResponse
+import com.playMatch.ui.matches.model.upcomingMatches.UpComingMatchList
 import com.playMatch.ui.signUp.signupModel.SportListResponse
 import com.playMatch.ui.signUp.signupModel.SportsList
 import com.playMatch.ui.teams.model.showTeamDetails.TeamDetailResponse
@@ -48,16 +53,14 @@ class CreateMatchActivity : BaseActivity(), View.OnClickListener,BottomSheetList
     private var adapter: SelectTeamAdapter? = null
     private var selectSportAdapter: SelectMatchSportAdapter? = null
     private var seletedBottomSheet: BottomSheetDialog? = null
-
     private var cal: Calendar = Calendar.getInstance()
-
-
     private var list = ArrayList<TeamList>()
     private var sportList = ArrayList<SportsList>()
-
     private var sportId:String?=null
     private var teamId:String?=null
+    private var matchDetails: UpComingMatchList?=null
     private var fitnessLevel:String?="Intermediate"
+    private var userType:Boolean?=false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         removeStatusBarFullyBlackIcon()
@@ -89,12 +92,62 @@ class CreateMatchActivity : BaseActivity(), View.OnClickListener,BottomSheetList
         }
         if (type=="edit"){
             binding.title.text="Edit Match"
-        }
+            binding.matchName.setText(matchDetails?.name)
+            binding.calendar.text=matchDetails?.matchDate
+            binding.startTime.text=matchDetails?.startTime
+            binding.finishTime.text=matchDetails?.finishTime
+            binding.locationTv.setText(matchDetails?.location)
+            binding.genderTv.setText(matchDetails?.gender)
+            binding.description.setText(matchDetails?.description)
+
+            if (matchDetails?.standard=="Beginner"){
+                binding.beginner.setCardBackgroundColor(Color.parseColor("#F95047"))
+                binding.beginnerTv.setTextColor(Color.WHITE)
+                binding.intermediate.setCardBackgroundColor(Color.WHITE)
+                binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
+                binding.experienced.setCardBackgroundColor(Color.WHITE)
+                binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
+                fitnessLevel=binding.beginnerTv.text.toString().trim()
+            }
+
+            if (matchDetails?.standard=="Intermediate"){
+                binding.intermediate.setCardBackgroundColor(Color.parseColor("#F95047"))
+                binding.intermediateTv.setTextColor(Color.WHITE)
+                binding.beginner.setCardBackgroundColor(Color.WHITE)
+                binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
+                binding.experienced.setCardBackgroundColor(Color.WHITE)
+                binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
+                fitnessLevel=binding.intermediateTv.text.toString().trim()
+            }
+
+            if (matchDetails?.standard=="Experienced"){
+                binding.experienced.setCardBackgroundColor(Color.parseColor("#F95047"))
+                binding.experiencedTv.setTextColor(Color.WHITE)
+                binding.beginner.setCardBackgroundColor(Color.WHITE)
+                binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
+                binding.intermediate.setCardBackgroundColor(Color.WHITE)
+                binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
+                fitnessLevel=binding.experiencedTv.text.toString().trim()
+            }
+
+            binding.selectSport.setCardBackgroundColor(Color.parseColor("#F95047"))
+            binding.selectSportTv.setTextColor(Color.WHITE)
+            binding.selectSportTv.text=matchDetails?.sportName
+            sportId=matchDetails?.sportId.toString()
+            binding.selectSportTv.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_circle, 0)
+
+            binding.selectTeam.setCardBackgroundColor(Color.parseColor("#F95047"))
+            binding.selectTeamTV.setTextColor(Color.WHITE)
+            binding.selectTeamTV.text = matchDetails?.teamName
+            teamId=teamId
+            binding.selectTeamTV.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.edit, 0);
+            }
     }
 
     private fun getIntentData() {
         if (intent?.extras != null) {
             type = intent.extras?.getString(PrefData.EDIT, "")
+            matchDetails = intent.extras?.getParcelable(PrefData.MATCH_DETAILS)
         }
     }
 
@@ -105,7 +158,8 @@ class CreateMatchActivity : BaseActivity(), View.OnClickListener,BottomSheetList
             }
             R.id.Continue -> {
                 if (type=="edit"){
-                    onBackPressed()
+                    userType=true
+                    editMatchApi()
                 }else {
                     showProgressBar()
                     if (binding.matchName.text.toString().trim().isEmpty()) {
@@ -389,6 +443,38 @@ class CreateMatchActivity : BaseActivity(), View.OnClickListener,BottomSheetList
             }
         } as Unit
     }
+
+
+    private fun editMatchApi(){
+        showProgressBar()
+        if (isNetworkAvailable()) {
+            lifecycleScope.launchWhenStarted {
+                val resultResponse = UserApi(this@CreateMatchActivity).editMatch(EditMatchPost(binding.matchName.text.toString().trim(),binding.calendar.text.toString().trim(),binding.startTime.text.toString().trim(),binding.finishTime.text.toString().trim(),binding.locationTv.text.toString().trim(),binding.genderTv.text.toString().trim(),fitnessLevel,sportId,teamId,binding.description.text.toString().trim(),"31.606142","74.885596",matchDetails?.id.toString()))
+                apiEditMatchResult(resultResponse)
+            }
+        } else {
+            showNetworkSpeedError()
+        }
+    }
+
+    private fun apiEditMatchResult(resultResponse: ResultResponse) {
+        hideProgressBar()
+        return when (resultResponse) {
+            is ResultResponse.Success<*> -> {
+                val response = resultResponse.response as EditMatchResponse
+                //get data and convert string to json and save data
+                if (response.success == "true") {
+//                    CommonUtils.performIntent(this, PaymentActivity::class.java)
+                    onBackPressed()
+                } else {
+                    showSnackBar(findViewById(R.id.rootView), response.message)
+                }
+            }
+            else -> {
+                showError(resultResponse)
+            }
+        } as Unit
+    }
     private fun showProgressBar(){
         binding.continueProgressBar.visibility=View.VISIBLE
         binding.ContinueTv.visibility=View.GONE
@@ -396,5 +482,22 @@ class CreateMatchActivity : BaseActivity(), View.OnClickListener,BottomSheetList
     private fun hideProgressBar(){
         binding.continueProgressBar.visibility=View.GONE
         binding.ContinueTv.visibility=View.VISIBLE
+    }
+
+    override fun onBackPressed() {
+//        val user = PrefData.getStringPrefs(this, PrefData.USER_TYPE, "")
+        val bundle = Bundle()
+        bundle.putString(IntentConstant.TYPE, IntentConstant.EDIT_MATCH)
+
+        if (userType == true && PrefData.getBooleanPrefs(
+                this,
+                PrefData.KEY_MATCH_TYPE,
+                true
+            )
+        ) {
+            CommonUtils.performIntentWithBundleFinish(this@CreateMatchActivity, HomeActivity::class.java,bundle)
+        } else {
+            CommonUtils.backPress(this)
+        }
     }
 }

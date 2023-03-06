@@ -145,7 +145,6 @@ class ProfileFragment : Fragment(),View.OnClickListener {
                                 binding?.progressBar?.visibility = View.GONE
                                 return false
                             }
-
                         }).into(binding!!.profileImage)
 
                     binding?.name!!.text=response.data.name

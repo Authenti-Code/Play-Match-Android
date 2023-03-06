@@ -51,6 +51,16 @@
                 android:layout_height="match_parent"
                 app:cardCornerRadius="@dimen/_8sdp">
 
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_gravity="center"
+                    android:elevation="@dimen/_10sdp"
+                    android:visibility="visible"
+                    android:layout_marginVertical="@dimen/_2sdp"
+                    android:indeterminateTint="@color/red_F95047"/>
+
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/logo"
                     android:layout_width="match_parent"
@@ -125,6 +135,7 @@
 
 
                             <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/gender"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:textColor="@color/black_707070"
@@ -165,6 +176,7 @@
                     android:background="@drawable/line"/>
 
                 <TextView
+                    android:id="@+id/locationTv"
                     android:layout_marginTop="@dimen/_5sdp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -174,6 +186,7 @@
                     android:textColor="@color/greay_B7B7B7"/>
 
                 <TextView
+                    android:visibility="gone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Amsterdam,Wellington St. "
@@ -203,6 +216,7 @@
 
 
                         <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/fitnessLevel"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:textColor="@color/white"
@@ -227,6 +241,7 @@
 
 
                         <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/sportsName"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:textColor="#D66657"

@@ -229,7 +229,19 @@ class HomeActivity : BaseActivity(), View.OnClickListener {
                     binding.profileOn.visibility = View.GONE
                     performBottomNavigation(position = 4)
                 }
+                IntentConstant.EDIT_MATCH -> {
+                    binding.homeOff.visibility = View.VISIBLE
+                    binding.homeOn.visibility = View.GONE
+                    binding.chatOff.visibility = View.VISIBLE
+                    binding.chatOn.visibility = View.GONE
+                    binding.groupOn.visibility = View.GONE
+                    binding.groupOff.visibility = View.VISIBLE
+                    binding.profileOff.visibility = View.VISIBLE
+                    binding.profileOn.visibility = View.GONE
+                    performBottomNavigation(position = 3)
+                }
             }
         }
     }
+
 }

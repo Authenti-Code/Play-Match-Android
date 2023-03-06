@@ -6,5 +6,6 @@ object IntentConstant {
     const val REQUEST_CODE_GALLERY=2
     const val FRAGMENT_Teams="fragment_teams"
     const val FRAGMENT_Matches="fragment_matches"
+    const val EDIT_MATCH: String = "edit_match"
 
 }

@@ -1,17 +1,17 @@
 package com.playMatch.controller.playMatchAPi.postPojoModel.user.Match
 
 data class EditMatchPost(
-    val description: String,
-    val finishTime: String,
-    val gender: String,
-    val latitude: String,
-    val location: String,
-    val longitude: String,
-    val matchDate: String,
+    val name: String? = null,
+    val matchDate: String? = null,
+    val startTime: String? = null,
+    val finishTime: String? = null,
+    val location: String? = null,
+    val gender: String? = null,
+    val standard: String? = null,
+    val sportId: String?= null,
+    val teamId: String?= null,
+    val description: String?= null,
+    val latitude: String?= null,
+    val longitude: String?= null,
     val matchId: String,
-    val name: String,
-    val sportId: String,
-    val standard: String,
-    val startTime: String,
-    val teamId: String
-)
+    )

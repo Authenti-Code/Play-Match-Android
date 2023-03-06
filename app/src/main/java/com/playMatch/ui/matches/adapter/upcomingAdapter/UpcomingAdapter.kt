@@ -3,6 +3,7 @@ package com.playMatch.ui.matches.adapter.upcomingAdapter
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.graphics.drawable.Drawable
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +14,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.playMatch.R
+import com.playMatch.controller.sharedPrefrence.PrefData
 import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.databinding.RvMatchesListItemBinding
 import com.playMatch.ui.home.model.HomeChildModel
@@ -88,9 +90,11 @@ class UpcomingAdapter(var list: ArrayList<UpComingMatchList>, var activity: Acti
 //            }
 
             binding.cardView.setOnClickListener {
+                val bundle=Bundle()
+                bundle.putParcelable(PrefData.MATCH_DETAILS,itemsViewModel)
                 selectedPosition=position
                 notifyDataSetChanged()
-                CommonUtils.performIntent(activity,MatchDetailsActivity::class.java)
+                CommonUtils.performIntentWithBundle(activity,MatchDetailsActivity::class.java,bundle)
             }
 
             binding.chat.setOnClickListener {

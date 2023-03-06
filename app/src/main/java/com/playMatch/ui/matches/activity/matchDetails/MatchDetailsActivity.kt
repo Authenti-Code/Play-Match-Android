@@ -1,8 +1,15 @@
 package com.playMatch.ui.matches.activity.matchDetails
 
+import android.annotation.SuppressLint
 import android.graphics.Color
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.View
+import com.bumptech.glide.Glide
+import com.bumptech.glide.Priority
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.load.engine.GlideException
+import com.bumptech.glide.request.RequestListener
 import com.playMatch.R
 import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.databinding.ActivityMatchDetailsBinding
@@ -13,6 +20,7 @@ import com.playMatch.ui.matches.adapter.acceptedPlayerAdapters.AcceptedPlayersAd
 import com.playMatch.ui.matches.adapter.invitedPlayersAdapter.InvitedPlayersAdapter
 import com.playMatch.ui.matches.adapter.searchPlayersAdapter.SearchPlayersAdapter
 import com.playMatch.controller.sharedPrefrence.PrefData
+import com.playMatch.ui.matches.model.upcomingMatches.UpComingMatchList
 
 @Suppress("DEPRECATION")
 class MatchDetailsActivity : BaseActivity(), View.OnClickListener {
@@ -20,22 +28,67 @@ class MatchDetailsActivity : BaseActivity(), View.OnClickListener {
     private var searchAdapter: SearchPlayersAdapter?=null
     private var invitedAdapter: InvitedPlayersAdapter?=null
     private var acceptedAdapter: AcceptedPlayersAdapter?=null
+    private var matchDetails: UpComingMatchList?=null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         removeStatusBarFullyBlackIcon()
         super.onCreate(savedInstanceState)
         binding = ActivityMatchDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        getIntentData()
         initView()
         adapterView()
     }
 
+    private fun getIntentData() {
+        matchDetails = intent.extras?.getParcelable(PrefData.MATCH_DETAILS)
+    }
+
+    @SuppressLint("SetTextI18n")
     private fun initView() {
         binding.back.setOnClickListener(this)
         binding.searchPlayers.setOnClickListener(this)
         binding.invitedPlayers.setOnClickListener(this)
         binding.accepted.setOnClickListener(this)
         binding.edit.setOnClickListener(this)
+
+        binding.name.text=matchDetails?.name
+        binding.date.text=matchDetails?.matchDate
+        binding.time.text= "${matchDetails?.startTime} - ${matchDetails?.finishTime}"
+        binding.locationTv.text=matchDetails?.location
+        binding.fitnessLevel.text=matchDetails?.standard
+        binding.sportsName.text=matchDetails?.sportName
+        binding.gender.text=matchDetails?.gender
+
+        Glide.with(this)
+            .load(matchDetails?.image)
+            .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
+            .skipMemoryCache(true)
+            .priority(Priority.IMMEDIATE)
+            .placeholder(R.drawable.new_dummy_profile)
+            .listener(object : RequestListener<Drawable> {
+                override fun onResourceReady(
+                    resource: Drawable?,
+                    model: Any?,
+                    target: com.bumptech.glide.request.target.Target<Drawable>?,
+                    dataSource: com.bumptech.glide.load.DataSource?,
+                    isFirstResource: Boolean
+                ): Boolean {
+                    binding.progressBar.visibility = View.GONE
+                    return false
+                }
+
+                override fun onLoadFailed(
+                    e: GlideException?,
+                    model: Any?,
+                    target: com.bumptech.glide.request.target.Target<Drawable>?,
+                    isFirstResource: Boolean
+                ): Boolean {
+                    binding.progressBar.visibility = View.GONE
+                    return false
+                }
+            }).into(binding.logo)
     }
 
     private fun adapterView() {
@@ -124,6 +177,7 @@ class MatchDetailsActivity : BaseActivity(), View.OnClickListener {
             R.id.edit -> {
                 val bundle=Bundle()
                 bundle.putString(PrefData.EDIT,"edit")
+                bundle.putParcelable(PrefData.MATCH_DETAILS,matchDetails)
                 CommonUtils.performIntentWithBundle(this,CreateMatchActivity::class.java,bundle)
             }
         }
