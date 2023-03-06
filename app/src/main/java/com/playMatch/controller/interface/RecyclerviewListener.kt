@@ -9,3 +9,7 @@ interface RecyclerviewListener {
 interface SelectSportsListener {
     fun onItemClick(position: Int, list: ArrayList<selectedSportModel>)
 }
+
+interface ApiUpdateListener {
+    fun onItemClick(status:String)
+}

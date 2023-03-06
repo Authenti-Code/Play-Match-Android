@@ -11,6 +11,7 @@ import com.playMatch.controller.`interface`.RecyclerviewListener
 import com.playMatch.controller.`interface`.SelectSportsListener
 import com.playMatch.controller.sharedPrefrence.PrefData
 import com.playMatch.databinding.RvSelectSportItemBinding
+import com.playMatch.ui.profile.model.profile.SportLevel
 import com.playMatch.ui.signUp.signupModel.*
 
 
@@ -44,7 +45,6 @@ class SelectSportAdapter(var list: ArrayList<SportsList>, var activity: Activity
             adapter = SelectChildSportAdapter(mlist, activity,object : RecyclerviewListener {
 
                 override fun onItemClick(position: Int, viewType: String,status:Boolean) {
-//                    nlist.add("${ItemsviewModel.id} : $viewType")
 
                     if (nlist.isEmpty()) {
                         nlist.add(selectedSportModel(ItemsviewModel.id,viewType))
@@ -162,6 +162,20 @@ class SelectSportAdapter(var list: ArrayList<SportsList>, var activity: Activity
             list.clear()
         }
         list.addAll(data)
+        notifyDataSetChanged()
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun updateSportList(data: List<SportLevel>) {
+        val ItemsviewModel = list[selectedPosition]
+        for (i in 0 until list.size!!) {
+            val modelNew = data[i]
+            if (modelNew.sportId ==ItemsviewModel.id) {
+            }
+            else{
+//                nlist.add(selectedSportModel(ItemsviewModel.id,viewType))
+            }
+        }
         notifyDataSetChanged()
     }
 }

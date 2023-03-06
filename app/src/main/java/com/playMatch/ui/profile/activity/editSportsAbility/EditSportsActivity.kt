@@ -14,6 +14,7 @@ import com.playMatch.ui.signUp.signUpAdapters.SelectSportAdapter
 import com.playMatch.ui.signUp.signupModel.SelectSportModel
 import com.playMatch.controller.sharedPrefrence.PrefData
 import com.playMatch.controller.utils.CommonUtils
+import com.playMatch.ui.profile.model.profile.SportLevel
 import com.playMatch.ui.signUp.signupModel.SportListResponse
 import com.playMatch.ui.signUp.signupModel.SportsList
 import com.playMatch.ui.signUp.signupModel.selectedSportModel
@@ -22,6 +23,7 @@ class EditSportsActivity : BaseActivity(), View.OnClickListener {
     private lateinit var binding: ActivityEditSportsBinding
     private var adapter: SelectSportAdapter?=null
     private  var list = ArrayList<SportsList>()
+    private var sportList = ArrayList<SportLevel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         removeStatusBarFullyBlackIcon()
@@ -31,6 +33,11 @@ class EditSportsActivity : BaseActivity(), View.OnClickListener {
         initView()
         setAdapter()
         sportListApi()
+        getIntentData()
+    }
+
+    private fun getIntentData() {
+        sportList = intent.extras?.getParcelableArrayList(PrefData.SPORT_LIST)!!
     }
 
     private fun setAdapter() {

@@ -573,7 +573,9 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
                 }
             }
             R.id.editSports -> {
-                CommonUtils.performIntent(this,EditSportsActivity::class.java)
+                val bundle=Bundle()
+                bundle.putParcelableArrayList(PrefData.SPORT_LIST,sportList)
+                CommonUtils.performIntentWithBundle(this,EditSportsActivity::class.java,bundle)
             }
             R.id.editImage -> {
                 selectImage()

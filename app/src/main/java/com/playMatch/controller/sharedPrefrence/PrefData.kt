@@ -10,6 +10,7 @@ object PrefData {
     const val FITNESS_LEVEL = "FitnessLevel"
     const val MY_ID = "my_id"
     const val TEAM_ID = "Team_Id"
+    const val SPORT_LIST = "Sport_list"
     const val CHAT_ROOM_ID = "chat_room_id"
     const val OTHER_USER_ID = "other_user_id"
     const val OTHER_USER_Receiver_ID = "other_user_receiver_id"

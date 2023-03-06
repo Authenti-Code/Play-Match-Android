@@ -67,7 +67,7 @@ class TeamsAdapter(var list: ArrayList<TeamList>, var activity: Activity) : Recy
                         dataSource: com.bumptech.glide.load.DataSource?,
                         isFirstResource: Boolean
                     ): Boolean {
-                        binding?.progressBar?.visibility = View.GONE
+                        binding.progressBar.visibility = View.GONE
                         return false
                     }
 
@@ -77,11 +77,11 @@ class TeamsAdapter(var list: ArrayList<TeamList>, var activity: Activity) : Recy
                         target: com.bumptech.glide.request.target.Target<Drawable>?,
                         isFirstResource: Boolean
                     ): Boolean {
-                        binding?.progressBar?.visibility = View.GONE
+                        binding.progressBar.visibility = View.GONE
                         return false
                     }
 
-                }).into(binding!!.logo)
+                }).into(binding.logo)
 
             binding.edit.setOnClickListener {
                 selectedPosition=position

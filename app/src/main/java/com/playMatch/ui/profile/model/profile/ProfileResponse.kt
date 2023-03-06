@@ -1,35 +1,68 @@
 package com.playMatch.ui.profile.model.profile
 
-data class ProfileResponse(
-    val `data`: Profile,
-    val message: String,
-    val success: String
-)
+import android.os.Parcelable
+import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
+data class ProfileResponse(
+    @field:SerializedName("data")
+    val `data`: Profile,
+    @field:SerializedName("message")
+    val message: String,
+    @field:SerializedName("success")
+    val success: String
+): Parcelable
+@Parcelize
 data class Profile(
+    @field:SerializedName("DOB")
     val DOB: String,
+    @field:SerializedName("distance")
     val distance: String,
+    @field:SerializedName("email")
     val email: String,
+    @field:SerializedName("fitnessLevel")
     val fitnessLevel: String,
+    @field:SerializedName("fri")
     val fri: String,
+    @field:SerializedName("gender")
     val gender: String,
+    @field:SerializedName("image")
     val image: String,
-    val invitesReceived: Any,
+    @field:SerializedName("invitesReceived")
+    val invitesReceived: String,
+    @field:SerializedName("location")
     val location: String,
-    val matchesCreated: Any,
-    val matchesPlayed: Any,
+    @field:SerializedName("matchesCreated")
+    val matchesCreated: String,
+    @field:SerializedName("matchesPlayed")
+    val matchesPlayed:String,
+    @field:SerializedName("mon")
     val mon: String,
+    @field:SerializedName("name")
     val name: String,
+    @field:SerializedName("sat")
     val sat: String,
+    @field:SerializedName("sportLevel")
     val sportLevel: List<SportLevel>,
+    @field:SerializedName("sun")
     val sun: String,
+    @field:SerializedName("thu")
     val thu: String,
-    val totalTeams: Any,
+    @field:SerializedName("totalTeams")
+    val totalTeams: String,
+    @field:SerializedName("tue")
     val tue: String,
+    @field:SerializedName("wed")
     val wed: String
-)
+): Parcelable
+
+@Parcelize
 data class SportLevel(
-    val sportId: Any,
+    @field:SerializedName("sportId")
+    val sportId: Int,
+    @field:SerializedName("sportLevel")
     val sportLevel: String,
-    val sportName: Any,
-)
+    @field:SerializedName("sportName")
+    val sportName: String,
+): Parcelable

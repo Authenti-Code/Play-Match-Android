@@ -14,6 +14,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.playMatch.R
+import com.playMatch.controller.`interface`.ApiUpdateListener
 import com.playMatch.controller.playMatchAPi.ResultResponse
 import com.playMatch.controller.playMatchAPi.apiClasses.UserApi
 import com.playMatch.controller.utils.CommonUtils
@@ -24,6 +25,7 @@ import com.playMatch.ui.teams.activity.AddTeamActivity
 import com.playMatch.ui.teams.adapter.TeamsAdapter
 import com.playMatch.controller.sharedPrefrence.PrefData
 import com.playMatch.ui.profile.model.profile.ProfileResponse
+import com.playMatch.ui.signUp.signupModel.selectedSportModel
 import com.playMatch.ui.teams.model.teamList.TeamList
 import com.playMatch.ui.teams.model.teamList.TeamListResponse
 
@@ -65,7 +67,7 @@ class TeamsFragment : Fragment(),View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.addTeam -> {
-       CommonUtils.performIntent(requireActivity(),AddTeamActivity::class.java)
+                CommonUtils.performIntent(requireActivity(), AddTeamActivity::class.java)
             }
         }
     }
@@ -80,7 +82,7 @@ class TeamsFragment : Fragment(),View.OnClickListener {
         binding?.rvTeams?.adapter = adapter
     }
 
-    private fun teamsListApi(){
+    internal fun teamsListApi() {
 
         if ((activity as BaseActivity).isNetworkAvailable()) {
             CommonUtils.showProgressDialog(requireActivity())
@@ -103,7 +105,10 @@ class TeamsFragment : Fragment(),View.OnClickListener {
                 if (response.success == "true") {
                     adapter?.updateList(response.data)
                 } else {
-                    (activity as BaseActivity).showSnackBar(view?.findViewById(R.id.rootView), response.message)
+                    (activity as BaseActivity).showSnackBar(
+                        view?.findViewById(R.id.rootView),
+                        response.message
+                    )
                 }
             }
             else -> {

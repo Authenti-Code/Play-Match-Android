@@ -12,7 +12,7 @@ import com.playMatch.R
 import com.playMatch.R.color
 import com.playMatch.controller.playMatchAPi.ResultResponse
 import com.playMatch.controller.playMatchAPi.apiClasses.UserApi
-import com.playMatch.controller.playMatchAPi.postPojoModel.user.upcomingMatch.UpcomingMatchPost
+import com.playMatch.controller.playMatchAPi.postPojoModel.user.Match.UpcomingMatchPost
 import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.databinding.FragmentMatchesBinding
 import com.playMatch.ui.baseActivity.BaseActivity
@@ -22,7 +22,6 @@ import com.playMatch.ui.matches.adapter.pastAdapter.PastAdapter
 import com.playMatch.ui.matches.adapter.upcomingAdapter.UpcomingAdapter
 import com.playMatch.ui.matches.model.upcomingMatches.UpComingMatchList
 import com.playMatch.ui.matches.model.upcomingMatches.UpcomingMatchResponse
-import com.playMatch.ui.teams.model.teamList.TeamListResponse
 
 
 /**

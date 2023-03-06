@@ -2,16 +2,17 @@ package com.playMatch.controller.playMatchAPi
 
 
 import com.playMatch.controller.playMatchAPi.apiClasses.ApiParameters
+import com.playMatch.controller.playMatchAPi.postPojoModel.user.Match.EditMatchPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.createMatch.CreateMatchPost
-import com.playMatch.controller.playMatchAPi.postPojoModel.user.editProfile.EditProfilePost
 import com.playMatch.ui.login.model.LoginResponse
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.login.LoginPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.logout.LogoutPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.matchAvailability.MatchAvailabilityPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.register.RegisterPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.showTeam.ShowTeamPost
-import com.playMatch.controller.playMatchAPi.postPojoModel.user.upcomingMatch.UpcomingMatchPost
+import com.playMatch.controller.playMatchAPi.postPojoModel.user.Match.UpcomingMatchPost
 import com.playMatch.ui.matches.model.createMatch.CreateMatchResponse
+import com.playMatch.ui.matches.model.editMatch.EditMatchResponse
 import com.playMatch.ui.matches.model.upcomingMatches.UpcomingMatchResponse
 import com.playMatch.ui.signUp.userSports.UserSportsPost
 import com.playMatch.ui.profile.activity.settingActivity.model.LogoutResponse
@@ -172,4 +173,11 @@ interface ApiService {
         @Header(ApiConstant.AUTH) token: String,
         @Body eventDetail: CreateMatchPost?
     ):Response<CreateMatchResponse>
+
+    @Headers("Content-Type: application/json")
+    @POST(ApiConstant.EDIT_MATCH)
+    suspend fun editMatch(
+        @Header(ApiConstant.AUTH) token: String,
+        @Body eventDetail: EditMatchPost?
+    ):Response<EditMatchResponse>
 }

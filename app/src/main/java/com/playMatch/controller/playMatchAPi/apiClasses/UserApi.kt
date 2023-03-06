@@ -3,7 +3,6 @@ package com.playMatch.controller.playMatchAPi.apiClasses
 import android.app.Activity
 import com.playMatch.controller.playMatchAPi.*
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.createMatch.CreateMatchPost
-import com.playMatch.controller.playMatchAPi.postPojoModel.user.editProfile.EditProfilePost
 import com.playMatch.ui.baseActivity.BaseActivity
 import com.playMatch.controller.sharedPrefrence.PrefData
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.login.LoginPost
@@ -11,7 +10,7 @@ import com.playMatch.controller.playMatchAPi.postPojoModel.user.logout.LogoutPos
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.matchAvailability.MatchAvailabilityPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.register.RegisterPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.showTeam.ShowTeamPost
-import com.playMatch.controller.playMatchAPi.postPojoModel.user.upcomingMatch.UpcomingMatchPost
+import com.playMatch.controller.playMatchAPi.postPojoModel.user.Match.UpcomingMatchPost
 import com.playMatch.ui.signUp.userSports.UserSportsPost
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody

@@ -29,6 +29,7 @@ import com.bumptech.glide.request.RequestListener
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.slider.RangeSlider
 import com.playMatch.R
+import com.playMatch.controller.`interface`.ApiUpdateListener
 import com.playMatch.controller.`interface`.BottomSheetListner
 import com.playMatch.controller.playMatchAPi.ApiConstant
 import com.playMatch.controller.playMatchAPi.ResultResponse
@@ -45,11 +46,13 @@ import com.playMatch.ui.profile.model.editProfile.EditProfileResponse
 import com.playMatch.ui.profile.model.profile.ProfileResponse
 import com.playMatch.ui.signUp.signupModel.SportListResponse
 import com.playMatch.ui.signUp.signupModel.SportsList
+import com.playMatch.ui.teams.fragment.TeamsFragment
 import com.playMatch.ui.teams.model.addTeam.AddTeamResponse
 import com.playMatch.ui.teams.model.editTeam.EditTeamResponse
 import com.playMatch.ui.teams.model.showTeamDetails.TeamDetailResponse
 import com.soundcloud.android.crop.Crop
 import java.io.ByteArrayOutputStream
+import kotlin.concurrent.fixedRateTimer
 import kotlin.math.roundToInt
 
 class AddTeamActivity : BaseActivity(), View.OnClickListener, BottomSheetListner {
