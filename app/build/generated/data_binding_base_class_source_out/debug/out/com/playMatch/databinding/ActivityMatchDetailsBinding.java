@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -40,16 +41,28 @@ public final class ActivityMatchDetailsBinding implements ViewBinding {
   public final ImageView edit;
 
   @NonNull
+  public final AppCompatTextView fitnessLevel;
+
+  @NonNull
+  public final AppCompatTextView gender;
+
+  @NonNull
   public final MaterialCardView invitedPlayers;
 
   @NonNull
   public final AppCompatTextView invitedPlayersTv;
 
   @NonNull
+  public final TextView locationTv;
+
+  @NonNull
   public final AppCompatImageView logo;
 
   @NonNull
   public final TextView name;
+
+  @NonNull
+  public final ProgressBar progressBar;
 
   @NonNull
   public final RecyclerView rvAccepted;
@@ -70,32 +83,43 @@ public final class ActivityMatchDetailsBinding implements ViewBinding {
   public final AppCompatTextView searchPlayersTv;
 
   @NonNull
+  public final AppCompatTextView sportsName;
+
+  @NonNull
   public final TextView time;
 
   private ActivityMatchDetailsBinding(@NonNull LinearLayoutCompat rootView,
       @NonNull MaterialCardView accepted, @NonNull AppCompatTextView acceptedTv,
       @NonNull ImageView back, @NonNull TextView date, @NonNull ImageView edit,
+      @NonNull AppCompatTextView fitnessLevel, @NonNull AppCompatTextView gender,
       @NonNull MaterialCardView invitedPlayers, @NonNull AppCompatTextView invitedPlayersTv,
-      @NonNull AppCompatImageView logo, @NonNull TextView name, @NonNull RecyclerView rvAccepted,
+      @NonNull TextView locationTv, @NonNull AppCompatImageView logo, @NonNull TextView name,
+      @NonNull ProgressBar progressBar, @NonNull RecyclerView rvAccepted,
       @NonNull RecyclerView rvInvitedPlayers, @NonNull RecyclerView rvSearchPlayers,
       @NonNull ImageView search, @NonNull MaterialCardView searchPlayers,
-      @NonNull AppCompatTextView searchPlayersTv, @NonNull TextView time) {
+      @NonNull AppCompatTextView searchPlayersTv, @NonNull AppCompatTextView sportsName,
+      @NonNull TextView time) {
     this.rootView = rootView;
     this.accepted = accepted;
     this.acceptedTv = acceptedTv;
     this.back = back;
     this.date = date;
     this.edit = edit;
+    this.fitnessLevel = fitnessLevel;
+    this.gender = gender;
     this.invitedPlayers = invitedPlayers;
     this.invitedPlayersTv = invitedPlayersTv;
+    this.locationTv = locationTv;
     this.logo = logo;
     this.name = name;
+    this.progressBar = progressBar;
     this.rvAccepted = rvAccepted;
     this.rvInvitedPlayers = rvInvitedPlayers;
     this.rvSearchPlayers = rvSearchPlayers;
     this.search = search;
     this.searchPlayers = searchPlayers;
     this.searchPlayersTv = searchPlayersTv;
+    this.sportsName = sportsName;
     this.time = time;
   }
 
@@ -156,6 +180,18 @@ public final class ActivityMatchDetailsBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.fitnessLevel;
+      AppCompatTextView fitnessLevel = ViewBindings.findChildViewById(rootView, id);
+      if (fitnessLevel == null) {
+        break missingId;
+      }
+
+      id = R.id.gender;
+      AppCompatTextView gender = ViewBindings.findChildViewById(rootView, id);
+      if (gender == null) {
+        break missingId;
+      }
+
       id = R.id.invitedPlayers;
       MaterialCardView invitedPlayers = ViewBindings.findChildViewById(rootView, id);
       if (invitedPlayers == null) {
@@ -168,6 +204,12 @@ public final class ActivityMatchDetailsBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.locationTv;
+      TextView locationTv = ViewBindings.findChildViewById(rootView, id);
+      if (locationTv == null) {
+        break missingId;
+      }
+
       id = R.id.logo;
       AppCompatImageView logo = ViewBindings.findChildViewById(rootView, id);
       if (logo == null) {
@@ -177,6 +219,12 @@ public final class ActivityMatchDetailsBinding implements ViewBinding {
       id = R.id.name;
       TextView name = ViewBindings.findChildViewById(rootView, id);
       if (name == null) {
+        break missingId;
+      }
+
+      id = R.id.progressBar;
+      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
+      if (progressBar == null) {
         break missingId;
       }
 
@@ -216,6 +264,12 @@ public final class ActivityMatchDetailsBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.sportsName;
+      AppCompatTextView sportsName = ViewBindings.findChildViewById(rootView, id);
+      if (sportsName == null) {
+        break missingId;
+      }
+
       id = R.id.time;
       TextView time = ViewBindings.findChildViewById(rootView, id);
       if (time == null) {
@@ -223,8 +277,9 @@ public final class ActivityMatchDetailsBinding implements ViewBinding {
       }
 
       return new ActivityMatchDetailsBinding((LinearLayoutCompat) rootView, accepted, acceptedTv,
-          back, date, edit, invitedPlayers, invitedPlayersTv, logo, name, rvAccepted,
-          rvInvitedPlayers, rvSearchPlayers, search, searchPlayers, searchPlayersTv, time);
+          back, date, edit, fitnessLevel, gender, invitedPlayers, invitedPlayersTv, locationTv,
+          logo, name, progressBar, rvAccepted, rvInvitedPlayers, rvSearchPlayers, search,
+          searchPlayers, searchPlayersTv, sportsName, time);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
