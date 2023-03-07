@@ -29,16 +29,9 @@ private  var selectedPosition=-1
         holder.apply {
             val ItemsviewModel = list[position]
             val id= PrefData.getStringPrefs(activity, PrefData.CHECK_BOX,"")
-            val selectedLevel= PrefData.getStringPrefs(activity, PrefData.SELECTED_LEVEL,"").toInt()-1
-                holder.binding.fitnessLevel.text = ItemsviewModel.fitnessLevel
+            holder.binding.fitnessLevel.text = ItemsviewModel.fitnessLevel
 
-            if (selectedLevel==position && selectedLevel!=null){
-                binding.cardView.setCardBackgroundColor(Color.parseColor("#F95047"))
-                binding.fitnessLevel.setTextColor(Color.WHITE)
-            }else{
-                binding.cardView.setCardBackgroundColor(Color.parseColor("#ffffff"))
-                binding.fitnessLevel.setTextColor(Color.parseColor("#F95047"))
-            }
+//
 
             if (selectedPosition==position && id=="1") {
                 binding.cardView.setCardBackgroundColor(Color.parseColor("#F95047"))
@@ -49,7 +42,6 @@ private  var selectedPosition=-1
             }
             binding.cardView.setOnClickListener {
                 selectedPosition=position
-                notifyDataSetChanged()
                 recyclerviewListener.onItemClick(position + 1, binding.fitnessLevel.text.toString().trim(),true)
                 ItemsviewModel.status
             }
@@ -67,5 +59,13 @@ private  var selectedPosition=-1
         return list.size
     }
 
+    fun updateLevel(level:String){
+        val selectedLevel= level.toInt()
+
+        if (selectedLevel!=null) {
+            selectedPosition = selectedLevel
+            notifyDataSetChanged()
+        }
+    }
 
 }

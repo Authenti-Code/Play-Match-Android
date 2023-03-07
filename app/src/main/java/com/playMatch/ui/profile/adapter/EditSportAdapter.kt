@@ -49,8 +49,10 @@ class EditSportAdapter(var list: ArrayList<EditSportList>, var activity: Activit
                 binding.rvChildSports.visibility=View.VISIBLE
                 binding.rvLightChildSports.visibility=View.GONE
                 selectedPosition=position
-                PrefData.setStringPrefs(activity,PrefData.SELECTED_LEVEL,ItemsviewModel.sportLevel)
-                }
+//                PrefData.setStringPrefs(activity,PrefData.SELECTED_LEVEL,ItemsviewModel.sportLevel)
+                PrefData.setStringPrefs(activity, PrefData.CHECK_BOX,"1")
+                adapter?.updateLevel(ItemsviewModel.sportLevel)
+            }
 
 
             adapter = SelectChildSportAdapter(mlist, activity,object : RecyclerviewListener {
