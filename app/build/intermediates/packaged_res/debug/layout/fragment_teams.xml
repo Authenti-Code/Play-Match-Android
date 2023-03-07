@@ -34,6 +34,10 @@
 
     </FrameLayout>
 
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvTeams"
         android:layout_width="match_parent"
@@ -44,5 +48,7 @@
         tools:listitem="@layout/rv_list_item_teams"
         android:layout_marginBottom="@dimen/_65sdp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </LinearLayout>
