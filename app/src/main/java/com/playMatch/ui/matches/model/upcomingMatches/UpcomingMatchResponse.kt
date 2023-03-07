@@ -52,8 +52,8 @@ data class UpComingMatchList(
     val teamName: String,
     @field:SerializedName("updated_at")
     val updated_at: String,
-    @field:SerializedName("image")
-    val image: String,
+    @field:SerializedName("teamImage")
+    val teamImage: String,
     @field:SerializedName("userId")
     val userId: Int
 ):Parcelable

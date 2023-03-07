@@ -25,6 +25,7 @@ object ApiConstant {
     const val PROFILE="profile"
 
     const val SPORTS_LIST="sportsList"
+    const val EDIT_SPORTS_LIST="editSportAbility"
     const val SPORTS_LEVELS="sportAbilityLevels"
     const val MATCH_AVAILABILITY="matchAvailability"
     const val CREATE_MATCH="create/match"

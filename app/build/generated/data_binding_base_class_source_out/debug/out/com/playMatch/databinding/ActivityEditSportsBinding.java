@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
@@ -25,17 +27,26 @@ public final class ActivityEditSportsBinding implements ViewBinding {
   public final ImageView back;
 
   @NonNull
+  public final ProgressBar progressBar;
+
+  @NonNull
   public final RecyclerView rvEditSports;
 
   @NonNull
   public final CardView update;
 
+  @NonNull
+  public final TextView updateTv;
+
   private ActivityEditSportsBinding(@NonNull FrameLayout rootView, @NonNull ImageView back,
-      @NonNull RecyclerView rvEditSports, @NonNull CardView update) {
+      @NonNull ProgressBar progressBar, @NonNull RecyclerView rvEditSports,
+      @NonNull CardView update, @NonNull TextView updateTv) {
     this.rootView = rootView;
     this.back = back;
+    this.progressBar = progressBar;
     this.rvEditSports = rvEditSports;
     this.update = update;
+    this.updateTv = updateTv;
   }
 
   @Override
@@ -71,6 +82,12 @@ public final class ActivityEditSportsBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.progressBar;
+      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
+      if (progressBar == null) {
+        break missingId;
+      }
+
       id = R.id.rv_edit_sports;
       RecyclerView rvEditSports = ViewBindings.findChildViewById(rootView, id);
       if (rvEditSports == null) {
@@ -83,7 +100,14 @@ public final class ActivityEditSportsBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityEditSportsBinding((FrameLayout) rootView, back, rvEditSports, update);
+      id = R.id.updateTv;
+      TextView updateTv = ViewBindings.findChildViewById(rootView, id);
+      if (updateTv == null) {
+        break missingId;
+      }
+
+      return new ActivityEditSportsBinding((FrameLayout) rootView, back, progressBar, rvEditSports,
+          update, updateTv);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

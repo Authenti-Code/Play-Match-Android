@@ -17,17 +17,13 @@ import com.playMatch.R
 import com.playMatch.controller.sharedPrefrence.PrefData
 import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.databinding.RvMatchesListItemBinding
-import com.playMatch.ui.home.model.HomeChildModel
 import com.playMatch.ui.inbox.activity.chatActivity.ChatActivity
 import com.playMatch.ui.matches.activity.matchDetails.MatchDetailsActivity
 import com.playMatch.ui.matches.model.upcomingMatches.UpComingMatchList
 
 class UpcomingAdapter(var list: ArrayList<UpComingMatchList>, var activity: Activity) : RecyclerView.Adapter<UpcomingAdapter.ViewHolder>() {
-
-
     private  var selectedPosition=-1
     inner class ViewHolder(val binding: RvMatchesListItemBinding) : RecyclerView.ViewHolder(binding.root)
-
 
 
 
@@ -55,7 +51,7 @@ class UpcomingAdapter(var list: ArrayList<UpComingMatchList>, var activity: Acti
 
 
             Glide.with(activity)
-                .load(itemsViewModel.image)
+                .load(itemsViewModel.teamImage)
                 .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
                 .skipMemoryCache(true)
                 .priority(Priority.IMMEDIATE)
@@ -83,17 +79,12 @@ class UpcomingAdapter(var list: ArrayList<UpComingMatchList>, var activity: Acti
                     }
 
                 }).into(binding!!.logo)
-//            if (position==1){
-//                binding.genderTv.text="Female"
-//                binding.host.visibility=View.GONE
-//                binding.chat.visibility=View.VISIBLE
-//            }
+
 
             binding.cardView.setOnClickListener {
                 val bundle=Bundle()
                 bundle.putParcelable(PrefData.MATCH_DETAILS,itemsViewModel)
                 selectedPosition=position
-                notifyDataSetChanged()
                 CommonUtils.performIntentWithBundle(activity,MatchDetailsActivity::class.java,bundle)
             }
 
@@ -108,14 +99,9 @@ class UpcomingAdapter(var list: ArrayList<UpComingMatchList>, var activity: Acti
     override fun getItemId(position: Int): Long {
         return position.toLong()
     }
-
-
     override fun getItemCount(): Int {
         return list.size
     }
-
-
-
 
     @SuppressLint("NotifyDataSetChanged")
     fun updateList(Data: List<UpComingMatchList>) {

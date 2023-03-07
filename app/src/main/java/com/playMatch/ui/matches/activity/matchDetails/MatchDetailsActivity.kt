@@ -62,7 +62,7 @@ class MatchDetailsActivity : BaseActivity(), View.OnClickListener {
         binding.gender.text=matchDetails?.gender
 
         Glide.with(this)
-            .load(matchDetails?.image)
+            .load(matchDetails?.teamImage)
             .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
             .skipMemoryCache(true)
             .priority(Priority.IMMEDIATE)

@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.graphics.Color
-import android.graphics.drawable.Drawable
 import android.icu.text.SimpleDateFormat
 import android.icu.util.Calendar
 import android.os.Bundle
@@ -14,11 +13,6 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.Priority
-import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.bumptech.glide.load.engine.GlideException
-import com.bumptech.glide.request.RequestListener
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.playMatch.R
 import com.playMatch.controller.constant.IntentConstant
@@ -27,12 +21,9 @@ import com.playMatch.controller.playMatchAPi.ResultResponse
 import com.playMatch.controller.playMatchAPi.apiClasses.UserApi
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.Match.EditMatchPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.createMatch.CreateMatchPost
-import com.playMatch.controller.playMatchAPi.postPojoModel.user.showTeam.ShowTeamPost
 import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.databinding.ActivityCreateMatchBinding
 import com.playMatch.ui.baseActivity.BaseActivity
-import com.playMatch.ui.home.model.HomeChildModel
-import com.playMatch.ui.matches.activity.payment.PaymentActivity
 import com.playMatch.ui.matches.adapter.selectSportAdapter.SelectMatchSportAdapter
 import com.playMatch.ui.matches.adapter.selectTeamAdapter.SelectTeamAdapter
 import com.playMatch.controller.sharedPrefrence.PrefData
@@ -42,7 +33,6 @@ import com.playMatch.ui.matches.model.editMatch.EditMatchResponse
 import com.playMatch.ui.matches.model.upcomingMatches.UpComingMatchList
 import com.playMatch.ui.signUp.signupModel.SportListResponse
 import com.playMatch.ui.signUp.signupModel.SportsList
-import com.playMatch.ui.teams.model.showTeamDetails.TeamDetailResponse
 import com.playMatch.ui.teams.model.teamList.TeamList
 import com.playMatch.ui.teams.model.teamList.TeamListResponse
 import java.util.*

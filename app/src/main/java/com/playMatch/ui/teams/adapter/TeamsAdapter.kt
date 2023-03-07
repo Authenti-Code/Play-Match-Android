@@ -85,7 +85,6 @@ class TeamsAdapter(var list: ArrayList<TeamList>, var activity: Activity) : Recy
 
             binding.edit.setOnClickListener {
                 selectedPosition=position
-                notifyDataSetChanged()
                 val bundle= Bundle()
                 bundle.putString(PrefData.CURRENT_USER_SCREEN_TYPE,"edit")
                 bundle.putString(PrefData.TEAM_ID,ItemsviewModel.teamId.toString())

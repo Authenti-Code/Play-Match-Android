@@ -14,7 +14,7 @@ object PrefData {
     const val GENDER = "Gender"
     const val MATCH_DETAILS = "Match_Details"
     const val USER_TYPE="User_Type"
-    const val MY_ID = "my_id"
+    const val SELECTED_LEVEL = "Selected_Level"
     const val TEAM_ID = "Team_Id"
     const val MATCH_ID = "Match_Id"
     const val SPORT_LIST = "Sport_list"

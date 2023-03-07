@@ -11,19 +11,23 @@ import com.playMatch.controller.playMatchAPi.apiClasses.UserApi
 import com.playMatch.databinding.ActivityEditSportsBinding
 import com.playMatch.ui.baseActivity.BaseActivity
 import com.playMatch.ui.signUp.signUpAdapters.SelectSportAdapter
-import com.playMatch.ui.signUp.signupModel.SelectSportModel
 import com.playMatch.controller.sharedPrefrence.PrefData
 import com.playMatch.controller.utils.CommonUtils
+import com.playMatch.ui.profile.adapter.EditSportAdapter
+import com.playMatch.ui.profile.model.editProfile.EditSportList
+import com.playMatch.ui.profile.model.editProfile.EditSportResponse
 import com.playMatch.ui.profile.model.profile.SportLevel
-import com.playMatch.ui.signUp.signupModel.SportListResponse
-import com.playMatch.ui.signUp.signupModel.SportsList
-import com.playMatch.ui.signUp.signupModel.selectedSportModel
+import com.playMatch.ui.signUp.MatchSignUpActivity
+import com.playMatch.ui.signUp.signupModel.*
+import com.playMatch.ui.signUp.userSports.UserSportsPost
 
 class EditSportsActivity : BaseActivity(), View.OnClickListener {
     private lateinit var binding: ActivityEditSportsBinding
-    private var adapter: SelectSportAdapter?=null
-    private  var list = ArrayList<SportsList>()
-    private var sportList = ArrayList<SportLevel>()
+    private var adapter: EditSportAdapter?=null
+    private  var list = ArrayList<EditSportList>()
+    private var sportList = ArrayList<EditSportList>()
+    private var sportLevel=ArrayList<selectedSportModel>()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         removeStatusBarFullyBlackIcon()
@@ -37,14 +41,15 @@ class EditSportsActivity : BaseActivity(), View.OnClickListener {
     }
 
     private fun getIntentData() {
-        sportList = intent.extras?.getParcelableArrayList(PrefData.SPORT_LIST)!!
+//        sportList = intent.extras?.getParcelableArrayList(PrefData.SPORT_LIST)!!
     }
 
     private fun setAdapter() {
         if (list.isEmpty()) {
-            adapter = SelectSportAdapter(list, this,object:SelectSportsListener{
+            adapter = EditSportAdapter(list, this,object:SelectSportsListener{
 
                 override fun onItemClick(position: Int, list: ArrayList<selectedSportModel>) {
+                    sportLevel = list
                 }
             })
             binding.rvEditSports.adapter = adapter
@@ -67,7 +72,7 @@ class EditSportsActivity : BaseActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.update -> {
-                onBackPressed()
+                selectSportApi()
             }
             R.id.back -> {
                 onBackPressed()
@@ -79,7 +84,7 @@ class EditSportsActivity : BaseActivity(), View.OnClickListener {
         if (isNetworkAvailable()) {
             CommonUtils.showProgressDialog(this)
             lifecycleScope.launchWhenStarted {
-                val resultResponse = UserApi(this@EditSportsActivity).sportsList()
+                val resultResponse = UserApi(this@EditSportsActivity).editSportsList()
                 apiSportListResult(resultResponse)
             }
         } else {
@@ -92,7 +97,7 @@ class EditSportsActivity : BaseActivity(), View.OnClickListener {
         CommonUtils.hideProgressDialog()
         return when (resultResponse) {
             is ResultResponse.Success<*> -> {
-                val response = resultResponse.response as SportListResponse
+                val response = resultResponse.response as EditSportResponse
                 //get data and convert string to json and save data
                 if (response.success == "true") {
 
@@ -111,5 +116,51 @@ class EditSportsActivity : BaseActivity(), View.OnClickListener {
                 showError(resultResponse)
             }
         }
+    }
+
+    private fun selectSportApi (){
+
+
+        if (isNetworkAvailable()) {
+            showProgressBar()
+            lifecycleScope.launchWhenStarted {
+                val resultResponse = UserApi(this@EditSportsActivity).sportsLevels(
+                    UserSportsPost(
+                        sportLevel
+                    )
+                )
+                apiResult(resultResponse)
+            }
+        } else {
+            showNetworkSpeedError()
+        }
+    }
+
+
+    private fun apiResult(resultResponse: ResultResponse) {
+        hideProgressBar()
+        return when (resultResponse) {
+            is ResultResponse.Success<*> -> {
+                val response = resultResponse.response as SportsLevelsResponse
+                //get data and convert string to json and save data
+                if (response.success == "true") {
+                    onBackPressed()
+                } else {
+                    showSnackBar(findViewById(R.id.rootView), response.message)
+                }
+            }
+            else -> {
+                showError(resultResponse)
+            }
+        }
+    }
+
+    private fun showProgressBar(){
+        binding.progressBar.visibility=View.VISIBLE
+        binding.updateTv.visibility=View.GONE
+    }
+    private fun hideProgressBar(){
+        binding.progressBar.visibility=View.GONE
+        binding.updateTv.visibility=View.VISIBLE
     }
 }

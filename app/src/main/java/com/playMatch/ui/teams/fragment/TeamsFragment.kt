@@ -62,6 +62,10 @@ class TeamsFragment : Fragment(),View.OnClickListener {
     private fun initViews() {
         PrefData.setBooleanPrefs(requireActivity(), PrefData.KEY_NOTIFICATION_IS_CHAT, false)
         binding?.addTeam?.setOnClickListener(this)
+        binding?.swipeRefreshLay?.setOnRefreshListener {
+            binding?.swipeRefreshLay?.isRefreshing = false
+            teamsListApi()
+        }
     }
 
     override fun onClick(v: View?) {

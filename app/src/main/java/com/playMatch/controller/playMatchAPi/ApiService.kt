@@ -17,6 +17,7 @@ import com.playMatch.ui.matches.model.upcomingMatches.UpcomingMatchResponse
 import com.playMatch.ui.signUp.userSports.UserSportsPost
 import com.playMatch.ui.profile.activity.settingActivity.model.LogoutResponse
 import com.playMatch.ui.profile.model.editProfile.EditProfileResponse
+import com.playMatch.ui.profile.model.editProfile.EditSportResponse
 import com.playMatch.ui.profile.model.profile.ProfileResponse
 import com.playMatch.ui.signUp.signupModel.*
 import com.playMatch.ui.teams.model.addTeam.AddTeamResponse
@@ -52,6 +53,12 @@ interface ApiService {
     @POST(ApiConstant.SPORTS_LIST)
     suspend fun sportsList(
     ):Response<SportListResponse>
+
+    @Headers("Content-Type: application/json")
+    @POST(ApiConstant.EDIT_SPORTS_LIST)
+    suspend fun editSportsList(
+        @Header(ApiConstant.AUTHORIZATION) token: String,
+        ):Response<EditSportResponse>
 
 
     @Headers("Content-Type: application/json")
