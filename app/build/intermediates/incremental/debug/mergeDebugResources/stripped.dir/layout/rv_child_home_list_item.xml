@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="@dimen/_230sdp"
+        android:layout_height="@dimen/_120sdp"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="@dimen/_5sdp"
+        app:cardCornerRadius="@dimen/_8sdp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="match_parent"
+                app:cardElevation="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_8sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/logo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/ic_league_match"/>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="League Match"
+                    android:singleLine="true"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/metropolis_semibold"
+                    android:textSize="@dimen/_12ssp"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="25 Dec 2022"
+                    android:fontFamily="@font/metropolis_light"
+                    android:textSize="@dimen/_9ssp"
+                    android:textColor="@color/greay_B7B7B7"/>
+
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10:00 AM - 2:00 PM"
+                    android:fontFamily="@font/metropolis_light"
+                    android:textSize="@dimen/_9ssp"
+                    android:textColor="@color/greay_B7B7B7"/>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:cardBackgroundColor="@color/red_E65D50"
+                    app:cardCornerRadius="@dimen/_3sdp">
+
+
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10ssp"
+                            android:gravity="center"
+                            android:text="Intermediate"
+                            android:backgroundTint="@color/white"
+                            android:fontFamily="@font/metropolis_light"/>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_15sdp"
+                    app:strokeWidth="@dimen/_1sdp"
+                    app:strokeColor="@color/red_E65D50"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    app:cardCornerRadius="@dimen/_3sdp">
+
+
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#D66657"
+                        android:textSize="@dimen/_10ssp"
+                        android:gravity="center"
+                        android:text="Cricket"
+                        android:backgroundTint="@color/white"
+                        android:fontFamily="@font/metropolis_light"/>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

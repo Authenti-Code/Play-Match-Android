@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rootView"
+    tools:context=".ui.signUp.AddProfileImageActivity">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:orientation="vertical">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:src="@drawable/ic_back"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Profile Image"
+        android:textColor="@color/black"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_gravity="center_horizontal|bottom"
+        android:textSize="@dimen/_14ssp"
+        android:fontFamily="@font/metropolis_semibold"/>
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/name"
+            android:src="@drawable/hi"
+            android:scaleType="center"/>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/name"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:fontFamily="@font/metropolis_regular"
+            android:text="John Deo "
+            android:textSize="@dimen/_23ssp"/>
+
+        <ImageView
+            android:id="@+id/skip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical|end"
+            android:src="@drawable/skip"
+            android:scaleType="center"/>
+
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:fontFamily="@font/metropolis_light"
+        android:text="Upload your profile image."
+        android:textSize="@dimen/_13ssp"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:textColor="@color/black"
+        android:drawableStart="@drawable/info"
+        android:drawablePadding="@dimen/_5sdp"
+        android:fontFamily="@font/metropolis_light"
+        android:text="This will give your profile more credibility"
+        android:textSize="@dimen/_10ssp"/>
+        
+        <RelativeLayout
+            android:id="@+id/profileLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_52sdp">
+            
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/profileBg"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_140sdp"
+                app:srcCompat="@drawable/signup_proifle_bg"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_70sdp"/>
+
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_160sdp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_60sdp"
+                android:elevation="@dimen/_5sdp"
+                android:src="@drawable/new_dummy_profile"
+                app:civ_border_color="@color/red_F95047"
+                app:civ_border_width="@dimen/_1sdp" />
+
+            <ImageView
+                android:id="@+id/editProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/profile_image"
+                android:layout_centerInParent="true"
+                android:elevation="@dimen/_10sdp"
+                android:src="@drawable/edit_profile" />
+
+            
+        </RelativeLayout>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_gravity="bottom">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/Continue"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            app:cardBackgroundColor="@color/red_F95047"
+            android:layout_marginBottom="@dimen/_15sdp"
+            app:cardCornerRadius="@dimen/_18sdp">
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:layout_marginVertical="@dimen/_2sdp"
+                android:indeterminateTint="@color/white"/>
+
+            <TextView
+                android:id="@+id/continueTv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp"
+                android:fontFamily="@font/metropolis_regular"
+                android:text="Continue"/>
+
+        </androidx.cardview.widget.CardView>
+
+    </FrameLayout>
+
+</FrameLayout>

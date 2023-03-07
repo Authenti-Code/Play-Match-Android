@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:elevation="0dp"
+                android:src="@drawable/new_dummy_profile"
+                app:civ_border_color="@color/red_F95047"
+                app:civ_border_width="@dimen/_1sdp" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    app:cardElevation="0dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    app:strokeWidth="@dimen/_1sdp"
+                    app:strokeColor="@color/black_707070"
+                    app:cardCornerRadius="@dimen/_3sdp">
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/cardViewTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/black_707070"
+                        android:drawableStart="@drawable/ic_plus"
+                        android:paddingStart="@dimen/_5sdp"
+                        android:textSize="@dimen/_10ssp"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:text="Invite"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:backgroundTint="@color/white"
+                        android:fontFamily="@font/metropolis_light"/>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rossy Alan"
+                    android:singleLine="true"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/metropolis_semibold"
+                    android:textSize="@dimen/_12ssp"
+                    android:textColor="@color/black"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="50 meters"
+                    android:fontFamily="@font/metropolis_light"
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@color/greay_B7B7B7"/>
+
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="@color/grey_66B7B7B7"
+                        app:cardCornerRadius="@dimen/_3sdp">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textColor="@color/black_707070"
+                            android:textSize="@dimen/_8ssp"
+                            android:gravity="center"
+                            android:text="Male"
+                            android:backgroundTint="@color/white"
+                            android:fontFamily="@font/metropolis_light"/>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="@dimen/_70sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        app:cardElevation="0dp"
+                       app:cardBackgroundColor="@color/red_F95047"
+                        app:cardCornerRadius="@dimen/_3sdp">
+
+
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_8ssp"
+                            android:gravity="center"
+                            android:text="Intermediate"
+                            android:backgroundTint="@color/white"
+                            android:fontFamily="@font/metropolis_light"/>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="#8CE2E2E2" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

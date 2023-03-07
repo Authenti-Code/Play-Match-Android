@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_5sdp"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="@dimen/_5sdp">
+
+        <ImageView
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_gravity="end"
+            android:src="@drawable/ic_close"/>
+
+
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_25sdp"
+
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_110sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                app:cardCornerRadius="@dimen/_8sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/logo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/match"/>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="T20 League Match"
+                            android:singleLine="true"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:fontFamily="@font/metropolis_semibold"
+                            android:textSize="@dimen/_10ssp"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:id="@+id/date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="25 Dec 2022"
+                            android:fontFamily="@font/metropolis_light"
+                            android:textSize="@dimen/_8ssp"
+                            android:textColor="@color/greay_B7B7B7"/>
+
+                        <TextView
+                            android:id="@+id/time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="10:00 AM - 2:00 PM"
+                            android:fontFamily="@font/metropolis_light"
+                            android:textSize="@dimen/_8ssp"
+                            android:textColor="@color/greay_B7B7B7"/>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_18sdp"
+                        android:layout_gravity="end"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            app:cardElevation="0dp"
+                            app:cardBackgroundColor="#66B7B7B7"
+                            app:cardCornerRadius="@dimen/_3sdp">
+
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:textColor="@color/black_707070"
+                                android:textSize="@dimen/_8ssp"
+                                android:gravity="center"
+                                android:text="Male"
+                                android:backgroundTint="@color/white"
+                                android:fontFamily="@font/metropolis_light"/>
+
+
+                        </com.google.android.material.card.MaterialCardView>
+
+
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/line"/>
+
+                <TextView
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sector 32, Entertainment District, 23156,"
+                    android:fontFamily="@font/metropolis_light"
+                    android:textSize="@dimen/_8ssp"
+                    android:textColor="@color/greay_B7B7B7"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Amsterdam,Wellington St. "
+                    android:fontFamily="@font/metropolis_light"
+                    android:textSize="@dimen/_8ssp"
+                    android:textColor="@color/greay_B7B7B7"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:background="@drawable/line"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="@dimen/_70sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        app:cardBackgroundColor="@color/red_E65D50"
+                        app:cardCornerRadius="@dimen/_5sdp">
+
+
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_8ssp"
+                            android:gravity="center"
+                            android:text="Intermediate"
+                            android:backgroundTint="@color/white"
+                            android:fontFamily="@font/metropolis_light"/>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="@dimen/_70sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        app:strokeWidth="@dimen/_1sdp"
+                        app:strokeColor="@color/red_E65D50"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        app:cardCornerRadius="@dimen/_5sdp">
+
+
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textColor="#D66657"
+                            android:textSize="@dimen/_8ssp"
+                            android:gravity="center"
+                            android:text="Cricket"
+                            android:backgroundTint="@color/white"
+                            android:fontFamily="@font/metropolis_light"/>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_marginBottom="@dimen/_30sdp"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            app:cardBackgroundColor="#6B8468"
+            app:cardCornerRadius="@dimen/_8sdp">
+
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp"
+                android:gravity="center"
+                android:text="Accept"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/metropolis_light"/>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_25sdp"
+            app:cardBackgroundColor="@color/red_E65D50"
+            android:layout_marginEnd="@dimen/_10sdp"
+            app:cardCornerRadius="@dimen/_5sdp">
+
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp"
+                android:gravity="center"
+                android:text="Reject"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/metropolis_light"/>
+
+
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rootView"
+    android:orientation="vertical"
+    tools:context=".ui.matches.activity.createMatchActivity.CreateMatchActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_30sdp">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"/>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Match"
+            android:textColor="@color/black"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_gravity="center_horizontal"
+            android:textSize="@dimen/_14ssp"
+            android:fontFamily="@font/metropolis_semibold"/>
+
+    </FrameLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/matchName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:drawableStart="@drawable/ic_match_name"
+        android:drawablePadding="@dimen/_10sdp"
+        android:hint="Enter match name"
+        android:textColorHint="@color/black_B7B7B7"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_gravity="center_horizontal"
+        android:textSize="@dimen/_10ssp"
+        android:fontFamily="@font/metropolis_semibold"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginStart="@dimen/_40sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:background="@color/black_707070" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/calendar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:drawableStart="@drawable/ic_calender"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:drawablePadding="@dimen/_10sdp"
+        android:hint="Select match date"
+        android:textColorHint="@color/black_B7B7B7"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_gravity="center_horizontal"
+        android:textSize="@dimen/_10ssp"
+        android:fontFamily="@font/metropolis_semibold"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginStart="@dimen/_40sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:background="@color/black_707070" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/startTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_time"
+        android:drawablePadding="@dimen/_10sdp"
+        android:singleLine="true"
+        android:hint="Start time"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:textColorHint="@color/black_B7B7B7"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_gravity="center_horizontal"
+        android:textSize="@dimen/_10ssp"
+        android:fontFamily="@font/metropolis_semibold"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginStart="@dimen/_40sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:background="@color/black_707070" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/finishTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_time"
+        android:drawablePadding="@dimen/_10sdp"
+        android:hint="Finish time"
+        android:singleLine="true"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:textColorHint="@color/black_B7B7B7"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_gravity="center_horizontal"
+        android:textSize="@dimen/_10ssp"
+        android:fontFamily="@font/metropolis_semibold"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginStart="@dimen/_40sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:background="@color/black_707070" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/locationTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_location_nav"
+        android:drawablePadding="@dimen/_10sdp"
+        android:hint="Location"
+        android:textColorHint="@color/black_B7B7B7"
+        android:backgroundTint="@color/white"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_gravity="center_horizontal"
+        android:textSize="@dimen/_10ssp"
+        android:fontFamily="@font/metropolis_semibold"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginStart="@dimen/_40sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:background="@color/black_707070" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/genderTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_gender"
+        android:drawablePadding="@dimen/_10sdp"
+        android:hint="Gender"
+        android:textColorHint="@color/black_B7B7B7"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        android:singleLine="true"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_gravity="center_horizontal"
+        android:textSize="@dimen/_10ssp"
+        android:fontFamily="@font/metropolis_semibold"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginStart="@dimen/_40sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:background="@color/black_707070" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Standard of play"
+        android:textColor="@color/black"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_gravity="start"
+        android:textSize="@dimen/_12ssp"
+        android:fontFamily="@font/metropolis_light"/>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/beginner"
+                        android:layout_width="@dimen/_90sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_marginVertical="@dimen/_5sdp"
+                        app:strokeWidth="@dimen/_1sdp"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        app:strokeColor="@color/red_E65D50"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        app:cardCornerRadius="@dimen/_5sdp">
+
+
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/beginnerTv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textColor="#D66657"
+                            android:textSize="@dimen/_8ssp"
+                            android:gravity="center"
+                            android:text="Beginner"
+                            android:backgroundTint="@color/white"
+                            android:fontFamily="@font/metropolis_light"/>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/intermediate"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        app:strokeWidth="@dimen/_1sdp"
+                        app:strokeColor="@color/red_E65D50"
+                        app:cardBackgroundColor="@color/red_F95047"
+                        app:cardCornerRadius="@dimen/_5sdp">
+
+
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/intermediateTv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_8ssp"
+                            android:gravity="center"
+                            android:text="Intermediate"
+                            android:backgroundTint="@color/white"
+                            android:fontFamily="@font/metropolis_light"/>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/experienced"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        app:strokeWidth="@dimen/_1sdp"
+                        app:strokeColor="@color/red_E65D50"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        app:cardCornerRadius="@dimen/_5sdp">
+
+
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/experiencedTv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textColor="#D66657"
+                            android:textSize="@dimen/_8ssp"
+                            android:gravity="center"
+                            android:text="Experienced"
+                            android:backgroundTint="@color/white"
+                            android:fontFamily="@font/metropolis_light"/>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+            </HorizontalScrollView>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/selectSport"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        app:strokeWidth="@dimen/_1sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        app:strokeColor="@color/red_E65D50"
+        android:layout_marginEnd="@dimen/_10sdp"
+        app:cardCornerRadius="@dimen/_5sdp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/selectSportTv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="@color/red_F95047"
+        android:textSize="@dimen/_10ssp"
+        android:paddingEnd="@dimen/_20sdp"
+        android:gravity="center"
+        android:text="Select Sport"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/metropolis_light"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select team"
+                android:textColor="@color/black"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_gravity="start"
+                android:textSize="@dimen/_12ssp"
+                android:fontFamily="@font/metropolis_light"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black_B7B7B7"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:drawableStart="@drawable/info"
+                android:drawablePadding="@dimen/_5sdp"
+                android:fontFamily="@font/metropolis_thin"
+                android:text="Select your team for this match."
+                android:textSize="@dimen/_9ssp"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/selectTeam"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:strokeWidth="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                app:strokeColor="@color/red_E65D50"
+                android:layout_marginEnd="@dimen/_10sdp"
+                app:cardCornerRadius="@dimen/_5sdp">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/selectTeamTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/red_F95047"
+                    android:textSize="@dimen/_10ssp"
+                    android:gravity="center"
+                    android:text="Select team"
+                    android:drawableEnd="@drawable/ic_front_arrow"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:backgroundTint="@color/white"
+                    android:fontFamily="@font/metropolis_light"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:textColor="@color/black"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_gravity="start"
+                android:textSize="@dimen/_12ssp"
+                android:fontFamily="@font/metropolis_light"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_125sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                app:strokeWidth="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                app:strokeColor="@color/red_E65D50"
+                android:layout_marginEnd="@dimen/_10sdp"
+                app:cardCornerRadius="@dimen/_8sdp">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8ssp"
+                    android:textColorHint="@color/black_B7B7B7"
+                    android:inputType="text|textMultiLine"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:hint="Type details about this match.."
+                    android:backgroundTint="@color/white"
+                    android:fontFamily="@font/metropolis_light"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Continue"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="@dimen/_30sdp"
+
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                app:cardBackgroundColor="@color/red_F95047"
+                app:cardCornerRadius="@dimen/_18sdp">
+
+                <ProgressBar
+                    android:id="@+id/continueProgressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    android:layout_marginVertical="@dimen/_2sdp"
+                    android:indeterminateTint="@color/white"/>
+
+                <TextView
+                    android:id="@+id/ContinueTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp"
+                    android:fontFamily="@font/metropolis_light"
+                    android:text="Continue"/>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
