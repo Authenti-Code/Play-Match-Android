@@ -46,29 +46,29 @@ class EditSportAdapter(var list: ArrayList<EditSportList>, var activity: Activit
 
             if (ItemsviewModel.isSelected == 1 ) {
                 binding.checkbox.isChecked=true
+                PrefData.setStringPrefs(activity, PrefData.CHECK_BOX,"1")
                 binding.rvChildSports.visibility=View.VISIBLE
                 binding.rvLightChildSports.visibility=View.GONE
-                selectedPosition=position
-//                PrefData.setStringPrefs(activity,PrefData.SELECTED_LEVEL,ItemsviewModel.sportLevel)
-                PrefData.setStringPrefs(activity, PrefData.CHECK_BOX,"1")
-                adapter?.updateLevel(ItemsviewModel.sportLevel)
+                PrefData.setStringPrefs(activity,PrefData.SELECTED_LEVEL,ItemsviewModel.sportLevel)
+                nlist.add(selectedSportModel(ItemsviewModel.id,ItemsviewModel.sportLevel,ItemsviewModel.sportName))
+//                adapter?.updateLevel(ItemsviewModel.sportLevel.toInt()- 2 )
             }
 
 
             adapter = SelectChildSportAdapter(mlist, activity,object : RecyclerviewListener {
 
-                override fun onItemClick(position: Int, viewType: String,status:Boolean) {
+                override fun onItemClick(position: Int, viewType: String,type:Boolean) {
 
                     if (nlist.isEmpty()) {
-                        nlist.add(selectedSportModel(ItemsviewModel.id,position.toString()))
+                        nlist.add(selectedSportModel(ItemsviewModel.id,position.toString(),viewType))
                     } else {
                         for (i in 0 until nlist.size!!) {
                             val modelNew = nlist[i]
                             if (modelNew.sportId ==ItemsviewModel.id ) {
-                                    nlist[i]=selectedSportModel(ItemsviewModel.id,viewType)
+                                    nlist[i]=selectedSportModel(ItemsviewModel.id,position.toString(),viewType)
                                 }
                             else{
-                                nlist.add(selectedSportModel(ItemsviewModel.id,viewType))
+                                nlist.add(selectedSportModel(ItemsviewModel.id,position.toString(),viewType))
                             }
                         }
                     }
@@ -150,6 +150,8 @@ class EditSportAdapter(var list: ArrayList<EditSportList>, var activity: Activit
     PrefData.setStringPrefs(activity, PrefData.CHECK_BOX,"0")
     binding.rvChildSports.visibility=View.GONE
     binding.rvLightChildSports.visibility=View.VISIBLE
+
+           adapter!!.unselect(position)
 
            for (i in 0 until nlist.size!!) {
                val modelNew = nlist[i]

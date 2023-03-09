@@ -45,7 +45,7 @@ class ProfileSportsAdapter(var list: ArrayList<SportLevel>, var activity: Activi
 
             if (list!=null) {
                 holder.binding.sportName.text = ItemsviewModel.sportName.toString()
-                holder.binding.sportLevel.text = ItemsviewModel.sportLevel
+                holder.binding.sportLevel.text = ItemsviewModel.levelName
             }
 
 

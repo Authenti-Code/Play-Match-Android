@@ -63,6 +63,8 @@ data class SportLevel(
     val sportId: Int,
     @field:SerializedName("sportLevel")
     val sportLevel: String,
+    @field:SerializedName("levelName")
+    val levelName: String,
     @field:SerializedName("sportName")
     val sportName: String,
 ): Parcelable

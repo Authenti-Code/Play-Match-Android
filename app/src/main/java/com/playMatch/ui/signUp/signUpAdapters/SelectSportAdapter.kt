@@ -47,15 +47,15 @@ class SelectSportAdapter(var list: ArrayList<SportsList>, var activity: Activity
                 override fun onItemClick(position: Int, viewType: String,status:Boolean) {
 
                     if (nlist.isEmpty()) {
-                        nlist.add(selectedSportModel(ItemsviewModel.id,viewType))
+                        nlist.add(selectedSportModel(ItemsviewModel.id,position.toString(),viewType))
                     } else {
                         for (i in 0 until nlist.size!!) {
                             val modelNew = nlist[i]
                             if (modelNew.sportId ==ItemsviewModel.id ) {
-                                    nlist[i]=selectedSportModel(ItemsviewModel.id,viewType)
+                                    nlist[i]=selectedSportModel(ItemsviewModel.id,position.toString(),viewType)
                                 }
                             else{
-                                nlist.add(selectedSportModel(ItemsviewModel.id,viewType))
+                                nlist.add(selectedSportModel(ItemsviewModel.id,position.toString(),viewType))
                             }
                         }
                     }

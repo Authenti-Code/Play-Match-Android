@@ -15,8 +15,8 @@ class SelectChildSportAdapter(var list: ArrayList<SelectChildSPortModel>, var ac
 
 
 private  var selectedPosition=-1
+private  var unSelectedPosition:Int?=null
     inner class ViewHolder(val binding: RvChildSelectSportListItemBinding) : RecyclerView.ViewHolder(binding.root)
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SelectChildSportAdapter.ViewHolder {
         val binding = RvChildSelectSportListItemBinding
@@ -29,9 +29,15 @@ private  var selectedPosition=-1
         holder.apply {
             val ItemsviewModel = list[position]
             val id= PrefData.getStringPrefs(activity, PrefData.CHECK_BOX,"")
+            if (PrefData.getStringPrefs(activity, PrefData.SELECTED_LEVEL)!=null) {
+                selectedPosition = PrefData.getStringPrefs(activity, PrefData.SELECTED_LEVEL)!!.toInt() - 1
+            }
             holder.binding.fitnessLevel.text = ItemsviewModel.fitnessLevel
 
-//
+            if (unSelectedPosition!=null){
+                binding.cardView.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                binding.fitnessLevel.setTextColor(Color.parseColor("#F95047"))
+            }
 
             if (selectedPosition==position && id=="1") {
                 binding.cardView.setCardBackgroundColor(Color.parseColor("#F95047"))
@@ -44,6 +50,7 @@ private  var selectedPosition=-1
                 selectedPosition=position
                 recyclerviewListener.onItemClick(position + 1, binding.fitnessLevel.text.toString().trim(),true)
                 ItemsviewModel.status
+                notifyDataSetChanged()
             }
         }
     }
@@ -58,14 +65,10 @@ private  var selectedPosition=-1
     override fun getItemCount(): Int {
         return list.size
     }
-
-    fun updateLevel(level:String){
-        val selectedLevel= level.toInt()
-
-        if (selectedLevel!=null) {
-            selectedPosition = selectedLevel
+    fun unselect(position:Int){
+        if (position!=null) {
+            unSelectedPosition = position
             notifyDataSetChanged()
         }
     }
-
 }

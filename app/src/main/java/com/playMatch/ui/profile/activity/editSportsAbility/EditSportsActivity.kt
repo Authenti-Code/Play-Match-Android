@@ -119,8 +119,6 @@ class EditSportsActivity : BaseActivity(), View.OnClickListener {
     }
 
     private fun selectSportApi (){
-
-
         if (isNetworkAvailable()) {
             showProgressBar()
             lifecycleScope.launchWhenStarted {
@@ -154,7 +152,6 @@ class EditSportsActivity : BaseActivity(), View.OnClickListener {
             }
         }
     }
-
     private fun showProgressBar(){
         binding.progressBar.visibility=View.VISIBLE
         binding.updateTv.visibility=View.GONE

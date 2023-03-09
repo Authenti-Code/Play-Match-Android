@@ -921,7 +921,7 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
                     else{
                         binding.Slay.visibility=View.GONE
                     }
-                    if (response.data.mon!= ""){
+                    if (response.data.mon.isNotEmpty()){
                         binding.Mcv.setCardBackgroundColor(Color.parseColor("#F95047"))
                         binding.Mtv.setTextColor(Color.WHITE)
                         binding.Mlay.visibility=View.VISIBLE
@@ -945,7 +945,7 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
                     else{
                         binding.Mlay.visibility=View.GONE
                     }
-                    if (response.data.tue!= ""){
+                    if (response.data.tue.isNotEmpty()){
                         binding.Tcv.setCardBackgroundColor(Color.parseColor("#F95047"))
                         binding.Ttv.setTextColor(Color.WHITE)
                         binding.Tlay.visibility=View.VISIBLE
@@ -969,7 +969,7 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
                     } else{
                         binding.Tlay.visibility=View.GONE
                     }
-                    if (response.data.wed!= ""){
+                    if (response.data.wed.isNotEmpty()){
                         binding.Wcv.setCardBackgroundColor(Color.parseColor("#F95047"))
                         binding.Wtv.setTextColor(Color.WHITE)
                         binding.Wlay.visibility=View.VISIBLE
@@ -991,7 +991,7 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
                     } else{
                         binding.Wlay.visibility=View.GONE
                     }
-                    if (response.data.thu!= ""){
+                    if (response.data.thu.isNotEmpty()){
                         binding.Thcv.setCardBackgroundColor(Color.parseColor("#F95047"))
                         binding.Thtv.setTextColor(Color.WHITE)
                         binding.Thlay.visibility=View.VISIBLE
@@ -1013,7 +1013,7 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
                     } else{
                         binding.Thlay.visibility=View.GONE
                     }
-                    if (response.data.fri != ""){
+                    if (response.data.fri.isNotEmpty()){
                         binding.Fcv.setCardBackgroundColor(Color.parseColor("#F95047"))
                         binding.Ftv.setTextColor(Color.WHITE)
                         binding.Flay.visibility=View.VISIBLE
@@ -1035,7 +1035,7 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
                     } else{
                         binding.Flay.visibility=View.GONE
                     }
-                    if (response.data.sat!= ""){
+                    if (response.data.sat.isNotEmpty()){
                         binding.Sacv.setCardBackgroundColor(Color.parseColor("#F95047"))
                         binding.Satv.setTextColor(Color.WHITE)
                         binding.SaLay.visibility=View.VISIBLE

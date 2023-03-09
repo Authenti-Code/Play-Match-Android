@@ -6,7 +6,8 @@ data class SelectChildSPortModel( val fitnessLevel: String,
 data class SelectChildSPortLightModel( val fitnessLevel: String)
 
 data class selectedSportModel( val sportId: Int,
-                               val level:String,){
+                               val level:String,
+                               val levelName:String){
     override fun toString(): String {
         return "{$sportId:$level}"
     }
