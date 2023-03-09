@@ -4375,6 +4375,8 @@ id notification_main_column
 id notification_main_column_container
 id notification_toggle
 id notify
+id novice
+id noviceTv
 id number
 id off
 id on
@@ -4552,6 +4554,8 @@ id stretch
 id submenuarrow
 id submit_area
 id sundaySlider
+id superstar
+id superstarTv
 id supportScrollUp
 id swipeRefreshLay
 id switchWidget

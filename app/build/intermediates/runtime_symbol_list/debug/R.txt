@@ -4374,6 +4374,8 @@ int id notification_main_column 0x7f0a01d0
 int id notification_main_column_container 0x7f0a01d1
 int id notification_toggle 0x7f0a01d2
 int id notify 0x7f0a01d3
+int id novice 0x7f0a02e5
+int id noviceTv 0x7f0a02e6
 int id number 0x7f0a01d4
 int id off 0x7f0a01d5
 int id on 0x7f0a01d6
@@ -4551,6 +4553,8 @@ int id stretch 0x7f0a0281
 int id submenuarrow 0x7f0a0282
 int id submit_area 0x7f0a0283
 int id sundaySlider 0x7f0a0284
+int id superstar 0x7f0a02e7
+int id superstarTv 0x7f0a02e8
 int id supportScrollUp 0x7f0a0285
 int id swipeRefreshLay 0x7f0a02e4
 int id switchWidget 0x7f0a0286

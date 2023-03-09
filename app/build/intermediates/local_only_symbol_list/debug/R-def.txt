@@ -295,6 +295,8 @@ id noMatch
 id notification
 id notification_toggle
 id notify
+id novice
+id noviceTv
 id number
 id password
 id past_match
@@ -353,6 +355,8 @@ id sportsTv
 id startTime
 id streetMap
 id sundaySlider
+id superstar
+id superstarTv
 id swipeRefreshLay
 id text_sign
 id thursdaySlider

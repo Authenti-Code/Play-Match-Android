@@ -12,6 +12,7 @@ import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.card.MaterialCardView;
 import com.playMatch.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -22,7 +23,31 @@ public final class RvSelectSportItemBinding implements ViewBinding {
   private final LinearLayoutCompat rootView;
 
   @NonNull
+  public final MaterialCardView beginner;
+
+  @NonNull
+  public final AppCompatTextView beginnerTv;
+
+  @NonNull
   public final CheckBox checkbox;
+
+  @NonNull
+  public final MaterialCardView experienced;
+
+  @NonNull
+  public final AppCompatTextView experiencedTv;
+
+  @NonNull
+  public final MaterialCardView intermediate;
+
+  @NonNull
+  public final AppCompatTextView intermediateTv;
+
+  @NonNull
+  public final MaterialCardView novice;
+
+  @NonNull
+  public final AppCompatTextView noviceTv;
 
   @NonNull
   public final RecyclerView rvChildSports;
@@ -33,14 +58,35 @@ public final class RvSelectSportItemBinding implements ViewBinding {
   @NonNull
   public final AppCompatTextView sportName;
 
-  private RvSelectSportItemBinding(@NonNull LinearLayoutCompat rootView, @NonNull CheckBox checkbox,
-      @NonNull RecyclerView rvChildSports, @NonNull RecyclerView rvLightChildSports,
-      @NonNull AppCompatTextView sportName) {
+  @NonNull
+  public final MaterialCardView superstar;
+
+  @NonNull
+  public final AppCompatTextView superstarTv;
+
+  private RvSelectSportItemBinding(@NonNull LinearLayoutCompat rootView,
+      @NonNull MaterialCardView beginner, @NonNull AppCompatTextView beginnerTv,
+      @NonNull CheckBox checkbox, @NonNull MaterialCardView experienced,
+      @NonNull AppCompatTextView experiencedTv, @NonNull MaterialCardView intermediate,
+      @NonNull AppCompatTextView intermediateTv, @NonNull MaterialCardView novice,
+      @NonNull AppCompatTextView noviceTv, @NonNull RecyclerView rvChildSports,
+      @NonNull RecyclerView rvLightChildSports, @NonNull AppCompatTextView sportName,
+      @NonNull MaterialCardView superstar, @NonNull AppCompatTextView superstarTv) {
     this.rootView = rootView;
+    this.beginner = beginner;
+    this.beginnerTv = beginnerTv;
     this.checkbox = checkbox;
+    this.experienced = experienced;
+    this.experiencedTv = experiencedTv;
+    this.intermediate = intermediate;
+    this.intermediateTv = intermediateTv;
+    this.novice = novice;
+    this.noviceTv = noviceTv;
     this.rvChildSports = rvChildSports;
     this.rvLightChildSports = rvLightChildSports;
     this.sportName = sportName;
+    this.superstar = superstar;
+    this.superstarTv = superstarTv;
   }
 
   @Override
@@ -70,9 +116,57 @@ public final class RvSelectSportItemBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.beginner;
+      MaterialCardView beginner = ViewBindings.findChildViewById(rootView, id);
+      if (beginner == null) {
+        break missingId;
+      }
+
+      id = R.id.beginnerTv;
+      AppCompatTextView beginnerTv = ViewBindings.findChildViewById(rootView, id);
+      if (beginnerTv == null) {
+        break missingId;
+      }
+
       id = R.id.checkbox;
       CheckBox checkbox = ViewBindings.findChildViewById(rootView, id);
       if (checkbox == null) {
+        break missingId;
+      }
+
+      id = R.id.experienced;
+      MaterialCardView experienced = ViewBindings.findChildViewById(rootView, id);
+      if (experienced == null) {
+        break missingId;
+      }
+
+      id = R.id.experiencedTv;
+      AppCompatTextView experiencedTv = ViewBindings.findChildViewById(rootView, id);
+      if (experiencedTv == null) {
+        break missingId;
+      }
+
+      id = R.id.intermediate;
+      MaterialCardView intermediate = ViewBindings.findChildViewById(rootView, id);
+      if (intermediate == null) {
+        break missingId;
+      }
+
+      id = R.id.intermediateTv;
+      AppCompatTextView intermediateTv = ViewBindings.findChildViewById(rootView, id);
+      if (intermediateTv == null) {
+        break missingId;
+      }
+
+      id = R.id.novice;
+      MaterialCardView novice = ViewBindings.findChildViewById(rootView, id);
+      if (novice == null) {
+        break missingId;
+      }
+
+      id = R.id.noviceTv;
+      AppCompatTextView noviceTv = ViewBindings.findChildViewById(rootView, id);
+      if (noviceTv == null) {
         break missingId;
       }
 
@@ -94,8 +188,21 @@ public final class RvSelectSportItemBinding implements ViewBinding {
         break missingId;
       }
 
-      return new RvSelectSportItemBinding((LinearLayoutCompat) rootView, checkbox, rvChildSports,
-          rvLightChildSports, sportName);
+      id = R.id.superstar;
+      MaterialCardView superstar = ViewBindings.findChildViewById(rootView, id);
+      if (superstar == null) {
+        break missingId;
+      }
+
+      id = R.id.superstarTv;
+      AppCompatTextView superstarTv = ViewBindings.findChildViewById(rootView, id);
+      if (superstarTv == null) {
+        break missingId;
+      }
+
+      return new RvSelectSportItemBinding((LinearLayoutCompat) rootView, beginner, beginnerTv,
+          checkbox, experienced, experiencedTv, intermediate, intermediateTv, novice, noviceTv,
+          rvChildSports, rvLightChildSports, sportName, superstar, superstarTv);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
