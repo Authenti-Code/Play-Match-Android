@@ -1,13 +1,11 @@
 package com.playMatch.ui.profile.adapter
-
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.graphics.Color
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.playMatch.controller.*
-import com.playMatch.controller.`interface`.RecyclerviewListener
 import com.playMatch.controller.`interface`.SelectSportsListener
 import com.playMatch.controller.sharedPrefrence.PrefData
 import com.playMatch.databinding.RvSelectSportItemBinding
@@ -17,7 +15,6 @@ import com.playMatch.ui.signUp.signUpAdapters.SelectChildSportAdapter
 import com.playMatch.ui.signUp.signUpAdapters.SelectLightBgChildSportAdapter
 import com.playMatch.ui.signUp.signupModel.*
 
-
 class EditSportAdapter(var list: ArrayList<EditSportList>, var activity: Activity, private var selecSportListener: SelectSportsListener ) : RecyclerView.Adapter<EditSportAdapter.ViewHolder>() {
 
     private var selectedPosition = -1
@@ -25,8 +22,8 @@ class EditSportAdapter(var list: ArrayList<EditSportList>, var activity: Activit
     private var lightAdapter: SelectLightBgChildSportAdapter?=null
     private  var mlist = ArrayList<SelectChildSPortModel>()
     private  var mlightlist = ArrayList<SelectChildSPortLightModel>()
-    private var type:String?=null
-    private var param:String?=null
+    private var level:String?=null
+    private var levelName:String?=null
     private var nlist=ArrayList<selectedSportModel>()
 
     inner class ViewHolder(val binding:RvSelectSportItemBinding) : RecyclerView.ViewHolder(binding.root)
@@ -46,37 +43,206 @@ class EditSportAdapter(var list: ArrayList<EditSportList>, var activity: Activit
 
             if (ItemsviewModel.isSelected == 1 ) {
                 binding.checkbox.isChecked=true
-                PrefData.setStringPrefs(activity, PrefData.CHECK_BOX,"1")
-                binding.rvChildSports.visibility=View.VISIBLE
-                binding.rvLightChildSports.visibility=View.GONE
-                PrefData.setStringPrefs(activity,PrefData.SELECTED_LEVEL,ItemsviewModel.sportLevel)
+                binding.beginner.strokeColor=Color.parseColor("#F95047")
+                binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
+                binding.novice.strokeColor=Color.parseColor("#F95047")
+                binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
+                binding.intermediate.strokeColor=Color.parseColor("#F95047")
+                binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
+                binding.experienced.strokeColor=Color.parseColor("#F95047")
+                binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
+                binding.superstar.strokeColor=Color.parseColor("#F95047")
+                binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
+                nlist.clear()
                 nlist.add(selectedSportModel(ItemsviewModel.id,ItemsviewModel.sportLevel,ItemsviewModel.sportName))
-//                adapter?.updateLevel(ItemsviewModel.sportLevel.toInt()- 2 )
+
+                if (ItemsviewModel.sportLevel == "1") {
+                        binding.beginner.setCardBackgroundColor(Color.parseColor("#F95047"))
+                        binding.beginnerTv.setTextColor(Color.WHITE)
+
+                        binding.novice.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
+
+                        binding.intermediate.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
+
+                        binding.experienced.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
+
+                        binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
+                    }
+                if (ItemsviewModel.sportLevel=="2") {
+                    binding.novice.setCardBackgroundColor(Color.parseColor("#F95047"))
+                    binding.noviceTv.setTextColor(Color.WHITE)
+
+                    binding.beginner.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                    binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
+
+                    binding.intermediate.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                    binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
+
+                    binding.experienced.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                    binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
+
+                    binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                    binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
+                }
+                if (ItemsviewModel.sportLevel=="3") {
+                    binding.intermediate.setCardBackgroundColor(Color.parseColor("#F95047"))
+                    binding.intermediateTv.setTextColor(Color.WHITE)
+
+                    binding.beginner.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                    binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
+
+                    binding.novice.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                    binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
+
+                    binding.experienced.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                    binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
+
+                    binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                    binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
+                }
+                if (ItemsviewModel.sportLevel=="4") {
+                    binding.experienced.setCardBackgroundColor(Color.parseColor("#F95047"))
+                    binding.experiencedTv.setTextColor(Color.WHITE)
+
+                    binding.beginner.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                    binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
+
+                    binding.novice.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                    binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
+
+                    binding.intermediate.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                    binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
+
+                    binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                    binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
+                }
+                if (ItemsviewModel.sportLevel=="5") {
+                    binding.superstar.setCardBackgroundColor(Color.parseColor("#F95047"))
+                    binding.superstarTv.setTextColor(Color.WHITE)
+
+                    binding.beginner.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                    binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
+
+                    binding.novice.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                    binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
+
+                    binding.intermediate.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                    binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
+
+                    binding.experienced.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                    binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
+                }
+                if (binding.checkbox.isChecked){
+                    binding.beginner.setOnClickListener {
+                        binding.beginner.setCardBackgroundColor(Color.parseColor("#F95047"))
+                        binding.beginnerTv.setTextColor(Color.WHITE)
+
+                        binding.novice.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
+
+                        binding.intermediate.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
+
+                        binding.experienced.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
+
+                        binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
+                    }
+
+                    binding.novice.setOnClickListener {
+                        binding.novice.setCardBackgroundColor(Color.parseColor("#F95047"))
+                        binding.noviceTv.setTextColor(Color.WHITE)
+
+                        binding.beginner.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
+
+                        binding.intermediate.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
+
+                        binding.experienced.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
+
+                        binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
+                    }
+
+                    binding.intermediate.setOnClickListener {
+                        binding.intermediate.setCardBackgroundColor(Color.parseColor("#F95047"))
+                        binding.intermediateTv.setTextColor(Color.WHITE)
+
+                        binding.beginner.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
+
+                        binding.novice.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
+
+                        binding.experienced.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
+
+                        binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
+                    }
+
+                    binding.experienced.setOnClickListener {
+                        binding.experienced.setCardBackgroundColor(Color.parseColor("#F95047"))
+                        binding.experiencedTv.setTextColor(Color.WHITE)
+
+                        binding.beginner.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
+
+                        binding.novice.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
+
+                        binding.intermediate.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
+
+                        binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
+                    }
+
+                    binding.superstar.setOnClickListener {
+                        binding.superstar.setCardBackgroundColor(Color.parseColor("#F95047"))
+                        binding.superstarTv.setTextColor(Color.WHITE)
+
+                        binding.beginner.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
+
+                        binding.novice.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
+
+                        binding.intermediate.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
+
+                        binding.experienced.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
+                    }
+                }
+
+            }else {
+                binding.checkbox.isChecked= false
             }
-
-
-            adapter = SelectChildSportAdapter(mlist, activity,object : RecyclerviewListener {
-
-                override fun onItemClick(position: Int, viewType: String,type:Boolean) {
-
-                    if (nlist.isEmpty()) {
-                        nlist.add(selectedSportModel(ItemsviewModel.id,position.toString(),viewType))
+                    if (nlist.isEmpty() && selectedPosition==position) {
+                        nlist.add(selectedSportModel(ItemsviewModel.id,level.toString(),levelName.toString()))
                     } else {
                         for (i in 0 until nlist.size!!) {
                             val modelNew = nlist[i]
                             if (modelNew.sportId ==ItemsviewModel.id ) {
-                                    nlist[i]=selectedSportModel(ItemsviewModel.id,position.toString(),viewType)
+                                    nlist[i]=selectedSportModel(ItemsviewModel.id,level.toString(),levelName.toString())
                                 }
                             else{
-                                nlist.add(selectedSportModel(ItemsviewModel.id,position.toString(),viewType))
+                                nlist.add(selectedSportModel(ItemsviewModel.id,level.toString(),levelName.toString()))
                             }
                         }
                     }
                     if (nlist!=null) {
                         selecSportListener.onItemClick(position, nlist)
                     }
-                }
-            })
+
 
             holder.binding.rvChildSports.adapter = adapter
             mlist.clear()
@@ -133,23 +299,137 @@ class EditSportAdapter(var list: ArrayList<EditSportList>, var activity: Activit
                         "Experienced"
                     )
                 )
-            mlightlist.add(
-                    SelectChildSPortLightModel(
-                        "Superstar"
-                    )
-                )
+            mlightlist.add(SelectChildSPortLightModel("Superstar"))
 
             binding.checkbox.setOnClickListener {
+
        if (binding.checkbox.isChecked){
-    PrefData.setStringPrefs(activity, PrefData.CHECK_BOX,"1")
-    binding.rvChildSports.visibility=View.VISIBLE
-    binding.rvLightChildSports.visibility=View.GONE
+           PrefData.setStringPrefs(activity, PrefData.CHECK_BOX,"1")
+           binding.beginner.strokeColor=Color.parseColor("#F95047")
+           binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
+           binding.novice.strokeColor=Color.parseColor("#F95047")
+           binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
+           binding.intermediate.strokeColor=Color.parseColor("#F95047")
+           binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
+           binding.experienced.strokeColor=Color.parseColor("#F95047")
+           binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
+           binding.superstar.strokeColor=Color.parseColor("#F95047")
+           binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
            selectedPosition=position
+
+           binding.beginner.setOnClickListener {
+               binding.beginner.setCardBackgroundColor(Color.parseColor("#F95047"))
+               binding.beginnerTv.setTextColor(Color.WHITE)
+
+               level="1"
+               levelName=binding.beginnerTv.text.toString().trim()
+
+               binding.novice.setCardBackgroundColor(Color.parseColor("#ffffff"))
+               binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
+
+               binding.intermediate.setCardBackgroundColor(Color.parseColor("#ffffff"))
+               binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
+
+               binding.experienced.setCardBackgroundColor(Color.parseColor("#ffffff"))
+               binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
+
+               binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
+               binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
+           }
+
+           binding.novice.setOnClickListener {
+               binding.novice.setCardBackgroundColor(Color.parseColor("#F95047"))
+               binding.noviceTv.setTextColor(Color.WHITE)
+
+               level="2"
+               levelName=binding.noviceTv.text.toString().trim()
+
+               binding.beginner.setCardBackgroundColor(Color.parseColor("#ffffff"))
+               binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
+
+               binding.intermediate.setCardBackgroundColor(Color.parseColor("#ffffff"))
+               binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
+
+               binding.experienced.setCardBackgroundColor(Color.parseColor("#ffffff"))
+               binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
+
+               binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
+               binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
+           }
+
+           binding.intermediate.setOnClickListener {
+               binding.intermediate.setCardBackgroundColor(Color.parseColor("#F95047"))
+               binding.intermediateTv.setTextColor(Color.WHITE)
+
+               level="3"
+               levelName=binding.intermediateTv.text.toString().trim()
+
+               binding.beginner.setCardBackgroundColor(Color.parseColor("#ffffff"))
+               binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
+
+               binding.novice.setCardBackgroundColor(Color.parseColor("#ffffff"))
+               binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
+
+               binding.experienced.setCardBackgroundColor(Color.parseColor("#ffffff"))
+               binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
+
+               binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
+               binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
+           }
+
+           binding.experienced.setOnClickListener {
+               binding.experienced.setCardBackgroundColor(Color.parseColor("#F95047"))
+               binding.experiencedTv.setTextColor(Color.WHITE)
+
+               level="4"
+               levelName=binding.experiencedTv.text.toString().trim()
+
+               binding.beginner.setCardBackgroundColor(Color.parseColor("#ffffff"))
+               binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
+
+               binding.novice.setCardBackgroundColor(Color.parseColor("#ffffff"))
+               binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
+
+               binding.intermediate.setCardBackgroundColor(Color.parseColor("#ffffff"))
+               binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
+
+               binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
+               binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
+           }
+
+           binding.superstar.setOnClickListener {
+               binding.superstar.setCardBackgroundColor(Color.parseColor("#F95047"))
+               binding.superstarTv.setTextColor(Color.WHITE)
+
+               level="5"
+               levelName=binding.superstarTv.text.toString().trim()
+
+               binding.beginner.setCardBackgroundColor(Color.parseColor("#ffffff"))
+               binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
+
+               binding.novice.setCardBackgroundColor(Color.parseColor("#ffffff"))
+               binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
+
+               binding.intermediate.setCardBackgroundColor(Color.parseColor("#ffffff"))
+               binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
+
+               binding.experienced.setCardBackgroundColor(Color.parseColor("#ffffff"))
+               binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
+           }
        }
        else{
     PrefData.setStringPrefs(activity, PrefData.CHECK_BOX,"0")
-    binding.rvChildSports.visibility=View.GONE
-    binding.rvLightChildSports.visibility=View.VISIBLE
+
+           binding.beginner.strokeColor=Color.parseColor("#80F95047")
+           binding.beginnerTv.setTextColor(Color.parseColor("#80F95047"))
+           binding.novice.strokeColor=Color.parseColor("#80F95047")
+           binding.beginnerTv.setTextColor(Color.parseColor("#80F95047"))
+           binding.intermediate.strokeColor=Color.parseColor("#80F95047")
+           binding.beginnerTv.setTextColor(Color.parseColor("#80F95047"))
+           binding.experienced.strokeColor=Color.parseColor("#80F95047")
+           binding.beginnerTv.setTextColor(Color.parseColor("#80F95047"))
+           binding.superstar.strokeColor=Color.parseColor("#80F95047")
+           binding.beginnerTv.setTextColor(Color.parseColor("#80F95047"))
 
            adapter!!.unselect(position)
 
