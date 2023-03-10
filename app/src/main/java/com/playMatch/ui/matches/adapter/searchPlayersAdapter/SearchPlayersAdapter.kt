@@ -27,7 +27,6 @@ class SearchPlayersAdapter(var list: ArrayList<HomeChildModel>, var activity: Ac
 
         val binding = RvListItemSearchPlayersBinding
             .inflate(LayoutInflater.from(parent.context), parent, false)
-
         return ViewHolder(binding)
     }
 
@@ -47,9 +46,6 @@ class SearchPlayersAdapter(var list: ArrayList<HomeChildModel>, var activity: Ac
 //            }
 //            holder.binding.title.text = ItemsviewModel.name
 
-
-
-
             binding.cardView.setOnClickListener {
                 selectedPosition=position
                 notifyDataSetChanged()
@@ -64,15 +60,9 @@ class SearchPlayersAdapter(var list: ArrayList<HomeChildModel>, var activity: Ac
     override fun getItemId(position: Int): Long {
         return position.toLong()
     }
-
-
     override fun getItemCount(): Int {
         return list.size
     }
-
-
-
-
     @SuppressLint("NotifyDataSetChanged")
     fun updateCommentList(Data: List<HomeChildModel>, mRecyclerview: RecyclerView?) {
         if (list.size > 0) {
@@ -84,10 +74,6 @@ class SearchPlayersAdapter(var list: ArrayList<HomeChildModel>, var activity: Ac
 
         mRecyclerview?.postDelayed({
             mRecyclerview.scrollToPosition(itemCount - 1)
-
         }, 100)
     }
-
-
-
 }

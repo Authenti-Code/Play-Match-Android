@@ -15,6 +15,8 @@ import com.playMatch.ui.signUp.signUpAdapters.SelectChildSportAdapter
 import com.playMatch.ui.signUp.signUpAdapters.SelectLightBgChildSportAdapter
 import com.playMatch.ui.signUp.signupModel.*
 
+
+@Suppress("UNREACHABLE_CODE")
 class EditSportAdapter(var list: ArrayList<EditSportList>, var activity: Activity, private var selecSportListener: SelectSportsListener ) : RecyclerView.Adapter<EditSportAdapter.ViewHolder>() {
 
     private var selectedPosition = -1
@@ -268,26 +270,6 @@ class EditSportAdapter(var list: ArrayList<EditSportList>, var activity: Activit
                                 )
                             }
                         }
-
-//                        if (position in 0 until list.size) {
-//                            if (binding.checkbox.isChecked == true) {
-//                                nlist.add(
-//                                    selectedSportModel(
-//                                        ItemsviewModel.id,
-//                                        level.toString(),
-//                                        sportsLevelName.toString()
-//                                    )
-//                                )
-//                            } else {
-//                                nlist.remove(
-//                                    selectedSportModel(
-//                                        ItemsviewModel.id,
-//                                        level.toString(),
-//                                        sportsLevelName.toString()
-//                                    )
-//                                )
-//                            }
-//                        }
                     }
 
                     binding.novice.setOnClickListener {
@@ -319,58 +301,6 @@ class EditSportAdapter(var list: ArrayList<EditSportList>, var activity: Activit
                                 )
                             }
                         }
-
-//                        if (position in 0 until list.size) {
-//                            if (binding.checkbox.isChecked == true) {
-//                                nlist.add(
-//                                    selectedSportModel(
-//                                        ItemsviewModel.id,
-//                                        level.toString(),
-//                                        sportsLevelName.toString()
-//                                    )
-//                                )
-//                            } else {
-//                                nlist.remove(
-//                                    selectedSportModel(
-//                                        ItemsviewModel.id,
-//                                        level.toString(),
-//                                        sportsLevelName.toString()
-//                                    )
-//                                )
-//                            }
-//                        }
-
-
-//                                if (nlist.isEmpty() && selectedPosition == position) {
-//                                    nlist.add(
-//                                        selectedSportModel(
-//                                            ItemsviewModel.id,
-//                                            level.toString(),
-//                                            levelName.toString()
-//                                        )
-//                                    )
-//                                } else {
-//                                    for (i in 0 until nlist.size!!) {
-//                                        val modelNew = nlist[i]
-//                                        if (modelNew.sportId == ItemsviewModel.id) {
-//                                            nlist[i] = selectedSportModel(
-//                                                ItemsviewModel.id,
-//                                                level.toString(),
-//                                                levelName.toString()
-//                                            )
-//                                        } else {
-//                                            if (nlist.isNotEmpty() && selectedPosition == position) {
-//                                                nlist.add(
-//                                                    selectedSportModel(
-//                                                        ItemsviewModel.id,
-//                                                        level.toString(),
-//                                                        levelName.toString()
-//                                                    )
-//                                                )
-//                                            }
-//                                        }
-//                                    }
-//                                }
                     }
 
                     binding.intermediate.setOnClickListener {
@@ -402,58 +332,6 @@ class EditSportAdapter(var list: ArrayList<EditSportList>, var activity: Activit
                                 )
                             }
                         }
-
-//                        if (position in 0 until list.size) {
-//                            if (binding.checkbox.isChecked == true) {
-//                                nlist.add(
-//                                    selectedSportModel(
-//                                        ItemsviewModel.id,
-//                                        level.toString(),
-//                                        sportsLevelName.toString()
-//                                    )
-//                                )
-//                            } else {
-//                                nlist.remove(
-//                                    selectedSportModel(
-//                                        ItemsviewModel.id,
-//                                        level.toString(),
-//                                        sportsLevelName.toString()
-//                                    )
-//                                )
-//                            }
-//                        }
-
-
-//                                if (nlist.isEmpty() && selectedPosition == position) {
-//                                    nlist.add(
-//                                        selectedSportModel(
-//                                            ItemsviewModel.id,
-//                                            level.toString(),
-//                                            levelName.toString()
-//                                        )
-//                                    )
-//                                } else {
-//                                    for (i in 0 until nlist.size!!) {
-//                                        val modelNew = nlist[i]
-//                                        if (modelNew.sportId == ItemsviewModel.id) {
-//                                            nlist[i] = selectedSportModel(
-//                                                ItemsviewModel.id,
-//                                                level.toString(),
-//                                                levelName.toString()
-//                                            )
-//                                        } else {
-//                                            if (nlist.isNotEmpty() && selectedPosition == position) {
-//                                                nlist.add(
-//                                                    selectedSportModel(
-//                                                        ItemsviewModel.id,
-//                                                        level.toString(),
-//                                                        levelName.toString()
-//                                                    )
-//                                                )
-//                                            }
-//                                        }
-//                                    }
-//                                }
                     }
 
                     binding.experienced.setOnClickListener {
@@ -485,58 +363,6 @@ class EditSportAdapter(var list: ArrayList<EditSportList>, var activity: Activit
                                 )
                             }
                         }
-
-//                        if (position in 0 until list.size) {
-//                            if (binding.checkbox.isChecked == true) {
-//                                nlist.add(
-//                                    selectedSportModel(
-//                                        ItemsviewModel.id,
-//                                        level.toString(),
-//                                        sportsLevelName.toString()
-//                                    )
-//                                )
-//                            } else {
-//                                nlist.remove(
-//                                    selectedSportModel(
-//                                        ItemsviewModel.id,
-//                                        level.toString(),
-//                                        sportsLevelName.toString()
-//                                    )
-//                                )
-//                            }
-//                        }
-
-
-//                                if (nlist.isEmpty() && selectedPosition == position) {
-//                                    nlist.add(
-//                                        selectedSportModel(
-//                                            ItemsviewModel.id,
-//                                            level.toString(),
-//                                            levelName.toString()
-//                                        )
-//                                    )
-//                                } else {
-//                                    for (i in 0 until nlist.size!!) {
-//                                        val modelNew = nlist[i]
-//                                        if (modelNew.sportId == ItemsviewModel.id) {
-//                                            nlist[i] = selectedSportModel(
-//                                                ItemsviewModel.id,
-//                                                level.toString(),
-//                                                levelName.toString()
-//                                            )
-//                                        } else {
-//                                            if (nlist.isNotEmpty() && selectedPosition == position) {
-//                                                nlist.add(
-//                                                    selectedSportModel(
-//                                                        ItemsviewModel.id,
-//                                                        level.toString(),
-//                                                        levelName.toString()
-//                                                    )
-//                                                )
-//                                            }
-//                                        }
-//                                    }
-//                                }
                     }
 
                     binding.superstar.setOnClickListener {
@@ -559,7 +385,8 @@ class EditSportAdapter(var list: ArrayList<EditSportList>, var activity: Activit
                         binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
 
                         if (position in 0 until list.size) {
-                            if (binding.checkbox.isChecked == true) {
+                            if (binding.checkbox.isChecked == true  ) {
+
                                 nlist.add(
                                     selectedSportModel(
                                         ItemsviewModel.id,
@@ -577,39 +404,6 @@ class EditSportAdapter(var list: ArrayList<EditSportList>, var activity: Activit
                                 )
                             }
                         }
-
-
-//                                if (nlist.isEmpty() && selectedPosition == position) {
-//                                    nlist.add(
-//                                        selectedSportModel(
-//                                            ItemsviewModel.id,
-//                                            level.toString(),
-//                                            levelName.toString()
-//                                        )
-//                                    )
-//                                } else {
-//                                    for (i in 0 until nlist.size!!) {
-//                                        val modelNew = nlist[i]
-//                                        if (modelNew.sportId == ItemsviewModel.id) {
-//                                            nlist[i] = selectedSportModel(
-//                                                ItemsviewModel.id,
-//                                                level.toString(),
-//                                                levelName.toString()
-//                                            )
-//                                        } else {
-//                                            if (nlist.isNotEmpty() && selectedPosition == position) {
-//                                                nlist.add(
-//                                                    selectedSportModel(
-//                                                        ItemsviewModel.id,
-//                                                        level.toString(),
-//                                                        levelName.toString()
-//                                                    )
-//                                                )
-//
-//                                            }
-//                                        }
-//                                    }
-//                                }
                     }
                 } else {
                     binding.beginner.strokeColor = Color.parseColor("#80F95047")
@@ -753,13 +547,24 @@ class EditSportAdapter(var list: ArrayList<EditSportList>, var activity: Activit
                                 }
                             }
 
-                        }
+
+
+
+//                                    nlist.remove(
+//                                        selectedSportModel(
+//                                            ItemsviewModel.id,
+//                                            level.toString(),
+//                                            sportsLevelName.toString()
+//                                        )
+//                                    )
+//                            }
+//                        }
 //                                if (nlist.isEmpty() && selectedPosition == position) {
 //                                    nlist.add(
 //                                        selectedSportModel(
 //                                            ItemsviewModel.id,
 //                                            level.toString(),
-//                                            levelName.toString()
+//                                            sportsLevelName.toString()
 //                                        )
 //                                    )
 //                                } else {
@@ -769,22 +574,14 @@ class EditSportAdapter(var list: ArrayList<EditSportList>, var activity: Activit
 //                                            nlist[i] = selectedSportModel(
 //                                                ItemsviewModel.id,
 //                                                level.toString(),
-//                                                levelName.toString()
+//                                            sportsLevelName.toString()
 //                                            )
 //                                        } else {
-//                                            if (nlist.isNotEmpty() && selectedPosition == position) {
-//                                                nlist.add(
-//                                                    selectedSportModel(
-//                                                        ItemsviewModel.id,
-//                                                        level.toString(),
-//                                                        levelName.toString()
-//                                                    )
-//                                                )
-//                                            }
+//                                            break
 //                                        }
 //                                    }
 //                                }
-
+                        }
 
                         binding.novice.setOnClickListener {
                             binding.novice.setCardBackgroundColor(Color.parseColor("#F95047"))
