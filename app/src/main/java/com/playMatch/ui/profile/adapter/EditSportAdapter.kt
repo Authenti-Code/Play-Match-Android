@@ -23,7 +23,7 @@ class EditSportAdapter(var list: ArrayList<EditSportList>, var activity: Activit
     private  var mlist = ArrayList<SelectChildSPortModel>()
     private  var mlightlist = ArrayList<SelectChildSPortLightModel>()
     private var level:String?=null
-    private var levelName:String?=null
+    private var sportsLevelName:String?=null
     private var nlist=ArrayList<selectedSportModel>()
 
     inner class ViewHolder(val binding:RvSelectSportItemBinding) : RecyclerView.ViewHolder(binding.root)
@@ -38,25 +38,32 @@ class EditSportAdapter(var list: ArrayList<EditSportList>, var activity: Activit
     @SuppressLint("SuspiciousIndentation")
     override fun onBindViewHolder(holder: EditSportAdapter.ViewHolder, @SuppressLint("RecyclerView") position: Int) {
         holder.apply {
-            val ItemsviewModel = list[position]
-            holder.binding.sportName.text = ItemsviewModel.sportName
+            with(list[position]) {
+                val ItemsviewModel = list[position]
+                holder.binding.sportName.text = ItemsviewModel.sportName
 
-            if (ItemsviewModel.isSelected == 1 ) {
-                binding.checkbox.isChecked=true
-                binding.beginner.strokeColor=Color.parseColor("#F95047")
-                binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
-                binding.novice.strokeColor=Color.parseColor("#F95047")
-                binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
-                binding.intermediate.strokeColor=Color.parseColor("#F95047")
-                binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
-                binding.experienced.strokeColor=Color.parseColor("#F95047")
-                binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
-                binding.superstar.strokeColor=Color.parseColor("#F95047")
-                binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
-                nlist.clear()
-                nlist.add(selectedSportModel(ItemsviewModel.id,ItemsviewModel.sportLevel,ItemsviewModel.sportName))
+                if (ItemsviewModel.isSelected == 1) {
+                    binding.checkbox.isChecked = true
+                    binding.beginner.strokeColor = Color.parseColor("#F95047")
+                    binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
+                    binding.novice.strokeColor = Color.parseColor("#F95047")
+                    binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
+                    binding.intermediate.strokeColor = Color.parseColor("#F95047")
+                    binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
+                    binding.experienced.strokeColor = Color.parseColor("#F95047")
+                    binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
+                    binding.superstar.strokeColor = Color.parseColor("#F95047")
+                    binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
+//                nlist.clear()
+                    nlist.add(
+                        selectedSportModel(
+                            ItemsviewModel.id,
+                            ItemsviewModel.sportLevel,
+                            ItemsviewModel.levelName
+                        )
+                    )
 
-                if (ItemsviewModel.sportLevel == "1") {
+                    if (ItemsviewModel.sportLevel == "1") {
                         binding.beginner.setCardBackgroundColor(Color.parseColor("#F95047"))
                         binding.beginnerTv.setTextColor(Color.WHITE)
 
@@ -72,89 +79,7 @@ class EditSportAdapter(var list: ArrayList<EditSportList>, var activity: Activit
                         binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
                         binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
                     }
-                if (ItemsviewModel.sportLevel=="2") {
-                    binding.novice.setCardBackgroundColor(Color.parseColor("#F95047"))
-                    binding.noviceTv.setTextColor(Color.WHITE)
-
-                    binding.beginner.setCardBackgroundColor(Color.parseColor("#ffffff"))
-                    binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
-
-                    binding.intermediate.setCardBackgroundColor(Color.parseColor("#ffffff"))
-                    binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
-
-                    binding.experienced.setCardBackgroundColor(Color.parseColor("#ffffff"))
-                    binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
-
-                    binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
-                    binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
-                }
-                if (ItemsviewModel.sportLevel=="3") {
-                    binding.intermediate.setCardBackgroundColor(Color.parseColor("#F95047"))
-                    binding.intermediateTv.setTextColor(Color.WHITE)
-
-                    binding.beginner.setCardBackgroundColor(Color.parseColor("#ffffff"))
-                    binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
-
-                    binding.novice.setCardBackgroundColor(Color.parseColor("#ffffff"))
-                    binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
-
-                    binding.experienced.setCardBackgroundColor(Color.parseColor("#ffffff"))
-                    binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
-
-                    binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
-                    binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
-                }
-                if (ItemsviewModel.sportLevel=="4") {
-                    binding.experienced.setCardBackgroundColor(Color.parseColor("#F95047"))
-                    binding.experiencedTv.setTextColor(Color.WHITE)
-
-                    binding.beginner.setCardBackgroundColor(Color.parseColor("#ffffff"))
-                    binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
-
-                    binding.novice.setCardBackgroundColor(Color.parseColor("#ffffff"))
-                    binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
-
-                    binding.intermediate.setCardBackgroundColor(Color.parseColor("#ffffff"))
-                    binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
-
-                    binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
-                    binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
-                }
-                if (ItemsviewModel.sportLevel=="5") {
-                    binding.superstar.setCardBackgroundColor(Color.parseColor("#F95047"))
-                    binding.superstarTv.setTextColor(Color.WHITE)
-
-                    binding.beginner.setCardBackgroundColor(Color.parseColor("#ffffff"))
-                    binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
-
-                    binding.novice.setCardBackgroundColor(Color.parseColor("#ffffff"))
-                    binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
-
-                    binding.intermediate.setCardBackgroundColor(Color.parseColor("#ffffff"))
-                    binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
-
-                    binding.experienced.setCardBackgroundColor(Color.parseColor("#ffffff"))
-                    binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
-                }
-                if (binding.checkbox.isChecked){
-                    binding.beginner.setOnClickListener {
-                        binding.beginner.setCardBackgroundColor(Color.parseColor("#F95047"))
-                        binding.beginnerTv.setTextColor(Color.WHITE)
-
-                        binding.novice.setCardBackgroundColor(Color.parseColor("#ffffff"))
-                        binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
-
-                        binding.intermediate.setCardBackgroundColor(Color.parseColor("#ffffff"))
-                        binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
-
-                        binding.experienced.setCardBackgroundColor(Color.parseColor("#ffffff"))
-                        binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
-
-                        binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
-                        binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
-                    }
-
-                    binding.novice.setOnClickListener {
+                    if (ItemsviewModel.sportLevel == "2") {
                         binding.novice.setCardBackgroundColor(Color.parseColor("#F95047"))
                         binding.noviceTv.setTextColor(Color.WHITE)
 
@@ -170,8 +95,7 @@ class EditSportAdapter(var list: ArrayList<EditSportList>, var activity: Activit
                         binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
                         binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
                     }
-
-                    binding.intermediate.setOnClickListener {
+                    if (ItemsviewModel.sportLevel == "3") {
                         binding.intermediate.setCardBackgroundColor(Color.parseColor("#F95047"))
                         binding.intermediateTv.setTextColor(Color.WHITE)
 
@@ -187,8 +111,7 @@ class EditSportAdapter(var list: ArrayList<EditSportList>, var activity: Activit
                         binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
                         binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
                     }
-
-                    binding.experienced.setOnClickListener {
+                    if (ItemsviewModel.sportLevel == "4") {
                         binding.experienced.setCardBackgroundColor(Color.parseColor("#F95047"))
                         binding.experiencedTv.setTextColor(Color.WHITE)
 
@@ -204,8 +127,7 @@ class EditSportAdapter(var list: ArrayList<EditSportList>, var activity: Activit
                         binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
                         binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
                     }
-
-                    binding.superstar.setOnClickListener {
+                    if (ItemsviewModel.sportLevel == "5") {
                         binding.superstar.setCardBackgroundColor(Color.parseColor("#F95047"))
                         binding.superstarTv.setTextColor(Color.WHITE)
 
@@ -221,228 +143,1007 @@ class EditSportAdapter(var list: ArrayList<EditSportList>, var activity: Activit
                         binding.experienced.setCardBackgroundColor(Color.parseColor("#ffffff"))
                         binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
                     }
+                    if (binding.checkbox.isChecked) {
+                        binding.beginner.setOnClickListener {
+                            binding.beginner.setCardBackgroundColor(Color.parseColor("#F95047"))
+                            binding.beginnerTv.setTextColor(Color.WHITE)
+
+                            binding.novice.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
+
+                            binding.intermediate.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
+
+                            binding.experienced.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
+
+                            binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
+                        }
+
+                        binding.novice.setOnClickListener {
+                            binding.novice.setCardBackgroundColor(Color.parseColor("#F95047"))
+                            binding.noviceTv.setTextColor(Color.WHITE)
+
+                            binding.beginner.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
+
+                            binding.intermediate.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
+
+                            binding.experienced.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
+
+                            binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
+                        }
+
+                        binding.intermediate.setOnClickListener {
+                            binding.intermediate.setCardBackgroundColor(Color.parseColor("#F95047"))
+                            binding.intermediateTv.setTextColor(Color.WHITE)
+
+                            binding.beginner.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
+
+                            binding.novice.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
+
+                            binding.experienced.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
+
+                            binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
+                        }
+
+                        binding.experienced.setOnClickListener {
+                            binding.experienced.setCardBackgroundColor(Color.parseColor("#F95047"))
+                            binding.experiencedTv.setTextColor(Color.WHITE)
+
+                            binding.beginner.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
+
+                            binding.novice.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
+
+                            binding.intermediate.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
+
+                            binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
+                        }
+
+                        binding.superstar.setOnClickListener {
+                            binding.superstar.setCardBackgroundColor(Color.parseColor("#F95047"))
+                            binding.superstarTv.setTextColor(Color.WHITE)
+
+                            binding.beginner.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
+
+                            binding.novice.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
+
+                            binding.intermediate.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
+
+                            binding.experienced.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
+                        }
+                    }
+
+                } else {
+                    binding.checkbox.isChecked = false
                 }
 
-            }else {
-                binding.checkbox.isChecked= false
-            }
-                    if (nlist.isEmpty() && selectedPosition==position) {
-                        nlist.add(selectedSportModel(ItemsviewModel.id,level.toString(),levelName.toString()))
-                    } else {
+                if (nlist != null) {
+                    selecSportListener.onItemClick(position, nlist)
+                }
+
+                if (binding.checkbox.isChecked) {
+                    binding.beginner.setOnClickListener {
+                        binding.beginner.setCardBackgroundColor(Color.parseColor("#F95047"))
+                        binding.beginnerTv.setTextColor(Color.WHITE)
+
+                        level = "1"
+                        sportsLevelName = binding.beginnerTv.text.toString().trim()
+
+                        binding.novice.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
+
+                        binding.intermediate.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
+
+                        binding.experienced.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
+
+                        binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
+
                         for (i in 0 until nlist.size!!) {
                             val modelNew = nlist[i]
-                            if (modelNew.sportId ==ItemsviewModel.id ) {
-                                    nlist[i]=selectedSportModel(ItemsviewModel.id,level.toString(),levelName.toString())
-                                }
-                            else{
-                                nlist.add(selectedSportModel(ItemsviewModel.id,level.toString(),levelName.toString()))
+                            if (modelNew.sportId == ItemsviewModel.id) {
+                                nlist[i] = selectedSportModel(
+                                    ItemsviewModel.id,
+                                    level.toString(),
+                                    sportsLevelName.toString()
+                                )
+                            }
+                        }
+
+//                        if (position in 0 until list.size) {
+//                            if (binding.checkbox.isChecked == true) {
+//                                nlist.add(
+//                                    selectedSportModel(
+//                                        ItemsviewModel.id,
+//                                        level.toString(),
+//                                        sportsLevelName.toString()
+//                                    )
+//                                )
+//                            } else {
+//                                nlist.remove(
+//                                    selectedSportModel(
+//                                        ItemsviewModel.id,
+//                                        level.toString(),
+//                                        sportsLevelName.toString()
+//                                    )
+//                                )
+//                            }
+//                        }
+                    }
+
+                    binding.novice.setOnClickListener {
+                        binding.novice.setCardBackgroundColor(Color.parseColor("#F95047"))
+                        binding.noviceTv.setTextColor(Color.WHITE)
+
+                        level = "2"
+                        sportsLevelName = binding.noviceTv.text.toString().trim()
+
+                        binding.beginner.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
+
+                        binding.intermediate.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
+
+                        binding.experienced.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
+
+                        binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
+
+                        for (i in 0 until nlist.size!!) {
+                            val modelNew = nlist[i]
+                            if (modelNew.sportId == ItemsviewModel.id) {
+                                nlist[i] = selectedSportModel(
+                                    ItemsviewModel.id,
+                                    level.toString(),
+                                    sportsLevelName.toString()
+                                )
+                            }
+                        }
+
+//                        if (position in 0 until list.size) {
+//                            if (binding.checkbox.isChecked == true) {
+//                                nlist.add(
+//                                    selectedSportModel(
+//                                        ItemsviewModel.id,
+//                                        level.toString(),
+//                                        sportsLevelName.toString()
+//                                    )
+//                                )
+//                            } else {
+//                                nlist.remove(
+//                                    selectedSportModel(
+//                                        ItemsviewModel.id,
+//                                        level.toString(),
+//                                        sportsLevelName.toString()
+//                                    )
+//                                )
+//                            }
+//                        }
+
+
+//                                if (nlist.isEmpty() && selectedPosition == position) {
+//                                    nlist.add(
+//                                        selectedSportModel(
+//                                            ItemsviewModel.id,
+//                                            level.toString(),
+//                                            levelName.toString()
+//                                        )
+//                                    )
+//                                } else {
+//                                    for (i in 0 until nlist.size!!) {
+//                                        val modelNew = nlist[i]
+//                                        if (modelNew.sportId == ItemsviewModel.id) {
+//                                            nlist[i] = selectedSportModel(
+//                                                ItemsviewModel.id,
+//                                                level.toString(),
+//                                                levelName.toString()
+//                                            )
+//                                        } else {
+//                                            if (nlist.isNotEmpty() && selectedPosition == position) {
+//                                                nlist.add(
+//                                                    selectedSportModel(
+//                                                        ItemsviewModel.id,
+//                                                        level.toString(),
+//                                                        levelName.toString()
+//                                                    )
+//                                                )
+//                                            }
+//                                        }
+//                                    }
+//                                }
+                    }
+
+                    binding.intermediate.setOnClickListener {
+                        binding.intermediate.setCardBackgroundColor(Color.parseColor("#F95047"))
+                        binding.intermediateTv.setTextColor(Color.WHITE)
+
+                        level = "3"
+                        sportsLevelName = binding.intermediateTv.text.toString().trim()
+
+                        binding.beginner.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
+
+                        binding.novice.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
+
+                        binding.experienced.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
+
+                        binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
+
+                        for (i in 0 until nlist.size!!) {
+                            val modelNew = nlist[i]
+                            if (modelNew.sportId == ItemsviewModel.id) {
+                                nlist[i] = selectedSportModel(
+                                    ItemsviewModel.id,
+                                    level.toString(),
+                                    sportsLevelName.toString()
+                                )
+                            }
+                        }
+
+//                        if (position in 0 until list.size) {
+//                            if (binding.checkbox.isChecked == true) {
+//                                nlist.add(
+//                                    selectedSportModel(
+//                                        ItemsviewModel.id,
+//                                        level.toString(),
+//                                        sportsLevelName.toString()
+//                                    )
+//                                )
+//                            } else {
+//                                nlist.remove(
+//                                    selectedSportModel(
+//                                        ItemsviewModel.id,
+//                                        level.toString(),
+//                                        sportsLevelName.toString()
+//                                    )
+//                                )
+//                            }
+//                        }
+
+
+//                                if (nlist.isEmpty() && selectedPosition == position) {
+//                                    nlist.add(
+//                                        selectedSportModel(
+//                                            ItemsviewModel.id,
+//                                            level.toString(),
+//                                            levelName.toString()
+//                                        )
+//                                    )
+//                                } else {
+//                                    for (i in 0 until nlist.size!!) {
+//                                        val modelNew = nlist[i]
+//                                        if (modelNew.sportId == ItemsviewModel.id) {
+//                                            nlist[i] = selectedSportModel(
+//                                                ItemsviewModel.id,
+//                                                level.toString(),
+//                                                levelName.toString()
+//                                            )
+//                                        } else {
+//                                            if (nlist.isNotEmpty() && selectedPosition == position) {
+//                                                nlist.add(
+//                                                    selectedSportModel(
+//                                                        ItemsviewModel.id,
+//                                                        level.toString(),
+//                                                        levelName.toString()
+//                                                    )
+//                                                )
+//                                            }
+//                                        }
+//                                    }
+//                                }
+                    }
+
+                    binding.experienced.setOnClickListener {
+                        binding.experienced.setCardBackgroundColor(Color.parseColor("#F95047"))
+                        binding.experiencedTv.setTextColor(Color.WHITE)
+
+                        level = "4"
+                        sportsLevelName = binding.experiencedTv.text.toString().trim()
+
+                        binding.beginner.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
+
+                        binding.novice.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
+
+                        binding.intermediate.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
+
+                        binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
+
+                        for (i in 0 until nlist.size!!) {
+                            val modelNew = nlist[i]
+                            if (modelNew.sportId == ItemsviewModel.id) {
+                                nlist[i] = selectedSportModel(
+                                    ItemsviewModel.id,
+                                    level.toString(),
+                                    sportsLevelName.toString()
+                                )
+                            }
+                        }
+
+//                        if (position in 0 until list.size) {
+//                            if (binding.checkbox.isChecked == true) {
+//                                nlist.add(
+//                                    selectedSportModel(
+//                                        ItemsviewModel.id,
+//                                        level.toString(),
+//                                        sportsLevelName.toString()
+//                                    )
+//                                )
+//                            } else {
+//                                nlist.remove(
+//                                    selectedSportModel(
+//                                        ItemsviewModel.id,
+//                                        level.toString(),
+//                                        sportsLevelName.toString()
+//                                    )
+//                                )
+//                            }
+//                        }
+
+
+//                                if (nlist.isEmpty() && selectedPosition == position) {
+//                                    nlist.add(
+//                                        selectedSportModel(
+//                                            ItemsviewModel.id,
+//                                            level.toString(),
+//                                            levelName.toString()
+//                                        )
+//                                    )
+//                                } else {
+//                                    for (i in 0 until nlist.size!!) {
+//                                        val modelNew = nlist[i]
+//                                        if (modelNew.sportId == ItemsviewModel.id) {
+//                                            nlist[i] = selectedSportModel(
+//                                                ItemsviewModel.id,
+//                                                level.toString(),
+//                                                levelName.toString()
+//                                            )
+//                                        } else {
+//                                            if (nlist.isNotEmpty() && selectedPosition == position) {
+//                                                nlist.add(
+//                                                    selectedSportModel(
+//                                                        ItemsviewModel.id,
+//                                                        level.toString(),
+//                                                        levelName.toString()
+//                                                    )
+//                                                )
+//                                            }
+//                                        }
+//                                    }
+//                                }
+                    }
+
+                    binding.superstar.setOnClickListener {
+                        binding.superstar.setCardBackgroundColor(Color.parseColor("#F95047"))
+                        binding.superstarTv.setTextColor(Color.WHITE)
+
+                        level = "5"
+                        sportsLevelName = binding.superstarTv.text.toString().trim()
+
+                        binding.beginner.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
+
+                        binding.novice.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
+
+                        binding.intermediate.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
+
+                        binding.experienced.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
+
+                        if (position in 0 until list.size) {
+                            if (binding.checkbox.isChecked == true) {
+                                nlist.add(
+                                    selectedSportModel(
+                                        ItemsviewModel.id,
+                                        level.toString(),
+                                        sportsLevelName.toString()
+                                    )
+                                )
+                            } else {
+                                nlist.remove(
+                                    selectedSportModel(
+                                        ItemsviewModel.id,
+                                        level.toString(),
+                                        sportsLevelName.toString()
+                                    )
+                                )
+                            }
+                        }
+
+
+//                                if (nlist.isEmpty() && selectedPosition == position) {
+//                                    nlist.add(
+//                                        selectedSportModel(
+//                                            ItemsviewModel.id,
+//                                            level.toString(),
+//                                            levelName.toString()
+//                                        )
+//                                    )
+//                                } else {
+//                                    for (i in 0 until nlist.size!!) {
+//                                        val modelNew = nlist[i]
+//                                        if (modelNew.sportId == ItemsviewModel.id) {
+//                                            nlist[i] = selectedSportModel(
+//                                                ItemsviewModel.id,
+//                                                level.toString(),
+//                                                levelName.toString()
+//                                            )
+//                                        } else {
+//                                            if (nlist.isNotEmpty() && selectedPosition == position) {
+//                                                nlist.add(
+//                                                    selectedSportModel(
+//                                                        ItemsviewModel.id,
+//                                                        level.toString(),
+//                                                        levelName.toString()
+//                                                    )
+//                                                )
+//
+//                                            }
+//                                        }
+//                                    }
+//                                }
+                    }
+                } else {
+                    binding.beginner.strokeColor = Color.parseColor("#80F95047")
+                    binding.beginner.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                    binding.beginnerTv.setTextColor(Color.parseColor("#80F95047"))
+                    binding.noviceTv.setTextColor(Color.parseColor("#80F95047"))
+                    binding.novice.strokeColor = Color.parseColor("#80F95047")
+                    binding.novice.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                    binding.intermediateTv.setTextColor(Color.parseColor("#80F95047"))
+                    binding.intermediate.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                    binding.intermediate.strokeColor = Color.parseColor("#80F95047")
+                    binding.experienced.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                    binding.experiencedTv.setTextColor(Color.parseColor("#80F95047"))
+                    binding.experienced.strokeColor = Color.parseColor("#80F95047")
+                    binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                    binding.superstarTv.setTextColor(Color.parseColor("#80F95047"))
+                    binding.superstar.strokeColor = Color.parseColor("#80F95047")
+
+//           adapter!!.unselect(position)
+
+                    for (i in 0 until nlist.size!!) {
+                        val modelNew = nlist[i]
+                        when (modelNew.sportId) {
+                            ItemsviewModel.id -> {
+                                nlist.removeAt(i)
                             }
                         }
                     }
-                    if (nlist!=null) {
-                        selecSportListener.onItemClick(position, nlist)
-                    }
+                }
 
 
-            holder.binding.rvChildSports.adapter = adapter
-            mlist.clear()
-            mlist.add(
-                SelectChildSPortModel(
-                    "Beginner",false
+                holder.binding.rvChildSports.adapter = adapter
+                mlist.clear()
+                mlist.add(
+                    SelectChildSPortModel(
+                        "Beginner", false
+                    )
                 )
-            )
 
-            mlist.add(
-                SelectChildSPortModel(
-                    "Novice",false
+                mlist.add(
+                    SelectChildSPortModel(
+                        "Novice", false
+                    )
                 )
-            )
 
-            mlist.add(
-                SelectChildSPortModel(
-                    "Intermediate",false
+                mlist.add(
+                    SelectChildSPortModel(
+                        "Intermediate", false
+                    )
                 )
-            )
 
-            mlist.add(
-                SelectChildSPortModel(
-                    "Experienced",false
+                mlist.add(
+                    SelectChildSPortModel(
+                        "Experienced", false
+                    )
                 )
-            )
-            mlist.add(
-                SelectChildSPortModel(
-                    "Superstar",false
+                mlist.add(
+                    SelectChildSPortModel(
+                        "Superstar", false
+                    )
                 )
-            )
 
-            lightAdapter = SelectLightBgChildSportAdapter(mlightlist, activity)
-            binding.rvLightChildSports.adapter = lightAdapter
-            mlightlist.clear()
+                lightAdapter = SelectLightBgChildSportAdapter(mlightlist, activity)
+                binding.rvLightChildSports.adapter = lightAdapter
+                mlightlist.clear()
 
                 mlightlist.add(
                     SelectChildSPortLightModel(
                         "Beginner"
                     )
                 )
-            mlightlist.add(
+                mlightlist.add(
                     SelectChildSPortLightModel(
                         "Novice"
                     )
                 )
-            mlightlist.add(
+                mlightlist.add(
                     SelectChildSPortLightModel(
                         "Intermediate"
                     )
                 )
-            mlightlist.add(
+                mlightlist.add(
                     SelectChildSPortLightModel(
                         "Experienced"
                     )
                 )
-            mlightlist.add(SelectChildSPortLightModel("Superstar"))
+                mlightlist.add(SelectChildSPortLightModel("Superstar"))
 
-            binding.checkbox.setOnClickListener {
+                binding.checkbox.setOnClickListener {
 
-       if (binding.checkbox.isChecked){
-           PrefData.setStringPrefs(activity, PrefData.CHECK_BOX,"1")
-           binding.beginner.strokeColor=Color.parseColor("#F95047")
-           binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
-           binding.novice.strokeColor=Color.parseColor("#F95047")
-           binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
-           binding.intermediate.strokeColor=Color.parseColor("#F95047")
-           binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
-           binding.experienced.strokeColor=Color.parseColor("#F95047")
-           binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
-           binding.superstar.strokeColor=Color.parseColor("#F95047")
-           binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
-           selectedPosition=position
+                    if (binding.checkbox.isChecked) {
+                        PrefData.setStringPrefs(activity, PrefData.CHECK_BOX, "1")
+                        binding.beginner.strokeColor = Color.parseColor("#F95047")
+                        binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
+                        binding.novice.strokeColor = Color.parseColor("#F95047")
+                        binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
+                        binding.intermediate.strokeColor = Color.parseColor("#F95047")
+                        binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
+                        binding.experienced.strokeColor = Color.parseColor("#F95047")
+                        binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
+                        binding.superstar.strokeColor = Color.parseColor("#F95047")
+                        binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
+                        selectedPosition = position
 
-           binding.beginner.setOnClickListener {
-               binding.beginner.setCardBackgroundColor(Color.parseColor("#F95047"))
-               binding.beginnerTv.setTextColor(Color.WHITE)
+                        binding.beginner.setOnClickListener {
+                            binding.beginner.setCardBackgroundColor(Color.parseColor("#F95047"))
+                            binding.beginnerTv.setTextColor(Color.WHITE)
 
-               level="1"
-               levelName=binding.beginnerTv.text.toString().trim()
+                            level = "1"
+                            sportsLevelName = binding.beginnerTv.text.toString().trim()
 
-               binding.novice.setCardBackgroundColor(Color.parseColor("#ffffff"))
-               binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
+                            binding.novice.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
 
-               binding.intermediate.setCardBackgroundColor(Color.parseColor("#ffffff"))
-               binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
+                            binding.intermediate.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
 
-               binding.experienced.setCardBackgroundColor(Color.parseColor("#ffffff"))
-               binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
+                            binding.experienced.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
 
-               binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
-               binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
-           }
+                            binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
 
-           binding.novice.setOnClickListener {
-               binding.novice.setCardBackgroundColor(Color.parseColor("#F95047"))
-               binding.noviceTv.setTextColor(Color.WHITE)
+                            if (position in 0 until list.size) {
+                                if (binding.checkbox.isChecked == true) {
+                                    nlist.add(
+                                        selectedSportModel(
+                                            ItemsviewModel.id,
+                                            level.toString(),
+                                            sportsLevelName.toString()
+                                        )
+                                    )
+                                } else {
+                                    nlist.remove(
+                                        selectedSportModel(
+                                            ItemsviewModel.id,
+                                            level.toString(),
+                                            sportsLevelName.toString()
+                                        )
+                                    )
+                                }
+                            }
 
-               level="2"
-               levelName=binding.noviceTv.text.toString().trim()
+                        }
+//                                if (nlist.isEmpty() && selectedPosition == position) {
+//                                    nlist.add(
+//                                        selectedSportModel(
+//                                            ItemsviewModel.id,
+//                                            level.toString(),
+//                                            levelName.toString()
+//                                        )
+//                                    )
+//                                } else {
+//                                    for (i in 0 until nlist.size!!) {
+//                                        val modelNew = nlist[i]
+//                                        if (modelNew.sportId == ItemsviewModel.id) {
+//                                            nlist[i] = selectedSportModel(
+//                                                ItemsviewModel.id,
+//                                                level.toString(),
+//                                                levelName.toString()
+//                                            )
+//                                        } else {
+//                                            if (nlist.isNotEmpty() && selectedPosition == position) {
+//                                                nlist.add(
+//                                                    selectedSportModel(
+//                                                        ItemsviewModel.id,
+//                                                        level.toString(),
+//                                                        levelName.toString()
+//                                                    )
+//                                                )
+//                                            }
+//                                        }
+//                                    }
+//                                }
 
-               binding.beginner.setCardBackgroundColor(Color.parseColor("#ffffff"))
-               binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
 
-               binding.intermediate.setCardBackgroundColor(Color.parseColor("#ffffff"))
-               binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
+                        binding.novice.setOnClickListener {
+                            binding.novice.setCardBackgroundColor(Color.parseColor("#F95047"))
+                            binding.noviceTv.setTextColor(Color.WHITE)
 
-               binding.experienced.setCardBackgroundColor(Color.parseColor("#ffffff"))
-               binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
+                            level = "2"
+                            sportsLevelName = binding.noviceTv.text.toString().trim()
 
-               binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
-               binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
-           }
+                            binding.beginner.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
 
-           binding.intermediate.setOnClickListener {
-               binding.intermediate.setCardBackgroundColor(Color.parseColor("#F95047"))
-               binding.intermediateTv.setTextColor(Color.WHITE)
+                            binding.intermediate.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
 
-               level="3"
-               levelName=binding.intermediateTv.text.toString().trim()
+                            binding.experienced.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
 
-               binding.beginner.setCardBackgroundColor(Color.parseColor("#ffffff"))
-               binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
+                            binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
 
-               binding.novice.setCardBackgroundColor(Color.parseColor("#ffffff"))
-               binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
+                                if (position in 0 until list.size) {
+                                    if (binding.checkbox.isChecked == true) {
+                                        nlist.add(
+                                            selectedSportModel(
+                                                ItemsviewModel.id,
+                                                level.toString(),
+                                                sportsLevelName.toString()
+                                            )
+                                        )
+                                    } else {
+                                        nlist.remove(
+                                            selectedSportModel(
+                                                ItemsviewModel.id,
+                                                level.toString(),
+                                                sportsLevelName.toString()
+                                            )
+                                        )
+                                    }
+                                }
 
-               binding.experienced.setCardBackgroundColor(Color.parseColor("#ffffff"))
-               binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
+//                            if (position in 0 until list.size) {
+//
+//                                if (nlist.isEmpty() && selectedPosition == position) {
+//                                    nlist.add(
+//                                        selectedSportModel(
+//                                            ItemsviewModel.id,
+//                                            level.toString(),
+//                                            sportsLevelName.toString()
+//                                        )
+//                                    )
+//                                } else {
+//                                    if (nlist.isNotEmpty() && selectedPosition == position) {
+//                                        for (i in 0 until nlist.size!!) {
+//                                            val modelNew = nlist[i]
+//                                            if (modelNew.sportId == ItemsviewModel.id) {
+//                                                nlist[i] = selectedSportModel(
+//                                                    ItemsviewModel.id,
+//                                                    level.toString(),
+//                                                    sportsLevelName.toString()
+//                                                )
+//                                            }
+//                                        }
+//                                    } else {
+//                                        nlist.add(
+//                                            selectedSportModel(
+//                                                ItemsviewModel.id,
+//                                                level.toString(),
+//                                                sportsLevelName.toString()
+//                                            )
+//                                        )
+//                                    }
+//                                }
+//                            }
 
-               binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
-               binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
-           }
+//                                if (nlist.isEmpty() && selectedPosition == position) {
+//                                    nlist.add(
+//                                        selectedSportModel(
+//                                            ItemsviewModel.id,
+//                                            level.toString(),
+//                                            levelName.toString()
+//                                        )
+//                                    )
+//                                } else {
+//                                    for (i in 0 until nlist.size!!) {
+//                                        val modelNew = nlist[i]
+//                                        if (modelNew.sportId == ItemsviewModel.id) {
+//                                            nlist[i] = selectedSportModel(
+//                                                ItemsviewModel.id,
+//                                                level.toString(),
+//                                                levelName.toString()
+//                                            )
+//                                        } else {
+//                                            if (nlist.isNotEmpty() && selectedPosition == position) {
+//                                                nlist.add(
+//                                                    selectedSportModel(
+//                                                        ItemsviewModel.id,
+//                                                        level.toString(),
+//                                                        levelName.toString()
+//                                                    )
+//                                                )
+//                                            }
+//                                        }
+//                                    }
+//                                }
+                        }
 
-           binding.experienced.setOnClickListener {
-               binding.experienced.setCardBackgroundColor(Color.parseColor("#F95047"))
-               binding.experiencedTv.setTextColor(Color.WHITE)
+                        binding.intermediate.setOnClickListener {
+                            binding.intermediate.setCardBackgroundColor(Color.parseColor("#F95047"))
+                            binding.intermediateTv.setTextColor(Color.WHITE)
 
-               level="4"
-               levelName=binding.experiencedTv.text.toString().trim()
+                            level = "3"
+                            sportsLevelName = binding.intermediateTv.text.toString().trim()
 
-               binding.beginner.setCardBackgroundColor(Color.parseColor("#ffffff"))
-               binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
+                            binding.beginner.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
 
-               binding.novice.setCardBackgroundColor(Color.parseColor("#ffffff"))
-               binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
+                            binding.novice.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
 
-               binding.intermediate.setCardBackgroundColor(Color.parseColor("#ffffff"))
-               binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
+                            binding.experienced.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
 
-               binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
-               binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
-           }
+                            binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
 
-           binding.superstar.setOnClickListener {
-               binding.superstar.setCardBackgroundColor(Color.parseColor("#F95047"))
-               binding.superstarTv.setTextColor(Color.WHITE)
+                                    if (binding.checkbox.isChecked == true) {
+                                        nlist.add(
+                                            selectedSportModel(
+                                                ItemsviewModel.id,
+                                                level.toString(),
+                                                sportsLevelName.toString()
+                                            )
+                                        )
+                                    } else {
+                                        nlist.remove(
+                                            selectedSportModel(
+                                                ItemsviewModel.id,
+                                                level.toString(),
+                                                sportsLevelName.toString()
+                                            )
+                                        )
+                                    }
+//                            if (position in 0 until list.size) {
+//
+//                                if (nlist.isEmpty() && selectedPosition == position) {
+//                                    nlist.add(
+//                                        selectedSportModel(
+//                                            ItemsviewModel.id,
+//                                            level.toString(),
+//                                            sportsLevelName.toString()
+//                                        )
+//                                    )
+//                                } else {
+//                                    if (nlist.isNotEmpty() && selectedPosition == position) {
+//                                        for (i in 0 until nlist.size!!) {
+//                                            val modelNew = nlist[i]
+//                                            if (modelNew.sportId == ItemsviewModel.id) {
+//                                                nlist[i] = selectedSportModel(
+//                                                    ItemsviewModel.id,
+//                                                    level.toString(),
+//                                                    sportsLevelName.toString()
+//                                                )
+//                                            }
+//                                        }
+//                                    } else {
+//                                        nlist.add(
+//                                            selectedSportModel(
+//                                                ItemsviewModel.id,
+//                                                level.toString(),
+//                                                sportsLevelName.toString()
+//                                            )
+//                                        )
+//                                    }
+//                                }
+//                            }
 
-               level="5"
-               levelName=binding.superstarTv.text.toString().trim()
 
-               binding.beginner.setCardBackgroundColor(Color.parseColor("#ffffff"))
-               binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
+                        }
 
-               binding.novice.setCardBackgroundColor(Color.parseColor("#ffffff"))
-               binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
+                        binding.experienced.setOnClickListener {
+                            binding.experienced.setCardBackgroundColor(Color.parseColor("#F95047"))
+                            binding.experiencedTv.setTextColor(Color.WHITE)
 
-               binding.intermediate.setCardBackgroundColor(Color.parseColor("#ffffff"))
-               binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
+                            level = "4"
+                            sportsLevelName = binding.experiencedTv.text.toString().trim()
 
-               binding.experienced.setCardBackgroundColor(Color.parseColor("#ffffff"))
-               binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
-           }
-       }
-       else{
-    PrefData.setStringPrefs(activity, PrefData.CHECK_BOX,"0")
+                            binding.beginner.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
 
-           binding.beginner.strokeColor=Color.parseColor("#80F95047")
-           binding.beginnerTv.setTextColor(Color.parseColor("#80F95047"))
-           binding.novice.strokeColor=Color.parseColor("#80F95047")
-           binding.beginnerTv.setTextColor(Color.parseColor("#80F95047"))
-           binding.intermediate.strokeColor=Color.parseColor("#80F95047")
-           binding.beginnerTv.setTextColor(Color.parseColor("#80F95047"))
-           binding.experienced.strokeColor=Color.parseColor("#80F95047")
-           binding.beginnerTv.setTextColor(Color.parseColor("#80F95047"))
-           binding.superstar.strokeColor=Color.parseColor("#80F95047")
-           binding.beginnerTv.setTextColor(Color.parseColor("#80F95047"))
+                            binding.novice.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
 
-           adapter!!.unselect(position)
+                            binding.intermediate.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
 
-           for (i in 0 until nlist.size!!) {
-               val modelNew = nlist[i]
-               when (modelNew.sportId) {
-                   ItemsviewModel.id -> {
-                       nlist.removeAt(i)
-                       return@setOnClickListener
-                   }
-               }
-               }
-             }
+                            binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
+
+                                if (position in 0 until list.size) {
+                                    if (binding.checkbox.isChecked == true) {
+                                        nlist.add(
+                                            selectedSportModel(
+                                                ItemsviewModel.id,
+                                                level.toString(),
+                                                sportsLevelName.toString()
+                                            )
+                                        )
+                                    } else {
+                                        nlist.remove(
+                                            selectedSportModel(
+                                                ItemsviewModel.id,
+                                                level.toString(),
+                                                sportsLevelName.toString()
+                                            )
+                                        )
+                                    }
+                                }
+//                            if (position in 0 until list.size) {
+//
+//                                if (nlist.isEmpty() && selectedPosition == position) {
+//                                    nlist.add(
+//                                        selectedSportModel(
+//                                            ItemsviewModel.id,
+//                                            level.toString(),
+//                                            sportsLevelName.toString()
+//                                        )
+//                                    )
+//                                } else {
+//                                    if (nlist.isNotEmpty() && selectedPosition == position) {
+//                                        for (i in 0 until nlist.size!!) {
+//                                            val modelNew = nlist[i]
+//                                            if (modelNew.sportId == ItemsviewModel.id) {
+//                                                nlist[i] = selectedSportModel(
+//                                                    ItemsviewModel.id,
+//                                                    level.toString(),
+//                                                    sportsLevelName.toString()
+//                                                )
+//                                            }
+//                                        }
+//                                    } else {
+//                                        nlist.add(
+//                                            selectedSportModel(
+//                                                ItemsviewModel.id,
+//                                                level.toString(),
+//                                                sportsLevelName.toString()
+//                                            )
+//                                        )
+//                                    }
+//                                }
+//                            }
+
+                        }
+
+                        binding.superstar.setOnClickListener {
+                            binding.superstar.isEnabled = false
+                            binding.superstar.setCardBackgroundColor(Color.parseColor("#F95047"))
+                            binding.superstarTv.setTextColor(Color.WHITE)
+
+                            level = "5"
+                            sportsLevelName = binding.superstarTv.text.toString().trim()
+
+                            binding.beginner.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.beginnerTv.setTextColor(Color.parseColor("#F95047"))
+
+                            binding.novice.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.noviceTv.setTextColor(Color.parseColor("#F95047"))
+
+                            binding.intermediate.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
+
+                            binding.experienced.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                            binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
+
+//                                if (position in 0 until list.size) {
+//                                    if (binding.checkbox.isChecked == true) {
+//                                        nlist.add(
+//                                            selectedSportModel(
+//                                                ItemsviewModel.id,
+//                                                level.toString(),
+//                                                sportsLevelName.toString()
+//                                            )
+//                                        )
+//                                    } else {
+//                                        nlist.remove(
+//                                            selectedSportModel(
+//                                                ItemsviewModel.id,
+//                                                level.toString(),
+//                                                sportsLevelName.toString()
+//                                            )
+//                                        )
+//                                    }
+//                                }
+                            if (position in 0 until list.size) {
+
+                                if (nlist.isEmpty() && selectedPosition == position) {
+                                    nlist.add(
+                                        selectedSportModel(
+                                            ItemsviewModel.id,
+                                            level.toString(),
+                                            sportsLevelName.toString()
+                                        )
+                                    )
+                                } else {
+                                    if (nlist.isNotEmpty() && selectedPosition == position) {
+
+                                        for (i in 0 until nlist.size!!) {
+                                            val modelNew = nlist[i]
+                                            if (modelNew.sportId == ItemsviewModel.id) {
+                                                nlist[i] = selectedSportModel(
+                                                    ItemsviewModel.id,
+                                                    level.toString(),
+                                                    sportsLevelName.toString()
+                                                )
+                                            }
+                                        }
+                                    } else {
+                                        nlist.add(
+                                            selectedSportModel(
+                                                ItemsviewModel.id,
+                                                level.toString(),
+                                                sportsLevelName.toString()
+                                            )
+                                        )
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+                else {
+                        binding.beginner.strokeColor = Color.parseColor("#80F95047")
+                        binding.beginner.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.beginnerTv.setTextColor(Color.parseColor("#80F95047"))
+                        binding.noviceTv.setTextColor(Color.parseColor("#80F95047"))
+                        binding.novice.strokeColor = Color.parseColor("#80F95047")
+                        binding.novice.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.intermediateTv.setTextColor(Color.parseColor("#80F95047"))
+                        binding.intermediate.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.intermediate.strokeColor = Color.parseColor("#80F95047")
+                        binding.experienced.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.experiencedTv.setTextColor(Color.parseColor("#80F95047"))
+                        binding.experienced.strokeColor = Color.parseColor("#80F95047")
+                        binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
+                        binding.superstarTv.setTextColor(Color.parseColor("#80F95047"))
+                        binding.superstar.strokeColor = Color.parseColor("#80F95047")
+
+//           adapter!!.unselect(position)
+
+                        for (i in 0 until nlist.size!!) {
+                            val modelNew = nlist[i]
+                            when (modelNew.sportId) {
+                                ItemsviewModel.id -> {
+                                    nlist.removeAt(i)
+                                    return@setOnClickListener
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }

@@ -11,6 +11,7 @@ data class EditSportList(
     val id: Int,
     val isSelected: Int,
     val sportLevel: String,
+    val levelName: String,
     val sportName: String,
     val updated_at: String
 )
