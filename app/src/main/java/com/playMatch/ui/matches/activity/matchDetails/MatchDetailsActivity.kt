@@ -264,6 +264,5 @@ class MatchDetailsActivity : BaseActivity(), View.OnClickListener {
             }
         } as Unit
     }
-
-
+    
 }
