@@ -4270,6 +4270,7 @@ int id left 0x7f0a0168
 int id leftToRight 0x7f0a0169
 int id left_to_right 0x7f0a016a
 int id legacy 0x7f0a016b
+int id level 0x7f0a02e9
 int id light 0x7f0a016c
 int id line1 0x7f0a016d
 int id line3 0x7f0a016e

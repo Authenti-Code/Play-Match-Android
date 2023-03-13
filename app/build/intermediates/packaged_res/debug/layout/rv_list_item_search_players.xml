@@ -14,15 +14,31 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/profile_image"
-                android:layout_marginTop="@dimen/_10sdp"
+            <FrameLayout
                 android:layout_width="@dimen/_70sdp"
                 android:layout_height="@dimen/_60sdp"
+                android:layout_marginTop="@dimen/_10sdp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:elevation="0dp"
                 android:src="@drawable/new_dummy_profile"
                 app:civ_border_color="@color/red_F95047"
                 app:civ_border_width="@dimen/_1sdp" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_gravity="center"
+                android:elevation="@dimen/_10sdp"
+                android:visibility="visible"
+                android:layout_marginVertical="@dimen/_2sdp"
+                android:indeterminateTint="@color/red_F95047"/>
+
+            </FrameLayout>
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
@@ -105,6 +121,7 @@
 
 
                         <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/gender"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:textColor="@color/black_707070"
@@ -128,6 +145,7 @@
 
 
                         <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/level"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:textColor="@color/white"

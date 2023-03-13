@@ -23,7 +23,7 @@ import java.lang.String;
 
 public final class ActivityMatchDetailsBinding implements ViewBinding {
   @NonNull
-  private final LinearLayoutCompat rootView;
+  private final LinearLayoutCompat rootView_;
 
   @NonNull
   public final MaterialCardView accepted;
@@ -65,6 +65,9 @@ public final class ActivityMatchDetailsBinding implements ViewBinding {
   public final ProgressBar progressBar;
 
   @NonNull
+  public final LinearLayoutCompat rootView;
+
+  @NonNull
   public final RecyclerView rvAccepted;
 
   @NonNull
@@ -88,18 +91,18 @@ public final class ActivityMatchDetailsBinding implements ViewBinding {
   @NonNull
   public final TextView time;
 
-  private ActivityMatchDetailsBinding(@NonNull LinearLayoutCompat rootView,
+  private ActivityMatchDetailsBinding(@NonNull LinearLayoutCompat rootView_,
       @NonNull MaterialCardView accepted, @NonNull AppCompatTextView acceptedTv,
       @NonNull ImageView back, @NonNull TextView date, @NonNull ImageView edit,
       @NonNull AppCompatTextView fitnessLevel, @NonNull AppCompatTextView gender,
       @NonNull MaterialCardView invitedPlayers, @NonNull AppCompatTextView invitedPlayersTv,
       @NonNull TextView locationTv, @NonNull AppCompatImageView logo, @NonNull TextView name,
-      @NonNull ProgressBar progressBar, @NonNull RecyclerView rvAccepted,
-      @NonNull RecyclerView rvInvitedPlayers, @NonNull RecyclerView rvSearchPlayers,
-      @NonNull ImageView search, @NonNull MaterialCardView searchPlayers,
-      @NonNull AppCompatTextView searchPlayersTv, @NonNull AppCompatTextView sportsName,
-      @NonNull TextView time) {
-    this.rootView = rootView;
+      @NonNull ProgressBar progressBar, @NonNull LinearLayoutCompat rootView,
+      @NonNull RecyclerView rvAccepted, @NonNull RecyclerView rvInvitedPlayers,
+      @NonNull RecyclerView rvSearchPlayers, @NonNull ImageView search,
+      @NonNull MaterialCardView searchPlayers, @NonNull AppCompatTextView searchPlayersTv,
+      @NonNull AppCompatTextView sportsName, @NonNull TextView time) {
+    this.rootView_ = rootView_;
     this.accepted = accepted;
     this.acceptedTv = acceptedTv;
     this.back = back;
@@ -113,6 +116,7 @@ public final class ActivityMatchDetailsBinding implements ViewBinding {
     this.logo = logo;
     this.name = name;
     this.progressBar = progressBar;
+    this.rootView = rootView;
     this.rvAccepted = rvAccepted;
     this.rvInvitedPlayers = rvInvitedPlayers;
     this.rvSearchPlayers = rvSearchPlayers;
@@ -126,7 +130,7 @@ public final class ActivityMatchDetailsBinding implements ViewBinding {
   @Override
   @NonNull
   public LinearLayoutCompat getRoot() {
-    return rootView;
+    return rootView_;
   }
 
   @NonNull
@@ -228,6 +232,8 @@ public final class ActivityMatchDetailsBinding implements ViewBinding {
         break missingId;
       }
 
+      LinearLayoutCompat rootView_ = (LinearLayoutCompat) rootView;
+
       id = R.id.rvAccepted;
       RecyclerView rvAccepted = ViewBindings.findChildViewById(rootView, id);
       if (rvAccepted == null) {
@@ -278,7 +284,7 @@ public final class ActivityMatchDetailsBinding implements ViewBinding {
 
       return new ActivityMatchDetailsBinding((LinearLayoutCompat) rootView, accepted, acceptedTv,
           back, date, edit, fitnessLevel, gender, invitedPlayers, invitedPlayersTv, locationTv,
-          logo, name, progressBar, rvAccepted, rvInvitedPlayers, rvSearchPlayers, search,
+          logo, name, progressBar, rootView_, rvAccepted, rvInvitedPlayers, rvSearchPlayers, search,
           searchPlayers, searchPlayersTv, sportsName, time);
     }
     String missingId = rootView.getResources().getResourceName(id);

@@ -4,6 +4,7 @@ package com.playMatch.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -32,20 +33,34 @@ public final class RvListItemSearchPlayersBinding implements ViewBinding {
   public final TextView date;
 
   @NonNull
+  public final AppCompatTextView gender;
+
+  @NonNull
+  public final AppCompatTextView level;
+
+  @NonNull
   public final TextView name;
 
   @NonNull
   public final CircleImageView profileImage;
 
+  @NonNull
+  public final ProgressBar progressBar;
+
   private RvListItemSearchPlayersBinding(@NonNull LinearLayoutCompat rootView,
       @NonNull MaterialCardView cardView, @NonNull AppCompatTextView cardViewTv,
-      @NonNull TextView date, @NonNull TextView name, @NonNull CircleImageView profileImage) {
+      @NonNull TextView date, @NonNull AppCompatTextView gender, @NonNull AppCompatTextView level,
+      @NonNull TextView name, @NonNull CircleImageView profileImage,
+      @NonNull ProgressBar progressBar) {
     this.rootView = rootView;
     this.cardView = cardView;
     this.cardViewTv = cardViewTv;
     this.date = date;
+    this.gender = gender;
+    this.level = level;
     this.name = name;
     this.profileImage = profileImage;
+    this.progressBar = progressBar;
   }
 
   @Override
@@ -93,6 +108,18 @@ public final class RvListItemSearchPlayersBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.gender;
+      AppCompatTextView gender = ViewBindings.findChildViewById(rootView, id);
+      if (gender == null) {
+        break missingId;
+      }
+
+      id = R.id.level;
+      AppCompatTextView level = ViewBindings.findChildViewById(rootView, id);
+      if (level == null) {
+        break missingId;
+      }
+
       id = R.id.name;
       TextView name = ViewBindings.findChildViewById(rootView, id);
       if (name == null) {
@@ -105,8 +132,14 @@ public final class RvListItemSearchPlayersBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.progressBar;
+      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
+      if (progressBar == null) {
+        break missingId;
+      }
+
       return new RvListItemSearchPlayersBinding((LinearLayoutCompat) rootView, cardView, cardViewTv,
-          date, name, profileImage);
+          date, gender, level, name, profileImage, progressBar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
