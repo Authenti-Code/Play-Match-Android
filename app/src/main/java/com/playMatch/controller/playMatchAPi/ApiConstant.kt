@@ -31,6 +31,8 @@ object ApiConstant {
     const val CREATE_MATCH="create/match"
     const val EDIT_MATCH="edit/match"
     const val LIST_MATCH="list/match"
+    const val PLAYERS_LIST="list/players"
+    const val MATCH_INVITE="send/matchInvite"
     const val SHOW_TEAM="showTeam"
     const val LOGOUT="logout"
 

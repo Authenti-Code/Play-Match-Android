@@ -355,8 +355,8 @@
 196-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:178:9-189:20
 197            android:name="com.playMatch.ui.signUp.SelectSportActivity"
 197-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:179:13-58
-198            android:exported="false" >
-198-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:180:13-37
+198            android:exported="true" >
+198-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:180:13-36
 199            <meta-data
 199-->D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:48:13-50:36
 200                android:name="android.app.lib_name"

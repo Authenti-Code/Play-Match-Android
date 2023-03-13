@@ -3,6 +3,7 @@ package com.playMatch.controller.playMatchAPi.apiClasses
 import android.app.Activity
 import com.playMatch.controller.playMatchAPi.*
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.Match.EditMatchPost
+import com.playMatch.controller.playMatchAPi.postPojoModel.user.Match.MatchInvitePost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.createMatch.CreateMatchPost
 import com.playMatch.ui.baseActivity.BaseActivity
 import com.playMatch.controller.sharedPrefrence.PrefData
@@ -12,6 +13,7 @@ import com.playMatch.controller.playMatchAPi.postPojoModel.user.matchAvailabilit
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.register.RegisterPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.showTeam.ShowTeamPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.Match.UpcomingMatchPost
+import com.playMatch.controller.playMatchAPi.postPojoModel.user.players.PlayersPost
 import com.playMatch.ui.signUp.userSports.UserSportsPost
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
@@ -66,7 +68,7 @@ class UserApi( val activity: Activity): BaseActivity()  {
     ): ResultResponse {
         return try {
             val requestFile =
-                imageBytes.toRequestBody("image/*".toMediaTypeOrNull(), 0, imageBytes.size)
+                imageBytes.toRequestBody("image/jpg".toMediaTypeOrNull(), 0, imageBytes.size)
 
             val imageBody = MultipartBody.Part.createFormData("image", imageName, requestFile)
             val response = apiService?.uploadImageInChat(ApiConstant.BEARER_TOKEN + " " +token!!, imageBody)
@@ -273,7 +275,7 @@ class UserApi( val activity: Activity): BaseActivity()  {
         sat: String,
     ): ResultResponse {
         return try {
-            val requestFile = imageBytes.toRequestBody("image/*".toMediaTypeOrNull(), 0, imageBytes.size)
+            val requestFile = imageBytes.toRequestBody("image/jpg".toMediaTypeOrNull(), 0, imageBytes.size)
 
             val imageBody = MultipartBody.Part.createFormData("image", imageName, requestFile)
             val response = apiService?.editProfile(ApiConstant.BEARER_TOKEN + " " +token!!,imageBody,name.toRequestBody(),gender.toRequestBody(),dob.toRequestBody(),location.toRequestBody(),fitness.toRequestBody(),sun.toRequestBody(),mon.toRequestBody(),tue.toRequestBody(),wed.toRequestBody(),thu.toRequestBody(),fri.toRequestBody(),sat.toRequestBody())
@@ -319,7 +321,7 @@ class UserApi( val activity: Activity): BaseActivity()  {
         otherDetails: String,
     ): ResultResponse {
         return try {
-            val requestFile = imageBytes.toRequestBody("image/*".toMediaTypeOrNull(), 0, imageBytes.size)
+            val requestFile = imageBytes.toRequestBody("image/jpg".toMediaTypeOrNull(), 0, imageBytes.size)
 
             val imageBody = MultipartBody.Part.createFormData("image", imageName, requestFile)
             val response = apiService?.addTeam(ApiConstant.BEARER_TOKEN + " " +token!!,imageBody,name.toRequestBody(),gender.toRequestBody(),sportId.toRequestBody(),location.toRequestBody(),teamStandard.toRequestBody(),isKitProvided.toRequestBody(),isAwayMatches.toRequestBody(),sun.toRequestBody(),mon.toRequestBody(),tue.toRequestBody(),wed.toRequestBody(),thu.toRequestBody(),fri.toRequestBody(),sat.toRequestBody(),otherDetails.toRequestBody())
@@ -411,7 +413,7 @@ class UserApi( val activity: Activity): BaseActivity()  {
         otherDetails: String,
     ): ResultResponse {
         return try {
-            val requestFile = imageBytes.toRequestBody("image/*".toMediaTypeOrNull(), 0, imageBytes.size)
+            val requestFile = imageBytes.toRequestBody("image/jpg".toMediaTypeOrNull(), 0, imageBytes.size)
 
             val imageBody = MultipartBody.Part.createFormData("image", imageName, requestFile)
             val response = apiService?.editTeam(ApiConstant.BEARER_TOKEN + " " +token!!,imageBody,teamId.toRequestBody(),name.toRequestBody(),gender.toRequestBody(),sportId.toRequestBody(),location.toRequestBody(),teamStandard.toRequestBody(),isKitProvided.toRequestBody(),isAwayMatches.toRequestBody(),sun.toRequestBody(),mon.toRequestBody(),tue.toRequestBody(),wed.toRequestBody(),thu.toRequestBody(),fri.toRequestBody(),sat.toRequestBody(),otherDetails.toRequestBody())
@@ -504,5 +506,50 @@ class UserApi( val activity: Activity): BaseActivity()  {
             ResultResponse.NetworkException(error.message!!)
         }
     }
+
+
+    suspend fun playersListing(playersPost: PlayersPost): ResultResponse {
+        return try {
+            val response = apiService?.playersList(ApiConstant.BEARER_TOKEN + " " + token,playersPost)
+            if (response?.isSuccessful!!) {
+                val model = response.body()
+                ResultResponse.Success(model)
+            } else {
+                when (response.code()) {
+                    403 -> ResultResponse.HttpErrors.ResourceForbidden(response.message())
+                    404 -> ResultResponse.HttpErrors.ResourceNotFound(response.message())
+                    500 -> ResultResponse.HttpErrors.InternalServerError(response.message())
+                    502 -> ResultResponse.HttpErrors.BadGateWay(response.message())
+                    301 -> ResultResponse.HttpErrors.ResourceRemoved(response.message())
+                    302 -> ResultResponse.HttpErrors.RemovedResourceFound(response.message())
+                    else -> ResultResponse.Error(response.message())
+                }
+            }
+        } catch (error: IOException) {
+            ResultResponse.NetworkException(error.message!!)
+        }
+    }
+    suspend fun invitePlayer(matchInvitePost: MatchInvitePost): ResultResponse {
+        return try {
+            val response = apiService?.matchInvite(ApiConstant.BEARER_TOKEN + " " + token,matchInvitePost)
+            if (response?.isSuccessful!!) {
+                val model = response.body()
+                ResultResponse.Success(model)
+            } else {
+                when (response.code()) {
+                    403 -> ResultResponse.HttpErrors.ResourceForbidden(response.message())
+                    404 -> ResultResponse.HttpErrors.ResourceNotFound(response.message())
+                    500 -> ResultResponse.HttpErrors.InternalServerError(response.message())
+                    502 -> ResultResponse.HttpErrors.BadGateWay(response.message())
+                    301 -> ResultResponse.HttpErrors.ResourceRemoved(response.message())
+                    302 -> ResultResponse.HttpErrors.RemovedResourceFound(response.message())
+                    else -> ResultResponse.Error(response.message())
+                }
+            }
+        } catch (error: IOException) {
+            ResultResponse.NetworkException(error.message!!)
+        }
+    }
+
 
 }

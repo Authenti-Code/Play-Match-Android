@@ -48,6 +48,7 @@ class CreateMatchActivity : BaseActivity(), View.OnClickListener,BottomSheetList
     private var sportList = ArrayList<SportsList>()
     private var sportId:String?=null
     private var teamId:String?=null
+    private var level:String?="3"
     private var matchDetails: UpComingMatchList?=null
     private var fitnessLevel:String?="Intermediate"
     private var userType:Boolean?=false
@@ -129,7 +130,7 @@ class CreateMatchActivity : BaseActivity(), View.OnClickListener,BottomSheetList
             binding.selectTeam.setCardBackgroundColor(Color.parseColor("#F95047"))
             binding.selectTeamTV.setTextColor(Color.WHITE)
             binding.selectTeamTV.text = matchDetails?.teamName
-            teamId=teamId
+            teamId=matchDetails?.teamId.toString()
             binding.selectTeamTV.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.edit, 0);
             }
     }
@@ -254,6 +255,7 @@ class CreateMatchActivity : BaseActivity(), View.OnClickListener,BottomSheetList
             binding.experienced.setCardBackgroundColor(Color.WHITE)
             binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
                 fitnessLevel=binding.beginnerTv.text.toString().trim()
+                level="1"
             }
             R.id.intermediate -> {
             binding.intermediate.setCardBackgroundColor(Color.parseColor("#F95047"))
@@ -263,7 +265,7 @@ class CreateMatchActivity : BaseActivity(), View.OnClickListener,BottomSheetList
             binding.experienced.setCardBackgroundColor(Color.WHITE)
             binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
                 fitnessLevel=binding.intermediateTv.text.toString().trim()
-
+              level="3"
             }
 
             R.id.experienced -> {
@@ -274,6 +276,7 @@ class CreateMatchActivity : BaseActivity(), View.OnClickListener,BottomSheetList
             binding.intermediate.setCardBackgroundColor(Color.WHITE)
             binding.intermediateTv.setTextColor(Color.parseColor("#F95047"))
                 fitnessLevel=binding.experiencedTv.text.toString().trim()
+                level="4"
             }
 
         }
@@ -407,7 +410,7 @@ class CreateMatchActivity : BaseActivity(), View.OnClickListener,BottomSheetList
          showProgressBar()
         if (isNetworkAvailable()) {
             lifecycleScope.launchWhenStarted {
-                val resultResponse = UserApi(this@CreateMatchActivity).createMatch(CreateMatchPost(binding.matchName.text.toString().trim(),binding.calendar.text.toString().trim(),binding.startTime.text.toString().trim(),binding.finishTime.text.toString().trim(),binding.locationTv.text.toString().trim(),binding.genderTv.text.toString().trim(),fitnessLevel,sportId,teamId,binding.description.text.toString().trim(),"31.606142","74.885596",))
+                val resultResponse = UserApi(this@CreateMatchActivity).createMatch(CreateMatchPost(binding.matchName.text.toString().trim(),binding.calendar.text.toString().trim(),binding.startTime.text.toString().trim(),binding.finishTime.text.toString().trim(),binding.locationTv.text.toString().trim(),binding.genderTv.text.toString().trim(),level,fitnessLevel,sportId,teamId,binding.description.text.toString().trim(),"31.606142","74.885596",))
                 apiCreateMatchResult(resultResponse)
             }
         } else {
@@ -439,7 +442,7 @@ class CreateMatchActivity : BaseActivity(), View.OnClickListener,BottomSheetList
         showProgressBar()
         if (isNetworkAvailable()) {
             lifecycleScope.launchWhenStarted {
-                val resultResponse = UserApi(this@CreateMatchActivity).editMatch(EditMatchPost(binding.matchName.text.toString().trim(),binding.calendar.text.toString().trim(),binding.startTime.text.toString().trim(),binding.finishTime.text.toString().trim(),binding.locationTv.text.toString().trim(),binding.genderTv.text.toString().trim(),fitnessLevel,sportId,teamId,binding.description.text.toString().trim(),"31.606142","74.885596",matchDetails?.id.toString()))
+                val resultResponse = UserApi(this@CreateMatchActivity).editMatch(EditMatchPost(binding.matchName.text.toString().trim(),binding.calendar.text.toString().trim(),binding.startTime.text.toString().trim(),binding.finishTime.text.toString().trim(),binding.locationTv.text.toString().trim(),binding.genderTv.text.toString().trim(),level,fitnessLevel,sportId,teamId,binding.description.text.toString().trim(),"31.606142","74.885596",matchDetails?.id.toString()))
                 apiEditMatchResult(resultResponse)
             }
         } else {

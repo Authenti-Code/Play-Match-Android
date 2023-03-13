@@ -706,7 +706,7 @@ open class BaseActivity : AppCompatActivity() {
             // you should access local path in scoped storage mode.
             val localStorage = getExternalFilesDir(null) ?: return
             val storagePath = localStorage.absolutePath
-            val rootPath = "$storagePath/Saetae"
+            val rootPath = "$storagePath/PlayMatch"
             val currentTime = System.currentTimeMillis().toString() + ".jpg"
 
             val root = File(rootPath)

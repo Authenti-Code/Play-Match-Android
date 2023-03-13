@@ -3,6 +3,7 @@ package com.playMatch.controller.playMatchAPi
 
 import com.playMatch.controller.playMatchAPi.apiClasses.ApiParameters
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.Match.EditMatchPost
+import com.playMatch.controller.playMatchAPi.postPojoModel.user.Match.MatchInvitePost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.createMatch.CreateMatchPost
 import com.playMatch.ui.login.model.LoginResponse
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.login.LoginPost
@@ -11,8 +12,11 @@ import com.playMatch.controller.playMatchAPi.postPojoModel.user.matchAvailabilit
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.register.RegisterPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.showTeam.ShowTeamPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.Match.UpcomingMatchPost
+import com.playMatch.controller.playMatchAPi.postPojoModel.user.players.PlayersPost
 import com.playMatch.ui.matches.model.createMatch.CreateMatchResponse
 import com.playMatch.ui.matches.model.editMatch.EditMatchResponse
+import com.playMatch.ui.matches.model.invitePlayer.InvitePlayerResponse
+import com.playMatch.ui.matches.model.players.PlayersResponse
 import com.playMatch.ui.matches.model.upcomingMatches.UpcomingMatchResponse
 import com.playMatch.ui.signUp.userSports.UserSportsPost
 import com.playMatch.ui.profile.activity.settingActivity.model.LogoutResponse
@@ -187,4 +191,18 @@ interface ApiService {
         @Header(ApiConstant.AUTH) token: String,
         @Body eventDetail: EditMatchPost?
     ):Response<EditMatchResponse>
+
+    @Headers("Content-Type: application/json")
+    @POST(ApiConstant.PLAYERS_LIST)
+    suspend fun playersList(
+        @Header(ApiConstant.AUTH) token: String,
+        @Body eventDetail: PlayersPost?
+    ):Response<PlayersResponse>
+
+    @Headers("Content-Type: application/json")
+    @POST(ApiConstant.MATCH_INVITE)
+    suspend fun matchInvite(
+        @Header(ApiConstant.AUTH) token: String,
+        @Body eventDetail:MatchInvitePost?
+    ):Response<InvitePlayerResponse>
 }

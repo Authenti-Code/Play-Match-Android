@@ -36,6 +36,7 @@ class MatchesFragment : Fragment(),View.OnClickListener {
     private var list = ArrayList<HomeChildModel>()
     private var upcomingList = ArrayList<UpComingMatchList>()
     private var pageNo: String = "1"
+    private var matchType: String = "u"
     private var totalPages: String = ""
 
 
@@ -78,15 +79,19 @@ class MatchesFragment : Fragment(),View.OnClickListener {
                 binding?.rvUpcoming?.visibility=View.VISIBLE
                 binding?.rvPast?.visibility=View.GONE
                 binding?.noMatch?.visibility=View.GONE
+                matchType="u"
+                upcomingMatchListApi()
             }
             R.id.past_match -> {
                 binding?.upcomingMatch?.setBackgroundResource(color.white)
                 binding?.pastMatch?.setBackgroundResource(R.drawable.matches_tab_bg)
                 binding?.pastMatch?.setTextColor(Color.WHITE)
                 binding?.upcomingMatch?.setTextColor(Color.parseColor("#E65D50"))
-                binding?.rvUpcoming?.visibility=View.GONE
+                binding?.rvUpcoming?.visibility=View.VISIBLE
                 binding?.rvPast?.visibility=View.GONE
-                binding?.noMatch?.visibility=View.VISIBLE
+                binding?.noMatch?.visibility=View.GONE
+                matchType="p"
+                upcomingMatchListApi()
             }
             R.id.createMatch -> {
                 CommonUtils.performIntent(requireActivity(),CreateMatchActivity::class.java)
@@ -119,7 +124,7 @@ class MatchesFragment : Fragment(),View.OnClickListener {
         if ((activity as BaseActivity).isNetworkAvailable()) {
             CommonUtils.showProgressDialog(requireActivity())
             lifecycleScope.launchWhenStarted {
-                val resultResponse = UserApi(requireActivity()).upcomingMatch(UpcomingMatchPost("u"))
+                val resultResponse = UserApi(requireActivity()).upcomingMatch(UpcomingMatchPost(matchType))
                 apiUpcomingMatchResult(resultResponse)
             }
         } else {

@@ -7,6 +7,7 @@ data class EditMatchPost(
     val finishTime: String? = null,
     val location: String? = null,
     val gender: String? = null,
+    val level: String? = null,
     val standard: String? = null,
     val sportId: String?= null,
     val teamId: String?= null,
