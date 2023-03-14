@@ -29,6 +29,16 @@
                     android:layout_height="match_parent"
                     android:scaleType="fitXY"
                     app:srcCompat="@drawable/ic_upcoming_matches"/>
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_gravity="center"
+                    android:elevation="@dimen/_10sdp"
+                    android:visibility="visible"
+                    android:layout_marginVertical="@dimen/_2sdp"
+                    android:indeterminateTint="@color/red_F95047"/>
             </androidx.cardview.widget.CardView>
 
             <TextView

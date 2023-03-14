@@ -4,6 +4,7 @@ package com.playMatch.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -29,13 +30,17 @@ public final class RvChildHomeThirdPositionListItemBinding implements ViewBindin
   @NonNull
   public final TextView name;
 
+  @NonNull
+  public final ProgressBar progressBar;
+
   private RvChildHomeThirdPositionListItemBinding(@NonNull LinearLayoutCompat rootView,
       @NonNull LinearLayoutCompat cardView, @NonNull AppCompatImageView logo,
-      @NonNull TextView name) {
+      @NonNull TextView name, @NonNull ProgressBar progressBar) {
     this.rootView = rootView;
     this.cardView = cardView;
     this.logo = logo;
     this.name = name;
+    this.progressBar = progressBar;
   }
 
   @Override
@@ -83,8 +88,14 @@ public final class RvChildHomeThirdPositionListItemBinding implements ViewBindin
         break missingId;
       }
 
+      id = R.id.progressBar;
+      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
+      if (progressBar == null) {
+        break missingId;
+      }
+
       return new RvChildHomeThirdPositionListItemBinding((LinearLayoutCompat) rootView, cardView,
-          logo, name);
+          logo, name, progressBar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

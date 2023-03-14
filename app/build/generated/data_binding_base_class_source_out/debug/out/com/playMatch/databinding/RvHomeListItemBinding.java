@@ -25,16 +25,20 @@ public final class RvHomeListItemBinding implements ViewBinding {
   public final AppCompatTextView heading;
 
   @NonNull
+  public final LinearLayoutCompat layout;
+
+  @NonNull
   public final RecyclerView rvChildHome;
 
   @NonNull
   public final TextView viewAll;
 
   private RvHomeListItemBinding(@NonNull LinearLayoutCompat rootView,
-      @NonNull AppCompatTextView heading, @NonNull RecyclerView rvChildHome,
-      @NonNull TextView viewAll) {
+      @NonNull AppCompatTextView heading, @NonNull LinearLayoutCompat layout,
+      @NonNull RecyclerView rvChildHome, @NonNull TextView viewAll) {
     this.rootView = rootView;
     this.heading = heading;
+    this.layout = layout;
     this.rvChildHome = rvChildHome;
     this.viewAll = viewAll;
   }
@@ -72,6 +76,8 @@ public final class RvHomeListItemBinding implements ViewBinding {
         break missingId;
       }
 
+      LinearLayoutCompat layout = (LinearLayoutCompat) rootView;
+
       id = R.id.rv_child_home;
       RecyclerView rvChildHome = ViewBindings.findChildViewById(rootView, id);
       if (rvChildHome == null) {
@@ -84,7 +90,7 @@ public final class RvHomeListItemBinding implements ViewBinding {
         break missingId;
       }
 
-      return new RvHomeListItemBinding((LinearLayoutCompat) rootView, heading, rvChildHome,
+      return new RvHomeListItemBinding((LinearLayoutCompat) rootView, heading, layout, rvChildHome,
           viewAll);
     }
     String missingId = rootView.getResources().getResourceName(id);

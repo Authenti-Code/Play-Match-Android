@@ -4,9 +4,11 @@ package com.playMatch.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageView;
+import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,10 +32,19 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final AppCompatImageView globe;
 
   @NonNull
+  public final AppCompatTextView matcheCount;
+
+  @NonNull
+  public final TextView name;
+
+  @NonNull
   public final AppCompatImageView notification;
 
   @NonNull
   public final RecyclerView rvParentHome;
+
+  @NonNull
+  public final AppCompatTextView teamCount;
 
   @NonNull
   public final Toolbar toolbar;
@@ -42,14 +53,18 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final CollapsingToolbarLayout toolbarLayout;
 
   private FragmentHomeBinding(@NonNull CoordinatorLayout rootView, @NonNull AppBarLayout appBar,
-      @NonNull AppCompatImageView globe, @NonNull AppCompatImageView notification,
-      @NonNull RecyclerView rvParentHome, @NonNull Toolbar toolbar,
-      @NonNull CollapsingToolbarLayout toolbarLayout) {
+      @NonNull AppCompatImageView globe, @NonNull AppCompatTextView matcheCount,
+      @NonNull TextView name, @NonNull AppCompatImageView notification,
+      @NonNull RecyclerView rvParentHome, @NonNull AppCompatTextView teamCount,
+      @NonNull Toolbar toolbar, @NonNull CollapsingToolbarLayout toolbarLayout) {
     this.rootView = rootView;
     this.appBar = appBar;
     this.globe = globe;
+    this.matcheCount = matcheCount;
+    this.name = name;
     this.notification = notification;
     this.rvParentHome = rvParentHome;
+    this.teamCount = teamCount;
     this.toolbar = toolbar;
     this.toolbarLayout = toolbarLayout;
   }
@@ -93,6 +108,18 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.matcheCount;
+      AppCompatTextView matcheCount = ViewBindings.findChildViewById(rootView, id);
+      if (matcheCount == null) {
+        break missingId;
+      }
+
+      id = R.id.name;
+      TextView name = ViewBindings.findChildViewById(rootView, id);
+      if (name == null) {
+        break missingId;
+      }
+
       id = R.id.notification;
       AppCompatImageView notification = ViewBindings.findChildViewById(rootView, id);
       if (notification == null) {
@@ -102,6 +129,12 @@ public final class FragmentHomeBinding implements ViewBinding {
       id = R.id.rvParentHome;
       RecyclerView rvParentHome = ViewBindings.findChildViewById(rootView, id);
       if (rvParentHome == null) {
+        break missingId;
+      }
+
+      id = R.id.teamCount;
+      AppCompatTextView teamCount = ViewBindings.findChildViewById(rootView, id);
+      if (teamCount == null) {
         break missingId;
       }
 
@@ -117,8 +150,8 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentHomeBinding((CoordinatorLayout) rootView, appBar, globe, notification,
-          rvParentHome, toolbar, toolbarLayout);
+      return new FragmentHomeBinding((CoordinatorLayout) rootView, appBar, globe, matcheCount, name,
+          notification, rvParentHome, teamCount, toolbar, toolbarLayout);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
