@@ -552,5 +552,27 @@ class UserApi( val activity: Activity): BaseActivity()  {
         }
     }
 
+    suspend fun home(): ResultResponse {
+        return try {
+            val response = apiService?.home(ApiConstant.BEARER_TOKEN + " " + token)
+            if (response?.isSuccessful!!) {
+                val model = response.body()
+                ResultResponse.Success(model)
+            } else {
+                when (response.code()) {
+                    403 -> ResultResponse.HttpErrors.ResourceForbidden(response.message())
+                    404 -> ResultResponse.HttpErrors.ResourceNotFound(response.message())
+                    500 -> ResultResponse.HttpErrors.InternalServerError(response.message())
+                    502 -> ResultResponse.HttpErrors.BadGateWay(response.message())
+                    301 -> ResultResponse.HttpErrors.ResourceRemoved(response.message())
+                    302 -> ResultResponse.HttpErrors.RemovedResourceFound(response.message())
+                    else -> ResultResponse.Error(response.message())
+                }
+            }
+        } catch (error: IOException) {
+            ResultResponse.NetworkException(error.message!!)
+        }
+    }
+
 
 }

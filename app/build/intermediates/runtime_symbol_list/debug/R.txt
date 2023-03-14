@@ -4292,6 +4292,7 @@ int id masked 0x7f0a017d
 int id matchName 0x7f0a017e
 int id match_constraint 0x7f0a017f
 int id match_parent 0x7f0a0180
+int id matcheCount 0x7f0a02eb
 int id material_clock_display 0x7f0a0181
 int id material_clock_display_and_toggle 0x7f0a0182
 int id material_clock_face 0x7f0a0183
@@ -4574,6 +4575,7 @@ int id tag_transition_group 0x7f0a0291
 int id tag_unhandled_key_event_manager 0x7f0a0292
 int id tag_unhandled_key_listeners 0x7f0a0293
 int id tag_window_insets_animation_callback 0x7f0a0294
+int id teamCount 0x7f0a02ec
 int id terrain 0x7f0a0295
 int id text 0x7f0a0296
 int id text2 0x7f0a0297

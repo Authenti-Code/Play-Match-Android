@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.playMatch.R
@@ -14,9 +15,12 @@ import com.playMatch.databinding.RvHomeListItemBinding
 import com.playMatch.ui.home.activity.HomeActivity
 import com.playMatch.ui.home.dialogs.invitesDialog.InvitesDialog
 import com.playMatch.ui.home.model.*
+import com.playMatch.ui.home.model.homeResponse.HomeList
+import com.playMatch.ui.home.model.homeResponse.TeamList
+import com.playMatch.ui.home.model.homeResponse.UpcomingMatchList
 import com.playMatch.ui.signUp.signUpAdapters.SelectLightBgChildSportAdapter
 
-class HomeParentAdapter(var list: ArrayList<HomeParentModel>, var activity: Activity) : RecyclerView.Adapter<HomeParentAdapter.ViewHolder>() {
+class HomeParentAdapter(var list: ArrayList<HomeList>, var activity: Activity) : RecyclerView.Adapter<HomeParentAdapter.ViewHolder>() {
 
     private var selectedPosition = -1
     private var adapter: HomeChildAdapter?=null
@@ -26,8 +30,8 @@ class HomeParentAdapter(var list: ArrayList<HomeParentModel>, var activity: Acti
     private var lightAdapter: SelectLightBgChildSportAdapter?=null
     private  var mlist = ArrayList<HomeChildModel>()
     private  var msecondlist = ArrayList<HomeChilseconddModel>()
-    private  var mthirdlist = ArrayList<HomeChildthirdModel>()
-    private  var mfourthlist = ArrayList<HomeChildfourthModel>()
+    private  var mthirdlist = ArrayList<UpcomingMatchList>()
+    private  var mfourthlist = ArrayList<TeamList>()
 
     inner class ViewHolder(val binding: RvHomeListItemBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -38,6 +42,7 @@ class HomeParentAdapter(var list: ArrayList<HomeParentModel>, var activity: Acti
         return ViewHolder(binding)
     }
 
+    @SuppressLint("SuspiciousIndentation")
     override fun onBindViewHolder(holder: ViewHolder, @SuppressLint("RecyclerView") position: Int) {
         holder.apply {
             val ItemsviewModel = list[position]
@@ -46,41 +51,54 @@ class HomeParentAdapter(var list: ArrayList<HomeParentModel>, var activity: Acti
                 adapter = HomeChildAdapter(mlist, activity)
                 holder.binding.rvChildHome.adapter = adapter
                 holder.binding.heading.text = "New Invites"
-                mlist.clear()
-                for (i in 1..5) {
-                    mlist.add(
-                        HomeChildModel(
-                            R.drawable.match,"League Match"
+
+                if (ItemsviewModel.invites.isEmpty()){
+                     list.count()
+                    list.drop(0)
+                    binding.layout.visibility=View.GONE
+
+                }else{
+                    mlist.clear()
+                    for (i in 1..5) {
+                        mlist.add(
+                            HomeChildModel(
+                                R.drawable.match, "League Match"
+                            )
                         )
-                    )
+                    }
+                    binding.layout.visibility=View.VISIBLE
                 }
             }
             else if (position==1){
                 secondAdapter = HomeChildSecondPositionAdapterclass(msecondlist, activity)
                 holder.binding.rvChildHome.adapter = secondAdapter
                 holder.binding.heading.text = "New Interests"
-                msecondlist.clear()
-                for (i in 1..5) {
-                    msecondlist.add(
-                        HomeChilseconddModel(
-                            R.drawable.profile_pic,"Rossy Alan"
-                        )
-                    )
 
+                if (ItemsviewModel.invites.isEmpty()){
+                    list.count()
+                    list.drop(1)
+                    binding.layout.visibility=View.GONE
+
+                }else{
+                    msecondlist.clear()
+                    for (i in 1..5) {
+                        msecondlist.add(
+                            HomeChilseconddModel(
+                                R.drawable.profile_pic, "Rossy Alan"
+                            )
+                        )
+                    }
+                    binding.layout.visibility=View.VISIBLE
                 }
+
             } else if (position==2){
                 thirdAdapter = HomeChildThirdPositionAdapter(mthirdlist, activity)
                 holder.binding.rvChildHome.adapter = thirdAdapter
                 holder.binding.heading.text = "Upcoming Matches"
                 mthirdlist.clear()
-                for (i in 1..5) {
-                    mthirdlist.add(
-                        HomeChildthirdModel(
-                            R.drawable.your_team,"T20 League"
-                        )
-                    )
+                    thirdAdapter?.updateList(ItemsviewModel.upcomingMatch)
 
-                }
+
 
                 binding.viewAll.setOnClickListener() {
                     val bundle = Bundle()
@@ -96,14 +114,10 @@ class HomeParentAdapter(var list: ArrayList<HomeParentModel>, var activity: Acti
                 holder.binding.rvChildHome.adapter = fourthAdapter
                 holder.binding.heading.text = "Teams"
                 mfourthlist.clear()
-                for (i in 1..5) {
-                    mfourthlist.add(
-                        HomeChildfourthModel(
-                            R.drawable.juventus,"League Match"
-                        )
-                    )
 
-                }
+                    fourthAdapter?.updateList(ItemsviewModel.teams)
+
+
                binding.viewAll.setOnClickListener() {
                    val bundle = Bundle()
                    bundle.putString(IntentConstant.TYPE, IntentConstant.FRAGMENT_Teams)
@@ -114,8 +128,6 @@ class HomeParentAdapter(var list: ArrayList<HomeParentModel>, var activity: Acti
                    )
                }
             }
-
-
             }
     }
 
@@ -124,17 +136,15 @@ class HomeParentAdapter(var list: ArrayList<HomeParentModel>, var activity: Acti
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun updateCommentList(Data: List<HomeParentModel>, mRecyclerview: RecyclerView?) {
+    fun updateList(Data: List<HomeList>) {
         if (list.size > 0) {
             list.clear()
             notifyDataSetChanged()
         }
-        list.addAll(Data)
+        for (i in 0..3) {
+            list.addAll(Data)
+        }
+        list.size
         notifyDataSetChanged()
-
-        mRecyclerview?.postDelayed({
-            mRecyclerview.scrollToPosition(itemCount - 1)
-
-        }, 100)
     }
 }

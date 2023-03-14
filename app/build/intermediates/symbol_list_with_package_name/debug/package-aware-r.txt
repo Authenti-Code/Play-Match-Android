@@ -4293,6 +4293,7 @@ id masked
 id matchName
 id match_constraint
 id match_parent
+id matcheCount
 id material_clock_display
 id material_clock_display_and_toggle
 id material_clock_face
@@ -4575,6 +4576,7 @@ id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id tag_window_insets_animation_callback
+id teamCount
 id terrain
 id text
 id text2

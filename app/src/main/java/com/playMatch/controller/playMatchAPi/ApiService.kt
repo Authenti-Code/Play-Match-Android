@@ -14,6 +14,7 @@ import com.playMatch.controller.playMatchAPi.postPojoModel.user.showTeam.ShowTea
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.Match.UpcomingMatchPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.players.PlayersPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.selectSportSearchPost.SelectSportSearchPost
+import com.playMatch.ui.home.model.homeResponse.HomeResponse
 import com.playMatch.ui.matches.model.createMatch.CreateMatchResponse
 import com.playMatch.ui.matches.model.editMatch.EditMatchResponse
 import com.playMatch.ui.matches.model.invitePlayer.InvitePlayerResponse
@@ -207,4 +208,10 @@ interface ApiService {
         @Header(ApiConstant.AUTH) token: String,
         @Body eventDetail:MatchInvitePost?
     ):Response<InvitePlayerResponse>
+
+    @Headers("Content-Type: application/json")
+    @POST(ApiConstant.HOME_LISTING)
+    suspend fun home(
+        @Header(ApiConstant.AUTH) token: String,
+    ):Response<HomeResponse>
 }

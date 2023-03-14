@@ -276,6 +276,7 @@ id kitNo
 id kitNoTv
 id kitYes
 id kitYesTv
+id layout
 id level
 id location
 id locationTv
@@ -285,6 +286,7 @@ id logo
 id logout
 id map
 id matchName
+id matcheCount
 id menu
 id message
 id message_time
@@ -360,6 +362,7 @@ id sundaySlider
 id superstar
 id superstarTv
 id swipeRefreshLay
+id teamCount
 id text_sign
 id thursdaySlider
 id time

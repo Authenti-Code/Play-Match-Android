@@ -74,7 +74,7 @@ class HomeChildAdapter(var list: ArrayList<HomeChildModel>, var activity: Activi
 
 
     @SuppressLint("NotifyDataSetChanged")
-    fun updateCommentList(Data: List<HomeChildModel>, mRecyclerview: RecyclerView?) {
+    fun updateList(Data: List<HomeChildModel>) {
         if (list.size > 0) {
             list.clear()
             notifyDataSetChanged()
@@ -82,9 +82,5 @@ class HomeChildAdapter(var list: ArrayList<HomeChildModel>, var activity: Activi
         list.addAll(Data)
         notifyDataSetChanged()
 
-        mRecyclerview?.postDelayed({
-            mRecyclerview.scrollToPosition(itemCount - 1)
-
-        }, 100)
     }
 }
