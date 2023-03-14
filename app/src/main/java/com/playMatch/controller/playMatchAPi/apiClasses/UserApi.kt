@@ -14,6 +14,7 @@ import com.playMatch.controller.playMatchAPi.postPojoModel.user.register.Registe
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.showTeam.ShowTeamPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.Match.UpcomingMatchPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.players.PlayersPost
+import com.playMatch.controller.playMatchAPi.postPojoModel.user.selectSportSearchPost.SelectSportSearchPost
 import com.playMatch.ui.signUp.userSports.UserSportsPost
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
@@ -117,9 +118,9 @@ class UserApi( val activity: Activity): BaseActivity()  {
     }
 
 
-    suspend fun sportsList(): ResultResponse {
+    suspend fun sportsList(selectSportSearchPost: SelectSportSearchPost): ResultResponse {
         return try {
-            val response = apiService?.sportsList()
+            val response = apiService?.sportsList(selectSportSearchPost)
             if (response?.isSuccessful!!) {
                 val model = response.body()
                 ResultResponse.Success(model)

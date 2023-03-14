@@ -17,6 +17,7 @@ import com.playMatch.R
 import com.playMatch.controller.`interface`.SelectSportsListener
 import com.playMatch.controller.playMatchAPi.ResultResponse
 import com.playMatch.controller.playMatchAPi.apiClasses.UserApi
+import com.playMatch.controller.playMatchAPi.postPojoModel.user.selectSportSearchPost.SelectSportSearchPost
 import com.playMatch.controller.sharedPrefrence.PrefData
 import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.databinding.ActivitySelectSportBinding
@@ -33,6 +34,7 @@ class SelectSportActivity : BaseActivity(), View.OnClickListener {
     private var sportLevel=ArrayList<selectedSportModel>()
 
     private var name:String?=null
+    private var search:String?=null
     private var dob:String?=null
     private var fitnessLevel:String?=null
     private var profileImage:Bitmap?=null
@@ -141,7 +143,8 @@ class SelectSportActivity : BaseActivity(), View.OnClickListener {
         if (isNetworkAvailable()) {
             CommonUtils.showProgressDialog(this)
             lifecycleScope.launchWhenStarted {
-                val resultResponse = UserApi(this@SelectSportActivity).sportsList()
+                val resultResponse = UserApi(this@SelectSportActivity).sportsList(
+                    SelectSportSearchPost(search!!))
                 apiSportListResult(resultResponse)
             }
         } else {

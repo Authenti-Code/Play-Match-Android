@@ -17,8 +17,11 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.appcompat.widget.AppCompatEditText
 import androidx.core.app.ActivityCompat
+import androidx.core.widget.doAfterTextChanged
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -29,36 +32,33 @@ import com.bumptech.glide.request.RequestListener
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.slider.RangeSlider
 import com.playMatch.R
-import com.playMatch.controller.`interface`.ApiUpdateListener
 import com.playMatch.controller.`interface`.BottomSheetListner
 import com.playMatch.controller.playMatchAPi.ApiConstant
 import com.playMatch.controller.playMatchAPi.ResultResponse
 import com.playMatch.controller.playMatchAPi.apiClasses.UserApi
+import com.playMatch.controller.playMatchAPi.postPojoModel.user.selectSportSearchPost.SelectSportSearchPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.showTeam.ShowTeamPost
 import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.databinding.ActivityAddTeamBinding
 import com.playMatch.ui.baseActivity.BaseActivity
-import com.playMatch.ui.home.model.HomeChildModel
 import com.playMatch.ui.location.activity.LocationActivity
 import com.playMatch.ui.matches.adapter.selectSportAdapter.SelectMatchSportAdapter
 import com.playMatch.controller.sharedPrefrence.PrefData
-import com.playMatch.ui.profile.model.editProfile.EditProfileResponse
-import com.playMatch.ui.profile.model.profile.ProfileResponse
 import com.playMatch.ui.signUp.signupModel.SportListResponse
 import com.playMatch.ui.signUp.signupModel.SportsList
-import com.playMatch.ui.teams.fragment.TeamsFragment
 import com.playMatch.ui.teams.model.addTeam.AddTeamResponse
 import com.playMatch.ui.teams.model.editTeam.EditTeamResponse
 import com.playMatch.ui.teams.model.showTeamDetails.TeamDetailResponse
 import com.soundcloud.android.crop.Crop
 import java.io.ByteArrayOutputStream
-import kotlin.concurrent.fixedRateTimer
 import kotlin.math.roundToInt
 
 class AddTeamActivity : BaseActivity(), View.OnClickListener, BottomSheetListner {
     private lateinit var binding: ActivityAddTeamBinding
     private var selectSportAdapter: SelectMatchSportAdapter? = null
-    private var seletedBottomSheet: BottomSheetDialog? = null
+    private var selectedBottomSheet: BottomSheetDialog? = null
+    private var progressbar: ProgressBar? = null
+    private var recyclerView: RecyclerView? = null
     private var list = ArrayList<SportsList>()
 
     //String
@@ -71,6 +71,7 @@ class AddTeamActivity : BaseActivity(), View.OnClickListener, BottomSheetListner
     private var sat:String?=""
     private var teamId:String?=""
     private var sportId:String?=""
+    private var searchText:String?=""
     private var kitProvided:String?="0"
     private var awayMatches:String?="0"
     private var teamStandard:String?="Intermediate"
@@ -698,7 +699,11 @@ class AddTeamActivity : BaseActivity(), View.OnClickListener, BottomSheetListner
             }
 
             R.id.selectSport -> {
+//                CommonUtils.showProgressDialog(this)
+                list.clear()
+                searchText=""
                 sportListApi()
+                selectSportBottomSheet()
             }
 
             R.id.beginner -> {
@@ -787,22 +792,35 @@ class AddTeamActivity : BaseActivity(), View.OnClickListener, BottomSheetListner
             }
             }
     }
+    @SuppressLint("MissingInflatedId", "SuspiciousIndentation")
     private fun selectSportBottomSheet() {
         val view: View = layoutInflater.inflate(R.layout.bottom_sheet_select_sport, null)
-        seletedBottomSheet = BottomSheetDialog(this, R.style.AppBottomSheetDialogTheme)
-        val recyclerView = view.findViewById<RecyclerView>(R.id.rvSelectSport)
+        selectedBottomSheet = BottomSheetDialog(this, R.style.AppBottomSheetDialogTheme)
+         recyclerView = view.findViewById(R.id.rvSelectSport)
+        progressbar = view.findViewById(R.id.progressBar)
         val close = view.findViewById<ImageView>(R.id.close)
+        val search = view.findViewById<AppCompatEditText>(R.id.searchEt)
+
 
         selectSportAdapter = SelectMatchSportAdapter(list, this@AddTeamActivity,String(),this)
         recyclerView?.adapter = selectSportAdapter
 
 
+
+
+            search.doAfterTextChanged {
+                    list.clear()
+                    searchText=search.text.toString().trim()
+                    selectSportAdapter?.updateList(java.util.ArrayList())
+                    sportListApi()
+            }
+
         close.setOnClickListener{
-            seletedBottomSheet?.dismiss()
+            selectedBottomSheet?.dismiss()
         }
-        seletedBottomSheet?.setCanceledOnTouchOutside(false)
-        seletedBottomSheet?.setContentView(view)
-        seletedBottomSheet?.show()
+        selectedBottomSheet?.setCanceledOnTouchOutside(false)
+        selectedBottomSheet?.setContentView(view)
+        selectedBottomSheet?.show()
     }
 
     override fun bottomSheetListner(ViewType: String,id:String,sportsName:String) {
@@ -815,15 +833,14 @@ class AddTeamActivity : BaseActivity(), View.OnClickListener, BottomSheetListner
                 sportId = id
             }
             binding.selectSportTv.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_circle, 0);
-            seletedBottomSheet?.dismiss()
+            selectedBottomSheet?.dismiss()
         }
     }
 
     private fun sportListApi(){
         if (isNetworkAvailable()) {
-            CommonUtils.showProgressDialog(this)
             lifecycleScope.launchWhenStarted {
-                val resultResponse = UserApi(this@AddTeamActivity).sportsList()
+                val resultResponse = UserApi(this@AddTeamActivity).sportsList(SelectSportSearchPost(searchText!!))
                 apiSportListResult(resultResponse)
             }
         } else {
@@ -839,10 +856,9 @@ class AddTeamActivity : BaseActivity(), View.OnClickListener, BottomSheetListner
                 val response = resultResponse.response as SportListResponse
                 //get data and convert string to json and save data
                 if (response.success == "true") {
-                    selectSportBottomSheet()
-
+                    progressbar?.visibility=View.GONE
+                    recyclerView?.visibility=View.VISIBLE
                     selectSportAdapter!!.updateList(response.data)
-
 
                 } else {
                     CommonUtils.hideProgressDialog()
@@ -872,11 +888,9 @@ class AddTeamActivity : BaseActivity(), View.OnClickListener, BottomSheetListner
                             this@AddTeamActivity,
                             PERMISSIONS,
                             PERMISSION_ALL
-
                         )
                     } else {
                         openCamera()
-
                     }
                 } catch (e: Exception) {
                     e.printStackTrace()
@@ -1322,4 +1336,7 @@ class AddTeamActivity : BaseActivity(), View.OnClickListener, BottomSheetListner
             }
         }
     }
+
+
+
 }

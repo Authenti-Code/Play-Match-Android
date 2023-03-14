@@ -13,6 +13,7 @@ import com.playMatch.controller.playMatchAPi.postPojoModel.user.register.Registe
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.showTeam.ShowTeamPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.Match.UpcomingMatchPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.players.PlayersPost
+import com.playMatch.controller.playMatchAPi.postPojoModel.user.selectSportSearchPost.SelectSportSearchPost
 import com.playMatch.ui.matches.model.createMatch.CreateMatchResponse
 import com.playMatch.ui.matches.model.editMatch.EditMatchResponse
 import com.playMatch.ui.matches.model.invitePlayer.InvitePlayerResponse
@@ -56,6 +57,7 @@ interface ApiService {
     @Headers("Content-Type: application/json")
     @POST(ApiConstant.SPORTS_LIST)
     suspend fun sportsList(
+        @Body eventDetail: SelectSportSearchPost?
     ):Response<SportListResponse>
 
     @Headers("Content-Type: application/json")

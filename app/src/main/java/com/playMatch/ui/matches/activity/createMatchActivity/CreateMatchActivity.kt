@@ -10,7 +10,10 @@ import android.os.Bundle
 import android.view.MotionEvent
 import android.view.View
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.appcompat.widget.AppCompatEditText
+import androidx.core.widget.doAfterTextChanged
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -21,6 +24,7 @@ import com.playMatch.controller.playMatchAPi.ResultResponse
 import com.playMatch.controller.playMatchAPi.apiClasses.UserApi
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.Match.EditMatchPost
 import com.playMatch.controller.playMatchAPi.postPojoModel.user.createMatch.CreateMatchPost
+import com.playMatch.controller.playMatchAPi.postPojoModel.user.selectSportSearchPost.SelectSportSearchPost
 import com.playMatch.controller.utils.CommonUtils
 import com.playMatch.databinding.ActivityCreateMatchBinding
 import com.playMatch.ui.baseActivity.BaseActivity
@@ -43,11 +47,15 @@ class CreateMatchActivity : BaseActivity(), View.OnClickListener,BottomSheetList
     private var adapter: SelectTeamAdapter? = null
     private var selectSportAdapter: SelectMatchSportAdapter? = null
     private var seletedBottomSheet: BottomSheetDialog? = null
+    private var progressbar: ProgressBar? = null
+    private var recyclerView: RecyclerView? = null
     private var cal: Calendar = Calendar.getInstance()
     private var list = ArrayList<TeamList>()
     private var sportList = ArrayList<SportsList>()
     private var sportId:String?=null
     private var teamId:String?=null
+
+    private var searchText:String?=""
     private var level:String?="3"
     private var matchDetails: UpComingMatchList?=null
     private var fitnessLevel:String?="Intermediate"
@@ -191,7 +199,10 @@ class CreateMatchActivity : BaseActivity(), View.OnClickListener,BottomSheetList
             }
 
             R.id.selectSport -> {
-            sportListApi()
+                list.clear()
+                searchText=""
+                sportListApi()
+                selectSportBottomSheet()
             }
 
             R.id.calendar -> {
@@ -299,11 +310,20 @@ class CreateMatchActivity : BaseActivity(), View.OnClickListener,BottomSheetList
     private fun selectSportBottomSheet() {
         val view: View = layoutInflater.inflate(R.layout.bottom_sheet_select_sport, null)
         seletedBottomSheet = BottomSheetDialog(this, R.style.AppBottomSheetDialogTheme)
-        val recyclerView = view.findViewById<RecyclerView>(R.id.rvSelectSport)
+        recyclerView = view.findViewById(R.id.rvSelectSport)
+        progressbar = view.findViewById(R.id.progressBar)
         val close = view.findViewById<ImageView>(R.id.close)
+        val search = view.findViewById<AppCompatEditText>(R.id.searchEt)
 
         selectSportAdapter = SelectMatchSportAdapter(sportList, this@CreateMatchActivity,String(),this)
         recyclerView?.adapter = selectSportAdapter
+
+        search.doAfterTextChanged {
+            list.clear()
+            searchText=search.text.toString().trim()
+            selectSportAdapter?.updateList(java.util.ArrayList())
+            sportListApi()
+        }
 
         close.setOnClickListener{
             seletedBottomSheet?.dismiss()
@@ -335,9 +355,10 @@ class CreateMatchActivity : BaseActivity(), View.OnClickListener,BottomSheetList
 
     private fun sportListApi(){
         if (isNetworkAvailable()) {
-            CommonUtils.showProgressDialog(this)
             lifecycleScope.launchWhenStarted {
-                val resultResponse = UserApi(this@CreateMatchActivity).sportsList()
+                val resultResponse = UserApi(this@CreateMatchActivity).sportsList(
+                    SelectSportSearchPost(searchText!!)
+                )
                 apiSportListResult(resultResponse)
             }
         } else {
@@ -353,7 +374,8 @@ class CreateMatchActivity : BaseActivity(), View.OnClickListener,BottomSheetList
                 val response = resultResponse.response as SportListResponse
                 //get data and convert string to json and save data
                 if (response.success == "true") {
-                    selectSportBottomSheet()
+                    progressbar?.visibility=View.GONE
+                    recyclerView?.visibility=View.VISIBLE
                     selectSportAdapter!!.updateList(response.data)
                 } else {
                     CommonUtils.hideProgressDialog()

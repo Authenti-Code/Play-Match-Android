@@ -145,17 +145,29 @@ class SelectSportAdapter(var list: ArrayList<SportsList>, var activity: Activity
                         binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
                         binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
 
-                        if (position in 0 until list.size) {
-                            if (binding.checkbox.isChecked == true) {
-                                nlist.add(
-                                    selectedSportModel(
-                                        ItemsviewModel.id,
-                                        level.toString(),
-                                        sportsLevelName.toString()
-                                    )
+                        if (nlist.isEmpty() && selectedPosition == position) {
+                            nlist.add(
+                                selectedSportModel(
+                                    ItemsviewModel.id,
+                                    level.toString(),
+                                    sportsLevelName.toString()
                                 )
-                            } else {
-                                nlist.remove(
+                            )
+                        } else {
+                            if (nlist.filter{it.sportId == ItemsviewModel.id}.isNotEmpty()) {
+
+                                for (i in 0 until nlist.size!!) {
+                                    val modelNew = nlist[i]
+                                    if (modelNew.sportId == ItemsviewModel.id) {
+                                        nlist[i] = selectedSportModel(
+                                            ItemsviewModel.id,
+                                            level.toString(),
+                                            sportsLevelName.toString()
+                                        )
+                                    }
+                                }
+                            }else{
+                                nlist.add(
                                     selectedSportModel(
                                         ItemsviewModel.id,
                                         level.toString(),
@@ -164,41 +176,6 @@ class SelectSportAdapter(var list: ArrayList<SportsList>, var activity: Activity
                                 )
                             }
                         }
-
-
-
-
-//                                    nlist.remove(
-//                                        selectedSportModel(
-//                                            ItemsviewModel.id,
-//                                            level.toString(),
-//                                            sportsLevelName.toString()
-//                                        )
-//                                    )
-//                            }
-//                        }
-//                                if (nlist.isEmpty() && selectedPosition == position) {
-//                                    nlist.add(
-//                                        selectedSportModel(
-//                                            ItemsviewModel.id,
-//                                            level.toString(),
-//                                            sportsLevelName.toString()
-//                                        )
-//                                    )
-//                                } else {
-//                                    for (i in 0 until nlist.size!!) {
-//                                        val modelNew = nlist[i]
-//                                        if (modelNew.sportId == ItemsviewModel.id) {
-//                                            nlist[i] = selectedSportModel(
-//                                                ItemsviewModel.id,
-//                                                level.toString(),
-//                                            sportsLevelName.toString()
-//                                            )
-//                                        } else {
-//                                            break
-//                                        }
-//                                    }
-//                                }
                     }
 
                     binding.novice.setOnClickListener {
@@ -220,17 +197,29 @@ class SelectSportAdapter(var list: ArrayList<SportsList>, var activity: Activity
                         binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
                         binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
 
-                        if (position in 0 until list.size) {
-                            if (binding.checkbox.isChecked == true) {
-                                nlist.add(
-                                    selectedSportModel(
-                                        ItemsviewModel.id,
-                                        level.toString(),
-                                        sportsLevelName.toString()
-                                    )
+                        if (nlist.isEmpty() && selectedPosition == position) {
+                            nlist.add(
+                                selectedSportModel(
+                                    ItemsviewModel.id,
+                                    level.toString(),
+                                    sportsLevelName.toString()
                                 )
-                            } else {
-                                nlist.remove(
+                            )
+                        } else {
+                            if (nlist.filter{it.sportId == ItemsviewModel.id}.isNotEmpty()) {
+
+                                for (i in 0 until nlist.size!!) {
+                                    val modelNew = nlist[i]
+                                    if (modelNew.sportId == ItemsviewModel.id) {
+                                        nlist[i] = selectedSportModel(
+                                            ItemsviewModel.id,
+                                            level.toString(),
+                                            sportsLevelName.toString()
+                                        )
+                                    }
+                                }
+                            }else{
+                                nlist.add(
                                     selectedSportModel(
                                         ItemsviewModel.id,
                                         level.toString(),
@@ -240,70 +229,6 @@ class SelectSportAdapter(var list: ArrayList<SportsList>, var activity: Activity
                             }
                         }
 
-//                            if (position in 0 until list.size) {
-//
-//                                if (nlist.isEmpty() && selectedPosition == position) {
-//                                    nlist.add(
-//                                        selectedSportModel(
-//                                            ItemsviewModel.id,
-//                                            level.toString(),
-//                                            sportsLevelName.toString()
-//                                        )
-//                                    )
-//                                } else {
-//                                    if (nlist.isNotEmpty() && selectedPosition == position) {
-//                                        for (i in 0 until nlist.size!!) {
-//                                            val modelNew = nlist[i]
-//                                            if (modelNew.sportId == ItemsviewModel.id) {
-//                                                nlist[i] = selectedSportModel(
-//                                                    ItemsviewModel.id,
-//                                                    level.toString(),
-//                                                    sportsLevelName.toString()
-//                                                )
-//                                            }
-//                                        }
-//                                    } else {
-//                                        nlist.add(
-//                                            selectedSportModel(
-//                                                ItemsviewModel.id,
-//                                                level.toString(),
-//                                                sportsLevelName.toString()
-//                                            )
-//                                        )
-//                                    }
-//                                }
-//                            }
-
-//                                if (nlist.isEmpty() && selectedPosition == position) {
-//                                    nlist.add(
-//                                        selectedSportModel(
-//                                            ItemsviewModel.id,
-//                                            level.toString(),
-//                                            levelName.toString()
-//                                        )
-//                                    )
-//                                } else {
-//                                    for (i in 0 until nlist.size!!) {
-//                                        val modelNew = nlist[i]
-//                                        if (modelNew.sportId == ItemsviewModel.id) {
-//                                            nlist[i] = selectedSportModel(
-//                                                ItemsviewModel.id,
-//                                                level.toString(),
-//                                                levelName.toString()
-//                                            )
-//                                        } else {
-//                                            if (nlist.isNotEmpty() && selectedPosition == position) {
-//                                                nlist.add(
-//                                                    selectedSportModel(
-//                                                        ItemsviewModel.id,
-//                                                        level.toString(),
-//                                                        levelName.toString()
-//                                                    )
-//                                                )
-//                                            }
-//                                        }
-//                                    }
-//                                }
                     }
 
                     binding.intermediate.setOnClickListener {
@@ -325,7 +250,7 @@ class SelectSportAdapter(var list: ArrayList<SportsList>, var activity: Activity
                         binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
                         binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
 
-                        if (binding.checkbox.isChecked == true) {
+                        if (nlist.isEmpty() && selectedPosition == position) {
                             nlist.add(
                                 selectedSportModel(
                                     ItemsviewModel.id,
@@ -334,48 +259,28 @@ class SelectSportAdapter(var list: ArrayList<SportsList>, var activity: Activity
                                 )
                             )
                         } else {
-                            nlist.remove(
-                                selectedSportModel(
-                                    ItemsviewModel.id,
-                                    level.toString(),
-                                    sportsLevelName.toString()
-                                )
-                            )
-                        }
-//                            if (position in 0 until list.size) {
-//
-//                                if (nlist.isEmpty() && selectedPosition == position) {
-//                                    nlist.add(
-//                                        selectedSportModel(
-//                                            ItemsviewModel.id,
-//                                            level.toString(),
-//                                            sportsLevelName.toString()
-//                                        )
-//                                    )
-//                                } else {
-//                                    if (nlist.isNotEmpty() && selectedPosition == position) {
-//                                        for (i in 0 until nlist.size!!) {
-//                                            val modelNew = nlist[i]
-//                                            if (modelNew.sportId == ItemsviewModel.id) {
-//                                                nlist[i] = selectedSportModel(
-//                                                    ItemsviewModel.id,
-//                                                    level.toString(),
-//                                                    sportsLevelName.toString()
-//                                                )
-//                                            }
-//                                        }
-//                                    } else {
-//                                        nlist.add(
-//                                            selectedSportModel(
-//                                                ItemsviewModel.id,
-//                                                level.toString(),
-//                                                sportsLevelName.toString()
-//                                            )
-//                                        )
-//                                    }
-//                                }
-//                            }
+                            if (nlist.filter{it.sportId == ItemsviewModel.id}.isNotEmpty()) {
 
+                                for (i in 0 until nlist.size!!) {
+                                    val modelNew = nlist[i]
+                                    if (modelNew.sportId == ItemsviewModel.id) {
+                                        nlist[i] = selectedSportModel(
+                                            ItemsviewModel.id,
+                                            level.toString(),
+                                            sportsLevelName.toString()
+                                        )
+                                    }
+                                }
+                            }else{
+                                nlist.add(
+                                    selectedSportModel(
+                                        ItemsviewModel.id,
+                                        level.toString(),
+                                        sportsLevelName.toString()
+                                    )
+                                )
+                            }
+                        }
 
                     }
 
@@ -398,17 +303,29 @@ class SelectSportAdapter(var list: ArrayList<SportsList>, var activity: Activity
                         binding.superstar.setCardBackgroundColor(Color.parseColor("#ffffff"))
                         binding.superstarTv.setTextColor(Color.parseColor("#F95047"))
 
-                        if (position in 0 until list.size) {
-                            if (binding.checkbox.isChecked == true) {
-                                nlist.add(
-                                    selectedSportModel(
-                                        ItemsviewModel.id,
-                                        level.toString(),
-                                        sportsLevelName.toString()
-                                    )
+                        if (nlist.isEmpty() && selectedPosition == position) {
+                            nlist.add(
+                                selectedSportModel(
+                                    ItemsviewModel.id,
+                                    level.toString(),
+                                    sportsLevelName.toString()
                                 )
-                            } else {
-                                nlist.remove(
+                            )
+                        } else {
+                            if (nlist.filter{it.sportId == ItemsviewModel.id}.isNotEmpty()) {
+
+                                for (i in 0 until nlist.size!!) {
+                                    val modelNew = nlist[i]
+                                    if (modelNew.sportId == ItemsviewModel.id) {
+                                        nlist[i] = selectedSportModel(
+                                            ItemsviewModel.id,
+                                            level.toString(),
+                                            sportsLevelName.toString()
+                                        )
+                                    }
+                                }
+                            }else{
+                                nlist.add(
                                     selectedSportModel(
                                         ItemsviewModel.id,
                                         level.toString(),
@@ -417,39 +334,6 @@ class SelectSportAdapter(var list: ArrayList<SportsList>, var activity: Activity
                                 )
                             }
                         }
-//                            if (position in 0 until list.size) {
-//
-//                                if (nlist.isEmpty() && selectedPosition == position) {
-//                                    nlist.add(
-//                                        selectedSportModel(
-//                                            ItemsviewModel.id,
-//                                            level.toString(),
-//                                            sportsLevelName.toString()
-//                                        )
-//                                    )
-//                                } else {
-//                                    if (nlist.isNotEmpty() && selectedPosition == position) {
-//                                        for (i in 0 until nlist.size!!) {
-//                                            val modelNew = nlist[i]
-//                                            if (modelNew.sportId == ItemsviewModel.id) {
-//                                                nlist[i] = selectedSportModel(
-//                                                    ItemsviewModel.id,
-//                                                    level.toString(),
-//                                                    sportsLevelName.toString()
-//                                                )
-//                                            }
-//                                        }
-//                                    } else {
-//                                        nlist.add(
-//                                            selectedSportModel(
-//                                                ItemsviewModel.id,
-//                                                level.toString(),
-//                                                sportsLevelName.toString()
-//                                            )
-//                                        )
-//                                    }
-//                                }
-//                            }
 
                     }
 
@@ -473,28 +357,29 @@ class SelectSportAdapter(var list: ArrayList<SportsList>, var activity: Activity
                         binding.experienced.setCardBackgroundColor(Color.parseColor("#ffffff"))
                         binding.experiencedTv.setTextColor(Color.parseColor("#F95047"))
 
-//                                if (position in 0 until list.size) {
-//                                    if (binding.checkbox.isChecked == true) {
-//                                        nlist.add(
-//                                            selectedSportModel(
-//                                                ItemsviewModel.id,
-//                                                level.toString(),
-//                                                sportsLevelName.toString()
-//                                            )
-//                                        )
-//                                    } else {
-//                                        nlist.remove(
-//                                            selectedSportModel(
-//                                                ItemsviewModel.id,
-//                                                level.toString(),
-//                                                sportsLevelName.toString()
-//                                            )
-//                                        )
-//                                    }
-//                                }
-                        if (position in 0 until list.size) {
 
-                            if (nlist.isEmpty() && selectedPosition == position) {
+                        if (nlist.isEmpty() && selectedPosition == position) {
+                            nlist.add(
+                                selectedSportModel(
+                                    ItemsviewModel.id,
+                                    level.toString(),
+                                    sportsLevelName.toString()
+                                )
+                            )
+                        } else {
+                            if (nlist.filter{it.sportId == ItemsviewModel.id}.isNotEmpty()) {
+
+                                for (i in 0 until nlist.size!!) {
+                                    val modelNew = nlist[i]
+                                    if (modelNew.sportId == ItemsviewModel.id) {
+                                        nlist[i] = selectedSportModel(
+                                            ItemsviewModel.id,
+                                            level.toString(),
+                                            sportsLevelName.toString()
+                                        )
+                                    }
+                                }
+                            }else{
                                 nlist.add(
                                     selectedSportModel(
                                         ItemsviewModel.id,
@@ -502,28 +387,6 @@ class SelectSportAdapter(var list: ArrayList<SportsList>, var activity: Activity
                                         sportsLevelName.toString()
                                     )
                                 )
-                            } else {
-                                if (nlist.isNotEmpty() && selectedPosition == position) {
-
-                                    for (i in 0 until nlist.size!!) {
-                                        val modelNew = nlist[i]
-                                        if (modelNew.sportId == ItemsviewModel.id) {
-                                            nlist[i] = selectedSportModel(
-                                                ItemsviewModel.id,
-                                                level.toString(),
-                                                sportsLevelName.toString()
-                                            )
-                                        }
-                                    }
-                                } else {
-                                    nlist.add(
-                                        selectedSportModel(
-                                            ItemsviewModel.id,
-                                            level.toString(),
-                                            sportsLevelName.toString()
-                                        )
-                                    )
-                                }
                             }
                         }
 

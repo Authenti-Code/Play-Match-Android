@@ -72,7 +72,4 @@ class SelectMatchSportAdapter(var list: ArrayList<SportsList>, var activity: Act
 //
 //        }, 100)
     }
-
-
-
 }
