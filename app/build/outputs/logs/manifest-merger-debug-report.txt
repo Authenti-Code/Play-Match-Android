@@ -348,7 +348,7 @@ ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:171:9-1
 activity#com.playMatch.ui.signUp.SelectSportActivity
 ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:178:9-189:20
 	android:exported
-		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:180:13-36
+		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:180:13-37
 	android:name
 		ADDED from D:\Akash\PlayMatch03-01-2023\app\src\main\AndroidManifest.xml:179:13-58
 activity#com.playMatch.ui.signUp.AddProfileImageActivity

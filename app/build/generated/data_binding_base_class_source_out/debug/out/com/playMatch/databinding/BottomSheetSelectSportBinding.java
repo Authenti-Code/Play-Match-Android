@@ -5,8 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatEditText;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
@@ -24,13 +26,22 @@ public final class BottomSheetSelectSportBinding implements ViewBinding {
   public final ImageView close;
 
   @NonNull
+  public final ProgressBar progressBar;
+
+  @NonNull
   public final RecyclerView rvSelectSport;
 
+  @NonNull
+  public final AppCompatEditText searchEt;
+
   private BottomSheetSelectSportBinding(@NonNull LinearLayoutCompat rootView,
-      @NonNull ImageView close, @NonNull RecyclerView rvSelectSport) {
+      @NonNull ImageView close, @NonNull ProgressBar progressBar,
+      @NonNull RecyclerView rvSelectSport, @NonNull AppCompatEditText searchEt) {
     this.rootView = rootView;
     this.close = close;
+    this.progressBar = progressBar;
     this.rvSelectSport = rvSelectSport;
+    this.searchEt = searchEt;
   }
 
   @Override
@@ -66,13 +77,26 @@ public final class BottomSheetSelectSportBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.progressBar;
+      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
+      if (progressBar == null) {
+        break missingId;
+      }
+
       id = R.id.rvSelectSport;
       RecyclerView rvSelectSport = ViewBindings.findChildViewById(rootView, id);
       if (rvSelectSport == null) {
         break missingId;
       }
 
-      return new BottomSheetSelectSportBinding((LinearLayoutCompat) rootView, close, rvSelectSport);
+      id = R.id.searchEt;
+      AppCompatEditText searchEt = ViewBindings.findChildViewById(rootView, id);
+      if (searchEt == null) {
+        break missingId;
+      }
+
+      return new BottomSheetSelectSportBinding((LinearLayoutCompat) rootView, close, progressBar,
+          rvSelectSport, searchEt);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -47,6 +47,7 @@
 
 
         <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/searchEt"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textColor="@color/black"
@@ -64,6 +65,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:visibility="gone"
         android:id="@+id/rvSelectSport"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -71,6 +73,16 @@
         android:layout_marginHorizontal="@dimen/_10sdp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/rv_select_sport_list_item"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:layout_marginVertical="@dimen/_2sdp"
+        android:indeterminateTint="@color/red_F95047"/>
+
+
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>

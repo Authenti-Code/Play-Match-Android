@@ -4469,6 +4469,7 @@ id scrollIndicatorUp
 id scrollView
 id scrollable
 id search
+id searchEt
 id searchPlayers
 id searchPlayersTv
 id search_badge

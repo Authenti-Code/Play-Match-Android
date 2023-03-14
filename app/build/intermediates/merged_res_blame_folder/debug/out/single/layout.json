@@ -88,10 +88,6 @@
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-51:\\layout\\rv_profile_list_item_sports_ability.xml"
     },
     {
-        "merged": "com.playMatch.app-mergeDebugResources-48:/layout/activity_home.xml",
-        "source": "com.playMatch.app-main-51:/layout/activity_home.xml"
-    },
-    {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-mergeDebugResources-48:\\layout\\activity_match_sign_up.xml",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-51:\\layout\\activity_match_sign_up.xml"
     },
@@ -134,6 +130,10 @@
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-mergeDebugResources-48:\\layout\\activity_create_match.xml",
         "source": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-main-51:\\layout\\activity_create_match.xml"
+    },
+    {
+        "merged": "com.playMatch.app-mergeDebugResources-48:/layout/bottom_sheet_select_sport.xml",
+        "source": "com.playMatch.app-main-51:/layout/bottom_sheet_select_sport.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\.gradle\\daemon\\7.5\\com.playMatch.app-mergeDebugResources-48:\\layout\\activity_match_details.xml",
